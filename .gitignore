@@ -51,3 +51,4 @@ Thumbs.db
 *.mov
 *.wmv
 config-server/src/main/resources/microservices/*.properties
+repomix-output.xml
