@@ -2686,3 +2686,41 @@ input, select, textarea {
 			}
 
 	}
+
+@media (min-width: 981px) {
+
+    #header {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 2em;
+    }
+
+    #header #nav {
+        margin-top: 2em;
+    }
+
+}
+
+@media (min-width: 981px) {
+
+    #features-wrapper .row {
+        align-items: stretch;
+    }
+
+    #features-wrapper .box.feature {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #features-wrapper .box.feature .inner {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #features-wrapper .box.feature .inner p {
+        flex-grow: 1;
+    }
+
+}
