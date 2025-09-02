@@ -2701,3 +2701,22 @@ ul.menu li:first-child {
 img {
     max-width: 100%;
 }
+
+.share-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 2.5em;
+    padding-top: 1.5em;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+.share-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.2s ease-in-out;
+}
+.share-icon:hover {
+    transform: scale(1.1);
+}
