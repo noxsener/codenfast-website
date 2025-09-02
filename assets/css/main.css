@@ -2698,6 +2698,29 @@ ul.menu li:first-child {
 
 }
 
+#features-wrapper .row > [class*="col-"],
+#posts-wrapper .row > [class*="col-"],
+#referans-wrapper .row > [class*="col-"] {
+    display: flex;
+    flex-direction: column;
+}
+
+.box.feature {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.box.feature .inner {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.box.feature .inner .button {
+    margin-top: auto;
+}
+
 img {
     max-width: 100%;
 }
