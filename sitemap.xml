@@ -6,8 +6,14 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://codenfast.com/posts/yht-yolculuk-06022026.html</loc>
+    <lastmod>2026-02-06T18:40:30.758489</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://codenfast.com/posts/website-maintenance-on-rail.html</loc>
-    <lastmod>2026-02-04T09:14:22.057637</lastmod>
+    <lastmod>2026-02-05T23:08:42.736324</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -72,24 +78,29 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codenfast.com/posts/1687973753217-copyright-attribution-and-licenses.html</loc>
-    <lastmod>2025-09-02T14:17:08.000642</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://codenfast.com/posts/1687973504556-privacy-policy.html</loc>
     <lastmod>2025-09-02T14:17:07.996642</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codenfast.com/categories/projects.html</loc>
+    <loc>https://codenfast.com/posts/1687973753217-copyright-attribution-and-licenses.html</loc>
+    <lastmod>2025-09-02T14:17:08.000642</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://codenfast.com/categories/eglence.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://codenfast.com/categories/software.html</loc>
+    <loc>https://codenfast.com/categories/yazilimcinin-maceralari.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://codenfast.com/categories/Proje.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
