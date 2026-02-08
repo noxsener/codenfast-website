@@ -1,5 +1,5 @@
 /*
-	Verti by HTML5 UP
+	Dopetrope by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
@@ -28,14 +28,14 @@
 		$('#nav > ul').dropotron({
 			mode: 'fade',
 			noOpenerFade: true,
-			speed: 300
+			alignment: 'center'
 		});
 
 	// Nav.
 
-		// Toggle.
+		// Title Bar.
 			$(
-				'<div id="navToggle">' +
+				'<div id="titleBar">' +
 					'<a href="#navPanel" class="toggle"></a>' +
 				'</div>'
 			)
