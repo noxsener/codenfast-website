@@ -2,39 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://codenfast.com/</loc>
+    <lastmod>2026-02-27T01:47:13.017204986+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://codenfast.com/posts/sprint-planlama-toplantisi-estimation-time.html</loc>
-    <lastmod>2026-02-24T06:15:28.021699</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://codenfast.com/posts/gereksiz-karmasik-cozumler.html</loc>
-    <lastmod>2026-02-24T02:12:10.541820</lastmod>
+    <lastmod>2026-02-24T02:12:10.54182+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://codenfast.com/posts/1687973504556-privacy-policy.html.html</loc>
-    <lastmod>2026-02-24T01:49:48.661213</lastmod>
+    <lastmod>2026-02-24T01:49:48.661213+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://codenfast.com/categories/ai-ve-eglence.html</loc>
+    <lastmod>2026-02-24T01:52:17.605378+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://codenfast.com/categories/makale.html</loc>
+    <lastmod>2026-02-24T01:54:09.627696+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://codenfast.com/categories/proje-uygulama.html</loc>
+    <lastmod>2026-02-24T01:54:26.75839+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
