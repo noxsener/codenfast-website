@@ -1913,7 +1913,7 @@ ul.menu li:first-child {
     padding: 4.5em 0 3em 0;
 }
 
-#features-wrapper {
+#features-wrapper, #banner-wrapper,#about-wrapper, #introduction-wrapper, #reference-wrapper {
     padding: 3em 0 3em 0;
 }
 
