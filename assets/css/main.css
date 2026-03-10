@@ -859,33 +859,178 @@ article table tr:hover td { background: var(--bg-card-hover); }
 #copyright ul.menu li a:hover { color: var(--cyan); }
 
 /* =========================================================
-   ANIMATIONS
+   ANIMATIONS — pure CSS, zero JS
    ========================================================= */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(24px); }
+
+/* --- Keyframes --- */
+@keyframes ddi-fade-up {
+    from { opacity: 0; transform: translateY(28px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes scanline {
-    0%   { top: -2px; }
-    100% { top: 100%; }
+@keyframes ddi-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
-@keyframes glowPulse {
-    0%, 100% { box-shadow: 0 0 6px var(--cyan); }
-    50%       { box-shadow: 0 0 20px var(--cyan), 0 0 40px rgba(0,212,255,0.3); }
+@keyframes ddi-slide-down {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
-.anim-fade-up {
-    animation: fadeInUp 0.6s ease both;
+@keyframes ddi-slide-right {
+    from { opacity: 0; transform: translateX(-20px); }
+    to   { opacity: 1; transform: translateX(0); }
 }
 
+@keyframes ddi-glow-pulse {
+    0%, 100% { box-shadow: 0 0 6px var(--cyan), 0 0 0 rgba(0,212,255,0); }
+    50%       { box-shadow: 0 0 18px var(--cyan), 0 0 40px rgba(0,212,255,0.25); }
+}
+
+@keyframes ddi-bar-grow {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+}
+
+@keyframes ddi-nav-slide-in {
+    from { opacity: 0; transform: translateX(100%); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes ddi-dropdown-open {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Page load: entire page wrapper fades in --- */
+#page-wrapper {
+    animation: ddi-fade-in 0.4s ease both;
+}
+
+/* --- Header slides down on load --- */
+#header-wrapper {
+    animation: ddi-slide-down 0.5s ease both;
+}
+
+/* --- Logo accent bar grows in --- */
+#logo h1 a::before {
+    transform-origin: top center;
+    animation: ddi-bar-grow 0.6s 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* --- Nav items stagger in --- */
+#nav > ul > li:nth-child(1) { animation: ddi-fade-in 0.4s 0.35s ease both; }
+#nav > ul > li:nth-child(2) { animation: ddi-fade-in 0.4s 0.42s ease both; }
+#nav > ul > li:nth-child(3) { animation: ddi-fade-in 0.4s 0.49s ease both; }
+#nav > ul > li:nth-child(4) { animation: ddi-fade-in 0.4s 0.56s ease both; }
+#nav > ul > li:nth-child(5) { animation: ddi-fade-in 0.4s 0.63s ease both; }
+#nav > ul > li:nth-child(6) { animation: ddi-fade-in 0.4s 0.70s ease both; }
+#nav > ul > li:nth-child(7) { animation: ddi-fade-in 0.4s 0.77s ease both; }
+
+/* --- Desktop dropdown reveal --- */
+#nav li ul {
+    /* Replace display:none toggle with visibility+opacity for animatability */
+    display: block !important;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-6px);
+    transition:
+            opacity 0.2s ease,
+            transform 0.2s ease,
+            visibility 0s linear 0.2s;
+}
+
+#nav li:hover > ul,
+#nav li.open > ul {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition:
+            opacity 0.2s ease,
+            transform 0.2s ease,
+            visibility 0s linear 0s;
+}
+
+/* --- Banner content staggers in --- */
+#banner-wrapper {
+    animation: ddi-fade-in 0.5s 0.1s ease both;
+}
+
+#banner .banner-text .label {
+    animation: ddi-slide-right 0.5s 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+#banner h2 {
+    animation: ddi-fade-up 0.6s 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+#banner .banner-text p {
+    animation: ddi-fade-up 0.5s 0.54s ease both;
+}
+
+#banner .banner-actions {
+    animation: ddi-fade-up 0.5s 0.64s ease both;
+}
+
+#banner .banner-image {
+    animation: ddi-fade-up 0.7s 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* --- Section headers fade up --- */
+header.major {
+    animation: ddi-fade-up 0.5s 0.1s ease both;
+}
+
+/* --- Cards stagger: nth-child within each row --- */
 .box.feature {
-    animation: fadeInUp 0.5s ease both;
+    animation: ddi-fade-up 0.55s ease both;
 }
 
-.col-4:nth-child(2) .box.feature { animation-delay: 0.1s; }
-.col-4:nth-child(3) .box.feature { animation-delay: 0.2s; }
+/* Stagger by column position — works for 3-col and 2-col grids */
+.col-4:nth-child(1) .box.feature,
+.col-12-medium:nth-child(1) .box.feature { animation-delay: 0.05s; }
+
+.col-4:nth-child(2) .box.feature,
+.col-12-medium:nth-child(2) .box.feature { animation-delay: 0.15s; }
+
+.col-4:nth-child(3) .box.feature,
+.col-12-medium:nth-child(3) .box.feature { animation-delay: 0.25s; }
+
+.col-4:nth-child(4) .box.feature  { animation-delay: 0.10s; }
+.col-4:nth-child(5) .box.feature  { animation-delay: 0.20s; }
+.col-4:nth-child(6) .box.feature  { animation-delay: 0.30s; }
+
+/* --- Section wrappers cascade in --- */
+#about-wrapper         { animation: ddi-fade-in 0.5s 0.05s ease both; }
+#features-wrapper      { animation: ddi-fade-in 0.5s 0.05s ease both; }
+#introduction-wrapper  { animation: ddi-fade-in 0.5s 0.05s ease both; }
+#reference-wrapper     { animation: ddi-fade-in 0.5s 0.05s ease both; }
+#posts-wrapper         { animation: ddi-fade-in 0.5s 0.05s ease both; }
+
+/* --- Article page content --- */
+article {
+    animation: ddi-fade-up 0.6s 0.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* --- Footer fades in --- */
+#footer-wrapper {
+    animation: ddi-fade-in 0.5s 0.1s ease both;
+}
+
+/* --- Logo accent bar pulses gently (ongoing) --- */
+#logo h1 a::before {
+    animation:
+            ddi-bar-grow 0.6s 0.3s cubic-bezier(0.22, 1, 0.36, 1) both,
+            ddi-glow-pulse 3s 1.2s ease-in-out infinite;
+}
+
+/* --- Utility class --- */
+.anim-fade-up {
+    animation: ddi-fade-up 0.6s ease both;
+}
 
 /* =========================================================
    UTILITY CLASSES
@@ -937,14 +1082,56 @@ article table tr:hover td { background: var(--bg-card-hover); }
     #logo h1 { font-size: 1.1rem; }
     #logo h1 a::before { display: none; }
 
-    #nav { display: none; position: fixed; top: 64px; left: 0; right: 0; bottom: 0;
-        background: rgba(5,7,9,0.98); overflow-y: auto; padding: 1rem; z-index: 999; }
-    #nav.open { display: block; }
+    #nav {
+        /* Slide in from right instead of abrupt display:block */
+        display: block !important;
+        position: fixed;
+        top: 64px; left: 0; right: 0; bottom: 0;
+        background: rgba(5,7,9,0.98);
+        overflow-y: auto;
+        padding: 1rem;
+        z-index: 999;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.3s ease,
+        visibility 0s linear 0.3s;
+    }
+    #nav.open {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0);
+        transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.3s ease,
+        visibility 0s linear 0s;
+    }
     #nav ul { flex-direction: column; gap: 0; }
     #nav > ul > li > a { height: auto; line-height: 1; padding: 1rem 0.5rem; border-bottom: 1px solid var(--border); }
     #nav > ul > li > a::after { display: none; }
-    #nav li ul { position: static; display: none; border: none; background: var(--bg-raised); margin-top: 0; }
-    #nav li.open > ul { display: block; }
+
+    /* Mobile dropdowns: override desktop visibility trick, use max-height slide */
+    #nav li ul {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        transform: none !important;
+        transition: none !important;
+        position: static;
+        border: none;
+        background: var(--bg-raised);
+        box-shadow: none;
+        border-top: none;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s cubic-bezier(0.22, 1, 0.36, 1) !important;
+    }
+    #nav li.open > ul {
+        max-height: 400px;
+    }
+    #nav li ul li a { padding-left: 2rem; font-size: 0.8rem; color: var(--text-muted); border-bottom: 1px solid var(--border); }
+    #nav li ul li a:hover { color: var(--cyan); padding-left: 2.4rem; background: transparent; }
 
     #nav-toggle { display: block; }
 
@@ -981,4 +1168,40 @@ article table tr:hover td { background: var(--bg-card-hover); }
    ========================================================= */
 body.scrolled #header-wrapper {
     box-shadow: 0 2px 30px rgba(0,0,0,0.6), 0 0 30px rgba(0,212,255,0.06);
+}
+
+/* =========================================================
+   BANNER LABEL — CSS blinking cursor
+   ========================================================= */
+@keyframes ddi-blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+}
+
+#banner .banner-text .label::after {
+    content: '▮';
+    margin-left: 4px;
+    color: var(--cyan);
+    animation: ddi-blink 1s step-end infinite;
+    font-size: 0.9em;
+}
+
+/* =========================================================
+   NAV TOGGLE — smooth icon swap via CSS
+   ========================================================= */
+#nav-toggle {
+    transition: color var(--transition), border-color var(--transition),
+    transform 0.2s ease;
+}
+#nav-toggle:active { transform: scale(0.9); }
+
+/* =========================================================
+   PREFERS-REDUCED-MOTION — respect user OS setting
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }

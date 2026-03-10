@@ -46,10 +46,15 @@
         openers.forEach(function(opener) {
             opener.addEventListener('click', function(e) {
                 var li = this.parentElement;
-                // On mobile, toggle on click
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
-                    li.classList.toggle('open');
+                    e.stopPropagation(); // prevent outside-click handler from firing
+                    var isOpen = li.classList.contains('open');
+                    // Close all other open dropdowns first
+                    document.querySelectorAll('#nav li.opener.open').forEach(function(other) {
+                        if (other !== li) other.classList.remove('open');
+                    });
+                    li.classList.toggle('open', !isOpen);
                 }
             });
         });
@@ -65,53 +70,17 @@
             });
         });
 
-        // ── Intersection Observer: card animations ─────────
-        if ('IntersectionObserver' in window) {
-            var cards = document.querySelectorAll('.box.feature');
-            var cardObserver = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                        cardObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        // ── Intersection Observer: removed — CSS handles card animations ──
 
-            cards.forEach(function(card, i) {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(28px)';
-                card.style.transition = 'opacity 0.5s ease ' + (i % 3 * 0.1) + 's, transform 0.5s ease ' + (i % 3 * 0.1) + 's';
-                cardObserver.observe(card);
-            });
-        }
-
-        // ── Typing cursor on banner label (cosmetic) ──────
-        var bannerLabel = document.querySelector('#banner .banner-text .label');
-        if (bannerLabel) {
-            var text = bannerLabel.textContent;
-            bannerLabel.textContent = '';
-            var cursor = document.createElement('span');
-            cursor.style.cssText = 'border-right: 2px solid #00d4ff; display:inline-block; margin-left:2px; animation: blink 0.8s step-end infinite;';
-            var style = document.createElement('style');
-            style.textContent = '@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }';
-            document.head.appendChild(style);
-            bannerLabel.appendChild(cursor);
-            var i = 0;
-            var typeInterval = setInterval(function() {
-                if (i < text.length) {
-                    bannerLabel.insertBefore(document.createTextNode(text[i]), cursor);
-                    i++;
-                } else {
-                    clearInterval(typeInterval);
-                }
-            }, 40);
-        }
+        // ── Typing effect: removed — use CSS animation instead ────────
 
         // ── Smooth scroll for anchor links ────────────────
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        // Exclude nav links to avoid conflicting with dropdown toggle
+        document.querySelectorAll('a[href^="#"]:not(#nav a)').forEach(function(anchor) {
             anchor.addEventListener('click', function(e) {
-                var target = document.querySelector(this.getAttribute('href'));
+                var href = this.getAttribute('href');
+                if (href === '#') return;
+                var target = document.querySelector(href);
                 if (target) {
                     e.preventDefault();
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
