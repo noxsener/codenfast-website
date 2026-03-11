@@ -2,9 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://codenfast.com/</loc>
-    <lastmod>2026-03-11T03:42:51.296072514+03:00</lastmod>
+    <lastmod>2026-03-11T09:24:14.470877748+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codenfast.com/posts/windows-12.html</loc>
+    <lastmod>2026-03-11T09:24:04.007825+03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://codenfast.com/posts/infoboard.html</loc>
