@@ -1082,6 +1082,17 @@ article {
     #logo h1 { font-size: 1.1rem; }
     #logo h1 a::before { display: none; }
 
+    #nav > ul > li {
+        animation: none !important; /* Masaüstü animasyonlarını devre dışı bırak */
+        opacity: 1 !important;
+        visibility: visible !important;
+        width: 100%;
+    }
+
+    #nav-toggle {
+        z-index: 1001; /* Butonun menü üzerinde kalmasını sağlar */
+    }
+
     #nav {
         /* Slide in from right instead of abrupt display:block */
         display: block !important;
@@ -1107,7 +1118,15 @@ article {
         visibility 0s linear 0s;
     }
     #nav ul { flex-direction: column; gap: 0; }
-    #nav > ul > li > a { height: auto; line-height: 1; padding: 1rem 0.5rem; border-bottom: 1px solid var(--border); }
+    #nav > ul > li > a {
+        height: auto;
+        line-height: 1;
+        padding: 1.2rem 0.8rem;
+        border-bottom: 1px solid var(--border);
+        color: var(--text-primary) !important; /* Yazıları beyaz/parlak yap */
+        opacity: 1 !important;                 /* Animasyonun sıfırda bırakmasını engelle */
+        visibility: visible !important;        /* Görünürlüğü zorla */
+    }
     #nav > ul > li > a::after { display: none; }
 
     /* Mobile dropdowns: override desktop visibility trick, use max-height slide */
