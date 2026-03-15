@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://codenfast.com/</loc>
-    <lastmod>2026-03-11T09:24:14.470877748+03:00</lastmod>
+    <lastmod>2026-03-15T03:32:54.586536823+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://codenfast.com/posts/ai-ile-slot-makinesi-arasindaki-benzerlikler.html</loc>
+    <lastmod>2026-03-15T03:32:48.09748+03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://codenfast.com/posts/windows-12.html</loc>
-    <lastmod>2026-03-11T09:24:04.007825+03:00</lastmod>
+    <lastmod>2026-03-13T22:40:11.579532+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -20,7 +26,7 @@
   </url>
   <url>
     <loc>https://codenfast.com/posts/guncel-hype-treni-2026.html</loc>
-    <lastmod>2026-03-06T19:31:42.499001+03:00</lastmod>
+    <lastmod>2026-03-13T22:40:38.333905+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -38,7 +44,7 @@
   </url>
   <url>
     <loc>https://codenfast.com/posts/funnyday-eglence-merkezleri-web-sitesi.html</loc>
-    <lastmod>2026-03-01T23:57:36.564371+03:00</lastmod>
+    <lastmod>2026-03-13T22:40:48.878303+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
