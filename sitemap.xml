@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://codenfast.com/</loc>
-    <lastmod>2026-03-26T20:28:44.599356212+03:00</lastmod>
+    <lastmod>2026-04-12T01:51:13.786203861+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://codenfast.com/posts/sirketlerin-ve-kamu-kuruluslari-ai-hizmetlerini-engelledi.html</loc>
+    <lastmod>2026-04-12T01:51:02.080203+03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://codenfast.com/posts/vibe-coding.html</loc>
-    <lastmod>2026-03-26T20:28:38.145921+03:00</lastmod>
+    <lastmod>2026-03-26T20:34:59.573631+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
