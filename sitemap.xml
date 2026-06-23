@@ -2,9 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://codenfast.com/</loc>
-    <lastmod>2026-06-20T02:48:01.619904964+03:00</lastmod>
+    <lastmod>2026-06-23T11:35:29.749516115+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codenfast.com/posts/elektronik-eimza-projesi-tamamlandir.html</loc>
+    <lastmod>2026-06-23T11:35:24.392425+03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://codenfast.com/posts/tost-matik.html</loc>
