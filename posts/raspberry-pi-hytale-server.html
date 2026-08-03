@@ -1,0 +1,524 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de Hytale Sunucusu Barındırma - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Basit adımlar"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de Hytale Sunucusu Barındırma"/>
+    <meta property="og:description"
+          content="Basit adımlar"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-hytale-server.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-hytale-server.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-Hytale-Server-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de Hytale Sunucusu Barındırma"/>
+    <meta name="twitter:description"
+          content="Basit adımlar"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-Hytale-Server-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de Hytale Sunucusu Barındırma","item":{"@id":"https://codenfast.com/posts/raspberry-pi-hytale-server.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-Hytale-Server-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-Hytale-Server-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-Hytale-Server-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-Hytale-Server-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-Hytale-Server-01-Open-Servers-Screen.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-Hytale-Server-01-Open-Servers-Screen.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-Hytale-Server-02-Select-Add-Server.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-Hytale-Server-02-Select-Add-Server.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-Hytale-Server-03-Add-Hytale-Server.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-Hytale-Server-03-Add-Hytale-Server.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-Hytale-Server-04-Join-your-hosted-server.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-Hytale-Server-04-Join-your-hosted-server.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-Hytale-Server-05-Running-on-server.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-Hytale-Server-05-Running-on-server.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de Hytale Sunucusu Barındırma","description":"Basit adımlar","image":["https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-Hytale-Server-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T11:48:55.616418+03:00","dateModified":"2026-08-03T11:48:55.616443+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de Hytale Sunucusu Barındırma</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-hytale-server/">PiMyLifeUp - Self-Hosting a Hytale Server on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu projede, Raspberry Pi üzerinde kendi Hytale sunucunuzu nasıl kendi kendinize barındıracağınızı (self-host) göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-Hytale-Server-Thumbnail.jpg" alt="Raspberry Pi Hytale Sunucusu" /></p>
+<p><a href="https://hytale.com/">Hytale</a>, macera ve yaratıcılığa odaklanan bir sandbox oyunudur. Minecraft'tan büyük ölçüde ilham alır ancak kendine özgü birçok özellik ekleyerek yine de çok özgün bir şey ortaya çıkarır.</p>
+<p>Ek özelliklerin yanı sıra, Hytale sıfırdan moddanabilirliğe ağırlıklı odaklanılarak inşa edilmiştir, böylece herkes özel içeriklerle oyunu daha da genişletebilir.</p>
+<p>Hytale'nin temel özelliklerinden biri, onu başkalarıyla oynayabilme yeteneğidir ve neyse ki, ekip daha en baştan kendi sunucularınızı barındırmayı çok basit bir süreç haline getirmiştir.</p>
+<p>Hytale sunucusu bir Raspberry Pi üzerinde bile çalıştırılabilir, bu da bütçenizi zorlamadan 7/24 çalışır durumda tutabileceğiniz oldukça uygun fiyatlı bir sunucu kurmanızı sağlar.</p>
+<p>Hytale sunucunuza dışarıdan erişim istiyorsanız, ya 5520 portunu yönlendirmeniz ya da <a href="https://pimylifeup.com/raspberry-pi-tailscale/">Tailscale</a> veya Pangolin gibi bir hizmet kullanmanız gerekeceğini lütfen unutmayın.</p>
+<p>Bir Raspberry Pi'de bir Hytale sunucusunu kendi kendinize barındırmak için ihtiyacınız olan üç şey olduğunu lütfen unutmayın.</p>
+<ul>
+<li>Öncelikle, 64-bit bir işletim sisteminiz olmalıdır.</li>
+<li>İkincisi, <strong>en az</strong> 4GB RAM'e sahip olmalısınız; sunucu daha azıyla düzgün çalışmayacaktır.</li>
+<li>Üçüncüsü, bir Hytale lisansına sahip OLMALISINIZ. Raspberry Pi'de sunucunuzu kurarken, yazılım kimlik doğrulaması için hesabınıza giriş yapmanızı isteyecektir. Hytale, bu yazının yayınlandığı tarih itibarıyla, oyuna sahip olmadan sunucu çalıştırılmasına izin vermemektedir.</li>
+</ul>
+<h2>Raspberry Pi'nizde Hytale Sunucusunu Kurma ve Çalıştırma</h2>
+<p>Aşağıdaki adımlarda, Raspberry Pi'nizde bir Hytale sunucusunu kurma ve çalıştırma sürecinin tamamında size rehberlik edeceğiz.</p>
+<p>Başlamadan önce, bu adımlar için Raspberry Pi OS Lite (64-bit) kullanmanızı şiddetle tavsiye ederiz. Bu, karşılaşabileceğiniz sorun sayısını azaltmaya yardımcı olacaktır.</p>
+<h3>Gerekli Yazılımları Hazırlama</h3>
+<p><strong>1.</strong> Hytale sunucusunu kurmaya başlamadan önce yapmamız gereken ilk şey, Raspberry Pi'mizin işletim sisteminin güncel olduğundan emin olmaktır.</p>
+<p>Aşağıdaki iki komutu kullanarak paket listesi önbelleğini güncelleyebilir ve güncel olmayan tüm paketleri yükseltebilirsiniz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>2.</strong> Her şey artık güncellendiğine göre, sunucuyu çalıştırmak için ihtiyacımız olan yazılımı kurmamız gerekiyor. Aşağıdaki komutu kullanarak ihtiyaç duyulan tüm yazılımları kurabilirsiniz.</p>
+<ul>
+<li>
+<p><code>openjdk-25-jdk-headless</code><strong>:</strong> Hytale sunucusu Java ile yazılmıştır, bu yüzden onu gerçekten çalıştırmak için sistemimizde çalışma zamanına ihtiyacımız olacak. Raspberry Pi OS'nin daha eski bir sürümünü çalıştırıyorsanız, Java 25 kutudan çıktığı gibi mevcut olmayabilir ve <a href="https://pimylifeup.com/raspberry-pi-java/">ayrı Java kurulum rehberimizi</a> takip etmeniz gerekecektir.</p>
+</li>
+<li>
+<p><code>wget</code><strong>:</strong> Hytale sunucu indiricisini almak için bu aracı kullanacağız.</p>
+</li>
+<li>
+<p><code>unzip</code><strong>:</strong> Bu, söz konusu indiriciyi çıkarmak için kullanılacak.</p>
+</li>
+<li>
+<p><code>screen</code><strong>:</strong> Bu paketle, sunucuyu ayrı bir terminal penceresinde çalışır durumda tutabileceğiz. İhtiyaç duyduğumuzda sunucunun komut satırı arayüzüyle kolayca etkileşim kurmamızı sağlar.</p>
+<p>sudo apt install openjdk-25-jdk-headless wget unzip screen</p>
+</li>
+</ul>
+<h3>Hytale İndiricisini Çalıştırmak İçin amd64 Emülasyonu Ekleme</h3>
+<p><strong>3.</strong> Bu rehberin yayınlandığı tarih itibarıyla, Hytale sunucu indiricisi Raspberry Pi'nin kullandığı ARM mimarisini yerel olarak desteklemiyor. Neyse ki, bunun için oldukça basit bir çözümümüz var.</p>
+<p>Yapmamız gereken tek şey &quot;<code>binfmt-support</code>&quot; ve &quot;<code>qemu-user-static</code>&quot; paketlerini kurmak. Bu paketler, Raspberry Pi'mizde amd64 yazılımını çalıştırmamızı sağlayacak.</p>
+<pre><code>sudo apt install binfmt-support qemu-user-static
+</code></pre>
+<p><a href="https://pimylifeup.com/raspberry-pi-x64/">Çok daha hızlı olan Box64'ü</a> neden kullanmadığımızı merak ediyorsanız, nedeni destekle ilgilidir. Qemu, Hytale İndiricisi olan statik olarak bağlanmış (statically linked) ikili dosyayla iyi çalışırken, Box64 çalışmıyor.</p>
+<p><strong>4.</strong> Bu paket artık kurulu olduğuna göre, sistemin artık emülasyon katmanı üzerinden amd64 yazılımını çalıştırabileceğinin farkında olması için &quot;<code>update-binfmts</code>&quot; komutunu çalıştırmamız gerekiyor.</p>
+<pre><code>sudo update-binfmts
+</code></pre>
+<p><strong>5.</strong> Ardından, paket yöneticisine de gerektiğinde bir uygulamanın amd64 sürümünü kurabileceğini söylememiz gerekiyor.</p>
+<pre><code>sudo dpkg --add-architecture amd64
+</code></pre>
+<p><strong>6.</strong> Son olarak, artık her şeyin istediğimiz yerde olduğundan emin olmak için hızlıca tekrar bir güncelleme ve yükseltme çalıştırmalıyız.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<h3>Raspberry Pi'mizde Hytale Sunucusunu Çalıştıracak Bir Kullanıcı Oluşturma</h3>
+<p><strong>7.</strong> Bir sonraki adımımız, Raspberry Pi'mizde bizim için Hytale sunucusunu çalıştıracak ayrı bir kullanıcı oluşturmaktır. Bu önemli bir adımdır çünkü bir sunucuyu sisteminizin diğer kısımlarından izole etmeye yardımcı olmak genellikle iyi bir uygulamadır.</p>
+<p>Bu rehber için, &quot;<code>hytaleserver</code>&quot; adlı bir kullanıcı oluşturacağız. Bu hesabı terminalde <a href="https://pimylifeup.com/useradd-command/">useradd komutunu kullanarak</a> oluşturabiliriz. &quot;<code>-m</code>&quot; seçeneğini kullanarak bu kullanıcı için yeni bir ana dizin de oluşturmuş olacağız.</p>
+<pre><code>sudo useradd -m hytaleserver
+</code></pre>
+<p><strong>8.</strong> Ardından, mevcut kullanıcınızı yeni kullanıcılar grubuna eklemek isteyeceğiz. Bu, bu yeni kullanıcının ana dizini içindeki dosyalara kolayca erişmemizi ve onları düzenlememizi sağlayacak.</p>
+<p>Mevcut kullanıcınızı yeni &quot;<code>hytaleserver</code>&quot; grubuna <a href="https://pimylifeup.com/usermod-command/">usermod komutunu kullanarak</a> ekleyebilirsiniz. &quot;<code>a</code>&quot; seçeneği &quot;add&quot; (ekle) anlamına gelir ve büyük &quot;<code>G</code>&quot; kullanıcımıza yeni bir grup eklediğimizi söyler.</p>
+<pre><code>sudo usermod -aG hytaleserver $USER
+</code></pre>
+<p><strong>9.</strong> Yeni grup değişikliklerimizin geçerli olmasını sağlamak için, hesabınızdan çıkış yapıp tekrar giriş yapmanız gerekir.</p>
+<p>Raspberry Pi'nizle etkileşim kurmak için terminal veya SSH kullandığınızı varsayarsak, aşağıdaki komutu yazarak çıkış yapabilmeniz gerekir.</p>
+<pre><code>logout
+</code></pre>
+<p>Alternatif olarak, aşağıdaki komutu çalıştırarak sisteminizi tamamen yeniden başlatabilirsiniz.</p>
+<pre><code>sudo reboot
+</code></pre>
+<p><strong>10.</strong> Ardından, yeni kullanıcımızın ana dizininin izinlerini, bu dizindeki dosyaları grubundaki herkesin okuyabilmesi, yazabilmesi ve çalıştırabilmesi için değiştirmemiz gerekiyor.</p>
+<p>Bu değişikliği chmod komutunu kullanarak 770 izinlerini uygulayarak yapabiliriz.</p>
+<pre><code>sudo chmod -R 770 /home/hytaleserver
+</code></pre>
+<h3>Hytale Sunucu İndiricisini İndirme</h3>
+<p><strong>11.</strong> Sonunda bulmacanın ilk büyük parçasını, yani Hytale sunucu indiricisini kurmaya geçebileceğimiz noktaya geldik. Bu yazılım, en son sürümü almanıza yardımcı olarak sunucunuzu yönetmeyi çok daha basit hale getirecek.</p>
+<p>Ancak bu sürece başlamadan önce, cd komutunu kullanarak bir önceki adımda oluşturduğumuz dizine geçmemiz gerekiyor.</p>
+<pre><code>cd /home/hytaleserver/
+</code></pre>
+<p><strong>12.</strong> Doğru klasördeyken, aşağıdaki komutu kullanarak Hytale sunucu indiricisini içeren arşivi doğrudan Raspberry Pi'mize indirebiliriz.</p>
+<pre><code>wget https://downloader.hytale.com/hytale-downloader.zip
+</code></pre>
+<p><strong>13.</strong> İndirme tamamlandıktan sonra, unzip komutunu kullanarak bu zip arşivini çıkarmak isteyeceğiz.</p>
+<pre><code>unzip hytale-downloader.zip
+</code></pre>
+<p><strong>14.</strong> İndirici artık Raspberry Pi'mizde bulunduğuna göre, o arşivi artık tutmaya gerek yok, o yüzden rm komutunu kullanarak silelim.</p>
+<pre><code>rm hytale-downloader.zip
+</code></pre>
+<h3>Raspberry Pi'de Hytale Sunucu İndiricisini Çalıştırma</h3>
+<p><strong>15.</strong> Sonunda, az önce çıkardığımız &quot;Hytale İndiricisini&quot; kullanarak Hytale sunucusunu Raspberry Pi'mize gerçekten indirebileceğimiz noktaya geldik.</p>
+<p>Bu aracı kullanmak için yapmanız gereken tek şey, terminalde aşağıdaki komutu kullanmaktır. Bu aracı çalıştırırken bir indirme yolu belirtiyoruz.</p>
+<pre><code>./hytale-downloader-linux-amd64 -download-path server.zip
+</code></pre>
+<p><strong>16.</strong> Bu aracı ilk kez çalıştırdığınızda, Hytale hesabınızı kullanarak kimliğinizi doğrulamanız istenecektir. Bu iki nedenden dolayı gereklidir: Hytale, API'sine kimliği doğrulanmamış erişime izin vermez ve ikincisi, bunun için bir sunucu barındırabilmek için Hytale'ye sahip olmanız gerekir.</p>
+<p>Devam etmek için, araç tarafından sağlanan URL'yi kullanmanız gerekir. Biri yetkilendirme kodunu manuel olarak girmenizi gerektirir; diğeri sizin için önceden dolduracaktır. Kimliğinizi doğruladıktan sonra indirici otomatik olarak devam edecektir.</p>
+<pre><code>Please visit the following URL to authenticate:
+https://oauth.accounts.hytale.com/oauth2/device/verify?user_code=XXXXXX
+Or visit the following URL and enter the code:
+https://oauth.accounts.hytale.com/oauth2/device/verify
+Authorization code: XXXXXXX
+</code></pre>
+<p>Aşağıdaki hatayı görürseniz, bu aslında Hytale'ye sahip olmayabileceğiniz ve gerekli varlıkları (assets) indiremeyeceğiniz anlamına gelir.</p>
+<pre><code>error fetching manifest: could not get signed URL for manifest: could not get signed URL: HTTP status: 403 Forbidden
+</code></pre>
+<p><strong>17.</strong> Kimlik doğrulaması yapıldıktan sonra, indirici Hytale sunucusunun en son sürümünü otomatik olarak alacak ve bir zip arşivi olarak Raspberry Pi'nize kaydedecektir.</p>
+<p>Terminalde aşağıdaki mesaj göründüğünde tamamlandığını anlayacaksınız.</p>
+<pre><code>successfully downloaded &quot;release&quot; patchline
+</code></pre>
+<p><strong>18.</strong> Artık Hytale sunucu dosya arşivine sahip olduğumuza göre, gerçekten istediğimiz tüm parçaları alabilmek için onu çıkarmamız gerekecek.</p>
+<p>Bu arşivi çıkarmak için, sadece unzip komutunu ardından &quot;<code>server.zip</code>&quot; ile kullanın. Bu süreç çok uzun sürmemeli.</p>
+<pre><code>unzip server.zip
+</code></pre>
+<p><strong>19.</strong> Tüm dosyalar çıkarıldıktan sonra, &quot;<code>Assets.zip</code>&quot; dosyasını mv komutunu kullanarak sunucuyla aynı konuma taşımak isteyeceğiz.</p>
+<p>Zorunlu olmasa da, her şeyi tek bir yerde tutmak işleri biraz kolaylaştırır.</p>
+<pre><code>mv Assets.zip ./Server/
+</code></pre>
+<h3>Raspberry Pi Hytale Sunucunuzu İlk Kez Çalıştırma</h3>
+<p><strong>20.</strong> Sonunda Raspberry Pi'mizde Hytale sunucusunu ilk kez başlatabileceğimiz noktaya geldik.</p>
+<p>Bu sunucuyu başlatmak için, önce daha önce sunucu arşivinden çıkarılan &quot;<code>/Server/</code>&quot; dizinine geçelim.</p>
+<pre><code>cd ./Server/
+</code></pre>
+<p><strong>21.</strong> Raspberry Pi'nizde sunucuyu başlatmak için, yapmanız gereken tek şey aşağıdaki komutu kullanmaktır. Fark edeceğiniz bir şey, daha önce taşıdığımız &quot;<code>Assets.zip</code>&quot; klasörünü de ilettiğimizdir.</p>
+<p>Sunucunun başlamasının biraz zaman alabileceğini lütfen unutmayın.</p>
+<pre><code>java -jar HytaleServer.jar --assets Assets.zip
+</code></pre>
+<p><strong>22.</strong> Sunucu Raspberry Pi'nizde başlamayı bitirdiğinde, hiçbir sunucu belirtecinin (token) yapılandırılmadığını belirten bir mesaj alacaksınız. İnsanların sunucunuza gerçekten katılabilmesi için bunların yapılandırılması gerekir.</p>
+<p>Daha önce belirtildiği gibi, bu yazının yayınlandığı tarih itibarıyla, oyunu barındırabilmek için gerçekten sahip olmanız gerekir.</p>
+<pre><code>[HytaleServer] No server tokens configured. Use /auth login to authenticate.
+</code></pre>
+<p><strong>23.</strong> Yeni Raspberry Pi Hytale Sunucunuzun kimliğini doğrulamak için, sunucu hâlâ çalışırken aşağıdaki komutu çalıştırmanız gerekecek. Bu, yetkilendirme sürecini başlatacaktır.</p>
+<pre><code>/auth login device
+</code></pre>
+<p>Yukarıdaki komutu çalıştırdıktan sonra, terminalde aşağıdakine benzer bir şey görmelisiniz. Sunucunuzun kimliğini doğrulamak için URL'leri takip edin.</p>
+<pre><code>===================================================================
+DEVICE AUTHORIZATION
+===================================================================
+Visit: https://accounts.hytale.com/device
+Enter code: XXXXXX
+Or visit: https://accounts.hytale.com/device?user_code=XXXXXX
+===================================================================
+Waiting for authorization (expires in 900 seconds)...
+</code></pre>
+<p><strong>24.</strong> Başarıyla kimlik doğrulamasından sonra, aşağıdakine benzer bir mesaj görmelisiniz.</p>
+<p>Bu mesajda ayrıca, kimlik bilgilerinin şu anda yalnızca bellekte saklandığına dair bir uyarı da vardır, yani yeniden başlatıldığında kaybolacaklardır. Neyse ki, Hytale Sunucusu bu sorun için bir çözüm sunuyor.</p>
+<pre><code>Authentication successful! Use '/auth status' to view details.
+WARNING: Credentials stored in memory only - they will be lost on restart!
+To persist credentials, run: /auth persistence &lt;type&gt;
+Available types: Memory, Encrypted
+</code></pre>
+<p><strong>25.</strong> Yetkilendirmenizin birden fazla yeniden başlatma arasında kalıcı olması için, Hytale komut satırı arayüzünde aşağıdaki komutu çalıştırmanız gerekir.</p>
+<p>Bu, sunucuya yetkilendirme verilerinizi sadece bellekte değil, yerel olarak şifrelenmiş bir kopyada saklamasını söyler. Sunucu bir sonraki başladığında, bu bilgiyi yerel kopyadan okuyabilecektir.</p>
+<pre><code>/auth persistence Encrypted
+</code></pre>
+<p>Bu doğru çalıştıysa, terminalde aşağıdaki mesajı görmelisiniz.</p>
+<pre><code>Credential storage changed to: Encrypted
+</code></pre>
+<h3>Yeni Hytale Sunucunuzu Test Etme</h3>
+<p><strong>26.</strong> Hytale Sunucusu artık Raspberry Pi'mizde çalışır durumda olduğuna göre, her şeyin düzgün çalıştığından emin olmak için hızlıca test edebiliriz.</p>
+<p>Elbette, bu aşama için Raspberry Pi'nizin IP Adresini el altında bulundurmalısınız. Zaten bilmiyorsanız, <a href="https://pimylifeup.com/raspberry-pi-ip-address/">bunu almakla ilgili rehberlerimiz</a> var.</p>
+<p>Hazır olduğunuzda, seçtiğiniz cihazda Hytale'i başlatın ve &quot;<code>Servers</code>&quot; seçeneğine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-Hytale-Server-01-Open-Servers-Screen.jpg" alt="Hytale Sunucular Ekranını Açma" /></p>
+<p><strong>27.</strong> Sunucular sayfasında, ekranın sağ alt köşesindeki büyük &quot;<code>ADD SERVER</code>&quot; düğmesine <code>tıklamak</code> isteyeceksiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-Hytale-Server-02-Select-Add-Server.jpg" alt="Add Server Seçme" /></p>
+<p><strong>28.</strong> Öncelikle, Hytale sunucunuzu barındırdığınız Raspberry Pi'nizin IP adresini girmelisiniz (<strong>1.</strong>). Bu, yerel bir IP adresi olabilir veya <code>5520</code> portunu yönlendirdiyseniz, harici bir IP adresi olabilir.</p>
+<p>Ardından, kolayca hatırlayabilmeniz için buna bir isim de vermek isteyeceksiniz. Örneğimizde, sunucumuzu &quot;<code>PiMyLifeUp Hytale Server</code>&quot; olarak adlandırdık.</p>
+<p>Doğru bilgileri girdiğinizden memnun olduğunuzda, &quot;<code>ADD SERVER</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-Hytale-Server-03-Add-Hytale-Server.jpg" alt="Raspberry Pi Hytale Sunucu Detaylarını Doldurma" /></p>
+<p><strong>29.</strong> Artık sunucunuzu &quot;<code>FAVORITE</code>&quot; sekmesinde bir seçenek olarak görmelisiniz. Sunucunuza katılmak için, yapmanız gereken tek şey ona <code>tıklamaktır</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-Hytale-Server-04-Join-your-hosted-server.jpg" alt="Kendi Barındırdığınız Sunucuya Katılma" /></p>
+<p><strong>30.</strong> Artık bir Raspberry Pi üzerinde çalışan kendi kendine barındırılan Hytale sunucunuzda başarıyla oynayabilmeniz gerekir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-Hytale-Server-05-Running-on-server.jpg" alt="Raspberry Pi'de Çalışan Hytale Sunucusuna Bağlanıldı" /></p>
+<h3>Raspberry Pi Hytale Sunucunuzun Açılışta Başlamasını Sağlama</h3>
+<p><strong>31.</strong> Raspberry Pi'miz açıldığında Hytale Sunucusunun başlaması için, bir servis dosyası oluşturmamız gerekecek. Bu servis, sunucuyu başlatmaktan ve yönetmekten sorumlu olacaktır.</p>
+<p>Bunu yapmadan önce, terminale dönüp <code>CTRL</code> + <code>C</code> tuşuna basarak şu anda çalışan sunucuyu durdurmalıyız.</p>
+<h4>Sunucunuzu Başlatacak Bir Betik Oluşturma</h4>
+<p><strong>32.</strong> Yapmak isteyeceğimiz ilk şey, Raspberry Pi'nizde Hytale sunucusunu bir screen içinde başlatacak çok kısa bir bash betiği yazmaktır.</p>
+<p>Sunucuyu bir screen içinde başlatarak, hâlâ onun komut satırı arayüzüyle etkileşim kurabileceğiz.</p>
+<p>Bu betiği yazmaya terminalde aşağıdaki komutu kullanarak başlayabilirsiniz.</p>
+<pre><code>sudo nano /home/hytaleserver/start_server.sh
+</code></pre>
+<p><strong>33.</strong> Bu betiğin içine aşağıdaki satırları yazın.</p>
+<p>Bu satırlar screen oturumunu başlatır ve hemen &quot;<code>Assets.zip</code>&quot; dosyasını kullanarak Hytale Sunucusunu başlatır.</p>
+<pre><code>#!/usr/bin/env bash
+
+SERVER_PATH=&quot;/home/hytaleserver/Server&quot;
+
+/usr/bin/screen -dmS hytaleserver /bin/bash -c &quot;
+cd \&quot;$SERVER_PATH\&quot;
+exec java -jar HytaleServer.jar --assets Assets.zip
+&quot;
+
+/usr/bin/screen -rD hytaleserver -X multiuser on
+/usr/bin/screen -rD hytaleserver -X acladd root
+</code></pre>
+<p><strong>34.</strong> Bu betiği doldurduktan sonra, <code>CTRL</code> + <code>X</code>, <code>Y</code> ve ardından <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<p><strong>35.</strong> Başlatma betiği artık yazıldığına göre, aşağıdaki komutu kullanarak çalıştırılabilir olduğundan emin olmak isteyeceğiz.</p>
+<pre><code>sudo chmod +x /home/hytaleserver/start_server.sh
+</code></pre>
+<h4>Raspberry Pi'nizde Hytale Sunucusunu Durduracak Bir Betik Yazma</h4>
+<p><strong>36.</strong> Ardından, Raspberry Pi'mizde çalışan Hytale sunucusunu güvenli bir şekilde durdurmaya yardımcı olacak bir betik yazmamız gerekiyor. Bu, oturumu doğrudan sonlandırmak yerine, her şeyin doğru şekilde kaydedilmesi için en iyi şansı vermelidir.</p>
+<p>Bu betiği yazmaya aşağıdaki komutu kullanarak başlayın.</p>
+<pre><code>sudo nano /home/hytaleserver/stop_server.sh
+</code></pre>
+<p><strong>37.</strong> Bu betiği aşağıdaki satırlarla doldurun. Bu satırlar çok basittir ve sadece Hytale komut satırı arayüzüne bir &quot;shutdown&quot; komutu gönderecektir.</p>
+<pre><code>#!/usr/bin/env bash
+
+/usr/bin/screen -Rd hytaleserver -X stuff &quot;shutdown \r&quot;
+</code></pre>
+<p><strong>38.</strong> Durdurma betiğini doldurmayı bitirdikten sonra, <code>CTRL</code> + <code>X</code>, <code>Y</code> ve ardından <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<p><strong>39.</strong> Başlatma betiği gibi, bu betiğin de çalıştırma izinlerine sahip olduğundan aşağıdaki komutu çalıştırarak emin olmalıyız.</p>
+<pre><code>sudo chmod +x /home/hytaleserver/stop_server.sh
+</code></pre>
+<h4>Hytale Sunucunuzu Açılışta Başlatacak Servis Dosyasını Yazma</h4>
+<p><strong>40.</strong> Sırada, Raspberry Pi'miz başladığında Hytale sunucumuzu gerçekten başlatacak servisin kendisini oluşturmak istiyoruz.</p>
+<p>Bu servis dosyasını yazmaya terminalde aşağıdaki komutu kullanarak başlayabilirsiniz.</p>
+<pre><code>sudo nano /etc/systemd/system/hytaleserver.service
+</code></pre>
+<p><strong>41.</strong> Bu dosyanın içine, Hytale sunucunuz için bir servis tanımlamak üzere aşağıdaki satırları yazın.</p>
+<p>Bu servisle, daha önce oluşturduğumuz &quot;<code>hytaleserver</code>&quot; kullanıcısı altında çalışmasını sağlarken, aynı zamanda daha önce yazdığımız &quot;<code>start</code>&quot; ve &quot;<code>stop</code>&quot; betiklerini de kullanmasını sağlıyoruz.</p>
+<pre><code>[Unit]
+Description=Hytale Server
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=forking
+User=hytaleserver
+Group=hytaleserver
+ExecStart=/usr/bin/bash /home/hytaleserver/start_server.sh
+ExecStop=/usr/bin/bash /home/hytaleserver/stop_server.sh
+WorkingDirectory=/home/hytaleserver/Server
+Restart=always
+TimeoutStartSec=600
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p><strong>42.</strong> Servisi doldurduktan sonra, artık <code>CTRL</code> + <code>X</code>, <code>Y</code> ve ardından <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<h4>İzinleri Temizleme</h4>
+<p><strong>43.</strong> Her şeyi orijinal kullanıcımızla oluşturduğumuzdan, tüm &quot;<code>/home/hytaleserver/</code>&quot; dizininin &quot;<code>hytaleserver</code>&quot; kullanıcısına ait olduğundan emin olmak için chown komutunu kullanmamız gerekecek.</p>
+<pre><code>sudo chown -R hytaleserver: /home/hytaleserver/
+</code></pre>
+<h4>Sunucunuzu Yeni Servisi Kullanarak Başlatma</h4>
+<p><strong>44.</strong> Sonunda Raspberry Pi'mizde yeni Hytale sunucu servisini etkinleştirebileceğimiz noktaya geldik. Servisi etkinleştirmek, Pi'niz açıldığında sistemin onu otomatik olarak başlatmasını sağlayacak olan şeydir.</p>
+<p>Servisi etkinleştirmek, aşağıdaki komutu kullanmak kadar basittir.</p>
+<pre><code>sudo systemctl enable hytaleserver
+</code></pre>
+<p><strong>45.</strong> Son olarak, aşağıdaki komutu kullanarak sunucunun kendisini başlatın.</p>
+<p>Her şey sorunsuz gittiyse, artık sunucunuza bağlanabilmeniz gerekir.</p>
+<pre><code>sudo systemctl start hytaleserver
+</code></pre>
+<h4>Sunucunuzu Screen Üzerinden Kontrol Etme</h4>
+<p><strong>46.</strong> Daha önce ayarladığımız kilit şeylerden biri Screen aracıdır. Bu, Raspberry Pi'nizde Hytale sunucunuzu yönetmek için çok önemlidir, çünkü mevcut aktif terminal oturumunda olmanıza gerek kalmadan sunucunun komut satırına erişim sağlar.</p>
+<p>Bu yöntemde bir uyarı olduğunu lütfen unutmayın. Bu adımları bitirdiğinizde, screen'i tekrar ayırmak (detach) için <code>CTRL</code> + <code>A</code> ve ardından <code>CTRL</code> + <code>D</code> tuşuna basmalısınız.</p>
+<p>O screen'i geri yüklemek ve komut satırı arayüzüne erişmek için, şunu kullanmak isteyeceksiniz:</p>
+<pre><code>sudo screen -r hytaleserver/hytaleserver
+</code></pre>
+<p><strong>47.</strong> Artık Hytale sunucusundan gelen tüm çıktıyı görmeli ve herhangi bir komut verebilmelisiniz.</p>
+<p>Unutmayın, bu screen ile işiniz bittiğinde, screen'i doğru şekilde ayırmak için <code>CTRL</code> + <code>A</code> ve ardından <code>CTRL</code> + <code>D</code> tuşuna basmalısınız.</p>
+<h2>Raspberry Pi'de Hytale Sunucunuzu Güncelleme</h2>
+<p>Bu bölümde, Hytale sunucusunun en son sürümüne güncelleme adımlarında size rehberlik edeceğiz. Bu adımların birçoğu esasen sunucuyu kurarken yaptıklarımızı tekrarlamak olduğundan onları fazla açıklamayacağız.</p>
+<p>Bu adımlar aynı zamanda servisi kurma zahmetine girdiğinizi varsayacaktır.</p>
+<p><strong>1.</strong> Raspberry Pi'nizde Hytale Sunucusunu güncelleyebilmemiz için, önce aşağıdaki komutu kullanarak çalışmasını durdurmanız gerekecek.</p>
+<p>Sunucunuzun güvenli bir şekilde kapanması uzun sürmemeli.</p>
+<pre><code>sudo systemctl stop hytaleserver
+</code></pre>
+<p><strong>2.</strong> Sunucu durduktan sonra, sunucuyu başlangıçta kurduğumuz dizine geçin.</p>
+<pre><code>cd /home/hytaleserver
+</code></pre>
+<p><strong>3.</strong> Güncelleme sürecinin ilk kısmı, Hytale İndiricisinin en son sürümüne sahip olduğumuzdan emin olmaktır. Bu araç, en son varlıkları (assets) almayı çok daha kolay hale getirmeye yardımcı olur.</p>
+<p>En son sürümün arşivini aşağıdaki komutu kullanarak indirebilirsiniz.</p>
+<pre><code>sudo wget https://downloader.hytale.com/hytale-downloader.zip
+</code></pre>
+<p><strong>4.</strong> Şimdi arşivin içeriğini mevcut dizine çıkarın. Orijinal dosyaların üzerine yazmak için &quot;-o&quot; komutunu kullanıyoruz.</p>
+<pre><code>sudo unzip -o hytale-downloader.zip
+</code></pre>
+<p><strong>5.</strong> Şimdi Hytale İndiricisini tekrar çalıştırın. Bu, en son varlık dosyalarını ve Hytale sunucusunun en son kopyasını alacaktır.</p>
+<p>Bu aracın devam etmeden önce sizden tekrar kimlik doğrulaması yapmanızı isteyebileceğini lütfen unutmayın.</p>
+<pre><code>sudo ./hytale-downloader-linux-amd64 -download-path server.zip
+</code></pre>
+<p><strong>6.</strong> İndirme tamamlandıktan sonra, az önce aldığımız &quot;server.zip&quot; arşivinin içeriğini çıkarın. Mevcut herhangi bir dosyanın üzerine yazdığımızdan emin olmak için yine &quot;<code>-o</code>&quot; komutunu kullanıyoruz.</p>
+<pre><code>sudo unzip -o server.zip
+</code></pre>
+<p><strong>7.</strong> Ardından, &quot;Assets.zip&quot; dosyasını tekrar &quot;<code>Server</code>&quot; dizinine taşıyın. Burada, güncelliğini yitirmiş sürümün üzerine yazması için &quot;<code>-f</code>&quot; seçeneğini kullanıyoruz.</p>
+<pre><code>sudo mv -f Assets.zip ./Server/
+</code></pre>
+<p><strong>8.</strong> Son görevimiz, tüm bu dosya ve klasörlerin oluşturduğumuz &quot;<code>hytaleserver</code>&quot; kullanıcısına ait olduğundan emin olmaktır.</p>
+<pre><code>sudo chown -R hytaleserver: /home/hytaleserver/
+</code></pre>
+<p><strong>9.</strong> Son olarak, artık aşağıdaki komutu kullanarak Hytale Sunucusunu tekrar başlatabilmeniz gerekir.</p>
+<p>Her şey doğru çalıştıysa, artık Raspberry Pi'nizde en son sürüm çalışıyor olmalıdır.</p>
+<pre><code>sudo systemctl start hytaleserver
+</code></pre>
+<h2>Sonuç</h2>
+<p>Bu eğitimde bu aşamaya ulaştıysanız, Raspberry Pi'nizde Hytale sunucusunu başarıyla kurmuş ve çalıştırmış olmalısınız.</p>
+<p>Pi, bir Hytale sunucusunu kendi kendine barındırmak ve yönetmek için tam yeterli güce sahiptir, bu da onu sadece birkaç kişiyle oynamak isteyenler için mükemmel kılar.</p>
+<p>Bu oyun sunucusunu Pi'nizde çalıştırırken herhangi bir sorunla karşılaşırsanız, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-hytale-server.html&amp;text=Raspberry+Pi%27de+Hytale+Sunucusu+Bar%C4%B1nd%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-hytale-server.html&amp;text=Raspberry+Pi%27de+Hytale+Sunucusu+Bar%C4%B1nd%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-hytale-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-hytale-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-hytale-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-hytale-server.html&amp;title=Raspberry+Pi%27de+Hytale+Sunucusu+Bar%C4%B1nd%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+Hytale+Sunucusu+Bar%C4%B1nd%C4%B1rma%20codenfast.com%2Fposts%2Fraspberry-pi-hytale-server.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

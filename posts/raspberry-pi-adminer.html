@@ -1,0 +1,315 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;ye Adminer Nasıl Kurulur - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Hafif bir veritabanı yönetim aracı"/>
+    <meta property="og:title" content="Raspberry Pi&#39;ye Adminer Nasıl Kurulur"/>
+    <meta property="og:description"
+          content="Hafif bir veritabanı yönetim aracı"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-adminer.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-adminer.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Adminer-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;ye Adminer Nasıl Kurulur"/>
+    <meta name="twitter:description"
+          content="Hafif bir veritabanı yönetim aracı"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Adminer-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'ye Adminer Nasıl Kurulur","item":{"@id":"https://codenfast.com/posts/raspberry-pi-adminer.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Adminer-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Adminer-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Adminer-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Adminer-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Adminer-01-Login-to-Adminer.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Adminer-01-Login-to-Adminer.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Adminer-02-Adminer-Dashboard.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Adminer-02-Adminer-Dashboard.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'ye Adminer Nasıl Kurulur","description":"Hafif bir veritabanı yönetim aracı","image":["https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Adminer-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:08:03.847614+03:00","dateModified":"2026-08-03T12:08:03.847639+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;ye Adminer Nasıl Kurulur</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-adminer/">PiMyLifeUp - How to Install Adminer on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'ye Adminer'ı nasıl kuracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Adminer-Thumbnail.jpg" alt="Raspberry Pi Adminer" /></p>
+<p>Adminer, <a href="https://pimylifeup.com/raspberry-pi-phpmyadmin/">phpMyAdmin</a>'e çok benzeyen, web tabanlı bir veritabanı yönetim aracıdır. Hafif olacak şekilde inşa edilmiştir ve tek bir PHP dosyası içinde yazılmıştır.</p>
+<p>Raspberry Pi'nizde Adminer kullanmak, ister <a href="https://pimylifeup.com/raspberry-pi-postgresql/">PostgreSQL</a>, ister <a href="https://pimylifeup.com/raspberry-pi-mysql/">MariaDB</a>, ister <a href="https://pimylifeup.com/raspberry-pi-sqlite/">SQLite</a>, isterse <a href="https://pimylifeup.com/mongodb-raspberry-pi/">MongoDB</a> olsun, veritabanlarınızı yönetmek için harika bir çözümdür.</p>
+<p>Süper ağır olmayan ama yine de ihtiyaç duyabileceğiniz her işlemi gerçekleştirebilen bir veritabanı aracı arayanlar için mükemmel bir çözümdür.</p>
+<p>Arayüz, phpMyAdmin ve diğer araçlar kadar şık veya gelişmiş olmayabilir, ama yine de gezinmesinin kolay olduğunu göreceksiniz.</p>
+<p>Raspberry Pi'mizde Adminer'ı çalıştırmak için Docker kullanacağız. Bu aracı çalıştırmak için Docker kullanmanın avantajı, hangi web sunucusunu çalıştırdığınız konusunda endişelenmemize gerek olmamasıdır. Bunun yerine, <a href="https://www.adminer.org/">Adminer</a> konteyneri içinde çalışması için ihtiyaç duyduğu her şeye sahip olacaktır.</p>
+<p>Bunun gibi bir veritabanı aracı çalıştırmanın bir diğer avantajı, ana sisteminizde PHP'yi güncellemenin Adminer'ı bozmayacak olmasıdır.</p>
+<h2>Raspberry Pi'ye Adminer Kurulumu</h2>
+<p>Aşağıdaki bölümde, Raspberry Pi'ye Adminer kurmak için gereken tüm adımlarda size rehberlik edeceğiz.</p>
+<h3>Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> Başlamadan önce, aşağıdaki iki komutu kullanarak işletim sistemimizin güncel olduğundan emin olmalıyız.</p>
+<p>İlk komut paket listesi önbelleğini günceller. İkincisi ise güncel olmayan tüm paketleri yükseltir.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>2.</strong> Güncelleme tamamlandıktan sonra, bir sonraki adımınız <a href="https://pimylifeup.com/raspberry-pi-docker/">Raspberry Pi'nize Docker kurmaktır</a>.</p>
+<p>Rehberimiz, birkaç kısa adımda Docker'ı kurulu hale getirecektir.</p>
+<p><strong>3.</strong> Bir sonraki adımımız, Adminer compose dosyasını saklamak için bir dizin oluşturmaktır.</p>
+<p>Bu dizini terminalde <code>mkdir</code> komutunu kullanarak oluşturabiliriz.</p>
+<pre><code>sudo mkdir -p /opt/stacks/adminer
+</code></pre>
+<p>&quot;<code>-p</code>&quot; seçeneğini kullanarak, <a href="https://pimylifeup.com/mkdir-command-linux/">mkdir komutu</a> belirtilen yoldaki eksik olan tüm dizinleri oluşturacaktır.</p>
+<p><strong>4.</strong> Dizin artık oluşturulduğuna göre, aşağıdaki komutu kullanarak &quot;<code>/opt/stacks/adminer</code>&quot; dizinine geçebiliriz.</p>
+<pre><code>cd /opt/stacks/adminer
+</code></pre>
+<h3>Raspberry Pi'de Adminer İçin Compose Dosyasını Yazma</h3>
+<p><strong>5.</strong> Bu aşamada, sonunda Raspberry Pi'de Adminer için Compose dosyasını yazmaya başlayabiliriz.</p>
+<p>Bu compose dosyası, Docker'a hangi imajı indireceğini ve konteyneri nasıl yapılandıracağını söyler.</p>
+<pre><code>sudo nano compose.yaml
+</code></pre>
+<p><strong>6.</strong> Bu dosyanın içine, aşağıdaki satırları yazın. Adminer, imaj adı ve çalışması gereken portlar dışında fazla bir yapılandırma gerektirmez.</p>
+<p>Bu yapılandırma, Adminer'ı &quot;<code>8080</code>&quot; portunda çalışacak şekilde ayarlayacaktır. Bunun farklı bir portta çalışmasını istiyorsanız, sol taraftaki &quot;<code>8080</code>&quot;i kullanmak istediğiniz portla değiştirin.</p>
+<pre><code>version: '3.1'
+
+services:
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+</code></pre>
+<p><strong>7.</strong> Bu satırı dosyaya ekledikten sonra, <code>CTRL</code> + <code>X</code>, <code>Y</code> ve ardından <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<h3>Raspberry Pi Adminer Konteynerini Başlatma</h3>
+<p><strong>8.</strong> Raspberry Pi'nizde Adminer konteynerini başlatmak için, yapmanız gereken tek şey aşağıdaki komutu kullanmaktır.</p>
+<p>Bu, veritabanı yönetim aracını cihazınıza hemen indirip çalıştıracaktır. <a href="https://pimylifeup.com/raspberry-pi-dockge/">Raspberry Pi'nizde</a> bu konteynerleri yönetmek için iyi bir araç istiyorsanız, Dockge'ye göz atmalısınız.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<p>&quot;<code>-d</code>&quot; seçeneğini kullanarak, Docker Adminer'ı başlattıktan sonra mevcut terminal oturumundan ayrılacaktır.</p>
+<h3>Yönetici Web Arayüzüne Erişim</h3>
+<p><strong>9.</strong> Raspberry Pi'nizde Adminer artık çalışır durumda olduğuna göre, web arayüzüne erişebiliriz.</p>
+<p>Bunu yapmak için, cihazınızın IP adresini bilmeniz gerekir. Bu IP'yi <a href="https://pimylifeup.com/hostname-command/">hostname komutunu kullanarak</a> alabilirsiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>10.</strong> IP adresinize sahip olduktan sonra, favori web tarayıcınızda aşağıdaki URL'ye gidin.</p>
+<p>&quot;<code>&lt;IPADRESI&gt;</code>&quot; kısmını Pi'nizin IP'siyle değiştirdiğinizden emin olun. Ayrıca, Adminer'ın çalıştığı portu değiştirdiyseniz, bunu da değiştirmeniz gerekecek.</p>
+<pre><code>http://&lt;IPADRESI&gt;:8080
+</code></pre>
+<p><strong>11.</strong> Artık Adminer kullanarak veritabanınıza giriş yapabilirsiniz. Çeşitli alanları doldurmanız gerekiyor, ama göründüğü kadar karmaşık değil.</p>
+<ol>
+<li>Öncelikle, kullandığınız veritabanı türünü ayarlamak isteyeceksiniz. Genellikle, bu varsayılan olarak &quot;<code>MySQL</code>&quot; olarak ayarlıdır.</li>
+<li>Ardından, veritabanı sunucunuzun IP adresini belirtmelisiniz.</li>
+<li>Ayrıca, bağlanmak istediğiniz veritabanındaki bir kullanıcının kullanıcı adını ve şifresini de belirtmelisiniz.</li>
+<li>&quot;Database&quot; seçeneği isteğe bağlıdır ama doğrudan bağlanmak istediğiniz belirli bir veritabanı varsa yardımcı olur.</li>
+</ol>
+<p>Son olarak, bilgilerinizi tamamladıktan sonra, &quot;<code>Login</code>&quot; düğmesine <code>tıklayın</code> (<strong>5.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Adminer-01-Login-to-Adminer.jpg" alt="Raspberry Pi'de Adminer'a Giriş Yapma" /></p>
+<p><strong>12.</strong> Aşağıda, Raspberry Pi'mizde Adminer'ı yerel veritabanı sunucumuza bağlanmak için kullandığımızı görebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Adminer-02-Adminer-Dashboard.jpg" alt="Adminer Gösterge Paneli" /></p>
+<h2>Adminer'ı Güncelleme</h2>
+<p>Adminer'ı bir Docker konteyneri kullanarak kurduğumuzdan, güncelleme süreci son derece basittir. Yapmamız gereken tek şey, imajı tekrar çekmek için Docker Compose kullanmaktır.</p>
+<p><strong>1.</strong> Daha önce Docker compose dosyamızı kaydettiğimiz dizine geçerek başlayalım.</p>
+<pre><code>cd /opt/stacks/adminer
+</code></pre>
+<p><strong>2.</strong> Ardından, yeni imajı çekmek için Docker Compose kullanmamız gerekiyor.</p>
+<p>Bu, Adminer imajının daha yeni bir sürümünün mevcut olup olmadığını kontrol edecek ve sisteme indirecektir.</p>
+<pre><code>docker compose pull
+</code></pre>
+<p><strong>3.</strong> Yeni bir sürüm mevcutsa, onu kullanmak için şu anda çalışan konteyneri yeniden başlatmanız gerekir.</p>
+<p>Adminer'ı yeniden başlatmak ve yeni imaja taşımak için aşağıdaki komutu kullanın.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h2>Sonuç</h2>
+<p>Umarız artık Raspberry Pi'nizde Adminer çalışıyor olacaktır.</p>
+<p>Bu, cihazınızda çalıştırabileceğiniz hafif ama güçlü bir veritabanı yönetim aracıdır.</p>
+<p>Bu yazılımı, çalıştırıyor olabileceğiniz herhangi bir başka web sunucusundan izole etmeye yardımcı olmak için Docker kullanarak kuruyoruz.</p>
+<p>Adminer'ı cihazınızda çalıştırırken herhangi bir sorunla karşılaştıysanız, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-adminer.html&amp;text=Raspberry+Pi%27ye+Adminer+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-adminer.html&amp;text=Raspberry+Pi%27ye+Adminer+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-adminer.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-adminer.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-adminer.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-adminer.html&amp;title=Raspberry+Pi%27ye+Adminer+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27ye+Adminer+Nas%C4%B1l+Kurulur%20codenfast.com%2Fposts%2Fraspberry-pi-adminer.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

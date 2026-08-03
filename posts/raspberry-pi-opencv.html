@@ -1,0 +1,384 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;ye OpenCV Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Raspberry Pi&#39;de OpenCV&#39;yi derleyin ve çalıştırın"/>
+    <meta property="og:title" content="Raspberry Pi&#39;ye OpenCV Kurulumu"/>
+    <meta property="og:description"
+          content="Raspberry Pi&#39;de OpenCV&#39;yi derleyin ve çalıştırın"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-opencv.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-opencv.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2019/12/Raspberry-Pi-OpenCV-Thumbnail-NoWm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;ye OpenCV Kurulumu"/>
+    <meta name="twitter:description"
+          content="Raspberry Pi&#39;de OpenCV&#39;yi derleyin ve çalıştırın"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2019/12/Raspberry-Pi-OpenCV-Thumbnail-NoWm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'ye OpenCV Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-opencv.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/12/Raspberry-Pi-OpenCV-Thumbnail-NoWm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/12/Raspberry-Pi-OpenCV-Thumbnail-NoWm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/12/Raspberry-Pi-OpenCV-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/12/Raspberry-Pi-OpenCV-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'ye OpenCV Kurulumu","description":"Raspberry Pi'de OpenCV'yi derleyin ve çalıştırın","image":["https://pimylifeup.com/wp-content/uploads/2019/12/Raspberry-Pi-OpenCV-Thumbnail-NoWm.jpg"],"datePublished":"2026-08-03T11:33:41.241067+03:00","dateModified":"2026-08-03T11:33:41.241098+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;ye OpenCV Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-opencv/">PiMyLifeUp - Installing OpenCV on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu rehber boyunca, Raspberry Pi'nizde OpenCV kurulumu sürecinde size adım adım rehberlik edeceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/12/Raspberry-Pi-OpenCV-Thumbnail.jpg" alt="Raspberry Pi OpenCV" /></p>
+<p>Raspberry Pi'nize OpenCV kurmanın birkaç yolunu inceleyeceğiz. İlk ve en kolay yol, doğrudan paket deposundan kurmaktır. Bu size daha eski bir sürüm verir, ama birkaç dakika içinde çalışır hale gelmeniz anlamına gelir.</p>
+<p>İkinci ve biraz daha karmaşık yol ise doğrudan kaynak kodundan derlemektir. Bu yöntemi kullanarak, Pi'nizde OpenCV'nin en son sürümüne sahip olursunuz, ancak kütüphanenin derlenmesi için bir saat beklemeye hazır olmalısınız.</p>
+<p><a href="https://opencv.org/about/">OpenCV'nin ne olduğunu</a> bilmeyenler için: Gerçek zamanlı bilgisayarlı görüyle ilgilenmeyi amaçlayan farklı programlama fonksiyonlarından oluşan bir kütüphanedir.</p>
+<p>Bilgisayarlı görüyü kullanarak, görüntüleri ve videoları gerçek zamanlı olarak yorumlayabilirsiniz. Bu da hareket algılama ve yüz tanıma gibi görevleri nispeten kolay bir şekilde gerçekleştirmenize olanak tanır.</p>
+<p>Raspberry Pi, OpenCV öğrenmeye başlamak için mükemmel bir platformdur ve aynı zamanda uygun fiyatlı, küçük bir cihaz olma özelliğini de taşır.</p>
+<p>Bu eğitim, bir Raspberry Pi 5 üzerinde Raspberry Pi OS Bookworm'ün en son sürümü kullanılarak test edilmiştir.</p>
+<h2>Depodan Raspberry Pi'nize OpenCV Kurma</h2>
+<p>Raspberry Pi'nizde OpenCV'nin en son sürümünü çalıştırma konusunda endişeniz yoksa, bu kütüphaneyi doğrudan resmi paket deposundan kurabilirsiniz.</p>
+<p>Kütüphanenin derlenmesini beklemeniz gerekmediğinden, bu yöntem çalışır hale gelmek için önemli ölçüde daha hızlıdır. Elbette dezavantajı, oldukça eski bir OpenCV sürümü çalıştırıyor olabilmenizdir.</p>
+<p>OpenCV'nin en son sürümünü çalıştırmak istiyorsanız, bu kütüphaneyi kaynak kodundan derlemeyle ilgili bölümümüzü takip edin.</p>
+<p><strong>1.</strong> OpenCV'yi kurabilmemiz için önce paket listemizin ve paketlerimizin güncel olduğundan emin olmalıyız.</p>
+<p>İlk komut paket listesi önbelleğini güncelleyecektir. İkincisi, bulduğu güncel olmayan tüm paketleri yükseltecektir.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Sisteminiz güncellendikten sonra, Raspberry Pi'nize OpenCV kurmak için yapmanız gereken tek şey aşağıdaki komutu çalıştırmaktır.</p>
+<p>Bu yazının yayınlandığı tarih itibarıyla, bu Pi'nize OpenCV 4.6 kuracaktır.</p>
+<pre><code>sudo apt install python3-opencv
+</code></pre>
+<p><strong>3.</strong> Artık OpenCV kurulu olduğuna göre, OpenCV'yi test etme bölümüne atlayabilirsiniz.</p>
+<h2>Raspberry Pi'de OpenCV'yi Derleme</h2>
+<p>Aşağıdaki bölümlerde, Raspberry Pi'nizde OpenCV'nin en son sürümünü derleme sürecinde size adım adım rehberlik edeceğiz.</p>
+<p>Kaynak koddan derlemek yavaş bir süreç olsa da, Pi'nizde OpenCV'nin tüm en yeni özelliklerine erişim sağlayacaktır.</p>
+<p>Alternatif olarak, OpenCV Pi'nin paket deposu üzerinden de mevcuttur. Ancak bu sürüm genellikle önemli ölçüde güncelliğini yitirmiştir.</p>
+<h3>Pi'nizde OpenCV'yi Derlemek İçin Gereken Paketleri Kurma</h3>
+<p><strong>1.</strong> Devam etmeden önce, önce mevcut paketleri güncellemeliyiz.</p>
+<p>Aşağıdaki iki komutu çalıştırarak şu anda kurulu olan paketleri güncelleyebilirsiniz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Şimdi OpenCV'nin derlenmesi için ihtiyacımız olan tüm paketleri kurma sürecine başlayabiliriz.</p>
+<p>Başlamak için, aşağıdaki komutu çalıştırın. Bu komut, OpenCV kodunu derlemek için gereken araçları içeren paketleri kuracaktır.</p>
+<pre><code>sudo apt install cmake ccache build-essential pkg-config git -y
+</code></pre>
+<p><strong>3.</strong> Ardından, OpenCV'ye farklı görüntü ve video formatları için destek ekleyecek paketleri kuracağız.</p>
+<p>Bu kütüphaneleri Raspberry Pi'nize aşağıdaki komutla kurun.</p>
+<pre><code>sudo apt install ffmpeg libjpeg-dev libtiff-dev libpng-dev libwebp-dev libopenexr-dev -y
+sudo apt install libopenjp2-7-dev libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev libx264-dev libdc1394-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev -y
+</code></pre>
+<p><strong>4.</strong> Bir sonraki adımımız, aşağıdaki komutu kullanarak OpenCV'nin arayüzü için gereken tüm paketleri kurmaktır.</p>
+<pre><code>sudo apt install libgtk-3-dev libqt5gui5 libqt5webkit5 libqt5test5 python3-pyqt5 -y
+</code></pre>
+<p><strong>5.</strong> Bu sonraki paketler, OpenCV'nin Raspberry Pi'de makul bir hızda çalışması için kritik öneme sahiptir.</p>
+<p>Aşağıdaki komutu çalıştırarak bu paketleri kurabilirsiniz.</p>
+<pre><code>sudo apt install libatlas-base-dev liblapacke-dev gfortran -y
+</code></pre>
+<p><strong>6.</strong> Kurmamız gereken sondan bir önceki paket grubu, OpenCV'nin verileri yönetmek için kullandığı Hiyerarşik Veri Biçimi (HDF5) ile ilgilidir.</p>
+<p>HDF5 paketlerini aşağıdaki komutu kullanarak Pi'nize kurun.</p>
+<pre><code>sudo apt install libhdf5-dev libhdf5-103 -y
+</code></pre>
+<p><strong>7.</strong> Son olarak, aşağıdaki komutu kullanarak son birkaç paketi kurabiliriz.</p>
+<p>Bu son birkaç paket, Raspberry Pi'mizde Python desteğiyle OpenCV'yi derlememizi sağlayacaktır.</p>
+<pre><code>sudo apt install python3-dev python3-pip python3-numpy -y
+</code></pre>
+<p>Bir sonraki bölüme geçmeden önce, tüm paketlerin başarıyla kurulduğundan emin olun.</p>
+<h3>Pi'nizin Swap Boyutunu Artırma</h3>
+<p><strong>8.</strong> Raspberry Pi'mizde OpenCV'yi derlemek için gereken tüm paketler artık kurulu olduğuna göre, derleme sürecine başlamadan önce bazı hazırlık çalışmaları yapmamız gerekiyor.</p>
+<p>Raspberry Pi'de OpenCV'yi derleme sürecine yardımcı olmak için şimdi geçici olarak takas (swap) alanının boyutunu artırmamız gerekecek.</p>
+<p>Takas alanı, cihazın fiziksel RAM'i tükendiğinde işletim sistemi tarafından kullanılır. Takas belleği RAM'den çok daha yavaş olsa da, belirli durumlarda yine de yardımcı olabilir.</p>
+<p>Aşağıdaki komutu çalıştırarak takas dosyası yapılandırmasını değiştirmeye başlayın.</p>
+<pre><code>sudo nano /etc/dphys-swapfile
+</code></pre>
+<p><strong>9.</strong> Bu dosyanın içindeyken, takas alanının boyutunu tanımlayan aşağıdaki satırı bulmamız gerekiyor.</p>
+<pre><code>CONF_SWAPSIZE=100
+</code></pre>
+<p>Yukarıdaki satırı bulduktan sonra, &quot;<code>100</code>&quot; değerini &quot;<code>2048</code>&quot; olarak ayarlayın. Bu, Pi'nizin SD kartında 2GB boyutunda bir takas dosyası oluşturacaktır.</p>
+<pre><code>CONF_SWAPSIZE=2048
+</code></pre>
+<p><strong>10.</strong> Değiştirdikten sonra, <code>CTRL</code>+<code>X</code>, ardından <code>Y</code> ve sonra <code>Enter</code> tuşlarına basarak dosyayı kaydedin.</p>
+<p><strong>11.</strong> Takas dosyası yapılandırmasında değişiklik yaptığımızdan, aşağıdaki komutu kullanarak servisini yeniden başlatmamız gerekiyor.</p>
+<p>Servisi yeniden başlatarak, takas dosyasını yeniden oluşturmaya zorluyoruz.</p>
+<pre><code>sudo systemctl restart dphys-swapfile
+</code></pre>
+<h3>OpenCV Kaynak Kodunu Raspberry Pi'nize Klonlama</h3>
+<p><strong>12.</strong> Ardından, ihtiyacımız olan iki OpenCV deposunu Raspberry Pi'mize klonlayalım.</p>
+<p>Bu iki komutu çalıştırmak, OpenCV'nin en son mevcut sürümünü <a href="https://github.com/opencv/opencv">git deposundan</a> alacaktır.</p>
+<pre><code>git clone https://github.com/opencv/opencv.git
+git clone https://github.com/opencv/opencv_contrib.git
+</code></pre>
+<p>Bu depolar oldukça büyük olduğundan, Raspberry Pi'nize klonlanmaları biraz zaman alabilir.</p>
+<h3>Raspberry Pi'nizde OpenCV'yi Derleme</h3>
+<p><strong>13.</strong> Klonlanan &quot;<strong>opencv</strong>&quot; klasörünün içinde &quot;<strong>build</strong>&quot; adında bir dizin oluşturarak ve ardından çalışma dizinini buna değiştirerek başlayalım.</p>
+<pre><code>mkdir ~/opencv/build
+cd ~/opencv/build
+</code></pre>
+<p><strong>14.</strong> Artık yeni oluşturduğumuz build klasörünün içinde olduğumuza göre, Raspberry Pi'mizde OpenCV'yi derlemeye hazırlamak için <code>cmake</code> kullanabiliriz.</p>
+<p>Gerekli makefile'ı oluşturmak için aşağıdaki komutu çalıştırın.</p>
+<pre><code>cmake -D CMAKE_BUILD_TYPE=RELEASE \
+    -D CMAKE_INSTALL_PREFIX=/usr/local \
+    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
+    -D ENABLE_NEON=ON \
+    -D WITH_OPENMP=ON \
+    -D ENABLE_VFPV3=OFF \
+    -D BUILD_TESTS=OFF \
+    -D INSTALL_PYTHON_EXAMPLES=OFF \
+    -D OPENCV_ENABLE_NONFREE=ON \
+    -D CMAKE_SHARED_LINKER_FLAGS=-latomic \
+    -D OPENCV_PYTHON_INSTALL_PATH=/usr/lib/python3/dist-packages \
+    -D BUILD_EXAMPLES=OFF ..
+</code></pre>
+<p><strong>15.</strong> Makefile başarıyla oluşturulduktan sonra, artık aşağıdaki komutu çalıştırarak OpenCV'yi derlemeye geçebiliriz.</p>
+<p>Derleyiciye, mevcut her işlemci için bir derleyici çalıştırmasını söylemek amacıyla <code>-j$(nproc)</code> argümanını kullanıyoruz.</p>
+<p>Bunu yapmak, derleme sürecini önemli ölçüde hızlandıracak ve Raspberry Pi üzerindeki her çekirdeğin OpenCV'yi derlemek için çalışmasını sağlayacaktır.</p>
+<pre><code>make -j$(nproc)
+</code></pre>
+<p>Derleme sürecinin epey zaman alabileceğini lütfen unutmayın. <a href="https://pimylifeup.com/raspberry-pi-4/">Raspberry Pi 4</a> üzerinde, bu süreç tamamlanması yaklaşık 1 saat sürdü.</p>
+<p>Derleme süreci tamamlanamıyorsa veya takılmış gibi görünüyorsa, CPU'nun kilitlenmiş olma ihtimali vardır.</p>
+<p>Bunu aşmak için, tek bir make işlemi çalıştırmayı deneyebilirsiniz. Bu, sorun olasılığını azaltmalı ama derleme sürelerinin uzamasına neden olmalıdır.</p>
+<pre><code>make
+</code></pre>
+<p><strong>16.</strong> Derleme süreci tamamlandığında, OpenCV'yi Raspberry Pi'mize kurma aşamasına geçebiliriz.</p>
+<p>Neyse ki bizim için bu oldukça basit bir süreçtir ve aşağıdaki komutu çalıştırmanızı gerektirir.</p>
+<pre><code>sudo make install
+</code></pre>
+<p>Bu komut, gerekli tüm dosyaları otomatik olarak ihtiyaç duyulan konumlara kopyalayacaktır.</p>
+<p><strong>17.</strong> Şimdi ayrıca işletim sisteminin kütüphane bağlantı önbelleğini yeniden oluşturmamız gerekiyor.</p>
+<p>Aşağıdaki komutu çalıştırmazsak, Raspberry Pi OpenCV kurulumumuzu bulamayacaktır.</p>
+<pre><code>sudo ldconfig
+</code></pre>
+<h3>Derleme Sonrası Temizlik</h3>
+<p><strong>18.</strong> Raspberry Pi'mizde OpenCV'yi derlemeyi bitirdiğimize göre, artık bu kadar büyük bir takas dosyasına ihtiyacımız yok.</p>
+<p>Aşağıdaki komutu kullanarak takas dosyası yapılandırmasını tekrar düzenleyelim.</p>
+<pre><code>sudo nano /etc/dphys-swapfile
+</code></pre>
+<p><strong>19.</strong> Bu dosyanın içinde, aşağıdaki satırı bulun.</p>
+<pre><code>CONF_SWAPSIZE=2048
+</code></pre>
+<p>Takas boyutu satırını bulduktan sonra, değeri varsayılan değerine (bu yazının yayınlandığı tarih itibarıyla &quot;<code>100</code>&quot;) geri değiştirin.</p>
+<pre><code>CONF_SWAPSIZE=100
+</code></pre>
+<p><strong>20.</strong> Bitirdiğinizde, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code> ve sonra <code>Enter</code> tuşlarına basarak dosyayı kaydedin.</p>
+<p><strong>21.</strong> Şimdi son temizlik görevimiz, takas dosyası servisini yeniden başlatmamızı gerektiriyor.</p>
+<p>Servisi yeniden başlatmak, dosyayı 2GB'tan 100 MB'a küçültecektir.</p>
+<pre><code>sudo systemctl restart dphys-swapfile
+</code></pre>
+<h2>Raspberry Pi'nizde OpenCV'yi Test Etme</h2>
+<p><strong>1.</strong> OpenCV'nin artık Raspberry Pi'mize kurulu olup olmadığını test etmek için, <a href="https://pimylifeup.com/installing-python-on-linux/">Python 3 kurulumumuzu</a> kullanacağız.</p>
+<p>Aşağıdaki komutu çalıştırarak Python terminaline girin.</p>
+<pre><code>python3
+</code></pre>
+<p><strong>2.</strong> Python içindeyken, artık aşağıdaki komutu kullanarak OpenCV Python modülünü içe aktarabiliriz.</p>
+<p>Modülü içe aktararak, önce OpenCV'nin Pi'mizde yüklenip yüklenmeyeceğini kontrol edebiliriz.</p>
+<pre><code>import cv2
+</code></pre>
+<p><strong>3.</strong> OpenCV modülü artık içe aktarıldığına göre, sürümünü alabilmemiz gerekir.</p>
+<p>OpenCV'nin sürümünü almak için aşağıdaki komutu kullanın.</p>
+<pre><code>cv2.__version__
+</code></pre>
+<p><strong>4.</strong> Her şey amaçlandığı gibi çalışıyorsa ve OpenCV Raspberry Pi'nize başarıyla kurulmuşsa, komut satırında aşağıdaki gibi bir metin görmelisiniz.</p>
+<pre><code>'4.9.0'
+</code></pre>
+<h2>Sonuç</h2>
+<p>Umarız bu noktada, artık Raspberry Pi'nizde OpenCV çalışır durumdadır.</p>
+<p>Bu kütüphane, Raspberry Pi'nizde bilgisayarlı görü uygulamak için kullanabileceğiniz zengin bir ücretsiz ve açık kaynaklı araç yelpazesine erişim sağlar.</p>
+<p>Bu eğitimle ilgili herhangi bir sorunla karşılaşırsanız veya geri bildiriminiz varsa, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-opencv.html&amp;text=Raspberry+Pi%27ye+OpenCV+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-opencv.html&amp;text=Raspberry+Pi%27ye+OpenCV+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-opencv.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-opencv.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-opencv.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-opencv.html&amp;title=Raspberry+Pi%27ye+OpenCV+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27ye+OpenCV+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-opencv.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

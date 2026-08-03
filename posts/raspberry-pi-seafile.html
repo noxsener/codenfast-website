@@ -1,0 +1,425 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;ye Seafile Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Açık kaynaklı bir dosya barındırma sunucusu"/>
+    <meta property="og:title" content="Raspberry Pi&#39;ye Seafile Kurulumu"/>
+    <meta property="og:description"
+          content="Açık kaynaklı bir dosya barındırma sunucusu"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-seafile.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-seafile.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Seafile-Thumbnail-NOWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;ye Seafile Kurulumu"/>
+    <meta name="twitter:description"
+          content="Açık kaynaklı bir dosya barındırma sunucusu"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Seafile-Thumbnail-NOWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'ye Seafile Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-seafile.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Seafile-Thumbnail-NOWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Seafile-Thumbnail-NOWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Seafile-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Seafile-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Seafile-Raspberry-Pi-01-Login-to-Account.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Seafile-Raspberry-Pi-01-Login-to-Account.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Seafile-Raspberry-Pi-02-Close-Welcome-Screen.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Seafile-Raspberry-Pi-02-Close-Welcome-Screen.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Seafile-Raspberry-Pi-03-Open-Settings-Screen.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Seafile-Raspberry-Pi-03-Open-Settings-Screen.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Seafile-Raspberry-Pi-04-Open-Password-Update-Screen.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Seafile-Raspberry-Pi-04-Open-Password-Update-Screen.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Seafile-Raspberry-Pi-05-Update-Password.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Seafile-Raspberry-Pi-05-Update-Password.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'ye Seafile Kurulumu","description":"Açık kaynaklı bir dosya barındırma sunucusu","image":["https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Seafile-Thumbnail-NOWM.jpg"],"datePublished":"2026-08-03T12:11:48.900921+03:00","dateModified":"2026-08-03T12:11:48.900949+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;ye Seafile Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-seafile/">PiMyLifeUp - Installing Seafile on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu projede, Raspberry Pi'ye Seafile'ı nasıl kuracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Seafile-Thumbnail.jpg" alt="Raspberry Pi Seafile" /></p>
+<p>Seafile, Raspberry Pi üzerinde çalışabilen açık kaynaklı bir dosya barındırma yazılımıdır.</p>
+<p>Bu hizmet, dosyalarınızı yüklemek için merkezi bir yere sahip olmanızı sağlar. Ardından bu dosyaları <a href="https://www.seafile.com/en/download/">desteklenen Seafile istemcilerinden</a> herhangi birine senkronize etmenizi sağlar.</p>
+<p>Seafile gibi bir dosya barındırma çözümü kullanmanın avantajlarından biri, verilerinizin kontrolünü elinizde tutmanızdır. Gizliliğinize saygı göstermeleri için Google Drive veya Dropbox gibi bir hizmete güvenmek zorunda kalmazsınız.</p>
+<p>Kullanabileceğiniz iki farklı Seafile sürümü vardır. Biri ücretsiz topluluk (community) sürümü, diğeri ise ücretli kurumsal (enterprise) sürümdür. Bu rehberde, sadece topluluk sürümüne odaklanacağız.</p>
+<p>Topluluk ve kurumsal sürümler arasındaki karşılaştırmayı <a href="https://www.seafile.com/en/product/private_server/#feature-list">Seafile'ın web sitesinde</a> bulabilirsiniz.</p>
+<p>Seafile, Raspberry Pi'nizde çalıştırabileceğiniz <a href="https://pimylifeup.com/raspberry-pi-owncloud/">Owncloud</a> ve <a href="https://pimylifeup.com/raspberry-pi-nextcloud-server/">Nextcloud</a> gibi diğer kendi kendine barındırılan dosya barındırma hizmetlerine benzer. Ancak, Seafile Google Drive ve Onedrive deneyimini kopyalamaktan çok, bir dosya barındırma hizmeti olmaya daha çok odaklanıyor. Sadece dosya barındırma peşindeyseniz, Seafile kesinlikle daha az şişkin bir deneyim sunar.</p>
+<p>Bu rehberin çalışması için Raspberry Pi OS'nin 64-bit bir sürümünü çalıştırıyor olmanız gerektiğini lütfen unutmayın. Seafile için kullandığımız Docker imajı 32-bit işletim sistemlerini desteklemiyor.</p>
+<h2>Raspberry Pi'ye Seafile Nasıl Kurulur</h2>
+<p>Aşağıdaki adımlarda, Raspberry Pi'nize Seafile kurma sürecinde size rehberlik edeceğiz.</p>
+<p>Kurulum sürecini büyük ölçüde basitleştirmek için Docker'dan yararlanacağız. Docker kullanmanın avantajı, birden fazla hizmeti kurup yapılandırmak için çok fazla zaman harcamak zorunda kalmamamızdır.</p>
+<p>Ayrıca, Seafile kurulumunuzun Pi'nizde çalıştırdığınız diğer yazılımlarla potansiyel olarak çakışması konusunda endişelenmenize gerek yok. Seafile ve bağımlılıkları, kendi izole konteynerlerinde tutulur.</p>
+<h3>Seafile İçin Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> Başlamadan önce, paket listesini güncellemeli ve güncel olmayan tüm paketleri yükseltmeliyiz.</p>
+<p>Terminalde aşağıdaki iki komutu kullanarak her iki görevi de gerçekleştirebilirsiniz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>2.</strong> Şimdi Raspberry Pi'mizde en azından &quot;<code>wget</code>&quot; ve &quot;<code>pwgen</code>&quot; paketlerinin kurulu olduğundan emin olmalıyız.</p>
+<p>Seafile ekibinden Compose dosyalarını almak için wget kullanacağız. &quot;<code>pwgen</code>&quot; paketi, Seafile'ın kullanması için benzersiz bir anahtar oluşturmak için kurulacak.</p>
+<pre><code>sudo apt install wget pwgen
+</code></pre>
+<p><strong>3.</strong> Sistem güncellemeyi bitirdikten sonra, <a href="https://pimylifeup.com/raspberry-pi-docker/">Raspberry Pi'nize Docker kurmanız gerekiyor</a>.</p>
+<p>Yukarıda bağlantısını verdiğimiz rehber, Pi'ye Docker'ı kurma ve yapılandırma adımlarının tümünde size rehberlik eder.</p>
+<p><strong>4.</strong> Docker'ı kurduktan sonra, bir sonraki adımımız Seafile Docker compose dosyamızı saklamak için <a href="https://pimylifeup.com/mkdir-command-linux/">mkdir komutunu kullanarak</a> bir dizin oluşturmaktır.</p>
+<p>Tüm Docker yığınlarımızı saklamak için uygun bir konum sağladığından bu klasörü &quot;<code>/opt/stacks/</code>&quot; dizini içinde oluşturacağız. &quot;<code>-p</code>&quot; seçeneğinin kullanılması, sisteminizin bu dizinin eksik olan her bir parçasını oluşturmasını sağlar.</p>
+<pre><code>sudo mkdir -p /opt/stacks/seafile
+</code></pre>
+<p><strong>5.</strong> Seafile için bir dizin oluşturduktan sonra, terminalde <a href="https://pimylifeup.com/cd-command/">cd komutunu kullanarak</a> içine geçin.</p>
+<pre><code>cd /opt/stacks/seafile
+</code></pre>
+<h3>Raspberry Pi'de SeaFile İçin Compose Dosyalarını Alma</h3>
+<p><strong>6.</strong> Bu bölüme, Raspberry Pi'mize kurmayı düşündüğümüz Seafile sürümünü tanımlayarak başlayalım.</p>
+<p>Bunu bir bash değişkeni olarak ayarlıyoruz, böylece sonraki birkaç adımda doğru sürüme kolayca referans verebiliriz.</p>
+<pre><code>SEAFILE_VERSION=12.0
+</code></pre>
+<p><strong>7.</strong> Sürüm ayarlandıktan sonra, Seafile için temel ortam dosyasını indirerek başlayalım. Bu, Seafile'ı yapılandırmak için kullanacağımız dosyadır.</p>
+<pre><code>sudo wget -O .env https://manual.seafile.com/$SEAFILE_VERSION/repo/docker/ce/env
+</code></pre>
+<p><strong>8.</strong> Ardından, Seafile'ın dayandığı temel hizmetleri kuracak Docker Compose dosyasını kaydedebiliriz. Birincisi Seafile'ın kendisi, ikincisi bir veritabanı sunucusu ve son olarak Seafile'ın önbellekleme sistemi için kullanılacak Memcached'dir.</p>
+<pre><code>sudo wget https://manual.seafile.com/$SEAFILE_VERSION/repo/docker/ce/seafile-server.yml
+</code></pre>
+<p><strong>9.</strong> Ayrıca SeaDoc için Docker Compose dosyasını da kaydedeceğiz. Bu, Seafile'ın çevrimiçi ortak belge editörünü etkinleştiren bir uzantıdır. Zorunlu olmasa da, sahip olmak inanılmaz derecede kullanışlı olabilir.</p>
+<pre><code>sudo wget https://manual.seafile.com/$SEAFILE_VERSION/repo/docker/seadoc.yml
+</code></pre>
+<p><strong>10.</strong> İndirmemiz gereken bu bulmacanın son parçası Caddy için Compose dosyasıdır. Caddy, Seafile'ın hizmeti gerçekten erişilebilir kılmak için kullanacağı şeydir; etkinleştirirseniz HTTPS işlevselliği de sağlar.</p>
+<pre><code>sudo wget https://manual.seafile.com/$SEAFILE_VERSION/repo/docker/caddy.yml
+</code></pre>
+<p><strong>11.</strong> Tüm Compose dosyaları artık kaydedildiğine göre, artık Seafile'ı gerçekten yapılandırmamız gerekecek.</p>
+<p>Şimdi, bunu yapabilmemiz için, &quot;<code>JWT</code>&quot; özel anahtarı için kullanılacak benzersiz bir şifre oluşturmamız gerekecek. Oturumları güvende tutmak için kullanılacağından, bunun güvenli olması kritik önem taşır.</p>
+<pre><code>pwgen -s 40 1
+</code></pre>
+<h3>Seafile Ortamını Yapılandırma</h3>
+<p><strong>12.</strong> Artık terminalde aşağıdaki komutu kullanarak &quot;<code>.env</code>&quot; dosyasını düzenlemek üzere açabilirsiniz.</p>
+<p>Kullanımı en kolay terminal tabanlı metin editörlerinden biri olduğundan &quot;nano&quot; kullanıyoruz.</p>
+<pre><code>sudo nano .env
+</code></pre>
+<p><strong>13.</strong> Dosya artık açık olduğuna göre, Seafile'ın Raspberry Pi'nizde amaçlandığı gibi çalıştığından emin olmak için birkaç değişiklik yapmamız gerekecek.</p>
+<h4>Depolama Konumunu Ayarlama</h4>
+<ul>
+<li>
+<p>Dosyalarınızın Raspberry Pi'nizde farklı bir konumda, örneğin harici bir sabit diskte saklanmasını istiyorsanız, aşağıdaki satırı aramak isteyeceksiniz.</p>
+<p>SEAFILE_VOLUME=/opt/seafile-data</p>
+</li>
+</ul>
+<p>Burada tanımlanan yolu, Seafile'ın dosyalarını saklamasını istediğiniz yolla değiştirin. Bu örnekte, kendimizinkini &quot;<code>/mount/hdddrive/seafile-data</code>&quot; dizininde saklanacak şekilde değiştiriyoruz.</p>
+<pre><code>SEAFILE_VOLUME=/mount/hddrive/seafile-data
+</code></pre>
+<ul>
+<li>
+<p>Aynı şekilde, bu değişikliği Seadoc volume yoluna da yapmak isteyeceksiniz. Bu yolu aşağıdaki satırı bularak ayarlayabilirsiniz.</p>
+<p>SEADOC_VOLUME=/opt/seadoc-data</p>
+</li>
+</ul>
+<p>Örneğin, mount yolumuzu &quot;<code>/mount/hddrive/seado-data</code>&quot; olarak ayarlamak, satırı aşağıdakine benzer hale getirmek anlamına gelir.</p>
+<pre><code>SEADOC_VOLUME=/mount/hddrive/seadoc-data
+</code></pre>
+<h4>Ana Bilgisayar Adınızı ve Protokolünüzü Yapılandırma</h4>
+<ul>
+<li>
+<p>Burada, Seafile kurulumunuza erişmek için kullanmak istediğiniz alan adını belirteceksiniz. Bunu yerel olarak veya bir alan adı olmadan kullanıyorsanız, bunun yerine IP Adresinize ayarlayabilirsiniz. Bir alan adı kullanıyorsanız, bunun makinenize genel olarak yönlendirilebilir olduğundan emin olun.</p>
+<p>SEAFILE_SERVER_HOSTNAME=seafile.example.com</p>
+</li>
+</ul>
+<p>Örneğin, ana bilgisayar adımızı &quot;<code>seafile.pimylifeup.com</code>&quot; olarak ayarlamak, satırın aşağıda gösterdiğimiz gibi görüneceği anlamına gelir.</p>
+<pre><code>SEAFILE_SERVER_HOSTNAME=seafile.pimylifeup.com
+</code></pre>
+<p>Bir alan adınız yoksa, ya yerel IP adresinizi ya da harici IP adresinizi kullanmak isteyeceksiniz. Aşağıdaki örneğimizde, Raspberry Pi'mize atanan yerel IP adresini kullanıyoruz.</p>
+<pre><code>SEAFILE_SERVER_HOSTNAME=192.168.0.22
+</code></pre>
+<ul>
+<li>
+<p>Şimdi, Pi'nize erişmek için gerçekten kullanılabilecek bir alan adınız varsa, HTTPS işlevselliğini etkinleştirebilirsiniz. Bunu başarmak için, dosyanın içinde aşağıdaki satırı bulun.</p>
+<p>SEAFILE_SERVER_PROTOCOL=http</p>
+</li>
+</ul>
+<p>Bu satırı bulduktan sonra, yapmanız gereken tek şey &quot;<code>http</code>&quot;i &quot;<code>https</code>&quot; ile değiştirmektir. Konteyneriniz başladığında, Caddy seçtiğiniz alan adı için otomatik olarak bir SSL sertifikası almaya çalışacaktır.</p>
+<pre><code>SEAFILE_SERVER_PROTOCOL=https
+</code></pre>
+<h4>Saat Diliminizi ve Özel Anahtarınızı Ayarlama</h4>
+<ul>
+<li>
+<p>Bir sonraki adımınız, Seafile'ın kullanacağı saat dilimini ayarlamaktır. Varsayılan olarak, Seafile saat dilimini UTC (<code>ETC/UTC</code>) olarak ayarlayacaktır.</p>
+<p>TIME_ZONE=Etc/UTC</p>
+</li>
+</ul>
+<p>Wikipedia'ya giderek <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">tz veritabanı saat dilimlerinin bir listesini</a> bulabilirsiniz. İhtiyacınız olan değerler TZ Tanımlayıcı sütunundadır. Örneğin, ben Avustralya'nın Hobart şehrinde yaşıyorum, bu yüzden bu değer için &quot;<code>Australia/Hobart</code>&quot; kullanırdım; siz kendi saat diliminizi (örn. &quot;<code>Europe/Istanbul</code>&quot;) kullanmalısınız.</p>
+<pre><code>TIME_ZONE=Australia/Hobart
+</code></pre>
+<ul>
+<li>
+<p>Bir sonraki adım, oturum anahtarlarınızın güvenliğini sağlamaya yardımcı olmak için kullanacağımız anahtarı belirtmektir. Bunu yapmak için, aşağıdaki seçeneği bulmanız gerekecek.</p>
+<p>JWT_PRIVATE_KEY=</p>
+</li>
+</ul>
+<p>Bu satırı bulduktan sonra, daha önce pwgen komutunu kullanarak oluşturduğunuz şifreyi satırın sonuna ekleyin.</p>
+<pre><code>JWT_PRIVATE_KEY=EXAMPLEKEYGOESHEREDONOTUSETHISONE
+</code></pre>
+<h4>Veritabanı Şifrelerini Yapılandırma</h4>
+<ul>
+<li>Ardından, Seafile'ın Raspberry Pi'nizde veritabanı sunucusu için kullanacağı şifreyi ayarlamamız gerekiyor.</li>
+</ul>
+<p>Bu şifreyi ayarlamak için, dosyanın içinde aşağıdaki satırı bulmak isteyeceksiniz.</p>
+<pre><code>SEAFILE_MYSQL_DB_PASSWORD=PASSWORD
+</code></pre>
+<p>&quot;<code>PASSWORD</code>&quot; kısmını kendi güvenli şifrenizle değiştirin. Bunun kolayca tahmin edilemeyecek bir şey olmasını sağlamak kritik önem taşır.</p>
+<pre><code>SEAFILE_MYSQL_DB_PASSWORD=RANDOMPASSWORDHERE
+</code></pre>
+<ul>
+<li>
+<p>Ayrıca veritabanı sunucusunun root kullanıcısı için kullanılacak ayrı bir şifre de belirlemeniz gerekecek. Bu yalnızca ilk başlatma sürecinde kullanılır, ama yine de bunu güvenli bir şey yapmanız kritik önem taşır.</p>
+<p>INIT_SEAFILE_MYSQL_ROOT_PASSWORD=ROOT_PASSWORD</p>
+</li>
+</ul>
+<p>&quot;<code>ROOT_PASSWORD</code>&quot; kısmını yeni bir şifreyle değiştirin, bu hatırlamanız gereken bir şey değil.</p>
+<pre><code>INIT_SEAFILE_MYSQL_ROOT_PASSWORD=DIFFERENTPASSWORD
+</code></pre>
+<h4>Seafile Kullanıcı Bilgilerinizi Ayarlama</h4>
+<ul>
+<li>Artık Raspberry Pi'nizde Seafile'ı yapılandırmanın son aşamasındasınız, bu Seafile'a erişmek için kullanacağınız kullanıcı hesabını oluşturmayı içerir.</li>
+</ul>
+<p>Bu süreçteki ilk adım, admin e-postasını tanımlayan satırı bulmaktır.</p>
+<pre><code>INIT_SEAFILE_ADMIN_EMAIL=me@example.com
+</code></pre>
+<p>Şimdi bunu, Seafile kurulumunuza erişmek için kullanmak istediğiniz e-posta adresiyle değiştirmek isteyeceksiniz. Örneğin, &quot;<code>seafile@pimylifeup.com</code>&quot; e-postasını kullanıyor olsaydık, satırı aşağıdaki gibi görünecek şekilde değiştirirdik.</p>
+<pre><code>INIT_SEAFILE_ADMIN_EMAIL=seafile@pimylifeup.com
+</code></pre>
+<ul>
+<li>
+<p>Ardından, admin hesabınız için kullanacağınız şifreyi ayarlamamız gerekiyor. Şifreyi ayarlamak için, e-postanın hemen altındaki aşağıdaki satırı bulun.</p>
+<p>INIT_SEAFILE_ADMIN_PASSWORD=asecret</p>
+</li>
+</ul>
+<p>Şifrenizi ayarlamak için, &quot;<code>asecret</code>&quot; kısmını web tarayıcınızı kullanarak Seafile'a erişmek için kullanmak istediğiniz şifreyle değiştirin.</p>
+<pre><code>INIT_SEAFILE_ADMIN_PASSWORD=randomsecurepassword
+</code></pre>
+<h4>Değişikliklerinizi Kaydetme</h4>
+<p><strong>13.</strong> Bu dosyayı doldurduktan sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code> ve son olarak <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<h3>Raspberry Pi'nizde Seafile'ı Başlatma</h3>
+<p><strong>14.</strong> Sonunda Raspberry Pi'mizde Seafile'ı başlatabileceğimiz noktaya geldik.</p>
+<p>Yapmamız gereken tek şey aşağıdaki komutu kullanmaktır. Bu komut, Docker'a yazdığımız compose dosyasında belirtilen konteynerleri başlatmasını söyler.</p>
+<p>Bu komutu ilk kez çalıştırdığınızda, bu süreç birkaç dakika sürebilir. Seafile, SQL veritabanı ve memcached için bir konteyner indirip kurması gerekir.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<p>&quot;<code>-d</code>&quot; seçeneğini kullanarak, Docker'a mevcut terminal oturumundan ayrılmasını da söylüyoruz. Bu, Seafile'ın arka planda çalışmaya devam etmesini sağlar.</p>
+<h3>Seafile Web Arayüzüne Erişim</h3>
+<p><strong>15.</strong> Artık Raspberry Pi'nizde Seafile'ı çalışır hale getirdiğimize göre, web arayüzüne erişebiliriz.</p>
+<p>Bu arayüze erişmek için, Pi'nizin IP adresini bilmeniz gerekir. Bu IP'yi almanın en kolay yolu <a href="https://pimylifeup.com/hostname-command/">hostname komutunu kullanmaktır</a>.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>16.</strong> IP adresiniz artık elinizde olduğuna göre, web tarayıcınızda aşağıdaki adrese gidin.</p>
+<p>Varsayılan portu &quot;<code>80</code>&quot;den değiştirmek zorunda kaldıysanız, bunu URL'nin sonuna eklemeniz gerekir.</p>
+<pre><code>http://&lt;IPADRESINIZ&gt;
+</code></pre>
+<p><strong>17.</strong> Artık sizi Seafile için giriş ekranı karşılayacak.</p>
+<p>Daha önce Docker compose dosyasında ayarladığınız e-posta ve şifreyi (<strong>1.</strong>) yazarak başlayın.</p>
+<p>Bilgilerinizi doldurduktan sonra, &quot;<code>Login</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/11/Seafile-Raspberry-Pi-01-Login-to-Account.jpg" alt="Raspberry Pi'nizde Seafile Hesabınıza Giriş Yapma" /></p>
+<p><strong>18.</strong> Artık karşılama ekranını göreceksiniz. Bu noktada, Raspberry Pi'nize Seafile'ı başarıyla kurmuş oldunuz. Ancak, Seafile'ı kullanmadan önce tamamlamanız gereken bir görev daha var.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/11/Seafile-Raspberry-Pi-02-Close-Welcome-Screen.jpg" alt="Raspberry Pi'nizde Seafile'a Hoş Geldiniz" /></p>
+<h4>Şifrenizi Güncelleme</h4>
+<p><strong>19.</strong> Yapmanız gereken ilk şeylerden biri şifrenizi güncellemektir. Şu anda, Docker compose dosyasında belirtileni kullanıyorsunuz ki bu en güvenli şey değil.</p>
+<p>Bu süreci başlatmak için, sağ üst köşedeki profilinize <code>tıklayın</code> (<strong>1.</strong>).</p>
+<p>Ardından, açılır menüde &quot;<code>User Settings</code>&quot; seçeneğine <code>tıklamak</code> isteyeceksiniz (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/11/Seafile-Raspberry-Pi-03-Open-Settings-Screen.jpg" alt="Kullanıcı ayarları ekranını açma" /></p>
+<p><strong>20.</strong> Artık kullanıcı ayarları ekranında olduğunuza göre, &quot;<code>Password</code>&quot; başlığına <code>kaydırın</code> ve &quot;<code>Update</code>&quot; düğmesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/11/Seafile-Raspberry-Pi-04-Open-Password-Update-Screen.jpg" alt="Şifre güncelleme ekranını açma" /></p>
+<p><strong>21.</strong> Artık Raspberry Pi Seafile kurulumunuz için admin hesabınıza yeni bir şifre belirleyebilirsiniz.</p>
+<p>Öncelikle, hesabınız için mevcut şifreyi belirtmelisiniz (<strong>1.</strong>).</p>
+<p>Ardından, bundan sonra giriş yapmak için kullanacağınız yeni bir şifre yazın (<strong>2.</strong>).</p>
+<p>Son olarak, bilgilerinizi tamamladıktan sonra, &quot;<code>Submit</code>&quot; düğmesine <code>tıklayın</code> (<strong>3.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/11/Seafile-Raspberry-Pi-05-Update-Password.jpg" alt="Seafile kullanıcı şifrenizi güncelleme" /></p>
+<p><strong>22.</strong> Bu noktada, Seafile hesabınız için şifrenizi başarıyla güncellediniz. Artık dosyalarınızı yeni kurulumunuza yüklemeye ve ihtiyaçlarınıza göre yapılandırmaya başlayabilirsiniz.</p>
+<h2>Sonuç</h2>
+<p>Umarız Raspberry Pi'nize Seafile'ı başarıyla kurup çalışır hale getirmişsinizdir.</p>
+<p>Seafile, kendi kendine barındırılan iyi bir dosya barındırma çözümüdür ve daha fazla kaynak tüketen Nextcloud ve OwnCloud çözümlerine mükemmel bir alternatiftir.</p>
+<p>Raspberry Pi'nize Seafile kurma hakkında sorularınız varsa, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-seafile.html&amp;text=Raspberry+Pi%27ye+Seafile+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-seafile.html&amp;text=Raspberry+Pi%27ye+Seafile+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-seafile.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-seafile.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-seafile.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-seafile.html&amp;title=Raspberry+Pi%27ye+Seafile+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27ye+Seafile+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-seafile.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

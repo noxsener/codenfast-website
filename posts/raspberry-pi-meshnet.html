@@ -1,0 +1,319 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de NordVPN Meshnet Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Cihazlarınız arasında sanal özel ağ oluşturun"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de NordVPN Meshnet Kurulumu"/>
+    <meta property="og:description"
+          content="Cihazlarınız arasında sanal özel ağ oluşturun"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-meshnet.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-meshnet.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2024/08/Raspberry-Pi-NordVPN-Meshnet-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de NordVPN Meshnet Kurulumu"/>
+    <meta name="twitter:description"
+          content="Cihazlarınız arasında sanal özel ağ oluşturun"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2024/08/Raspberry-Pi-NordVPN-Meshnet-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de NordVPN Meshnet Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-meshnet.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/08/Raspberry-Pi-NordVPN-Meshnet-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/08/Raspberry-Pi-NordVPN-Meshnet-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/08/Raspberry-Pi-NordVPN-Meshnet-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/08/Raspberry-Pi-NordVPN-Meshnet-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/08/Raspberry-Pi-NordVPN-Meshnet-01-Login-to-NordVPN.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/08/Raspberry-Pi-NordVPN-Meshnet-01-Login-to-NordVPN.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de NordVPN Meshnet Kurulumu","description":"Cihazlarınız arasında sanal özel ağ oluşturun","image":["https://pimylifeup.com/wp-content/uploads/2024/08/Raspberry-Pi-NordVPN-Meshnet-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T11:36:01.339493+03:00","dateModified":"2026-08-03T11:36:01.339522+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de NordVPN Meshnet Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-meshnet/">PiMyLifeUp - Setting up NordVPN Meshnet on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'nizde NordVPN'in Meshnet özelliğini nasıl kuracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/08/Raspberry-Pi-NordVPN-Meshnet-Thumbnail.jpg" alt="Raspberry Pi NordVPN Meshnet" /></p>
+<p>Meshnet, NordVPN tarafından ücretsiz olarak sunulan ve birden fazla cihazı internet üzerinden kolayca bağlamanızı sağlayan bir hizmettir.</p>
+<p>Bu, tüm cihazlarınız arasında sanal bir özel ağ (VPN) oluşturarak çalışır. Bu, cihazların, tamamen farklı bir konumda olsalar bile, aynı LAN ağına bağlıymış gibi davranmasını ve çalışmasını sağlar.</p>
+<p>Daha önce <a href="https://pimylifeup.com/ubuntu-tailscale/">Tailscale</a> veya <a href="https://pimylifeup.com/raspberry-pi-zerotier/">Zerotier</a> gibi başka hizmetler kullandıysanız, NordVPN'in Meshnet'inin nasıl çalıştığına biraz aşina olacaksınız.</p>
+<p>Hepsinden iyisi, Meshnet hizmetinden yararlanmak için aslında aktif bir NordVPN aboneliğine ihtiyacınız yok. Herkese ücretsiz olarak sunulur; tek ihtiyacınız olan bir NordVPN hesabıdır.</p>
+<p>Ayrıca, NordVPN Meshnet için oldukça makul sınırlar sunar. Bir hesaptan 10 cihaza kadar bağlanabilir, ağınıza başka kişileri dahil ederseniz 50 cihaza daha bağlanabilirsiniz.</p>
+<p>Elbette, NordVPN bir VPN sağlayıcısı olarak mükemmel bir seçimdir.</p>
+<h2>Raspberry Pi'de NordVPN Meshnet Kurulumu ve Çalıştırılması</h2>
+<p>Aşağıdaki bölümlerde, Raspberry Pi'nizde Meshnet'i kurma ve çalıştırma sürecinde size adım adım rehberlik edeceğiz.</p>
+<p>Bu eğitimlerin tamamı terminal içinde tamamlanacaktır. Bir masaüstü sürümü çalıştırıyorsanız, <code>CTRL</code> + <code>ALT</code> + <code>T</code> tuşlarına basarak terminali açmak isteyeceksiniz.</p>
+<h3>Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> Raspberry Pi'mizde NordVPN Meshnet'i kurmadan önce, işletim sistemimizin güncel olduğundan emin olacağız.</p>
+<p>Aşağıdaki iki komutu çalıştırarak paket listesi önbelleğini güncelleyebilir ve güncel olmayan tüm paketleri yükseltebilirsiniz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>2.</strong> Bu ağ aracını kurmak için ihtiyacımız olan tek paket curl'dur. NordVPN kurulum betiğini çalıştırmak için curl kullanacağız.</p>
+<p>Genellikle curl, Raspberry Pi OS ile önceden kurulu olarak gelir, ancak terminalde aşağıdaki komutu kullanarak kurulu olduğundan emin olabilirsiniz.</p>
+<pre><code>sudo apt install curl
+</code></pre>
+<h3>Raspberry Pi'nizde Meshnet'e Erişmek İçin NordVPN Kurulumu</h3>
+<p><strong>4.</strong> Pi'niz artık hazır olduğuna göre, Raspberry Pi'nize NordVPN istemcisini kurmak için yapmanız gereken tek şey aşağıdaki komutu çalıştırmaktır.</p>
+<p>Bu komut, NordVPN CDN'sinden resmi kurulum betiğini almak için curl kullanır. Ardından bu kurulum betiğini çalıştırılmak üzere kabuğa (shell) geri aktarır.</p>
+<pre><code>sh &lt;(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
+</code></pre>
+<p>Çalıştırdığımız betik, sisteminize NordVPN paket deposunu ekler ve ardından NordVPN istemcisini otomatik olarak kurar. Ayrıca mevcut kullanıcınızı yeni &quot;<code>nordvpn</code>&quot; grubuna ekleyecektir.</p>
+<p><strong>5.</strong> Raspberry Pi'nizde Meshnet kurulumuna devam edebilmeniz için, Pi'nizi yeniden başlatmanız gerekecek.</p>
+<p>Pi'nizi <a href="https://pimylifeup.com/reboot-linux/">reboot komutunu kullanarak</a> yeniden başlatabilirsiniz.</p>
+<pre><code>sudo reboot
+</code></pre>
+<h3>NordVPN'e Giriş Yapma</h3>
+<p><strong>6.</strong> Pi'niz yeniden başlatmayı tamamladıktan sonra, artık aşağıdaki komutu çalıştırarak hesabınızı kullanarak NordVPN'e giriş yapabilirsiniz.</p>
+<p>Daha önce belirtildiği gibi, bir NordVPN hesabına giriş yapmanız gerekir. Ancak, Meshnet'i kullanmak için aktif bir aboneliğe ihtiyacınız yoktur.</p>
+<p>Terminalde aşağıdaki komutu kullanarak giriş sürecini başlatabilirsiniz.</p>
+<pre><code>nordvpn login
+</code></pre>
+<p>Önceki komutu çalıştırdıktan sonra, size bir URL'ye gitmenizi isteyen bir mesaj gelecektir. Devam etmek için bu URL'yi favori tarayıcınızda açın.</p>
+<pre><code>Continue in the browser: https://api.nordvpn.com/v1/users/oauth/login-redirect?attempt=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXX
+</code></pre>
+<p><strong>7.</strong> Giriş yaptıktan sonra, sizi büyük bir &quot;<code>Continue</code>&quot; düğmesi karşılayacaktır.</p>
+<p>&quot;<code>Continue</code>&quot; düğmesine <code>sağ tıklayın</code> ve &quot;<code>Copy link</code>&quot; seçeneğine <code>tıklayın</code>. Terminal içinde giriş işlemini tamamlamak için bu bağlantıya ihtiyacınız var.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/08/Raspberry-Pi-NordVPN-Meshnet-01-Login-to-NordVPN.jpg" alt="Raspberry Pi'de NordVPN Meshnet İçin Giriş Kodu Alma" /></p>
+<p>URL, aşağıda gösterdiğimize benzer görünmelidir. Bir sonraki adım için bu URL'ye ihtiyacınız olacak.</p>
+<pre><code>nordvpn://login?action=login&amp;exchange_token=MGFlY2E1N
+mE4YjM2NDM4NjUzN2VjOWIzYWM3ZTU3ZDliNDdiNzRjZTMwMjE5Yjk
+zZTNhNTI3ZWZlOTIwMGJlOQ%3D%3D&amp;status=done
+</code></pre>
+<p><strong>8.</strong> Terminale geri dönüp, Raspberry Pi'nizi NordVPN ağına giriş yaptırmak için aşağıdaki komutu kullanın. Bu, aynı zamanda Meshnet hizmetini etkinleştirmemizi sağlayacak şeydir.</p>
+<p>&quot;<code>&lt;URL&gt;</code>&quot; kısmını bir önceki adımda aldığınız URL ile değiştirdiğinizden emin olun.</p>
+<pre><code>nordvpn login --callback &quot;&lt;URL&gt;&quot;
+</code></pre>
+<p>Bu komutun geçerli bir giriş URL'siyle nasıl görüneceğine dair bir örnek aşağıda gösterilmiştir.</p>
+<pre><code>nordvpn login --callback &quot;nordvpn://login?action=login&amp;exchange_token=MGFlY2E1N
+mE4YjM2NDM4NjUzN2VjOWIzYWM3ZTU3ZDliNDdiNzRjZTMwMjE5Yjk
+zZTNhNTI3ZWZlOTIwMGJlOQ%3D%3D&amp;status=done&quot;
+</code></pre>
+<p><strong>9.</strong> NordVPN ağına başarıyla giriş yaptıysanız, terminalde aşağıdaki mesajı görmelisiniz.</p>
+<p>Bu, artık Raspberry Pi'mizde Meshnet özelliğini etkinleştirmeye geçebileceğimiz anlamına gelir.</p>
+<pre><code>Welcome to NordVPN! You can now connect to VPN by using 'nordvpn connect'.
+</code></pre>
+<h3>Raspberry Pi'de Meshnet'i Açma</h3>
+<p><strong>10.</strong> NordVPN komut satırı aracını kurduğumuza göre, Raspberry Pi'mizde Meshnet özelliğini etkinleştirmek, terminalde aşağıdaki komutu kullanmak kadar basittir.</p>
+<p>Bu komutu çalıştırmak, Meshnet'i etkinleştirecek ve ardından Meshnet kurulumu yaptığınız diğer cihazlara bağlanmanızı sağlayacaktır.</p>
+<pre><code>nordvpn set meshnet on
+</code></pre>
+<p>Aşağıda, &quot;<code>Meshnet</code>&quot;in başarıyla etkinleştirildiğini görebilirsiniz.</p>
+<pre><code>Meshnet is set to 'enabled' successfully.
+</code></pre>
+<p><strong>11.</strong> Terminalde aşağıdaki komutu çalıştırarak Meshnet'in etkin olduğundan emin olabilirsiniz.</p>
+<p>Bu komut, mevcut cihazınızın ayrıntılarını ve bağlı olduğunuz tüm eşleri (peer) yazdıracaktır.</p>
+<pre><code>nordvpn meshnet peer list
+</code></pre>
+<p>Aşağıda, Meshnet'in Raspberry Pi'mize atadığı ana bilgisayar adını (hostname) ve IP adresini nasıl kolayca görebileceğimizi görebilirsiniz. Aynı Meshnet ağının parçası olduğumuz sürece, bu makineye bağlanmak için ana bilgisayar adını veya IP adresini kullanabiliriz.</p>
+<pre><code>This device:
+Hostname: examplename-everest.nord
+Nickname: -
+IP: XXX.XX.XXX.234
+Public Key: XXXXXXXXX0YXXXgpd6Xs/XX0M/58ZbXXXXXQ6mXXX=
+OS: linux
+Distribution: Debian GNU/Linux
+
+Local Peers:
+[no peers]
+
+External Peers:
+[no peers]
+</code></pre>
+<h2>Sonuç</h2>
+<p>Bu eğitimin bu noktasında, artık Raspberry Pi'nizde NordVPN'in Meshnet özelliği kurulu ve çalışır durumda olmalıdır.</p>
+<p>Meshnet, cihazlarınız arasında sanal bir ağ kurmayı basit bir işlem haline getiren son derece kullanışlı bir teknolojidir.</p>
+<p>Pi'nizde Meshnet kullanma hakkında sorularınız varsa, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-meshnet.html&amp;text=Raspberry+Pi%27de+NordVPN+Meshnet+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-meshnet.html&amp;text=Raspberry+Pi%27de+NordVPN+Meshnet+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-meshnet.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-meshnet.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-meshnet.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-meshnet.html&amp;title=Raspberry+Pi%27de+NordVPN+Meshnet+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+NordVPN+Meshnet+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-meshnet.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

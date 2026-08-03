@@ -1,0 +1,384 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de Cloudflare Tunnel Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Port açmadan güvenli bağlantı"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de Cloudflare Tunnel Kurulumu"/>
+    <meta property="og:description"
+          content="Port açmadan güvenli bağlantı"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-cloudflare-tunnel.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-cloudflare-tunnel.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Cloudflare-Tunnel-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de Cloudflare Tunnel Kurulumu"/>
+    <meta name="twitter:description"
+          content="Port açmadan güvenli bağlantı"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Cloudflare-Tunnel-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de Cloudflare Tunnel Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-cloudflare-tunnel.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Cloudflare-Tunnel-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Cloudflare-Tunnel-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Cloudflare-Tunnel-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Cloudflare-Tunnel-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de Cloudflare Tunnel Kurulumu","description":"Port açmadan güvenli bağlantı","image":["https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Cloudflare-Tunnel-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:36:38.751822+03:00","dateModified":"2026-08-03T12:36:38.751848+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de Cloudflare Tunnel Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-cloudflare-tunnel/">PiMyLifeUp - Setting up a Cloudflare Tunnel on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu proje, Raspberry Pi'de Cloudflare tunnel'ı nasıl kuracağınızı gösterecek.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Cloudflare-Tunnel-Thumbnail.jpg" alt="Raspberry Pi Cloudflare Tunnel" /></p>
+<p>Cloudflare, DDOS koruma hizmetleriyle tanınan bir şirket haline geldi. Ancak, aynı zamanda güvenli ve özel bağlantılar sağlamada da öncülerden biridir.</p>
+<p>Cloudflare'in ücretsiz sunduğu ürünlerden biri de tunnel hizmetidir. Bu tunnel, cihazınız ile Cloudflare ağı arasında güvenli bir bağlantı oluşturmanızı sağlar.</p>
+<p>Raspberry Pi'nizde Cloudflare'in tunnel'ını kullanarak, güvenlik duvarınızda herhangi bir port açma konusunda endişelenmenize gerek kalmaz. HTTP veya HTTPS kullanan bir hizmete erişim vermek istiyorsanız, başka bir cihaza Cloudflared kurmanıza bile gerek kalmaz.</p>
+<p>Bu rehberin, Cloudflare'in hizmetleri üzerinden çalışacak şekilde yapılandırılmış bir alan adına sahip olmanızı gerektirdiğini lütfen unutmayın. Zaten kurulu bir alan adınız yoksa, devam etmeden önce bunu yapmanız gerekecek.</p>
+<h2>Raspberry Pi'nizi Cloudflare Tunnel İçin Hazırlama</h2>
+<p>Raspberry Pi'de <a href="https://www.cloudflare.com/en-au/products/tunnel/">Cloudflare tunnel'ı</a> kurmak için, &quot;<code>Cloudflared</code>&quot; adlı bir yazılım parçasına güveneceğiz. Cloudflared, Pi ile Cloudflare ağı arasındaki güvenli tunnel'ı oluşturan ve sürdüren yazılımdır.</p>
+<p>Bu adımlar nispeten basit olsa da, gerekli yazılımı kurmak için resmi Cloudflare deposunu eklememiz gerekecek.</p>
+<h3>Gerekli Herhangi Bir Yazılımı Kurma</h3>
+<p><strong>1.</strong> İlk görevimiz, paket listesinde bir güncelleme yapmak ve güncel olmayan tüm paketleri yükseltmektir.</p>
+<p>Terminalde aşağıdaki komutu kullanarak her iki görevi de gerçekleştirebilirsiniz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Güncelleme tamamlandıktan sonra, hem &quot;<code>curl</code>&quot; hem de &quot;<code>lsb-release</code>&quot; paketlerine sahip olduğumuzdan emin olmalıyız.</p>
+<p>Terminalde aşağıdaki komutu kullanarak her iki paketi de kurun.</p>
+<pre><code>sudo apt install curl lsb-release
+</code></pre>
+<ul>
+<li><code>curl</code> – Cloudflared deposu için GPG anahtarını almak amacıyla curl kullanacağız.</li>
+<li><code>lsb-release</code> – Bu paket, sürüm adı gibi sistem hakkındaki bilgileri kolayca almamızı sağlar.</li>
+</ul>
+<h3>Raspberry Pi'ye Cloudflare Deposunu Ekleme</h3>
+<p><strong>3.</strong> Gerekli tüm paketler yerinde olduğuna göre, sonunda Cloudflared deposu için GPG anahtarını alıp Raspberry Pi'mizde saklayabiliriz.</p>
+<p>Bu anahtarı cihazınıza kaydetmek için, aşağıdaki komutu kullanın.</p>
+<pre><code>curl -L https://pkg.cloudflare.com/cloudflare-main.gpg | sudo tee /usr/share/keyrings/cloudflare-main.gpg &gt;/dev/null
+</code></pre>
+<p>Bir GPG anahtarı, kurduğumuz paketlerin geçerli olduğunu ve depoya ait olduğunu doğrulamak için kritik önem taşır.</p>
+<p><strong>4.</strong> GPG anahtarı keyrings klasörümüze kaydedildikten sonra, bir sonraki adımımız Cloudflared deposunu Raspberry Pi'mize eklemektir.</p>
+<p>Aşağıdaki komutu çalıştırarak depoyu ekleyebilirsiniz.</p>
+<pre><code>echo &quot;deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared any main&quot; | sudo tee  /etc/apt/sources.list.d/cloudflared.list
+</code></pre>
+<p><strong>5.</strong> Mevcut depolarda değişiklik yaptığımızdan, paket listesi önbelleğinde başka bir güncelleme daha yapmamız gerekecek.</p>
+<p>Terminalde aşağıdaki komutu kullanarak bu önbelleği güncelleyebilirsiniz.</p>
+<pre><code>sudo apt update
+</code></pre>
+<h3>Raspberry Pi'ye Cloudfared Kurulumu</h3>
+<p><strong>6.</strong> Depo eklendikten sonra, artık Cloudflared paketini Raspberry Pi'mize kurmaya devam edebiliriz.</p>
+<p>Bu paketi kurmak için, aşağıdaki komutu çalıştırmak isteyeceksiniz.</p>
+<pre><code>sudo apt install cloudflared
+</code></pre>
+<h2>Raspberry Pi'de Bir Cloudflare Tunnel Kurma</h2>
+<p>Artık Raspberry Pi'mizi hazırladığımıza göre, Cloudflare tunnel'ı kurabiliriz. Bu tunnel, trafiğinizin üzerinden çalıştırılacağı yerdir.</p>
+<h3>Cloudflare Hizmetiyle Kimlik Doğrulama</h3>
+<p><strong>1.</strong> İlk adımımız, Raspberry Pi'miz ile Cloudflare hizmeti arasında bir bağlantı oluşturmaktır.</p>
+<p>Aşağıdaki komutu kullanarak Cloudflare hizmetiyle kimlik doğrulamaya başlayabiliriz.</p>
+<pre><code>cloudflared tunnel login
+</code></pre>
+<p>Bu süreç tamamlanırken cihazınızda Cloudflared'i açık tuttuğunuzdan emin olun.</p>
+<p><strong>2.</strong> Yukarıdaki komutu çalıştırdıktan sonra, terminalde aşağıdaki mesajın göründüğünü göreceksiniz.</p>
+<p>Mesajda görüntülenen URL'ye gitmek ve Cloudflare hesabınıza giriş yapmak için bunu kullanmak isteyeceksiniz.</p>
+<pre><code>Please open the following URL and log in with your Cloudflare account:
+
+https://dash.cloudflare.com/argotunnel?callback=https%3A%2F%2Flogin.cloudflareaccess.org%2FXXXXXXXXXX
+
+Leave cloudflared running to download the cert automatically.
+</code></pre>
+<p><strong>3.</strong> Raspberry Pi'niz Cloudflare hizmetiyle başarıyla kimlik doğrulamasını tamamladığında, aşağıdaki mesajı göreceksiniz.</p>
+<pre><code>You have successfully logged in.
+If you wish to copy your credentials to a server, they have been saved to:
+/home/pi/.cloudflared/cert.pem
+</code></pre>
+<h3>Raspberry Pi'de Cloudflare Tunnel Oluşturma</h3>
+<p><strong>4.</strong> Artık yetkilendirildiğimize göre, aşağıdaki komutu kullanarak bir Cloudflare tunnel'ı oluşturabiliriz.</p>
+<p>&quot;<code>TUNNELNAME</code>&quot; kısmını bu tunnel'a atamak istediğiniz isimle değiştirdiğinizden emin olun.</p>
+<pre><code>cloudflared tunnel create TUNNELNAME
+</code></pre>
+<p><strong>5.</strong> Yukarıdaki komutu çalıştırdıktan sonra, aşağıdakine benzer bir mesaj göreceksiniz.</p>
+<p>Daha sonra ihtiyacımız olacağından ID'yi not etmek isteyeceksiniz.</p>
+<pre><code>Tunnel credentials written to /home/pi/.cloudflared/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX.json. cloudflared chose this file based on where your origin certificate was found. Keep this file secret. To revoke these credentials, delete the tunnel.
+
+Created tunnel pimytunnel with id XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+</code></pre>
+<h3>Tunnel'ı Bir Alan Adına Yönlendirme</h3>
+<p><strong>6.</strong> Tunnel oluşturulduktan sonra, artık tunnel'ı Cloudflare'de sahip olduğumuz bir alan adına yönlendirebiliriz. Bu, Raspberry Pi'mize o alan adı üzerinden erişmemizi sağlayacak.</p>
+<p>Örneğin, Minecraft sunucunuzun veya PhotoPrism'inizin belirli bir alan adı üzerinden erişilebilir olmasını istiyorsanız, aşağıdakini kullanabilirsiniz. Ancak, bunun için bir tunnel oluşturmak istediğiniz program HTTP veya HTTPS protokolünü kullanmıyorsa, diğer kullanıcının Cloudflared kurulu olması gerekecektir.</p>
+<p>&quot;<code>TUNNELNAME</code>&quot; kısmını tunnel'ınızın adıyla ve &quot;<code>DOMAINNAME</code>&quot; kısmını kullanmak istediğiniz alan adıyla değiştirdiğinizden emin olun.</p>
+<pre><code>cloudflared tunnel route dns TUNNELNAME DOMAINNAME
+</code></pre>
+<p><strong>7.</strong> Yukarıdaki komut doğru çalıştıysa, aşağıdakine benzer bir mesaj görürsünüz. Bu mesaj, Cloudflare'in tunnel'ınıza yönlendiren bir CNAME oluşturduğunu doğrular.</p>
+<pre><code>2022-10-18T04:54:54Z INF Added CNAME DOMAINNAME which will route to this tunnel tunnelID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+</code></pre>
+<h3>Raspberry Pi Portlarınızı Cloudflare Tunnel Üzerinden Yönlendirme</h3>
+<p><strong>8.</strong> Yapmamız gereken son görev, Cloudflare tunnel'ını Raspberry Pi'mizdeki bir hedefe bağlamaktır.</p>
+<p>Tunnel var olsa da, şu anda herhangi bir şeye bağlı değil, bu yüzden bu örnekte onu belirli bir URL'ye koyacağız.</p>
+<p>Bu komutu çalıştırırken, &quot;<code>PORT</code>&quot; kısmını açığa çıkarmak istediğiniz uygulamaya ait portla değiştirin. Örneğin, web sunucunuzun HTTP portunu açığa çıkarmak istiyorsanız, <code>80</code> portunu kullanabilirsiniz.</p>
+<p>&quot;<code>TUNNELNAME</code>&quot; kısmını tunnel'ın adıyla değiştirin.</p>
+<pre><code>cloudflared tunnel run --url localhost:PORT TUNNELNAME
+</code></pre>
+<p><strong>9.</strong> Cloudflare tunnel'ı başlatıldıktan sonra, aşağıdakine benzer bir mesaj göreceksiniz.</p>
+<pre><code>2022-10-18T09:34:40Z INF Starting tunnel tunnelID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+2022-10-18T09:34:40Z INF Cannot determine default configuration path. No file [config.yml config.yaml] in [~/.clouddflare-warp /etc/cloudflared /usr/local/etc/cloudflared]
+2022-10-18T09:34:40Z INF Version 2022.10.0
+2022-10-18T09:34:40Z INF GOOS: linux, GOVersion: go1.18.6, GoArch: arm
+2022-10-18T09:34:40Z INF Settings: map[url:localhost:80]
+</code></pre>
+<p>Bu tunnel'ı istediğiniz zaman klavyenizde <code>CTRL</code> + <code>C</code> tuşuna basarak kapatabilirsiniz.</p>
+<p><strong>10.</strong> Raspberry Pi'nize giden Cloudflare tunnel'ının çalıştığını doğrulamak için, artık daha önce kurduğunuz alan adı üzerinden erişmeyi denemelisiniz.</p>
+<p>Örneğin, NGINX web sunucumuz için bir Cloudflare tunnel'ı kurduk ve ona bu şekilde eriştik.</p>
+<h3>Açılışta Cloudflare Tunnel'ınıza Bağlanma</h3>
+<p><strong>11.</strong> Cloudflare tunnel'ınızın çalıştığını doğruladıktan sonra, muhtemelen Raspberry Pi'niz başladığında başlamasını isteyeceksiniz.</p>
+<p>Bunu yapmak için, tüm bunları Cloudflare daemon'unun okuyacağı bir &quot;<code>config.yml</code>&quot; dosyasına yazmamız gerekecek.</p>
+<pre><code>sudo nano ~/.cloudflared/config.yml
+</code></pre>
+<p><strong>12.</strong> Bu dosyanın içine, aşağıdaki satırları yazmak ve kullanım durumunuza göre ilerledikçe ayarlamak isteyeceksiniz.</p>
+<ul>
+<li>
+<p><code>[TUNNELNAME]</code> – Bu değeri tunnel'ınızın adıyla değiştirin.</p>
+</li>
+<li>
+<p><code>[USERNAME]</code> – Bu değer, kullanıcınızın adıyla değiştirilmelidir.</p>
+</li>
+<li>
+<p><code>[UUID]</code> – Bu bölümün 5. adımında aldığınız UUID'yi belirtmeniz gerekecek.</p>
+</li>
+<li>
+<p><code>[HOSTNAME]</code> – Bu değeri kullanmayı planladığınız alan adıyla değiştirin. Örneğin, &quot;<code>test.pimylifeup.com</code>&quot;.</p>
+</li>
+<li>
+<p><code>[PORT]</code> – Son olarak, &quot;<strong>PORT</strong>&quot; kısmını tunnel üzerinden erişilebilir olmasını istediğiniz portla değiştirin.</p>
+</li>
+<li>
+<p><code>[PROTOCOL]</code> – Bu, hizmetiniz için kullanmak istediğiniz protokoldür. Bir web sunucusu durumunda, &quot;<code>http</code>&quot; veya &quot;<code>https</code>&quot; kullanmak isteyeceksiniz. Ancak, kullandığınız hizmet farklı bir protokol kullanıyorsa yararlanabileceğiniz birkaç başka seçenek daha vardır.</p>
+<ul>
+<li><code>http</code> – HTTP isteklerini belirtilen hizmete iletir. Örn., <code>http://localhost:8080</code></li>
+<li><code>https</code> – HTTPS isteklerini belirtilen hizmete iletir. Örn., <code>https://localhost:8080</code></li>
+<li><code>unix</code> – HTTP ile aynıdır ama bir Unix Socket kullanır. Örn., <code>unix:/home/example/exam.sock</code></li>
+<li><code>unix+tls</code> – HTTPS ile aynıdır ama bir Unix socket kullanır. Örn., <code>unix+tls:/home/example/exam.sock</code></li>
+<li><code>tcp</code> – TCP protokolünü kullanan bir hizmeti yerel bir hizmete proxy'ler. (Örneğin, bir Minecraft sunucusu) Örn., <code>tcp://localhost:25655</code></li>
+<li><code>ssh</code> – Bir SSH bağlantısını yerel bir hizmete proxy'lemenizi sağlar. Örn., <code>ssh://localhost:22</code></li>
+<li><code>rdp</code> – RDP kullanılarak yapılan bir bağlantıyı belirtilen hizmete proxy'ler. Örn., <code>rdp://localhost:338</code></li>
+</ul>
+<p>tunnel: [TUNNELNAME]<br />
+credentials-file: /home/[USERNAME]/.cloudflared/[UUID].json</p>
+<p>ingress:<br />
+- hostname: [HOSTNAME]<br />
+service: [PROTOCOL]://localhost:[PORT]<br />
+- service: http_status:404</p>
+</li>
+</ul>
+<p><strong>13.</strong> Yapılandırma dosyasında bu değişiklikleri yaptıktan sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<p><strong>14.</strong> Yapılandırma dosyası oluşturulduktan sonra, aşağıdaki komutu kullanarak onu bir servis olarak kurabiliriz.</p>
+<p>Bu komut, yapılandırma dosyamızı doğru konuma kopyalayacak ve systemd için bir servis dosyası hazırlayacaktır.</p>
+<pre><code>sudo cloudflared --config ~/.cloudflared/config.yml service install
+</code></pre>
+<p><strong>15.</strong> Aşağıdaki komutu kullanarak Cloudflare tunnel servisini, Raspberry Pi'miz açıldığında başlayacak şekilde etkinleştirebiliriz.</p>
+<pre><code>sudo systemctl enable cloudflared
+</code></pre>
+<p><strong>16.</strong> Son olarak, terminalde aşağıdaki komutu kullanarak tunnel'ın şimdi çevrimiçi olduğundan emin olabilirsiniz.</p>
+<pre><code>sudo systemctl start cloudflared
+</code></pre>
+<h2>Sonuç</h2>
+<p>Bu eğitim, Raspberry Pi'de bir Cloudflare Tunnel'ı nasıl kuracağınızı gösterir.</p>
+<p>Bir Cloudflare tunnel'ı, ana makinenizde port açmak zorunda kalmadan Cloudflare ağına güvenli bir bağlantı oluşturmanızı sağlar.</p>
+<p>Yalnızca HTTP veya HTTPS'den yayın yapmak istiyorsanız, istemci makinelere Cloudflared kurulu olmasına gerek yoktur.</p>
+<p>Raspberry Pi'nizde Cloudflare tunnel'ını çalışır hale getirirken herhangi bir sorunla karşılaştıysanız, aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-cloudflare-tunnel.html&amp;text=Raspberry+Pi%27de+Cloudflare+Tunnel+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-cloudflare-tunnel.html&amp;text=Raspberry+Pi%27de+Cloudflare+Tunnel+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-cloudflare-tunnel.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-cloudflare-tunnel.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-cloudflare-tunnel.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-cloudflare-tunnel.html&amp;title=Raspberry+Pi%27de+Cloudflare+Tunnel+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+Cloudflare+Tunnel+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-cloudflare-tunnel.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

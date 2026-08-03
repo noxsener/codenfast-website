@@ -1,0 +1,294 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;ye Wireshark Kurulumu ve Çalıştırılması - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Ücretsiz ve açık kaynaklı paket analizörü"/>
+    <meta property="og:title" content="Raspberry Pi&#39;ye Wireshark Kurulumu ve Çalıştırılması"/>
+    <meta property="og:description"
+          content="Ücretsiz ve açık kaynaklı paket analizörü"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-wireshark.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-wireshark.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-Thumbnail-nOWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;ye Wireshark Kurulumu ve Çalıştırılması"/>
+    <meta name="twitter:description"
+          content="Ücretsiz ve açık kaynaklı paket analizörü"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-Thumbnail-nOWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'ye Wireshark Kurulumu ve Çalıştırılması","item":{"@id":"https://codenfast.com/posts/raspberry-pi-wireshark.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-Thumbnail-nOWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-Thumbnail-nOWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-01-Configuring-wireshark.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-01-Configuring-wireshark.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-02-Opening-the-start-menu.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-02-Opening-the-start-menu.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-03-Opening-Wireshark.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-03-Opening-Wireshark.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-04-Wireshark-RUnning.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-04-Wireshark-RUnning.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-05-Capture-List.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-05-Capture-List.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-06-Capturing-Network-Interface.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-06-Capturing-Network-Interface.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'ye Wireshark Kurulumu ve Çalıştırılması","description":"Ücretsiz ve açık kaynaklı paket analizörü","image":["https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-Thumbnail-nOWM.jpg"],"datePublished":"2026-08-03T12:41:42.499619+03:00","dateModified":"2026-08-03T12:41:42.499643+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;ye Wireshark Kurulumu ve Çalıştırılması</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-wireshark/">PiMyLifeUp - Installing and Running Wireshark on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'ye Wireshark'ı nasıl kurup çalıştıracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-Thumbnail.jpg" alt="Raspberry Pi Wireshark" /></p>
+<p>WireShark, ağ arayüzleri üzerinden gönderilen paketleri analiz etmek için Raspberry Pi'ye kurabileceğimiz ücretsiz ve açık kaynaklı bir yazılımdır.</p>
+<p>Ağ terminolojisinde bir paket, alıcı ağ protokolünün açabileceği ve bir ağ üzerinden gönderilirken geçerli kalacağı şekilde biçimlendirilmiş bir veri birimidir.</p>
+<p>Cihazınızdan gelen ağ verilerini analiz edebilmek çeşitli şekillerde kullanışlıdır. Örneğin, Wireshark'ı ağ sorunlarını gidermek, yazılım tarafından gönderilen veya alınan verileri analiz etmek ve daha fazlası için kullanabilirsiniz.</p>
+<p>Wireshark grafiksel bir arayüz olduğundan, Raspberry Pi OS'nin masaüstü sürümünü kullanıyor olmanız gerektiğini lütfen unutmayın. &quot;lite&quot; sürümlerini kullanmayın çünkü bunlar sadece terminaldir.</p>
+<h2>Raspberry Pi'ye Wireshark Kurulumu ve Yapılandırılması</h2>
+<p>Yazılım resmi paket deposu üzerinden mevcut olduğundan, bir Raspberry Pi'ye Wireshark kurmak basit bir süreçtir.</p>
+<p>Bu kısa bölüm, terminali kullanarak Wireshark'ı nasıl kurup yapılandıracağınızı gösterecek.</p>
+<h3>Wireshark Kurulumu</h3>
+<p>Resmi paket deposu üzerinden mevcut olması, Wireshark kurulumunu zahmetsiz hale getirir. Aslında, yazılımı kurmak için çalıştırmamız gereken sadece tek bir komut var.</p>
+<p><strong>1.</strong> Raspberry Pi'ye Wireshark'ı kurmadan önce, önce paket listesini güncellememiz gerekiyor. Aynı zamanda, mevcut tüm paketleri de yükselteceğiz.</p>
+<p>Aşağıdaki komutu kullanarak paket listesini güncelleyebilir ve güncel olmayan tüm paketleri yükseltebilirsiniz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p>Devam etmeniz istenirse, yükseltmeyi onaylamak için <code>Y</code> yazıp <code>ENTER</code> tuşuna basmanız gerekecek.</p>
+<p><strong>2.</strong> Paket listesi güncellendikten sonra, Pi'mize Wireshark kurmak için terminalde yalnızca aşağıdaki komutu çalıştırmamız gerekiyor.</p>
+<pre><code>sudo apt install wireshark
+</code></pre>
+<p><strong>3.</strong> Wireshark'ın kurulumu sırasında, yazılımın root olmayan kullanıcılar tarafından erişilebilir olmasını isteyip istemediğiniz sorulacaktır.</p>
+<p>&quot;<code>&lt;Yes&gt;</code>&quot; seçilerek, bir kullanıcı &quot;<code>wireshark</code>&quot; grubunun bir parçası olduğu sürece &quot;<code>dumpcap</code>&quot;ı ve Wireshark'ı kullanabilecektir.</p>
+<p>Wireshark'ı kurmayı planladığımız şekil bu olduğundan, <code>ARROW</code> (ok) tuşlarını kullanarak &quot;<code>&lt;YES&gt;</code>&quot;i seçin ve <code>ENTER</code> tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-01-Configuring-wireshark.png" alt="Raspberry Pi'de Wireshark'ı Yapılandırma" /></p>
+<p><strong>4.</strong> Artık Raspberry Pi'nize Wireshark kurulu olsa da, terminalde yapmamız gereken bazı ek işler var.</p>
+<h3>Wireshark İçin Raspberry Pi'yi Yapılandırma</h3>
+<p>Wireshark, varsayılan kullanıcınız gerekli araçlara erişemeyeceğinden kutudan çıktığı gibi amaçlandığı şekilde çalışmayacaktır. Ancak endişelenmeyin, yapmamız gereken tek şey kullanıcıyı belirli bir gruba eklemektir.</p>
+<p>Bunu yapmadan Raspberry Pi'nizde Wireshark'ı çalıştırabilseniz de, ağ arayüzlerinizi izleyemezsiniz.</p>
+<p><strong>5.</strong> Şimdi yapmamız gereken tek şey, kullanıcınızı &quot;<code>wireshark</code>&quot; grubuna eklemektir.</p>
+<p>Kullanıcıyı bu gruba ekleyerek, Wireshark'ın kullandığı &quot;<code>dumpcamp</code>&quot; yazılımına erişimi olmalıdır.</p>
+<p>Kullanıcınızı &quot;<code>wireshark</code>&quot; grubuna eklemek için, aşağıda gösterildiği gibi <a href="https://pimylifeup.com/usermod-command/">usermod komutunu kullanacağız</a>. Lütfen &quot;<code>pi</code>&quot; kısmını kendi kullanıcı adınızla değiştirdiğinizden emin olun.</p>
+<pre><code>sudo usermod -a -G wireshark pi
+</code></pre>
+<p><strong>6.</strong> Kullanıcınızın grubunda değişiklik yaptıktan sonra, çıkış yapıp tekrar giriş yapmanız veya cihazınızı tamamen yeniden başlatmanız gerekecek.</p>
+<p>Raspberry Pi'nizi yeniden başlatmak isterseniz, aşağıdaki komutu kullanabilirsiniz.</p>
+<pre><code>sudo reboot
+</code></pre>
+<h2>Raspberry Pi'de Wireshark Çalıştırma</h2>
+<p>Artık Raspberry Pi'ye Wireshark kurduğumuza göre, cihazınızda yazılımı nasıl çalıştıracağınızı göstermeye geçebiliriz.</p>
+<h3>Wireshark'ı Açma</h3>
+<p>Wireshark, Raspberry Pi OS masaüstüne otomatik olarak bir uygulama olarak eklenmesi sayesinde açması kolaydır. Bu bölüm, yazılımı tam olarak nerede bulabileceğinizi gösterecek.</p>
+<p><strong>1.</strong> Wireshark'ı kullanabilmeniz için, elbette, önce yazılımı açmanız gerekecek. Onu açmanın en kolay yolu Raspberry Pi OS başlat menüsü üzerindendir.</p>
+<p>Ekranınızın sol üst köşesindeki Raspberry simgesine <code>tıklayarak</code> başlat menüsünü açın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-02-Opening-the-start-menu.jpg" alt="Başlat menüsünü açma" /></p>
+<p><strong>2.</strong> Cihazınızda başlat menüsü açıkken, &quot;<code>Internet</code>&quot; seçeneğinin üzerine <code>gelin</code> (<strong>1.</strong>).</p>
+<p>Artık menüde bir seçenek olarak &quot;<code>Wireshark</code>&quot;ın belirdiğini görmelisiniz. Açmak için &quot;<code>Wireshark</code>&quot;a <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-03-Opening-Wireshark.jpg" alt="Raspberry Pi'de WireShark'ı Açma" /></p>
+<p><strong>3.</strong> Artık Raspberry Pi'nizde Wireshark yazılımı açık ve kullanıma hazır olmalıdır.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-04-Wireshark-RUnning.jpg" alt="Raspberry Pi'de Açık Wireshark" /></p>
+<h3>Wireshark'ın Temel Kullanımı</h3>
+<p>Raspberry Pi'nizde Wireshark'ın nasıl çalıştığına dair temel bir fikir vermek için, şimdi arayüzü hızlıca inceleyeceğiz. Ama elbette, bu sadece bu paket analizörünün yeteneklerine çok hızlı bir bakış.</p>
+<p><strong>4.</strong> Wireshark artık açık olduğuna göre, sizi bir karşılama ekranı karşılayacak.</p>
+<p>Bu ekranda yakalama cihazları listesine bakmak isteyeceksiniz. Burada ağ arayüzlerinizin bir listesini görmelisiniz.</p>
+<p>Örneğin, o belirli ağ arayüzünde paketleri yakalamaya başlamak için &quot;<code>eth0</code>&quot; arayüzüne <code>tıklayacağız</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-05-Capture-List.jpg" alt="Wireshark Yakalama listesi" /></p>
+<p><strong>5.</strong> Wireshark, seçtiğiniz arayüzde hemen paket yakalamaya başlayacaktır.</p>
+<ol>
+<li>Bu ekranın üstünde, bir metin kutusu göreceksiniz. Bu metin kutusu, gördüğünüz veri miktarını en aza indirmek için görüntüleme filtreleri ayarlamanızı sağlar. Bu, verilerin nereye gönderilmesi gerektiği gibi belirli şeyleri bildiğinizde özellikle kullanışlıdır. Örneğin, TCP protokolüyle, paket listesini yalnızca 80 portunda gerçekleşen trafiği gösterecek şekilde filtrelemek için &quot;<code>tcp.port == 80</code>&quot; kullanabilirsiniz.</li>
+<li>Ardından, paket listenizi göreceksiniz. Burada Raspberry Pi'nizde Wireshark'ın yakaladığı her paketi kaydırıp görebilirsiniz.</li>
+<li>Bir alttaki kutu, şu anda seçili olan paket hakkında ayrıntılar verir. Bu kutunun içinde, o belirli paketin insan tarafından okunabilir biçimde bir dökümünü görebilirsiniz.</li>
+<li>Wireshark arayüzündeki son kutu, bu yakalanan paket içinde gönderilen tam bayt'ları görüntülemenizi sağlar.</li>
+</ol>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Wireshark-06-Capturing-Network-Interface.jpg" alt="Ağ arayüzüne genel bakış" /></p>
+<h2>Sonuç</h2>
+<p>Bu eğitim boyunca, Raspberry Pi'ye Wireshark'ı nasıl kurup çalıştırabileceğinizi gösterdik.</p>
+<p>Wireshark, cihazınızdaki herhangi bir ağ arayüzünü izleyebilen çok güçlü bir paket yakalama ve analiz aracıdır. Bu yazılım hakkında daha fazla bilgi edinmek için, <a href="https://www.wireshark.org/docs/">resmi Wireshark dokümantasyonuna</a> göz atmanızı şiddetle tavsiye ederiz.</p>
+<p>Wireshark'ı Pi'de çalışır hale getirirken herhangi bir sorunla karşılaştıysanız, lütfen aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-wireshark.html&amp;text=Raspberry+Pi%27ye+Wireshark+Kurulumu+ve+%C3%87al%C4%B1%C5%9Ft%C4%B1r%C4%B1lmas%C4%B1" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-wireshark.html&amp;text=Raspberry+Pi%27ye+Wireshark+Kurulumu+ve+%C3%87al%C4%B1%C5%9Ft%C4%B1r%C4%B1lmas%C4%B1" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-wireshark.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-wireshark.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-wireshark.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-wireshark.html&amp;title=Raspberry+Pi%27ye+Wireshark+Kurulumu+ve+%C3%87al%C4%B1%C5%9Ft%C4%B1r%C4%B1lmas%C4%B1" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27ye+Wireshark+Kurulumu+ve+%C3%87al%C4%B1%C5%9Ft%C4%B1r%C4%B1lmas%C4%B1%20codenfast.com%2Fposts%2Fraspberry-pi-wireshark.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

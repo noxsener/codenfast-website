@@ -1,0 +1,297 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;ye CasaOS Kurulumu ve Çalıştırılması - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="CasaOS, Pi&#39;nizi bir ev laboratuvarına dönüştürmeyi daha da kolaylaştırır"/>
+    <meta property="og:title" content="Raspberry Pi&#39;ye CasaOS Kurulumu ve Çalıştırılması"/>
+    <meta property="og:description"
+          content="CasaOS, Pi&#39;nizi bir ev laboratuvarına dönüştürmeyi daha da kolaylaştırır"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-casaos.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-casaos.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-CasaOS-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;ye CasaOS Kurulumu ve Çalıştırılması"/>
+    <meta name="twitter:description"
+          content="CasaOS, Pi&#39;nizi bir ev laboratuvarına dönüştürmeyi daha da kolaylaştırır"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-CasaOS-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'ye CasaOS Kurulumu ve Çalıştırılması","item":{"@id":"https://codenfast.com/posts/raspberry-pi-casaos.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-CasaOS-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-CasaOS-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-CasaOS-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-CasaOS-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-CasaOS-01-Welcome-Scren.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-CasaOS-01-Welcome-Scren.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-CasaOS-02-Create-Account.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-CasaOS-02-Create-Account.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-CasaOS-03-CasaOS-Running-on-a-Raspberry-Pi.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-CasaOS-03-CasaOS-Running-on-a-Raspberry-Pi.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'ye CasaOS Kurulumu ve Çalıştırılması","description":"CasaOS, Pi'nizi bir ev laboratuvarına dönüştürmeyi daha da kolaylaştırır","image":["https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-CasaOS-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T11:51:23.376699+03:00","dateModified":"2026-08-03T11:51:23.377154+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;ye CasaOS Kurulumu ve Çalıştırılması</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-casaos/">PiMyLifeUp - Installing and Running CasaOS on a Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu hızlı rehberde, Raspberry Pi'nizde CasaOS'u nasıl kurup çalıştıracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-CasaOS-Thumbnail.jpg" alt="Raspberry Pi CasaOS" /></p>
+<p><a href="https://casaos.zimaspace.com/">CasaOS</a>, Raspberry Pi'nizde yazılımları kendi kendinize barındırmayı mümkün olduğunca basit hale getirmek için tasarlanmış bir yazılım paketleri kümesidir. Adına rağmen, bu yazılım kendi başına bir işletim sistemi değildir. Bunun yerine, Raspberry Pi OS Lite gibi bir işletim sistemine kurduğunuz bir şeydir.</p>
+<p>Pi'nize CasaOS kurarak, web arayüzü üzerinden herhangi bir Docker konteynerini kolayca çalışır hale getirebilirsiniz. Bu arayüz, mevcut depolama kullanımı da dahil olmak üzere Pi'nizin sistem kullanımını kolayca izlemenizi sağlar. Uygulama mağazası üzerinden, tek bir tıklamayla kurup çalıştırabileceğiniz çeşitli projeler sunar.</p>
+<p>CasaOS'u neredeyse <a href="https://pimylifeup.com/raspberry-pi-dockge/">Dockge</a> ve <a href="https://pimylifeup.com/raspberry-pi-portainer/">Portainer</a> gibi diğer Docker yönetim platformlarına bir alternatif olarak düşünebilirsiniz. Ancak, sadece Docker yönetimi yerine daha çok kişisel bir bulut barındırma platformu olmayı hedefliyor.</p>
+<p>Tasarımı bakımından, bu yazılım paketi bir web tabanlı dosya yöneticisi bile içerdiğinden ve sizin için ağ paylaşımları kurmanıza yardımcı olacağından <a href="https://pimylifeup.com/raspberry-pi-nextcloud-server/">Nextcloud gibi</a> bulut depolama platformlarına da bir miktar benzer.</p>
+<p>CasaOS hem 32-bit hem de 64-bit ARM işletim sistemlerini destekler, yani bunu bir Raspberry Pi 3 ve daha yenisinde çalıştırabilmeniz gerekir. Elbette, daha yeni Pi'ler her zaman daha fazla yazılım çalıştırmanız için biraz daha alan sağlayacaktır.</p>
+<p>Web arayüzü sayesinde, CasaOS <a href="https://pimylifeup.com/headless-raspberry-pi-setup/">başsız (headless) bir Raspberry Pi çalıştıranlar</a> için mükemmel bir çözümdür. Makineye doğrudan erişime ihtiyaç duymadan ev laboratuvarınızın en önemli yönlerini kontrol edebilirsiniz. Hatta <a href="https://pimylifeup.com/raspberry-pi-cloudflare-tunnel/">Cloudflare tunnel</a> gibi bir şeyle CasaOS arayüzüne uzaktan bile erişebilirsiniz.</p>
+<h2>Raspberry Pi'ye CasaOS Nasıl Kurulur</h2>
+<p>Aşağıdaki birkaç bölümde, Raspberry Pi'nizde CasaOS için inanılmaz derecede basit kurulum sürecinde size rehberlik edeceğiz.</p>
+<p>Bu yazılım paketinden fark edeceğiniz temel bir tasarım unsuru, yeni kullanıcıların başlaması için inanılmaz derecede kolay olması amaçlanmış olmasıdır.</p>
+<p>Raspberry Pi'mize CasaOS kurmak için, <a href="https://pimylifeup.com/raspberry-pi-ssh/">SSH bağlantısı üzerinden terminali</a> kullanacağız. Pi OS'nin masaüstü sürümünü çalıştırıyorsanız, <code>CTRL</code> + <code>ALT</code> + <code>T</code> tuşlarına basarak terminali hızlıca açabilirsiniz.</p>
+<h3>Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> CasaOS'u kurmadan önceki ilk adımınız, Raspberry Pi'nizin işletim sisteminin güncel olduğundan emin olmaktır.</p>
+<p>İlk komut paket listesi önbelleğini güncelleyecektir. İkincisi ise güncel olmayan tüm paketleri yükseltecektir.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>2.</strong> Pi'nizi güncelledikten sonra, bir sonraki adımınız makinenizde curl paketinin kurulu olduğundan emin olmaktır. Bu paket, CasaOS kurulum betiğini almamızı ve çalıştırmamızı sağlayacak.</p>
+<p>apt'nin kurmayı denemesini sağlayarak curl'un kurulu olduğundan basitçe emin olabilirsiniz.</p>
+<pre><code>sudo apt install curl
+</code></pre>
+<h3>Raspberry Pi'nize CasaOS Kurulumu</h3>
+<p><strong>3.</strong> Raspberry Pi'mize CasaOS kurmak için, ekibin sağladığı kurulum betiğine güveneceğiz. Elbette, bizim yaptığımız gibi betikleri doğrudan çalıştırma konusunda her zaman biraz temkinli olmalısınız. Bu betiğin içeriğini <a href="https://get.casaos.io/">doğrudan Get CasaOS URL'sine giderek</a> görüntüleyebilirsiniz.</p>
+<p>Bu betiği kullanarak CasaOS kurulumuna devam etmekten memnunsanız, sadece aşağıdaki komutu çalıştırın. Burada, bash betiğini CasaOS sunucularından almak ve doğrudan terminale aktarmak için curl kullanıyoruz.</p>
+<pre><code>curl -fsSL https://get.casaos.io | sudo bash
+</code></pre>
+<p><strong>4.</strong> CasaOS'un kurulumu, kurması ve yapılandırması gereken epey paket olduğundan tamamlanması biraz zaman alacaktır.</p>
+<pre><code>   _____                 ____   _____
+  / ____|               / __ \ / ____|
+ | |     __ _ ___  __ _| |  | | (___
+ | |    / _` / __|/ _` | |  | |\___ \
+ | |___| (_| \__ \ (_| | |__| |____) |
+  \_____\__,_|___/\__,_|\____/|_____/
+
+   --- Made by IceWhale with YOU ---
+
+[  OK  ] Your hardware architecture is : aarch64
+[  OK  ] Your System is : Linux
+[  OK  ] Your Linux Distribution is : debian
+</code></pre>
+<h3>CasaOS Web Arayüzüne Erişim</h3>
+<p><strong>5.</strong> CasaOS Raspberry Pi'nizde kurulumunu tamamladığında, terminalde aşağıda gösterdiğimize benzer bir mesaj göreceksiniz.</p>
+<p>Bu mesaj içinde, yazılımın web arayüzüne erişmek için web tarayıcınızda gitmeniz gereken adresi görmelisiniz.</p>
+<pre><code> ─────────────────────────────────────────────────────
+ CasaOS v0.4.13 is running at:
+ ─────────────────────────────────────────────────────
+ - http://192.168.0.32 (eth0)
+ Open your browser and visit the above address.
+ ─────────────────────────────────────────────────────
+</code></pre>
+<p>Bu mesajı kaçırdıysanız, hostname komutunu kullanarak her zaman Pi'nizin IP adresini alabilirsiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>6.</strong> Şimdi favori web tarayıcınızda, aşağıdaki adrese gidin. &quot;<code>&lt;IPADRESI&gt;</code>&quot; kısmını Pi'nizin IP'siyle değiştirdiğinizden emin olun.</p>
+<pre><code>http://&lt;IPADRESI&gt;/
+</code></pre>
+<p><strong>7.</strong> CasaOS web arayüzüne ilk kez eriştiğinizde, bazı ilk kurulum adımlarından geçmeniz gerekir.</p>
+<p>CasaOS için hesabınızı oluşturmaya başlamak için, &quot;<code>Go</code>&quot; düğmesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-CasaOS-01-Welcome-Scren.jpg" alt="CasaOS Karşılama Ekranı" /></p>
+<p><strong>8.</strong> Bu bir sonraki ekranda, CasaOS için hesabınızı oluşturmak amacıyla kullanılacak bilgileri doldurmanız istenecektir (<strong>1.</strong>). Bu kullanıcı Raspberry Pi'nizle CasaOS üzerinden etkileşim kurabileceğinden, burada güvenli bir şifre belirlemek önemlidir.</p>
+<p>Kullanıcı adınızı ve şifrenizi doldurduktan sonra, devam etmek için &quot;<code>Create</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-CasaOS-02-Create-Account.jpg" alt="Raspberry Pi'de CasaOS için hesap oluşturma" /></p>
+<p><strong>9.</strong> Artık Raspberry Pi'nizde CasaOS'u başarıyla kurmuş oldunuz. Artık Pi'nizde uygulamaları kolayca kendi kendinize barındırmak için bu yazılımı kullanabilirsiniz.</p>
+<p>Pi'nize yeni &quot;uygulamalar&quot; kurmak için başlangıç noktası, gösterge panelindeki &quot;App Store&quot; bağlantısıdır. Bu mağaza, çok sayıda uygulamayı kolayca kurmanızı sağlar. Kullanmak istediğiniz uygulama kütüphanelerinde eksikse, Docker konteyner bilgilerini kendiniz doldurmanıza bile izin verir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-CasaOS-03-CasaOS-Running-on-a-Raspberry-Pi.jpg" alt="Raspberry Pi 5'te çalışan CasaOS" /></p>
+<h2>Sonuç</h2>
+<p>Bu eğitimin bu noktasında, Raspberry Pi'nizde CasaOS çalışıyor olmalıdır.</p>
+<p>CasaOS, cihazınızda Docker kullanarak uygulamaları kendi kendinize barındırmayı mümkün olduğunca basit hale getirmeye yönelik ilginç bir girişimdir. Hem tüm uygulamalarınızı hem de Pi'nizin kendisini yönetmek için ihtiyaç duyacağınız tek ön yüz olmayı hedefliyor.</p>
+<p>CasaOS'u çalıştırmakta herhangi bir sorunla karşılaştıysanız, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-casaos.html&amp;text=Raspberry+Pi%27ye+CasaOS+Kurulumu+ve+%C3%87al%C4%B1%C5%9Ft%C4%B1r%C4%B1lmas%C4%B1" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-casaos.html&amp;text=Raspberry+Pi%27ye+CasaOS+Kurulumu+ve+%C3%87al%C4%B1%C5%9Ft%C4%B1r%C4%B1lmas%C4%B1" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-casaos.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-casaos.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-casaos.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-casaos.html&amp;title=Raspberry+Pi%27ye+CasaOS+Kurulumu+ve+%C3%87al%C4%B1%C5%9Ft%C4%B1r%C4%B1lmas%C4%B1" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27ye+CasaOS+Kurulumu+ve+%C3%87al%C4%B1%C5%9Ft%C4%B1r%C4%B1lmas%C4%B1%20codenfast.com%2Fposts%2Fraspberry-pi-casaos.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

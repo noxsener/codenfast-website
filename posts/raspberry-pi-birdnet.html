@@ -1,0 +1,302 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi ve BirdNET-Pi ile Gerçek Zamanlı Kuş Sınıflandırma - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Yapay zeka modeliyle kuş seslerini gerçek zamanlı yorumlama"/>
+    <meta property="og:title" content="Raspberry Pi ve BirdNET-Pi ile Gerçek Zamanlı Kuş Sınıflandırma"/>
+    <meta property="og:description"
+          content="Yapay zeka modeliyle kuş seslerini gerçek zamanlı yorumlama"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-birdnet.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-birdnet.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi ve BirdNET-Pi ile Gerçek Zamanlı Kuş Sınıflandırma"/>
+    <meta name="twitter:description"
+          content="Yapay zeka modeliyle kuş seslerini gerçek zamanlı yorumlama"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi ve BirdNET-Pi ile Gerçek Zamanlı Kuş Sınıflandırma","item":{"@id":"https://codenfast.com/posts/raspberry-pi-birdnet.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-01-Homepage.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-01-Homepage.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-02-Open-Tools-Page.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-02-Open-Tools-Page.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-03-Login-to-account.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-03-Login-to-account.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-04-Open-Settings-Page.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-04-Open-Settings-Page.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-05-Set-location-and-birdweather.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-05-Set-location-and-birdweather.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-06-Save-settings.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-06-Save-settings.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-07-Open-Advanced-Settings.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-07-Open-Advanced-Settings.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-08-Set-Password.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-08-Set-Password.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-09-Save-Advanced-Settings.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-09-Save-Advanced-Settings.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi ve BirdNET-Pi ile Gerçek Zamanlı Kuş Sınıflandırma","description":"Yapay zeka modeliyle kuş seslerini gerçek zamanlı yorumlama","image":["https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T11:27:52.138297+03:00","dateModified":"2026-08-03T11:27:52.138323+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi ve BirdNET-Pi ile Gerçek Zamanlı Kuş Sınıflandırma</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-birdnet/">PiMyLifeUp - Classify Birds in Real Time on your Raspberry Pi with BirdNET-Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu projede, Raspberry Pi'nize BirdNET-Pi yazılımını nasıl kuracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-Thumbnail.jpg" alt="Raspberry Pi BirdNET-Pi Kuş Sesi Sınıflandırıcı" /></p>
+<p><a href="https://github.com/Nachtzuster/BirdNET-Pi">BirdNET-Pi</a> ile, Raspberry Pi'nizi kuş seslerine dayanarak gerçek zamanlı olarak kuşları algılayabilen ve sınıflandırabilen bir makineye dönüştürebilirsiniz. Hatta verilerinizi tüm dünyayla paylaşmak için bunu kullanarak herkesin bölgenizde hangi kuşların yaşadığını görmesini sağlayabilirsiniz.</p>
+<p>Bu yazılım tarafından kaydedilen tüm veriler, kullanışlı web arayüzü üzerinden kolayca görüntülenebilir. Kayıtları kolayca analiz edebilir ve yanlış pozitifleri kontrol edebilirsiniz. Yazılım, entegre bir spektrogram bile sunar.</p>
+<p>BirdNET-Pi, ayrıca <a href="https://app.birdweather.com/">BirdWeather haritasına</a> kolayca entegre olmanızı sağlar; böylece verileriniz hem sizin hem de kuş hareketlerini takip etmekle ilgilenen diğer kişiler tarafından kolayca görüntülenebilir.</p>
+<p>Bu yazılım, <a href="https://birdnet.cornell.edu/">BirdNET adlı</a> özel olarak tasarlanmış bir yapay zeka modeli sayesinde bunu yapabilmektedir. Bu model, binlerce türü tanımak üzere özel olarak eğitilip tasarlanmıştır ve Cornell Ornitoloji Laboratuvarı ile Chemnitz Teknoloji Üniversitesi tarafından aktif olarak geliştirilip sürdürülmektedir.</p>
+<p>Bunun çalışması için tek ihtiyacınız olan bir USB mikrofon ve bir Raspberry Pi 3 veya daha yenisi. Yazılımın bu gereksinimi vardır çünkü 64-bit bir işletim sistemine dayanır. Pi 3, 64-bit işletim sistemini destekleyen en eski Pi modelidir.</p>
+<p>64-bit bir işletim sistemi çalıştırıyor olmanız GEREKTİĞİNİ lütfen unutmayın. BirdNET-Pi, 32-bit bir işletim sistemine kurulamaz ve çalışmaz.</p>
+<p>Ayrıca, BirdNET-Pi gerçekten bağımsız bir yazılım parçası olacak şekilde tasarlanmıştır. Bu yazılıma özel olarak, Raspberry Pi OS'nin temiz bir kurulumuyla ayrılmış bir Pi çalıştırmanızı öneririz.</p>
+<p>Elbette, yatırım yapmak isteyebileceğiniz bir diğer şey de hava koşullarına dayanıklı bir muhafazadır; mikrofonunuz iç mekanda sıkışıp kalırsa harika kayıtlar elde edemezsiniz.</p>
+<h2>Raspberry Pi'nizde BirdNET-Pi Kurulumu</h2>
+<p>BirdNET-Pi yazılımının kurulumu, özellikle Raspberry Pi OS'nin temiz bir kurulumunda çalıştırıyorsanız, gerçekten inanılmaz derecede kolaydır. Bu yazılım kurulduktan sonra, çoğu ayar doğrudan yazılımın web arayüzü üzerinden yapılandırılabilir.</p>
+<p>Başlamadan önce, mikrofonunuzu Raspberry Pi'nize bağlamanızı şiddetle tavsiye ederiz. Çoğu USB mikrofon, Raspberry Pi'nizle kutudan çıktığı gibi çalışacaktır. Ancak, sizinki çalışmıyorsa <a href="https://pimylifeup.com/raspberrypi-microphone/">mikrofon kurulumu</a> konusunda size yol gösteren bir rehberimiz de var.</p>
+<h3>Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> Raspberry Pi'mize BirdNET-Pi kurmaya başlamadan önce, mikrofon bağlamanın dışında bazı ilk hazırlık adımları yapmamız gerekecek.</p>
+<p>Bu ilk adım için, terminalde aşağıdaki iki komutu çalıştırarak <a href="https://pimylifeup.com/raspberry-pi-update/">her şeyin güncel olduğundan</a> emin olalım.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>2.</strong> Güncelleme tamamlandıktan sonra, sisteminizde &quot;<code>curl</code>&quot; paketinin kurulu olduğundan emin olmalıyız. Bu paketi BirdNET-Pi kurulum betiğini çalıştırmak için kullanacağız.</p>
+<p>Bu paketi terminalde aşağıdaki komutu kullanarak kurabilirsiniz.</p>
+<pre><code>sudo apt install curl
+</code></pre>
+<p><strong>3.</strong> Her şeyi kurduktan sonra, bir sonraki hazırlık adımı Raspberry Pi'niz için statik bir IP adresi ayarlamaktır. Bu, esasen her zaman aynı IP adresinden erişilebilir olmasını sağlamaya yardımcı olur.</p>
+<p>Bunu başarmanın en iyi yolu, yönlendiricinizde DHCP rezervasyonu yapmaktır, ancak <a href="https://pimylifeup.com/raspberry-pi-static-ip-address/">Raspberry Pi'nizde doğrudan statik bir IP adresine</a> nasıl ulaşacağınızı gösteren bir rehberimiz de var.</p>
+<h3>Raspberry Pi'nizde BirdNET-Pi Kurulum Programını Çalıştırma</h3>
+<p><strong>4.</strong> Her şey artık hazır olduğuna göre, Raspberry Pi'nize BirdNET-Pi kurmak, terminalde aşağıdaki komutu çalıştırmak kadar basittir.</p>
+<p>Bu komut, GitHub sayfalarından <a href="https://raw.githubusercontent.com/Nachtzuster/BirdNET-Pi/main/newinstaller.sh">BirdNET-Pi kurulum betiğini</a> alır ve terminale aktarır. Bu betik, 64-bit bir sistem çalıştırdığınızı doğrular ve Git'i kurar. Ardından BirdNET-Pi deposunu klonlamak için git'i kullanır ve asıl kurulum betiğini çalıştırır.</p>
+<pre><code>curl -s https://raw.githubusercontent.com/Nachtzuster/BirdNET-Pi/main/newinstaller.sh | bash
+</code></pre>
+<p><strong>5.</strong> Kurulum süreci, Raspberry Pi'nizde birkaç yazılım parçasını kurup yapılandırması gerektiğinden tamamlanması biraz zaman alabilir. Buna, bağlı mikrofonunuzun algıladığı çeşitli kuşları dinlemek ve sınıflandırmak için kullanılacak model de dahildir.</p>
+<p>Kurulumun tamamlandığını, BirdNET-Pi Pi'nizi otomatik olarak yeniden başlattığında anlayacaksınız.</p>
+<h3>BirdNET-Pi Web Arayüzüne Erişim</h3>
+<p><strong>6.</strong> BirdNET-Pi artık Raspberry Pi'nizde çalışır durumda olduğuna göre, web arayüzüne erişmek son derece basittir.</p>
+<p>Web arayüzüne erişmek için Pi'nizin IP adresini bilmeniz gerekir. Hatırlamıyorsanız, atanan IP'yi almak için terminalde her zaman <a href="https://pimylifeup.com/hostname-command/">hostname komutunu</a> kullanabilirsiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>7.</strong> Favori web tarayıcınızda, şimdi aşağıdaki adrese gitmeniz gerekecek.</p>
+<p>Tek yapmanız gereken &quot;<code>&lt;IPADRESI&gt;</code>&quot; kısmını Raspberry Pi'nizin IP adresiyle değiştirmektir. BirdNET-Pi varsayılan portlarda çalıştığından, herhangi bir port belirtmenize gerek yoktur.</p>
+<pre><code>http://&lt;IPADRESI&gt;
+</code></pre>
+<p><strong>8.</strong> Artık BirdNET-Pi web arayüzüne erişiminiz var. Her şey düzgün çalışıyorsa, mikrofonunuzu otomatik olarak algılamalı ve kuş seslerini dinlemek ve sınıflandırmak için kullanmaya başlamalıdır.</p>
+<p>Elbette, muhtemelen yapılandırmak isteyeceğiniz birkaç farklı şey vardır ve bir sonraki adımda bunu ele alacağız.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-01-Homepage.jpg" alt="Raspberry Pi BirdNET-Pi Yazılımının Ana Sayfası" /></p>
+<h3>BirdNET-Pi'yi Yapılandırma</h3>
+<p><strong>9.</strong> Raspberry Pi'nizin BirdNET-Pi web arayüzüne bağlıyken, ekranın sağ üst köşesindeki &quot;<code>Tools</code>&quot; kısmına <code>tıklayarak</code> ayarlar sayfasına erişebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-02-Open-Tools-Page.jpg" alt="Araçlar sayfasını açma" /></p>
+<p><strong>10.</strong> Bu sayfaya erişirken, devam etmeden önce bir kullanıcı adı ve şifre girmeniz istenecektir.</p>
+<p>Varsayılan olarak, <strong>kullanıcı adı</strong> (<strong>1.</strong>) olarak &quot;<code>birdnet</code>&quot; yazmanız yeterlidir ve şifreyi boş bırakabilirsiniz. Kullanıcı adını yazdıktan sonra, sadece &quot;<code>Sign in</code>&quot; (<strong>2.</strong>) üzerine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-03-Login-to-account.jpg" alt="birdnet kullanarak BirdNET-Pi'ye giriş yapma" /></p>
+<p><strong>11.</strong> Artık BirdNET-Pi yazılımının araçlar bölümünde olmanız gerekir. Bu, sisteminizin çeşitli yönlerini kontrol etmek de dahil olmak üzere epeyce şey yapmanızı sağlar. Ancak, ilgilendiğimiz tek şey &quot;<code>Settings</code>&quot; sayfasıdır.</p>
+<p>Bu rehbere devam etmek için &quot;<code>Settings</code>&quot; seçeneğine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-04-Open-Settings-Page.jpg" alt="Ayarlar sayfasını açma" /></p>
+<h4>Enlem ve Boylamı Güncelleme</h4>
+<p><strong>12.</strong> Güncellemek isteyeceğiniz bir ayar, BirdNET-Pi yazılımını çalıştıran Raspberry Pi'nizi kurmayı planladığınız yerin enlem ve boylamıdır. Bu, BirdWeather gibi hizmetlerin dünyada nerede olduğunuzu söylemesine yardımcı olur.</p>
+<p>BirdNET-Pi, Raspberry Pi'nizde ilk başladığında konumunuzu otomatik olarak tahmin eder, ancak bu genellikle son derece yanlış olabilir, bu nedenle kendiniz düzeltmeniz en iyisidir.</p>
+<p>Bunun için doğru değerleri almak amacıyla Google Haritalar gibi bir araç kullanabilirsiniz. Ekranda <code>sağ tıklarsanız</code>, o konumun enlem ve boylamını elde edersiniz. Doğru değerleri aldıktan sonra, iki metin kutusunu doldurun (<strong>1.</strong>).</p>
+<p>Bu sayfadayken, <a href="https://app.birdweather.com/signup">BirdWeather kurulumunu</a> yapmayı da düşünebilirsiniz (<strong>2.</strong>). Bu hizmet, kayıtlarınızı kataloglar ve hem sizin hem de başkalarının erişimine sunar. Ayrıca, diğer kişilerin bölgenizde hangi kuşları tespit ettiğinizi görmesini sağlar. Bu hizmete bağlanmak için bir BirdWeather hesabına ihtiyacınız vardır.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-05-Set-location-and-birdweather.jpg" alt="Raspberry Pi BirdNET-Pi kurulumunuz için konum ayarlama" /></p>
+<p><strong>13.</strong> BirdNET-Pi yazılımını yapılandırmayı bitirdikten sonra, sayfanın altına kaydırın ve &quot;<code>Update Settings</code>&quot; düğmesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-06-Save-settings.jpg" alt="Güncellenen ayarları kaydetme" /></p>
+<h4>Raspberry Pi BirdNET-Pi Ayarlar Sayfası İçin Şifre Belirleme</h4>
+<p><strong>14.</strong> Daha önce, BirdNET-Pi ayarlar sayfalarına erişmek için sadece &quot;birdnet&quot; kullanıcı adını kullanmamız gerektiğini fark etmiş olacaksınız. Bu, web arayüzünüze erişimi olan herkesin Pi'niz üzerinde kontrol sahibi olacağından oldukça güvensiz bir uygulamadır.</p>
+<p>Neyse ki, web sayfasını biraz daha güvenli hale getirmek için bir şifre belirlemek mümkündür. Bu şifre yalnızca yönetici sayfaları içindir.</p>
+<p>Şifre ekranına erişmek için &quot;Settings&quot; sayfasının altına kaydırıp &quot;<code>Advanced Settings</code>&quot; düğmesine <code>tıklamanız</code> gerekir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-07-Open-Advanced-Settings.jpg" alt="Gelişmiş ayarları açma" /></p>
+<p><strong>15.</strong> Bu sayfada, &quot;Password&quot; etiketli bir metin kutusu bulacaksınız. Bu yönetici sayfalarına erişmek için kullanmak istediğiniz şifreyi yazın.</p>
+<p>Şifrenin yalnızca harf ve rakam içerdiğinden emin olun. Bu araç özel karakterleri desteklemez.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-08-Set-Password.jpg" alt="Raspberry Pi BirdNET-Pi web arayüzü için yeni şifre belirleme" /></p>
+<p><strong>16.</strong> Bu yeni şifrenin ayarlanması için, sayfanın altına kaydırıp &quot;<code>Update Settings</code>&quot; düğmesine <code>tıklamalısınız</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2026/01/Raspberry-Pi-BirdNET-Pi-Bird-Call-Classifier-09-Save-Advanced-Settings.jpg" alt="Gelişmiş ayarları kaydetme" /></p>
+<h2>Sonuç</h2>
+<p>Umarız bu rehberin sonunda, BirdNET-Pi yazılımını kullanarak Raspberry Pi'nizi gerçek zamanlı bir kuş sınıflandırıcısı olarak başarıyla kurmuşsunuzdur.</p>
+<p>BirdNET-Pi, Pi'nizin kuş seslerini hızlı ve kolay bir şekilde izlemesini sağlayan inanılmaz derecede güçlü ve kullanımı kolay bir yazılım yığınıdır. Birkaç dakika içinde çalışır hale getirebilir ve topladığı verileri hemen görmeye başlayabilirsiniz.</p>
+<p>Bu kuş analiz cihazıyla Pi'nizi kurarken herhangi bir sorunla karşılaşırsanız, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-birdnet.html&amp;text=Raspberry+Pi+ve+BirdNET-Pi+ile+Ger%C3%A7ek+Zamanl%C4%B1+Ku%C5%9F+S%C4%B1n%C4%B1fland%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-birdnet.html&amp;text=Raspberry+Pi+ve+BirdNET-Pi+ile+Ger%C3%A7ek+Zamanl%C4%B1+Ku%C5%9F+S%C4%B1n%C4%B1fland%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-birdnet.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-birdnet.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-birdnet.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-birdnet.html&amp;title=Raspberry+Pi+ve+BirdNET-Pi+ile+Ger%C3%A7ek+Zamanl%C4%B1+Ku%C5%9F+S%C4%B1n%C4%B1fland%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi+ve+BirdNET-Pi+ile+Ger%C3%A7ek+Zamanl%C4%B1+Ku%C5%9F+S%C4%B1n%C4%B1fland%C4%B1rma%20codenfast.com%2Fposts%2Fraspberry-pi-birdnet.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

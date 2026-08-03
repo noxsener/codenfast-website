@@ -1,0 +1,338 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de PostgreSQL Veritabanı Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Açık kaynaklı bir ilişkisel veritabanı yönetim sistemi"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de PostgreSQL Veritabanı Kurulumu"/>
+    <meta property="og:description"
+          content="Açık kaynaklı bir ilişkisel veritabanı yönetim sistemi"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-postgresql.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-postgresql.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-PostgreSQL-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de PostgreSQL Veritabanı Kurulumu"/>
+    <meta name="twitter:description"
+          content="Açık kaynaklı bir ilişkisel veritabanı yönetim sistemi"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-PostgreSQL-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de PostgreSQL Veritabanı Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-postgresql.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-PostgreSQL-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-PostgreSQL-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-PostgreSQL-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-PostgreSQL-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de PostgreSQL Veritabanı Kurulumu","description":"Açık kaynaklı bir ilişkisel veritabanı yönetim sistemi","image":["https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-PostgreSQL-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:52:52.628537+03:00","dateModified":"2026-08-03T12:52:52.62856+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de PostgreSQL Veritabanı Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-postgresql/">PiMyLifeUp - Setting up a PostgreSQL Database on a Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu projede, bir Raspberry Pi'de bir PostgreSQL Veritabanının nasıl kurulacağını göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-PostgreSQL-Thumbnail.jpg" alt="Raspberry Pi PostgreSQL" /></p>
+<p><a href="https://www.postgresql.org/">PostgreSQL</a>, SQL dilini uygulayan ücretsiz ve açık kaynaklı bir ilişkisel veritabanı sistemidir.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-mysql/">MySQL veya MariaDB</a> ile aşinaysanız, Raspberry Pi'nizde PostgreSQL kullanmakta rahat edeceksiniz.</p>
+<p>Bunun nedeni, tüm bu sunucuların veritabanlarını yönetmek için SQL kullanmasıdır.</p>
+<p>MySQL yerine PostgreSQL kullanmayı tercih edebileceğiniz birkaç neden vardır. Bunlardan biri PostgreSQL'in özellik seti ve SQL dilini uygulamadaki uyumluluğudur.</p>
+<p>Aşağıdaki bölümler, Raspberry Pi'nize PostgreSQL'i nasıl kuracağınızı ve ilk veritabanınızı ve tablonuzu nasıl oluşturacağınızı gösterecek.</p>
+<h2>Raspberry Pi'ye PostgreSQL Kurulumu</h2>
+<p>Raspberry Pi OS paket deposu üzerinden mevcut olması sayesinde PostgreSQL kurmak basit bir süreçtir.</p>
+<p>Aşağıdaki adımlar, Postgres'i kurmanızı ve pi kullanıcısını kullanarak veritabanıyla etkileşim kurabilmeniz için yazılımı yapılandırmanızı sağlayacaktır.</p>
+<h3>PostgreSQL Sunucusunu Kurma</h3>
+<p>İlk adımımız, PostgreSQL sunucu yazılımını Raspberry Pi'nize kurmaktır.</p>
+<p>Bu kurulum süreci oldukça basittir ve yalnızca iki adım gerektirir.</p>
+<p><strong>1.</strong> <a href="https://pimylifeup.com/raspberry-pi-update/">Raspberry Pi'nizin işletim sistemini güncelleyerek</a> başlamamız gerekiyor.</p>
+<p>Güncellemek, PostgreSQL yazılımını kurmak için yeni bir temele sahip olmamızı sağlar.</p>
+<p>Pi'nizde paket listesini ve kurulu paketleri güncellemek için aşağıdaki iki komutu çalıştırın.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Bir sonraki adımımız, aşağıdaki komutu kullanarak PostgreSQL paketini Raspberry Pi'mize kurmaktır.</p>
+<p>Postgres sunucusunun yanı sıra, bu komut komut satırı arayüzü gibi ek yazılım parçalarını da kuracaktır.</p>
+<pre><code>sudo apt install postgresql
+</code></pre>
+<h3>PostgreSQL'in CLI'sini Kullanıcınızı Kullanacak Şekilde Yapılandırma</h3>
+<p>Şu anda, kullanıcınızı kullanarak PostgreSQL CLI'sini kullanmayı denerseniz, kurulmuş bir role sahip olmadığınızı söyleyen bir hata alırsınız.</p>
+<p>Ancak endişelenmeyin, çünkü yeni bir rol oluşturmak için <code>postgres</code> kullanıcısına geçebiliriz.</p>
+<p><strong>1.</strong> İlk adımınız <code>postgres</code> kullanıcısına geçmektir.</p>
+<p>Bunu, Raspberry Pi'nizde aşağıdaki komutu çalıştırarak yapabilirsiniz.</p>
+<pre><code>sudo su postgres
+</code></pre>
+<p><strong>2.</strong> Kullanıcı değiştirdiğimizden, PostgreSQL o kullanıcının ana dizininde olmanızı bekler.</p>
+<p><a href="https://pimylifeup.com/cd-command/">cd komutunu kullanarak</a>, ardından tilde sembolünü (<code>~</code>) kullanarak ana dizininize geçebilirsiniz.</p>
+<pre><code>cd ~
+</code></pre>
+<p><strong>3.</strong> <code>postgres</code> kullanıcısına geçtikten sonra, artık yeni bir rol oluşturabiliriz.</p>
+<p>Kullanıcınız için bir rol oluşturma sürecini başlatmak için cihazınızda aşağıdaki komutu çalıştırın. &quot;<code>&lt;USERNAME&gt;</code>&quot; kısmını kullanıcınızın adıyla değiştirdiğinizden emin olun.</p>
+<pre><code>createuser &lt;USERNAME&gt; -P --interactive
+</code></pre>
+<p>Bu süreçte, birkaç bilgi yanıtlamanız istenecektir.</p>
+<p><strong>4.</strong> İlk istem, bu yeni rol için bir şifre girmenizi isteyecektir.</p>
+<p>Bir şifre belirlemek, Raspberry Pi'nizin PostgreSQL sunucusuna bağlanırken ekstra bir güvenlik katmanı ekler.</p>
+<pre><code>Enter password for new role:
+Enter it again:
+</code></pre>
+<p><strong>5.</strong> Şimdi bu yeni kullanıcının bir süper kullanıcı (superuser) olup olmayacağına karar vermeniz gerekecek.</p>
+<p>Kullanıcınızı veritabanları ve diğer şeyler oluşturmak için kullanmak istiyorsanız, bu soruya <code>Y</code> yanıtını verin.</p>
+<pre><code>Shall the new role be a superuser? (y/n) y
+</code></pre>
+<p><strong>6.</strong> Bir sonraki adımımız, kullanıcımızla aynı ada sahip bir veritabanı oluşturmaktır.</p>
+<p>Komut satırı arayüzünü kullanmayı denediğinizde, otomatik olarak kullanıcı adınızla aynı ada sahip bir veritabanına bağlanmaya çalışacaktır.</p>
+<p>Aşağıdaki komutu çalıştırarak komut satırı arayüzünü yükleyin.</p>
+<pre><code>psql
+</code></pre>
+<p><strong>7.</strong> Şimdi, aşağıdakini yazarak kullanıcı adınızla bir veritabanı oluşturun. Yine, &quot;<code>&lt;USERNAME&gt;</code>&quot; kısmını kullanıcınızın adıyla değiştirdiğinizden emin olun.</p>
+<p>Bu veritabanı esasen CLI aracını kullanmaya kolayca başlamayı kolaylaştırmak için burada.</p>
+<pre><code>CREATE DATABASE &lt;USERNAME&gt;;
+</code></pre>
+<p><strong>8.</strong> PostgreSQL'e aşağıdakini yazarak CLI aracından çıkabilirsiniz.</p>
+<pre><code>exit
+</code></pre>
+<p><strong>9.</strong> Kullanıcınız için rol oluşturulduktan sonra, artık ona geri dönebiliriz.</p>
+<p>Kullanıcınıza geri dönmek için, yapmanız gereken tek şey aşağıdaki komutu girmektir.</p>
+<pre><code>exit
+</code></pre>
+<p><strong>10.</strong> Son olarak, aşağıdaki komutu çalıştırarak mevcut kullanıcınızın ana dizinine geri geçebilirsiniz.</p>
+<pre><code>cd ~
+</code></pre>
+<h2>Raspberry Pi'de İlk PostgreSQL Veritabanınızı Oluşturma</h2>
+<p>Raspberry Pi'mizde artık PostgreSQL'in çalışır durumda olduğunu test etmek için, şimdi üzerinde yeni bir veritabanı oluşturacağız.</p>
+<p>Bu adımlar, bir veritabanı oluşturmak ve ona bir tablo eklemek için Postgres CLI'sini nasıl kullanacağınızı gösterecek.</p>
+<p><strong>1.</strong> Postgres CLI'sine girerek bu sürece başlayalım.</p>
+<p>Komut satırı arayüzüne geçmek için aşağıdaki komutu çalıştırın.</p>
+<pre><code>psql
+</code></pre>
+<p><strong>2.</strong> PostgreSQL komut satırı içinde, artık veritabanları oluşturabilir ve üzerinde işlem yapabiliriz.</p>
+<p>Daha önce de belirttiğimiz gibi, Postgres SQL programlama dilini kullanır. Daha önce hiç SQL kullandıysanız, kendinizi evinizde gibi hissedeceksiniz.</p>
+<p>İlk görevimiz için, Raspberry Pi'mizde yeni bir veritabanı oluşturalım. Bu örnek için, bu veritabanını &quot;<code>exampledb</code>&quot; olarak adlandıracağız.</p>
+<pre><code>CREATE DATABASE exampledb;
+</code></pre>
+<p><strong>3.</strong> Ardından, bu yeni veritabanına geçmeniz gerekecek.</p>
+<p>Varsayılan olarak, Postgres CLI'sini başlattığınızda, kullanıcınızla aynı ada sahip veritabanıyla etkileşim kurarsınız.</p>
+<p>Yeni DB'mize geçmek için, &quot;<code>\connect</code>&quot; komutunu, ardından DB'mizin adını kullanmamız gerekiyor.</p>
+<pre><code>\connect exampledb;
+</code></pre>
+<p>CLI yeni veritabanınıza bağlandığında, aşağıda gösterdiğimiz gibi bir mesaj almalısınız.</p>
+<pre><code>You are now connected to database &quot;exampledb&quot; as user &quot;pi&quot;.
+</code></pre>
+<p><strong>4.</strong> PostgreSQL'in Raspberry Pi'de çalıştığını göstermek için bir sonraki adımımız, veritabanımız içinde bir tablo oluşturmaktır.</p>
+<p>Bunu, iki sütuna sahip &quot;<code>authors</code>&quot; adlı basit bir tablo yapacağız. Bir sütun &quot;<code>name</code>&quot; olarak adlandırılacak, diğeri ise &quot;<code>website</code>&quot; olarak adlandırılacak.</p>
+<p>Her iki sütunun veri türünü de &quot;<code>text</code>&quot; olarak ayarlayacağız.</p>
+<pre><code>CREATE TABLE authors (name text, website text);
+</code></pre>
+<p><strong>4.</strong> Şimdi bu yepyeni tabloya bir veri satırı ekleyelim.</p>
+<p>SQL desteğine sahip olmak bu veriyi eklemeyi basit bir süreç haline getirir. Satırımız için, &quot;<code>Emmet</code>&quot; isimli ve &quot;<code>pimylifeup.com</code>&quot; web sitesine sahip bir yazar ekleyeceğiz.</p>
+<pre><code>INSERT INTO authors VALUES ('Emmet', 'pimylifeup.com');
+</code></pre>
+<p><strong>5.</strong> Son olarak, son görevimiz PostgreSQL'e bu tabloda saklanan verileri çıktı olarak vermesini sağlamaktır.</p>
+<p>Bunu yapmak için, aşağıdaki basit select ifadesini kullanabiliriz.</p>
+<pre><code>SELECT * FROM authors;
+</code></pre>
+<p>Bu komuttan, belirtilen tabloda saklanan tüm verileri görmelisiniz.</p>
+<p>Bu tabloya yalnızca tek bir satır eklediğimizden, komut satırına çıktı olarak verilen tek şey bu olmalıdır.</p>
+<pre><code> name  |    website
+-------+----------------
+ Emmet | pimylifeup.com
+(1 row)
+</code></pre>
+<h2>Sonuç</h2>
+<p>Artık Raspberry Pi'nizde bir PostgreSQL veritabanını nasıl kurup ayarlayabileceğiniz konusunda iyi bir anlayışa sahip olmalısınız.</p>
+<p>PostgreSQL, MySQL ve MariaDB'ye sağlam bir alternatiftir. Çok sayıda özelliğe sahiptir ve SQL'in en eksiksiz uygulamalarından birine sahiptir.</p>
+<p>Cihazınızda Postgres sunucusunu çalışır hale getirirken herhangi bir sorunla karşılaştıysanız, lütfen aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-postgresql.html&amp;text=Raspberry+Pi%27de+PostgreSQL+Veritaban%C4%B1+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-postgresql.html&amp;text=Raspberry+Pi%27de+PostgreSQL+Veritaban%C4%B1+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-postgresql.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-postgresql.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-postgresql.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-postgresql.html&amp;title=Raspberry+Pi%27de+PostgreSQL+Veritaban%C4%B1+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+PostgreSQL+Veritaban%C4%B1+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-postgresql.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

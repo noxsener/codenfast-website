@@ -1,0 +1,298 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>PiFi ile Raspberry Pi&#39;yi Wi-Fi Yönlendiriciye Dönüştürme - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Kolay bir Wi-Fi yönlendirici kurulum çözümü"/>
+    <meta property="og:title" content="PiFi ile Raspberry Pi&#39;yi Wi-Fi Yönlendiriciye Dönüştürme"/>
+    <meta property="og:description"
+          content="Kolay bir Wi-Fi yönlendirici kurulum çözümü"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-pifi.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-pifi.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-WiFi-Router-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="PiFi ile Raspberry Pi&#39;yi Wi-Fi Yönlendiriciye Dönüştürme"/>
+    <meta name="twitter:description"
+          content="Kolay bir Wi-Fi yönlendirici kurulum çözümü"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-WiFi-Router-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"PiFi ile Raspberry Pi'yi Wi-Fi Yönlendiriciye Dönüştürme","item":{"@id":"https://codenfast.com/posts/raspberry-pi-pifi.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-WiFi-Router-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-WiFi-Router-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-WiFi-Router-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-WiFi-Router-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-01-Open-Choose-OS-menu.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-01-Open-Choose-OS-menu.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-02-Use-Custom-Image-Option.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-02-Use-Custom-Image-Option.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-03-Choose-Storage-to-write-PiFi-to.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-03-Choose-Storage-to-write-PiFi-to.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-04-Proceed-Writing-image.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-04-Proceed-Writing-image.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-05-Dont-apply-OS-customisation.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-05-Dont-apply-OS-customisation.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-06-Existing-Data-Warning.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-06-Existing-Data-Warning.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-07-Get-Started-with-PiFi.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-07-Get-Started-with-PiFi.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-08-Select-region.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-08-Select-region.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-09-Default-PiFi-Password.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-09-Default-PiFi-Password.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-10-Select-Wi-Fi-network-to-connect.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-10-Select-Wi-Fi-network-to-connect.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-11-Set-Admin-Password.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-11-Set-Admin-Password.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-12-Enable-Adguard-Home-protection.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-12-Enable-Adguard-Home-protection.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-13-Removing-USB-warning.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-13-Removing-USB-warning.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-14-PiFi-is-Ready.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-14-PiFi-is-Ready.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-15-Update-default-network-warning.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-15-Update-default-network-warning.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-16-Set-new-WiFi-name-and-password.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-16-Set-new-WiFi-name-and-password.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"PiFi ile Raspberry Pi'yi Wi-Fi Yönlendiriciye Dönüştürme","description":"Kolay bir Wi-Fi yönlendirici kurulum çözümü","image":["https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-WiFi-Router-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T11:34:59.554214+03:00","dateModified":"2026-08-03T11:34:59.554241+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>PiFi ile Raspberry Pi&#39;yi Wi-Fi Yönlendiriciye Dönüştürme</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-pifi/">PiMyLifeUp - Turning a Raspberry Pi into a Wi-Fi Router with PiFi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'nizi bir Wi-Fi yönlendiriciye dönüştürmek için PiFi'yi nasıl kurup kullanacağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-WiFi-Router-Thumbnail.jpg" alt="Raspberry Pi PiFi Wi-Fi Yönlendirici" /></p>
+<p>PiFi, Raspberry Pi'nizi hızlı, OpenWrt tabanlı bir <a href="https://pimylifeup.com/raspberry-pi-wireless-access-point/">Wi-Fi yönlendirici</a> olarak kurmayı önemli ölçüde kolaylaştıran bir dağıtımdır (distro). Süper taşınabilir bir seyahat yönlendiricisi istiyorsanız kesinlikle değerlendirmek isteyeceğiniz bir projedir.</p>
+<p>Bilmeyenler için OpenWrt, ağ yönlendirmeye odaklanan açık kaynaklı bir işletim sistemidir. Kendi yönlendiricisini kurmak isteyen herkes için popüler bir seçim haline gelmiştir. PiFi, Raspberry Pi üzerinde daha iyi çalışması ve kendi uygulamaları üzerinden kontrol edilebilmesi için iyileştirmeler içeren özelleştirilmiş bir sürümünü kullanır.</p>
+<p>OpenWrt üzerine inşa edilmiş olmasının yanı sıra, PiFi seyahat için gerçekten kullanışlı hale getiren ek özelliklerle doludur. Bu özelliklerden biri, trafiği seçtiğiniz bir VPN üzerinden yönlendirme konusundaki yerleşik işlevselliğidir. Hem WireGuard hem de OpenVPN protokollerini desteklemesi, bu seyahat yönlendiricisinin VPN sağlayıcılarının büyük çoğunluğuyla çalışacağı anlamına gelir.</p>
+<p>Bir diğer kullanışlı özellik ise <a href="https://pimylifeup.com/raspberry-pi-adguard-home/">AdGuard Home</a> için yerleşik desteğidir. Bu yazılım, kutudan çıktığı gibi reklamları engelleyerek veri kullanımını azaltmaya ve gizliliği artırmaya yardımcı olabilir.</p>
+<p>Bu işlevsellik, PiFi'nin iOS ve Android uygulaması üzerinden kontrol edilir. Bu uygulamayla, OpenWrt yönlendiricinizi kolayca yapılandırabilir ve kontrol edebilirsiniz.</p>
+<p>PiFi'yi Raspberry Pi'nizde iki şekilde çalıştırabilirsiniz. İlki, bir SD kart ve desteklenen bir Wi-Fi adaptörü içeren <a href="https://www.pifi.org/pifi-kit">PiFi kitini</a> satın almaktır. İkincisi ise, bu rehberde yaptığımız gibi, imajı kendiniz kurmaktır.</p>
+<p>PiFi yazılımı resmi olarak yalnızca iki Wi-Fi adaptörünü destekler. Birincisi Pi'nin kendi üzerindeki dahili adaptördür, diğeri ise kitlerinde sundukları daha hızlı USB Wi-Fi dongle'dır. Kit aynı zamanda bu projenin gelişimini desteklemenin de temel yoludur.</p>
+<p>PiFi'nin başsız (headless) bir yazılım olduğunu, bu nedenle Raspberry Pi'nizin HDMI portlarında herhangi bir çıktı olmayacağını lütfen unutmayın.</p>
+<h2>Raspberry Pi'nize PiFi Wi-Fi Yönlendiricisini Kurma</h2>
+<p>Aşağıdaki birkaç bölümde, Raspberry Pi'nizde PiFi Wi-Fi yönlendiricisini kurmanın ilk adımlarında size rehberlik edeceğiz.</p>
+<p>PiFi, seçtiğiniz bir SD karta yazabileceğiniz bir imaj olarak dağıtıldığından, bu sürecin tamamı nispeten kolay hale getirilmiştir.</p>
+<h3>Pi'niz İçin Pi-Fi OpenWrt İmajını İndirme</h3>
+<p><strong>1.</strong> Yapmanız gereken ilk şey, Raspberry Pi'nizin sürümü için <a href="https://www.pifi.org/downloads">PiFi OpenWrt imajını indirmektir</a>.</p>
+<p>Bu imajı bir SD karta veya başka bir depolama cihazına yazıp Pi'nize takacaksınız.</p>
+<h3>İmajı SD Kartınıza Yazma</h3>
+<p><strong>2.</strong> PiFi imajını bilgisayarınıza kaydettikten sonra, artık onu bir SD Karta veya USB sürücüye yazabiliriz.</p>
+<p>Bu rehber için <a href="https://www.raspberrypi.com/software/">Raspberry Pi Imager'ı kullanacağız</a>. Tam olarak aynı adımları takip etmek istiyorsanız, rehbere devam etmeden önce bu aracı indirip kurun.</p>
+<p><strong>4.</strong> Raspberry Pi imager artık açıkken, &quot;<code>CHOOSE OS</code>&quot; düğmesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-01-Open-Choose-OS-menu.jpg" alt="Choose OS menüsünü açma" /></p>
+<p><strong>5.</strong> Açılan iletişim kutusunda, en alta kaydırıp &quot;<code>Use custom</code>&quot; seçeneğine <code>tıklamanız</code> gerekir.</p>
+<p>Bu seçeneğe tıklamak, Raspberry Pi'nizin SD Kartına yazmak istediğiniz PiFi imajını seçebileceğiniz bir iletişim kutusu açacaktır.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-02-Use-Custom-Image-Option.jpg" alt="Raspberry Pi için Özel PiFi OpenWRT İmajını Seçme" /></p>
+<p><strong>6.</strong> Ardından, &quot;<code>CHOOSE STORAGE</code>&quot; düğmesine <code>tıklayın</code> ve PiFi imajını yazmak istediğiniz sürücüyü seçin.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-03-Choose-Storage-to-write-PiFi-to.jpg" alt="PiFi'yi Yazmak İçin Depolama Cihazı Seçme" /></p>
+<p><strong>7.</strong> PiFi imajı seçiliyken, imajı yazmaya başlamak için &quot;<code>Next</code>&quot; düğmesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-04-Proceed-Writing-image.jpg" alt="Raspberry Pi SD Kartına PiFi Yazmaya Devam Etme" /></p>
+<p><strong>8.</strong> Bu imaja işletim sistemi özelleştirmesi uygulamak isteyip istemediğiniz sorulabilir.</p>
+<p>Bu imaj, Raspberry Pi'niz için OpenWrt'nin bir çatalı (fork) olduğundan, bu özelleştirmeler hiçbir işe yaramayacağından sadece &quot;<code>No</code>&quot; düğmesine <code>tıklayabilirsiniz</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-05-Dont-apply-OS-customisation.jpg" alt="Özelleştirme uygulamayın" /></p>
+<p><strong>9.</strong> Şimdi, PiFi imajını cihaza yazmanın SD karttaki tüm mevcut verileri sileceğine dair bir uyarı göreceksiniz.</p>
+<p>Devam etmek için &quot;<code>YES</code>&quot; düğmesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-06-Existing-Data-Warning.jpg" alt="Mevcut veri uyarısı" /></p>
+<h3>Yeni Raspberry Pi PiFi Wi-Fi Yönlendiricinize Bağlanma</h3>
+<p><strong>10.</strong> PiFi destekli yeni Raspberry Pi Wi-Fi yönlendiricinizi kontrol etmek için, resmi PiFi uygulamasını mobil cihazınıza indirmeniz gerekecek.</p>
+<p>Ekip, hem <a href="https://apps.apple.com/app/pifi-router-for-raspberry-pi/id6504454741">Android</a> hem de <a href="https://play.google.com/store/apps/details?id=com.pifi.piapp">iOS cihazları</a> için uygulama sürümleri sunuyor.</p>
+<p><strong>11.</strong> Uygulamayı indirip başlattıktan sonra, sizi aşağıdaki karşılama ekranı karşılayacaktır.</p>
+<p>Pi-Fi kurulumuna başlamak için &quot;<code>Get Started</code>&quot; düğmesine <code>dokunun</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-07-Get-Started-with-PiFi.jpg" alt="Raspberry Pi'nizde PiFi'ye Bağlanma" /></p>
+<p><strong>12.</strong> Bir sonraki adım, PiFi destekli Raspberry Pi yönlendiriciniz için Wi-Fi bölgesini seçmektir.</p>
+<p>Örneğin, bizim durumumuzda &quot;<code>Australia</code>&quot; seçeneğini seçtik.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-08-Select-region.jpg" alt="PiFi için bölge seçme" /></p>
+<p><strong>13.</strong> Bu bir sonraki ekran, kurulum sürecine devam etmek için telefonunuzun &quot;<code>PiFi</code>&quot; Wi-Fi ağına geçmenizi isteyecektir.</p>
+<p>Bu ekran, bu Wi-Fi ağı için varsayılan şifreyi de gösterecektir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-09-Default-PiFi-Password.jpg" alt="PiFi Wi-Fi yönlendiricisi için varsayılan şifre" /></p>
+<p><strong>14.</strong> Telefonunuzun Wi-Fi ayarlarına geçtiğinizde, listede yeni bir ağın belirdiğini görmelisiniz.</p>
+<p>Örneğimizde, kurulum ağının &quot;<code>PiFi 5 Setup</code>&quot; olarak adlandırıldığını görebilirsiniz. Ağa dokunun ve ardından varsayılan şifreyi yazın. Bu, PiFi'yi ilk kez kurduğunuz için, bu &quot;<code>Raspberry314</code>&quot; olarak ayarlanmış olmalıdır.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-10-Select-Wi-Fi-network-to-connect.jpg" alt="Raspberry Pi PiFi WiFi'nize Bağlanma" /></p>
+<p><strong>15.</strong> Bu bir sonraki ekranda, yönetici hesabı için kullanılacak bir şifre girmeniz istenecektir (<strong>1.</strong>). Bu yönetici hesabı, PiFi'yi uygulama içinden yönetmek için kullanacağınız hesaptır.</p>
+<p>Bir şifre belirledikten sonra, &quot;<code>Set Admin Password</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-11-Set-Admin-Password.jpg" alt="Yönetici şifresi belirleme" /></p>
+<p><strong>16.</strong> Bu bir sonraki ekran, AdGuard Home ağ genelinde reklam engelleyiciyi etkinleştirmek isteyip istemediğinizi soracaktır.</p>
+<p>Bu korumayı etkinleştirmek için &quot;<code>Enable Protection</code>&quot; düğmesini seçin. Alternatif olarak, &quot;<code>Skip for now</code>&quot; düğmesine <code>dokunup</code> daha sonra kurabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-12-Enable-Adguard-Home-protection.jpg" alt="AdGuard Home'u Etkinleştirme" /></p>
+<p><strong>17.</strong> Son kurulum ekranı, Raspberry Pi'nizde PiFi Wi-Fi adaptörünü kullanıyorsanız, onu çıkarmanın bir fabrika ayarlarına sıfırlamaya neden olacağı konusunda sizi uyaracaktır.</p>
+<p>Bunu anladıktan sonra, &quot;<code>Got it!</code>&quot; düğmesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-13-Removing-USB-warning.jpg" alt="USB çıkarma uyarısı" /></p>
+<p><strong>18.</strong> Artık Raspberry Pi OpenWrt tabanlı Wi-Fi yönlendiricinizi başarıyla kurmuş oldunuz.</p>
+<p>Ana uygulamaya erişim sağlamak için &quot;<code>Continue</code>&quot; düğmesine <code>dokunun</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-14-PiFi-is-Ready.jpg" alt="OpenWRT PiFi WiFi Yönlendiriciniz Hazır" /></p>
+<p><strong>19.</strong> Raspberry Pi'nizde PiFi'yi kurduktan sonra yapmak isteyeceğiniz ilk şey, varsayılan ağı güncellemektir.</p>
+<p>Ekranınızın üstünde bunu yapmanız için sizi uyaran bir bildirim görmelisiniz. Devam etmek için bu bildirime dokunun.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-15-Update-default-network-warning.jpg" alt="Varsayılan ağ seçeneklerini güncelleme uyarısı" /></p>
+<p><strong>20.</strong> Bu ekranda, artık yeni bir Wi-Fi ağ adı ve şifre belirleyebilirsiniz (<strong>1.</strong>).</p>
+<p>Bu bilgileri belirlemekten memnun olduğunuzda, &quot;<code>Update</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/09/Raspberry-Pi-PiFi-16-Set-new-WiFi-name-and-password.jpg" alt="Yeni wifi adı ve şifresi belirleme" /></p>
+<h2>Sonuç</h2>
+<p>Umarız bu noktada, PiFi dağıtımı sayesinde Raspberry Pi'nizde OpenWrt tabanlı bir seyahat yönlendiricisi çalışır durumdadır.</p>
+<p>Bu dağıtım, Raspberry Pi'nizi minimum çabayla son derece taşınabilir bir yönlendirici olarak kurmanın harika bir yoludur. Uygulama tabanlı yaklaşım, hareket halindeyken de yönetimini kolaylaştırır.</p>
+<p>Bu yazılımı Pi'nize kurarken herhangi bir sorunla karşılaştıysanız, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-pifi.html&amp;text=PiFi+ile+Raspberry+Pi%27yi+Wi-Fi+Y%C3%B6nlendiriciye+D%C3%B6n%C3%BC%C5%9Ft%C3%BCrme" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-pifi.html&amp;text=PiFi+ile+Raspberry+Pi%27yi+Wi-Fi+Y%C3%B6nlendiriciye+D%C3%B6n%C3%BC%C5%9Ft%C3%BCrme" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-pifi.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-pifi.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-pifi.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-pifi.html&amp;title=PiFi+ile+Raspberry+Pi%27yi+Wi-Fi+Y%C3%B6nlendiriciye+D%C3%B6n%C3%BC%C5%9Ft%C3%BCrme" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=PiFi+ile+Raspberry+Pi%27yi+Wi-Fi+Y%C3%B6nlendiriciye+D%C3%B6n%C3%BC%C5%9Ft%C3%BCrme%20codenfast.com%2Fposts%2Fraspberry-pi-pifi.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

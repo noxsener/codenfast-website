@@ -1,0 +1,319 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;ye Navidrome Kurulumu ve Çalıştırılması - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Açık kaynaklı ve kendi kendine barındırılan bir müzik akış yazılımı"/>
+    <meta property="og:title" content="Raspberry Pi&#39;ye Navidrome Kurulumu ve Çalıştırılması"/>
+    <meta property="og:description"
+          content="Açık kaynaklı ve kendi kendine barındırılan bir müzik akış yazılımı"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-navidrome.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-navidrome.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2023/12/Raspberry-Pi-Navidrome-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;ye Navidrome Kurulumu ve Çalıştırılması"/>
+    <meta name="twitter:description"
+          content="Açık kaynaklı ve kendi kendine barındırılan bir müzik akış yazılımı"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2023/12/Raspberry-Pi-Navidrome-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'ye Navidrome Kurulumu ve Çalıştırılması","item":{"@id":"https://codenfast.com/posts/raspberry-pi-navidrome.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/12/Raspberry-Pi-Navidrome-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/12/Raspberry-Pi-Navidrome-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/12/Raspberry-Pi-Navidrome-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/12/Raspberry-Pi-Navidrome-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/12/Raspberry-Pi-Navidrome-01-Create-Admin-Account.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/12/Raspberry-Pi-Navidrome-01-Create-Admin-Account.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/12/Raspberry-Pi-Navidrome-02-Navidrome-running-on-the-Raspberry-Pi.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/12/Raspberry-Pi-Navidrome-02-Navidrome-running-on-the-Raspberry-Pi.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'ye Navidrome Kurulumu ve Çalıştırılması","description":"Açık kaynaklı ve kendi kendine barındırılan bir müzik akış yazılımı","image":["https://pimylifeup.com/wp-content/uploads/2023/12/Raspberry-Pi-Navidrome-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:03:52.636895+03:00","dateModified":"2026-08-03T12:03:52.636921+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;ye Navidrome Kurulumu ve Çalıştırılması</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-navidrome/">PiMyLifeUp - Installing and Running Navidrome on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'nize Navidrome'u nasıl kuracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/12/Raspberry-Pi-Navidrome-Thumbnail.jpg" alt="Raspberry Pi Navidrome" /></p>
+<p><a href="https://www.navidrome.org/">Navidrome</a>, açık kaynaklı bir müzik sunucusu ve akış yazılımıdır (streamer). Bu yazılımı, Spotify ve Apple Music gibi hizmetlere kendi müzik dosyalarınız için kendi kendine barındırılan bir alternatif olarak düşünebilirsiniz.</p>
+<p>Bu müzik akış yazılımı, kullanımı kolay web arayüzü ve harika uygulama desteği sayesinde müzik çalma listelerinizi başkalarıyla kolayca paylaşmanıza bile olanak tanır.</p>
+<p>Bu Navidrome müzik sunucusu, Raspberry Pi'nizde müzik dosyalarınızı tarayarak ve bir kitaplık oluşturarak çalışır. Ardından web arayüzü veya uyumlu bir istemci aracılığıyla müziğinizi çalma listelerine ayırabilirsiniz.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-plex-server/">Plex Medya Sunucusu</a> gibi, Navidrome de müziğiniz için kapak resmi almaya çalışacaktır. Kapak resmi bulmaya yardımcı olmak için, dosyanın doğru adlandırıldığından veya müzik sunucusunun alabileceği meta verilere sahip olduğundan emin olun.</p>
+<h2>Raspberry Pi'ye Navidrome Kurulumu</h2>
+<p>Aşağıdaki bölümlerde, Raspberry Pi'nize Navidrome'u nasıl kurup çalıştıracağınızı göstereceğiz.</p>
+<p>Bu müzik sunucusunu kolayca çalışır hale getirmek için Docker'dan yararlanacağız. Docker kullanarak, bir web sunucusu kurma ve çeşitli bağımlılıkları sürdürme konusunda stres yapmamıza gerek kalmaz.</p>
+<h3>Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> Daha ileri gitmeden önce, <a href="https://pimylifeup.com/raspberry-pi-docker/">Raspberry Pi'nize Docker'ı kurup ayarlamanız gerekiyor</a>. Pi'mizde Navidrome'u çalıştırmak için kullanacağımız şey Docker'dır.</p>
+<p>Beklediğimiz gibi çalışması için her şeyi kurmak amacıyla yukarıda bağlantısını verdiğimiz rehbere tıklayıp takip edin.</p>
+<p><strong>2.</strong> Docker'ı kurduktan sonra, Navidrome müzik sunucusu için compose dosyamızı saklamak amacıyla bir dizin oluşturmaya geçebiliriz.</p>
+<p>Bu klasörü, terminalde aşağıdaki komutu kullanarak oluşturabilirsiniz.</p>
+<pre><code>sudo mkdir -p /opt/stacks/navidrome/data
+</code></pre>
+<p>&quot;<code>-p</code>&quot; etiketini kullanarak, <a href="https://pimylifeup.com/mkdir-command-linux/">mkdir komutuna</a> verilen yol içinde eksik olan herhangi bir dizini oluşturmasını söylüyoruz.</p>
+<p><strong>3.</strong> Ardından, yolun &quot;<code>data</code>&quot; kısmının root değil, mevcut kullanıcınıza ait olduğundan emin olmalıyız.</p>
+<p>Bunu, o dizinde <a href="https://pimylifeup.com/chown-command/">chown komutunu</a> kullanarak yapabiliriz.</p>
+<pre><code>sudo chown $USER: /opt/stacks/navidrome/data
+</code></pre>
+<p><strong>4.</strong> Ardından, oluşturduğumuz dizine geçmeniz gerekiyor.</p>
+<p>Raspberry Pi OS gibi bir Linux sisteminde dizinleri <a href="https://pimylifeup.com/cd-command/">cd komutunu kullanarak</a> değiştirebilirsiniz.</p>
+<pre><code>cd /opt/stacks/navidrome
+</code></pre>
+<h3>Raspberry Pi'de Navidrome İçin Compose Dosyasını Yazma</h3>
+<p><strong>5.</strong> &quot;<code>navidrome</code>&quot; dizinimiz içinde, Navidrome için bir Docker Compose dosyası yazmak isteyeceğiz.</p>
+<p>Bu dosya, Docker'a Raspberry Pi'mizde Navidrome imajını nasıl indirip çalıştırması gerektiğini söyler.</p>
+<p>Bu dosyayı yazmaya, aşağıdaki komutu kullanarak başlayabilirsiniz. Daha kolay metin tabanlı editörlerden biri olduğundan <a href="https://pimylifeup.com/nano-text-editor/">nano metin editörünü</a> kullanıyoruz.</p>
+<pre><code>sudo nano compose.yaml
+</code></pre>
+<p>Pi'nizde Docker Compose dosyalarını yönetmenin daha iyi bir yolunu istiyorsanız, <a href="https://pimylifeup.com/raspberry-pi-dockge/">Dockge'ye göz atmanızı</a> şiddetle tavsiye ederiz.</p>
+<p><strong>6.</strong> Şimdi, bu dosyanın içine aşağıdaki satırları yazın.</p>
+<p>&quot;<code>&lt;PATHTOMUSIC&gt;</code>&quot; kısmını müziğinizin saklandığı yolla değiştirmelisiniz. Bu dizin hangisi olursa olsun, kullanıcınızın buna okuma erişimi olmalıdır.</p>
+<pre><code>version: &quot;3&quot;
+services:
+  navidrome:
+    image: deluan/navidrome:latest
+    user: 1000:1000
+    ports:
+      - &quot;4533:4533&quot;
+    restart: unless-stopped
+    environment:
+      ND_SCANSCHEDULE: 1h
+      ND_LOGLEVEL: info
+      ND_SESSIONTIMEOUT: 24h
+      ND_BASEURL: &quot;&quot;
+    volumes:
+      - &quot;./data:/data&quot;
+      - &quot;&lt;PATHTOMUSIC&gt;:/music:ro&quot;
+</code></pre>
+<p><strong>7.</strong> Yukarıdaki satırları yazdıktan sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code> ve son olarak <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<h3>Navidrome Müzik Sunucusunu Başlatma</h3>
+<p><strong>8.</strong> Compose dosyası yazıldıktan sonra, Raspberry Pi'nizde Navidrome müzik sunucusunu başlatmak, aşağıdaki komutu çalıştırmak kadar basittir.</p>
+<p>Docker'ın terminal oturumundan ayrılıp arka planda çalışması için &quot;<code>-d</code>&quot; seçeneğini kullanıyoruz.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<p>Komutu çalıştırdıktan sonra, Docker Navidrome imajını indirecek ve ona ilettiğimiz değişkenleri kullanarak başlatacaktır.</p>
+<h3>Navidrome Müzik Web Arayüzüne Erişim</h3>
+<p><strong>9.</strong> Navidrome müzik sunucunuza erişmek için, Raspberry Pi'nizin IP adresini bilmek isteyeceksiniz.</p>
+<p>Yerel IP adresini almanın en kolay yolu hostname komutunu kullanmaktır. Henüz yapmadıysanız, <a href="https://pimylifeup.com/raspberry-pi-static-ip-address/">Pi'nizi statik bir IP adresine</a> sahip olacak şekilde ayarlamayı ciddi ciddi düşünmelisiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>10.</strong> Raspberry Pi'nizin IP'sini öğrendikten sonra, favori web tarayıcınızda aşağıdaki adrese gitmek isteyeceksiniz.</p>
+<p>&quot;<code>&lt;IPADRESI&gt;</code>&quot; kısmını Pi'nizin IP'siyle değiştirdiğinizden emin olun.</p>
+<pre><code>http://&lt;IPADRESI&gt;:4533
+</code></pre>
+<p><strong>11.</strong> Navidrome web arayüzüne ilk kez eriştiğinizde, ilk kullanıcınızı oluşturmanız istenecektir.</p>
+<p>Bu kullanıcıya hatırlayacağınız bir isim ve güvenli bir şifre verin (<strong>1.</strong>). Bu kullanıcıyı daha sonra başkaları için kullanıcı oluşturmak amacıyla kullanabilirsiniz.</p>
+<p>Bir kullanıcı adı ve şifre yazdıktan sonra, kurulum deneyimini tamamlamak için &quot;<code>CREATE ADMIN</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/12/Raspberry-Pi-Navidrome-01-Create-Admin-Account.jpg" alt="Navidrome Admin Hesabı Oluşturma" /></p>
+<p><strong>12.</strong> Artık Navidrome web arayüzüne tam erişiminiz olmalıdır. Klasörünüze zaten müzik eklediyseniz, müzik sunucusu bunları otomatik olarak algılamış ve kitaplığınıza eklemiş olmalıdır.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/12/Raspberry-Pi-Navidrome-02-Navidrome-running-on-the-Raspberry-Pi.jpg" alt="Raspberry Pi'de Çalışan Navidrome" /></p>
+<h2>Raspberry Pi'nizde Navidrome'u Güncelleme</h2>
+<p>Navidrome'u resmi Docker konteyneri kullanarak kurmuş olmanız sayesinde, yazılımı güncellemek basittir.</p>
+<p>Bu bölüm, Raspberry Pi'nizde Navidrome müzik sunucusunun en son sürümünü Docker'ın indirip kullanmasını sağlamanın basit adımlarında size rehberlik edecek.</p>
+<p><strong>1.</strong> Öncelikle, Navidrome Docker Compose dosyasını yazdığınız dizine geri geçmemiz gerekiyor.</p>
+<p>Eğitimimizi tam olarak takip ettiyseniz, bu aşağıdaki komutu çalıştırmak kadar basit olmalı.</p>
+<pre><code>cd /opt/stacks/navidrome
+</code></pre>
+<p><strong>2.</strong> Doğru dizinde olduğumuzda, Navidrome imajının en son sürümünü çekmek için Docker Compose kullanabiliriz.</p>
+<p>Docker'ın en son sürümü indirmesini sağlamak, aşağıdaki komutu kullanmak kadar basittir.</p>
+<pre><code>docker compose pull
+</code></pre>
+<p><strong>3.</strong> Docker Navidrome'un yeni bir sürümünü indirse bile, hemen kullanmayacaktır.</p>
+<p>Docker'ın en son imaja güncellemesini sağlamak için aşağıdaki komutu kullanmamız gerekiyor. Navidrome'u başlattığında, mevcut imajı otomatik olarak kaldırıp yeni imaja geçirecektir.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h2>Sonuç</h2>
+<p>Umarız artık Raspberry Pi'nizde Navidrome müzik sunucusu çalışıyor olacaktır.</p>
+<p>Bu müzik sunucusu, tüm müziğinizi tek bir merkezi konumdan yayınlamanızı sağlar. API'si, müzik çalarların tüm işlevselliğine çok kolay bir şekilde bağlanmasına olanak tanır.</p>
+<p>Navidrome'u Pi'nizde çalışır hale getirme hakkında herhangi bir sorunuz veya endişeniz varsa, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-navidrome.html&amp;text=Raspberry+Pi%27ye+Navidrome+Kurulumu+ve+%C3%87al%C4%B1%C5%9Ft%C4%B1r%C4%B1lmas%C4%B1" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-navidrome.html&amp;text=Raspberry+Pi%27ye+Navidrome+Kurulumu+ve+%C3%87al%C4%B1%C5%9Ft%C4%B1r%C4%B1lmas%C4%B1" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-navidrome.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-navidrome.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-navidrome.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-navidrome.html&amp;title=Raspberry+Pi%27ye+Navidrome+Kurulumu+ve+%C3%87al%C4%B1%C5%9Ft%C4%B1r%C4%B1lmas%C4%B1" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27ye+Navidrome+Kurulumu+ve+%C3%87al%C4%B1%C5%9Ft%C4%B1r%C4%B1lmas%C4%B1%20codenfast.com%2Fposts%2Fraspberry-pi-navidrome.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

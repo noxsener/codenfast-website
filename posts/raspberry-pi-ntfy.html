@@ -1,0 +1,412 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;ye NTFY Push Bildirim Sunucusu Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Kendi kendine barındırılan bir push bildirim sunucusu"/>
+    <meta property="og:title" content="Raspberry Pi&#39;ye NTFY Push Bildirim Sunucusu Kurulumu"/>
+    <meta property="og:description"
+          content="Kendi kendine barındırılan bir push bildirim sunucusu"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-ntfy.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-ntfy.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-NTFY-Push-Notification-Server-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;ye NTFY Push Bildirim Sunucusu Kurulumu"/>
+    <meta name="twitter:description"
+          content="Kendi kendine barındırılan bir push bildirim sunucusu"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-NTFY-Push-Notification-Server-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'ye NTFY Push Bildirim Sunucusu Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-ntfy.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-NTFY-Push-Notification-Server-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-NTFY-Push-Notification-Server-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-NTFY-Push-Notification-Server-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-NTFY-Push-Notification-Server-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-ntfy-push-notification-server-01-Topic-Example.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-ntfy-push-notification-server-01-Topic-Example.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'ye NTFY Push Bildirim Sunucusu Kurulumu","description":"Kendi kendine barındırılan bir push bildirim sunucusu","image":["https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-NTFY-Push-Notification-Server-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:14:48.582865+03:00","dateModified":"2026-08-03T12:14:48.582898+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;ye NTFY Push Bildirim Sunucusu Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-ntfy/">PiMyLifeUp - Installing the NTFY Push Notification Server on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'nize NTFY'yi nasıl kurup çalıştıracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-NTFY-Push-Notification-Server-Thumbnail.jpg" alt="Raspberry Pi NTFY" /></p>
+<p>NTFY, telefonunuza veya web uygulaması üzerinden kolayca push bildirimleri göndermenizi sağlayan bir push bildirim sunucusudur.</p>
+<p>Kendi kendine barındırılan bir çözüm olduğundan, her şeyin çalışması için başka hizmetlere güvenmek zorunda kalmayacaksınız. Elbette, bu, <a href="https://ntfy.sh/">NTFY'yi</a> yerel bağlantınızın dışında kullanmak için ya port yönlendirmesi yapmanız ya da <a href="https://pimylifeup.com/raspberry-pi-tailscale/">Tailscale gibi bir hizmet</a> kullanmanız gerektiği anlamına gelir.</p>
+<p>Raspberry Pi'de NTFY kurmak nispeten basit bir süreçtir ve ekip, Pi'mizde çalışacak hem ARM7 hem de ARM64 derlemeleri sağlar.</p>
+<h2>Raspberry Pi'ye NTFY Kurulumu</h2>
+<p>Aşağıdaki bölümlerde, Raspberry Pi'nize NTFY push bildirim sunucusunu nasıl kuracağınızı göstereceğiz.</p>
+<p>Bu adımlar, resmi paket deposunu ekleme, sunucuyu kurma ve yapılandırmayı içerir.</p>
+<h3>NTFY İçin Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> Yapmamız gereken ilk şey paket listelerini güncellemek ve güncel olmayan tüm paketleri yükseltmektir.</p>
+<p>Her iki görevi de aşağıdaki iki komutu kullanarak gerçekleştirebilirsiniz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>2.</strong> Devam etmeden önce, sistemimizde curl paketinin mevcut olduğundan emin olmamız gerekiyor. GPG anahtarını Raspberry Pi'mize kaydetmek ve NTFY sunucusunu test etmek için curl kullanacağız.</p>
+<p>curl'u kurmak için, terminalde aşağıdaki komutu kullanmalısınız.</p>
+<pre><code>sudo apt install curl
+</code></pre>
+<h3>NTFY Paket Deposunu Ekleme</h3>
+<p><strong>3.</strong> NTFY paket deposunu eklemeden önce, GPG anahtarını almalı ve anahtar zincirimize (keyring) kaydetmeliyiz.</p>
+<p>GPG anahtarı, paket yöneticisinin paketlerin gerçekten depodan geldiğini doğrulamasını sağlar. Sahte bir paket indirme olasılığını azaltmaya yardımcı olur.</p>
+<pre><code>curl -fsSL https://archive.heckel.io/apt/pubkey.txt | sudo gpg --dearmor -o /etc/apt/keyrings/archive.heckel.io.gpg
+</code></pre>
+<p><strong>4.</strong> NTFY için GPG anahtarı Raspberry Pi'mize kaydedildikten sonra, artık depoyu kaynaklarımıza ekleyebiliriz.</p>
+<p>Bu komut, 32-bit veya 64-bit bir işletim sistemi çalıştırmanıza bağlı olarak hafifçe farklılık gösterir.</p>
+<p><strong>64-bit İşletim Sistemleri İçin</strong></p>
+<pre><code>echo &quot;deb [arch=arm64 signed-by=/etc/apt/keyrings/archive.heckel.io.gpg] https://archive.heckel.io/apt debian main&quot; | sudo tee  /etc/apt/sources.list.d/archive.heckel.io.list
+</code></pre>
+<p><strong>32-bit İşletim Sistemleri İçin</strong></p>
+<pre><code>echo &quot;deb [arch=armhf signed-by=/etc/apt/keyrings/archive.heckel.io.gpg] https://archive.heckel.io/apt debian main&quot; | sudo tee  /etc/apt/sources.list.d/archive.heckel.io.list
+</code></pre>
+<p><strong>5.</strong> Mevcut paket depolarında değişiklik yaptığımızdan, aşağıdaki komutu çalıştırmamız gerekiyor.</p>
+<p>Bu komut, her paket kaynağından en son paket listelerini alacaktır.</p>
+<pre><code>sudo apt update
+</code></pre>
+<h3>Paket Deposundan Raspberry Pi'nize NTFY Kurulumu</h3>
+<p><strong>6.</strong> Sonunda Raspberry Pi'mize NTFY push bildirim sunucusunu kurabileceğimiz noktaya geldik.</p>
+<p>Bu yazılımı kurmak artık aşağıdaki komutu çalıştırmak kadar basittir.</p>
+<pre><code>sudo apt install ntfy
+</code></pre>
+<h3>NFTY'yi Yapılandırma</h3>
+<p><strong>7.</strong> İşleri biraz kolaylaştırmak için, orijinal NTFY yapılandırmasını yedekleyeceğiz.</p>
+<p>Raspberry Pi'mizde NTFY için sıfırdan yeni bir yapılandırma dosyası oluşturacağız. Ancak, size hangi başka ayarların mevcut olduğunu öğrenmeniz gerektiğinde eskisine sahip olmak iyidir.</p>
+<p>Aşağıda gösterildiği gibi mv komutunu kullanarak yapılandırma dosyasının bir yedeğini oluşturun.</p>
+<pre><code>sudo mv /etc/ntfy/server.yml /etc/ntfy/server.bkup
+</code></pre>
+<p><strong>8.</strong> Eski sunucu yapılandırmasını kenara aldıktan sonra, artık kendimizinkini yazmaya başlayabiliriz.</p>
+<p>Aşağıdaki komutu kullanarak yeni bir &quot;<code>server.yml</code>&quot; dosyası oluşturun.</p>
+<pre><code>sudo nano /etc/ntfy/server.yml
+</code></pre>
+<p><strong>a.</strong> Bu yapılandırma dosyasına eklememiz gereken ilk satır, temel URL'yi tanımlayan satırdır.</p>
+<p>Buradaki değer, Raspberry Pi'nizde NTFY'yi nasıl kurmayı planladığınıza bağlıdır.</p>
+<p>Örneğin, bir alan adı kullanıyorsanız, şuna benzer bir şey kullanırsınız: &quot;<code>https://notify.pimylifeup.com</code>&quot;.</p>
+<p>Aksi takdirde, statik bir IP adresi kullanıyorsanız, bunun yerine &quot;<code>http://192.168.0.132</code>&quot; gibi bir temel URL kullanırsınız.</p>
+<p>Kurulumunuz için hangi değerin en iyi çalışacağını belirledikten sonra, &quot;<code>&lt;YOURDOMAIN&gt;</code>&quot; kısmını bu değerle değiştirin.</p>
+<pre><code>base-url: &quot;&lt;YOURDOMAIN&gt;&quot;
+</code></pre>
+<p><strong>b.</strong> Ardından, NTFY sunucusunun dinlemesini istediğimiz portu belirtmemiz gerekiyor.</p>
+<p>Raspberry Pi'nizde başka bir şey çalışmıyorsa, güvenle &quot;<code>80</code>&quot; portuna sadık kalabilirsiniz. Aksi takdirde, lütfen bunu farklı bir port ile değiştirin ve not edin.</p>
+<pre><code>listen-http: &quot;:80&quot;
+</code></pre>
+<p><strong>c.</strong> Ayrıca NTFY'nin önbellek veritabanı dosyasını saklayacağı bir yer de belirtmeliyiz. Bu, push bildirim sunucusu başladığında otomatik olarak oluşturulacak bir SQLite veritabanıdır.</p>
+<pre><code>cache-file: &quot;/var/cache/ntfy/cache.db&quot;
+</code></pre>
+<p><strong>d.</strong> Belirteceğimiz bir sonraki şey, NTFY'nin herhangi bir eki (attachment) saklayacağı dizindir. Bu, bir görsel veya başka bir tür ek içeren bir push bildirimi göndermek istiyorsanız gereklidir.</p>
+<pre><code>attachment-cache-dir: &quot;/var/cache/ntfy/attachments&quot;
+</code></pre>
+<p><strong>9.</strong> Aşağıda, nihai yapılandırmanın nasıl görünmesi gerektiğine dair bir örnek bulunmaktadır. Elbette, sizinki yapılandırma dosyasında yer tutucularımız yerine kendi değerlerinize sahip olacak.</p>
+<pre><code>base-url: &quot;&lt;YOURDOMAIN&gt;&quot;
+listen-http: &quot;:80&quot;
+cache-file: &quot;/var/cache/ntfy/cache.db&quot;
+attachment-cache-dir: &quot;/var/cache/ntfy/attachments&quot;
+</code></pre>
+<p><strong>10.</strong> Bu değişiklikleri, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak dosyaya kaydedebilirsiniz.</p>
+<h3>Raspberry Pi'de NTFY Sunucusunu Başlatma</h3>
+<p><strong>11.</strong> NTFY artık yapılandırıldığına göre, aşağıdaki komutu kullanarak NTFY sunucusunu başlatabiliriz.</p>
+<p>Bu komut, NTFY servisini başlatmak için systemctl kullanır.</p>
+<pre><code>sudo systemctl start ntfy
+</code></pre>
+<p><strong>12.</strong> NTFY artık çalışır durumda olduğuna göre, servisi etkinleştirmek isteyeceksiniz.</p>
+<p>Servisi etkinleştirerek, Raspberry Pi'niz başladığında NTFY push bildirim sunucusu da başlayacaktır.</p>
+<pre><code>sudo systemctl enable ntfy
+</code></pre>
+<h3>NTFY Push Bildirimlerini Test Etme</h3>
+<p><strong>13.</strong> Varsayılan olarak, NTFY web arayüzü üzerinden bildirim göndermek için herhangi bir kimlik doğrulama gerektirmez.</p>
+<p>Belirli bir konuya (topic) bir push bildirimi göndermek için, kullanmanız gereken tek şey aşağıdakidir. NTFY'nin bu şekilde çalışmaya devam etmesine izin vermeyi planlıyorsanız, konu adlarınızın kolayca tahmin edilemeyecek şekilde olmasını sağlamanız önerilir.</p>
+<pre><code>curl http://&lt;DOMAIN OR IP&gt;/&lt;TOPICNAME&gt; -d &quot;&lt;YOURTEXTHERE&gt;&quot;
+</code></pre>
+<p>Örneğin, &quot;<code>pimylifeup</code>&quot; konusuna &quot;<code>Hello World</code>&quot; mesajını göndermek isteseydiniz, aşağıdaki komutu kullanırdınız.</p>
+<pre><code>curl http://192.168.0.134:8080/pimylifeup -d &quot;Hello World&quot;
+</code></pre>
+<p><strong>14.</strong> Artık Raspberry Pi NTFY sunucunuzun yeni mesajınızı alıp almadığını aşağıdaki URL'ye giderek test edebilirsiniz.</p>
+<p>URL'ye giderek, NTFY'ye gönderilen tüm mesajları ve o konuya abone olan herhangi bir kullanıcıya neyin gönderilmiş olacağını görebilirsiniz.</p>
+<pre><code>http://&lt;DOMAIN OR IP&gt;/&lt;TOPICNAME&gt;
+</code></pre>
+<p><strong>15.</strong> Artık Raspberry Pi'nizde NTFY çalışıyor.</p>
+<p>HTTPS desteği ekleyerek bu işlevselliği daha da genişletebilirsiniz. Tarayıcı push bildiriminin işlev görmesi için HTTPS gereklidir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-ntfy-push-notification-server-01-Topic-Example.jpg" alt="Raspberry Pi NTFY Web Sunucusu Örneği" /></p>
+<h2>NTFY Kurulumunuza HTTPS Ekleme</h2>
+<p>Bu bölümde, Raspberry Pi'nizdeki NTFY kurulumunuza HTTPS desteğini nasıl ekleyebileceğinizi inceleyeceğiz.</p>
+<p>Bunu başarmanın iki yolu vardır. Biri yerleşik HTTPS desteğini kullanmak, diğeri ise bir ters proxy kullanmaktır. Bu bölümde, Caddy kullanarak ters proxy yolundan gideceğiz.</p>
+<p>Bir alan adınız yoksa, kendinden imzalı (self-signed) bir sertifika kullanmanız gerekecek. Bu sertifikalar, cihazınız bağlantıyı doğrulayamadığından NTFY kullanımında sorunlara neden olabilir.</p>
+<h3>Caddy Kurulumu</h3>
+<p><strong>1.</strong> <a href="https://pimylifeup.com/raspberry-pi-caddy-web-server/">Raspberry Pi'mize Caddy kurmadan</a> önce, önce paket listesini güncellememiz gerekiyor.</p>
+<p>Önceki adımları nispeten yakın bir zamanda takip ettiyseniz, bu adımı atlayabilirsiniz.</p>
+<pre><code>sudo apt update
+</code></pre>
+<p><strong>2.</strong> Caddy kurmak, aşağıdaki komutu kullanmak kadar kolaydır.</p>
+<p>Bu komut, resmi Raspberry Pi OS deposundan Caddy web sunucusunu alacaktır.</p>
+<pre><code>sudo apt install caddy
+</code></pre>
+<p><strong>3.</strong> Caddy kurulduktan sonra, varsayılan dosyayı temizleyelim. Bunu, kendi talimat setimizi kolayca ekleyebilmemiz için yapıyoruz.</p>
+<pre><code>sudo truncate /etc/caddy/Caddyfile -s 0
+</code></pre>
+<h3>NTFY İçin CaddyFile Oluşturma</h3>
+<p><strong>4.</strong> Şimdi, aşağıdaki komutu kullanarak Caddyfile'ı yazmaya başlayabilirsiniz. Kullanımı nispeten basit olduğundan nano metin editörünü kullanıyoruz.</p>
+<pre><code>sudo nano /etc/caddy/Caddyfile
+</code></pre>
+<p><strong>5.</strong> Raspberry Pi'nizde NTFY'yi nasıl kullanmayı planladığınıza bağlı olarak, bu adımlar hafifçe farklılık gösterecektir.</p>
+<ul>
+<li><strong>a –</strong> Bir alan adınız varsa bunu kullanın.</li>
+<li><strong>b –</strong> IP'nizi kullanmak istiyorsanız ve 80 ve 443 portları boşsa bir yöntem.</li>
+<li><strong>c –</strong> Son yöntem, NTFY'yi standart olmayan bir portta çalıştırmanız gerekiyorsa.</li>
+</ul>
+<p><strong>a.</strong> Kullandığınız bir alan adınız varsa ve zaten Raspberry Pi'nize yönlendirdiyseniz, aşağıdaki biçimi kullanabilirsiniz.</p>
+<p>&quot;<code>DOMAINNAMEHERE</code>&quot; kısmını kullanmayı planladığınız alan adıyla değiştirmelisiniz. Caddy, başladığında gereken sertifikayı otomatik olarak oluşturacaktır.</p>
+<pre><code>DOMAINNAMEHERE
+
+reverse_proxy:9090
+</code></pre>
+<p><strong>b.</strong> Bir alan adı kullanmıyorsanız ve bunun yerine bir IP'ye güveniyorsanız, kullanabileceğimiz alternatif bir yöntem var.</p>
+<p>Bu yöntemle, <strong>80</strong> ve <strong>443</strong> portlarının kullanılmaya hazır boş olduğunu varsayıyoruz. Bu blokta, &quot;<code>&lt;YOURIPADDRESS&gt;</code>&quot; kısmını ya yerel IP'nizle ya da harici IP'nizle değiştirmelisiniz.</p>
+<pre><code>https://&lt;YOURIPADDRESS&gt; {
+    reverse_proxy:9090
+}
+</code></pre>
+<p><strong>c.</strong> Bu son yapılandırma, Raspberry Pi'nizde NTFY'yi farklı bir port altında çalıştırırken kullanışlıdır.</p>
+<p>Bu yapılandırmayla, &quot;<code>YOURIPADDRESS</code>&quot; kısmını IP'nizle değiştirmelisiniz.</p>
+<p>Ayrıca, &quot;<code>PORT</code>&quot; kısmını NTFY'nin çalışmasını istediğiniz portla değiştirmelisiniz. Kullanılacak bir porta örnek &quot;<code>8443</code>&quot;tür.</p>
+<pre><code>{
+    auto_https disable_redirects
+}
+
+https://&lt;YOURIUPADDRESS&gt;:&lt;PORT&gt; {
+    reverse_proxy:9090
+}
+</code></pre>
+<p><strong>6.</strong> Bu dosyada değişiklik yaptıktan sonra, kaydedip çıkabilirsiniz. Nano kullanıyorsanız, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basabilirsiniz.</p>
+<h3>Proxy'ler İçin NTFY'yi Değiştirme</h3>
+<p><strong>7.</strong> Şimdi, &quot;9090&quot; portunu kullanması ve proxy'leri kullanacak şekilde yapılandırılması için NTFY'nin kendisini değiştirmemiz gerekecek.</p>
+<p>Aşağıdaki komutu kullanarak NTFY yapılandırma dosyasını açın.</p>
+<pre><code>sudo nano /etc/ntfy/server.yml
+</code></pre>
+<p><strong>8.</strong> Bu dosyanın içinde, &quot;<code>listen-http</code>&quot; seçeneğini güncelleyerek başlamalıyız.</p>
+<pre><code>listen-http: &quot;:80&quot;
+</code></pre>
+<p>Bulduktan sonra, aşağıdaki gibi görünecek şekilde güncelleyin. Bunu, NTFY'nin Raspberry Pi'mizde <code>9090</code> portuna bağlanması ve localhost'a kilitlenmesi için değiştiriyoruz.</p>
+<p>Tüm trafiğin NTFY ile etkileşim kurmak için proxy'miz üzerinden geçmesini istiyoruz.</p>
+<pre><code>listen-http: &quot;localhost:9090&quot;
+</code></pre>
+<p><strong>9.</strong> Ardından, dosyanın altına aşağıdaki satırı eklemelisiniz. Bu, davranışı değiştirir.</p>
+<pre><code>behind-proxy: true
+</code></pre>
+<p><strong>10.</strong> Bu değişiklikleri yaptıktan sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<h3>Raspberry Pi'nizde Caddy ve NTFY'yi Başlatma</h3>
+<p><strong>11.</strong> Sonunda Caddy ve NTFY'yi çalışır hale getirebileceğimiz noktaya geldik.</p>
+<p>Aşağıdaki komutu kullanarak NTFY servisini yeniden başlatarak bu sürece başlayalım.</p>
+<pre><code>sudo systemctl restart ntfy
+</code></pre>
+<p><strong>12.</strong> Bu başarıyla yeniden başladıysa, bir sonraki adımımız aşağıdaki komutu çalıştırarak Caddy'yi yeniden başlatmaktır.</p>
+<pre><code>sudo systemctl restart caddy
+</code></pre>
+<p>Bu komutu çalıştırdıktan sonra bir hatayla karşılaşırsanız, Raspberry Pi'nizi yeniden başlatmayı deneyin.</p>
+<h3>Yeni Değişikliklerinizi Test Etme</h3>
+<p><strong>13.</strong> Aşağıdaki komutu kullanarak NTFY sunucumuza tekrar yeni bir push bildirimi göndermeyi deneyelim.</p>
+<p>Bilgileri kendi sunucunuzunkilerle doldurduğunuzdan emin olun. Kendinden imzalı bir sertifika kullanıyorsanız, bunun çalışması için &quot;<code>-k</code>&quot; seçeneğini kullanmanız gerekebilir.</p>
+<pre><code>curl https://&lt;DOMAIN OR IP&gt;/&lt;TOPICNAME&gt; -d &quot;&lt;YOURTEXTHERE&gt;&quot;
+</code></pre>
+<p>Örneğin, &quot;<code>pimylifeup</code>&quot; konusuna &quot;<code>Hello World</code>&quot; mesajını göndermek isteseydiniz, aşağıdaki komutu kullanırdınız.</p>
+<pre><code>curl http://192.168.0.134:8443/pimylifeup -d &quot;Hello World&quot;
+</code></pre>
+<h2>Sonuç</h2>
+<p>Umarız bu eğitimin bu noktasında, Raspberry Pi'nizde NTFY çalışıyor olacaktır.</p>
+<p>Bu, kendi push bildirim sunucunuzu kolayca kurup çalıştırmanızı sağlayan kullanışlı bir yazılımdır. Her şeyin çalışması için üçüncü taraf bir sunucuya bağımlı olmayacaksınız.</p>
+<p>Bir Raspberry Pi'de NTFY çalıştırma hakkında sorularınız varsa, lütfen aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-ntfy.html&amp;text=Raspberry+Pi%27ye+NTFY+Push+Bildirim+Sunucusu+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-ntfy.html&amp;text=Raspberry+Pi%27ye+NTFY+Push+Bildirim+Sunucusu+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-ntfy.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-ntfy.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-ntfy.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-ntfy.html&amp;title=Raspberry+Pi%27ye+NTFY+Push+Bildirim+Sunucusu+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27ye+NTFY+Push+Bildirim+Sunucusu+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-ntfy.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de Sesli Kitap ve Podcast Kitaplığınızı Barındırma - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Sesli kitap ve podcast kitaplıklarınızı kolayca kendi kendinize barındırın"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de Sesli Kitap ve Podcast Kitaplığınızı Barındırma"/>
+    <meta property="og:description"
+          content="Sesli kitap ve podcast kitaplıklarınızı kolayca kendi kendinize barındırın"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-audiobookshelf.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-audiobookshelf.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2025/01/Raspberry-Pi-Audiobookshelf-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de Sesli Kitap ve Podcast Kitaplığınızı Barındırma"/>
+    <meta name="twitter:description"
+          content="Sesli kitap ve podcast kitaplıklarınızı kolayca kendi kendinize barındırın"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2025/01/Raspberry-Pi-Audiobookshelf-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de Sesli Kitap ve Podcast Kitaplığınızı Barındırma","item":{"@id":"https://codenfast.com/posts/raspberry-pi-audiobookshelf.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2025/01/Raspberry-Pi-Audiobookshelf-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2025/01/Raspberry-Pi-Audiobookshelf-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2025/01/Raspberry-Pi-Audiobookshelf-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2025/01/Raspberry-Pi-Audiobookshelf-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2025/01/Raspberry-Pi-Audiobookshelf-01-Create-new-user.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2025/01/Raspberry-Pi-Audiobookshelf-01-Create-new-user.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2025/01/Raspberry-Pi-Audiobookshelf-02-Login-to-interface.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2025/01/Raspberry-Pi-Audiobookshelf-02-Login-to-interface.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2025/01/Raspberry-Pi-Audiobookshelf-02a-Create-new-library.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2025/01/Raspberry-Pi-Audiobookshelf-02a-Create-new-library.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2025/01/Raspberry-Pi-Audiobookshelf-03-Add-First-Library.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2025/01/Raspberry-Pi-Audiobookshelf-03-Add-First-Library.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2025/01/Raspberry-Pi-Audiobookshelf-04-Auto-added-items.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2025/01/Raspberry-Pi-Audiobookshelf-04-Auto-added-items.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de Sesli Kitap ve Podcast Kitaplığınızı Barındırma","description":"Sesli kitap ve podcast kitaplıklarınızı kolayca kendi kendinize barındırın","image":["https://pimylifeup.com/wp-content/uploads/2025/01/Raspberry-Pi-Audiobookshelf-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T11:50:16.177756+03:00","dateModified":"2026-08-03T11:50:16.177784+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de Sesli Kitap ve Podcast Kitaplığınızı Barındırma</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-audiobookshelf/">PiMyLifeUp - Hosting your Audiobook and Podcast Library on a Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, audiobookshelf yazılımını kullanarak sesli kitap kitaplığınızı bir Raspberry Pi üzerinde nasıl kendi kendinize barındıracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2025/01/Raspberry-Pi-Audiobookshelf-Thumbnail.jpg" alt="Raspberry Pi Audiobookshelf" /></p>
+<p><a href="https://github.com/advplyr/audiobookshelf">Audiobookshelf</a>, tüm sesli kitaplarınızı ve podcast'lerinizi saklamak için bir yer sağlayan özel bir medya sunucusudur. Sesiniz için otomatik olarak meta veri ve kapak verisi getirmesiyle <a href="https://pimylifeup.com/raspberry-pi-plex-server/">Plex gibi diğer medya sunucularına</a> benzer.</p>
+<p>Audiobookshelf, kutudan çıktığı gibi ARM cihazlar için destek sunar, yani Raspberry Pi'mizi bu yazılımı çalıştırmak için kullanabiliriz.</p>
+<p>Raspberry Pi, 7/24 çalışır durumda tutması çok uygun fiyatlı olması sayesinde, sesli kitaplarınızı ve podcast'lerinizi kendi kendinize barındırmak için harika bir platformdur. Düşük güçlü olmasına rağmen, kitaplığınızı işlemek ve sunmak için hâlâ fazlasıyla yeterli performans vardır.</p>
+<p>Bu yazılımın, podcast'leri doğrudan arayüzü üzerinden arama ve indirme yeteneği gibi başka güzel özellikleri de var. Hatta ona bir RSS beslemesi (feed) verebilirsiniz ve yeni bölümler yayınlandıkça otomatik olarak indirecektir.</p>
+<p>Bunun yanı sıra, Audiobookshelf öncelikli olarak sesli kitaplarınızı saklamak için bir yer sağlamaya odaklansa da, e-Kitaplar için de bazı temel destekler sunar.</p>
+<p>Bu yazılımın yalnızca 64-bit cihazlar için derlemeler sunduğunu lütfen unutmayın. Audiobookshelf'i kullanmak için Raspberry Pi'nizde <a href="https://pimylifeup.com/raspberry-pi-64-bit/">64-bit bir işletim sistemi</a> çalıştırıyor olmanız gerekir.</p>
+<h2>Raspberry Pi'de Audiobookshelf Kurulumu ve Çalıştırılması</h2>
+<p>Sonraki birkaç bölümde, Audiobookshelf yazılımını Raspberry Pi'nize kurma ve çalıştırma sürecinde size rehberlik edeceğiz.</p>
+<p>Bu sürecin tamamı, geliştirme ekibinin bir ARM Docker konteyneri sağlaması sayesinde zahmetsiz hale getirilmiştir.</p>
+<h3>Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> Audiobookshelf'i kurmaya başlamadan önce, Raspberry Pi'mizin güncel olduğundan emin olmalıyız.</p>
+<p>Terminalde aşağıdaki komutları kullanarak güncel olmayan tüm paketleri güncelleyebilirsiniz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>2.</strong> Bir sonraki adımınız, makinenize Docker kurmaktır. Kurulum sürecini basitleştirdiğinden, Audiobookshelf'i yönetmek ve çalıştırmak için bir Docker konteyneri kullanacağız.</p>
+<p>Bunu daha önce kurmadıysanız, <a href="https://pimylifeup.com/raspberry-pi-docker/">Raspberry Pi'ye Docker kurma</a> rehberimizi şiddetle tavsiye ederiz.</p>
+<p><strong>3.</strong> Docker kurulduktan sonra, bir sonraki adımınız, Audiobookshelf'in meta verilerinin Raspberry Pi'nizde saklanacağı bir yer oluşturmaktır. Bu klasör aynı zamanda bu yazılımı yönetmek için kullanılacak Compose dosyasını da tutacağımız yerdir.</p>
+<p>Terminalde <a href="https://pimylifeup.com/mkdir-command-linux/">mkdir komutunu kullanarak</a> &quot;<code>/opt/stacks/audiobookshelf</code>&quot; konumunda bir dizin oluşturabilirsiniz.</p>
+<pre><code>sudo mkdir -p /opt/stacks/audiobookshelf
+</code></pre>
+<p><strong>4.</strong> Yukarıdaki dizini oluşturduktan sonra, <a href="https://pimylifeup.com/cd-command/">cd komutunu kullanarak</a> içine geçmek isteyeceksiniz. Eğitimin geri kalanı için bu klasörde olmamız gerekiyor.</p>
+<pre><code>cd /opt/stacks/audiobookshelf
+</code></pre>
+<h3>Bir Docker Compose Dosyası Oluşturma</h3>
+<p><strong>5.</strong> Compose dosyasını saklamak için bir yer ayarladığımıza göre, terminalde aşağıdaki komutu çalıştırarak Nano metin editörünü kullanarak yazmaya başlayabiliriz. Nano, başlangıç seviyesi için harika bir terminal tabanlı metin editörüdür.</p>
+<p>Bu dosya, Docker'ın Raspberry Pi'mizde Audiobookshelf konteynerini başlatmak için kullanacağı dosyadır.</p>
+<pre><code>sudo nano compose.yaml
+</code></pre>
+<p><strong>6.</strong> Bu Compose dosyasının içine, aşağıdaki satırları doldurmak isteyeceksiniz. Bu satırlar, Audiobookshelf'in Raspberry Pi'nizde nasıl çalıştırılacağını ve erişebileceği verileri belirleyecek.</p>
+<p>Ana makinenizdeki her sesli kitap veya podcast kitaplığı için bir volume belirlemek isteyeceksiniz. Bunları &quot;<code>volumes:</code>&quot; seçeneği altında şu biçimi kullanarak ayarlarsınız: &quot;<code>&lt;HOSTPATH&gt;:/&lt;LIBRARYNAME&gt;</code>&quot;.</p>
+<ul>
+<li><code>&lt;HOSTPATH&gt;</code><strong>:</strong> Bu, sesli kitap veya podcast kitaplığınızın ana makinenizde bulunduğu yoldur. Örneğin, bizimki &quot;<code>/home/pimylifeup/audiobooks</code>&quot; konumunda, bu yüzden kullanacağımız yol bu olacaktır.</li>
+<li><code>&lt;LIBRARYNAME&gt;</code><strong>:</strong> Sağ tarafta ise bunun Docker konteyneri içinde hangi yolda bulunması gerektiğidir. Genellikle, &quot;<code>audiobooks</code>&quot; gibi bu kitaplık için kullanmak istediğiniz adı belirtmek isteyeceksiniz.</li>
+</ul>
+<p>Tüm sesli kitap ve podcast kitaplıklarınızı belirledikten sonra, belirtmek isteyeceğiniz bir yer tutucu daha olacak.</p>
+<ul>
+<li>
+<p><code>&lt;TIMEZONE&gt;</code><strong>:</strong> Bu yer tutucu, saat dilimi tanımlayıcısıyla değiştirilmelidir. Bu <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">tanımlayıcıların bir listesini Wikipedia'da</a> bulabilirsiniz. Örneğin, yaşadığımız yere göre, bu değer için &quot;<code>Australia/Hobart</code>&quot; kullanırdık; siz kendi saat diliminizi (örn. &quot;<code>Europe/Istanbul</code>&quot;) kullanmalısınız.</p>
+<p>services:<br />
+audiobookshelf:<br />
+image: ghcr.io/advplyr/audiobookshelf:latest<br />
+ports:<br />
+- 13378:80<br />
+volumes:<br />
+- <HOSTPATH>:/<LIBRARYNAME><br />
+- ./config:/config<br />
+- ./metadata:/metadata<br />
+environment:<br />
+- TZ=<TIMEZONE><br />
+restart: unless-stopped</p>
+</li>
+</ul>
+<p>Örneğin, aşağıda bir podcast ve sesli kitap kitaplığı ekledikten sonra dosyanızın nasıl görünebileceği gösterilmektedir.</p>
+<pre><code>services:
+  audiobookshelf:
+    image: ghcr.io/advplyr/audiobookshelf:latest
+    ports:
+      - 13378:80
+    volumes:
+      - /home/pimylifeup/audiobooks:/audiobooks
+      - /home/pimylifeup/podcasts:/podcasts
+      - ./config:/config
+      - ./metadata:/metadata
+    environment:
+      - TZ=&lt;TIMEZONE&gt;
+    restart: unless-stopped
+</code></pre>
+<p><strong>7.</strong> Compose dosyasını doldurduktan sonra, <code>CTRL</code> + <code>X</code>, <code>Y</code> ve ardından <code>ENTER</code> tuşuna basarak Nano'dan <a href="https://pimylifeup.com/nano-save-exit/">kaydedip çıkabilirsiniz</a>.</p>
+<h3>Raspberry Pi'nizde AudioBookShelf'i Başlatma</h3>
+<p><strong>8.</strong> Raspberry Pi'mizde Audiobookshelf'i çalıştırmak için Docker kullanmanın önemli bir avantajı, yazılımı başlatmayı ve yönetmeyi çok kolay hale getirmesidir.</p>
+<p>Bu sesli kitap kitaplığını çalışır hale getirmek için şimdi yapmanız gereken tek şey, terminalde aşağıdaki komutu kullanmaktır. Docker, Audiobookshelf'in en son sürümünü hemen indirip başlatacaktır.</p>
+<p>Bu konteyneri başlatırken &quot;<code>-d</code>&quot; seçeneğini kullanıyoruz, böylece Docker başlatıldıktan sonra terminalden ayrılacaktır (detach).</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h3>Audiobookshelf Web Arayüzüne Erişim</h3>
+<p><strong>9.</strong> Favori web tarayıcınızda, Audiobookshelf web arayüzüne erişmek için aşağıdaki adrese gitmek isteyeceksiniz.</p>
+<p>Tek yapmanız gereken &quot;<code>&lt;IPADRESI&gt;</code>&quot; kısmını Raspberry Pi'nizin IP'siyle değiştirmektir. Bu eğitimi yerel olarak takip ediyorsanız, <a href="https://pimylifeup.com/raspberry-pi-ip-address/">Pi'nizin IP'sini</a> <a href="https://pimylifeup.com/hostname-command/">hostname komutunu</a> kullanarak alabilirsiniz.</p>
+<pre><code>http://&lt;IPADRESI&gt;:13378
+</code></pre>
+<h3>Kök (Root) Kullanıcıyla Oluşturma ve Giriş Yapma</h3>
+<p><strong>10.</strong> Audiobookshelf'i ilk kez kullandığınızda, bir kök (root) kullanıcı oluşturmanız istenecektir. Bu kullanıcının Raspberry Pi'nizdeki sesli kitap kitaplığınız üzerinde tam kontrolü vardır, bu yüzden güvenli bir şifre belirlediğinizden emin olun (<strong>1.</strong>).</p>
+<p>Bir kullanıcı adı ve şifre belirledikten sonra, &quot;<code>Submit</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2025/01/Raspberry-Pi-Audiobookshelf-01-Create-new-user.jpg" alt="Raspberry Pi Audiobookshelf için yeni kullanıcı oluşturma" /></p>
+<p><strong>11.</strong> Doğrudan giriş ekranına yönlendirileceksiniz.</p>
+<p>Yeni kullanıcınızın bilgilerini yazın (<strong>1.</strong>) ve ardından giriş yapmak için &quot;<code>Submit</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2025/01/Raspberry-Pi-Audiobookshelf-02-Login-to-interface.jpg" alt="audiobookshelf web arayüzüne giriş yapma" /></p>
+<h3>Raspberry Pi'nizde İlk Sesli Kitap veya Podcast Kitaplığınızı Ekleme</h3>
+<p><strong>12.</strong> Giriş yaptıktan sonra, &quot;<code>Libraries</code>&quot; sekmesine yönlendirileceksiniz. Şu anda Audiobookshelf medyanızın nerede olduğunu bilmiyor, bu yüzden bir kitaplık kurmamız gerekiyor.</p>
+<p>Bu yazılıma ilk kitaplığınızı eklemeye başlamak için, &quot;<code>Add your first library</code>&quot; düğmesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2025/01/Raspberry-Pi-Audiobookshelf-02a-Create-new-library.jpg" alt="Audiobookshelf'te yeni kitaplık oluşturma" /></p>
+<p><strong>13.</strong> Kitaplık ekranı artık açık olduğuna göre, yapmak isteyeceğiniz ilk şey medya türünü ayarlamaktır (<strong>1.</strong>). Sesli kitaplar veya e-Kitaplar için &quot;<code>Books</code>&quot;, podcast'ler için &quot;<code>Podcasts</code>&quot; kullanın.</p>
+<p>Medya türü ayarlandıktan sonra, bir sonraki adımınız kitaplığınız için bir isim belirlemektir (<strong>2.</strong>). Bizim durumumuzda, bunu içinde sakladığımız medya türüne göre adlandıracağız, yani &quot;<code>Audiobooks</code>&quot;.</p>
+<p>Bir sonraki adımınız, medyanızın saklandığı dizini belirtmektir. Bizim durumumuzda, daha önce Docker Compose dosyasında ayarladığımız için &quot;<code>/audiobooks</code>&quot; (<strong>3.</strong>) yolunu kullanıyoruz.</p>
+<p>Bu yeni kitaplığı kaydetmek için, &quot;<code>Save</code>&quot; düğmesine <code>tıklayın</code> (<strong>4.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2025/01/Raspberry-Pi-Audiobookshelf-03-Add-First-Library.jpg" alt="Raspberry Pi'nize ilk Sesli Kitap kitaplığınızı ekleme" /></p>
+<p><strong>14.</strong> Audiobookshelf, verilen klasörler içinde bulunan tüm sesli kitapları otomatik olarak tarayacaktır.</p>
+<p>İstediğiniz kadar kitaplık ekleyebilirsiniz; sadece ayrı klasörlere sahip olduklarından emin olun.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2025/01/Raspberry-Pi-Audiobookshelf-04-Auto-added-items.jpg" alt="Sesli kitap kitaplığı otomatik olarak taranıp eklendi" /></p>
+<h3>Son Adımlar</h3>
+<p><strong>15.</strong> Bu eğitimi bir adım öteye taşımak için, <a href="https://pimylifeup.com/docker-nginx-reverse-proxy/">Nginx reverse proxy gibi bir şey</a> kurmayı düşünebilirsiniz. Bu, kurulumunuza SSL gibi şeyler eklemeyi çok daha kolay bir işlem haline getirecektir.</p>
+<p>Port yönlendirme yapmak ve güvenlik duvarınızı açmak zorunda kalmaktan kaçınmayı tercih ederseniz, <a href="https://pimylifeup.com/raspberry-pi-tailscale/">Tailscale gibi</a> birçok başka harika çözüm de vardır. Tailscale, Raspberry Pi'niz ile aynı ağın üyesi olan diğer cihazlar arasında sorunsuz bir şekilde bir VPN oluşturmaya yardımcı olur.</p>
+<p>Bir diğer popüler seçenek ise kendi alan adınızı ve <a href="https://pimylifeup.com/raspberry-pi-cloudflare-tunnel/">bir Cloudflare Tunnel'ı</a> kullanmaktır.</p>
+<h2>Raspberry Pi'de Audiobookshelf'i Güncelleme</h2>
+<p><strong>1.</strong> Raspberry Pi'nizde Audiobookshelf'in en son sürümüne güncellemek için, bu rehberin başında Compose dosyasını yazdığımız dizine geçmeniz gerekir.</p>
+<p>Aşağıda gösterildiği gibi, terminalde cd komutunu kullanarak bu dizine geçebilirsiniz.</p>
+<pre><code>cd /opt/stacks/audiobookshelf
+</code></pre>
+<p><strong>2.</strong> Bu dosyaya geçtikten sonra, aşağıdaki komutu çalıştırarak sesli kitap kitaplığı yazılımının en son sürümünü çekmek için Docker kullanabilirsiniz.</p>
+<p>Bu komut, varsa daha yeni bir sürümü indirecektir. Ancak, henüz mevcut konteyneri güncellemeyecektir.</p>
+<pre><code>docker compose pull
+</code></pre>
+<p><strong>3.</strong> Docker'ın mevcut Audiobookshelf konteynerinizi en son sürüme taşımasını sağlamak için, yalnızca Docker Compose up komutunu yeniden çalıştırmanız yeterlidir.</p>
+<p>Bu komut, imajın yeni bir sürümünün mevcut olduğunu algılayacak ve zaten çalışan konteyneri bu yeni sürümü kullanarak yeniden başlatacaktır.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h2>Sonuç</h2>
+<p>Umarız bu eğitimin bu noktasında, Raspberry Pi'nizde Audiobookshelf'i başarıyla çalışır hale getirmişsinizdir.</p>
+<p>Bu yazılım, Sesli Kitap veya podcast kitaplıklarınızı kendi kendinize barındırmanın en iyi yollarından biridir. Kitaplığınızı düzenlemeyi kolaylaştırmaya yardımcı olan özelliklerle doludur.</p>
+<p>Audiobookshelf'i Pi'nizde çalıştırırken sorun yaşadıysanız, lütfen aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-audiobookshelf.html&amp;text=Raspberry+Pi%27de+Sesli+Kitap+ve+Podcast+Kitapl%C4%B1%C4%9F%C4%B1n%C4%B1z%C4%B1+Bar%C4%B1nd%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-audiobookshelf.html&amp;text=Raspberry+Pi%27de+Sesli+Kitap+ve+Podcast+Kitapl%C4%B1%C4%9F%C4%B1n%C4%B1z%C4%B1+Bar%C4%B1nd%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-audiobookshelf.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-audiobookshelf.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-audiobookshelf.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-audiobookshelf.html&amp;title=Raspberry+Pi%27de+Sesli+Kitap+ve+Podcast+Kitapl%C4%B1%C4%9F%C4%B1n%C4%B1z%C4%B1+Bar%C4%B1nd%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+Sesli+Kitap+ve+Podcast+Kitapl%C4%B1%C4%9F%C4%B1n%C4%B1z%C4%B1+Bar%C4%B1nd%C4%B1rma%20codenfast.com%2Fposts%2Fraspberry-pi-audiobookshelf.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;ye ZoneMinder Nasıl Kurulur - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Açık kaynaklı ve ücretsiz CCTV yazılımı"/>
+    <meta property="og:title" content="Raspberry Pi&#39;ye ZoneMinder Nasıl Kurulur"/>
+    <meta property="og:description"
+          content="Açık kaynaklı ve ücretsiz CCTV yazılımı"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-zoneminder.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-zoneminder.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-ZoneMinder-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;ye ZoneMinder Nasıl Kurulur"/>
+    <meta name="twitter:description"
+          content="Açık kaynaklı ve ücretsiz CCTV yazılımı"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-ZoneMinder-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'ye ZoneMinder Nasıl Kurulur","item":{"@id":"https://codenfast.com/posts/raspberry-pi-zoneminder.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-ZoneMinder-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-ZoneMinder-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-ZoneMinder-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-ZoneMinder-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-ZoneMinder-01-Privacy-Screen.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-ZoneMinder-01-Privacy-Screen.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-ZoneMinder-02-Add-Camera.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-ZoneMinder-02-Add-Camera.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-ZoneMinder-03-Camera-Menu-Settings.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-ZoneMinder-03-Camera-Menu-Settings.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-ZoneMinder-04-Camera-Source-Settings.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-ZoneMinder-04-Camera-Source-Settings.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'ye ZoneMinder Nasıl Kurulur","description":"Açık kaynaklı ve ücretsiz CCTV yazılımı","image":["https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-ZoneMinder-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:35:16.278317+03:00","dateModified":"2026-08-03T12:35:16.278339+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;ye ZoneMinder Nasıl Kurulur</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-zoneminder/">PiMyLifeUp - How to Install ZoneMinder on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'ye ZoneMinder'ı nasıl kuracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-ZoneMinder-Thumbnail.jpg" alt="Raspberry Pi ZoneMinder" /></p>
+<p>ZoneMinder, CCTV akışlarınızı tek bir yerden izlemenizi sağlayan ücretsiz, açık kaynaklı bir yazılımdır. Hepsinden iyisi, açık kaynaklı bir yazılım olması sayesinde çoğu analog veya IP kamerayı destekler.</p>
+<p>Raspberry Pi, özellikle fazla kameranız yoksa, nispeten düşük güçlü olması ve 7/24 çalışır bırakılabilmesi sayesinde ZoneMinder çalıştırmak için mükemmel bir seçimdir.</p>
+<p>ZoneMinder'dan en iyi şekilde yararlanmak için, kameralarınızın IP'lerini ve onlara nasıl bağlanılacağını bilmeniz gerekir. ZoneMinder'ın popülerliği sayesinde, genellikle kamera markanızın adını &quot;ZoneMinder&quot; ile arayarak bağlantı rehberleri bulabilirsiniz.</p>
+<p>Aşağıdaki bölümlerde, bir Raspberry Pi'de ZoneMinder'ı çalışır hale getirmek için gereken tüm yazılımı nasıl kuracağımızı ele alacağız.</p>
+<h2>Raspberry Pi'ye ZoneMinder Kurulumu</h2>
+<p>Bu bölüm, Raspberry Pi'de ZoneMinder'ı nasıl kurup hazırlayacağınızı gösterecek. Bu adımlar, <a href="https://pimylifeup.com/raspberry-pi-mysql/">MySQL sunucusu</a> ve <a href="https://pimylifeup.com/raspberry-pi-apache/">Apache web sunucusu</a> gibi diğer öğeleri kurmayı ve ayarlamayı içerir.</p>
+<p>Aşağıdaki bölümler tamamen komut satırı içinde olacaktır. Raspberry Pi OS Desktop kullanıyorsanız, klavyenizde <code>CTRL</code> + <code>ALT</code> + <code>T</code> tuşlarına basarak terminali açabilirsiniz.</p>
+<h3>Gerekli Paketleri Kurma</h3>
+<p><strong>1.</strong> Raspberry Pi'mize ZoneMinder ve bağımlılıklarını kurmadan önce, paket listesi önbelleğini güncellememiz gerekiyor.</p>
+<p>Bu liste önbelleğini terminalde aşağıdaki komutu kullanarak güncelleyebilirsiniz.</p>
+<pre><code>sudo apt update
+</code></pre>
+<p><strong>2.</strong> Paket listesi güncellemesi tamamlandıktan sonra, ihtiyaç duyduğumuz tüm yazılımları kurmaya geçebiliriz.</p>
+<p>Terminalde aşağıdaki komutu kullanarak Apache2, MariaDB ve lsb_release'i kurabilirsiniz.</p>
+<pre><code>sudo apt install apache2 mariadb-server
+</code></pre>
+<p><strong>3.</strong> Veritabanı sunucusunu kurduktan sonra, MySQL güvenli kurulum betiğini çalıştırmalısınız.</p>
+<p>Bu betik, veritabanı sunucusundan zayıf güvenlik ayarlarını kaldırmaya yardımcı olur.</p>
+<pre><code>sudo mysql_secure_installation
+</code></pre>
+<ol>
+<li>root kullanıcısı için şifre girmeniz istendiğinde, boş bırakın ve <code>ENTER</code> tuşuna basın.</li>
+<li>root kullanıcısı varsayılan olarak &quot;<code>unix_socket</code>&quot; kimlik doğrulamasını kullanacak şekilde yapılandırıldığından, &quot;<code>n</code>&quot; yazın ve ardından <code>ENTER</code> tuşuna basın.</li>
+<li>Ardından root şifresini değiştirmeniz istenecektir. &quot;<code>unix_socket</code>&quot; kullanıldığından, &quot;<code>n</code>&quot; yazın ve ardından <code>ENTER</code> tuşuna basın.</li>
+<li>Size sunulan diğer seçeneklerin geri kalanı için, &quot;<code>Y</code>&quot; yazın ve ardından <code>ENTER</code> tuşuna basın. Kalan seçenekler, veritabanı sunucunuzun güvenliğini artıracaktır.</li>
+</ol>
+<h3>Resmi Depodan ZoneMinder Kurulumu</h3>
+<p><strong>4.</strong> Raspberry Pi'mize resmi depodan ZoneMinder kurabilmek için, önce GPG anahtarını kaydetmemiz gerekiyor. Resmi depoyu kullanmanın avantajı, en son sürümü almanızdır.</p>
+<p>GPG anahtarını aşağıdaki komutu kullanarak sisteminize kaydedebilir ve saklayabilirsiniz.</p>
+<pre><code>curl -L https://zmrepo.zoneminder.com/debian/archive-keyring.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/zoneminder-archive-keyring.gpg &gt;/dev/null
+</code></pre>
+<p><strong>5.</strong> GPG anahtarı kaydedildikten sonra, ZoneMinder deposunu kaynak listesine eklemeye devam edebiliriz.</p>
+<p>Bu depoyu eklemek için, terminalde aşağıdaki komutu kullanın.</p>
+<pre><code>echo &quot;deb [signed-by=/usr/share/keyrings/zoneminder-archive-keyring.gpg] https://zmrepo.zoneminder.com/debian/master $(lsb_release -cs)/&quot; | sudo tee  /etc/apt/sources.list.d/zoneminder.list
+</code></pre>
+<p><strong>6.</strong> Kaynaklarımızda değişiklik yaptığımızdan, paket listesi önbelleğini güncellememiz gerekecek.</p>
+<p>Bu önbelleği aşağıdaki komutu kullanarak güncelleyebilirsiniz.</p>
+<pre><code>sudo apt update
+</code></pre>
+<p><strong>7.</strong> Depo eklendikten sonra, artık aşağıdaki komutu kullanarak Raspberry Pi'nize ZoneMinder kurabilirsiniz.</p>
+<p>Kurulum sırasında bu paket, ihtiyaç duyduğu şeylerin büyük çoğunluğunu kuracaktır. Buna, ZoneMinder'ın kullandığı veritabanlarının otomatik olarak oluşturulması da dahildir.</p>
+<pre><code>sudo apt install zoneminder
+</code></pre>
+<h3>Raspberry Pi'nizin Saat Dilimini Düzeltme</h3>
+<p><strong>7.</strong> Zoneminder yazılımı, Raspberry Pi'nizin saat diliminin yapılandırılmış olmasını gerektirir. Bu, hem cihazın kendisi hem de PHP için yapılandırılmalıdır.</p>
+<p>Raspberry Pi yapılandırma aracını kullanarak Pi'nin saat dilimini ayarlayarak başlayalım. Bu aracı aşağıdaki komutu kullanarak açabilirsiniz.</p>
+<pre><code>sudo raspi-config
+</code></pre>
+<p><strong>8.</strong> Araç içinde, &quot;<code>Localisation Options</code>&quot;a, ardından &quot;<code>Timezone</code>&quot;a gidin ve saat dilimini ayarlamak için yönergeleri takip edin.</p>
+<p>Bu menüde gezinmek için yukarı aşağı hareket etmek üzere <code>ARROW</code> (ok) tuşlarını, ardından bir seçeneği seçmek için <code>ENTER</code> tuşunu kullanabilirsiniz.</p>
+<p><strong>9.</strong> Bir sonraki adımımız, yapılandırma dosyalarını ayarlayarak PHP saat dilimini değiştirmektir.</p>
+<p>PHP'nin varsayılan sürümü işletim sistemine bağlı olarak değişebileceğinden, sürüm numarasını aşağıdaki satırı kullanarak alabiliriz.</p>
+<pre><code>PHP_VERSION=$(php -v | head -n 1 | tail -n 1 | cut -d &quot; &quot; -f 2 | cut -c 1-3)
+</code></pre>
+<p><strong>10.</strong> Artık PHP sürümü bir ortam değişkeninde saklandığına göre, doğru yapılandırma dosyasını kolayca düzenleyebiliriz.</p>
+<p>Aşağıdaki komutu kullanarak PHP'nin yapılandırma dosyasını değiştirmeye başlayın.</p>
+<pre><code>sudo nano /etc/php/$PHP_VERSION/apache2/php.ini
+</code></pre>
+<p><strong>11.</strong> Bu dosyanın içinde, aşağıdaki satırı bulmak isteyeceksiniz. Nano metin editörünü kullandığımızdan, <code>CTRL</code> + <code>W</code> kullanarak arama yapabilirsiniz.</p>
+<pre><code>;date.timezone =
+</code></pre>
+<p>Bulduktan sonra, bu değeri saat diliminize ayarlamak ve noktalı virgülü (<code>;</code>) kaldırmak isteyeceksiniz. Saat diliminiz için doğru değeri <a href="https://www.php.net/manual/en/timezones.php">PHP'nin desteklenen saat dilimleri listesini kullanarak</a> bulabilirsiniz.</p>
+<p>Örneğin, saat dilimini Avustralya'nın Hobart şehrine ayarlamak için aşağıdaki satırı kullanırdık.</p>
+<pre><code>date.timezone = Australia/Hobart
+</code></pre>
+<p><strong>12.</strong> Bitirdiğinizde, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<h3>ZoneMinder'a Bağlı Video Kameralara Erişim Verme</h3>
+<p><strong>13.</strong> ZoneMinder'ın Raspberry Pi'nize bağlı kameralara erişebilmesi için, &quot;<code>www-data</code>&quot; kullanıcısını &quot;<code>video</code>&quot; grubuna eklememiz gerekecek.</p>
+<p>&quot;<code>video</code>&quot; grubu, kullanıcılara bir web kamerası gibi bağlı cihazlara erişim vermek için kullanılır.</p>
+<p>Aşağıdaki komutu kullanarak &quot;<code>www-data</code>&quot; kullanıcısını &quot;<code>video</code>&quot; grubuna ekleyin.</p>
+<pre><code>sudo usermod -aG video www-data
+</code></pre>
+<h3>ZoneMinder Apache Yapılandırmasını Etkinleştirme</h3>
+<p><strong>14.</strong> Sonunda ZoneMinder Apache yapılandırmasını güvenle etkinleştirebileceğimiz noktaya geldik.</p>
+<p>ZoneMinder, Raspberry Pi'mizde kurulum sırasında doğru yapılandırma dosyalarını otomatik olarak oluşturdu. Sadece onları etkinleştirmemiz gerekiyor.</p>
+<p>ZoneMinder Apache yapılandırmasını etkinleştirmek için, aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo a2enconf zoneminder
+</code></pre>
+<p><strong>15.</strong> Apache yapılandırmamızı kurarken, ZoneMinder'ın Raspberry Pi'nizde çalışması için gereken dört modülü etkinleştirmeliyiz.</p>
+<p>Terminalde aşağıdaki üç komutu çalıştırarak gereken tüm bu modülleri etkinleştirebiliriz.</p>
+<pre><code>sudo a2enmod rewrite
+sudo a2enmod headers
+sudo a2enmod expires
+sudo a2enmod cgi
+</code></pre>
+<p><strong>16.</strong> Bir sonraki görevimiz Apache2'yi yeniden başlatmaktır, bu da aşağıdaki komutu kullanarak basitçe yapılabilir.</p>
+<pre><code>sudo systemctl restart apache2
+</code></pre>
+<h3>Raspberry Pi'de ZoneMinder Servisini Başlatma</h3>
+<p><strong>17.</strong> Raspberry Pi'mizde ZoneMinder'ı neredeyse tamamen çalışır hale getirdik.</p>
+<p>Sonraki birkaç adımımız, servisi açılışta başlayacak şekilde etkinleştirmeyi, ardından son olarak yazılımın kendisini başlatmayı içerecek.</p>
+<p>Cihazınız açıldığında ZoneMinder'ın otomatik olarak başlamasını etkinleştirmek için aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo systemctl enable zoneminder
+</code></pre>
+<p><strong>18.</strong> Şimdi, ZoneMinder kamera monitör yazılımını başlatmak için aşağıdaki komutu kullanın.</p>
+<pre><code>sudo systemctl start zoneminder
+</code></pre>
+<p><strong>19.</strong> Bu noktada, sonunda Raspberry Pi'nizde ZoneMinder çalışıyor. Artık çeşitli kameralarınızı izlemek için kullanılabilir.</p>
+<h2>ZoneMinder Web Arayüzüne Erişim</h2>
+<p>Artık Raspberry Pi'mize ZoneMinder kurulduğuna göre, artık temelde tamamen web arayüzü üzerinden yönetilmektedir.</p>
+<p>Bu bölüm, web arayüzüne nasıl erişeceğinizi gösterecek ve sizi kamera eklemeye yönlendirecek.</p>
+<p><strong>1.</strong> Web arayüzüne erişmek için, Raspberry Pi'nizin IP adresini bilmeniz gerekecek.</p>
+<p>IP adresini almanın en kolay yollarından biri, <a href="https://pimylifeup.com/hostname-command/">hostname komutunu kullanmaktır</a>.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>2.</strong> Cihazınızın IP adresini öğrendikten sonra, favori web tarayıcınızda aşağıdaki adrese gitmek isteyeceksiniz.</p>
+<p>&quot;<code>&lt;IPADDRESS&gt;</code>&quot; kısmını Raspberry Pi'nizin IP adresiyle değiştirin.</p>
+<pre><code>http://&lt;IPADRESI&gt;/zm
+</code></pre>
+<p><strong>3.</strong> ZoneMinder web arayüzünü ilk kez ziyaret ettiğinizde, bir gizlilik politikasını kabul etmeniz istenecektir.</p>
+<p>Metni okuyun ve kabul ediyorsanız, ekranın sol altındaki &quot;<code>APPLY</code>&quot; düğmesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-ZoneMinder-01-Privacy-Screen.png" alt="ZoneMinder Gizlilik Beyanını Kabul Etme" /></p>
+<p><strong>4.</strong> Artık sizi Raspberry Pi'nizin ZoneMinder gösterge paneli karşılayacak. Bu gösterge paneli, kameraları ZoneMinder'a ekledikten sonra tüm mevcut kameralarınızı göreceğiniz yerdir.</p>
+<p>ZoneMinder'a bir kamera eklemek için, &quot;<code>ADD</code>&quot; düğmesine <code>tıklamak</code> isteyeceksiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-ZoneMinder-02-Add-Camera.png" alt="Raspberry Pi ZoneMinder'a Yeni Kamera Ekleme" /></p>
+<p><strong>5.</strong> ZoneMinder'a bir kamerayı tam olarak nasıl ekleyeceğinize girmeyeceğiz, belirlemeniz gereken temel ayarları ele alacağız.</p>
+<p>İlk sayfada, arayüz içinde daha kolay tanımlayabilmeniz için kameranıza bir isim vermek isteyeceksiniz (<strong>1.</strong>).</p>
+<p>Bundan sonra, ayarlamak isteyeceğiniz diğer ana ayarlar &quot;<code>Source</code>&quot; sekmesindedir (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-ZoneMinder-03-Camera-Menu-Settings.png" alt="Genel Kamera Ayarlarını Belirleme" /></p>
+<p><strong>6.</strong> Source sekmesi, ZoneMinder'ın kameralarınızla nasıl etkileşim kuracağını ayarlamanızı sağlar.</p>
+<p>Kaynak yolu (<strong>1.</strong>), ZoneMinder'ın kameranıza erişebileceği yolu belirteceğiniz yerdir. Bir IP kamera kullanıyorsanız, bu büyük olasılıkla bir RTSP bağlantısıdır. Tam olarak nasıl çalıştığını öğrenmek için kameranızı Google'da arayabilirsiniz.</p>
+<p>Değiştirmeniz gerekebilecek diğer şey ise &quot;<code>Method</code>&quot;tur (<strong>2.</strong>). Bağlantı türüyle eşleşen yöntemi seçin.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-ZoneMinder-04-Camera-Source-Settings.png" alt="ZoneMinder Kamera kaynağını ayarlama" /></p>
+<h2>Sonuç</h2>
+<p>Bu eğitimin bu noktasında, artık Raspberry Pi'nizde ZoneMinder çalışıyor olmalıdır.</p>
+<p>ZoneMinder, çok sayıda kameradan görüntü izleyip kaydedebilen güçlü bir uygulamadır. Web arayüzü içinde kamera eklemeyi ele almasak da, <a href="https://wiki.zoneminder.com/Dummies_Guide">resmi dokümantasyona</a> göz atabilirsiniz.</p>
+<p>ZoneMinder'ı cihazınıza kurarken herhangi bir sorunla karşılaştıysanız, aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-zoneminder.html&amp;text=Raspberry+Pi%27ye+ZoneMinder+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-zoneminder.html&amp;text=Raspberry+Pi%27ye+ZoneMinder+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-zoneminder.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-zoneminder.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-zoneminder.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-zoneminder.html&amp;title=Raspberry+Pi%27ye+ZoneMinder+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27ye+ZoneMinder+Nas%C4%B1l+Kurulur%20codenfast.com%2Fposts%2Fraspberry-pi-zoneminder.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

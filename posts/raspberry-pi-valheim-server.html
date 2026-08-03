@@ -1,0 +1,388 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de Valheim Sunucusu Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Enerji verimli bir Valheim sunucusu"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de Valheim Sunucusu Kurulumu"/>
+    <meta property="og:description"
+          content="Enerji verimli bir Valheim sunucusu"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-valheim-server.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-valheim-server.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2021/10/Raspberry-Pi-Valheim-Dedicated-Server-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de Valheim Sunucusu Kurulumu"/>
+    <meta name="twitter:description"
+          content="Enerji verimli bir Valheim sunucusu"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2021/10/Raspberry-Pi-Valheim-Dedicated-Server-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de Valheim Sunucusu Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-valheim-server.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/10/Raspberry-Pi-Valheim-Dedicated-Server-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/10/Raspberry-Pi-Valheim-Dedicated-Server-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/10/Raspberry-Pi-Valheim-Dedicated-Server-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/10/Raspberry-Pi-Valheim-Dedicated-Server-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/10/Raspberry-Pi-Valheim-Dedicated-Server-01-Join-server-by-IP.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/10/Raspberry-Pi-Valheim-Dedicated-Server-01-Join-server-by-IP.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de Valheim Sunucusu Kurulumu","description":"Enerji verimli bir Valheim sunucusu","image":["https://pimylifeup.com/wp-content/uploads/2021/10/Raspberry-Pi-Valheim-Dedicated-Server-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:48:40.105686+03:00","dateModified":"2026-08-03T12:48:40.10571+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de Valheim Sunucusu Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-valheim-server/">PiMyLifeUp - Setting up a Valheim Server on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu projede, Raspberry Pi'de özel bir Valheim sunucusunu nasıl kurabileceğinizi göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/10/Raspberry-Pi-Valheim-Dedicated-Server-Thumbnail.jpg" alt="Raspberry Pi Valheim Özel Sunucusu" /></p>
+<p><a href="https://www.valheimgame.com/">Valheim</a>, Valhalla'ya layık olduklarını kanıtlamaya çalışan ölmüş Vikingler için kurgusal bir dünyada geçen zorlu bir hayatta kalma ve sandbox video oyunudur. Oyun, hayatta kalmak için üretim yapmayı, inşa etmeyi ve savaşmayı içerir.</p>
+<p>Oyun hatta on kişiye kadar çok oyunculu desteğe bile sahiptir. Elbette, bu çok oyunculu destek Raspberry Pi'nizin işe yaradığı yerdir.</p>
+<p>Bu rehberde, doğrudan Raspberry Pi üzerinde özel bir Valheim sunucusunun nasıl çalıştırılacağı gösterilecek.</p>
+<p>Pi, özellikle hızlı bir SD kart veya USB 3.0 cihazıyla eşleştirildiğinde, Valheim sunucu yazılımını çalıştırmak için makul derecede yetenekli bir cihaz olduğunu kanıtlıyor.</p>
+<p>Valheim sunucusu Pi'nin ARM mimarisi için yerel olarak derlenmemiş olsa da, çalıştırmak için birkaç yazılım parçası kullanabiliriz.</p>
+<p>Daha ileri gitmeden önce, bu proje için bir Raspberry Pi 4 veya daha yenisini kullanmanız gerekecek. Valheim özel sunucusunu çalıştırmak için dayanacağımız yazılım şu anda daha eski Pi'lerde çalışmıyor.</p>
+<h2>Raspberry Pi'nizi Valheim Sunucusu İçin Ayarlama</h2>
+<p>Raspberry Pi'nizde bir Valheim sunucusu çalıştırmak için, <a href="https://pimylifeup.com/raspberry-pi-64-bit/">64-bit bir işletim sistemi kullanmanız</a> gerektiğini lütfen unutmayın. Bu nedenle, bu rehber için, Raspberry Pi OS'nin 64-bit sürümünü kullanmaya odaklanacağız.</p>
+<p>Valheim sunucunuzun performansını en üst düzeye çıkarmak için, <a href="https://pimylifeup.com/headless-raspberry-pi-setup/">Raspberry Pi'nizi başsız (headless) olarak kurmanızı</a> şiddetle tavsiye ederiz.</p>
+<p>Valheim geliştirme ekibi sunucularının bir ARM derlemesini sağlamadığından, onu Raspberry Pi'mizde çalışır hale getirmek için birkaç şey yapmamız gerekiyor.</p>
+<h3>Raspberry Pi'ye x86 ve x64 Emülatörlerini Kurma</h3>
+<p>Kullandığımız yazılım Pi'nin ARM mimarisi için yerel olarak inşa edilmediğinden, bu rehberde hem bir x86 hem de x64 emülatörü kullanmamız gerekecek.</p>
+<p>&quot;<code>SteamCMD</code>&quot; yazılımı &quot;<code>box86</code>&quot; kurmamızı gerektirecek, Valheim özel sunucusu ise &quot;<code>box64</code>&quot; kullanmamızı gerektirecek.</p>
+<p><strong>1.</strong> Öncelikle, Raspberry Pi'mize Box86 kurmamız gerekiyor. Bu yazılım parçası, cihazımızda &quot;<code>SteamCMD</code>&quot; yazılımını çalıştırmamızı sağlayacak.</p>
+<p>SteamCMD, Valheim özel sunucusunun en son sürümünü Raspberry Pi'mize indirmek için kullanacağımız araçtır.</p>
+<p>Bu yazılımı derlemek ve kurmak için, lütfen <a href="https://pimylifeup.com/raspberry-pi-x86/">Raspberry Pi'de Box86 kullanma</a> rehberimizi takip edin. Bir Raspberry Pi 5 kullanıyorsanız, o sayfadaki &quot;<code>sorun giderme</code>&quot; yönergelerini de takip etmeniz gerekecek.</p>
+<p><strong>2.</strong> Box86'yı kurduktan sonra, Box64'ü de kurmanız gerekecek. Bu yazılım Box86'ya benzer ama ARM64 cihazımızda x64 yazılımını çalıştırmak için kullanılır.</p>
+<p>Bu yazılım, ARM için yerel derlemeler olmadığından Raspberry Pi'mizde Valheim özel sunucusunu çalıştırmamızı sağlayacaktır.</p>
+<p>Bu rehbere devam etmeden önce, <a href="https://pimylifeup.com/raspberry-pi-x64/">Raspberry Pi'ye Box64 kurma</a> rehberimizi takip ettiğinizden emin olun.</p>
+<h3>Pi'de SteamCMD Kurulumu</h3>
+<p>Raspberry Pi'nize Box86 ve Box64 kurulduğuna göre, artık bulmacanın son parçasını kurmaya geçebiliriz.</p>
+<p>Raspberry Pi'mizde Valheim özel sunucusunu indirmek için, &quot;<code>steamcmd</code>&quot; adlı Steam komut satırı aracını kullanmamız gerekiyor.</p>
+<p>Aşağıdaki adımlar, Raspberry Pi'nizde SteamCMD'yi kurma ve çalıştırma sürecinde size rehberlik edecek.</p>
+<p><strong>1.</strong> İlk adımımız, SteamCMD yazılımını saklayacağımız bir dizin oluşturmaktır. Bizim durumumuzda, bunu &quot;<code>pi</code>&quot; kullanıcımızın ana dizininde &quot;<code>steamcmd</code>&quot; adlı bir dizinde tutacağız.</p>
+<p>Cihazınızda aşağıdaki komutları kullanarak bu dizini oluşturabilir ve içine geçebilirsiniz.</p>
+<pre><code>mkdir ~/steamcmd
+cd ~/steamcmd
+</code></pre>
+<p><strong>2.</strong> Artık dizinde olduğumuza göre, aşağıdaki komutu kullanarak SteamCMD'yi indirip çıkarabiliriz.</p>
+<p>Bu komut, dosyayı indirmek için <code>curl</code> kullanacak ve bir boru (<code>|</code>) kullanarak doğrudan <a href="https://pimylifeup.com/tar-command-linux/">tar aracına</a> aktaracaktır. Bir boru, curl'den sağlanan verileri tek bir komutla çıkarmamızı sağlar.</p>
+<pre><code>curl -sqL &quot;https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz&quot; | tar zxvf -
+</code></pre>
+<p><strong>3.</strong> Raspberry Pi'mize Valheim özel sunucusunu kurmadan önce, SteamCMD'nin artık çalıştığından emin olalım.</p>
+<p>Yazılımın doğru çalıştığını, betiği aşağıdaki komutla çalıştırarak doğrulayabiliriz.</p>
+<pre><code>./steamcmd.sh
+</code></pre>
+<p>&quot;<code>steamcmd</code>&quot; yazılımının ilk çalıştırılması sırasında, kendini güncelleyecek ve kullanıma hazırlayacaktır.</p>
+<p><strong>4.</strong> SteamCMD güncellemeyi bitirdikten sonra, cihazınızda aşağıdaki komutu kullanarak araçtan çıkabilirsiniz.</p>
+<pre><code>quit
+</code></pre>
+<h2>Raspberry Pi'ye Valheim Sunucusu Kurulumu</h2>
+<p>Raspberry Pi'mizi hazırladığımıza göre, Valheim özel sunucusunu kurabiliriz.</p>
+<p>Bunu başarmak için, en son sürümü indirmek üzere bir önceki bölümde kurduğumuz SteamCMD aracını kullanacağız.</p>
+<p><strong>1.</strong> Aşağıdaki komutu kullanarak SteamCMD'yi indirdiğimiz aynı dizinde olduğumuzdan emin olun.</p>
+<pre><code>cd ~/steamcmd
+</code></pre>
+<p><strong>2.</strong> Artık doğru konumda olduğumuza göre, Valheim özel sunucusunu indirmek için SteamCMD kullanabiliriz.</p>
+<p>Aşağıdaki komutu kullanarak sunucuyu indirmeye başlamak için SteamCMD kullanabilirsiniz.</p>
+<pre><code>./steamcmd.sh +force_install_dir ~/valheim_server +@sSteamCmdForcePlatformType linux +login anonymous +app_update 896660 validate +quit
+</code></pre>
+<p>Bununla, Steam komut satırına birkaç farklı komut veriyoruz. Her şeyin ne yaptığı hakkında bir fikriniz olması için hızlıca üzerinden geçeceğiz.</p>
+<ul>
+<li><code>+@sSteamCmdForcePlatformType linux</code> – Komutun bu kısmını kullanarak, platform türünü Linux'a zorluyoruz. Bu, komut satırı aracının yanlış bir platform seçmesini engeller.</li>
+<li><code>+login anonymous</code> – Bu seçenek bizi Steam ağına &quot;<code>anonymous</code>&quot; bir kullanıcı olarak giriş yaptıracaktır. Anonim, şifre gerektirmediğinden, açıkça mevcut yazılımları indirmek için kullanışlıdır.</li>
+<li><code>+force_install_dir /home/pi/valheim_server</code> – Bu seçeneği kullanarak, SteamCMD sunucuyu nereye kurmak istediğimizi seçmemizi sağlar. Bizim durumumuzda, Valheim özel sunucusunu &quot;<code>/home/pi/valheim_server</code>&quot;a kuracağız.</li>
+<li><code>+app_update 896660</code> – Bu kısım, indirmek istediğimiz şeyi seçmemizi sağlayan kısımdır. Bu durumda, &quot;<a href="https://steamdb.info/app/896660/">896660</a>&quot; Valheim özel sunucusu için uygulama kimliğidir.</li>
+</ul>
+<p><strong>3.</strong> Bir sonraki adımımız, ihtiyaçlarınıza en iyi şekilde uyacak şekilde yapılandırabilmeniz için Valheim'ın sunucu başlatma betiğini değiştirmektir.</p>
+<p>Aşağıdaki komutla nano metin editörünü kullanarak &quot;<code>start_server.sh</code>&quot; betiğini düzenlemeye başlayın.</p>
+<pre><code>nano ~/valheim_server/start_server.sh
+</code></pre>
+<p><strong>4.</strong> Bu dosyanın içinde, özellikle bir satırı değiştirmeniz gerekecek. Bu, Raspberry Pi'mizde Valheim özel sunucusunu başlatacak satırdır.</p>
+<p>Bu satırı aramak için nano içinde <code>CTRL</code> + <code>W</code> kullanabilirsiniz.</p>
+<pre><code>./valheim_server.x86_64 -name &quot;My server&quot; -port 2456 -world &quot;Dedicated&quot; -password &quot;secret&quot;
+</code></pre>
+<p>Yukarıdaki satırı bulduktan sonra, aşağıdakiyle değiştirin.</p>
+<pre><code>./valheim_server.x86_64 -nographics -batchmode -port 2456 -public 0 -name &quot;My Server Name&quot; -world &quot;MyWorldName&quot; -password &quot;MySecretPassword&quot; -savedir &quot;./valheim_data&quot;
+</code></pre>
+<p>Bu yeni satırı yazarken, birkaç seçeneği değiştirmek isteyebilirsiniz. Şimdi hızlıca bunların üzerinden geçeceğiz.</p>
+<ul>
+<li><code>-port 2456</code> – Port seçeneği, Valheim özel sunucusunun hangi portu dinleyeceğini belirtir. Genellikle bunu varsayılan olarak bırakmak güvenlidir, başka bir program bunu kullanmadığı sürece. Bir güvenlik duvarının arkasındaysanız, bu portu yönlendirdiğinizden emin olmanız gerekecek.</li>
+<li><code>-public 0</code> – Bu seçeneği kullanarak, sunucunuzun oyun içi sunucu tarayıcısında görünmesini isteyip istemediğinize karar verebilirsiniz. Bu seçeneğin varsayılan değeri <code>0</code>dır, yani listelenmeyecektir. Tarayıcıda listelenmesini istiyorsanız bunu <code>1</code> olarak ayarlayın.</li>
+<li><code>-name &quot;My Server Name&quot;</code> – Bu seçenek, sunucunuzun sunucu tarayıcısında listelendiğinde kullanmasını istediğiniz adı saklar.</li>
+<li><code>-word &quot;MyWorldName&quot;</code> – Valheim dünyanızın adını belirtmek için bu seçeneği kullanın. Bu adın &quot;<code>.db</code>&quot; veya &quot;<code>.fwl</code>&quot; gibi herhangi bir dosya uzantısı içermediğinden emin olun.</li>
+<li><code>-password &quot;MySecretPassword&quot;</code> – Bu seçeneği, bir kullanıcının oyun dünyasına giriş yapmak için girmesi gereken bir şifre belirtmek için kullanabilirsiniz. Bu seçenek <strong>isteğe bağlıdır</strong> ve kaldırılabilir. Şifrenizi girerken, <strong>en az 5 karakter</strong> içerdiğinden emin olun.</li>
+<li><code>-savedir &quot;/home/pi/valheim_data&quot;</code> – Bu seçenekle, Valheim dünya verilerimizin Raspberry Pi'mizde nereye kaydedilmesini istediğimizi belirtiriz. Varsayılan olarak, bu dünyayı &quot;<code>pi</code>&quot; kullanıcımızın ana dizininde &quot;<code>valheim_data</code>&quot; adlı bir dizinde saklayacağız.</li>
+</ul>
+<p><strong>5.</strong> Dosyada bu değişiklikleri yaptıktan sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<h2>Raspberry Pi Valheim Özel Sunucunuzu Çalıştırma</h2>
+<p>Artık Raspberry Pi'de Valheim sunucumuzu kurup yapılandırdığımıza göre, onu tek bir komutla çalıştırabiliriz.</p>
+<p>Daha önce &quot;<code>start_server.sh</code>&quot; betiğini değiştirdiğimizden, sunucu belirlediğiniz seçeneklerle oluşturulacaktır.</p>
+<p><strong>1.</strong> Raspberry Pi'mizde Valheim sunucusunu başlatmak için, daha önce kurduğumuz dizinde olduğumuzdan emin olmamız gerekiyor.</p>
+<p>Cihazınızda aşağıdaki komutu kullanarak doğru dizine geçin.</p>
+<pre><code>cd ~/valheim_server/
+</code></pre>
+<p><strong>2.</strong> Artık doğru dizinde olduğumuza göre, aşağıdaki komutu kullanarak Valheim özel sunucusunu başlatabiliriz.</p>
+<p>Bu komutu kullanarak, sunucuyu daha önce belirlediğimiz seçeneklerle başlatacağız.</p>
+<pre><code>./start_server.sh
+</code></pre>
+<p>Valheim sunucularının başlatma sürecinin tamamlanmasının epey zaman alabileceğini lütfen unutmayın. Bunun nedeni, oyun dünyasını, konum listesini ve çeşitli başka şeyleri oluşturması gerekmesidir.</p>
+<p><strong>3.</strong> Sunucunuza bağlanmak için, Valheim içindeki &quot;<code>Join by IP</code>&quot; seçeneğini kullanabilirsiniz.</p>
+<p>Raspberry Pi'nizin yerel IP adresini bilmiyorsanız, <a href="https://pimylifeup.com/hostname-command/">hostname komutunu kullanarak</a> alabilirsiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/10/Raspberry-Pi-Valheim-Dedicated-Server-01-Join-server-by-IP.jpg" alt="Raspberry Pi Valheim sunucusuna IP ile katılma" /></p>
+<p><strong>4.</strong> Valheim sunucusuyla işiniz bittiyse, <code>CTRL</code> + <code>C</code> tuşuna basarak çıkabilirsiniz.</p>
+<p>Bu tuşlara basarak, sunucu tüm bağlantıları kapatacak, dünyayı kaydedecek ve ardından kapanacaktır.</p>
+<h2>Valheim Sunucusunun Açılışta Başlamasını Sağlama</h2>
+<p>Raspberry Pi'mizde Valheim sunucusunun açılışta başlamasını sağlamak için, bir servis dosyası oluşturmalıyız.</p>
+<p>Bu dosya için, daha önce &quot;<code>start_server.sh</code>&quot; betiğini değiştirdiğinizde belirlediğiniz seçenekleri hatırlamanız gerekecek.</p>
+<p><strong>1.</strong> Cihazınızda aşağıdaki komutu kullanarak bu yeni servisi oluşturmaya başlayabiliriz.</p>
+<p>Oluşturduğumuz bu yeni servis &quot;<code>valheim</code>&quot; olarak adlandırılacak.</p>
+<pre><code>sudo nano /etc/systemd/system/valheim.service
+</code></pre>
+<p><strong>2.</strong> Bu dosyanın içine, aşağıdaki satırları girmeniz gerekiyor. Bu satırlar servisi ve Valheim sunucusunun nasıl başlatılması gerektiğini tanımlar.</p>
+<p>&quot;<code>&lt;USERNAME&gt;</code>&quot; kısmını kullanıcınızın adıyla değiştirdiğinizden emin olun.</p>
+<pre><code>[Unit]
+Description=Valheim Dedicated Server
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Environment=SteamAppId=892970
+Environment=LD_LIBRARY_PATH=/home/&lt;USERNAME&gt;/valheim_server/linux64:$LD_LIBRARY_PATH
+Type=simple
+Restart=on-failure
+RestartSec=10
+KillSignal=SIGINT
+User=&lt;USERNAME&gt;
+Group=&lt;USERNAME&gt;
+WorkingDirectory=/home/&lt;USERNAME&gt;/valheim_server
+ExecStart=/home/&lt;USERNAME&gt;/valheim_server/valheim_server.x86_64 -nographics -batchmode -port 2456 -public 0 -name &quot;My Server Name&quot; -world &quot;MyWorldName&quot; -password &quot;MySecretPassword&quot; -savedir &quot;/home/&lt;USERNAME&gt;/valheim_data&quot;
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p>Bu yeni satırları yazarken, &quot;<code>ExecStart</code>&quot; satırını daha önce değiştirdiğiniz &quot;<code>start_server.sh</code>&quot; dosyasında kullandığınız aynı seçenekleri yansıtacak şekilde değiştirdiğinizden emin olmanız gerekecek.</p>
+<p><strong>3.</strong> Servisi oluşturmayı bitirdikten sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code> ve son olarak <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<p><strong>4.</strong> Az önce oluşturduğumuz servisi etkinleştirerek Valheim sunucusunun Raspberry Pi'nizde açılışta başlamasını sağlayabilirsiniz.</p>
+<p>Aşağıdaki komutu kullanarak yeni &quot;<code>valheim</code>&quot; servisimizi etkinleştirin.</p>
+<pre><code>sudo systemctl enable valheim
+</code></pre>
+<p><strong>5.</strong> Servisin başlaması için Raspberry Pi'mizin yeniden başlamasını beklemek yerine, onu kendimiz manuel olarak başlatabiliriz.</p>
+<p>&quot;<code>valheim</code>&quot; servisini manuel olarak başlatmak için, aşağıdaki komutu kullanmanız gerekiyor.</p>
+<pre><code>sudo systemctl start valheim
+</code></pre>
+<p><strong>6.</strong> Valheim servisinin durumunu kontrol ederek çalıştığından emin olmak mümkündür.</p>
+<p>Servisin durumunu almak için cihazınızda aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo systemctl status valheim
+</code></pre>
+<p>Valheim özel sunucunuz doğru çalışıyorsa, durumun &quot;<code>Active: active (running)</code>&quot; olarak işaretlendiğini görmelisiniz.</p>
+<h2>Raspberry Pi'de Valheim Sunucunuzu Güncelleme</h2>
+<p>Valheim özel sunucunuzu güncellemek oldukça basit bir süreçtir ve büyük ölçüde bu rehberde daha önce kurduğumuz &quot;<code>steamcmd</code>&quot; aracını kullanmamızı içerir.</p>
+<p><strong>1.</strong> Devam etmeden önce, sunucunuzun durdurulduğundan emin olmalısınız. Valheim sunucusunu şu anda kullanımdayken güncelleyemezsiniz.</p>
+<p>Servisimizi kullanarak, aşağıdaki komutu kullanarak Valheim özel sunucusunu durdurabilirsiniz.</p>
+<pre><code>sudo systemctl stop valheim
+</code></pre>
+<p><strong>2.</strong> Sunucuyu durdurduktan sonra, aşağıdaki komutu yazarak özel sunucuyu güncellemek mümkündür.</p>
+<p>Bu komut &quot;<code>steamcmd</code>&quot; aracını çağıracak ve yazılımı mevcut en son sürüme güncellemesini zorlayacaktır.</p>
+<pre><code>/home/$USER/steamcmd/steamcmd.sh +@sSteamCmdForcePlatformType linux +login anonymous +force_install_dir /home/pi/valheim_server +app_update 896660 +quit
+</code></pre>
+<p><strong>3.</strong> Sunucunuz artık en son sürüme güncellenmiş olmalı. Güncelleme sürecinin &quot;<code>start_server.sh</code>&quot; betiğini geçersiz kılma ihtimali vardır, bu yüzden servisi kullanmıyorsanız bu dosyayı tekrar değiştirmeniz gerekebilir.</p>
+<p>Önceki bölümde oluşturduğumuz servisi kullanıyorsanız, artık aşağıdaki komutu çalıştırarak tekrar başlatabilirsiniz.</p>
+<pre><code>sudo systemctl start valheim
+</code></pre>
+<h2>Sonuç</h2>
+<p>Bu rehberin bu noktasında, artık Raspberry Pi'nizde Valheim özel sunucusu çalışıyor olmalıdır.</p>
+<p>Pi, bir Valheim sunucusu çalıştırmanın nispeten yetenekli ve enerji verimli bir yolu olarak çalışır. Sonuç olarak, sunucuda oyun oynarken iyi bir deneyim yaşamalısınız; yaşadığımız tek aksama başlangıç ve kaydetme sürecinde oldu.</p>
+<p>Raspberry Pi'nizde Valheim özel sunucusunu çalışır hale getirirken herhangi bir sorunla karşılaştıysanız, aşağıya yorum bırakabilirsiniz.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-valheim-server.html&amp;text=Raspberry+Pi%27de+Valheim+Sunucusu+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-valheim-server.html&amp;text=Raspberry+Pi%27de+Valheim+Sunucusu+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-valheim-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-valheim-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-valheim-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-valheim-server.html&amp;title=Raspberry+Pi%27de+Valheim+Sunucusu+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+Valheim+Sunucusu+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-valheim-server.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

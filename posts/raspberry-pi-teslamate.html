@@ -1,0 +1,379 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de TeslaMate Çalıştırma - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Bir Tesla&#39;dan veri kaydetme"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de TeslaMate Çalıştırma"/>
+    <meta property="og:description"
+          content="Bir Tesla&#39;dan veri kaydetme"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-teslamate.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-teslamate.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de TeslaMate Çalıştırma"/>
+    <meta name="twitter:description"
+          content="Bir Tesla&#39;dan veri kaydetme"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de TeslaMate Çalıştırma","item":{"@id":"https://codenfast.com/posts/raspberry-pi-teslamate.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-01-Enter-Tesla-API-Details.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-01-Enter-Tesla-API-Details.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-02-TeslaMate-Dashboard.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-02-TeslaMate-Dashboard.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-03-Login-to-Grafana.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-03-Login-to-Grafana.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-04-Set-New-Password.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-04-Set-New-Password.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-05-Browse-to-dashboards.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-05-Browse-to-dashboards.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-06-List-of-TeslaMate-Dashboard.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-06-List-of-TeslaMate-Dashboard.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-07-Grafana-Charging-Stats.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-07-Grafana-Charging-Stats.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de TeslaMate Çalıştırma","description":"Bir Tesla'dan veri kaydetme","image":["https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:29:02.046256+03:00","dateModified":"2026-08-03T12:29:02.046283+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de TeslaMate Çalıştırma</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-teslamate/">PiMyLifeUp - Running TeslaMate on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'nizde TeslaMate'i nasıl çalıştıracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-Thumbnail.jpg" alt="Raspberry Pi TeslaMate" /></p>
+<p>TeslaMate, bir Tesla araba hakkında çok sayıda ayrıntıyı takip etmenizi sağlayan bir veri kaydedicisidir. Bunu, Tesla API'sini yoklayarak ve döndürdüğü verileri Raspberry Pi'nizde çalışan bir PostgreSQL veritabanına kaydederek başarır.</p>
+<p>Bu yazılım, bir Tesla'ya sahip olan ve onun döndürdüğü verileri takip etmekle ilgilenen kişiler için mükemmeldir. Bu verileri hatta arabanızın çeşitli özelliklerini otomatikleştirmek için Home Assistant gibi bir yazılımla entegre edebilirsiniz.</p>
+<p>Raspberry Pi, 7/24 çalıştırması pahalı olmayan düşük güçlü bir cihaz olduğundan TeslaMate ile mükemmel bir eşleşme sağlar.</p>
+<p>Raspberry Pi'nizde Teslamate'i çalıştırma sürecini önemli ölçüde basitleştirmek için, bunu bir Docker konteyneri üzerinden çalıştıracağız. Bu, birkaç farklı yazılım parçasını kurup yapılandırmak zorunda kalmamızı önler.</p>
+<h2>Raspberry Pi'nizi TeslaMate'i Çalıştırmaya Hazırlama</h2>
+<p>Raspberry Pi'nizde TeslaMate'i kurup çalıştırabilmemiz için, bazı ilk kurulum adımlarından geçmemiz gerekiyor.</p>
+<p>Sonraki birkaç adımda, Raspberry Pi'yi güncelleyecek ve Docker compose'un kurulu olduğundan emin olacağız.</p>
+<p><strong>1.</strong> Daha ileri gitmeden önce, mevcut paketler listesini güncellemeli ve güncel olmayan tüm paketleri yükseltmeliyiz.</p>
+<p>Terminalde aşağıdaki komutu kullanarak her iki görevi de gerçekleştirebiliriz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Ardından, <a href="https://pimylifeup.com/raspberry-pi-docker/">Raspberry Pi'nize Docker kurma</a> rehberimizi takip etmeniz gerekiyor.</p>
+<p>Docker, Raspberry Pi'nizde TeslaMate'i çalıştırmayı önemli ölçüde daha basit hale getirecek.</p>
+<h2>Raspberry Pi'nize TeslaMate Kurulumu</h2>
+<p>Artık hazırlandığımıza göre, Raspberry Pi'nize TeslaMate kurmak güvenlidir.</p>
+<p>Bu adımlar için, TeslaMate'i çalıştırmak için ihtiyaç duyduğumuz tüm hizmetleri kuracak bir Docker Compose betiği oluşturacağız.</p>
+<p><strong>3.</strong> Raspberry Pi'mize TeslaMate kurmadan önce, ana dizinimizde &quot;<code>teslamate</code>&quot; adlı bir dizin oluşturmamız gerekiyor.</p>
+<p>Aşağıdaki komutu çalıştırarak bu klasörü oluşturmak için <a href="https://pimylifeup.com/mkdir-command-linux/">mkdir komutunu kullanabilirsiniz</a>.</p>
+<pre><code>mkdir ~/teslamate
+</code></pre>
+<p><strong>4.</strong> Artık yeni dizinimizi oluşturduğumuza göre, içine geçmek için <a href="https://pimylifeup.com/cd-command/">cd komutunu kullanmamız</a> gerekiyor.</p>
+<pre><code>cd ~/teslamate
+</code></pre>
+<p><strong>5.</strong> Terminalde aşağıdaki komutu kullanarak &quot;<code>docker-compose</code>&quot; dosyamızı yazmaya başlayabiliriz.</p>
+<p>Bu compose dosyası, Raspberry Pi'mizde dört farklı hizmet kuracak.</p>
+<ol>
+<li>Kurduğu ilk uygulama TeslaMate'in kendisidir.</li>
+<li>Ardından, TeslaMate'in verilerini saklaması için ihtiyaç duyduğu veritabanı hizmeti gelir. Bu durumda, <a href="https://pimylifeup.com/raspberry-pi-postgresql/">bu PostgreSQL olacak</a>.</li>
+<li>Ayrıca, <a href="https://pimylifeup.com/mkdir-command-linux/">Grafana</a> da bir Docker konteyneri içinde kurulacak. Grafana, TeslaMate'in Raspberry Pi'nizde topladığı tüm verileri görüntülemenizi sağlayan şeydir.</li>
+<li>Sisteme kurulacak son Docker konteyneri Mosquitto broker'dır. Bu broker, HomeAssistant gibi diğer hizmetlerin TeslaMate ile etkileşim kurmasını sağlayan şeydir.</li>
+</ol>
+<pre><code>nano compose.yml
+</code></pre>
+<p><strong>6.</strong> Bu dosyanın içine, aşağıdaki satırları girmek isteyeceksiniz.</p>
+<p>Bu yapılandırma bilgilerini dosyaya girerken, aşağıdaki iki öğeyi değiştirmelisiniz.</p>
+<ul>
+<li>
+<p><code>[REPLACEWITHENCRYPTKEY]</code> – Bu anahtar, Tesla API anahtarlarını Raspberry Pi'nizde dururken şifrelemek için kullanıldığından önemlidir. Bu anahtar için uzun, rastgele bir anahtar belirlediğinizden emin olun.</p>
+</li>
+<li>
+<p><code>[REPLACEWITHDBPASSWORD]</code> – Ardından, PostgreSQL veritabanı için bir şifre belirtmelisiniz. Bu, dosyada üç kez tekrarlanır. Bu veritabanı, TeslaMate'in Raspberry Pi'nizde çalışırken tüm verilerini sakladığı yerdir.</p>
+<p>services:<br />
+teslamate:<br />
+image: teslamate/teslamate:latest<br />
+restart: always<br />
+environment:<br />
+- ENCRYPTION_KEY=[REPLACEWITHENCRYPTKEY]<br />
+- DATABASE_USER=teslamate<br />
+- DATABASE_PASS=[REPLACEWITHDBPASSWORD]<br />
+- DATABASE_NAME=teslamate<br />
+- DATABASE_HOST=database<br />
+- MQTT_HOST=mosquitto<br />
+ports:<br />
+- 4000:4000<br />
+volumes:<br />
+- ./import:/opt/app/import<br />
+cap_drop:<br />
+- all</p>
+<p>database:<br />
+image: postgres:17.3<br />
+restart: always<br />
+environment:<br />
+- POSTGRES_USER=teslamate<br />
+- POSTGRES_PASSWORD=[REPLACEWITHDBPASSWORD]<br />
+- POSTGRES_DB=teslamate<br />
+volumes:<br />
+- teslamate-db:/var/lib/postgresql/data</p>
+<p>grafana:<br />
+image: teslamate/grafana:latest<br />
+restart: always<br />
+environment:<br />
+- DATABASE_USER=teslamate<br />
+- DATABASE_PASS=[REPLACEWITHDBPASSWORD]<br />
+- DATABASE_NAME=teslamate<br />
+- DATABASE_HOST=database<br />
+ports:<br />
+- 3000:3000<br />
+volumes:<br />
+- teslamate-grafana-data:/var/lib/grafana</p>
+<p>mosquitto:<br />
+image: eclipse-mosquitto:2<br />
+restart: always<br />
+command: mosquitto -c /mosquitto-no-auth.conf<br />
+# ports:<br />
+#   - 1883:1883<br />
+volumes:<br />
+- mosquitto-conf:/mosquitto/config<br />
+- mosquitto-data:/mosquitto/data</p>
+<p>volumes:<br />
+teslamate-db:<br />
+teslamate-grafana-data:<br />
+mosquitto-conf:<br />
+mosquitto-data:</p>
+</li>
+</ul>
+<p><strong>7.</strong> Bunu yaptıktan sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<p><strong>8.</strong> Bu noktada, terminaldeki komutu kullanarak sonunda Raspberry Pi'nizde TeslaMate'i başlatabiliriz.</p>
+<p>İlk başlatma sırasında, Docker, TeslaMate konteynerinin en son sürümünü Grafana, Postgres ve Mosquitto gibi diğer yazılımlarla birlikte indirecektir.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h2>TeslaMate İçin API'yi Ayarlama</h2>
+<p><strong>9.</strong> TeslaMate'i kullanabilmeniz için, Tesla hesabınızın API anahtarlarını almanız gerekecek.</p>
+<p>Bu muhtemelen tüm sürecin en karmaşık kısmıdır, çünkü Tesla bunları kolayca almayı sağlamaz.</p>
+<p>Aşağıda, TeslaMate ekibi tarafından önerilen üç seçeneği bulabilirsiniz. Bu araçların sağladığı &quot;<code>Access Token</code>&quot; ve &quot;<code>Refresh Token</code>&quot;a ihtiyacınız olacak.</p>
+<ul>
+<li><strong>Windows/Linux/macOS:</strong> <a href="https://github.com/adriankumpf/tesla_auth">Adriankumpf tarafından Tesla Auth</a></li>
+<li><strong>Android:</strong> <a href="https://play.google.com/store/apps/details?id=net.leveugle.teslatokens">Denouche Company tarafından Tesla Tokens</a></li>
+<li><strong>iOS/macOS:</strong> <a href="https://apps.apple.com/us/app/auth-app-for-tesla/id1552058613?platform=mac">Kim Hansen tarafından Auth app for Tesla</a></li>
+</ul>
+<p><strong>10.</strong> Şimdi favori web tarayıcınızda aşağıdaki adrese gitmek isteyeceksiniz.</p>
+<p>&quot;<code>YOURIPADDRESS</code>&quot; kısmını <a href="https://pimylifeup.com/raspberry-pi-ip-address/">Raspberry Pi'nizin IP'siyle</a> değiştirdiğinizden emin olun.</p>
+<pre><code>http://IPADRESINIZ:4000
+</code></pre>
+<p><strong>11.</strong> TeslaMate'in Raspberry Pi'nizde çalışmaya başlayabilmesi için, bazı bilgileri belirtmeniz gerekir.</p>
+<p>Öncelikle, &quot;<code>Access Token</code>&quot;ı belirtin (<strong>1.</strong>). Erişim tokenı, TeslaMate'e API'ye erişim verir.</p>
+<p>Ardından, &quot;<code>Refresh Token</code>&quot;a ihtiyacınız var (<strong>2.</strong>). Bu token, TeslaMate'in gerektiğinde erişim tokenını otomatik olarak güncellemesini sağlar.</p>
+<p>Her iki tokene de sahip olduğunuzda, devam etmek için &quot;<code>Sign in</code>&quot; düğmesine <code>tıklamalısınız</code> (<strong>3.</strong>). TeslaMate, Tesla API'siyle etkileşim kurabilmek için bu tokenlara ihtiyaç duyar.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-01-Enter-Tesla-API-Details.jpg" alt="Tesla API Bilgilerini Girme" /></p>
+<p><strong>12.</strong> Artık Raspberry Pi'nizde çalışan TeslaMate'e erişiminiz var. Hemen Tesla API üzerinden bilgi alacak ve veritabanına kaydedecektir.</p>
+<p>TeslaMate geçmiş verileri alamadığından, veritabanının anlamlı verilerle dolması biraz zaman alacaktır.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-02-TeslaMate-Dashboard.jpg" alt="Raspberry Pi TeslaMate Gösterge Paneli" /></p>
+<h2>Raspberry Pi'de TeslaMate Grafana Gösterge Panelini Görüntüleme</h2>
+<p><strong>13.</strong> Artık Raspberry Pi'nizde TeslaMate çalıştığına göre, Grafana gösterge panellerine erişerek kaydettiği verileri görüntüleyebilirsiniz.</p>
+<p>Daha önce fark etmiş olabileceğiniz gibi, Docker compose dosyamıza Grafana'yı da dahil ettik. Aşağıdaki adrese giderek bu web arayüzüne erişebilirsiniz.</p>
+<p>&quot;<code>&lt;YOURIPADDRESS&gt;</code>&quot; kısmını Raspberry Pi'nizin IP'siyle değiştirdiğinizden emin olun.</p>
+<pre><code>http://&lt;IPADRESINIZ&gt;:3000
+</code></pre>
+<p><strong>14.</strong> Grafana'yı ilk açtığınızda, web arayüzüne giriş yapmanız gerekecektir.</p>
+<p>Varsayılan kullanıcı adı ve şifre &quot;<code>admin</code>&quot;dir (<strong>1.</strong>).</p>
+<p>Varsayılan kullanıcı adını ve şifreyi girdikten sonra, &quot;<code>Log in</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-03-Login-to-Grafana.jpg" alt="TeslaMate Grafana'ya Giriş Yapma" /></p>
+<p><strong>15.</strong> Ardından, Grafana için yeni, daha güvenli bir şifre belirlemeniz istenecektir. Sağlanan kutulara yeni bir şifre yazın (<strong>1.</strong>).</p>
+<p>Belirlediğiniz yeni şifreden memnun olduğunuzda, &quot;<code>Submit</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-04-Set-New-Password.jpg" alt="Grafana için yeni şifre belirleme" /></p>
+<p><strong>16.</strong> Artık cihazınızda Grafana açık olduğuna göre, gösterge panellerinin bir listesine göz atabiliriz.</p>
+<p>Öncelikle, aşağıdaki ekran görüntüsünde gösterildiği gibi sol kenar çubuğundaki tablo simgesine <code>tıklayın</code> (<strong>1.</strong>).</p>
+<p>Bu bir alt menü getirecektir. Devam etmek için &quot;<code>Browse</code>&quot; düğmesine <code>tıklamanız</code> gerekiyor (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-05-Browse-to-dashboards.jpg" alt="Gösterge Paneli Ekranına Göz Atma" /></p>
+<p><strong>17.</strong> Artık Raspberry Pi'nizde kullanabileceğiniz TeslaMate gösterge panellerinin bir listesini görebilirsiniz.</p>
+<p>Bu listeyi açmak için, &quot;<code>TeslaMate</code>&quot; başlığına <code>tıklayın</code> (<strong>1.</strong>).</p>
+<p>Ardından, verilerini görüntülemek istediğiniz gösterge panelini bulun ve devam etmek için <code>tıklayın</code> (<strong>2.</strong>). Örneğimiz için, &quot;<code>Charging Stats</code>&quot; gösterge panelini açacağız.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-06-List-of-TeslaMate-Dashboard.jpg" alt="Raspberry Pi'de TeslaMate Gösterge Panelleri Listesi" /></p>
+<p><strong>18.</strong> Aşağıda, TeslaMate'in Raspberry Pi'nizde çalışırken topladığı tüm şarj istatistiklerini bulabilirsiniz.</p>
+<p>Raspberry Pi'niz çalıştığı ve arabanıza bir bağlantısı olduğu sürece bu veriyi işlemeye devam edecektir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/05/Raspberry-Pi-TeslaMate-07-Grafana-Charging-Stats.jpg" alt="TeslaMate Şarj İstatistikleri" /></p>
+<h2>Sonuç</h2>
+<p>Bu noktada, umarız artık Raspberry Pi'nizde TeslaMate çalışıyor olacaktır.</p>
+<p>TeslaMate, API'sini yoklayarak Tesla'nız hakkında veri toplayan bir veri kaydedicisidir. Bu veriler bir PostgreSQL veritabanında saklanır ve bir Grafana veritabanı üzerinden sunulur.</p>
+<p>TeslaMate'i cihazınızda çalıştırırken herhangi bir sorunla karşılaştıysanız, aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-teslamate.html&amp;text=Raspberry+Pi%27de+TeslaMate+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-teslamate.html&amp;text=Raspberry+Pi%27de+TeslaMate+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-teslamate.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-teslamate.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-teslamate.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-teslamate.html&amp;title=Raspberry+Pi%27de+TeslaMate+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+TeslaMate+%C3%87al%C4%B1%C5%9Ft%C4%B1rma%20codenfast.com%2Fposts%2Fraspberry-pi-teslamate.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

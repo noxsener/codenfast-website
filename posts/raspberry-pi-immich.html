@@ -1,0 +1,324 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de Immich Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Kendi kendine barındırılan fotoğraf uygulaması"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de Immich Kurulumu"/>
+    <meta property="og:description"
+          content="Kendi kendine barındırılan fotoğraf uygulaması"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-immich.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-immich.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Immich-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de Immich Kurulumu"/>
+    <meta name="twitter:description"
+          content="Kendi kendine barındırılan fotoğraf uygulaması"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Immich-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de Immich Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-immich.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Immich-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Immich-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Immich-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Immich-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Immich-01-Getting-Started.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Immich-01-Getting-Started.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Immich-02-Sign-up-to-Immich.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Immich-02-Sign-up-to-Immich.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Immich-03-Log-In-to-Immich.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Immich-03-Log-In-to-Immich.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Immich-04-Immich-Running-on-the-Raspberry-Pi.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Immich-04-Immich-Running-on-the-Raspberry-Pi.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de Immich Kurulumu","description":"Kendi kendine barındırılan fotoğraf uygulaması","image":["https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Immich-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:13:06.484107+03:00","dateModified":"2026-08-03T12:13:06.484129+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de Immich Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-immich/">PiMyLifeUp - Setting Up Immich on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu projede, Raspberry Pi'ye Immich'i nasıl kurup çalıştıracağımızı inceleyeceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Immich-Thumbnail.jpg" alt="Raspberry Pi Immich" /></p>
+<p><a href="https://github.com/immich-app/immich">Immich</a>, harika bir web arayüzüne ve kullanışlı bir mobil uygulamaya sahip, kendi kendine barındırılan bir fotoğraf ve video yedekleme yazılımıdır.</p>
+<p>Bu yazılımı kullanarak, fotoğraflarınızı ve videolarınızı mobil telefonunuzdan doğrudan Immich'e çok kolay bir şekilde yedekleyebilirsiniz. İnsanlar bu yazılımı genellikle Google Photos veya iCloud'a bir alternatif olarak kullanır. Bu yazılım, görsellerinizin kontrolünü elinizde tutmanızı sağlar ve sizi aylık bir abonelikten kurtarır.</p>
+<p>Immich, iCloud ve Google Photos'un daha gösterişli özelliklerinden bazılarına bile sahiptir; görsellerinizi yüz tanıma, coğrafi konum ve daha fazlasıyla otomatik olarak işleyebilir.</p>
+<p>Bu yazılım, kendi kendine barındırılan <a href="https://pimylifeup.com/raspberry-pi-photoprism/">PhotoPrism adlı fotoğraf uygulamasına</a> da sağlam bir alternatiftir.</p>
+<p>Raspberry Pi'nize Immich kurmak çok basit bir süreçtir. Bunun nedeni, ARM desteğine sahip bir Docker konteyneri olarak mevcut olmasıdır.</p>
+<p>Sizi uyarmamız gereken bir şey, tüm fotoğraflarınızı ilk kez Immich'e senkronize ettiğinizde, Raspberry Pi'nizin oldukça zorlanacağıdır. Bunun nedeni, tüm görselleri işlemesi gerekmesidir. Ancak, ilk senkronizasyondan sonra, yeni görselleri işlemek dışında minimal kaynak kullanır.</p>
+<p>En iyi performans için, en azından bir Raspberry Pi 4 kullanmanızı öneririz. Ancak, Pi ne kadar hızlıysa, Immich görsellerinizi o kadar hızlı işleyebilir.</p>
+<p>Ayrıca, Immich Raspberry Pi OS'nin 64-bit sürümünü çalıştırıyor olmanızı gerektirir. 32-bit işletim sistemleri çalışmayacaktır.</p>
+<h2>Raspberry Pi'ye Immich Kurulumu</h2>
+<p>Aşağıdaki bölümlerde, Raspberry Pi'nize Immich'i nasıl kuracağınızı göstereceğiz.</p>
+<p>Docker kullanabilmemiz sayesinde, bu süreç nispeten basittir. Yapmamız gereken tek şey Docker'ı kurmak, bazı yapılandırma dosyalarını çekmek ve bazı ayarları biraz değiştirmektir.</p>
+<p>Aşağıdaki adımların çoğu için terminali kullanacağız. Raspberry Pi OS'nin masaüstü sürümünü kullanıyorsanız, <code>CTRL</code> + <code>ALT</code> + <code>T</code> tuşlarına basarak terminali açabilirsiniz.</p>
+<h3>Immich İçin Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> Raspberry Pi'mize Immich'i kurmadan önce, mevcut sistemimizin güncel olduğundan emin olmalıyız.</p>
+<p>Aşağıdaki komutu kullanarak paket listesini güncelleyebilir ve ardından güncel olmayan tüm paketleri yükseltebiliriz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Bir sonraki adımımız, aşağıdaki komutu kullanarak sistemimizde wget paketinin kurulu olduğundan emin olmaktır.</p>
+<p>Docker compose dosyasını ve ortam yapılandırma dosyasını almak için daha sonra <a href="https://pimylifeup.com/wget-command-linux/">wget kullanacağız</a>.</p>
+<pre><code>sudo apt install wget
+</code></pre>
+<p><strong>3.</strong> Şimdi cihazımızda Immich'i kolayca çalıştırabilmemiz için Docker kurmamız gerekiyor.</p>
+<p>Bunu doğru şekilde ayarlamak için <a href="https://pimylifeup.com/raspberry-pi-docker/">Raspberry Pi'ye Docker kurma</a> rehberimizi takip edin.</p>
+<p><strong>4.</strong> Docker'ı kurduktan sonra, artık Immich için yapılandırma dosyalarını saklayacağımız bazı dizinler oluşturabiliriz.</p>
+<p><a href="https://pimylifeup.com/mkdir-command-linux/">mkdir komutunu kullanarak</a> &quot;<code>/opt/stacks/</code>&quot; dizini içinde immich adlı bir dizin oluşturun.</p>
+<pre><code>sudo mkdir -p /opt/stacks/immich
+</code></pre>
+<p><strong>5.</strong> Dizin artık oluşturulduğuna göre, <a href="https://pimylifeup.com/cd-command/">cd komutunu kullanarak</a> içine geçebiliriz.</p>
+<pre><code>cd /opt/stacks/immich
+</code></pre>
+<h3>Docker Compose Dosyasını Ayarlama</h3>
+<p><strong>6.</strong> Neyse ki, Immich ekibi bizim için Docker Compose dosyasını sağladı. Yapmamız gereken tek şey dosyayı GitHub'larından indirmektir.</p>
+<p>Bu Docker compose dosyasını kaydetmek için aşağıdaki komutu çalıştırarak wget kullanabilirsiniz.</p>
+<pre><code>sudo wget https://github.com/immich-app/immich/releases/latest/download/docker-compose.yml
+</code></pre>
+<h3>Immich İçin Ortam Dosyasını Yazma</h3>
+<p><strong>7.</strong> Artık Immich için Docker compose dosyası Raspberry Pi'mize kaydedildiğine göre, ortam dosyasına geçebiliriz.</p>
+<p>Immich'in Docker konteyneri, kendisini kurmak için bu ortam dosyasını kullanır. Bu dosyanın yer tutucu sürümünü aşağıdaki komutu kullanarak Pi'nize indirin.</p>
+<pre><code>sudo wget -O .env https://github.com/immich-app/immich/releases/latest/download/example.env
+</code></pre>
+<p>Bu dosyayı &quot;<code>.example.env</code>&quot; yerine &quot;<code>.env</code>&quot; olarak kaydedebilmek için &quot;<code>-O</code>&quot; seçeneğini kullanıyoruz.</p>
+<p><strong>8.</strong> Bir sonraki adımımız, ihtiyaçlarımıza daha iyi uyması için bu ortam dosyasını düzenlemeye başlamaktır. Varsayılan ayarlar çalışacaktır, ama güvensiz olabilir ve görsellerinizi kullanmak istemediğiniz bir konuma kaydedebilir.</p>
+<pre><code>sudo nano .env
+</code></pre>
+<p><strong>a.</strong> Muhtemelen değiştirmek isteyeceğiniz ilk ayar yükleme konumudur. Bu ayar, Immich'e Raspberry Pi'nizde dosyaları nereye kaydetmesi gerektiğini söyler.</p>
+<p>Görseller çok hızlı bir şekilde büyük miktarda alan kaplayabileceğinden, muhtemelen bu konumu bol alana sahip harici bir sürücüye ayarlamak isteyeceksiniz.</p>
+<pre><code>UPLOAD_LOCATION=./library
+</code></pre>
+<p><strong>b.</strong> Ayarlamanız gereken son değer, Immich'in Postgres veritabanıyla etkileşim kurmak için kullanacağı şifredir.</p>
+<p>&quot;<code>postgres</code>&quot; kısmını güvenli, uzun bir şifreyle değiştirmek isteyeceksiniz.</p>
+<pre><code>DB_PASSWORD=postgres
+</code></pre>
+<p><strong>9.</strong> Ortam dosyasında bu değişiklikleri yaptıktan sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code> ve son olarak <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<h3>Raspberry Pi'nizde Immich'i Başlatma</h3>
+<p><strong>10.</strong> Artık aşağıdaki komutu kullanarak Raspberry Pi'mizde Immich'i başlatabiliriz.</p>
+<p>Bunu çalıştırdıktan sonra, Immich, dayandığı çeşitli hizmetlerle birlikte Pi'nize indirilecektir. İnternet bağlantınıza bağlı olarak, bu birkaç dakika sürebilir.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<p>&quot;<code>-d</code>&quot; seçeneğini kullanarak, Docker'a başladıktan sonra mevcut terminalden ayrılmasını söylüyoruz.</p>
+<h3>Immich Web Arayüzüne Erişim</h3>
+<p><strong>11.</strong> Immich artık Raspberry Pi'nizde çalışır durumda olduğuna göre, web arayüzüne erişebiliriz.</p>
+<p>&quot;<code>&lt;IPADRESINIZ&gt;</code>&quot; kısmını <a href="https://pimylifeup.com/raspberry-pi-ip-address/">Raspberry Pi'nizin IP'siyle</a> değiştirdiğinizden emin olun. IP'nizden emin değilseniz, &quot;<code>hostname -I</code>&quot; komutunu kullanabilirsiniz.</p>
+<pre><code>http://IPADRESINIZ:2283
+</code></pre>
+<p><strong>12.</strong> Immich'e ilk kez eriştiğinizde, sizi aşağıdaki ekran karşılayacak.</p>
+<p>Devam etmek için, &quot;<code>Getting Started</code>&quot; düğmesine <code>tıklamanız</code> gerekiyor.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Immich-01-Getting-Started.jpg" alt="Getting Started Düğmesine Tıklama" /></p>
+<p><strong>13.</strong> Ardından, Immich için admin hesabınızı oluşturmanız istenecektir. Admin hesabınız için bilgileri doldurmak üzere kutuları kullanın (<strong>1.</strong>).</p>
+<p>Bilgilerinizi doldurduktan sonra, &quot;<code>Sign up</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Immich-02-Sign-up-to-Immich.jpg" alt="Raspberry Pi'nizde Immich'e Kaydolma" /></p>
+<p><strong>14.</strong> Bu noktada, az önce belirlediğiniz e-posta ve şifreyi kullanarak yeni admin hesabınıza giriş yapabilirsiniz (<strong>1.</strong>).</p>
+<p>Bilgilerinizi doldurduktan sonra, &quot;<code>Login</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Immich-03-Log-In-to-Immich.jpg" alt="Immich'e Giriş Yapma" /></p>
+<p><strong>15.</strong> Artık Raspberry Pi'nizde çalışan Immich'e erişiminiz var.</p>
+<p>Görsellerinizi yüklemeye, yeni hesaplar oluşturmaya ve daha fazlasına başlayabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Immich-04-Immich-Running-on-the-Raspberry-Pi.jpg" alt="Raspberry Pi'de Çalışan Immich" /></p>
+<h2>Pi'nizde Immich'i Güncelleme</h2>
+<p>Immich oldukça sık güncellenen bir yazılımdır, bu yüzden onu nasıl güncelleyeceğinizi bilmek isteyeceksiniz.</p>
+<p>Neyse ki, onu bir Docker konteyneri olarak çalıştırdığımızdan, Raspberry Pi'nizde Immich'i güncellemek gerçekten basit bir süreçtir.</p>
+<p><strong>1.</strong> Öncelikle, bu rehberde daha önce oluşturduğumuz Immich dizininde olduğunuzdan emin olmanız gerekiyor.</p>
+<p>Aşağıdaki komutu çalıştırarak bu dizine geçin.</p>
+<pre><code>cd /opt/stacks/immich
+</code></pre>
+<p><strong>2.</strong> Doğru dizinde olduğumuzda, Raspberry Pi'nize yeni Immich konteynerini çekmek için Docker compose kullanabiliriz.</p>
+<p>Yeni imajları çekmek için yapmamız gereken tek şey aşağıdaki komutu kullanmaktır.</p>
+<pre><code>docker compose pull
+</code></pre>
+<p><strong>3.</strong> Konteynerin yeni bir sürümünü çektikten sonra, terminalinizde aşağıdaki komutu kullanarak Immich'i yeniden başlatmanız gerekir.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h2>Sonuç</h2>
+<p>Umarız bu eğitimin bu noktasında, artık Raspberry Pi'nizde Immich çalışıyor olacaktır.</p>
+<p>Immich, fotoğraflarınızı ve videolarınızı tek bir merkezi konumda saklamak için harika bir çözümdür. Hatta fotoğrafları yüz tanımaya veya çekildikleri konuma göre gruplandırmak gibi ek işlevlere bile sahiptir.</p>
+<p>Bu yazılımı Pi'nizde çalışır hale getirme hakkında herhangi bir sorunuz varsa, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-immich.html&amp;text=Raspberry+Pi%27de+Immich+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-immich.html&amp;text=Raspberry+Pi%27de+Immich+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-immich.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-immich.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-immich.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-immich.html&amp;title=Raspberry+Pi%27de+Immich+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+Immich+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-immich.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

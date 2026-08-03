@@ -1,0 +1,330 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de Linkwarden Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Arşivleyen bir yer imi yöneticisi"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de Linkwarden Kurulumu"/>
+    <meta property="og:description"
+          content="Arşivleyen bir yer imi yöneticisi"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-linkwarden.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-linkwarden.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de Linkwarden Kurulumu"/>
+    <meta name="twitter:description"
+          content="Arşivleyen bir yer imi yöneticisi"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de Linkwarden Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-linkwarden.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-01-Change-to-Sign-up-screen.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-01-Change-to-Sign-up-screen.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-02-Create-new-account.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-02-Create-new-account.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-03-Login-to-account.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-03-Login-to-account.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-04-Open-Create-new-Link-Dialog.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-04-Open-Create-new-Link-Dialog.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-05-Add-new-link-to-Linkwarden.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-05-Add-new-link-to-Linkwarden.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-06-Open-Collection.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-06-Open-Collection.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-07-Select-Bookmarked-Link.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-07-Select-Bookmarked-Link.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-08-Bookmark-info.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-08-Bookmark-info.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de Linkwarden Kurulumu","description":"Arşivleyen bir yer imi yöneticisi","image":["https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:18:52.735123+03:00","dateModified":"2026-08-03T12:18:52.735151+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de Linkwarden Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-linkwarden/">PiMyLifeUp - Setting up Linkwarden on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu projede, Raspberry Pi'nize Linkwarden'ı nasıl kurup çalıştıracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-Thumbnail.jpg" alt="Raspberry Pi Linkwarden" /></p>
+<p>Linkwarden, bazı ilginç ve kullanışlı özelliklere sahip, kendi kendine barındırılan bir yer imi (bookmark) yöneticisidir.</p>
+<p>Bu araç, ziyaret ettiğiniz web sayfalarını kolayca toplamak, düzenlemek ve arşivlemek için kullanılabilir, bu da sayfanın bir sonraki bakmak istediğinizde hâlâ var olmasını sağlar.</p>
+<p>Linkwarden, Raspberry Pi'nizde bunu sayfanın ekran görüntülerini alarak ve bir PDF oluşturarak başarır. Bu ekran görüntüleri ve PDF'ler, web sitesi veya bağlantı bozulsa bile hâlâ erişiminizin olmasını sağlar.</p>
+<p>Eski bir yer iminize dönüp bir 404 sayfasıyla karşılaştıysanız, bu yazılımı hemen seveceksiniz.</p>
+<p>Bu yazılımın bir diğer temel özelliği, işbirliği düşünülerek tasarlanmış olmasıdır. Hem özel hem de genel bağlantı setlerine sahip birden fazla kullanıcınız olabilir.</p>
+<p>Hepsinden iyisi, bu yazılımı çalışır hale getirmek aslında oldukça basittir. Raspberry Pi'nizde çalıştırmanız gereken tek şey 64-bit bir işletim sistemidir. 32-bit için desteği yoktur.</p>
+<p>Bu, bir Raspberry Pi 3 veya daha yenisini çalıştırıyor olmanız gerektiği anlamına gelir.</p>
+<h2>Raspberry Pi'ye Linkwarden Kurulumu</h2>
+<p>Bu bölümde, Raspberry Pi'nize Linkwarden yazılımını nasıl kuracağınızı göstereceğiz.</p>
+<p>Bu, Docker'ı kurmayı, ek bir paketi ve yapılandırma dosyasını biraz değiştirmeyi içerir.</p>
+<h3>Linkwarden'ı Çalıştırmak İçin Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> Raspberry Pi'mizde bu yer imi yöneticisini kurmaya başlamadan önce, önce işletim sistemini güncellemeliyiz.</p>
+<p>İşletim sistemini güncellemek ve güncel olmayan tüm paketleri yükseltmek, aşağıdaki komutu çalıştırmak kadar basittir.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>2.</strong> Güncelleme tamamlandıktan sonra, <a href="https://pimylifeup.com/raspberry-pi-docker/">Raspberry Pi'ye Docker kurma</a> rehberimizi takip etmeniz gerekiyor.</p>
+<p>Bu rehber, Docker'ı sisteminizde doğru şekilde çalışır hale getirmek için gereken tüm adımları kapsar.</p>
+<p>Docker kullanıyoruz çünkü Linkwarden'ı çalışır hale getirmeyi hızlı ve kolay bir süreç yapıyor. Örneğin, <a href="https://pimylifeup.com/raspberry-pi-postgresql/">Raspberry Pi'nizde PostgreSQL kurmak</a> konusunda endişelenmenize gerek yok.</p>
+<p><strong>3.</strong> Docker'ı kurduktan sonra, Raspberry Pi'mize Linkwarden kurmaya hazırlanmaya devam edebiliriz.</p>
+<p>Bir sonraki adımımız Git'i kurmaktır. Git, yer imi yöneticisinin en son sürümünü klonlamamızı sağlayacak.</p>
+<pre><code>sudo apt install git
+</code></pre>
+<p><strong>4.</strong> Daha ileri gitmeden önce, Linkwarden'ın kullanması için birkaç güvenli dize oluşturmamız gerekiyor.</p>
+<p>Aşağıdaki komutu iki kez çalıştırın: birincisi Linkwarden gizli anahtarı için, ikincisini ise Postgres veritabanı kullanacak.</p>
+<pre><code>openssl rand -base64 12
+</code></pre>
+<h3>Raspberry Pi'ye Linkwarden Kurulumu</h3>
+<p><strong>5.</strong> Sonunda Raspberry Pi'ye Linkwarden kurma sürecine başlayabiliriz.</p>
+<p>İlk adımımız, aşağıdaki komutu kullanarak Linkwarden deposunu cihazımıza klonlamaktır.</p>
+<pre><code>git clone https://github.com/linkwarden/linkwarden.git
+</code></pre>
+<p><strong>6.</strong> Linkwarden deposunu klonladıktan sonra, <a href="https://pimylifeup.com/cd-command/">cd komutunu kullanarak</a> dizine geçmemiz gerekiyor.</p>
+<pre><code>cd linkwarden
+</code></pre>
+<p><strong>7.</strong> Şimdi birkaç önemli şeyi ayarlayacak bir ortam dosyası yazmamız gerekiyor. Daha önce oluşturduğunuz o iki anahtara burada ihtiyacınız olacak.</p>
+<p>Bu dosyayı yazmaya aşağıdaki komutu kullanarak başlayın. Kullanımı daha kolay terminal editörlerinden biri olduğundan <a href="https://pimylifeup.com/nano-text-editor/">nano metin editörünü</a> kullanıyoruz.</p>
+<pre><code>nano .env
+</code></pre>
+<p><strong>8.</strong> Bu dosyanın içine, aşağıdaki satırları eklemelisiniz.</p>
+<ul>
+<li>
+<p><code>&lt;YOURNEXTAUTHSECRET&gt;</code><strong>:</strong> Bunu daha önce oluşturduğunuz şifrelerden biriyle değiştirin. Bu gizli anahtar, kimlik doğrulama sistemi tarafından oluşturulan token'ları şifrelemeye yardımcı olmak için kullanılır.</p>
+</li>
+<li>
+<p><code>&lt;YOURPOSTRESPASSWORD&gt;</code><strong>:</strong> Oluşturduğunuz ikinci şifre, Linkwarden'ın Postgres veritabanıyla konuşması için kullanılır.</p>
+</li>
+<li>
+<p><code>&lt;LOCALHOST&gt;</code><strong>:</strong> Bir alan adı kullanıyorsanız, bunu onunla değiştirmek isteyeceksiniz. Alternatif olarak, bunu sadece yerel olarak veya bir alan adı olmadan kullanıyorsanız, bunu &quot;<code>localhost</code>&quot; olarak ayarlayabilirsiniz.</p>
+<p>NEXTAUTH_SECRET=<YOURNEXTAUTHSECRET><br />
+POSTGRES_PASSWORD=<YOURPOSTGRESPASSWORD><br />
+NEXTAUTH_URL=http://<localhost>:3000</p>
+</li>
+</ul>
+<p><strong>9.</strong> Bu satırları dosyaya ekledikten sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<p><strong>10.</strong> Bu dosyayı güncelledikten sonra, sonunda Raspberry Pi'nizde Linkwarden yer imi yöneticisini başlatabilirsiniz.</p>
+<p>Şimdi yapmamız gereken tek şey, konteyneri başlatmak için Docker Compose kullanmaktır. &quot;<code>-d</code>&quot; seçeneğini kullanarak, Docker'a konteyneri mevcut terminal oturumundan ayırmasını (detach) söylüyoruz.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<p>Bu sürecin tamamlanması birkaç dakika sürebileceğini lütfen unutmayın. Linkwarden ve Postgres konteynerlerini indirip başlatması gerekiyor.</p>
+<h2>Linkwarden Web Arayüzüne Hızlı Bakış</h2>
+<p>Artık Raspberry Pi'nizde Linkwarden çalıştığına göre, ona nasıl erişeceğinizi ve kullanacağınızı bilmek isteyeceksiniz.</p>
+<p>Bu bölüm, ilk yer iminizi ekleme sürecini hızlıca ele alacak.</p>
+<h3>Linkwarden Web Arayüzüne Erişim</h3>
+<p><strong>1.</strong> Linkwarden'a erişmek için, Raspberry Pi'nizin IP adresini bilmeniz gerekecek.</p>
+<p>Bunu aldıktan sonra, web tarayıcınızda aşağıdaki URL'ye gitmek isteyeceksiniz. &quot;<code>&lt;YOURIPADDRESS&gt;</code>&quot; kısmını Raspberry Pi'nizin IP'siyle değiştirdiğinizden emin olun.</p>
+<pre><code>http://&lt;IPADRESINIZ&gt;:3000
+</code></pre>
+<h3>Hesabınızı Oluşturma</h3>
+<p><strong>2.</strong> Linkwarden'ı açtıktan sonra, sizi aşağıdaki ekran karşılayacak. Şu anda bir hesabınız yok, bu yüzden bir tane oluşturmanız gerekecek.</p>
+<p>Bu süreci başlatmak için, &quot;<code>Sign Up</code>&quot; metnine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-01-Change-to-Sign-up-screen.jpg" alt="Sign Up Ekranına Geçme" /></p>
+<p><strong>3.</strong> Şimdi Linkwarden hesabınız için kullanmak istediğiniz tüm bilgileri doldurmanız gerekiyor (<strong>1.</strong>).</p>
+<p>Bilgilerinizi doldurduktan sonra, yapmanız gereken tek şey &quot;<code>Sign Up</code>&quot; düğmesine <code>tıklamaktır</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-02-Create-new-account.jpg" alt="Yeni Raspberry Pi Linkwarden Hesabı Oluşturma" /></p>
+<h3>Raspberry Pi Linkwarden Arayüzüne Giriş Yapma</h3>
+<p><strong>4.</strong> Şimdi az önce belirlediğiniz kullanıcı adını ve şifreyi doldurun (<strong>1.</strong>).</p>
+<p>Bilgilerinizi doldurduktan sonra, &quot;<code>Login</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-03-Login-to-account.jpg" alt="Raspberry Pi Linkwarden Hesabınıza Giriş Yapma" /></p>
+<h3>İlk Yer İminizi Ekleme</h3>
+<p><strong>5.</strong> Artık sizi Linkwarden gösterge paneli karşılayacak. Henüz herhangi bir bağlantı eklemediğinizden, oldukça boş görünecek.</p>
+<p>Yeni bir bağlantı eklemek için, sağ üst köşedeki &quot;<code>New Link</code>&quot; düğmesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-04-Open-Create-new-Link-Dialog.jpg" alt="Yeni Bağlantı Ekle İletişim Kutusunu Açma" /></p>
+<p><strong>6.</strong> Yeni bir bağlantı eklerken, Raspberry Pi'nizde yer imi olarak eklemek istediğiniz URL'yi (<strong>1.</strong>) yazarak başlamalısınız.</p>
+<p>Yeni bağlantınızı Linkwarden'a eklerken, bu bağlantıyı hangi kategoriye koyacağınızı da seçebilirsiniz (<strong>2.</strong>). İsterseniz bunu daha sonra değiştirebilirsiniz.</p>
+<p>Memnun kaldığınızda, &quot;<code>+ Add</code>&quot; düğmesine <code>tıklayın</code> (<strong>3.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-05-Add-new-link-to-Linkwarden.jpg" alt="Linkwarden Yer İmi Yöneticisine Yeni Bağlantı Ekleme" /></p>
+<p><strong>7.</strong> Artık Raspberry Pi Linkwarden kurulumunuza ilk bağlantı yer iminizi başarıyla eklediniz.</p>
+<p>Koleksiyonunuza göz atarsanız, bu yer imini ve oluşturduğu PDF'i ve ekran görüntüsünü bulabileceksiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-06-Open-Collection.jpg" alt="Koleksiyonu Açma" /></p>
+<p><strong>8.</strong> Koleksiyonumuza göz attıktan sonra, Pi My Life Up ana sayfasını Raspberry Pi yer imi yöneticimize eklediğimizi görebilirsiniz.</p>
+<p>Bağlantıya tıklayarak, daha fazla bilgi göreceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-07-Select-Bookmarked-Link.jpg" alt="Yeni Eklenen Yer İmli Bağlantıyı Seçme" /></p>
+<p><strong>9.</strong> Burada, Linkwarden'ın o web sitesi için oluşturduğu bağlantıyı, ekran görüntüsünü ve PDF'i bulabilirsiniz.</p>
+<p>Bu yazılımın oluşturduğu ekran görüntüsü ve PDF'ler muhtemelen Linkwarden'ın en kullanışlı özelliğidir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Linkwarden-08-Bookmark-info.jpg" alt="Raspberry Pi Linkwarden'da Yer İmi Bilgisi" /></p>
+<h2>Sonuç</h2>
+<p>Umarız bu rehberin bu noktasında, Raspberry Pi'de Linkwarden'ı nasıl kurup kullanacağınızı anlamış olursunuz.</p>
+<p>Linkwarden, birçok kullanışlı özellik sunan güçlü bir Raspberry Pi yer imi yöneticisidir. Bu özelliklerin en kullanışlısı, bağlantılarınızın arşivlerini oluşturma yeteneğidir.</p>
+<p>Bu arşivler, bir web sitesi kapandığında veya bağlantı yapısını değiştirdiğinde yer imlerinizin bozulmasını önlemeye yardımcı olur.</p>
+<p>Bu yer imi yöneticisini Raspberry Pi'nizde çalışır hale getirirken herhangi bir sorunla karşılaşırsanız, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-linkwarden.html&amp;text=Raspberry+Pi%27de+Linkwarden+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-linkwarden.html&amp;text=Raspberry+Pi%27de+Linkwarden+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-linkwarden.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-linkwarden.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-linkwarden.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-linkwarden.html&amp;title=Raspberry+Pi%27de+Linkwarden+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+Linkwarden+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-linkwarden.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

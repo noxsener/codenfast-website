@@ -1,0 +1,352 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de Ollama Çalıştırma - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Raspberry Pi üzerinde büyük dil modellerini kolayca çalıştırın"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de Ollama Çalıştırma"/>
+    <meta property="og:description"
+          content="Raspberry Pi üzerinde büyük dil modellerini kolayca çalıştırın"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-ollama.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-ollama.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2024/04/Raspberry-Pi-Ollama-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de Ollama Çalıştırma"/>
+    <meta name="twitter:description"
+          content="Raspberry Pi üzerinde büyük dil modellerini kolayca çalıştırın"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2024/04/Raspberry-Pi-Ollama-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de Ollama Çalıştırma","item":{"@id":"https://codenfast.com/posts/raspberry-pi-ollama.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/04/Raspberry-Pi-Ollama-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/04/Raspberry-Pi-Ollama-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/04/Raspberry-Pi-Ollama-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/04/Raspberry-Pi-Ollama-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/04/Raspberry-Pi-Ollama-01-Run-phi3.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/04/Raspberry-Pi-Ollama-01-Run-phi3.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/04/Raspberry-Pi-Ollama-02-Using-Tinyllama.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/04/Raspberry-Pi-Ollama-02-Using-Tinyllama.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/04/Raspberry-Pi-Ollama-03-Running-llama3.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/04/Raspberry-Pi-Ollama-03-Running-llama3.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/04/Raspberry-Pi-Ollama-04-Using-API.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/04/Raspberry-Pi-Ollama-04-Using-API.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de Ollama Çalıştırma","description":"Raspberry Pi üzerinde büyük dil modellerini kolayca çalıştırın","image":["https://pimylifeup.com/wp-content/uploads/2024/04/Raspberry-Pi-Ollama-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T11:25:46.470003+03:00","dateModified":"2026-08-03T11:25:46.47003+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de Ollama Çalıştırma</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-ollama/">PiMyLifeUp - Running Ollama on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu yazıda, Raspberry Pi üzerinde Ollama'yı nasıl çalıştıracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/04/Raspberry-Pi-Ollama-Thumbnail.jpg" alt="Raspberry Pi Ollama" /></p>
+<p>Ollama, büyük dil modellerini (LLM) cihazınızda yerel olarak çalıştırmayı nispeten kolaylaştıran bir projedir.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-chatgpt/">ChatGPT</a> gibi bir aracı kullanmanın aksine, Ollama'nın işlediği tüm istekler seçtiğiniz model kullanılarak doğrudan Raspberry Pi'nizde yerel olarak işlenir.</p>
+<p>Ollama'nın kendisi büyük bir dil modeli değildir. Çeşitli açık kaynaklı yapay zeka modellerini hızlı bir şekilde çalıştırmanızı sağlayan bir araçtır. Bu araç, desteklenen bir büyük dil modelinin indirilmesini ve ardından çalıştırılmasını yönetir. Ollama'nın, diğer uygulamalardan etkileşime geçebileceğiniz bir API'si bile vardır.</p>
+<p>Desteklediği dil modellerinin listesini görmek için <a href="https://ollama.com/library">yazılımın resmi web sitesini</a> ziyaret edin. Bir modelin ne kadar büyük olursa, Raspberry Pi üzerinde o kadar yoğun kaynak tüketeceğini unutmayın. Örneğin, TinyLlama yapay zeka modeli ağır Llama3 modeline göre çok daha iyi çalışacaktır.</p>
+<p>Ayrıca, 8GB belleğe sahip bir Raspberry Pi 5 kullanarak önemli ölçüde daha iyi bir deneyim elde edersiniz. Dil modellerinin işlenmesi, Pi'nin işlem gücünü ve belleğini hızla tüketir.</p>
+<h2>Raspberry Pi'nize Ollama Kurulumu</h2>
+<p>Bu bölümde, Raspberry Pi'nize Ollama'yı kurmak için gereken son derece basit adımları göstereceğiz. Bu süreç, işin neredeyse tamamını bizim yerimize halleden Ollama'nın kurulum betiği sayesinde kolaylaştırılmıştır.</p>
+<p>Devam etmeden önce, Ollama'yı kullanabilmek için 64-bit bir işletim sistemi çalıştırıyor olmanız gerektiğini unutmayın.</p>
+<h3>Ollama İçin Sisteminizi Hazırlama</h3>
+<p><strong>1.</strong> Ollama'yı kurmadan önce, Raspberry Pi'nizin işletim sisteminin güncel olduğundan emin olmalısınız.</p>
+<p>Aşağıdaki komutu çalıştırarak paketlerinizi en son sürüme güncelleyebilirsiniz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Bir sonraki adımımız için curl paketinin kurulu olduğundan emin olmamız gerekiyor. Genellikle bu, Raspberry Pi ile birlikte gelir, ancak kurulu olup olmadığını doğrulamakta fayda var.</p>
+<p>Aşağıdaki komutu çalıştırarak Pi'nizde curl'un kurulu olduğundan emin olabilirsiniz.</p>
+<pre><code>sudo apt install curl
+</code></pre>
+<h3>Raspberry Pi'nizde Ollama Kurulum Betiğini Çalıştırma</h3>
+<p><strong>3.</strong> Raspberry Pi'miz hazır olduğuna göre, Ollama kurulum betiğini çalıştırmaya geçebiliriz.</p>
+<p>Pi'nize Ollama kurmak, terminalde aşağıdaki komutu çalıştırmak kadar basittir. Bu komut, Ollama'dan &quot;install.sh&quot; betiğini indirip doğrudan bash'e aktaracaktır.</p>
+<pre><code>curl -fsSL https://ollama.com/install.sh | sh
+</code></pre>
+<p>Böyle bir betiği önce içeriğini doğrulamadan çalıştırmak genellikle kötü bir uygulama olarak kabul edilir. <a href="https://ollama.com/install.sh">Bu betiğin kodunu</a> favori web tarayıcınızda doğrudan siteye giderek inceleyebilirsiniz.</p>
+<p><strong>4.</strong> Aşağıdaki komutu kullanarak Ollama'yı Raspberry Pi'mize başarıyla kurduğumuzu doğrulayabiliriz.</p>
+<p>Bu komut, Ollama'nın sürümünü terminale yazdırmasını sağlar.</p>
+<pre><code>ollama --version
+</code></pre>
+<p>Aşağıda, yazılımın kurulu olduğunu ve şu anda 0.1.32 sürümünü çalıştırdığımızı görebilirsiniz.</p>
+<pre><code>ollama version is 0.1.32
+</code></pre>
+<h2>Raspberry Pi'nizde Ollama Nasıl Kullanılır</h2>
+<p>Bu bölümde, Ollama'nın desteklediği çeşitli dil modellerinden bazılarını çalıştırmak için Raspberry Pi'nizde Ollama'yı nasıl kullanabileceğinizi göstereceğiz.</p>
+<p>Özellikle, Raspberry Pi'mizde Deepseek, Phi3, TinyLlama ve Llama3 modellerini test edeceğiz. Bunlardan ilk ikisi hafif modeller olması amaçlanmıştır, sonuncusu ise değildir.</p>
+<p>Pi'nizden çok fazla şey beklememeniz gerektiğini unutmayın. Yapay zeka modellerini, hele ki çok büyük olanları çalıştırmak için gerçekten tasarlanmamıştır. Gerçekten kullanılabilir bir şey istiyorsanız, daha hafif modellere bağlı kalmaya çalışın.</p>
+<h3>Raspberry Pi'de Deepseek Çalıştırma</h3>
+<p>Raspberry Pi'nizde tam Deepseek LLM Modelini çalıştırmak kesinlikle söz konusu olamazken, damıtılmış (distilled) sürümlerinden bazılarını çalıştırabilirsiniz.</p>
+<p>Bu damıtılmış sürümler, tam Deepseek-R1 modelini alıp daha performanslı ama daha az doğru ve halüsinasyona daha yatkın bir hale getirir.</p>
+<p>Raspberry Pi'nizde Deepseek'ten alacağınız performans, hangi damıtılmış varyantı çalıştırdığınıza büyük ölçüde bağlıdır. Örneğin, daha küçük 1.5b modeli, daha büyük 14b modelinden önemli ölçüde daha iyi performans gösterecektir.</p>
+<p>Ayrıca, tercih ettiğiniz model ne kadar büyükse, Deepseek'i çalıştırmak için Raspberry Pi'nizin o kadar fazla RAM'e ihtiyacı olacaktır.</p>
+<p><strong>1.</strong> Ollama yazılımının Raspberry Pi'nizde Deepseek modelini indirip çalıştırmasını sağlamak, aşağıdaki komutlardan birini kullanmak kadar basittir.</p>
+<p>Deepseek'in dört damıtılmış sürümü için komutları, ne kadar iyi çalıştıklarına göre sıraladık. İlki en iyi performansı gösterir, sonuncusu en kötü performansı gösterir ama yine de Pi'nizde bir şekilde çalışabilir durumda kalır.</p>
+<p><strong>Deepseek-R1 1.15B</strong></p>
+<p>Bu modelin 1.5B damıtılmış sürümünü indirip çalıştırmak için terminalde aşağıdaki komutu kullanın. Bu model en az 1.1GB boş alana sahip olmanızı gerektirir.</p>
+<p>Raspberry Pi'de çalıştırabileceğiniz tüm Deepseek varyantları arasında, makul bir yanıt süresine sahip olan tek varyant budur.</p>
+<p>Aslında, Raspberry Pi'mizde çalıştırdığımız tüm yapay zeka modelleri arasında, bu belki de en iyi performans gösterenidir.</p>
+<pre><code>ollama run deepseek-r1:1.5b
+</code></pre>
+<p><strong>Deepseek-R1 7b</strong></p>
+<p>Deepseek'in sunduğu bir sonraki model 7 milyardan fazla parametreye sahiptir. Bu, yapay zeka modelinin kullanması için önemli ölçüde daha fazla veri sağlar. Ancak, en küçük modelden de önemli ölçüde daha yavaştır.</p>
+<p>Deepseek'in bu sürümünü Raspberry Pi'nizde çalıştırmak istiyorsanız, yalnızca aşağıdaki komutu çalıştırmanız yeterlidir. Bu mod, Pi'nizde en az 4.7GB boş alana sahip olmanızı gerektirir.</p>
+<pre><code>ollama run deepseek-r1:7b
+</code></pre>
+<p><strong>Deepseek-R1 8b</strong></p>
+<p>Deepseek-R1 8b modeli, Raspberry Pi 8GB modellerinde çalıştırılabilecek son yapay zeka modelidir. &quot;7b&quot; damıtılmış modele kıyasla bir milyar daha fazla parametreye sahiptir. Bunun daha iyi sonuçlar üretip üretmediği büyük ölçüde kullanım senaryonuza bağlıdır.</p>
+<p>Deepseek modelinin bu daha büyük sürümünü çalıştırmak, Raspberry Pi'nizde aşağıdaki komutu kullanmak kadar basittir. 7b modelinden bile daha yavaş hızlara hazırlıklı olun. Bu modelin cihazınızda 4.8GB depolama alanı tüketeceğini unutmayın.</p>
+<pre><code>ollama run deepseek-r1:8b
+</code></pre>
+<p><strong>Deepseek-R1 14b</strong></p>
+<p>Raspberry Pi'nizde çalışacak Deepseek modelinin son sürümü &quot;14b&quot; damıtılmış varyantıdır. Bu varyantı çalıştırabilmek için bile Raspberry Pi'nin 16GB'lık sürümünü çalıştırıyor olmanız gerekir. Bu, başlangıçta bile 10.7GB RAM tüketir.</p>
+<p>Bu daha büyük model, diğer tüm modellere kıyasla daha da önemli bir performans kaybına sahiptir. Sorunuz ile Deepseek'in tam yanıtını üretmesi arasında önemli miktarda zaman bekleyeceksiniz.</p>
+<p>Deepseek-R1'in &quot;14b&quot; varyantını Raspberry Pi'nizde aşağıdaki komutu kullanarak çalıştırabilirsiniz. Bu varyant 9.0GB boş alana sahip olmanızı gerektirecektir.</p>
+<pre><code>ollama run deepseek-r1:14b
+</code></pre>
+<p><strong>2.</strong> Her şey düzgün çalışıyorsa, artık Ollama'yı kullanarak Raspberry Pi'nizde Deepseek ile etkileşime geçebilmeniz gerekir.</p>
+<h3>Pi'nizde Phi3 LLM'i Kullanma</h3>
+<p><a href="https://news.microsoft.com/source/features/ai/the-phi-3-small-language-models-with-big-potential/">Phi3</a>, Microsoft tarafından geliştirilen, çok daha büyük modellerden beklediğiniz kalitede sonuçların bir kısmını korurken son derece hafif olacak şekilde tasarlanmış bir LLM'dir.</p>
+<p>Hafif olması, Phi3'ü Raspberry Pi'nizde çalıştırmak için harika bir büyük dil modeli haline getiriyor. Kullanılabilir bir hızda performans gösterebilmelidir. Süper hızlı yanıtlar beklemeyin, ama Pi 5 bu modeli çalıştırabilecek kapasitededir.</p>
+<p><strong>1.</strong> Ollama'nın Raspberry Pi'nizde Phi3 LLM'ini indirip başlatmasını sağlamak için yalnızca aşağıdaki komutu kullanmanız yeterlidir.</p>
+<p>Bu işlemin tamamlanmasının biraz zaman alabileceğini unutmayın; daha küçük bir model olmasına rağmen Phi3 yine de 2.3GB'a denk gelir.</p>
+<pre><code>ollama run phi3
+</code></pre>
+<p><strong>2.</strong> Phi3 artık Raspberry Pi'nizde çalışıyor olduğundan, yapay zeka modeliyle iletişim kurmaya başlayabileceksiniz.</p>
+<p>Bu modelde fark edeceğiniz bir şey, kullanılabilir olmasına rağmen, uzun yanıtlar için yanıt vermesinin uzun zaman alabileceğidir. Raspberry Pi'nizde hızlı bir LLM arıyorsanız, diğer seçenekleri değerlendirmeniz gerekebilir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/04/Raspberry-Pi-Ollama-01-Run-phi3.jpg" alt="Raspberry Pi'de Ollama ile Phi3 Çalıştırma" /></p>
+<h3>TinyLlama'yı Test Etme</h3>
+<p><a href="https://github.com/jzhang38/TinyLlama">TinyLlama</a>, son derece hafiftir ve Raspberry Pi'nin işlemcisinde çalıştırabileceğiniz en hızlı LLM'lerden biridir.</p>
+<p>Phi3 veya ağır sıklet Llama 3 gibi daha büyük modeller kadar yüksek kaliteli sonuçlar üretemese de, çoğu temel soruyu yanıtlamaya fazlasıyla yeterlidir. Ayrıca, TinyLlama'nın kalite konusunda eksik bıraktığını kesinlikle hızla telafi eder.</p>
+<p><strong>1.</strong> Aşağıdaki komutu çalıştırarak Ollama'yı Raspberry Pi'nizde TinyLlama'yı çalıştırmak için kullanabilirsiniz.</p>
+<p>Bu model oldukça hafiftir, bu nedenle Pi'nize nispeten hızlı bir şekilde indirilmelidir.</p>
+<pre><code>ollama run tinyllama
+</code></pre>
+<p><strong>2.</strong> Model çalışmaya başladıktan sonra ona sorular sorabilir ve yapay zeka modeliyle konuşabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/04/Raspberry-Pi-Ollama-02-Using-Tinyllama.jpg" alt="TinyLlama LLM'ini Kullanma" /></p>
+<h3>Raspberry Pi'de Llama3 Çalıştırma</h3>
+<p><a href="https://llama.meta.com/llama3/">Llama3</a>, özellikle TinyLlama ve Phi3 ile karşılaştırıldığında ağır sıklet bir dil modelidir. Süper yüksek kaliteli sonuçlar üretebilir, ancak Pi'nizde çalıştırırken sabırlı olmanız gereken bir modeldir.</p>
+<p>Şahsen, Llama3 modelinin Raspberry Pi 5'imizde ne kadar iyi çalıştığına şaşırdık. Başlaması biraz zaman alsa da, öz ve oldukça okunabilir sonuçlar üretti.</p>
+<p>İsteminiz ne kadar uzun olursa, hem Llama3 dil modeli hem de Pi'niz üzerinde o kadar fazla yük oluşturur.</p>
+<p><strong>1.</strong> Yine de bu modeli denemek isteyecek kadar cesursanız, aşağıdaki komutu çalıştırarak Ollama'nın Raspberry Pi'nizde Llama3'ü indirip çalıştırmasını sağlayabilirsiniz.</p>
+<p>Llama3'ün çok büyük bir model olduğunu unutmayın. Pi'nizde en az 4.7GB boş alana sahip olmanız gerekir.</p>
+<pre><code>ollama run llama3
+</code></pre>
+<p><strong>2.</strong> Ollama, Raspberry Pi'nizde Llama3 modelini başlatmayı tamamladıktan sonra, dil modeliyle iletişim kurmaya başlayabilirsiniz.</p>
+<p>Aşağıda, kullandığımız birkaç istemi ve ürettiği sonuçları görebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/04/Raspberry-Pi-Ollama-03-Running-llama3.jpg" alt="Raspberry Pi'de Llama3 Çalıştırma" /></p>
+<h3>Raspberry Pi'nizde Ollama ile İletişim Kurmak İçin Curl Kullanma</h3>
+<p>Ollama'nın havalı özelliklerinden biri, sorgulayabileceğiniz <a href="https://github.com/ollama/ollama/blob/main/docs/api.md">API</a>'sidir. Bu API'yi kullanarak, isteminize belirli modeller kullanılarak yanıtlar üretilmesini talep edebilirsiniz.</p>
+<p><strong>1.</strong> Bunu göstermek için, Raspberry Pi'mizde çalışan Ollama sunucusuna bir istek göndermek üzere curl kullanalım.</p>
+<p>Bu komutla birlikte bazı JSON verileri gönderiyoruz. Bu JSON parçasında aşağıdaki bilgileri belirtiyoruz.</p>
+<ul>
+<li>
+<p><code>model</code><strong>:</strong> Bu, Ollama'nın Raspberry Pi'nizde çalıştırmasını istediğimiz büyük dil modelidir. Bu örnekte hafif &quot;<code>tinyllama</code>&quot; modelinde kalıyoruz.</p>
+</li>
+<li>
+<p><code>prompt</code><strong>:</strong> İstem, modele söylemek istediğiniz şeydir, genellikle bir sorudur. Bu örnekte, modele Avustralya'nın başkentinin ne olduğunu soracağız.</p>
+</li>
+<li>
+<p><code>stream</code><strong>:</strong> &quot;stream&quot; seçeneğini false olarak ayarlayarak Ollama'ya, modelin üretimi bitirene kadar beklememizi ve ardından bir yanıt vermesini istediğimizi söylüyoruz. Bu, modelden gelen bir veri akışını işlemek istemiyorsanız kullanışlıdır. Genellikle bir model, bir seferde bir kelime olacak şekilde akış olarak geri gönderilir.</p>
+<p>curl <a href="http://localhost:11434/api/generate">http://localhost:11434/api/generate</a> -d '{<br />
+&quot;model&quot;: &quot;tinyllama&quot;,<br />
+&quot;prompt&quot;: &quot;Why is the capital of Australia?&quot;,<br />
+&quot;stream&quot;: false<br />
+}'</p>
+</li>
+</ul>
+<p><strong>2.</strong> Aşağıda, bu API tarafından döndürülen verilerin nasıl bir şey olduğuna dair bir fikir edinebilirsiniz. Varsayılan olarak Ollama, sonucu JSON verisi olarak döndürecektir.</p>
+<p>Bunun içinde, sonucu ve isteğin tamamlanmasının ne kadar sürdüğü gibi çeşitli ek bilgileri görebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/04/Raspberry-Pi-Ollama-04-Using-API.jpg" alt="Ollama API'sini Kullanma" /></p>
+<h2>Sonuç</h2>
+<p>Bu rehberin sonunda, Raspberry Pi'nizde Ollama kurulu olmalıdır.</p>
+<p>Ollama, Llama3 gibi büyük dil modellerinin kurulumunu ve kullanımını basitleştiren zarif bir yazılım parçasıdır.</p>
+<p>Aynı makinede birden fazla model bile çalıştırabilir ve API'si veya Ollama komut satırı arayüzü üzerinden modeli çalıştırarak kolayca bir sonuç alabilirsiniz.</p>
+<p>Raspberry Pi'nizde Ollama çalıştırma hakkında sorularınız varsa aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-ollama.html&amp;text=Raspberry+Pi%27de+Ollama+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-ollama.html&amp;text=Raspberry+Pi%27de+Ollama+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-ollama.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-ollama.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-ollama.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-ollama.html&amp;title=Raspberry+Pi%27de+Ollama+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+Ollama+%C3%87al%C4%B1%C5%9Ft%C4%B1rma%20codenfast.com%2Fposts%2Fraspberry-pi-ollama.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

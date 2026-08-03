@@ -1,0 +1,320 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de Watcharr Çalıştırma - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Kendi kendine barındırılan bir izleme listesi"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de Watcharr Çalıştırma"/>
+    <meta property="og:description"
+          content="Kendi kendine barındırılan bir izleme listesi"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-watcharr.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-watcharr.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-Watcharr-Thumbnail-NOWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de Watcharr Çalıştırma"/>
+    <meta name="twitter:description"
+          content="Kendi kendine barındırılan bir izleme listesi"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-Watcharr-Thumbnail-NOWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de Watcharr Çalıştırma","item":{"@id":"https://codenfast.com/posts/raspberry-pi-watcharr.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-Watcharr-Thumbnail-NOWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-Watcharr-Thumbnail-NOWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-Watcharr-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-Watcharr-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-Watcharr-01-Setup-admin-user.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-Watcharr-01-Setup-admin-user.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-Watcharr-02-Search-or-import-Movies-and-TV-Shows.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-Watcharr-02-Search-or-import-Movies-and-TV-Shows.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-Watcharr-03-Searching-for-Movies.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-Watcharr-03-Searching-for-Movies.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de Watcharr Çalıştırma","description":"Kendi kendine barındırılan bir izleme listesi","image":["https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-Watcharr-Thumbnail-NOWM.jpg"],"datePublished":"2026-08-03T11:56:22.15098+03:00","dateModified":"2026-08-03T11:56:22.151009+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de Watcharr Çalıştırma</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-watcharr/">PiMyLifeUp - Running Watcharr on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'nizde Watcharr'ı nasıl çalıştıracağınızı öğreneceksiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-Watcharr-Thumbnail.jpg" alt="Raspberry Pi Watcharr" /></p>
+<p>Watcharr yazılımı, açık kaynaklı, kendi kendine barındırılan bir izleme listesidir. İzlediğiniz, izlemekte olduğunuz veya izlemeyi planladığınız dizileri saklamanızı sağlar. Hem filmleri hem de dizileri destekler.</p>
+<p>Bu yazılımı kullanarak, izlediğiniz dizileri ve filmleri değerlendirebilir ve ne kadarını izlediğinizi takip edebilirsiniz. <a href="https://github.com/sbondCo/Watcharr">Watcharr</a> yazılımı, video oyunlarını takip etmek için bile yapılandırılabilir.</p>
+<p>Tüm bu işlevsellik, dizilerinizi, filmlerinizi veya oyunlarınızı bulmayı ve takip etmeyi zahmetsiz hale getiren şık, modern ve hızlı bir web arayüzünde sunulur.</p>
+<p>Bu yazılım Go ve Svelte ile yazıldığından, oldukça hafiftir ve bu da onu Raspberry Pi'de çalıştırmak için harika kılar. Bu yazılımı, <a href="https://pimylifeup.com/raspberry-pi-plex-server/">Plex medya sunucusu gibi</a> daha talepkar yazılımlarla birlikte kolayca çalıştırabilirsiniz.</p>
+<p>Aşağıdaki bölümlerin sonunda, Raspberry Pi'nizde Watcharr çalışıyor olacak. Tek şart, Raspberry Pi OS'nin 64-bit bir sürümünü çalıştırıyor olmanızdır. Watcharr, 32-bit sürümler için derleme sağlamaz.</p>
+<h2>Raspberry Pi'nizde Watcharr Kurulumu ve Çalıştırılması</h2>
+<p>Aşağıdaki adımlarda, kendi kendine barındırılan izleme listesi web uygulaması Watcharr'ı Raspberry Pi'nize nasıl kurup çalıştıracağınızda size rehberlik edeceğiz.</p>
+<p>Watcharr ile deneyiminizi iyileştirmek için, devam etmeden önce Raspberry Pi'niz için <a href="https://pimylifeup.com/raspberry-pi-static-ip-address/">statik bir IP adresi ayarlamanızı</a> şiddetle tavsiye ederiz. Bu, cihazınıza sürekli olarak hangi IP'nin atandığını bulma zahmetinden sizi kurtaracaktır.</p>
+<h3>Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> Devam etmeden önce, <a href="https://pimylifeup.com/raspberry-pi-update/">Raspberry Pi'mizin güncel olduğundan</a> emin olalım.</p>
+<p>Aşağıdaki komutu kullanarak paket listesi önbelleğini güncelleyebilir ve güncel olmayan tüm paketleri yükseltebilirsiniz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>2.</strong> Raspberry Pi'de Watcharr'ı çalıştırmak için, Docker'ı kurmamız gerekiyor. Bu rehbere devam etmeden önce, <a href="https://pimylifeup.com/raspberry-pi-docker/">Pi'ye Docker kurma</a> rehberimizi takip edin.</p>
+<p>Watcharr'ı kurmayı ve çalıştırmayı basit bir süreç haline getirecek olan şey Docker'dır.</p>
+<h3>Watcharr'ı Saklamak İçin Klasörler Ayarlama</h3>
+<p><strong>3.</strong> Pi'nize Docker'ı kurduktan sonra, Pi'nizi Watcharr'ı çalıştıracak şekilde ayarlamaya devam edebilirsiniz.</p>
+<p>Bir sonraki adımımız, Watcharr için Compose dosyasını saklayacağımız bir dizin oluşturmak olacak. Bu aynı zamanda Watcharr'ın önbelleğini ve verilerini saklamak için kullanacağımız dizindir.</p>
+<p>Terminalde aşağıdaki komutu çalıştırarak bu dizini oluşturabilirsiniz.</p>
+<pre><code>sudo mkdir -p /opt/stacks/watcharr
+</code></pre>
+<p><a href="https://pimylifeup.com/mkdir-command-linux/">mkdir komutuyla</a> &quot;<code>-p</code>&quot; seçeneğini kullanmak, yolun bir kısmı henüz mevcut olmasa bile tam yolu oluşturmamızı sağlar.</p>
+<p><strong>4.</strong> Klasörü oluşturduktan sonra, <a href="https://pimylifeup.com/cd-command/">cd komutunu kullanarak</a> içine geçmeniz gerekiyor.</p>
+<p>Eğitimin geri kalanı, bu dizinde olmanızı bekleyecek.</p>
+<pre><code>cd /opt/stacks/watcharr
+</code></pre>
+<h3>Raspberry Pi'de Watcharr İçin Bir Compose Dosyası Yazma</h3>
+<p><strong>5.</strong> Şimdi Docker'ın Watcharr'ı Raspberry Pi'nize indirip çalıştırmak için kullanacağı Compose dosyasını yazmaya başlayabiliriz.</p>
+<p>Aşağıdaki komutu kullanarak Compose dosyasını yazmaya başlayabilirsiniz.</p>
+<pre><code>sudo nano compose.yaml
+</code></pre>
+<p><strong>6.</strong> Bu dosyanın içine, aşağıdaki satırları yazmanız gerekiyor.</p>
+<pre><code>version: &quot;3&quot;
+
+services:
+  watcharr:
+    image: ghcr.io/sbondco/watcharr:latest
+    container_name: watcharr
+    ports:
+      - 3080:3080
+    volumes:
+      - ./data:/data
+    restart: unless-stopped
+</code></pre>
+<p><strong>7.</strong> Compose dosyasını doldurduktan sonra, <code>CTRL</code> + <code>X</code>, <code>Y</code> ve ardından <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<h3>Raspberry Pi'de Watcharr'ı Başlatma</h3>
+<p><strong>8.</strong> Compose dosyası artık yazıldığına göre, şimdi Raspberry Pi'mizde Watcharr konteynerini başlatabiliriz.</p>
+<p>Docker'ın Watcharr'ı başlatmasını sağlamak, aşağıdaki komutu çalıştırmak kadar kolaydır. İnternet bağlantınıza bağlı olarak, Docker Watcharr konteynerinin en son sürümünü indirdiğinden bu birkaç dakika sürebilir.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<p>&quot;<code>-d</code>&quot; seçeneği, Docker'a konteyneri başarıyla başlattıktan sonra mevcut terminal oturumundan ayrılmasını (detach) söyler.</p>
+<h3>Watcharr Web Arayüzünüze Erişim</h3>
+<p><strong>9.</strong> Watcharr artık çalıştığına göre, Raspberry Pi'nizin IP adresini almamız gerekecek.</p>
+<p>Cihazınızın IP'sini <a href="https://pimylifeup.com/hostname-command/">hostname komutunu kullanarak</a> alabilirsiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>10.</strong> Favori web tarayıcınızda, Watcharr web arayüzüne erişmek için aşağıdaki adrese gitmek isteyeceksiniz.</p>
+<p>&quot;<code>&lt;IPADRESI&gt;</code>&quot; kısmını Pi'nizin IP'siyle değiştirdiğinizden emin olun.</p>
+<pre><code>http://&lt;IPADRESI&gt;:3080/
+</code></pre>
+<p><strong>11.</strong> Watcharr web arayüzüne ilk kez eriştiğinizde, bir admin kullanıcısı oluşturmanız istenecektir.</p>
+<p>Web arayüzüne erişmek için kullanmak istediğiniz kullanıcı adını ve şifreyi girin (<strong>1.</strong>).</p>
+<p>Bilgilerinizi doldurduktan sonra, bir hesap oluşturmak için &quot;<code>Set Up</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-Watcharr-01-Setup-admin-user.jpg" alt="Raspberry Pi'de Watcharr için Admin Kullanıcısı Kurma" /></p>
+<p><strong>12.</strong> Bir hesap oluşturduktan sonra, hemen Watcharr web arayüzüne giriş yapmış olacaksınız.</p>
+<p>Artık izlediğiniz dizileri kaydetmek için arayüzü kullanmaya başlayabilirsiniz. Dizi veya film eklemenin birkaç yolu vardır. Birincisi, ekranın üstündeki arama işlevini kullanmaktır (<strong>1.</strong>).</p>
+<p>Yazılım ayrıca &quot;<code>Import</code>&quot; düğmesine <code>tıklayıp</code> (<strong>2.</strong>) yönergeleri takip ederek izlenen dizilerin bir listesini içe aktarmanıza da izin verir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-Watcharr-02-Search-or-import-Movies-and-TV-Shows.jpg" alt="Film ve dizileri arama veya içe aktarma" /></p>
+<p><strong>13.</strong> Aşağıda, Watcharr'ın arama işlevinin filmleri ve dizileri aramak için nasıl çalıştığını görebilirsiniz.</p>
+<p>Bu arayüzün kullanımının ne kadar kolay olduğunu hızlıca fark edeceksiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-Watcharr-03-Searching-for-Movies.jpg" alt="Raspberry Pi'de Çalışan Watcharr" /></p>
+<h2>Raspberry Pi'de Watcharr İzleme Listesini Güncelleme</h2>
+<p>Raspberry Pi'mizde Watcharr'ı çalıştırmak için Docker kullanmak, bu yazılımı güncellemeyi zahmetsiz hale getirir.</p>
+<p>Aşağıdaki birkaç adımı kullanarak en son sürümü indirip yükseltebiliriz.</p>
+<p><strong>1.</strong> Öncelikle, bu rehberin başında Compose dosyasını yazdığımız dizine geçmeliyiz.</p>
+<p>Bunun nedeni, Watcharr'ın en son sürümünü Docker'ın indirmesini sağlamak için Compose dosyasını kullanmamız gerekmesidir.</p>
+<pre><code>cd /opt/stacks/watcharr
+</code></pre>
+<p><strong>2.</strong> Doğru konuma geldiğimizde, Watcharr'ın en son sürümünü indirmek için &quot;<code>pull</code>&quot; seçeneğini kullanın.</p>
+<p>Bu komut imajın en son sürümünü indirse de, çalışan konteyneri otomatik olarak güncellemeyecektir.</p>
+<pre><code>docker compose pull
+</code></pre>
+<p><strong>3.</strong> Docker'ın Watcharr konteynerini en son sürüme güncellemesini sağlamak için, onu ilk başta başlatmak için kullandığımız aynı komutu kullanmamız gerekiyor.</p>
+<p>Docker konteyneri başlatmaya gittiğinde, yeni bir imajın mevcut olduğunu algılayacak, eski konteyneri kapatacak ve ardından yeni imajı kullanarak yeniden başlatacaktır.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h2>Sonuç</h2>
+<p>Bu noktada, umarız Watcharr adlı kendi kendine barındırılan izleme listesini Raspberry Pi'nize kurmuşsunuzdur.</p>
+<p>Bu listeyi kullanarak, izlediğiniz, izlemeyi planladığınız veya şu anda izlemekte olduğunuz filmleri ve dizileri kolayca takip edebilirsiniz.</p>
+<p>Watcharr'ı Pi'nizde çalıştırma hakkında sorularınız varsa, aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-watcharr.html&amp;text=Raspberry+Pi%27de+Watcharr+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-watcharr.html&amp;text=Raspberry+Pi%27de+Watcharr+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-watcharr.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-watcharr.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-watcharr.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-watcharr.html&amp;title=Raspberry+Pi%27de+Watcharr+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+Watcharr+%C3%87al%C4%B1%C5%9Ft%C4%B1rma%20codenfast.com%2Fposts%2Fraspberry-pi-watcharr.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

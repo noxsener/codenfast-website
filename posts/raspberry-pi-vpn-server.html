@@ -1,0 +1,392 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Kendi Raspberry Pi VPN Sunucunuzu Kurun - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Kendi sanal özel ağınızı kurun"/>
+    <meta property="og:title" content="Kendi Raspberry Pi VPN Sunucunuzu Kurun"/>
+    <meta property="og:description"
+          content="Kendi sanal özel ağınızı kurun"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-vpn-server.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-vpn-server.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-VPN-Server-no-wm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Kendi Raspberry Pi VPN Sunucunuzu Kurun"/>
+    <meta name="twitter:description"
+          content="Kendi sanal özel ağınızı kurun"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-VPN-Server-no-wm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Kendi Raspberry Pi VPN Sunucunuzu Kurun","item":{"@id":"https://codenfast.com/posts/raspberry-pi-vpn-server.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-VPN-Server-no-wm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-VPN-Server-no-wm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-VPN-server.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-VPN-server.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/1-PiVPN-Automated-Installer-Welcome-Screen.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/1-PiVPN-Automated-Installer-Welcome-Screen.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/2-PiVPN-Static-IP-Address-Required.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/2-PiVPN-Static-IP-Address-Required.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/3-PiVPN-Are-you-using-DHCP-Reservation.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/3-PiVPN-Are-you-using-DHCP-Reservation.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/4-Allow-PiVPN-to-set-a-Static-IP-address.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/4-Allow-PiVPN-to-set-a-Static-IP-address.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/5-PiVPN-warning-about-IP-Conflict.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/5-PiVPN-warning-about-IP-Conflict.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/6-PiVPN-Choose-local-user-to-hold-config.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/6-PiVPN-Choose-local-user-to-hold-config.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/7-PiVPN-Choose-user-for-VPN-config.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/7-PiVPN-Choose-user-for-VPN-config.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/8-PiVPN-Choose-software-type-for-VPN-OVPN.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/8-PiVPN-Choose-software-type-for-VPN-OVPN.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/9-PiVPN-Select-easy-mode-installation.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/9-PiVPN-Select-easy-mode-installation.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/10-Set-default-OpenVPN-port.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/10-Set-default-OpenVPN-port.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/11-Confirm-OpenVPN-Port-Settings.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/11-Confirm-OpenVPN-Port-Settings.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/12-PiVPN-Select-DNS-Provider.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/12-PiVPN-Select-DNS-Provider.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/13-PiVPN-Select-Public-IP-Or-DNS.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/13-PiVPN-Select-Public-IP-Or-DNS.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/14-PiVPN-Generating-Server-and-HMAC-keys.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/14-PiVPN-Generating-Server-and-HMAC-keys.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/15-PiVPN-Message-about-enabling-Unattended-Upgrades.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/15-PiVPN-Message-about-enabling-Unattended-Upgrades.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/16-PiVPN-Enable-Unattended-Upgrades.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/16-PiVPN-Enable-Unattended-Upgrades.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/17-PiVPN-Installation-Completed.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/17-PiVPN-Installation-Completed.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/18-Reboot-Pi-after-PiVPN-installation.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/18-Reboot-Pi-after-PiVPN-installation.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/Pivpn-add.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/Pivpn-add.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/SFTP-Details.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/SFTP-Details.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/SFTP-ovpns.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/SFTP-ovpns.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/SFTP-ovpns-download-1.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/SFTP-ovpns-download-1.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/OpenVPN-GUI.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/OpenVPN-GUI.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/Select-ovpn-file.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/Select-ovpn-file.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/Ovpn-file-imported-succesfully.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/Ovpn-file-imported-succesfully.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/OpenVPN-GUI-2.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/OpenVPN-GUI-2.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/Ovpn-enter-password.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/Ovpn-enter-password.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Kendi Raspberry Pi VPN Sunucunuzu Kurun","description":"Kendi sanal özel ağınızı kurun","image":["https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-VPN-Server-no-wm.jpg"],"datePublished":"2026-08-03T11:46:25.487391+03:00","dateModified":"2026-08-03T11:46:25.48742+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Kendi Raspberry Pi VPN Sunucunuzu Kurun</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-vpn-server/">PiMyLifeUp - Build Your Own Raspberry Pi VPN Server</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, OpenVPN yazılımını kullanarak bir Raspberry Pi VPN sunucusunun nasıl kurulacağına dair adımları ele alacağım.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-VPN-server.jpg" alt="Raspberry Pi VPN sunucusu" /></p>
+<p>Ayrıca, şifreleme anahtarları ayarlayarak bağlantınızın mümkün olduğunca güvenli olmasını sağlamak için yapmanız gereken çeşitli şeyleri kurmaya da değineceğim.</p>
+<p>Bu proje biraz uzun bir süreç olabilir, ancak takip edilmesi nispeten basit bir eğitimdir ve yapılandırıldıktan sonra ekstra bir etkileşim gerektirmemelidir.</p>
+<p>Bir Raspberry Pi kullanmak, büyük miktarda güç tüketmeden 7/24 çevrimiçi kalabilen bir sanal özel ağ (VPN) kurmanın ucuz bir yoludur.</p>
+<p>Aynı anda birkaç bağlantıyı idare edebilecek kadar küçük ve güçlüdür, bu da onu evde özel kullanım için harika kılar.</p>
+<p>VPN'ler, genel Wi-Fi kullanırken bile şifrelenmiş ve güvenli internet trafiğine erişim sağlayabilen inanılmaz derecede kullanışlı bir ağ aracıdır.</p>
+<p>Ek bir bonus olarak, kendi bilgisayarınıza bağlanmanıza ve ev ağınıza erişmenize izin vermek için de kullanabilirsiniz. Bu, yerel ağınızın dışında bulunan diğer cihazlarınızın, VPN Sunucusunun yerel ağındaymış gibi davranmasını sağlar.</p>
+<p>Örneğin, uzaktayken erişmek istediğiniz bir <a href="https://pimylifeup.com/raspberry-pi-nas/">ağa bağlı depolama sunucunuz</a> varsa, bir VPN sunucusu ona güvenli bir şekilde erişmenizi sağlamada son derece kullanışlı olacaktır.</p>
+<h2>VPN Sunucunuz İçin Hazırlanma</h2>
+<p>Raspberry Pi VPN sunucusunu kurmaya başlamadan önce, kurmaya ve kullanmaya hazır olduğunuzdan emin olmak için ele almamız gereken birkaç şey var.</p>
+<p>Öncelikle, bu eğitim için, Raspberry Pi OS'nin temiz bir sürümünü kullandığımı bilmeniz önemlidir. Henüz kurmadıysanız ve nasıl yapılacağını öğrenmek istiyorsanız, tüm bunlara yeniyseniz <a href="https://pimylifeup.com/raspberry-pi-os-install/">Raspberry Pi OS kurulum rehberim</a> son derece kullanışlıdır.</p>
+<p>Başlangıç olarak, bunu kurmaya başlamadan önce gerçekten bir VPN'e ihtiyacınız olduğundan emin olun, çünkü ev ağınıza bir geçit görevi görebilir.</p>
+<p>Bir VPN kullanmayı düşünüyorsanız, ev ağınızdaki tüm bilgisayarların güvenli olduğundan ve yerel ağınız içinde birinin erişmesini istemeyeceğiniz hiçbir şeyi paylaşmadığınızdan emin olun.</p>
+<h2>VPN Sunucunuzun IP Adresini Hazırlama</h2>
+<p>Statik bir IP adresi mi yoksa dinamik bir IP adresi mi kullanacağınıza karar vermeniz önemlidir. Statik bir IP adresi için VPN kurmak oldukça basit bir süreçtir ve ekstra bir çalışma gerektirmez.</p>
+<p>Ancak, dinamik bir IP adresi kullanmak istiyorsanız, bir dinamik DNS hizmetinden yararlanmanız gerekir.</p>
+<p>Dinamik DNS hizmeti yolunu seçerseniz, kendi alan adınızı mı yoksa ücretsiz bir tane mi kullanmak istediğinize karar vermelisiniz.</p>
+<p>Kendi alan adınızı kullanmak isterseniz, CloudFlare gibi bir hizmet kullanabilirsiniz; ücretsiz bir alt alan adı kullanacaksanız, no-ip.org gibi bir hizmet sizin için kullanışlı olacaktır.</p>
+<p>Daha fazla bilgi için <a href="https://pimylifeup.com/raspberry-pi-port-forwarding/">Raspberry Pi'de Dinamik DNS</a> kurmayla ilgili rehberimize göz atabilirsiniz.</p>
+<p><strong>Cloudflare</strong> veya <strong>no-ip.org</strong> için ayarladığınız alan adını hatırlayın, çünkü eğitimin ilerleyen kısımlarında buna ihtiyacınız olacak.</p>
+<h2>Raspberry Pi VPN'iniz İçin Port Yönlendirme</h2>
+<p>Raspberry Pi'nizi kurmaya başlamadan önce yapmanız gereken üçüncü önemli şey, OpenVPN yazılımı için port yönlendirmesi yapmaktır.</p>
+<p>Yönlendirmeniz gereken varsayılan port <code>1194</code>'tür. Eğitimin ilerleyen kısımlarında buna ihtiyacınız olacağından, ayarladığınız portu hatırlayın. Bu port için kullanmanız gereken protokol <code>UDP</code>'dir.</p>
+<p>Yönlendiricinizde port yönlendirmeyi nasıl yapacağınızdan emin değilseniz, <a href="https://portforward.com/">port forward</a> üzerinden yönlendiricinizi aramanızı öneririz.</p>
+<h2>VPN Sunucusunu Kurma</h2>
+<p><strong>1.</strong> Bir Raspberry Pi VPN Sunucusu kurmak oldukça karmaşık bir süreç olabilir; normalde yazılımı kurmanız, şifreleme anahtarlarını oluşturmanız, portu güvenlik duvarına eklemeniz, Pi'yi statik bir IP adresi tutacak şekilde ayarlamanız ve daha fazlasını yapmanız gerekir.</p>
+<p>Neyse ki bizim için, <strong>PiVPN</strong> adlı bir kurulum betiği sayesinde bir Raspberry Pi VPN sunucusu kurmanın çok daha kolay bir yolu var; bu, bir VPN kurmak için gereken tüm ağır işleri halleder ve hata yapma olasılığını azaltır.</p>
+<p>Başlamadan önce, öncelikle varsayılan pi kullanıcısının şifresini değiştirmeliyiz; bu, birinin VPN'inize erişim sağlamayı başarması durumunda Raspberry Pi'nize kolayca erişememesini sağlamak içindir.</p>
+<pre><code>passwd
+</code></pre>
+<p><strong>2.</strong> Şifre değiştirildikten sonra, Raspberry Pi'mizde VPN sunucumuzu kurma sürecine başlayabiliriz. Bu sürece, <a href="https://github.com/pivpn/pivpn">PiVPN'in GitHub sayfasından</a> kurulum betiğini indirip çalıştıran aşağıdaki komutu çalıştırarak başlayabiliriz.</p>
+<p>Normalde, bir betiği doğrudan bir URL'den çalıştırmak kötü bir fikirdir, çünkü birinin Raspberry Pi'nize erişim sağlayıp ciddi zarar vermesinin kolay bir yolu olabilir.</p>
+<p>Ancak bu, doğruladığımız güvenilir bir kaynaktır; kodu kendiniz incelemek isterseniz, sadece <a href="https://install.pivpn.io">betiğin konumuna</a> gidin.</p>
+<pre><code>curl -L https://install.pivpn.io | bash
+</code></pre>
+<p><strong>3.</strong> Yukarıdaki komutu çalıştırdıktan sonra, aşağıdaki ekranla karşılaşmalısınız. Bu ekran, OpenVPN kurmak üzere olduğunuzu söyleyen bir metin içerecektir.</p>
+<p>Bir sonraki ekrana geçmek için, <code>ENTER</code> tuşuna basmanız gerekiyor.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/1-PiVPN-Automated-Installer-Welcome-Screen.png" alt="PiVPN Kurulum Karşılama Ekranı" /></p>
+<p><strong>4.</strong> Bir sonraki ekran, VPN'iniz için statik bir IP adresi ayarlamanız gerektiğini açıklar.</p>
+<p>Bu, Raspberry Pi yeniden başlatıldığında aynı IP adresini kullanmaya çalışması içindir. Yerel IP değişirse, VPN'inize erişiminizi kaybedebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/2-PiVPN-Static-IP-Address-Required.png" alt="PiVPN Statik IP Adresi Gerekli" /></p>
+<p><strong>5.</strong> Şimdi yönlendiricinizde bir DHCP rezervasyonu kullanıp kullanmadığınız sorulacaktır.</p>
+<p>DHCP rezervasyonunun ne olduğunu veya nasıl kullanılacağını bilmiyorsanız, devam etmek için <code>&lt;No&gt;</code> seçin.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/3-PiVPN-Are-you-using-DHCP-Reservation.png" alt="PiVPN DHCP Rezervasyonu Kullanıyor musunuz" /></p>
+<p><strong>6.</strong> Burada, mevcut IP adresini ve ağ geçidini statik olarak ayarlamak için <code>&lt;Yes&gt;</code> seçin.</p>
+<p>Bu sayfada gösterilen IP adresinden memnun değilseniz, <code>&lt;No&gt;</code> seçin.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/4-Allow-PiVPN-to-set-a-Static-IP-address.png" alt="PiVPN'in Statik bir IP adresi ayarlamasına izin verme" /></p>
+<p><strong>7.</strong> Bu ekran, yönlendiricinizin IP adresini başka bir cihaza atama ihtimali olduğu konusunda sizi uyarır.</p>
+<p>Bunu önlemek için DHCP rezervasyonları kullanabilirsiniz. Ancak, çoğu yönlendirici bu sorunu önleyecek kadar akıllıdır.</p>
+<p>Devam etmek için, <code>&lt;Ok&gt;</code> seçin ve <code>ENTER</code> tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/5-PiVPN-warning-about-IP-Conflict.png" alt="IP Çakışması hakkında uyarı" /></p>
+<p><strong>8.</strong> Bu ekran, OpenVPN yapılandırma dosyalarına sahip olacak bir kullanıcı ayarlamamız gerektiğini açıklar.</p>
+<p>Bir sonraki ekrana gitmek için <code>&lt;Ok&gt;</code> seçin ve <code>ENTER</code> tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/6-PiVPN-Choose-local-user-to-hold-config.png" alt="Yapılandırmayı tutacak yerel kullanıcıyı seçme" /></p>
+<p><strong>9.</strong> Bize, Raspberry Pi'nizin VPN yapılandırma dosyalarına sahip olabilecek kullanıcıların bir listesi sunulacaktır.</p>
+<p>Bu eğitimde, <code>pi</code> kullanıcısını kullanacağız. Başka bir kullanıcı kullanmak isterseniz, seçmek için <code>ARROW</code> (ok) tuşlarını ve <code>SPACEBAR</code> (boşluk) tuşunu kullanın.</p>
+<p>Seçiminizden memnun olduğunuzda, devam etmek için <code>ENTER</code> tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/7-PiVPN-Choose-user-for-VPN-config.png" alt="PiVPN VPN yapılandırması için kullanıcı seçme" /></p>
+<p><strong>10.</strong> Şimdi Raspberry Pi'nize hangi VPN türünü kurmak istediğinizi seçmeniz istenecek.</p>
+<p>İki seçenek WireGuard ve OpenVPN'dir.</p>
+<p>Bu rehber için, Raspberry Pi'mizde OpenVPN kullanacağız (<strong>1.</strong>). Seçmek için <code>ARROW</code> (ok) tuşlarını ve <code>SPACEBAR</code> (boşluk) tuşunu kullanın.</p>
+<p><code>OpenVPN</code> seçili olduğunda, devam etmek için <code>ENTER</code> tuşuna basın (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/8-PiVPN-Choose-software-type-for-VPN-OVPN.png" alt="PiVPN için yazılım türü seçme - OpenVPN" /></p>
+<p><strong>10.</strong> Artık Raspberry Pi'nizde OpenVPN kurulumunu özelleştirmek isteyip istemediğinize karar verebilirsiniz.</p>
+<p>PiVPN ekibinin seçtiği ayar çoğu kullanıcı için en iyisidir. Ancak, isterseniz bunları değiştirebilirsiniz.</p>
+<p>Rehberimiz için, varsayılan ayarlara sadık kalacağız.</p>
+<p>Devam etmek için, <code>&lt;No&gt;</code> seçin, ardından <code>ENTER</code> tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/9-PiVPN-Select-easy-mode-installation.png" alt="PiVPN kolay mod kurulumu seçme" /></p>
+<p><strong>11.</strong> Şimdi OpenVPN'in çalışacağı portu seçeceğiz.</p>
+<p>Bu eğitim için, varsayılan <code>1194</code> portuna sadık kalacağız. Portu yalnızca iyi bir nedeniniz varsa değiştirmelisiniz.</p>
+<p>Portu belirledikten sonra, <code>&lt;Ok&gt;</code> seçin ve <code>ENTER</code> tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/10-Set-default-OpenVPN-port.png" alt="Varsayılan OpenVPN portunu ayarlama" /></p>
+<p><strong>14.</strong> OpenVPN kurulumunuz için ayarladığınız portu onaylamanız istenecek.</p>
+<p>Seçtiğiniz porttan memnunsanız, devam etmek için <code>&lt;Yes&gt;</code> seçin.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/11-Confirm-OpenVPN-Port-Settings.png" alt="OpenVPN Port Ayarlarını Onaylama" /></p>
+<p><strong>15.</strong> Bir sonraki adım bir DNS sağlayıcısı seçmektir. Bir DNS sağlayıcısı, <code>https://pimylifeup.com</code> gibi bir URL'yi bir IP adresine çözen şeydir.</p>
+<p>Rehberimizde, Cloudflare'in DNS sunucularını kullanacağız. Cloudflare, günlüklerini her 24 saatte bir siler ve sorgulayan IP adresini takip etmez.</p>
+<p>Cloudflare'i veya başka bir DNS sağlayıcısını seçmek için, <code>ARROW</code> (ok) tuşlarını kullanmanız gerekecek (<strong>1.</strong>).</p>
+<p>İstediğiniz DNS sağlayıcısının üzerine geldiğinizde, seçmek için <code>SPACEBAR</code> (boşluk) tuşuna basın.</p>
+<p>Doğru seçimi yaptığınızdan eminseniz, devam etmek için <code>ENTER</code> tuşuna basabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/12-PiVPN-Select-DNS-Provider.png" alt="PiVPN DNS Sağlayıcısı Seçme" /></p>
+<p><strong>16.</strong> Genel IP Adresinizi mi yoksa bir DNS adını mı kullanmak istediğinize karar vermeniz gerekecek.</p>
+<p>Dinamik bir IP adresi kullanıyorsanız, genel DNS adı seçeneğini kullanmanızı öneririz. Bu konuda yardıma ihtiyacınız olursa, <a href="https://pimylifeup.com/raspberry-pi-port-forwarding/">Raspberry Pi'de dinamik DNS</a> kurmayla ilgili rehberimizi takip edebilirsiniz.</p>
+<p>Statik bir genel IP adresi kullandığımızdan, bu rehber için genel IP adresimizi kullanmaya devam edeceğiz.</p>
+<p>Seçenekler arasında <code>ARROW</code> (ok) tuşlarını kullanarak geçiş yapabilirsiniz. İstediğinizi bulduğunuzda, seçmek için <code>SPACEBAR</code> (boşluk) tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/13-PiVPN-Select-Public-IP-Or-DNS.png" alt="PiVPN Genel IP veya DNS Seçme" /></p>
+<p><strong>17.</strong> Bir sonraki adım, PiVPN betiğinin hem HMAC anahtarını hem de sunucu anahtarını oluşturmak üzere olduğunu açıklıyor.</p>
+<p>Bu anahtarlar, Raspberry Pi'nizin VPN'inin şifreleme kısmını oluşturan parçalardır.</p>
+<p>Rehbere devam etmek için <code>ENTER</code> tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/14-PiVPN-Generating-Server-and-HMAC-keys.png" alt="PiVPN Sunucu ve HMAC anahtarları oluşturuluyor" /></p>
+<p><strong>18.</strong> Şimdi size gözetimsiz güncellemeler (unattended-upgrades) hakkında basit bir açıklama sunulacak.</p>
+<p>Bu özellik, <a href="https://pimylifeup.com/download-raspbian/">Raspberry Pi OS'nin</a> her gün otomatik olarak güvenlik paketi güncellemelerini indirmesini sağlar.</p>
+<p>Bu ayar için asıl yapılandırma sayfasına geçmek için <code>ENTER</code> tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/15-PiVPN-Message-about-enabling-Unattended-Upgrades.png" alt="PiVPN Gözetimsiz Güncellemeleri etkinleştirme hakkında mesaj" /></p>
+<p><strong>19.</strong> Bu ekranda, <code>&lt;Yes&gt;</code> seçerek gözetimsiz güncellemeleri etkinleştirmenizi şiddetle tavsiye ederiz. Bunu etkinleştirmek, Raspberry Pi'nizin her zaman en son paketlere sahip olmasını sağlayacaktır.</p>
+<p>Bu özelliği kapalı bırakmak, Raspberry Pi'nizin VPN'i ve potansiyel olarak ev ağınız için önemli bir güvenlik riski oluşturabilir.</p>
+<p>Bitirdiğinizde, ayarlarınızı onaylamak için <code>ENTER</code> tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/16-PiVPN-Enable-Unattended-Upgrades.png" alt="PiVPN Gözetimsiz Güncellemeleri Etkinleştirme" /></p>
+<p><strong>20.</strong> Artık Raspberry Pi'nize OpenVPN kurulumunu tamamladınız.</p>
+<p>Bağlantılara izin vermek için tamamlamanız gereken birkaç şey daha olsa da, artık bu kurulum rehberinin yaklaşık %90'ını tamamladınız.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/17-PiVPN-Installation-Completed.png" alt="PiVPN Kurulumu Tamamlandı" /></p>
+<p><strong>21.</strong> Şimdi bizi, Raspberry Pi'yi yeniden başlatmamızı isteyen bir ekran karşılayacak.</p>
+<p>Aşağıdaki iki ekranda <code>ENTER</code> tuşuna basarak <code>&lt;Yes&gt;</code> seçeneğini seçin.</p>
+<p>OpenVPN'i kurduktan sonra Raspberry Pi'nizi yeniden başlatmak kritik bir adımdır.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/18-Reboot-Pi-after-PiVPN-installation.png" alt="PiVPN kurulumundan sonra Pi'yi yeniden başlatma" /></p>
+<h2>İlk OpenVPN Kullanıcınızı Ayarlama</h2>
+<p><strong>1.</strong> Normalde OpenVPN için bir kullanıcı ayarlamak, kullanıcı için bireysel sertifikalar oluşturmanız gerektiğinden zahmetli bir süreç olurdu, neyse ki PiVPN sayesinde bunu tek bir komutla yapabiliriz.</p>
+<p>Kullanıcı eklemeye başlamak için, aşağıdaki komutu çalıştırın:</p>
+<pre><code>sudo pivpn add
+</code></pre>
+<p>Bu ekranda, istemci için bir <strong>isim</strong> girmeniz gerekecek, bu isim farklı istemcileri birbirinden ayırt edebilmeniz için bir tanımlayıcı görevi görecektir.</p>
+<p>Ayrıca istemci için bir <strong>şifre</strong> belirlemenizi de isteyecektir ve bu şifreleme anahtarını güvence altına alacağından, tahmin edilmesi kolay olmayan güvenli bir şey yapmanız önemlidir.</p>
+<p>Yani, biri şifreyi kolayca tahmin edebilirse, VPN'inizin güvenliğini ciddi şekilde azaltır.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/Pivpn-add.png" alt="Pivpn add" /></p>
+<p>Bunlara enter tuşuna bastığınızda, PiVPN betiği Easy-RSA'ya istemci için 2048-bit RSA özel anahtarını oluşturmasını söyleyecek ve ardından dosyayı <code>/home/pi/ovpns</code> içine kaydedecektir.</p>
+<p><code>/home/pi/ovpns</code>, oluşturulan dosyayı cihazlarımıza kopyalayabilmemiz için sonraki birkaç adımda erişim sağlamamız gereken klasördür.</p>
+<p>Bu dosyaları güvende tuttuğunuzdan emin olun, çünkü VPN'inize erişmenin tek yolu bunlardır.</p>
+<p><strong>2.</strong> Yeni <strong>istemcimiz</strong> artık parola cümlemizle (passphrase) OpenVPN için ayarlandığına göre, artık onu bağlanmayı planladığımız cihaza aktarmamız gerekiyor.</p>
+<p>Bunu yapmanın en kolay yolu, ev ağınız içinden SFTP kullanmaktır.</p>
+<p>Bu eğitime devam etmeden önce, SFTP bağlantılarını işleyebilen <a href="https://filezilla-project.org/">FileZilla gibi bir program</a> kurulu olduğundan emin olun.</p>
+<p>Başlamak için, Raspberry Pi'mize SFTP üzerinden giriş yapalım. Raspberry Pi'nizin IP adresinin önüne <code>sftp://</code> yazmayı unutmayın.</p>
+<p>Pi'nizin yerel adresine sahip değilseniz, terminalde <code>hostname -I</code> komutunu kullanın.</p>
+<p>IP adresinizi, Kullanıcı Adınızı ve Şifrenizi girdikten sonra, hızlı bağlan düğmesine basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/SFTP-Details.png" alt="SFTP Detayları" /></p>
+<p><strong>3.</strong> Başarıyla giriş yaptıktan sonra, ihtiyacımız olan dosyanın bulunacağı <strong>ovpns</strong> klasörünü aramamız gerekiyor.</p>
+<p>Klasörü bulduktan sonra, üzerine <code>çift tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/SFTP-ovpns.png" alt="SFTP ovpns" /></p>
+<p><strong>4.</strong> Şimdi, yapmamız gereken tek şey istediğiniz <code>.ovpn</code> dosyasını bilgisayarınızda güvenli bir yere sürüklemektir. Bu dosya, VPN'e bağlanmak için ihtiyacımız olan verileri içerir, bu yüzden bu dosyayı güvende tutun.</p>
+<p>Aynı zamanda birinin VPN'inize erişim sağlayabileceği tek yol da budur, bu yüzden parola cümlesini ve dosyayı güvende tutmak son derece önemlidir.</p>
+<p>Biri bunlara erişim sağlarsa, ağınıza potansiyel olarak zarar verebilir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/SFTP-ovpns-download-1.png" alt="SFTP ovpns indirme" /></p>
+<p><strong>5.</strong> Artık <code>.ovpn</code> dosyası cihazımızda olduğuna göre, VPN'imize bağlanmak için bunu kullanabiliriz.</p>
+<p><code>.ovpn</code> dosyası, güvenli bir bağlantı kurmak için ihtiyacımız olan her şeyi saklar. Bağlanılacak web adresini ve ihtiyaç duyduğu tüm şifreleme verilerini içerir.</p>
+<p>İçermediği tek şey parola cümlenizdir, bu yüzden VPN'e bağlanırken bunu girmeniz gerekecek.</p>
+<p>Kullanacağımız istemci resmi OpenVPN istemcisidir ve bunu <a href="https://openvpn.net/index.php/download/community-downloads.html">resmi OpenVPN web sitesinden</a> alabilirsiniz.</p>
+<p>Bu istemciyi indirip kurun, ilk çalıştırmasında otomatik olarak görev çubuğuna küçültülecektir, simgeye <code>sağ tıklayın</code>, ardından &quot;Import file…&quot; seçeneğini seçin.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/OpenVPN-GUI.png" alt="OpenVPN GUI" /></p>
+<p><strong>6.</strong> Bir dosya gezgini ekranıyla karşılaşacaksınız, burada daha önce kaydettiğiniz <strong>.ovpn</strong> dosyasının bulunduğu yere gidin.</p>
+<p>Bulduktan sonra, OpenVPN istemcisine aktarmak için dosyaya <code>çift tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/Select-ovpn-file.png" alt="Ovpn dosyası seçme" /></p>
+<p><strong>7.</strong> Şimdi size dosyanın OpenVPN'e başarıyla aktarıldığını söyleyen bir iletişim kutusu sunulmalıdır.</p>
+<p>Devam etmek için sadece &quot;<strong>OK</strong>&quot; düğmesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/Ovpn-file-imported-succesfully.png" alt="Ovpn dosyası başarıyla aktarıldı" /></p>
+<p><strong>8.</strong> Şimdi, görev çubuğundaki OpenVPN istemci simgesine tekrar <code>sağ tıklayın</code>, bu sefer &quot;<strong>Connect</strong>&quot; düğmesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/OpenVPN-GUI-2.png" alt="OpenVPN GUI 2" /></p>
+<p><strong>9.</strong> Şimdi OpenVPN istemcisi <code>.ovpn</code> dosyasında bulunan verileri okumaya çalışacak.</p>
+<p>Bir parola cümlesi belirlediğimizden, şimdi bu eğitimin ilerleyen kısmında ayarladığınız parola cümlesini girmenizi isteyecektir.</p>
+<p>Doğru parola cümlesini girdiğinizden emin olduğunuzda, &quot;<strong>OK</strong>&quot; Düğmesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/Ovpn-enter-password.png" alt="Ovpn şifre girme" /></p>
+<p><strong>10.</strong> OpenVPN istemcisi artık Raspberry Pi'nizin VPN sunucusuna bağlanmayı deneyecektir. OpenVPN simgesi sabit yeşile dönüşürse, bu VPN'inize başarıyla bağlandığınız anlamına gelir.</p>
+<p>Ancak, sarıya dönüşür ve 60 saniye sonra yeşile dönmezse, bu bağlantının başarısız olmasına neden olan bir şey olduğu anlamına gelir.</p>
+<p>Çoğu durumda bağlantı başarısızlığı port yönlendirme sorunlarından kaynaklanır, örneğin benim yönlendiricim port yönlendirmede çok sayıda soruna sahip.</p>
+<p>Port yönlendirme konusunda karşılaşabileceğiniz sorunlarla ilgili yardım bulmak için yönlendiricinizin model numarasını Google'da aramanız en kolay yoldur.</p>
+<p>Bazı İSS'ler (İnternet Servis Sağlayıcıları) da belirli portları engeller, bu yüzden İSS'nizin kullanmayı planladığınız portu engellemediğini kontrol etmeniz en iyisidir.</p>
+<p>Dinamik bir DNS hizmeti kullanıyorsanız, hizmetin en son IP adresinizle doğru şekilde güncellendiğinden emin olun. IP adresi değiştiyse ama DNS ayarı değişmediyse, bağlantının başarısız olmasına neden olur.</p>
+<p>Umarım, artık başarıyla bağlanabileceğiniz tam işlevsel bir VPN'iniz vardır.</p>
+<h2>VPN'i Pi'nizden Kaldırma</h2>
+<p><strong>1.</strong> Herhangi bir nedenle, Raspberry Pi'nizden VPN'inizi kaldırmak isterseniz, üzerinde sadece aşağıdaki komutu kullanabilirsiniz.</p>
+<p>Bu komut, VPN tünelini kaldırmak için pivpn yazılımını kullanacaktır.</p>
+<pre><code>sudo pivpn uninstall
+</code></pre>
+<h2>Sonuç</h2>
+<p>Umarım bu eğitim size bir Raspberry Pi VPN Sunucusunun nasıl kurulacağını göstermiştir ve herhangi bir sorunla karşılaşmamışsınızdır. Bu, ucuz, her zaman açık bir VPN ağı kurmak isteyen herkes için kesinlikle harika bir projedir.</p>
+<p>Paylaşmak istediğiniz geri bildiriminiz, ipuçlarınız varsa veya herhangi bir sorunla karşılaştıysanız, lütfen aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-vpn-server.html&amp;text=Kendi+Raspberry+Pi+VPN+Sunucunuzu+Kurun" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-vpn-server.html&amp;text=Kendi+Raspberry+Pi+VPN+Sunucunuzu+Kurun" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-vpn-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-vpn-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-vpn-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-vpn-server.html&amp;title=Kendi+Raspberry+Pi+VPN+Sunucunuzu+Kurun" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Kendi+Raspberry+Pi+VPN+Sunucunuzu+Kurun%20codenfast.com%2Fposts%2Fraspberry-pi-vpn-server.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de Paperless-NGX Çalıştırma - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Kağıt belgelerinizi dijitalleştirmeye yardımcı olun"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de Paperless-NGX Çalıştırma"/>
+    <meta property="og:description"
+          content="Kağıt belgelerinizi dijitalleştirmeye yardımcı olun"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-paperless.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-paperless.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de Paperless-NGX Çalıştırma"/>
+    <meta name="twitter:description"
+          content="Kağıt belgelerinizi dijitalleştirmeye yardımcı olun"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de Paperless-NGX Çalıştırma","item":{"@id":"https://codenfast.com/posts/raspberry-pi-paperless.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-01-Login-to-Paperless-Web-Interface.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-01-Login-to-Paperless-Web-Interface.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-02-Dashboard.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-02-Dashboard.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-03-Upload-New-Documents.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-03-Upload-New-Documents.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-04-New-Document-Being-Processed.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-04-New-Document-Being-Processed.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-05-Open-Newly-Uploaded-Document.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-05-Open-Newly-Uploaded-Document.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-06-Edit-Document-Example.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-06-Edit-Document-Example.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de Paperless-NGX Çalıştırma","description":"Kağıt belgelerinizi dijitalleştirmeye yardımcı olun","image":["https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:39:17.89198+03:00","dateModified":"2026-08-03T12:39:17.892027+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de Paperless-NGX Çalıştırma</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-paperless/">PiMyLifeUp - Running Paperless-NGX on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'ye Paperless-NGX'i nasıl kurup çalıştıracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-Thumbnail.jpg" alt="Raspberry Pi Paperless-NG" /></p>
+<p>Paperless-NGX, tüm kağıt belgeleriniz için dijital bir arşiv/indeks görevi görmek üzere tasarlanmış güçlü bir yazılımdır.</p>
+<p>Paperless-NGX'e bir belge verdiğinizde, üzerinde OCR (Optik Karakter Tanıma) gerçekleştirerek görüntüleri aranabilir ve seçilebilir metne dönüştürecektir.</p>
+<p>Bu, Paperless'ın yapabileceklerinin sadece yüzeyini çiziyor. Belgelerinizi toplamak için merkezi bir yere ihtiyacınız varsa, kesinlikle bu yazılıma göz atmalısınız.</p>
+<p>Raspberry Pi, düşük miktarda güç kullandığından sürekli çalıştırmayı ucuz hale getirdiğinden <a href="https://github.com/paperless-ngx/paperless-ngx/">Paperless-NGX</a> için mükemmel bir cihazdır.</p>
+<p>Paperless-NGX ile en iyi deneyim için, 4GB veya daha fazla belleğe sahip bir Raspberry Pi 4 veya daha yenisini kullanmalısınız. Ayrıca, cihazınızın belleğinden en iyi şekilde yararlanabilmesi için 64-bit bir işletim sistemi kullanmanız da yardımcı olacaktır.</p>
+<h2>Raspberry Pi'nizi Paperless-NG İçin Hazırlama</h2>
+<p>Bu bölüm, Raspberry Pi'nizi Paperless-NG için hazırlama adımlarını gösterecek.</p>
+<p>Burada yapmamız gereken iki ana görev, &quot;<code>docker-compose</code>&quot;u kurmak ve Paperless'ın belgeleri alacağı bir dizin oluşturmaktır.</p>
+<p><strong>1.</strong> Herhangi bir şey yapmadan önce, paket listesini güncellememiz ve güncel olmayan tüm paketleri yükseltmemiz gerekecek.</p>
+<p>Bu görevleri gerçekleştirmek için, terminalde aşağıdaki iki komutu çalıştırın.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Güncelleme tamamlandıktan sonra, Paperless-NG'yi çalıştırmak için ihtiyacımız olan paketleri kurabiliriz. Paperless bir docker konteyneri olarak geldiğinden, sadece Docker kurmamız gerekiyor.</p>
+<p>Devam etmeden önce, <a href="https://pimylifeup.com/raspberry-pi-docker/">Raspberry Pi'ye Docker kurma</a> rehberimizi takip etmeniz gerekiyor.</p>
+<p><strong>3.</strong> Artık Docker'ı kurduğumuza göre, Paperless'ın yeni belgeleri alacağı bir dizin oluşturmamız gerekiyor.</p>
+<p>Bu eğitim için, kullanıcının ana dizini içinde &quot;<code>paperless</code>&quot; adlı başka bir dizinin içinde bulunacak &quot;<code>consume</code>&quot; adlı bir klasör oluşturacağız.</p>
+<p>Bu dizinleri terminalde aşağıdaki komutu kullanarak oluşturabilirsiniz.</p>
+<pre><code>mkdir -p ~/paperless/consume
+</code></pre>
+<h2>Raspberry Pi'ye Paperless-NGX Kurulumu</h2>
+<p>Raspberry Pi'miz hazırlandığına göre, Paperless-NGX kurmaya geçebiliriz. Bu adımlarda, Paperless-NGX'i kurup çalıştırmak için gereken bir &quot;<code>docker-compose.yml</code>&quot; dosyası ve bir ortam dosyası yazacağız.</p>
+<p><strong>1.</strong> Önceki bir adımda oluşturduğumuz dizine geçerek başlayalım.</p>
+<p>Terminalde <a href="https://pimylifeup.com/cd-command/">cd komutunu kullanarak</a> bu dizine geçebilirsiniz.</p>
+<pre><code>cd ~/paperless/
+</code></pre>
+<h3>docker-compose.yml Dosyasını Oluşturma</h3>
+<p><strong>2.</strong> Artık &quot;<code>paperless</code>&quot; dizininde olduğumuza göre, aşağıdaki komutu kullanarak bu Docker yapılandırma dosyasını yazmaya başlayabiliriz.</p>
+<p>Bu dosya, Docker'a hangi konteynerleri indirip çalıştırması gerektiğini söyler.</p>
+<pre><code>nano docker-compose.yml
+</code></pre>
+<p><strong>3.</strong> Bu yapılandırma dosyasının içine, aşağıdaki satırları yazın. Biraz sonra ayarlamak isteyebileceğiniz birkaç seçeneği inceleyeceğiz.</p>
+<pre><code>services:
+  broker:
+    image: docker.io/library/redis:7
+    restart: unless-stopped
+
+  webserver:
+    image: ghcr.io/paperless-ngx/paperless-ngx:latest
+    restart: unless-stopped
+    depends_on:
+      - broker
+    ports:
+      - 8000:8000
+    volumes:
+      - data:/usr/src/paperless/data
+      - media:/usr/src/paperless/media
+      - ./export:/usr/src/paperless/export
+      - ./consume:/usr/src/paperless/consume
+    env_file: docker-compose.env
+    environment:
+      PAPERLESS_REDIS: redis://broker:6379
+
+volumes:
+  data:
+  media:
+</code></pre>
+<p><strong>4.</strong> Yapılandırma dosyasının içinde, Paperless-NGX'i Raspberry Pi'nize uyacak şekilde ayarlamak için değiştirmek isteyebileceğiniz birkaç şey var.</p>
+<p>Varsayılan ayarlara sadık kalmaktan memnunsanız, bir sonraki adıma geçebilirsiniz.</p>
+<p><strong>Paperless-NGX'in Çalıştığı Portu Değiştirme</strong></p>
+<p>Değiştirmek isteyebileceğiniz ilk şey, Paperless-NGX'in Raspberry Pi'nizde kullandığı porttur. Varsayılan olarak, <code>8000</code> portunda çalışacaktır, ama bunu başka bir porta değiştirmek de mümkündür.</p>
+<p>Portu değiştirmek için, iki nokta üst üstenin sol tarafındaki sayıyı değiştirmek isteyeceksiniz.</p>
+<pre><code>    ports:
+      - 8000:8000
+</code></pre>
+<p>Örneğin, Paperless'ın <code>8080</code> portunda çalışmasını istediğiniz için değiştirmek isterseniz, bunu aşağıdaki gibi görünecek şekilde değiştirirsiniz.</p>
+<pre><code>    ports:
+      - 8080:8000
+</code></pre>
+<p><strong>İçe Alma Dizinini Değiştirme</strong></p>
+<p>Değiştirmek isteyebileceğiniz diğer seçenek, Paperless'ın Raspberry Pi'nizde dosyaları arayacağı konumdur. Varsayılan olarak, bu &quot;<code>consume</code>&quot; adlı göreceli dizin olacaktır (Bunun için bir yeri bu eğitimin başında oluşturduk).</p>
+<p>Paperless'ın belgeleri içe aktardığı dizini değiştirmek isterseniz, sütunun sol tarafındaki dizini değiştirmek isteyeceksiniz.</p>
+<pre><code>      - ./consume:/usr/src/paperless/consume
+</code></pre>
+<p>Örneğin, &quot;<code>/mnt/paperless</code>&quot; konumunda bağlı bir paylaşımdan klasörleri içe aktarmak isteseydiniz, bu satırı aşağıdaki gibi görünecek şekilde değiştirirdiniz.</p>
+<pre><code>      - /mnt/paperless:/usr/src/paperless/consume
+</code></pre>
+<p><strong>5.</strong> Bu dosyayı düzenlemeyi bitirdikten sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<h3>Paperless-NGX Ortam Dosyasını Yazma</h3>
+<p><strong>6.</strong> Paperless-NGX için gizli anahtar olarak kullanmak üzere rastgele bir dizeye ihtiyacımız olacak.</p>
+<p>Terminalde aşağıdaki komutu kullanarak rastgele bir anahtar oluşturabilirsiniz.</p>
+<pre><code>cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1
+</code></pre>
+<p>Bu komutu çalıştırdıktan sonra, aşağıdakine benzer bir sonuç almalısınız. Bu dizeyi kopyalayın, çünkü bir sonraki adımda kullanacağız.</p>
+<pre><code>McziUH4c8lidzd4wggZj5q1tpgBv7DcPMtFv5RD7f0rFUrQFOmh8rSOiuMwp9N6P
+</code></pre>
+<p><strong>7.</strong> Aşağıdaki komutu çalıştırarak &quot;<code>docker-compose.env</code>&quot; dosyasını yazmaya başlayabiliriz.</p>
+<pre><code>nano docker-compose.env
+</code></pre>
+<p><strong>8.</strong> Bu dosyanın içine, aşağıdaki satırları yazmanız gerekecek. Her parçayı eklerken açıklayacağız.</p>
+<p>Ekleyeceğimiz ilk satır, Paperless için gizli anahtarı ayarlar. &quot;<code>YOURSECRETKEY</code>&quot; kısmını <strong>6. adımda</strong> oluşturduğunuz anahtarla değiştirin.</p>
+<pre><code>PAPERLESS_SECRET_KEY=YOURSECRETKEY
+</code></pre>
+<p><strong>9.</strong> &quot;<code>USERMAP</code>&quot; seçenekleriyle başlayalım. Bu seçenekler, Docker konteynerini belirli bir kullanıcıya ve gruba eşler. Raspberry Pi OS'de ana kullanıcı <code>1000</code> ID'sine sahip olacaktır.</p>
+<p>Farklı bir şey kullanıyorsanız bu değerleri değiştirmeniz gerekecek.</p>
+<pre><code>USERMAP_UID=1000
+USERMAP_GID=1000
+</code></pre>
+<p><strong>10.</strong> Bir sonraki seçenek, Raspberry Pi'nizde Paperless'ın desteklemesi için ek diller eklemenizi sağlar. Varsayılan diller sizin için yeterliyse, bu seçeneği eklemeyi atlayabilirsiniz.</p>
+<p>Varsayılan olarak, Paperless İngilizce, Almanca, İtalyanca, İspanyolca ve Fransızca dillerini destekler. Ancak, yazılım <a href="https://packages.debian.org/search?keywords=tesseract-ocr-&amp;searchon=names&amp;suite=buster">Debian paket listesine bakarak</a> çok daha fazlasını destekleyebilir.</p>
+<p>Her ek dil, üç harfli koduyla belirtilmelidir (Örn. Çekçe için <code>ces</code>). Her birini tek bir boşlukla ayırarak birden fazla ek dil ekleyebilirsiniz.</p>
+<pre><code>PAPERLESS_OCR_LANGUAGES=ADDITIONAL LANGS HERE
+</code></pre>
+<p><strong>11.</strong> Varsayılan olarak, Paperless-NGX UTC saat dilimini kullanacaktır. Ancak, &quot;<code>PAPERLESS_TIME_ZONE</code>&quot; seçeneğini ayarlayarak bunu yerel saat diliminize değiştirebiliriz.</p>
+<p>Wikipedia'da <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">bir saat dilimleri listesi</a> bulabilirsiniz. Aradığınız değer &quot;<code>TZ database name</code>&quot; sütunundadır.</p>
+<p>Örneğin, saat dilimini <strong>Avustralya'nın Hobart</strong> şehrine ayarlamak için aşağıdaki satırı kullanırdık.</p>
+<pre><code>PAPERLESS_TIME_ZONE=Australia/Hobart
+</code></pre>
+<p><strong>12.</strong> Bu bölümde inceleyeceğimiz son seçenek, Paperless'ın Raspberry Pi'nizde OCR için kullanacağı varsayılan dili ayarlamaktır.</p>
+<p>Bu seçeneği, belgelerinizin çoğunun bulunacağı dile ayarlamalısınız.</p>
+<p>Aşağıda eklediğimiz satırla, varsayılan dili İngilizce olarak ayarlayacağız.</p>
+<pre><code>PAPERLESS_OCR_LANGUAGE=eng
+</code></pre>
+<p><strong>13.</strong> Bitirdiğinizde, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<h3>Raspberry Pi'de Paperless-NGX Kurulumunu Çalıştırma</h3>
+<p><strong>14.</strong> Son olarak, aşağıdaki komutu kullanarak Raspberry Pi'de Paperless'ı çalıştırabiliriz.</p>
+<p>Docker, gereken tüm konteynerleri indirmeye hemen başlayacak ve yapılandırmamızı kullanarak başlatacaktır.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<p>İnternet bağlantınızın hızına bağlı olarak, bu süreç biraz zaman alabilir.</p>
+<h3>Paperless-NGX'in Web Arayüzü İçin Bir Kullanıcı Oluşturma</h3>
+<p><strong>15.</strong> Paperless-NGX artık Raspberry Pi'nizde çalışır durumda olduğuna göre, bir kullanıcı oluşturmanız gerekecek.</p>
+<p>Bu süreci başlatmak için, terminalde aşağıdaki komutu çalıştırmalısınız.</p>
+<pre><code>docker compose run --rm webserver createsuperuser
+</code></pre>
+<p><strong>16.</strong> Sizden istenecek ilk şey, yeni kullanıcınız için bir kullanıcı adı belirtmenizdir.</p>
+<p>Herhangi bir şey yazmadan <code>ENTER</code> tuşuna basarsanız, Paperless kullanıcıyı &quot;<code>paperless</code>&quot; adıyla oluşturacaktır.</p>
+<pre><code>Username (leave blank to use 'paperless'):
+</code></pre>
+<p><strong>18.</strong> Şimdi bu kullanıcı için isteğe bağlı olarak bir e-posta adresi girmeniz istenecektir.</p>
+<p>Kullanıcıya bir e-posta atamak istemiyorsanız bu alanı boş bırakabilirsiniz.</p>
+<pre><code>Email address:
+</code></pre>
+<p><strong>19.</strong> Ardından, bu kullanıcı için şifreyi yazmanız gerekecek. Bunun güvenli bir şey olduğundan ve e-posta adresinize veya kullanıcı adınıza çok fazla benzemediğinden emin olun.</p>
+<pre><code>Password:
+</code></pre>
+<p>Şifreyi onaylamak için tekrar girmeniz istenecektir.</p>
+<pre><code>Password (again):
+</code></pre>
+<p><strong>20.</strong> Paperless-NGX için kullanıcınız başarıyla oluşturulduysa, terminalde aşağıdaki mesajı görmelisiniz.</p>
+<p>Artık Raspberry Pi'nizde Paperless'a giriş yapmaya ve kullanmaya geçebilirsiniz.</p>
+<pre><code>Superuser created successfully.
+</code></pre>
+<h2>Raspberry Pi'nin Paperless-NGX Web Arayüzünü Kullanma</h2>
+<p>Sonraki birkaç bölümde, Paperless-NGX'in web arayüzüne nasıl erişip kullanacağınızı göstereceğiz.</p>
+<p>Bu bölüm için ihtiyacınız olan tek şey favori web tarayıcınız ve Raspberry Pi'nize bir bağlantıdır.</p>
+<h3>Paperless-NGX Web Arayüzüne Erişim</h3>
+<p><strong>1.</strong> Raspberry Pi'nizde Paperless-NGX web arayüzüne erişmek için, IP adresini bilmeniz gerekir.</p>
+<p>Raspberry Pi'nizin IP'sini almanın en kolay yolu, terminalde <a href="https://pimylifeup.com/hostname-command/">hostname komutunu kullanmaktır</a>.</p>
+<pre><code>hostname -I
+</code></pre>
+<p>Genellikle, Pi'nize atanan IP, listelenen ilk adres olacaktır.</p>
+<p><strong>2.</strong> Raspberry Pi'nizin IP adresini öğrendikten sonra, aşağıdaki adrese gitmek isteyeceksiniz.</p>
+<p>&quot;<code>IPADDRESS</code>&quot; kısmını IP'nizle değiştirdiğinizden emin olun. Docker yapılandırma dosyasındaki portu değiştirdiyseniz &quot;<code>8000</code>&quot; portunu da değiştirmeniz gerekir.</p>
+<pre><code>http://IPADRESI:8000
+</code></pre>
+<p><strong>3.</strong> Artık sizi Paperless giriş ekranı karşılayacak. Bu ekranda, önceki bölümde belirlediğiniz hem kullanıcı adını hem de şifreyi doldurmanız gerekecek (<strong>1.</strong>).</p>
+<p>Giriş bilgilerinizi doldurduktan sonra, &quot;<code>Sign in</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-01-Login-to-Paperless-Web-Interface.png" alt="Paperless-NG Web Arayüzüne Giriş Yapma" /></p>
+<p><strong>4.</strong> Artık sizi Paperless-NGX gösterge paneli karşılayacak. Bu gösterge panelini tüm belgelerinizi görüntülemek ve yönetmek için kullanabilirsiniz.</p>
+<p>Bu arayüzü, belgelerinizi Paperless'a manuel olarak yükleyip işletmek için bile kullanabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-02-Dashboard.png" alt="Raspberry Pi'de Paperless-NG Gösterge Paneli" /></p>
+<h3>Web Arayüzü Üzerinden Paperless'a Bir Belge Yükleme</h3>
+<p><strong>5.</strong> Raspberry Pi'nize Paperless üzerinden bir dosya yüklemek için, gösterildiği gibi sol kenar çubuğuna sürükleyip bırakmak isteyeceksiniz.</p>
+<p>Alternatif olarak, &quot;<code>Browse files</code>&quot; düğmesine <code>tıklayarak</code> yüklemek istediğiniz belgeleri manuel olarak seçebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-03-Upload-New-Documents.png" alt="Paperless'a bir belge yükleme" /></p>
+<p><strong>6.</strong> Paperless'a bir dosya yüklendiğinde, otomatik olarak belgeyi işlemeye başlayacaktır.</p>
+<p>Bu süreç, tüm belgeyi taraması gerektiğinden zaman alabilir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-04-New-Document-Being-Processed.png" alt="Paperless belge işleniyor" /></p>
+<h3>İşlenmiş Bir Belgeyi Düzenleme</h3>
+<p><strong>7.</strong> Paperless'a belgeler yüklendikten sonra, oluşturulan meta verileri düzenlemek mümkündür. Bu, yüklediğiniz tüm farklı belgeleri düzgün bir şekilde kategorize etmek için kullanışlıdır.</p>
+<p>Meta veriyi düzenlemek, Paperless'ın makine öğrenmesinin belgelerinizi otomatik olarak kategorize etmesine de yardımcı olacaktır.</p>
+<p>Bir belgeyi düzenlemek için, onu yükledikten hemen sonra &quot;<code>Open document</code>&quot;a <code>tıklayabilirsiniz</code> (<strong>1.</strong>).</p>
+<p>Alternatif olarak, bu belgeleri &quot;<code>Documents</code>&quot; sayfasında bulabilirsiniz (<strong>2.</strong>)</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-05-Open-Newly-Uploaded-Document.png" alt="Belgeleri Açma" /></p>
+<p><strong>8.</strong> Aşağıda, Paperless'a yüklediğimiz bir ekran görüntüsü için düzenleme ekranını görebilirsiniz.</p>
+<p>Belgeyi tarayarak metni kolayca vurgulamanızı ve kopyalamanızı sağlamaya çalışmıştır.</p>
+<p>Bu belgeler ekranını, bu belgenin başlığı, etiketleri, belge türü ve daha fazlası gibi çeşitli ayrıntılarını düzenlemek için kullanabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Paperless-NG-06-Edit-Document-Example.png" alt="Raspberry Pi Paperless'ta belge düzenleme" /></p>
+<h2>Sonuç</h2>
+<p>Bu noktada, artık Raspberry Pi'nizde Paperless-NGX çalışıyor olmalıdır.</p>
+<p>Paperless, tüm kağıt belgelerinizi tek bir merkezi konumda dijitalleştirmek için harika, güçlü bir yazılımdır.</p>
+<p>Paperless'ı Raspberry Pi'nizde çalışır hale getirme hakkında sorularınız varsa, aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-paperless.html&amp;text=Raspberry+Pi%27de+Paperless-NGX+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-paperless.html&amp;text=Raspberry+Pi%27de+Paperless-NGX+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-paperless.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-paperless.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-paperless.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-paperless.html&amp;title=Raspberry+Pi%27de+Paperless-NGX+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+Paperless-NGX+%C3%87al%C4%B1%C5%9Ft%C4%B1rma%20codenfast.com%2Fposts%2Fraspberry-pi-paperless.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

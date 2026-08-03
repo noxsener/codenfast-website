@@ -1,0 +1,321 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de NGINX Proxy Manager Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Ters proxy&#39;leri kolayca kurun"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de NGINX Proxy Manager Kurulumu"/>
+    <meta property="og:description"
+          content="Ters proxy&#39;leri kolayca kurun"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-nginx-proxy-manager.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-nginx-proxy-manager.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de NGINX Proxy Manager Kurulumu"/>
+    <meta name="twitter:description"
+          content="Ters proxy&#39;leri kolayca kurun"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de NGINX Proxy Manager Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-nginx-proxy-manager.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-01-Sign-in-to-your-account.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-01-Sign-in-to-your-account.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-02-Change-User-Details.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-02-Change-User-Details.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-03-Change-Password.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-03-Change-Password.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-04-Open-Proxy-Hosts-screen.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-04-Open-Proxy-Hosts-screen.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-05-Open-Add-Proxy-Host.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-05-Open-Add-Proxy-Host.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-06-Add-New-Proxy.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-06-Add-New-Proxy.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de NGINX Proxy Manager Kurulumu","description":"Ters proxy'leri kolayca kurun","image":["https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:17:30.152446+03:00","dateModified":"2026-08-03T12:17:30.152473+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de NGINX Proxy Manager Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-nginx-proxy-manager/">PiMyLifeUp - Setting up the NGINX Proxy Manager on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu projede, Raspberry Pi'nizde NGINX ters proxy (reverse proxy) yöneticisini kurma sürecinde size rehberlik edeceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-Thumbnail.jpg" alt="Raspberry Pi NGINX Proxy Manager" /></p>
+<p><a href="https://github.com/NginxProxyManager/nginx-proxy-manager">NGINX proxy manager</a>, Raspberry Pi'nizde bir ters proxy kurma sürecini basitleştiren kullanışlı bir araçtır.</p>
+<p>Raspberry Pi'nizde bir ters proxy kurmak isteyebileceğiniz çeşitli nedenler vardır. Bir numaralı neden, bir hizmeti internete açmak ve HTTPS'yi hızlıca uygulamanızı sağlamak olurdu.</p>
+<p>Örneğin, HTTP'yi desteklemeyen bir hizmet kurduysanız, bunun yerine NGINX ters proxy üzerinden yönlendirmesini sağlayabilirsiniz. Bu ters proxy daha sonra HTTPS isteklerini kabul edebilir ve bunlar daha az güvenli olan programa iletilir.</p>
+<p>Raspberry Pi'nizde bir ters proxy kurmak, birden fazla uygulama çalıştırmayı da basitleştirir.</p>
+<p>Aşağıdaki bölümlerde, Docker kullanarak Raspberry Pi'nizde NGINX ters proxy yöneticisini nasıl çalışır hale getireceğinizi göstereceğiz.</p>
+<h2>Raspberry Pi'ye NGINX Proxy Manager Kurulumu</h2>
+<p>Bu bölüm, Raspberry Pi'nizin bir ters proxy olarak çalışması için gereken tüm adımları ele alacak. Bunu NGINX proxy manager adlı bir yazılım parçasını kullanarak başaracağız.</p>
+<p>Bu yazılımı seçtik çünkü Pi'nizde birden fazla ters proxy'yi kolayca kurmanızı sağlıyor.</p>
+<p>Bu ilk adımlar tamamen terminal içinde çalıştırılacaktır, bu yüzden devam etmeden önce açık olduğundan emin olun. Raspberry Pi OS'nin masaüstü sürümünü kullanıyorsanız, klavyenizde <code>CTRL</code> + <code>ALT</code> + <code>T</code> tuşlarına basarak bunu açabilirsiniz.</p>
+<h3>NGINX Ters Proxy Yöneticisini Çalıştırmak İçin Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> Başlamadan önce, Raspberry Pi'mizin NGINX proxy yöneticisini çalıştıracak şekilde ayarlandığından emin olmalıyız.</p>
+<p>Bu süreçteki ilk adımımız, paket listemizin güncel olduğundan ve güncel olmayan tüm paketlerin yükseltildiğinden emin olmaktır.</p>
+<p>Terminalde aşağıdaki komutu kullanarak her iki görevi de gerçekleştirebilirsiniz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>2.</strong> Yükseltme tamamlandıktan sonra, bir sonraki adımınız <a href="https://pimylifeup.com/raspberry-pi-docker/">Raspberry Pi'ye Docker kurmaktır</a>.</p>
+<p>Bu eğitime devam etmeden önce, yukarıda bağlantısını verdiğimiz rehberi takip edin. Docker rehberimiz, yazılımın cihazınızda doğru şekilde çalışmasını sağlayacak.</p>
+<p><strong>3.</strong> Docker'ı kurduktan sonra, sonraki birkaç adıma devam edebiliriz.</p>
+<p>Şimdi Docker compose dosyasını saklamak için bir klasör oluşturmamız gerekiyor. <a href="https://pimylifeup.com/mkdir-command-linux/">Aşağıdaki mkdir komutunu kullanarak</a> Raspberry Pi'nizde &quot;<code>nginxproxymanager</code>&quot; adlı bir dizin oluşturun.</p>
+<pre><code>sudo mkdir -p /opt/stacks/nginxproxymanager
+</code></pre>
+<p><strong>4.</strong> Yeni dizini oluşturduktan sonra, <a href="https://pimylifeup.com/cd-command/">cd komutunu kullanarak</a> içine geçmelisiniz.</p>
+<pre><code>cd /opt/stacks/nginxproxymanager
+</code></pre>
+<h3>NGINX Proxy Manager İçin Bir Docker Compose Dosyası Yazma</h3>
+<p><strong>5.</strong> Artık NGINX proxy manager'ı kurmaya devam edebiliriz.</p>
+<p>Bu ters proxy hizmetini Raspberry Pi'mizde Docker kullanarak çalıştıracağımızdan, bir Docker Compose dosyası oluşturmak isteyeceğiz. Bir compose dosyası, Docker'ın belirtilen konteyneri nasıl başlatacağını bilmesi için bir talimatlar kümesi gibidir.</p>
+<p>Terminalde aşağıdaki komutu kullanarak bu dosyayı nano metin editörüyle yazmaya başlayın.</p>
+<pre><code>nano compose.yml
+</code></pre>
+<p><strong>6.</strong> Bu dosyanın içine, aşağıdaki satırları yazın.</p>
+<p>NGINX Proxy Manager ile birlikte bir MariaDB veya MySQL sunucusu da kurabilseniz de, SQLite'a güveneceğiz. SQLite ayrı bir sunucu gerektirmez ve çoğu kişinin ihtiyaçları için yeterince hızlı olmalıdır.</p>
+<pre><code>services:
+  app:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+</code></pre>
+<p><strong>7.</strong> Yukarıdaki satırları ekledikten sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<h3>Raspberry Pi'nizde NGINX Proxy Manager'ı Başlatma</h3>
+<p><strong>8.</strong> Artık aşağıdaki komutu kullanarak Raspberry Pi'de ters proxy yöneticisini başlatabiliriz.</p>
+<p>&quot;<code>-d</code>&quot; seçeneğini kullanarak, Docker'a konteyneri başlattığında mevcut terminal oturumundan ayrılması gerektiğini söylüyoruz.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<p>Konteynerin tüm bileşenlerini indirmesi gerektiğinden, bu süreç tamamlanması birkaç dakika sürebilir.</p>
+<h2>Raspberry Pi'de NGINX Proxy Manager Kullanımı</h2>
+<p>Artık Raspberry Pi'de NGINX Proxy manager'ı sonunda çalışır hale getirdiğimize göre, onu kullanalım.</p>
+<p>Bu yazılım sayesinde, Raspberry Pi'nizde bir ters proxy kurmanın ne kadar basit olduğunu yakında göreceksiniz.</p>
+<h3>NGINX Proxy Manager Web Arayüzüne Erişim</h3>
+<p><strong>1.</strong> NGINX Proxy manager tamamen web arayüzü üzerinden yapılandırılır. Bu arayüze erişmek için, öncelikle <a href="https://pimylifeup.com/raspberry-pi-ip-address/">Raspberry Pi'nizin IP adresini</a> bilmeniz gerekir.</p>
+<p>Raspberry Pi'nizin IP adresini almanın en kolay yolu <a href="https://pimylifeup.com/hostname-command/">hostname komutunu kullanmaktır</a>.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>2.</strong> Pi'nizin IP'sini öğrendikten sonra, favori web tarayıcınızda aşağıdaki adrese gidin.</p>
+<p>&quot;<code>&lt;YOURIPADDRESS&gt;</code>&quot; kısmını Raspberry Pi'nizin IP'siyle değiştirdiğinizden emin olun.</p>
+<pre><code>http://&lt;IPADRESINIZ&gt;:81/
+</code></pre>
+<h3>İlk Kurulum Deneyimi</h3>
+<p><strong>3.</strong> Sizi giriş yapmanızı isteyen aşağıdaki ekran karşılayacak. NGINX Proxy Manager'ın ilk girişiniz için kullanmanız gereken varsayılan bir girişi vardır.</p>
+<p>Kullanıcı adı için &quot;<code>admin@example.com</code>&quot; yazın. Şifre için &quot;<code>changeme</code>&quot; yazın (<strong>1.</strong>).</p>
+<p>Varsayılan şifreyi doldurduktan sonra, &quot;<code>Sign In</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-01-Sign-in-to-your-account.jpg" alt="Yeni hesaba giriş yapma" /></p>
+<p><strong>4.</strong> İlk kez giriş yaptığınızda, yeni kullanıcınız için bilgileri doldurmanız gerekir (<strong>1.</strong>).</p>
+<p>Bilgileri güncelledikten sonra, &quot;<code>Save</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-02-Change-User-Details.jpg" alt="Kullanıcı bilgilerini değiştirme" /></p>
+<p><strong>5.</strong> Ardından, hesabınız için yeni bir şifre belirlemeniz gerekir. Mevcut şifreyi (<strong>1.</strong>) girerek başlayın, ki bu hâlâ &quot;<code>changeme</code>&quot; olacaktır.</p>
+<p>Ardından hesabınız için yeni bir şifre dolduracaksınız (<strong>2.</strong>).</p>
+<p>Yeni şifrenizi onaylamak için, &quot;<code>Save</code>&quot; düğmesine <code>tıklayın</code> (<strong>3.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-03-Change-Password.jpg" alt="Hesap için yeni şifre belirleme" /></p>
+<h3>Raspberry Pi'de İlk Ters Proxy'nizi Oluşturma</h3>
+<p><strong>6.</strong> Artık Raspberry Pi'nizde NGINX ters proxy yöneticisi çalışıyor. Bir ters proxy kurmanın tam adımlarını ele almasak da, size seçeneği nerede bulacağınızı gösterelim.</p>
+<p>Üst menüde, &quot;<code>Hosts</code>&quot; düğmesine <code>tıklamanız</code> gerekiyor (<strong>1.</strong>). Bu, Pi'nizde kurabileceğiniz farklı proxy türlerini listeleyen bir açılır kutu getirecek. Devam etmek için, &quot;<code>Proxy Hosts</code>&quot; seçeneğine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-04-Open-Proxy-Hosts-screen.jpg" alt="Proxy Hosts ekranını açma" /></p>
+<p><strong>7.</strong> Artık proxy hosts sayfasında olacaksınız. Şu anda burada hiçbir şey olmayacak. Devam etmek için &quot;<code>Add Proxy Host</code>&quot; düğmesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-05-Open-Add-Proxy-Host.jpg" alt="Add Proxy host'u açma" /></p>
+<p><strong>8.</strong> Artık Raspberry Pi'nizdeki ters proxy için tüm bilgileri ayarlamak üzere bu iletişim kutusunu kullanabilirsiniz.</p>
+<p>Bu, alan adını veya adlarını, HTTP şemasını, ana bilgisayar adını/IP'sini ve proxy'niz üzerinden ilettiğiniz portu ayarlamanızı sağlar.</p>
+<p>Alan adını doldururken, her seferinde onaylamak için <code>ENTER</code> tuşuna basmanız gerekecek. Bunun nedeni, formun tek bir proxy için birden fazla alan adı kaydetmenize olanak tanımasıdır.</p>
+<p>Aynı iletişim kutusunu kullanarak NGINX Proxy Manager'a alan adınız için bir SSL sertifikası oluşturmasını da söyleyebilirsiniz.</p>
+<p>Memnun kaldığınızda, devam etmek için &quot;<code>Save</code>&quot; düğmesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-NGINX-Reverse-Proxy-Manager-06-Add-New-Proxy.jpg" alt="Raspberry Pi'de NGINX Ters Proxy Yöneticisi" /></p>
+<h2>Sonuç</h2>
+<p>Umarız bu noktada, artık Raspberry Pi'nizde NGINX Proxy Manager kurulu ve çalışır durumdadır.</p>
+<p>Bu yazılım, Raspberry Pi'nizde ters proxy'ler çalıştırmayı çok daha basit bir süreç haline getirir. Bir ters proxy, cihazınızdaki yazılıma daha hızlı ve daha güvenli erişim kurmaya yardımcı olabilir.</p>
+<p>Bu yazılımı çalıştırmak için yardıma ihtiyacınız olursa, aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-nginx-proxy-manager.html&amp;text=Raspberry+Pi%27de+NGINX+Proxy+Manager+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-nginx-proxy-manager.html&amp;text=Raspberry+Pi%27de+NGINX+Proxy+Manager+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-nginx-proxy-manager.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-nginx-proxy-manager.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-nginx-proxy-manager.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-nginx-proxy-manager.html&amp;title=Raspberry+Pi%27de+NGINX+Proxy+Manager+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+NGINX+Proxy+Manager+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-nginx-proxy-manager.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

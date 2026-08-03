@@ -1,0 +1,370 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi VPN Erişim Noktası: Basit Bir VPN Yönlendirici Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Pi kullanarak basit bir VPN yönlendirici kurun"/>
+    <meta property="og:title" content="Raspberry Pi VPN Erişim Noktası: Basit Bir VPN Yönlendirici Kurulumu"/>
+    <meta property="og:description"
+          content="Pi kullanarak basit bir VPN yönlendirici kurun"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-vpn-access-point.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-vpn-access-point.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2017/04/Raspberry-Pi-VPN-Access-Point-no-wm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi VPN Erişim Noktası: Basit Bir VPN Yönlendirici Kurulumu"/>
+    <meta name="twitter:description"
+          content="Pi kullanarak basit bir VPN yönlendirici kurun"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2017/04/Raspberry-Pi-VPN-Access-Point-no-wm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi VPN Erişim Noktası: Basit Bir VPN Yönlendirici Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-vpn-access-point.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/04/Raspberry-Pi-VPN-Access-Point-no-wm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/04/Raspberry-Pi-VPN-Access-Point-no-wm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/04/Raspberry-Pi-VPN-Access-Point.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/04/Raspberry-Pi-VPN-Access-Point.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi VPN Erişim Noktası: Basit Bir VPN Yönlendirici Kurulumu","description":"Pi kullanarak basit bir VPN yönlendirici kurun","image":["https://pimylifeup.com/wp-content/uploads/2017/04/Raspberry-Pi-VPN-Access-Point-no-wm.jpg"],"datePublished":"2026-08-03T11:44:21.492394+03:00","dateModified":"2026-08-03T11:44:21.492422+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi VPN Erişim Noktası: Basit Bir VPN Yönlendirici Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-vpn-access-point/">PiMyLifeUp - Raspberry Pi VPN Access Point: Setup a Basic VPN Router</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu Raspberry Pi VPN erişim noktası eğitiminde, bir WiFi erişim noktasında VPN'i nasıl kuracağımızı inceleyeceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/04/Raspberry-Pi-VPN-Access-Point.jpg" alt="Raspberry Pi VPN Erişim Noktası" /></p>
+<p>Bu eğitim, önceki Kablosuz Erişim Noktası eğitimimizin üzerine inşa edilir, ancak önemli bir değişiklik yapar: tüm trafiği bir VPN üzerinden yönlendirmek.</p>
+<p>Bir VPN Erişim Noktası, herhangi bir VPN yazılımını desteklemese bile, istediğiniz herhangi bir cihazı bir VPN üzerinden çalıştırmanın hızlı ve kolay bir yolunu sağlar. Yapmanız gereken tek şey, o cihazı Raspberry Pi kablosuz erişim noktanıza bağlamaktır ve tüm trafiği otomatik olarak bir VPN tüneli üzerinden yönlendirilecektir.</p>
+<p>Bu eğitim, <a href="https://pimylifeup.com/raspberry-pi-wireless-access-point/">kablosuz erişim noktası üzerine önceki eğitimimizin</a> üzerine inşa edilir, ancak büyük bir değişiklik yapar: tüm trafiği bir VPN üzerinden yönlendirmek. Bu proje esasen bir VPN yönlendiricisidir ve kurulumu inanılmaz derecede kolaydır; öncelikle az önce bağlantısını verdiğim ilk eğitimi takip etmeniz gerekecek.</p>
+<p>Eğitimimiz için, bu VPN erişim noktasını VyprVPN veya NordVPN hizmetlerini kullanarak nasıl kuracağınızı göstereceğiz. Eğitimimiz için çeşitli VPN sağlayıcılarını test ederken, bunların hem iyi hız hem de iyi gizlilik politikalarını korurken en güvenilir olanlardan bazıları olduğunu bulduk.</p>
+<p>Raspberry Pi'ye ağınızın dışından bağlanıp onu bir VPN olarak kullanmayı tercih ederseniz, göz atmanız gereken oldukça <a href="https://pimylifeup.com/raspberry-pi-vpn-server/">kolay takip edilebilir bir Raspberry Pi VPN eğitimim</a> var.</p>
+<p>Bunun için VPN hizmetinizi kullanmayı seçebilirsiniz; başka sağlayıcılar için önerileriniz varsa, bu sayfanın altına bir yorum bırakabilirsiniz.</p>
+<h2>Erişim Noktası İçin OpenVPN'i Hazırlama</h2>
+<p>VPN Erişim Noktamızı kurmak için, öncelikle Kablosuz Erişim Noktası eğitimimizi takip etmeniz gerekecek, çünkü bu, Raspberry Pi'nizi bu eğitim için doğru şekilde ayarlayacaktır.</p>
+<p>Bu eğitim için, VPN hizmetinizi bir VPN Erişim Noktası kurmak için nasıl kullanabileceğinizi göstereceğiz.</p>
+<p>Bu eğitimde değineceğimiz iki VPN, VyprVPN ve NordVPN'dir. Bu ikisini seçtik çünkü her ikisinin de güvenilir, hızlı ve iyi gizlilik politikalarına sahip olduğunu gördük.</p>
+<p>VPN'in kendisi için, <a href="https://openvpn.net/index.php/open-source/333-what-is-openvpn.html">OpenVPN yazılımını kullanacağız</a>; değineceğimiz iki VPN de OpenVPN protokolü için tam destek sunuyor ve çalıştırmak için gereken <strong>.ovpn</strong> dosyalarını bize sağlıyor.</p>
+<p><strong>1.</strong> VPN Erişim Noktamızı kurmaya başlamadan önce, öncelikle aşağıdaki iki komutu çalıştırarak en son paketlere sahip olduğumuzdan emin olalım.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Artık tamamen güncel olduğumuza göre, dayanacağımız OpenVPN yazılımını kurabiliriz.</p>
+<p>Bunu terminalde aşağıdaki komutu çalıştırarak yapabiliriz:</p>
+<pre><code>sudo apt install openvpn -y
+</code></pre>
+<p><strong>3.</strong> Şimdi Raspberry Pi VPN erişim noktamızı çalışır hale getirmek için ihtiyacımız olan her şeyi saklayacağımız &quot;<code>openvpn</code>&quot; dizinine geçelim.</p>
+<p><a href="https://pimylifeup.com/cd-command/">Dizin değiştirme komutunu</a> kullanarak bu dizine geçebiliriz.</p>
+<pre><code>cd /etc/openvpn
+</code></pre>
+<p><strong>4.</strong> Artık &quot;<code>openvpn</code>&quot; dizinine geçtiğimize göre, devam etmek için yetkilendirme dosyamızı oluşturmamız gerekiyor.</p>
+<p>Oluşturacağımız bu &quot;<code>auth.txt</code>&quot; dosyası, VPN hizmetiniz için kullanıcı adınızı ve şifrenizi saklayacaktır.</p>
+<p>Aşağıdaki <a href="https://pimylifeup.com/nano-text-editor/">nano komutunu</a> çalıştırarak dosyayı oluşturmaya başlayın.</p>
+<pre><code>sudo nano /etc/openvpn/auth.txt
+</code></pre>
+<p><strong>5.</strong> Şimdi aşağıdaki örneğimizde gösterildiği gibi kullanıcı adınızı ve şifrenizi bu dosyaya ekleyin.</p>
+<p>OpenVPN'i, VPN hizmetinize giriş yapmak için bu dosyadan okuyacak şekilde ayarlayacağız.</p>
+<pre><code>username
+password
+</code></pre>
+<p><strong>6.</strong> Giriş bilgilerinizi dosyaya girdikten sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code> ve sonra <strong>Enter</strong> tuşuna basarak dosyayı kaydedip çıkabiliriz.</p>
+<h2>NordVPN İçin OVPN Dosyalarını Alma</h2>
+<p><strong>1.</strong> auth.txt dosyasını oluşturduğumuza göre, NordVPN'den gerekli ovpn dosyalarını almamız gerekecek.</p>
+<p>Bu dosyaları kullanabilmeniz için, önce NordVPN'e kaydolmanız gerektiğini unutmayın.</p>
+<p>Ancak bunu yapmadan önce, öncelikle terminalde aşağıdaki komutu çalıştırarak doğru dizinde olduğumuzdan emin olalım.</p>
+<pre><code>cd /etc/openvpn
+</code></pre>
+<p><strong>2.</strong> Şimdi NordVPN için OpenVPN dosyalarını almak için, <a href="https://nordvpn.com/ovpn/">NordVPN web sitesindeki ovpn bölümüne</a> gitmeniz gerekiyor.</p>
+<p>Bu web sitesinde kullanmak istediğiniz belirli sunucuyu bulun, &quot;<strong>Download UDP</strong>&quot; düğmesine <code>sağ tıklayın</code> ve &quot;<strong>Copy Link Address</strong>&quot; seçeneğine basarak bağlantıyı kopyalayın.</p>
+<p>Bu URL'yi, kullandığımız URL'nin yerine aşağıdaki komuta yapıştırın.</p>
+<p>Örneğimizde, <strong>au514</strong> sunucusunu kullanacağız.</p>
+<pre><code>sudo wget https://downloads.nordcdn.com/configs/files/ovpn_legacy/servers/au514.nordvpn.com.udp1194.ovpn
+</code></pre>
+<p><strong>3.</strong> Şimdi az önce indirdiğiniz dosyayı yeniden adlandırmanız en iyisidir. Dosyayı yeniden adlandırmak, eğitimin ilerleyen kısımlarında kullanmayı kolaylaştıracaktır.</p>
+<p>Ayrıca dosya türünü &quot;<code>.ovpn</code>&quot;den &quot;<code>.conf</code>&quot;a değiştirmeniz gerekiyor. Bu değişiklik, otomatik başlatmayı etkinleştirdiğimizde OpenVPN'in dosyayı algılayıp yükleyebilmesi için gereklidir.</p>
+<p>Aşağıdaki örneğimizde gösterdiğimiz gibi, dosyayı hızlıca yeniden adlandırmak için <a href="https://pimylifeup.com/mv-command-linux/">mv komutunu kullanabilirsiniz</a>.</p>
+<p><code>au514.nordvpn.com.udp1194.ovpn</code> dosya adını sadece <code>au514.conf</code> olarak kısalttık. Bu şekilde çok daha kolay işlenir, ama yine de hangi sunucuya bağlanmak için olduğu hakkında yeterli bilgi verir.</p>
+<pre><code>sudo mv au514.nordvpn.com.udp1194.ovpn au514.conf
+</code></pre>
+<p><strong>4.</strong> Dosyayı yeniden adlandırdıktan sonra, &quot;VPN erişim noktasını kurma&quot; başlıklı bölüme geçebilirsiniz.</p>
+<p>Bu bölüm, sizi OpenVPN'i fiilen kullanma sürecinde yönlendirecek ve trafiği onun üzerinden nasıl yönlendireceğinizi de gösterecektir.</p>
+<h2>VPN Erişim Noktasını Kurma</h2>
+<p><strong>1.</strong> Artık kullanıma hazır bir .ovpn dosyamız olduğuna göre, Raspberry Pi VPN erişim noktamızın çalışması için üzerinde bazı değişiklikler yapmamız gerekiyor.</p>
+<p>Bu komuttaki dosya adını kendi dosyanızla değiştirdiğinizden emin olarak aşağıdaki komutu çalıştırarak başlayın.</p>
+<pre><code>sudo nano au514.conf
+</code></pre>
+<p><strong>2.</strong> Şimdi, bu dosyanın içinde, aşağıdaki satırı aramanız ve üzerinde değişiklik yapmanız gerekiyor. Bu satırı bulmayı kolaylaştırmak için <code>CTRL</code> + <code>W</code> kullanabilirsiniz.</p>
+<p>Bu değişiklik, OpenVPN istemcisi dosyayı açtığında &quot;<code>auth.txt</code>&quot; dosyanızı yüklemesi gerektiğini bilmesini sağlayacaktır.</p>
+<p><strong>Bulun</strong></p>
+<pre><code>auth-user-pass
+</code></pre>
+<p><strong>Şununla değiştirin</strong></p>
+<pre><code>auth-user-pass auth.txt
+</code></pre>
+<p><strong>3.</strong> Dosyayı değiştirdikten sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code> ve son olarak <code>ENTER</code> tuşuna basarak kaydedebilirsiniz.</p>
+<p><strong>4.</strong> Bunu yaptıktan sonra, OpenVPN'in VPN sağlayıcımıza (örneğimizde bu NordVPN olacak) başarılı bir bağlantı kurduğundan emin olmak için artık test edebiliriz.</p>
+<p>Bunu yapmak için, aşağıdaki komutu çalıştıracağız; <strong>.conf</strong> (<strong>.ovpn</strong>) dosyasını bir önceki adımda değiştirdiğiniz dosyayla değiştirdiğinizden emin olun. Örneğimiz için &quot;<strong>au514.conf</strong>&quot; dosyamızı kullanacağız.</p>
+<pre><code>sudo openvpn --config &quot;/etc/openvpn/au514.conf&quot;
+</code></pre>
+<p>Bu komut, bağlantıyı kurarken epey metin çıktısı verecektir; aramak isteyeceğiniz asıl metin aşağıda gösterdiğimize benzer bir şeydir.</p>
+<p>Buna benzer bir çıktı alırsanız, bu VPN sağlayıcınızın sunucularına başarılı bir bağlantı kurduğunuz anlamına gelir.</p>
+<pre><code>/sbin/ip route add 81.171.69.2/32 via 192.168.40.1
+/sbin/ip route add 0.0.0.0/1 via 172.20.32.1
+/sbin/ip route add 128.0.0.0/1 via 172.20.32.1
+Initialization Sequence Completed
+</code></pre>
+<p><strong>5.</strong> OpenVPN istemcisini test amaçlı çalıştırdığımıza göre, artık onu sonlandırıp açılışta başlamasını ayarlamaya ve trafiğin VPN tüneli üzerinden yönlendirilmesi için güvenlik duvarı yönlendirmemizi değiştirmeye geçebiliriz.</p>
+<p>Şu anda çalışan işlemi durdurmak için <code>CTRL</code> + <code>C</code> tuşuna basın.</p>
+<h3>Ağ Kurallarını Ayarlama</h3>
+<p><strong>6.</strong> VPN'imiz doğru çalıştığına göre, Kablosuz Erişim Noktası eğitimimizde yaptığımız gibi Ethernet üzerinden değil, <code>wlan0</code> bağlantısını tünelimiz üzerinden yeniden yönlendirmek için iptables kullanmamız gerekiyor.</p>
+<p>Ancak bunu yapmadan önce, mevcut nftables'ımızı temizlememiz gerekecek. Bunu Raspberry Pi'de aşağıdaki komutu çalıştırarak yapabiliriz.</p>
+<pre><code>sudo nft flush ruleset
+</code></pre>
+<p><strong>7.</strong> Bir sonraki adımımız, wlan bağlantısını tünel üzerinden yönlendirecek bazı kurallar ayarlamaktır. Bu üç ayrı komut gerektirecek.</p>
+<p>İlk komut bir NAT tablosu oluşturur, sonraki bir postrouting zinciri kurar ve sonuncusu bir masquerade kuralı oluşturur.</p>
+<pre><code>sudo nft add table ip nat
+sudo nft add chain ip nat postrouting '{ type nat hook postrouting priority srcnat; policy accept; }'
+sudo nft add rule ip nat postrouting oifname &quot;tun0&quot; masquerade
+</code></pre>
+<p><strong>8.</strong> Bunu yaptıktan sonra, NFT Tabloları her okunduğunda okunmaları için nftables kurallarımızı kaydedelim.</p>
+<p>Bunu aşağıdaki komutu kullanarak başarabiliriz. Bu komut, şu anda etkin olan kural setini &quot;<code>/etc/nftables.conf</code>&quot; dosyasına aktarır.</p>
+<pre><code>sudo sh -c 'nft list ruleset &gt; /etc/nftables.conf'
+</code></pre>
+<p><strong>9.</strong> Bu değişikliği yaptıktan sonra, NFTables servisinin etkin olduğundan da emin olmalıyız. Neyse ki bu oldukça kolay, sadece aşağıdaki komutu çalıştırabiliriz.</p>
+<p>Servisi etkinleştirmek, Raspberry Pi'niz açıldığında servisin başlatılmasını sağlar.</p>
+<pre><code>sudo systemctl enable --now nftables
+</code></pre>
+<h3>OpenVPN'i Açılışta Bağlanacak Şekilde Ayarlama</h3>
+<p><strong>10.</strong> Artık güvenlik duvarımız kurulu ve hazır olduğuna göre, OpenVPN istemcisinin yapılandırma dosyasını ayarlamamız gerekiyor.</p>
+<p>Aşağıdaki komutu çalıştırarak dosyayı düzenlemeye başlayın.</p>
+<pre><code>sudo nano /etc/default/openvpn
+</code></pre>
+<p><strong>11.</strong> Bu dosyada aşağıdaki satırı bulun ve hem yorum satırı olmaktan çıkaracak hem de &quot;<strong>all</strong>&quot;ı bu bölümün <strong>1. Adımında</strong> değiştirdiğiniz dosyanın adıyla değiştirecek şekilde değiştirin.</p>
+<p>Örneğimizi aşağıda görebilirsiniz.</p>
+<p><strong>Bulun</strong></p>
+<pre><code>#autostart=&quot;all&quot;
+</code></pre>
+<p><strong>Şununla değiştirin</strong></p>
+<pre><code>autostart=&quot;au514&quot;
+</code></pre>
+<p><strong>12.</strong> OpenVPN yapılandırma dosyasında gerekli değişiklikleri yaptıktan sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code> ve son olarak <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<p><strong>13.</strong> Artık Raspberry Pi'nizi yeniden başlatarak her şeyin çalışıp çalışmadığını görebilmeniz gerekir.</p>
+<p>Açılışta, otomatik olarak VPN'inize bağlanmalı, tüneli kurmalı ve ardından kablosuz erişim noktanızdan gelen trafiği tünel üzerinden iletmelidir.</p>
+<pre><code>sudo reboot
+</code></pre>
+<p>VPN erişim noktanızın amaçlandığı gibi çalıştığını doğrulamanın en kolay yolu, IP adresinizin VPN üzerinden bağlı olmayan cihazlardan farklı olup olmadığını kontrol etmektir.</p>
+<p>Alternatif olarak, VPN sağlayıcınız muhtemelen web sitelerinin üstünde &quot;<strong>Protected</strong>&quot; olup olmadığınızı gösterir; örneklerimizin her ikisi, NordVPN ve VyprVPN, bu geri bildirimi sağlar.</p>
+<h2>DNS Sızıntılarını Önleme</h2>
+<p>DNS sızıntısı yaşadığınızı fark edebilirsiniz, ancak küçük bir ayar Raspberry Pi'nizde bunu kolayca düzeltebilir. Değişiklik, DNS'imizi internet servis sağlayıcısı yerine <a href="https://www.cloudflare.com/learning/dns/what-is-1.1.1.1/">Cloudflare'in genel DNS'ini</a> kullanmaya zorlamaktır.</p>
+<p><strong>1.</strong> Raspberry Pi'nizde DNS sızıntılarının oluşmasını önlemeye yardımcı olmak için, dhcpcd yapılandırma dosyasını daha iyi bir DNS sağlayıcısına bağlanacak şekilde değiştirmek isteyeceğiz.</p>
+<p>İsterseniz bunu bir Pi-Hole sunucusu veya başka bir şey kullanacak şekilde de ayarlayabilirsiniz.</p>
+<pre><code>sudo nano /etc/dhcpcd.conf
+</code></pre>
+<p><strong>2.</strong> Dosyayı açtıktan sonra, aşağıdaki satırı bulana kadar gözden geçirmek isteyeceksiniz.</p>
+<pre><code>#static domain_name_servers=192.168.0.1
+</code></pre>
+<p><strong>3.</strong> Bu satırı bulduktan sonra, satırın başındaki kare işaretini (<code>#</code>) kaldırın ve DNS IP'sini &quot;<code>192.168.0.1</code>&quot;den &quot;<code>1.1.1.1</code>&quot;e değiştirin.</p>
+<pre><code>static domain_name_servers=1.1.1.1
+</code></pre>
+<p><strong>4.</strong> Bu değişikliği yaptıktan sonra, <code>CTRL</code> + <code>X</code>, <code>Y</code> ve ardından <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<p><strong>5.</strong> Şimdi aşağıdaki komutu girerek Pi'nizi yeniden başlatın.</p>
+<pre><code>sudo reboot
+</code></pre>
+<p><strong>6.</strong> <a href="https://ipleak.net/">ipleak.net</a> adresine gidin ve DNS'inizin artık sızdırmadığını kontrol edin. Hâlâ sızdırıyorsa, WebRTC'nin sızdırmadığından emin olmak isteyebilirsiniz.</p>
+<h2>Sonuç</h2>
+<p>Umarız artık VyprVPN veya NordVPN hizmetine OpenVPN tüneliniz üzerinden tüm trafiğini yönlendiren, tam işlevsel bir Kablosuz Erişim Noktanız vardır.</p>
+<p>Elinizde kararlı ve hızlı bir VPN bağlantısı ve daha güvenli bir bağlantıya geçmenin kolay bir yolu kalmalı.</p>
+<p>Bu Raspberry Pi VPN erişim noktası eğitimiyle ilgili herhangi bir sorunla karşılaşırsanız veya geri bildiriminiz varsa, lütfen aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-vpn-access-point.html&amp;text=Raspberry+Pi+VPN+Eri%C5%9Fim+Noktas%C4%B1%3A+Basit+Bir+VPN+Y%C3%B6nlendirici+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-vpn-access-point.html&amp;text=Raspberry+Pi+VPN+Eri%C5%9Fim+Noktas%C4%B1%3A+Basit+Bir+VPN+Y%C3%B6nlendirici+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-vpn-access-point.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-vpn-access-point.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-vpn-access-point.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-vpn-access-point.html&amp;title=Raspberry+Pi+VPN+Eri%C5%9Fim+Noktas%C4%B1%3A+Basit+Bir+VPN+Y%C3%B6nlendirici+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi+VPN+Eri%C5%9Fim+Noktas%C4%B1%3A+Basit+Bir+VPN+Y%C3%B6nlendirici+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-vpn-access-point.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

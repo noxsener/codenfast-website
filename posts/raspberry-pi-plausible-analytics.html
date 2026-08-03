@@ -1,0 +1,384 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de Plausible Analytics Çalıştırma - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Google Analytics&#39;e açık kaynaklı ve ücretsiz bir alternatif"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de Plausible Analytics Çalıştırma"/>
+    <meta property="og:description"
+          content="Google Analytics&#39;e açık kaynaklı ve ücretsiz bir alternatif"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-plausible-analytics.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-plausible-analytics.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Plausible-Analytics-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de Plausible Analytics Çalıştırma"/>
+    <meta name="twitter:description"
+          content="Google Analytics&#39;e açık kaynaklı ve ücretsiz bir alternatif"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Plausible-Analytics-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de Plausible Analytics Çalıştırma","item":{"@id":"https://codenfast.com/posts/raspberry-pi-plausible-analytics.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Plausible-Analytics-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Plausible-Analytics-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Plausible-Analytics-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Plausible-Analytics-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Plausible-Analytics-01-Register-for-your-Plausible-account.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Plausible-Analytics-01-Register-for-your-Plausible-account.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Plausible-Analytics-02-Add-your-first-website.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Plausible-Analytics-02-Add-your-first-website.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Plausible-Analytics-03-javascript-Snippet.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Plausible-Analytics-03-javascript-Snippet.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Plausible-Analytics-04-Waiting-for-first-pageview.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Plausible-Analytics-04-Waiting-for-first-pageview.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Plausible-Analytics-05-Example-data.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Plausible-Analytics-05-Example-data.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de Plausible Analytics Çalıştırma","description":"Google Analytics'e açık kaynaklı ve ücretsiz bir alternatif","image":["https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Plausible-Analytics-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:23:03.735564+03:00","dateModified":"2026-08-03T12:23:03.73559+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de Plausible Analytics Çalıştırma</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-plausible-analytics/">PiMyLifeUp - Running Plausible Analytics on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'de Plausible Analytics platformunu nasıl çalıştıracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Plausible-Analytics-Thumbnail.jpg" alt="Raspberry Pi Plausible Analytics" /></p>
+<p>Plausible, ziyaretçilerinizin verilerini özel tutmanızı ve kontrolünüzde bulundurmanızı sağlayan bir web sitesi analiz platformudur.</p>
+<p>Hem hafif hem de açık kaynaklı olan Google Analytics'e sağlam bir alternatiftir. Yüksek trafikli bir web sitesi çalıştırmıyorsanız, hatta bir Raspberry Pi üzerinden bile çalıştırabilirsiniz.</p>
+<p>Aşağıdaki bölümlerde, Plausible Analytics'i nasıl kuracağınızı ve Raspberry Pi'nizde çalışacak şekilde nasıl yapılandıracağınızı göstereceğiz.</p>
+<p>Raspberry Pi'de <a href="https://plausible.io/">Plausible Analytics</a>, bir Docker konteyneri aracılığıyla kurulması sayesinde nispeten basit bir süreçtir. Ancak, ARM tabanlı sistemimizde çalışması için bazı ayarlamalar yapmamız gerekecek.</p>
+<h2>Raspberry Pi'nize Plausible Analytics Kurulumu</h2>
+<p>Aşağıdaki bölümlerde, Raspberry Pi'nizde Plausible Analytics'i çalışır hale getireceksiniz.</p>
+<p>Devam etmeden önce, analiz verisi toplamak istediğiniz bir web sitenize ihtiyacınız olacak. Bu yazılımı düzgün kullanmak için bir alan adına da ihtiyacınız olacak.</p>
+<h3>Gerekli Paketleri Kurma</h3>
+<p><strong>1.</strong> İlk adımımız paket listesini güncellemek ve güncel olmayan tüm paketleri yükseltmektir.</p>
+<p>Terminalde aşağıdaki iki komutu kullanarak Raspberry Pi işletim sisteminizi güncelleyebilirsiniz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>2.</strong> Ardından, Git, NGINX ve Certbot kurmak isteyeceksiniz.</p>
+<p>Plausible analytics kendi kendine barındırma deposunu Pi'mize klonlamak için git kullanacağız. Ayrıca, Raspberry Pi'mize NGINX de kuruyoruz. Bu web sunucusu, HTTPS'yi desteklemediğinden Plausible için ters proxy görevi görür.</p>
+<pre><code>sudo apt install git nginx certbot python3-certbot-nginx
+</code></pre>
+<p><strong>3.</strong> Güncelleme tamamlandıktan sonra, Docker kurmaya geçmeniz gerekecek.</p>
+<p>Devam etmeden önce, <a href="https://pimylifeup.com/raspberry-pi-docker/">Raspberry Pi'ye Docker kurma</a> rehberimizi takip edin. Bu rehber, Docker'ı cihazınızda doğru şekilde çalışır hale getirecektir.</p>
+<h3>Raspberry Pi'ye Plausible Analytics'i Klonlama</h3>
+<p><strong>4.</strong> Şimdi &quot;<code>/opt</code>&quot; dizinine geçmek için cd komutunu kullanabiliriz.</p>
+<p>Bu dizin, Plausible gibi isteğe bağlı yazılımları saklamak için mükemmel bir yerdir.</p>
+<pre><code>cd /opt
+</code></pre>
+<p><strong>5.</strong> Bu dizin içinde, Plausible Analytics kendi kendine barındırma temelini Raspberry Pi'mize klonlamak istiyoruz.</p>
+<p>Sonunda &quot;<code>plausible</code>&quot; belirterek, ona depoyu &quot;<code>plausible</code>&quot; adlı bir dizine klonlamasını söylüyoruz.</p>
+<pre><code>sudo git clone https://github.com/plausible/hosting plausible
+</code></pre>
+<p><strong>6.</strong> Şimdi aşağıdaki komutu kullanarak &quot;<code>plausible</code>&quot; dizinine geçmemiz gerekiyor.</p>
+<pre><code>cd plausible
+</code></pre>
+<h3>Plausible'ın İlk Yapılandırması</h3>
+<p><strong>7.</strong> Bir sonraki adımımız, Plausible için gizli anahtar tabanı olarak kullanılabilecek rastgele bir hash oluşturmaktır.</p>
+<p>Aşağıdaki komutu kullanarak kullanılabilir bir hash oluşturabilirsiniz. Sonraki adımlarda kullanacağımızdan bunu not edin.</p>
+<pre><code>openssl rand 64 | base64 -w 0 ; echo
+</code></pre>
+<p>Bu komut tarafından oluşturulan değere bir örnek aşağıdadır. Bunu kendi anahtarınız için kullanmayın.</p>
+<pre><code>qS7IxUUaOzq/x8TUk7UwZ3oxYBnYmJ1jmGAnXdcdjlBaV644fDEB6rMBQGLcEJdgznXUpCYITNuIBx7en970fw==
+</code></pre>
+<p><strong>8.</strong> Şimdi aşağıdaki komutu kullanarak Raspberry Pi'nizde Plausible ortam dosyasını düzenleyebiliriz.</p>
+<pre><code>sudo nano plausible-conf.env
+</code></pre>
+<p><strong>9.</strong> Bu dosyanın içinde, aşağıdaki satırları bulacaksınız. &quot;<code>replace-me</code>&quot; olarak etiketlenmiş iki değeri değiştirmeniz gerekecek.</p>
+<ul>
+<li>
+<p><strong>BASE_URL:</strong> Bu değeri, Plausible analytics URL'nize erişmeyi planladığınız yolla değiştirin. Bu &quot;<code>http</code>&quot; veya &quot;<code>https</code>&quot; ile başlayabilir ve yalnızca Plausible analytics arayüzü içinde URL oluşturmak için kullanılır. Bunun için geçerli bir ayar örneği &quot;<code>https://analytics.pimylifeup.com</code>&quot; veya &quot;<code>http://192.168.0.134</code>&quot; olurdu.</p>
+</li>
+<li>
+<p><strong>SECRET_KEY_BASE:</strong> Bu değeri, bu rehberin <strong>7. adımında</strong> oluşturduğunuzla değiştirmelisiniz.</p>
+<p>BASE_URL=replace-me<br />
+SECRET_KEY_BASE=replace-me</p>
+</li>
+</ul>
+<p><strong>10.</strong> Bu dosya için geçerli bir yapılandırma örneği aşağıda gösterdiğimize biraz benzer olurdu.</p>
+<p>Örneğimizde, temel URL'nin bir parçası olarak Raspberry Pi'mizin yerel IP adresini kullanıyoruz.</p>
+<pre><code>BASE_URL=http://192.168.0.134
+SACRET_KEY_BASE=qS7IxUUaOzq/x8TUk7UwZ3oxYBnYmJ1jmGAnXdcdjlBaV644fDEB6rMBQGLcEJdgznXUpCYITNuIBx7en970fw==
+</code></pre>
+<p><strong>11.</strong> Yapılandırmadan memnun olduğunuzda, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<h3>Docker Compose Dosyasını Değiştirme</h3>
+<p><strong>12.</strong> Raspberry Pi'nizde Plausible Analytics'e erişmek için bir ters proxy kullanmayı planladığımızdan, &quot;<code>docker-compose.yml</code>&quot; dosyasını değiştirmemiz gerekiyor.</p>
+<p>Bu dosyayı aşağıdaki komutu kullanarak değiştirmeye başlayabilirsiniz.</p>
+<pre><code>sudo nano docker-compose.yml
+</code></pre>
+<p><strong>13.</strong> Bu dosyanın içinde aşağıdaki satırı bulmak isteyeceksiniz. &quot;<code>plausible:</code>&quot; başlığının altında olmalıdır.</p>
+<pre><code>  - 8000:8000
+</code></pre>
+<p><strong>14.</strong> Yukarıdaki değeri bulduktan sonra, aşağıdakiyle değiştirin.</p>
+<p>Bunu yapmak, Plausible'a yalnızca Pi'nin localhost'u üzerinden erişilebilmesini sağlayacaktır.</p>
+<p>Bu değişiklik, birinin Raspberry Pi'mizde doğrudan Plausible'a erişip ters proxy'yi atlamasını engeller.</p>
+<pre><code>  - 127.0.0.1:8000:8000
+</code></pre>
+<p><strong>15.</strong> Ardından, Clickhouse'un daha eski bir sürümünü kullanmak için Docker compose dosyasını değiştirmemiz gerekiyor. Yeni sürümler artık Raspberry Pi'de çalışmıyor gibi görünüyor.</p>
+<p>Bu klasörün içinde aşağıdaki satırı bulun.</p>
+<pre><code>    image: clickhouse/clickhouse-server:23.3.7.5-alpine
+</code></pre>
+<p><strong>16.</strong> Şimdi bu satırı aşağıdaki satırla değiştirin.</p>
+<pre><code>    image: clickhouse/clickhouse-server:22.6-alpine
+</code></pre>
+<p><strong>17.</strong> Ayrıca, Raspberry Pi'de Plausible analytics için bir smtp sunucusu sağlamak amacıyla kullanılan Docker konteynerini de değiştirmemiz gerekiyor.</p>
+<p>Mevcut sürüm, ARM sistemleri için bir derlemeye sahip değil.</p>
+<pre><code>image: bytemark/smtp
+</code></pre>
+<p><strong>18.</strong> Yukarıdaki satırı aşağıdakiyle değiştirmek isteyeceksiniz. Bu alternatif konteyner güvenli bir yedek olarak çalışmalı ve ARM64 desteğine sahip.</p>
+<pre><code>    image: ixdotai/smtp
+</code></pre>
+<p><strong>19.</strong> Yukarıdaki değişikliği yaptıktan sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<h3>Raspberry Pi'de Plausible Analytics İçin Bir Ters Proxy Kurma</h3>
+<p><strong>20.</strong> Bir sonraki adımımız, Raspberry Pi'mizde NGINX'i Plausible analytics için bir ters proxy görevi görecek şekilde yapılandırmaktır.</p>
+<p>Endişelenmeyin. Bu süreç nispeten basittir ve aynı zamanda Plausible'a https desteği eklemenin de yoludur.</p>
+<p>Aşağıdaki komutu kullanarak Plausible için bir sanal ana bilgisayar (virtual host) yazmaya başlayın.</p>
+<pre><code>sudo nano /etc/nginx/sites-available/plausible.conf
+</code></pre>
+<p><strong>21.</strong> Bu dosyanın içine aşağıdaki satırları eklemek isteyeceksiniz. Bu, <code>80</code> (HTTP) portunda dinleyen basit bir ana bilgisayar oluşturur. Kısa süre içinde SSL desteği ekleyeceğiz.</p>
+<p>NGINX belirtilen alan adı için bir istek aldığında, bunu Raspberry Pi'mizdeki Plausible Analytics'e iletecektir.</p>
+<p>Aşağıdaki satırları yazarken, &quot;<code>&lt;DOMAINNAME&gt;</code>&quot; kısmını Plausible ile kullanmayı düşündüğünüz alan adıyla değiştirin.</p>
+<p>Bunu yerel ağınızda test ediyorsanız, alt çizgi (<code>_</code>) ile değiştirin. Başka herhangi bir sitenin etkin olmadığından emin olun, çünkü bu, Plausible Analytics'i varsayılan NGINX ana bilgisayarı olarak kullanılabilir hale getirir.</p>
+<pre><code>server {
+    listen       80;
+    listen       [::]:80;
+    server_name  &lt;DOMAINNAME&gt;;
+
+    access_log  /var/log/nginx/plausible.access.log;
+    error_log   /var/log/nginx/plausible.error.log;
+
+    location / {
+      proxy_pass http://localhost:8000;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  }
+}
+</code></pre>
+<p><strong>22.</strong> Yukarıdaki satırları dosyaya ekledikten sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<p><strong>23.</strong> NGINX yapılandırma dosyasıyla, onu mevcut klasöründen &quot;<code>sites-enabled</code>&quot; dizinine bağlayan sembolik bir bağlantı (symbolic link) oluşturmamız gerekiyor.</p>
+<p>Aşağıdaki komutu kullanarak bu sembolik bağlantıyı oluşturun.</p>
+<pre><code>sudo ln -s /etc/nginx/sites-available/plausible.conf /etc/nginx/sites-enabled/
+</code></pre>
+<p><strong>24.</strong> Yapılandırma dosyası artık oluşturulduğuna göre, NGINX'e yapılandırmasını yeniden yüklemesini söylememiz gerekiyor.</p>
+<pre><code>sudo systemctl reload nginx
+</code></pre>
+<h3>Plausible Analytics'e HTTPS Ekleme</h3>
+<p><strong>25.</strong> Plausible Analytics'i bir üretim ortamında kullanmayı düşünmüyorsanız veya bir alan adınız yoksa, <strong>23. adıma</strong> geçin.</p>
+<p>Aksi takdirde, NGINX ters proxy'nize HTTPS desteği eklemek için aşağıdaki adımlarla devam edin.</p>
+<p><strong>26.</strong> Certbot, NGINX'e çok basit bir şekilde bir SSL sertifikası eklememizi sağlar.</p>
+<p>Yapmanız gereken tek şey, terminalde aşağıdaki komutu çalıştırmaktır. &quot;<code>&lt;DOMAINNAME&gt;</code>&quot; kısmını kullandığınız alan adıyla değiştirdiğinizden emin olun.</p>
+<pre><code>sudo certbot --nginx -d &lt;DOMAINNAME&gt;
+</code></pre>
+<p>Certbot, HTTPS desteği eklemek için yapılandırma dosyanızı otomatik olarak yeniden yapılandıracaktır.</p>
+<h3>Raspberry Pi'de Plausible Analytics'i Açma</h3>
+<p><strong>27.</strong> Sonunda Plausible Analytics'e geçmeye hazırız.</p>
+<p>Plausible'ı açmak için, sadece aşağıdaki komutu kullanmamız gerekiyor. Bu komut, Docker'a sağlanan &quot;<code>docker-compose</code>&quot; dosyasını kullanarak konteyneri başlatmasını söyler.</p>
+<p>&quot;<code>-d</code>&quot; komutunu kullanarak, Docker'a konteynerleri ayrılmış (detached) bir durumda başlatmasını söylüyoruz. Yeniden başlatmalarda bile, konteyneri kapatana kadar çalışmaya devam edecekler.</p>
+<pre><code>sudo docker compose up -d
+</code></pre>
+<h3>Plausible Analytics Web Arayüzüne Erişim</h3>
+<p><strong>28.</strong> Artık Plausible Analytics web sitesi arayüzüne erişebilirsiniz.</p>
+<p>Web arayüzüne ulaşmak için, ters proxy'yi kurarken belirttiğiniz alan adını ziyaret etmek isteyeceksiniz. Bunu bir IP adresi kullanarak test ediyorsanız, bunun yerine onu kullanmak isteyeceksiniz.</p>
+<p><strong>29.</strong> Raspberry Pi'nizin Plausible Analytics kurulumunu ilk kez açtığınızda, bir kullanıcı kaydetmeniz istenecektir.</p>
+<p>Hesabınız için bilgileri doldurarak başlayın (<strong>1.</strong>).</p>
+<p>Bilgilerinizi doldurduktan sonra, &quot;<code>Create my account</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Plausible-Analytics-01-Register-for-your-Plausible-account.jpg" alt="Raspberry Pi'de Plausible Analytics Hesabınıza Kaydolma" /></p>
+<p><strong>30.</strong> Ardından, analiz verisi toplamayı düşündüğünüz web sitesinin alan adını (<strong>1.</strong>) belirtmeniz istenecektir.</p>
+<p>Ayrıca raporlama saat dilimini de seçebilirsiniz (<strong>2.</strong>). Bu saat dilimi, aldığı verileri hizalamanıza yardımcı olur.</p>
+<p>Her iki değeri de doldurduktan sonra, &quot;<code>Add snippet</code>&quot; düğmesine <code>tıklayın</code> (<strong>3.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Plausible-Analytics-02-Add-your-first-website.jpg" alt="İlk Web Sitenizi Plausible'a Ekleme" /></p>
+<p><strong>31.</strong> Şimdi size bir JavaScript kod parçacığı (snippet) verilecek. Takibe başlaması için bu kod parçacığını web sitenize kopyalamanız gerekecek.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Plausible-Analytics-03-javascript-Snippet.jpg" alt="Plausible JavaScript kod parçacığı" /></p>
+<p><strong>32.</strong> Raspberry Pi'nizin Plausible Analytics kurulumu, kod parçacığı ilk sayfa görüntülemesini yakalayana kadar bekleyecektir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Plausible-Analytics-04-Waiting-for-first-pageview.jpg" alt="Raspberry Pi, Plausible'ın ilk sayfa görüntülemesini bekliyor" /></p>
+<p><strong>33.</strong> Aşağıda, bazı veriler yakaladıktan sonra Plausible Analytics'in nasıl göründüğüne dair bir örnek bulunmaktadır.</p>
+<p>Plausible'ın Pi'de nasıl çalıştığını anlamak ve bazı veriler toplamak için bunu birkaç gün boyunca örnek bir web sitesinde çalıştırdık.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Plausible-Analytics-05-Example-data.jpg" alt="Raspberry Pi Plausible Analytics Gösterge Paneli" /></p>
+<h2>Sonuç</h2>
+<p>Umarız bu noktada, artık Raspberry Pi'nizde Plausible Analytics çalışıyor olacaktır.</p>
+<p>Bu yazılım, Google Analytics gibi hizmetlere mükemmel bir açık kaynaklı alternatiftir. Hepsinden iyisi, kendi kendine barındırıldığından, verilerinizin kontrolü tamamen sizde kalır.</p>
+<p>Bu yazılımı çalıştırmakta herhangi bir sorunla karşılaşırsanız, lütfen aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-plausible-analytics.html&amp;text=Raspberry+Pi%27de+Plausible+Analytics+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-plausible-analytics.html&amp;text=Raspberry+Pi%27de+Plausible+Analytics+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-plausible-analytics.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-plausible-analytics.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-plausible-analytics.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-plausible-analytics.html&amp;title=Raspberry+Pi%27de+Plausible+Analytics+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+Plausible+Analytics+%C3%87al%C4%B1%C5%9Ft%C4%B1rma%20codenfast.com%2Fposts%2Fraspberry-pi-plausible-analytics.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;ye Emby Medya Sunucusu Kurulumu ve Çalıştırılması - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Pi için bir medya sunucusu"/>
+    <meta property="og:title" content="Raspberry Pi&#39;ye Emby Medya Sunucusu Kurulumu ve Çalıştırılması"/>
+    <meta property="og:description"
+          content="Pi için bir medya sunucusu"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-emby-media-server.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-emby-media-server.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;ye Emby Medya Sunucusu Kurulumu ve Çalıştırılması"/>
+    <meta name="twitter:description"
+          content="Pi için bir medya sunucusu"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'ye Emby Medya Sunucusu Kurulumu ve Çalıştırılması","item":{"@id":"https://codenfast.com/posts/raspberry-pi-emby-media-server.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-01-Set-display-language.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-01-Set-display-language.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-02-Create-Emby-Media-Server-User.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-02-Create-Emby-Media-Server-User.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-03-Add-new-library.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-03-Add-new-library.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-04-Set-library-content-type-and-add-folders.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-04-Set-library-content-type-and-add-folders.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-05-Set-the-Library-Folder.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-05-Set-the-Library-Folder.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-06-Confirm-new-library.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-06-Confirm-new-library.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-07-Finish-Setting-up-libraries.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-07-Finish-Setting-up-libraries.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-08-Set-preffered-Metadata-Language.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-08-Set-preffered-Metadata-Language.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-09-Configure-Remote-Access.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-09-Configure-Remote-Access.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-10-Accept-Terms-and-Conditions.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-10-Accept-Terms-and-Conditions.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-11-Finish-Configuring-Emby-Media-Server.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-11-Finish-Configuring-Emby-Media-Server.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-12-Select-User-to-Sign-In-As.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-12-Select-User-to-Sign-In-As.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-12-Sign-in-to-user.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-12-Sign-in-to-user.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-13-Emby-running-on-the-Raspberry-Pi.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-13-Emby-running-on-the-Raspberry-Pi.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'ye Emby Medya Sunucusu Kurulumu ve Çalıştırılması","description":"Pi için bir medya sunucusu","image":["https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:21:39.026116+03:00","dateModified":"2026-08-03T12:21:39.026146+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;ye Emby Medya Sunucusu Kurulumu ve Çalıştırılması</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-emby-media-server/">PiMyLifeUp - Installing and Running the Emby Media Server on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu projede, Raspberry Pi'ye Emby Medya Sunucusunu nasıl kurup çalıştıracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-Thumbnail.jpg" alt="Raspberry Pi Emby Medya Sunucusu" /></p>
+<p>Emby, kapalı kaynaklı bir medya oynatıcı ve sunucudur ve Jellyfin'in çatallandığı (fork) projedir.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-plex-server/">Plex</a> ve <a href="https://pimylifeup.com/raspberry-pi-jellyfin/">Jellyfin</a> gibi, Emby de bir sunucu ve istemci kurulumu kullanır, yani istemciler medyayı Emby Medya sunucusundan akış olarak alır.</p>
+<p>Bu rehberde, Raspberry Pi'nize Emby Medya Sunucusunu nasıl kurup ayarlayacağınızı göstereceğiz.</p>
+<p>Bunu kullanarak, TV dizilerinizi, filmlerinizi ve müziklerinizi Raspberry Pi'nizden herhangi bir Emby istemcisine akış olarak gönderebilirsiniz.</p>
+<p>Pi en iyi donanım transcoding desteğini sunmadığından, bu medya sunucusundan ne kadar akış yaptığınız konusunda dikkatli olmalısınız.</p>
+<h2>Raspberry Pi'ye Emby Medya Sunucusu Nasıl Kurulur</h2>
+<p>Aşağıdaki birkaç bölümde, Raspberry Pi'nize Emby Medya Sunucusunu nasıl kuracağınızı göstereceğiz.</p>
+<p>Sunucu, medya dosyalarınızı uyumlu herhangi bir Emby istemcisine &quot;sunacaktır&quot;. Bu sunucuyu kurmak basit bir süreçtir ve sadece birkaç kısa adımda yapılabilir.</p>
+<h3>Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> Raspberry Pi'mize Emby Medya Sunucusunu kurabilmemiz için, işletim sistemimizin güncel olduğundan emin olmamız gerekiyor.</p>
+<p>Aşağıdaki iki komutu kullanarak paket listesini güncelleyebilir ve güncel olmayan tüm paketleri yükseltebilirsiniz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>2.</strong> Bir sonraki adımımız, Raspberry Pi'nizde &quot;wget&quot; paketinin kurulu olduğundan emin olmaktır.</p>
+<p>Emby Medya Sunucusunun en son sürümünü Pi'ye indirmek için wget kullanacağız.</p>
+<pre><code>sudo apt install wget
+</code></pre>
+<h3>Raspberry Pi'ye Emby Medya Sunucusu Kurulumu</h3>
+<p><strong>3.</strong> Bir sonraki adım, 64-bit veya 32-bit bir işletim sistemi çalıştırmanıza bağlı olarak biraz değişecek. Bu sunucunun en son sürümünü <a href="https://github.com/MediaBrowser/Emby.Releases/releases/latest">Emby Projeleri GitHub'ında</a> bulabilirsiniz.</p>
+<p>Raspberry Pi OS'nin <strong>64-bit sürümünü</strong> kullanıyorsanız, Emby Medya Sunucusunun 64-bit sürümünü indirmek için aşağıdaki komutu kullanın.</p>
+<pre><code>wget https://github.com/MediaBrowser/Emby.Releases/releases/download/4.9.3.0/emby-server-deb_4.9.3.0_arm64.deb -O emby-server.deb
+</code></pre>
+<p>Alternatif olarak, <strong>32-bit bir işletim sistemi</strong> kullanıyorsanız, aşağıdaki komutu kullanın.</p>
+<pre><code>wget https://github.com/MediaBrowser/Emby.Releases/releases/download/4.9.3.0/emby-server-deb_4.9.3.0_armhf.deb -O emby-server.deb
+</code></pre>
+<p><strong>4.</strong> Artık Raspberry Pi'de Emby Medya Sunucusu paketini indirdiğinize göre, onu kurabiliriz.</p>
+<p>Terminalde aşağıdaki komutu kullanarak Emby'yi kurun.</p>
+<pre><code>sudo dpkg -i emby-server.deb
+</code></pre>
+<p>Sunucu kurulduktan sonra, Raspberry Pi'nizde otomatik olarak başlatılacaktır.</p>
+<h3>Emby Medya Sunucusu İçin İzinleri Düzeltme</h3>
+<p><strong>5.</strong> Emby Medya Sunucusunun medya dosyalarınızı akış olarak sunabilmesi için, en azından medya dosyalarınız üzerinde okuma ve çalıştırma izinlerine ihtiyacı olacaktır.</p>
+<p>Sonraki adımları takip etmeden önce, Raspberry Pi'nizdeki medya dosyalarınızın yolunu bilmeniz gerekecek.</p>
+<p>Örneğimiz için, dosyalarımız &quot;<code>/home/pi/media</code>&quot; dizininde saklanıyor.</p>
+<p><strong>6.</strong> Aşağıdaki komut, belirtilen dizinde herhangi bir dizin aramak için &quot;<code>find</code>&quot; komutunu kullanacaktır.</p>
+<p>Artık belirtilen klasördeki her dizin üzerinde <a href="https://pimylifeup.com/chmod-command/">chmod komutunu çalıştırmak</a> için &quot;<code>find</code>&quot; komutunu kullanabiliriz. Bu komutu çalıştırmak, belirtilen klasördeki her dizinin iznini &quot;<code>755</code>&quot; olarak ayarlayacaktır.</p>
+<pre><code>sudo find /home/pi/media -type d -exec chmod 755 {} \;
+</code></pre>
+<p><strong>7.</strong> Bir sonraki komut benzer bir şey yapacak, ama bu sefer belirtilen dizin içindeki dosyaları arayacak.</p>
+<p>Ayrıca find komutunun farklı bir sürümünü çalıştırmamız gerekiyor, ama bu sefer dosyalar üzerinde çalışacak.</p>
+<p>find komutunun bulduğu her dosya için, izni &quot;<code>644</code>&quot; olarak ayarlamak üzere chmod komutunu çalıştırır.</p>
+<pre><code>sudo find /home/pi/media -type f -exec chmod 644 {} \;
+</code></pre>
+<h2>Raspberry Pi'de Emby Medya Sunucusunu Yapılandırma</h2>
+<p>Artık Raspberry Pi'ye Emby Medya Sunucusunu kurduğunuza göre, yapılandırmaya geçebiliriz.</p>
+<h3>Emby Medya Sunucusu Web Arayüzüne Erişim</h3>
+<p><strong>1.</strong> Raspberry Pi'nizde Emby Medya Sunucusunu yapılandırmak için, Pi'nizin IP adresini bilmeniz gerekir.</p>
+<p>Terminalde <a href="https://pimylifeup.com/hostname-command/">hostname komutunu kullanarak</a> IP adresini alabilirsiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>2.</strong> Pi'nizin IP adresini öğrendikten sonra, favori web tarayıcınızda aşağıdaki URL'ye gidin.</p>
+<p>&quot;<code>IPADDRESS</code>&quot; kısmını Pi'nizin IP'siyle değiştirdiğinizden emin olun. Pi'nin kendisinden bağlanıyorsanız, bunun yerine &quot;<code>127.0.0.1</code>&quot; veya &quot;<code>localhost</code>&quot; yazın.</p>
+<pre><code>http://IPADRESI:8096
+</code></pre>
+<h3>İlk Emby Medya Sunucusu Kurulumu</h3>
+<p><strong>3.</strong> Web sitesine girdiğinizde, tercih ettiğiniz görüntüleme dilini seçmeniz istenecektir (<strong>1.</strong>).</p>
+<p>Bir dil seçtikten sonra, devam etmek için &quot;<code>Next</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-01-Set-display-language.jpg" alt="Görüntüleme dilini belirleme" /></p>
+<h4>Emby Kullanıcısını Oluşturma</h4>
+<p><strong>4.</strong> Artık admin kullanıcınıza yeni bir isim verme şansınız olacak (<strong>1.</strong>). İsterseniz varsayılan &quot;<code>emby</code>&quot; adına sadık kalabilirsiniz.</p>
+<p>Ardından, bu yeni kullanıcı için şifreyi belirtmeniz gerekecek (<strong>2.</strong>).</p>
+<p>Yeni bir şifre yazdıktan sonra, kurulum sürecine devam etmek için &quot;<code>Next</code>&quot; düğmesine <code>tıklayın</code> (<strong>3.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-02-Create-Emby-Media-Server-User.jpg" alt="Raspberry Pi için Emby Medya Sunucusu kullanıcısı oluşturma" /></p>
+<h4>Emby Medya Sunucusuna Medya Kitaplıkları Ekleme</h4>
+<p><strong>5.</strong> Şimdi, Raspberry Pi'nizin Emby Medya Sunucusuna ilk medya kitaplığınızı ekleyebilirsiniz.</p>
+<p>Bu süreci başlatmak için, &quot;<code>New Library</code>&quot; düğmesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-03-Add-new-library.jpg" alt="Yeni kitaplık ekleme" /></p>
+<p><strong>6.</strong> Yeni bir kitaplık eklerken, açılır kutuyu kullanarak içerik türünü (<strong>1.</strong>) belirtmek isteyeceksiniz.</p>
+<p>İçerik türünü ayarladıktan sonra, görüntüleme adı (<strong>2.</strong>) otomatik olarak aynı ada ayarlanacaktır. Bunu istediğiniz gibi değiştirebilirsiniz.</p>
+<p>Son olarak, bu içerik grubuna klasör eklemek için, üzerindeki artı simgesine (<code>+</code>) <code>tıklayın</code> (<strong>3.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-04-Set-library-content-type-and-add-folders.jpg" alt="İçerik türünü ayarlama ve klasör seçme" /></p>
+<p><strong>7.</strong> Bu iletişim kutusunu kullanarak, medya dosyalarınızın saklandığı dizini seçebilir veya arayabilirsiniz (<strong>1.</strong>).</p>
+<p>Doğru klasörü seçtikten sonra, &quot;<code>Ok</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-05-Set-the-Library-Folder.jpg" alt="Raspberry Pi'de Emby için kitaplık klasör konumunu ayarlama" /></p>
+<p><strong>8.</strong> Raspberry Pi'nizdeki yeni Emby kitaplığınız için bilgileri doldurduktan sonra, &quot;<code>Ok</code>&quot; düğmesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-06-Confirm-new-library.jpg" alt="Yeni kitaplık değişikliklerini onaylama" /></p>
+<p><strong>9.</strong> Artık daha fazla kitaplık ekleyebilir veya &quot;<code>Next</code>&quot; düğmesine <code>tıklayarak</code> yapılandırmaya devam edebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-07-Finish-Setting-up-libraries.jpg" alt="Medya kitaplıklarını kurmayı bitirme" /></p>
+<h4>Emby Kurulumunu Sonlandırma</h4>
+<p><strong>10.</strong> Bu bir sonraki ekran, medya öğeleriniz için meta veri konusunda tercih ettiğiniz dili seçmenizi sağlar (<strong>1.</strong>). Bunu daha sonra her kitaplık için ayrı yapılandırabilirsiniz.</p>
+<p>Dil ayarlandıktan sonra, &quot;<code>Next</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-08-Set-preffered-Metadata-Language.jpg" alt="Tercih edilen meta veri dilini ayarlama" /></p>
+<p><strong>11.</strong> Kurulumun sonuna yaklaşıyoruz. Şimdi Emby'nin uzaktan erişim için portları otomatik olarak eşleştirmeyi denemesini isteyip istemediğinize karar vermeniz gerekiyor (<strong>1.</strong>).</p>
+<p>Seçeneği yapılandırdıktan sonra, devam etmek için &quot;<code>Next</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-09-Configure-Remote-Access.jpg" alt="Raspberry Pi'de Emby Medya Sunucusu Uzaktan Erişimini Yapılandırma" /></p>
+<p><strong>12.</strong> Raspberry Pi'nizdeki Emby medya sunucusu, devam etmeden önce hizmet şartlarını kabul etmenizi isteyecektir (<strong>1.</strong>).</p>
+<p>Hizmet şartlarını kabul ettikten sonra, &quot;<code>Next</code>&quot; düğmesine <code>tıklayabilirsiniz</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-10-Accept-Terms-and-Conditions.jpg" alt="Şartları ve koşulları kabul etme" /></p>
+<p><strong>13.</strong> Sonunda Raspberry Pi'nizde medya sunucusunu kurmayı bitirdiniz.</p>
+<p>Sunucu gösterge paneline geçmek için &quot;<code>Finish</code>&quot; düğmesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-11-Finish-Configuring-Emby-Media-Server.jpg" alt="Raspberry Pi'de Emby Medya Sunucusu yapılandırmasını bitirme" /></p>
+<h3>Emby Medya Sunucusu Gösterge Paneli</h3>
+<p><strong>14.</strong> Artık Raspberry Pi'nizin Emby Medya Sunucusu gösterge paneline giriş yapmak için kullanabileceğiniz kullanıcılarla karşılaşacaksınız.</p>
+<p>Devam etmek için daha önce oluşturduğunuz kullanıcıyı seçin.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-12-Select-User-to-Sign-In-As.jpg" alt="Giriş yapılacak kullanıcıyı seçme" /></p>
+<p><strong>15.</strong> Şimdi, ilk kurulum sürecinde belirlediğiniz kullanıcı adını ve şifreyi yazın (<strong>1.</strong>).</p>
+<p>Bilgilerinizi doldurduktan sonra, &quot;<code>Sign In</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>)</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-12-Sign-in-to-user.jpg" alt="Emby kullanıcısına giriş yapma" /></p>
+<p><strong>16.</strong> Artık Raspberry Pi'nizde çalışan Emby Medya Sunucusu gösterge panelinize erişiminiz olmalıdır.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/09/Raspberry-Pi-Emby-Media-Server-13-Emby-running-on-the-Raspberry-Pi.jpg" alt="Raspberry Pi'de Emby Medya Sunucusu Gösterge Paneli" /></p>
+<h2>Sonuç</h2>
+<p>Umarız bu eğitimin bu noktasında, artık Raspberry Pi'nizde Emby medya sunucusu çalışıyor olacaktır.</p>
+<p>Emby, Jellyfin ve Plex'ten farklı bir şey denemek isteyenler için sağlam bir seçenektir.</p>
+<p>Emby'yi kurarken herhangi bir sorunla karşılaşırsanız, lütfen aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-emby-media-server.html&amp;text=Raspberry+Pi%27ye+Emby+Medya+Sunucusu+Kurulumu+ve+%C3%87al%C4%B1%C5%9Ft%C4%B1r%C4%B1lmas%C4%B1" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-emby-media-server.html&amp;text=Raspberry+Pi%27ye+Emby+Medya+Sunucusu+Kurulumu+ve+%C3%87al%C4%B1%C5%9Ft%C4%B1r%C4%B1lmas%C4%B1" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-emby-media-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-emby-media-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-emby-media-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-emby-media-server.html&amp;title=Raspberry+Pi%27ye+Emby+Medya+Sunucusu+Kurulumu+ve+%C3%87al%C4%B1%C5%9Ft%C4%B1r%C4%B1lmas%C4%B1" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27ye+Emby+Medya+Sunucusu+Kurulumu+ve+%C3%87al%C4%B1%C5%9Ft%C4%B1r%C4%B1lmas%C4%B1%20codenfast.com%2Fposts%2Fraspberry-pi-emby-media-server.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

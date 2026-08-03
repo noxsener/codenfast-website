@@ -1,0 +1,354 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de WireGuard VPN Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="WireGuard, OpenVPN&#39;e hızlı bir alternatiftir"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de WireGuard VPN Kurulumu"/>
+    <meta property="og:description"
+          content="WireGuard, OpenVPN&#39;e hızlı bir alternatiftir"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-wireguard.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-wireguard.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2020/07/Raspberry-Pi-WireGuard-VPN-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de WireGuard VPN Kurulumu"/>
+    <meta name="twitter:description"
+          content="WireGuard, OpenVPN&#39;e hızlı bir alternatiftir"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2020/07/Raspberry-Pi-WireGuard-VPN-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de WireGuard VPN Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-wireguard.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/Raspberry-Pi-WireGuard-VPN-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/Raspberry-Pi-WireGuard-VPN-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/Raspberry-Pi-WireGuard-VPN-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/Raspberry-Pi-WireGuard-VPN-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/1-PiVPN-Welcome-Install-Screen.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/1-PiVPN-Welcome-Install-Screen.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/2-PiVPN-Message-about-Static-IP-Address.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/2-PiVPN-Message-about-Static-IP-Address.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/3-PiVPN-DHCP-Reservation-Message.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/3-PiVPN-DHCP-Reservation-Message.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/4-Allow-PiVPN-Static-IP-address.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/4-Allow-PiVPN-Static-IP-address.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/5-PiVPN-Potential-IP-Conflict.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/5-PiVPN-Potential-IP-Conflict.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/6-PiVPN-Message-about-Local-users.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/6-PiVPN-Message-about-Local-users.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/7-PiVPN-Select-from-user-list.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/7-PiVPN-Select-from-user-list.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/8-Select-WireGuard-as-VPN-for-Raspberry-Pi.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/8-Select-WireGuard-as-VPN-for-Raspberry-Pi.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/9-Choose-Wireguard-Port-for-Raspberry-Pi-VPN.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/9-Choose-Wireguard-Port-for-Raspberry-Pi-VPN.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/10-Confirm-WireGuard-VPN-Port.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/10-Confirm-WireGuard-VPN-Port.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/11-Select-DNS-Provider-to-route-WireGuard-through.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/11-Select-DNS-Provider-to-route-WireGuard-through.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/12-Choose-WireGuard-access-paths.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/12-Choose-WireGuard-access-paths.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/13-WireGuard-Generating-Server-keys.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/13-WireGuard-Generating-Server-keys.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/14-PiVPN-Warning-about-enabling-Unattended-Upgrades.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/14-PiVPN-Warning-about-enabling-Unattended-Upgrades.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/15-PiVPN-Enabling-Unattended-Upgrades-on-Pi.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/15-PiVPN-Enabling-Unattended-Upgrades-on-Pi.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/16-Raspberry-Pi-WireGuard-Installation-Completed.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/16-Raspberry-Pi-WireGuard-Installation-Completed.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/17-Reboot-Pi-after-WireGuard-Installation.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/17-Reboot-Pi-after-WireGuard-Installation.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/19-Creating-a-WireGuard-Profile-on-Raspberry-Pi.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/19-Creating-a-WireGuard-Profile-on-Raspberry-Pi.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/20-QR-Code-Generatted-for-WireGuard-connection.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/20-QR-Code-Generatted-for-WireGuard-connection.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/Scan-WireGuard-QR-Code-on-iPhone.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/Scan-WireGuard-QR-Code-on-iPhone.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de WireGuard VPN Kurulumu","description":"WireGuard, OpenVPN'e hızlı bir alternatiftir","image":["https://pimylifeup.com/wp-content/uploads/2020/07/Raspberry-Pi-WireGuard-VPN-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T11:39:48.95553+03:00","dateModified":"2026-08-03T11:39:48.955564+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de WireGuard VPN Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-wireguard/">PiMyLifeUp - Setting up a WireGuard VPN on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu projede, Raspberry Pi'de bir WireGuard VPN'i nasıl kuracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/07/Raspberry-Pi-WireGuard-VPN-Thumbnail.jpg" alt="Raspberry Pi WireGuard VPN" /></p>
+<p>WireGuard, son zamanlarda büyük popülerlik kazanan yeni bir VPN protokolüdür.</p>
+<p>Raspberry Pi'nizde OpenVPN yerine WireGuard VPN kullanmanın birkaç avantajı vardır.</p>
+<p>WireGuard, bağlantı kurmakta <a href="https://pimylifeup.com/raspberry-pi-vpn-server/">OpenVPN</a>'den çok daha hızlıdır; bir bağlantıyı saniyenin onda biri içinde tamamlayabilir.</p>
+<p>WireGuard'ın kod tabanı da OpenVPN'inkinden önemli ölçüde daha küçüktür. Bu, daha küçük bir saldırı yüzeyi ve hataların daha kolay ele alınabilmesi sayesinde yazılımın daha güvenli olmasını sağlar.</p>
+<p>Karşılaştırma yapmak gerekirse, <a href="https://www.wireguard.com/">WireGuard</a> yalnızca 4.000 satır kod kullanırken, OpenVPN 70.000'den fazla satır kod kullanır.</p>
+<p>WireGuard'ın tek dikkate değer dezavantajı, bağlanan kullanıcının IP adresini saklamasıdır. Bunu bağlantı hızını artırmak için yapar.</p>
+<p>Bu eğitimin sonunda, Raspberry Pi'nizde WireGuard destekli bir VPN çalışıyor olacak.</p>
+<p>Bu WireGuard VPN kurulum projesi, Raspberry Pi OS Lite'ın en son mevcut sürümünü çalıştıran bir Raspberry Pi 4 üzerinde test edilmiştir.</p>
+<h2>WireGuard VPN'i Kurmak İçin Raspberry Pi'nizi Hazırlama</h2>
+<p>Bu bölümde, Raspberry Pi'mizin WireGuard VPN yazılımını kurmaya hazır olduğundan emin olmak için bazı ilk hazırlık çalışmalarını yapacağız.</p>
+<p><strong>1.</strong> Yapmamız gereken ilk şey, Raspberry Pi'mizin en son mevcut paketleri kullandığından emin olmaktır.</p>
+<p>Bunu aşağıdaki iki komutu çalıştırarak yapabiliriz.</p>
+<pre><code>sudo apt update
+sudo apt full-upgrade
+</code></pre>
+<p><strong>2.</strong> İhtiyacımız olan kurulum betiklerini çalıştırmak için gereken tek paketi kurmamız gerekiyor.</p>
+<p>Bu paket Raspbian işletim sisteminin çoğu dağıtımında mevcut olsa da, aşağıdaki komutu çalıştırarak bundan emin olacağız.</p>
+<pre><code>sudo apt install curl -y
+</code></pre>
+<h2>Raspberry Pi'ye WireGuard Kurulumu</h2>
+<p>Bu bölümde, WireGuard'ı kurmak için PiVPN betiğini kullanacağız.</p>
+<p>PiVPN, Raspberry Pi'mize WireGuard kurma sürecini basit bir işlem haline getirir. Betik, cihazımız için en iyi varsayılanları ayarlar.</p>
+<h3>PiVPN Kurulum Betiğini Başlatma</h3>
+<p><strong>1.</strong> Aşağıdaki komutu çalıştırarak kurulum sürecini başlatalım.</p>
+<pre><code>curl -L https://install.pivpn.io | bash
+</code></pre>
+<p>Bu komut, PiVPN kurulum betiğini web sitelerinden indirmek için <code>curl</code> kullanacak ve ardından doğrudan bash'e aktaracaktır.</p>
+<p>Bu betiğin içeriğini, web tarayıcınızda doğrudan <a href="https://install.pivpn.io">install PiVPN alan adına</a> giderek doğrulayabilirsiniz.</p>
+<h3>Raspberry Pi'nize WireGuard Kurulumu</h3>
+<p><strong>1.</strong> Sizi karşılayacak ilk ekran, bu betiğin ne yapmak üzere olduğunu bildirecektir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/07/1-PiVPN-Welcome-Install-Screen.png" alt="PiVPN Karşılama Kurulum Ekranı" /></p>
+<p>WireGuard kurulum sürecini başlatmak için <code>ENTER</code> tuşuna basın.</p>
+<p><strong>2.</strong> Bu betik aracılığıyla yapılandıracağımız ilk şey statik bir IP adresidir.</p>
+<p>Bu ekran, Raspberry Pi'nizin bir WireGuard VPN sunucusu olarak çalışırken neden <a href="https://pimylifeup.com/raspberry-pi-static-ip-address/">statik bir IP adresine</a> sahip olması gerektiğini açıklar.</p>
+<p>Devam etmek için <code>ENTER</code> tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/07/2-PiVPN-Message-about-Static-IP-Address.png" alt="PiVPN Statik IP Adresi Hakkında Mesaj" /></p>
+<p><strong>3.</strong> Zaten DHCP rezervasyonu kullanıp kullanmadığınız sorulacaktır.</p>
+<p>DHCP rezervasyonu kullanmak, yönlendiricinizin Raspberry Pi'nize bir IP adresi atamasını sağlar.</p>
+<p>Bu rehberde, DHCP rezervasyonu kullanmadığınızı varsayacağız ve Pi'nin kendisinde statik bir IP adresi ayarlamaya geçeceğiz.</p>
+<p><code>&lt;No&gt;</code> seçeneğini seçin ve devam etmek için <code>ENTER</code> tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/07/3-PiVPN-DHCP-Reservation-Message.png" alt="DHCP Rezervasyon Mesajı" /></p>
+<p><strong>4.</strong> WireGuard yazılımı için statik bir IP adresi ayarlamak amacıyla, kurulum betiği varsayılan ayarlarınızı kullanmak isteyecektir.</p>
+<p>Varsayılan IP adresi ve ağ geçidi sizin için doğruysa, güvenle <code>&lt;Yes&gt;</code> seçeneğini seçebilirsiniz.</p>
+<p><code>ENTER</code> tuşuna basarak bu WireGuard kurulum rehberine devam edin.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/07/4-Allow-PiVPN-Static-IP-address.png" alt="PiVPN Statik IP adresine izin verme" /></p>
+<p><strong>5.</strong> Bu yöntemi kullanırken potansiyel olarak IP çakışmalarıyla karşılaşabileceğiniz konusunda uyarılacaksınız.</p>
+<p>Bunu aşmanın yolu DHCP rezervasyonu kullanmaktır. Ancak, çoğu yönlendirici bunun bir sorun olmasını engelleyecek kadar akıllı olmalıdır.</p>
+<p>Devam etmek için <code>ENTER</code> tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/07/5-PiVPN-Potential-IP-Conflict.png" alt="Potansiyel IP Çakışması" /></p>
+<p><strong>6.</strong> Bu ekran, WireGuard yapılandırma dosyalarını saklamak için yerel bir kullanıcı belirtmeniz gerektiğini söyleyecektir.</p>
+<p><code>ENTER</code> tuşuna basarak bir sonraki ekrana geçin.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/07/6-PiVPN-Message-about-Local-users.png" alt="Yerel kullanıcılar hakkında mesaj" /></p>
+<p><strong>7.</strong> Artık mevcut kullanıcılar listesinden seçim yapabilirsiniz.</p>
+<p>Kullanıcıyı vurgulamak için <code>ARROW</code> (ok) tuşlarını, ardından seçmek için <code>SPACEBAR</code> (boşluk) tuşunu kullanın.</p>
+<p>Seçtiğiniz kullanıcıdan memnun kaldığınızda, <code>ENTER</code> tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/07/7-PiVPN-Select-from-user-list.png" alt="WireGuard Yapılandırması için Raspberry Pi kullanıcısı seçme" /></p>
+<p><strong>8.</strong> Son olarak, kurmak istediğimiz VPN yazılımını seçebiliriz.</p>
+<p>Raspberry Pi'mize WireGuard kurmak istediğimizden, devam etmek için <code>ENTER</code> tuşuna basabilirsiniz.</p>
+<p>Bunun nedeni, PiVPN betiğinin varsayılan olarak WireGuard'ı seçmesidir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/07/8-Select-WireGuard-as-VPN-for-Raspberry-Pi.png" alt="Raspberry Pi için VPN olarak WireGuard'ı seçme" /></p>
+<p><strong>9.</strong> Bu ekran, Raspberry Pi'nizde WireGuard'ın kullandığı portu değiştirmenizi sağlar.</p>
+<p>Portu değiştirmek için belirli bir nedeniniz olmadıkça, bunu aynı bırakmanız önerilir.</p>
+<p>Belirtilen portu onaylamak için <code>ENTER</code> tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/07/9-Choose-Wireguard-Port-for-Raspberry-Pi-VPN.png" alt="Raspberry Pi VPN için WireGuard Portu Seçme" /></p>
+<p><strong>10.</strong> Bu ekran, Raspberry Pi WireGuard VPN'inizin kullanacağı portu sadece onaylar.</p>
+<p>Ev ağınızın dışından WireGuard VPN'inize erişebilmek için, burada belirtilen portu port yönlendirmeniz (port forward) gerekeceğini lütfen unutmayın. Bu portun türü <code>UDP</code>'dir.</p>
+<p>Portun hâlâ doğru olduğunu onaylayın, ardından devam etmek için <code>ENTER</code> tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/07/10-Confirm-WireGuard-VPN-Port.png" alt="WireGuard VPN Portunu Onaylama" /></p>
+<p><strong>11.</strong> Artık VPN istemcilerimiz için kullanmak istediğimiz DNS sağlayıcısını belirtebiliriz.</p>
+<p>Eğitimimiz için, nispeten hızlı olması ve günlüklerini her 24 saatte bir temizlemeleri nedeniyle Cloudflare'i kullanmayı seçtik.</p>
+<p>Bu menüde gezinmek için <code>ARROW</code> (ok) tuşlarını kullanın. Kullanmak istediğiniz DNS sağlayıcısını bulduğunuzda, <code>SPACEBAR</code> (boşluk) tuşuna basın.</p>
+<p>Seçiminizden memnunsanız, onaylamak için <code>ENTER</code> tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/07/11-Select-DNS-Provider-to-route-WireGuard-through.png" alt="WireGuard'ı üzerinden yönlendirecek DNS Sağlayıcısını seçme" /></p>
+<p><strong>12.</strong> WireGuard VPN'inize erişmek için iki farklı yol belirleyebilirsiniz.</p>
+<p>Genel (public) IP adresinizi kullanmak en kolay seçenektir. Ancak, bu yalnızca statik bir IP adresiniz varsa kullanılmalıdır.</p>
+<p>Diğer seçenek ise bir alan adı kullanmaktır. Bu seçeneği <a href="https://pimylifeup.com/raspberry-pi-port-forwarding/">dinamik DNS rehberimizi</a> takip ederek kurabilirsiniz.</p>
+<p>Bu rehber için, genel IP adresimizi kullanmaya devam edeceğiz.</p>
+<p>İstediğiniz seçenek seçili olduğunda, devam etmek için <code>ENTER</code> tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/07/12-Choose-WireGuard-access-paths.png" alt="WireGuard erişim yollarını seçme" /></p>
+<p><strong>13.</strong> PiVPN betiği artık WireGuard'ın gerektirdiği sunucu anahtarını oluşturacak.</p>
+<p>Burada yapmanız gereken tek şey tekrar <code>ENTER</code> tuşuna basmak.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/07/13-WireGuard-Generating-Server-keys.png" alt="Raspberry Pi WireGuard Sunucu Anahtarları Oluşturuluyor" /></p>
+<p><strong>14.</strong> Bu ekran, gözetimsiz güncellemeler (unattended-upgrades) hakkında ve bunları neden etkinleştirmeniz gerektiğine dair size hızlı bir özet verecek.</p>
+<p><code>ENTER</code> tuşuna basarak bir sonraki adıma geçin.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/07/14-PiVPN-Warning-about-enabling-Unattended-Upgrades.png" alt="PiVPN Gözetimsiz Güncellemeleri Etkinleştirme Uyarısı" /></p>
+<p><strong>15.</strong> Artık <code>&lt;Yes&gt;</code> seçeneğini seçerek gözetimsiz güncellemeleri etkinleştirebilirsiniz.</p>
+<p>Raspberry Pi'nizin güvenlik düzeltmelerini düzenli olarak indirmesini sağlamak için bunları etkinleştirmenizi şiddetle tavsiye ederiz.</p>
+<p>Bunu etkinleştirmemek, WireGuard VPN'inizi potansiyel olarak saldırılara karşı savunmasız bırakabilir.</p>
+<p>İstediğiniz seçenek seçili olduğunda, onaylamak için <code>ENTER</code> tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/07/15-PiVPN-Enabling-Unattended-Upgrades-on-Pi.png" alt="Pi'de Gözetimsiz Güncellemeleri Etkinleştirme" /></p>
+<p><strong>16.</strong> Artık Raspberry Pi'nize WireGuard VPN yazılımını başarıyla kurdunuz.</p>
+<p>Bu ekran, bir sonraki bölümde ele alacağımız kullanıcılar için hâlâ profil oluşturmanız gerektiğini bildirecek.</p>
+<p>Son iki adıma devam etmek için <code>ENTER</code> tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/07/16-Raspberry-Pi-WireGuard-Installation-Completed.png" alt="Raspberry Pi WireGuard Kurulumu Tamamlandı" /></p>
+<p><strong>17.</strong> Devam etmeden önce Raspberry Pi'nizi yeniden başlatmak isteyip istemediğiniz sorulacaktır.</p>
+<p><code>&lt;Yes&gt;</code> seçeneğini seçmenizi öneririz.</p>
+<p>Yeniden başlatmayı seçtikten sonra, yeniden başlatmak için <code>ENTER</code> tuşuna iki kez basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/07/17-Reboot-Pi-after-WireGuard-Installation.png" alt="WireGuard Kurulumundan Sonra Raspberry Pi'yi Yeniden Başlatma" /></p>
+<h2>Raspberry Pi'nizde İlk WireGuard Profilinizi Oluşturma</h2>
+<p>WireGuard yazılımını Raspberry Pi'mize başarıyla kurduğumuza göre, artık onun için bir profil oluşturabiliriz.</p>
+<p>Bu profili oluşturabilmek için, yine PiVPN betiğini kullanacağız.</p>
+<p><strong>1.</strong> WireGuard için yeni bir profil oluşturmaya başlamak için, aşağıdaki komutu çalıştırmamız gerekiyor.</p>
+<pre><code>sudo pivpn add
+</code></pre>
+<p><strong>2.</strong> Yapmanız gereken tek şey, oluşturduğunuz profil için bir isim yazmaktır.</p>
+<p>Örneğin, profilimizi &quot;<code>PiMyLifeUp</code>&quot; olarak adlandıracağız.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/07/19-Creating-a-WireGuard-Profile-on-Raspberry-Pi.png" alt="Raspberry Pi'de WireGuard Profili Oluşturma" /></p>
+<p>Bir profil oluşturduktan sonra, çıktıda belirtilen dizinde saklanacaktır.</p>
+<p>Önceki adımları takip ettiyseniz ve <code>pi</code> kullanıcısını kullandıysanız, yapılandırma dosyasını <code>/home/pi/configs</code> dizininde bulabileceksiniz.</p>
+<p>Buradaki yapılandırma dosyasını WireGuard istemcilerinizi kurmak için kullanabilirsiniz. Ancak, bir sonraki bölümde ele alacağımız başka bir yöntem de mevcut.</p>
+<h2>WireGuard Profiliniz İçin Bir QR Kodu Oluşturma</h2>
+<p>Bu bölümde, Raspberry Pi'mizde oluşturduğumuz WireGuard profili için bir QR kodu nasıl oluşturacağınızı göstereceğiz.</p>
+<p>Bu QR kodunu cihazınızı kullanarak tarayabileceksiniz. Bu, yapılandırma dosyasını cihazınıza kopyalamak zorunda kalmanızı önler.</p>
+<p>Neyse ki bizim için, PiVPN yazılımı kullanabileceğimiz bir QR kod oluşturucuyla birlikte gelir.</p>
+<p><strong>1.</strong> Profiliniz için bir QR kodu oluşturmaya başlamak için, aşağıdaki komutu çalıştırmanız gerekecek.</p>
+<p>&quot;<code>PROFILENAME</code>&quot; kısmını bir önceki bölümde belirlediğiniz isimle değiştirdiğinizden emin olun. Bizim durumumuzda bu &quot;<code>PiMyLifeUp</code>&quot; olacak.</p>
+<pre><code>pivpn -qr PROFILENAME
+</code></pre>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/07/20-QR-Code-Generatted-for-WireGuard-connection.png" alt="WireGuard bağlantısı için oluşturulan QR Kodu" /></p>
+<p><strong>2.</strong> Ardından bu QR kodunu iOS veya Android cihazlarınızı kullanarak tarayabilirsiniz.</p>
+<p>WireGuard uygulamasını hem <a href="https://play.google.com/store/apps/details?id=com.wireguard.android">Google Play Store'da</a> hem de <a href="https://apps.apple.com/us/app/wireguard/id1441195209">Apple App Store'da</a> bulabilirsiniz.</p>
+<p>QR kodunu tararken, profil için bir isim girmeniz istenecektir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/07/Scan-WireGuard-QR-Code-on-iPhone.jpg" alt="iPhone'da WireGuard QR Kodunu Tarama" /></p>
+<p>Bu noktada, artık Raspberry Pi üzerinde bir WireGuard VPN'inin başarıyla çalışıyor olması gerekir.</p>
+<p>Herhangi bir sorunla karşılaştıysanız veya geri bildiriminiz varsa, lütfen aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-wireguard.html&amp;text=Raspberry+Pi%27de+WireGuard+VPN+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-wireguard.html&amp;text=Raspberry+Pi%27de+WireGuard+VPN+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-wireguard.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-wireguard.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-wireguard.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-wireguard.html&amp;title=Raspberry+Pi%27de+WireGuard+VPN+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+WireGuard+VPN+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-wireguard.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

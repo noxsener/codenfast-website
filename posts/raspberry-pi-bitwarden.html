@@ -1,0 +1,605 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de Bitwarden ile Kendi Parola Yöneticinizi Kurun - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Ücretsiz ve açık kaynaklı bir parola yöneticisi"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de Bitwarden ile Kendi Parola Yöneticinizi Kurun"/>
+    <meta property="og:description"
+          content="Ücretsiz ve açık kaynaklı bir parola yöneticisi"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-bitwarden.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-bitwarden.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de Bitwarden ile Kendi Parola Yöneticinizi Kurun"/>
+    <meta name="twitter:description"
+          content="Ücretsiz ve açık kaynaklı bir parola yöneticisi"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de Bitwarden ile Kendi Parola Yöneticinizi Kurun","item":{"@id":"https://codenfast.com/posts/raspberry-pi-bitwarden.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-01-Open-Docker-Endpoint.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-01-Open-Docker-Endpoint.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-02-Change-to-Volumes-Tab.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-02-Change-to-Volumes-Tab.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-03-Add-new-Volume.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-03-Add-new-Volume.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-04-Create-Volume-for-Bitwarden.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-04-Create-Volume-for-Bitwarden.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-05-Switch-to-Containers-Tab.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-05-Switch-to-Containers-Tab.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-06-Add-New-Container.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-06-Add-New-Container.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-07-Set-Container-Name-and-Image.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-07-Set-Container-Name-and-Image.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-08-Assign-Container-Ports.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-08-Assign-Container-Ports.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-09-Map-Volume-for-Bitwarden.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-09-Map-Volume-for-Bitwarden.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-10-Set-Docker-Restart-Policy.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-10-Set-Docker-Restart-Policy.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-11-Deploy-Container.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-11-Deploy-Container.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-13-Container-List-with-Bitwarden.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-13-Container-List-with-Bitwarden.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-14-The-Bitwarden-Login-UI.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-14-The-Bitwarden-Login-UI.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-15-Create-your-Bitwarden-Account.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-15-Create-your-Bitwarden-Account.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-16-Login-to-Newly-Created-Account.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-16-Login-to-Newly-Created-Account.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-17-Vault-Web-Interface.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-17-Vault-Web-Interface.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-18-Select-Bitwarden-Container-to-Modify.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-18-Select-Bitwarden-Container-to-Modify.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-19-Edit-Existing-Container.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-19-Edit-Existing-Container.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-20-Add-the-Admin-Token.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-20-Add-the-Admin-Token.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-21-Replace-Existing-Container.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-21-Replace-Existing-Container.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-22-Login-to-Admin-Panel.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-22-Login-to-Admin-Panel.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-23-Admin-Panel.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-23-Admin-Panel.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-24-Open-General-Settings-Panel.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-24-Open-General-Settings-Panel.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-25-Disable-New-Signups.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-25-Disable-New-Signups.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-26-Save-Admin-Settings-Changes.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-26-Save-Admin-Settings-Changes.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de Bitwarden ile Kendi Parola Yöneticinizi Kurun","description":"Ücretsiz ve açık kaynaklı bir parola yöneticisi","image":["https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:57:58.743619+03:00","dateModified":"2026-08-03T12:57:58.74365+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de Bitwarden ile Kendi Parola Yöneticinizi Kurun</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-bitwarden/">PiMyLifeUp - Self Hosting Bitwarden on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu projede, Raspberry Pi'nizde Bitwarden'ı nasıl self-host edeceğinizi göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-Thumbnail.jpg" alt="Raspberry Pi Bitwarden RS" /></p>
+<p>Bitwarden, tamamen ücretsiz ve açık kaynaklı bir parola yönetim hizmetidir. Parolalarınızın nasıl saklandığı üzerinde tam kontrol sahibi olmanızı sağlar.</p>
+<p>Yazılım, güvenli bir parola yöneticisi isteyenler için en iyi ücretsiz çözüm olarak yaygın şekilde kabul edilir.</p>
+<p>Raspberry Pi, nispeten düşük güç tükettiği için <a href="https://bitwarden.com/">Bitwarden</a> için mükemmel bir self-hosted çözümdür. Bu, sürekli çalışır durumda tutmayı ucuz hale getirmeye yardımcı olur.</p>
+<p>Bitwarden istemcileriniz, parola verilerinizi senkronize etmek için bu sunucuya bağlanabilir.</p>
+<p>Raspberry Pi en güçlü cihaz olmadığından, sunucu yazılımının resmi olmayan bir sürümünü kullanmamız gerekecek.</p>
+<p>Bu sürüm, <a href="https://github.com/dani-garcia/bitwarden_rs">Bitwarden sunucusunun</a> tamamen Rust ile yazılmış bir yeniden uygulamasıdır. Tükettiği kaynak miktarını en aza indirmek için yazılmıştır, bu da Raspberry Pi'miz için mükemmeldir.</p>
+<h2>İçindekiler</h2>
+<ul>
+<li>Raspberry Pi'nizi Bitwarden için Hazırlama</li>
+<li>Bitwarden'ı Raspberry Pi'ye Kurma
+<ul>
+<li>Portainer Kullanarak Bitwarden Kurma</li>
+<li>Docker CLI Kullanarak Bitwarden Kurma</li>
+</ul>
+</li>
+<li>Bitwarden için NGINX Proxy Kurma</li>
+<li>Bitwarden Web Arayüzüne Erişme</li>
+<li>Bitwarden Admin Panelini Etkinleştirme</li>
+<li>Admin Token Oluşturma</li>
+<li>Admin Sayfasına Erişme</li>
+<li>Bitwarden Admin Paneline Erişme</li>
+<li>Yeni Kullanıcı Oluşturmayı Devre Dışı Bırakma</li>
+<li>Sonuç</li>
+</ul>
+<h2>Raspberry Pi'nizi Bitwarden için Hazırlama</h2>
+<p>Sunucumuzu self-host etmeden önce yapmamız gereken birkaç şey var. Bu adımlardan biri Docker'ı kurmaktır.</p>
+<p><strong>1.</strong> İlk olarak, Bitwarden bir Docker konteyneri içinde çalışacağından, onu kurmanız gerekir.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-docker/">Raspberry Pi'de Docker kurulumunu</a> anlatan bir rehberimiz var.</p>
+<p><strong>2.</strong> Docker konteynerinizi yönetmek için Portainer kullanıp kullanmayacağınızı da seçebilirsiniz.</p>
+<p>Ya doğrudan komut satırını kullanarak çalıştırabilir ya da Portainer'a ekleyebilirsiniz. Portainer, Bitwarden konteynerinizi basit web arayüzü ile yönetmenizi sağlayacaktır.</p>
+<p>Bu yolu seçerseniz <a href="https://pimylifeup.com/raspberry-pi-portainer/">Raspberry Pi'ye Portainer kurulumu</a> rehberimizi takip edin.</p>
+<p><strong>3.</strong> Docker'ı kurup Portainer kullanıp kullanmayacağınıza karar verdikten sonra, işletim sistemimizi güncelleyebiliriz.</p>
+<p>Raspberry Pi'mizi güncellemek, Bitwarden'ı çalıştırmak için optimize edilmiş bir sisteme sahip olmamızı sağlar.</p>
+<p>Aşağıdaki iki komutu çalıştırarak sisteminizi güncelleyebilirsiniz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<h2>Bitwarden'ı Raspberry Pi'ye Kurma</h2>
+<p>Raspberry Pi'mizi hazırladığımıza göre, Bitwarden yazılımını kurmaya geçebiliriz.</p>
+<p>Bitwarden RS bir Docker konteyneri olarak mevcut olduğundan, kurulum süreci basittir.</p>
+<p>Biri Bitwarden'ı kurmak için Portainer'ı, diğeri ise doğrudan Docker kullanarak nasıl kurulacağını gösteren iki rehber yazdık.</p>
+<h3>Portainer Kullanarak Bitwarden Kurma</h3>
+<p>İlk bölümümüzde, Portainer web arayüzünü kullanarak Bitwarden'ı Raspberry Pi'nize nasıl kuracağınızı göstereceğiz.</p>
+<p>Daha önce de belirttiğimiz gibi Portainer, Bitwarden'ı <a href="https://pimylifeup.com/raspberry-pi-ssh/">Raspberry Pi'nize SSH ile bağlanmadan</a> yönetmenizi sağladığı için mükemmel bir çözümdür.</p>
+<h4>Bitwarden Konteyneri için Hazırlık</h4>
+<p>Şimdi Bitwarden konteynerimizi kurabilmemiz için Portainer'ı hazırlayalım. Bu süreçte birkaç adım var ancak çok uzun sürmüyor.</p>
+<p><strong>1.</strong> Portainer web arayüzünü açarak başlayın.</p>
+<p>Bu, <a href="https://pimylifeup.com/raspberry-pi-ip-address/">Raspberry Pi'nizin IP adresine</a> ve ardından <code>9000</code> portuna giderek erişilebilir olmalıdır.</p>
+<pre><code>https://[PIIPADRESI]:9000
+</code></pre>
+<p>&quot;<code>[PIIPADRESI]</code>&quot; kısmını Raspberry Pi'nizin IP'si ile değiştirdiğinizden emin olun.</p>
+<p><strong>2.</strong> Arayüzü açtığınızda, yerel Docker endpoint'ine geçmeniz gerekir.</p>
+<p>Bu endpoint üzerindeki konteynerleri yönetebilmemiz için ona <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-01-Open-Docker-Endpoint.jpg" alt="Portainer'da Docker Endpoint Açma" /></p>
+<p><strong>3.</strong> Bitwarden konteynerini oluşturmadan önce, onun için bir volume (birim) oluşturmamız gerekir.</p>
+<p>Kenar çubuğunda &quot;<code>Volumes</code>&quot; seçeneğini görmelisiniz, ona <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-02-Change-to-Volumes-Tab.jpg" alt="Volumes Sekmesine Geçme" /></p>
+<p><strong>4.</strong> Bu menüde, daha önce oluşturduğunuz volume'lerin bir listesini görmelisiniz.</p>
+<p>Bu listenin üstünde bir &quot;<code>Add volume</code>&quot; butonu olmalı. Volume menüsüne geçmek için butona <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-03-Add-new-Volume.jpg" alt="Yeni Bitwarden Volume Ekleme Ekranına Geçme" /></p>
+<p><strong>5.</strong> Bu yeni volume'e bir isim vermemiz gerekiyor. Bu rehber için &quot;<code>Bitwarden</code>&quot; ismini kullanacağız (<strong>1.</strong>).</p>
+<p>Raspberry Pi Bitwarden volume'ünüz için bir isim seçtikten sonra, &quot;<code>Create the volume</code>&quot; butonuna <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-04-Create-Volume-for-Bitwarden.jpg" alt="Raspberry Pi Bitwarden için Volume Oluşturma" /></p>
+<p><strong>6.</strong> Volume oluşturulduktan sonra, &quot;<strong>Containers</strong> &quot; menüsüne geçmemiz gerekiyor.</p>
+<p>Kenar çubuğundaki &quot;<code>Containers</code>&quot; seçeneğine <code>tıklayarak</code> buraya geçebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-05-Switch-to-Containers-Tab.jpg" alt="Containers Sekmesine Geçme" /></p>
+<p><strong>7.</strong> Aşağıda, Raspberry Pi'nizde mevcut konteynerlerin bir listesini görmelisiniz.</p>
+<p>Bu sayfanın üstünde, &quot;<code>Add container</code>&quot; butonuna <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-06-Add-New-Container.jpg" alt="Raspberry Pi'ye Yeni Konteyner Ekleme" /></p>
+<h4>Raspberry Pi için Bitwarden RS Konteyneri Oluşturma</h4>
+<p>Ön hazırlığı yaptığımıza göre, şimdi Bitwarden konteynerini Raspberry Pi'mize dağıtabiliriz.</p>
+<p><strong>1.</strong> Konteyneriniz için yapmanız gereken ilk şey ona bir isim vermektir (<strong>1.</strong>). Kendi konteynerimizi &quot;<code>Bitwarden</code>&quot; olarak adlandıracağız.</p>
+<p>Ardından, Docker hub'dan çekmek istediğimiz imajı belirtmemiz gerekiyor. Bizim durumumuzda bu, Raspberry Pi için Bitwarden konteyneri olacak.</p>
+<p>&quot;Image&quot; kutusuna &quot;<code>vaultwarden/server:latest</code>&quot; yazdığınızdan emin olun (<strong>2.</strong>)</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-07-Set-Container-Name-and-Image.jpg" alt="Konteyner Adı ve İmajı Ayarlama" /></p>
+<p><strong>2.</strong> Ardından, konteynerimiz için ağ ayarlarını yapmamız gerekiyor. &quot;<code>Network ports configuration</code>&quot; başlığını arayın.</p>
+<p>Bu başlığın altında, &quot;<code>publish a new network port</code>&quot; butonuna iki kez <code>tıklamanız</code> gerekecek (<strong>1.</strong>).</p>
+<p>Bitwarden'dan açığa çıkarmak istediğimiz portları ayarlamamıza olanak tanıyan iki kutu setine sahip olmalısınız.</p>
+<p><strong>2)</strong> İlk kutuda, <code>host</code>u &quot;<code>127.0.0.1:8080</code>&quot; olarak ayarlamanız gerekecek.</p>
+<p>Ayrıca <strong>container</strong> portunu <code>80</code> olarak ayarlamanız gerekecek (<strong>2.</strong>). Bu, Bitwarden'ın web arayüzüne erişilebilecek porttur.</p>
+<p><strong>3)</strong> İkinci adım için, <code>host</code>u &quot;<code>127.0.0.1:3012</code>&quot; olarak ayarlamanız gerekecek.</p>
+<p>&quot;<code>container</code>&quot; portu <code>3012</code> olarak ayarlanmalıdır (<strong>3.</strong>). Bitwarden bu portu web socket bağlantıları için kullanır.</p>
+<p>Her iki host portunu da yerel cihaza bağladığımızı belirtmeliyiz.</p>
+<p>Bunun nedeni, dış cihazların bunlara erişmesine ihtiyaç duymamamızdır. Bunun yerine, bunlar bir NGINX ters proxy kullanılarak açığa çıkarılacaktır.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-08-Assign-Container-Ports.jpg" alt="Bitwarden Konteyner Portlarını Atama" /></p>
+<p><strong>3.</strong> Sayfanın en altına, &quot;<code>Advanced container settings</code>&quot; başlığını bulana kadar kaydırın.</p>
+<p>Bu bölümde, &quot;<code>Volumes</code>&quot; sekmesine <code>tıklayarak</code> geçin (<strong>1.</strong>).</p>
+<p>Ardından, Raspberry Pi'nizin volume'ünü konteynere ekleyebilmemiz için &quot;<code>map additional volume</code>&quot; butonuna <code>tıklamanız</code> gerekiyor (<strong>2.</strong>).</p>
+<p>&quot;<code>container</code>&quot; seçeneği için, bunu &quot;<code>/data</code>&quot; olarak ayarladığınızdan emin olun (<strong>3.</strong>).</p>
+<p>Son olarak, volume'ü önceki bölümde oluşturduğumuz volume olarak ayarlamamız gerekiyor. Bu &quot;<code>Bitwarden-local</code>&quot; olarak adlandırılmalıdır (<strong>4.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-09-Map-Volume-for-Bitwarden.jpg" alt="Bitwarden için Volume Eşleme" /></p>
+<p><strong>4.</strong> Ardından, Bitwarden'ın Raspberry Pi'mizde çevrimiçi kalmasını sağlamak istiyoruz. Bunu yeniden başlatma politikasını ayarlayarak yapabiliriz.</p>
+<p>Bu sayfada, sekmeyi değiştirmek için &quot;<code>Restart policy</code>&quot; seçeneğine <code>tıklayın</code> (<strong>1.</strong>).</p>
+<p>Yeniden başlatma politikasını &quot;<code>Always</code>&quot; olarak değiştirmek istiyoruz. Bu, Docker'ın bir nedenden dolayı başarısız olduğunda konteyneri çevrimiçi tutmaya çalışmasını sağlayacaktır (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-10-Set-Docker-Restart-Policy.jpg" alt="Docker Yeniden Başlatma Politikasını Ayarlama" /></p>
+<p><strong>5.</strong> Bitwarden konteynerini yapılandırmayı bitirdiğimize göre, sonunda dağıtabiliriz.</p>
+<p>Bu sayfadaki &quot;<code>actions</code>&quot; başlığı altında, &quot;<code>Deploy the container</code>&quot; butonuna <code>tıklamanız</code> gerekiyor.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-11-Deploy-Container.jpg" alt="Raspberry Pi'de Bitwarden Konteynerini Dağıtma" /></p>
+<p><strong>6.</strong> Portainer, Bitwarden docker imajını Raspberry Pi'nize çekmeyi bitirdiğinde, konteyner listesinde mevcut olacaktır.</p>
+<p>Aşağıda, Bitwarden'ı kurmayı bitirdikten sonraki konteyner listemizin bir ekran görüntüsü var.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-13-Container-List-with-Bitwarden.jpg" alt="Bitwarden ile Konteyner Listesi" /></p>
+<h3>Docker CLI Kullanarak Bitwarden Kurma</h3>
+<p>Raspberry Pi'nizde Bitwarden'ı kullanmak için Portainer kurmayı ve kullanmayı tercih etmiyorsanız, CLI kullanmak kolaydır.</p>
+<p>Aşağıdaki adımları takip ederek, Bitwarden imajını cihazınıza çekip ardından çalıştıracağız.</p>
+<p><strong>1.</strong> İlk adımımız, Docker kullanarak Bitwarden RS'in en son sürümünü çekmektir.</p>
+<p>Bu adımlar, sunucunun en son sürümünü indirecek ve çalıştırılabilir hale getirecektir.</p>
+<pre><code>docker pull vaultwarden/server:latest
+</code></pre>
+<p><strong>2.</strong> Docker, Bitwarden RS'i Raspberry Pi'nize indirmeyi bitirdiğinde, artık devam edebilirsiniz.</p>
+<p>Bir sonraki adımımız, imajın kendisini çalıştırmaktır. Bunu aşağıdaki komutu çalıştırarak yapabiliriz.</p>
+<pre><code>sudo docker run -d --name bitwarden \
+    --restart=always \
+    -v /bw-data/:/data/ \
+    -p 127.0.0.1:8080:80 \
+    -p 127.0.0.1:3012:3012 \
+    vaultwarden/server:latest
+</code></pre>
+<p>Bu komut, imajını indirdiğimiz Bitwarden RS sunucusunu başlatacaktır.</p>
+<p>Ardından, Docker'ın Bitwarden imajından iletmesini istediğimiz portları tanımlıyoruz.</p>
+<p>Bizim durumumuzda, web sunucusunu &quot;<code>8080</code>&quot; portunda açığa çıkarıyoruz.</p>
+<p>Ardından, Bitwarden'ın web socket'lerinin iletişim kurmak için kullandığı &quot;<code>3012</code>&quot; portunu açığa çıkarıyoruz.</p>
+<p>Bu portların her ikisi de Raspberry Pi'nin <code>localhost</code>una (<code>127.0.0.1</code>) kilitlenecektir. Bir sonraki bölümde oluşturacağımız proxy sunucusu, HTTPS ayarlayarak Bitwarden'a dış erişim sağlayacaktır.</p>
+<h2>Bitwarden için NGINX Proxy Kurma</h2>
+<p>Bitwarden'ı çalışır durumda edinmemize rağmen, HTTPS ayarlamadan onu kullanmak mümkün değildir.</p>
+<p>Bunun nedeni, Bitwarden'ın web arayüzünün, tarayıcıların yalnızca bir HTTPS bağlantısında çalışırken izin verdiği belirli JavaScript fonksiyonlarını kullanmasıdır.</p>
+<p>HTTPS desteğini sağlamak için, NGINX kullanarak bir proxy kurmamız gerekecek.</p>
+<p>NGINX, Raspberry Pi'nizin Bitwarden sunucusunun önünde durup istekleri proxy'leyecektir.</p>
+<h3>Pi'de NGINX Hazırlama</h3>
+<p>Bitwarden'ı kullanabilmemiz için, önce NGINX kurmamız gerekiyor.</p>
+<p>Bunu yapmak için, web sunucu yazılımını kurmanız ve HTTPS bağlantısı için kullanacağımız bir SSL sertifikası oluşturmanız gerekir.</p>
+<p><strong>1.</strong> Bu bölüme başlamadan önce, NGINX'in zaten kurulu olmasını gerektiriyoruz.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-nginx/">Raspberry Pi'nize NGINX kurmayı</a> gösteren rehberimizi takip edin. Bir proxy sunucusu çalıştırmak için PHP gerekmediğinden yalnızca ilk bölümü takip etmeniz yeterlidir.</p>
+<p><strong>2.</strong> NGINX'i kurduktan sonra, onun için bir SSL sertifikası oluşturmamız gerekiyor.</p>
+<p>Raspberry Pi'nizde bir sertifika oluşturmanın iki farklı yolu vardır.</p>
+<p><strong>a)</strong> Bir alan adı kullanmayı planlıyorsanız, imzalı bir SSL sertifikası oluşturmak için <a href="https://pimylifeup.com/raspberry-pi-ssl-lets-encrypt/">Let's Encrypt'i kullanabilirsiniz</a>.</p>
+<p>Yalnızca bir IP adresi kullanıyorsanız imzalı bir sertifika oluşturamazsınız çünkü alan adı verilme sürecinin bir parçası olarak kullanılır.</p>
+<p>Bu yolu seçerseniz, sertifikanızın saklandığı dizini not almanız gerekecek. Bittiğinde, bu bölümün <strong>5. adımına atlayın</strong>.</p>
+<p><strong>b)</strong> Alternatif ise kendinden imzalı bir sertifika oluşturmaktır. Bunlar hala güvenli olsa da, tarayıcının bir sertifika otoritesinden gerçekliğini garanti edemediği bir uyarı alacaksınız.</p>
+<p>Bu sertifikayı Raspberry Pi'de tek bir komut kullanarak oluşturabiliriz, bu da kullanımını basitleştirir.</p>
+<p><strong>3.</strong> Let's Encrypt'i seçtiyseniz, bu bölümün <strong>5. adımına atlayabilirsiniz</strong>. Aksi takdirde devam edebilirsiniz.</p>
+<p>Kendinden imzalı bir sertifika oluşturmak için aşağıdaki komutu kullanabilirsiniz.</p>
+<pre><code>sudo openssl req -x509 -nodes -days 365 -newkey rsa:4096 -keyout /etc/ssl/private/nginx-bitwarden.key -out /etc/ssl/certs/nginx-bitwarden.crt
+</code></pre>
+<p>Bu kendinden imzalı sertifika 365 gün geçerli olacak ve &quot;<code>/etc/ssl/private/</code>&quot; ve &quot;<code>/etc/ssl/certs/</code>&quot; dizinlerinde saklanacaktır.</p>
+<p><strong>4.</strong> SSL oluşturma süreci sırasında, size bazı ek detaylar sağlamanız istenecektir.</p>
+<p>OpenSSL, bunun bir sahtekarlık olup olmadığını belirlemenize yardımcı olmak için bu detayları sertifikaya yazacaktır.</p>
+<pre><code>Country Name (2 letter code) [AU]: TR
+State or Province Name (full name) [Some-State]: Istanbul
+Locality Name (eg, city) []: Istanbul
+Organization Name (eg, company) [Internet Widgits Pty Ltd]: Codenfast
+Organizational Unit Name (eg, section) []:
+Common Name (e.g. server FQDN or YOUR name) []: raspberrypi_ip_adresi
+Email Address []: eposta@alanadiniz.com
+</code></pre>
+<p>Raspberry Pi'nizin Bitwarden kurulumu için sertifikayı oluşturmayı bitirmek üzere gerekli tüm soruları yanıtlayın.</p>
+<p><strong>5.</strong> Son hazırlık görevimiz, <a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange">güçlü bir Diffie-Hellman grubu</a> oluşturmaktır.</p>
+<p>Bu, cihazınızın SSL bağlantılarının güvenliğini artırmaya yardımcı olmak için kullanılır.</p>
+<pre><code>sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
+</code></pre>
+<p>Bu sürecin tamamlanmasının biraz zaman alabileceğini lütfen unutmayın.</p>
+<h3>NGINX'i Proxy Olarak Çalışacak Şekilde Yapılandırma</h3>
+<p>Şimdi, Bitwarden'a bağlantıları proxy'lemesine olanak tanıyacak bir NGINX sanal host'u oluşturabiliriz.</p>
+<p>Neyse ki bizim için, NGINX'i proxy olarak çalışacak şekilde yapılandırmak çok basit bir süreçtir.</p>
+<p><strong>1.</strong> Öncelikle, NGINX'in varsayılan yapılandırma dosyasını kaldıralım.</p>
+<p>Bitwarden'ı bir alan adı ile birlikte kullanmayı planlıyorsanız bunu yapmanıza gerek yoktur.</p>
+<pre><code>sudo rm /etc/nginx/sites-enabled/default
+</code></pre>
+<p><strong>2.</strong> NGINX için yeni bir yapılandırma dosyası oluşturmamız gerekiyor.</p>
+<p>Aşağıdaki komutu çalıştırarak <a href="https://pimylifeup.com/nano-text-editor/">nano metin editörünü</a> kullanarak bu yeni yapılandırma dosyasını yazmaya başlayın.</p>
+<pre><code>sudo nano /etc/nginx/sites-enabled/bitwarden.conf
+</code></pre>
+<p><strong>3.</strong> Bu dosyanın içine, aşağıdaki metin satırlarını yazın.</p>
+<p>Ekleyeceğimiz bu ilk blok, <code>http</code>den (port <code>80</code>) gelen tüm trafiği <code>https</code>ye (port <code>443</code>) yönlendirecektir.</p>
+<pre><code>server {
+    listen 80;
+    listen [::]:80;
+    server_name _; #Bunu alan adınızla değiştirin
+    return 301 https://$host$request_uri;
+}
+</code></pre>
+<p><strong>4.</strong> Ardından, proxy'lemeyi ve HTTPS bağlantısını yönetecek server bloğumuzu eklememiz gerekiyor.</p>
+<p>Ayrıca, sertifikayı oluşturmak için Let's Encrypt kullandıysanız, hem &quot;<code>ssl_certifcate</code>&quot; hem de &quot;<code>ssl_certificate_key</code>&quot; için yolları değiştirmeniz gerekecek.</p>
+<pre><code>server {
+  listen 443 ssl http2;
+  server_name _; #Bunu alan adınızla değiştirin
+
+  ssl_certificate      /etc/ssl/certs/nginx-bitwarden.crt;   #İmzalı sertifika kullanıyorsanız bunları Lets Encrypt yolu ile değiştirin
+  ssl_certificate_key  /etc/ssl/private/nginx-bitwarden.key; #İmzalı sertifika kullanıyorsanız bunları Lets Encrypt yolu ile değiştirin
+
+  ssl_dhparam /etc/ssl/certs/dhparam.pem;
+
+  # Büyük eklere izin ver
+  client_max_body_size 128M;
+
+  location / {
+    proxy_pass http://0.0.0.0:8080;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+  }
+
+  location /notifications/hub {
+    proxy_pass http://0.0.0.0:3012;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection &quot;upgrade&quot;;
+  }
+
+  location /notifications/hub/negotiate {
+    proxy_pass http://0.0.0.0:8080;
+  }
+}
+</code></pre>
+<p><strong>5.</strong> Raspberry Pi Bitwarden sunucunuzu nasıl kullanmayı planladığınıza bağlı olarak birkaç şeyi değiştirmeniz gerekebilir.</p>
+<p>Bir alan adı kullanıyorsanız, <code>servername _;</code> kısmını onu içerecek şekilde değiştirmeniz gerekir.</p>
+<p>Örneğin, sunucu adımız şu şekilde olurdu: &quot;<code>server_name bitwarden.pimylifeup.com</code>&quot;.</p>
+<p><strong>6.</strong> Bittiğinde, dosyanız aşağıdaki gibi görünmelidir.</p>
+<pre><code>server {
+    listen 80;
+    listen [::]:80;
+    server_name _; #Bunu alan adınızla değiştirin
+    return 301 https://$host$request_uri;
+}
+
+server {
+  listen 443 ssl http2;
+  server_name _; #Bunu alan adınızla değiştirin
+
+  ssl_certificate      /etc/ssl/certs/nginx-bitwarden.crt;   #İmzalı sertifika kullanıyorsanız bunları Lets Encrypt yolu ile değiştirin
+  ssl_certificate_key  /etc/ssl/private/nginx-bitwarden.key; #İmzalı sertifika kullanıyorsanız bunları Lets Encrypt yolu ile değiştirin
+
+  ssl_dhparam /etc/ssl/certs/dhparam.pem;
+
+  # Büyük eklere izin ver
+  client_max_body_size 128M;
+
+  location / {
+    proxy_pass http://0.0.0.0:8080;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+  }
+
+  location /notifications/hub {
+    proxy_pass http://0.0.0.0:3012;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection &quot;upgrade&quot;;
+  }
+
+  location /notifications/hub/negotiate {
+    proxy_pass http://0.0.0.0:8080;
+  }
+}
+</code></pre>
+<p><strong>7.</strong> Bittiğinde, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak bu dosyayı kaydedebilirsiniz.</p>
+<p><strong>8.</strong> Şimdi, yapmamız gereken tek şey NGINX servisini yeniden başlatmaktır.</p>
+<p>Servisi yeniden başlatmadan, son değişikliklerimizden haberdar olmayacaktır.</p>
+<p>Raspberry Pi'nizde, NGINX'i yeniden başlatmak için aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo systemctl restart nginx
+</code></pre>
+<h2>Bitwarden Web Arayüzüne Erişme</h2>
+<p>Bir proxy sunucusu kurulduğuna göre, artık Raspberry Pi'mizde çalışan Bitwarden web arayüzüne erişebilir ve kullanabiliriz.</p>
+<p><strong>1.</strong> Bitwarden arayüzünüze erişmek için, favori web tarayıcınızda aşağıdaki adrese gitmeniz gerekiyor.</p>
+<p>&quot;<code>YOURPIIPADDRESS</code>&quot; kısmını <a href="https://pimylifeup.com/raspberry-pi-ip-address/">Raspberry Pi'nizin IP'si</a> ile değiştirdiğinizden emin olun.</p>
+<p>Alternatif olarak, bir alan adı kullanıyorsanız, onu kullanmanız gerekecek.</p>
+<pre><code>https://YOURPIIPADDRESS
+</code></pre>
+<p>Kendinden imzalı bir sertifika kullanıyorsanız, bir uyarı mesajı alacaksınız.</p>
+<p>Bu sertifikayı kendiniz oluşturduğunuzu ve Raspberry Pi'nize bağlandığınızı bildiğiniz için, bu mesajı görmezden gelebilirsiniz.</p>
+<p><strong>2.</strong> Bitwarden'ı kullanmaya başlamadan önce, bir hesap oluşturmanız gerekecek.</p>
+<p>Giriş ekranında, &quot;<code>Create Account</code>&quot; butonunu görmelisiniz. Bu butonu bulduğunuzda ona <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-14-The-Bitwarden-Login-UI.jpg" alt="Bitwarden için Create Account Seçme" /></p>
+<p><strong>3.</strong> Şimdi yeni hesabınız için bilgileri doldurmaya başlayabilirsiniz.</p>
+<p>Yapmanız gereken ilk şey bu Bitwarden hesabı için e-posta girmektir (<strong>1.</strong>). Bu e-posta adresi giriş yapmak için kullanacağınız adres olacaktır.</p>
+<p>Ardından, Bitwarden'ın arayüzlerinde kullanması için bir isim vermeniz gerekiyor (<strong>2.</strong>).</p>
+<p>Ardından bu hesap için bir parola belirlemeniz gerekecek. Bunu güvenli ve tahmin edilmesi kolay olmayan bir şeye ayarladığınızdan emin olun (<strong>3.</strong>).</p>
+<p>Hesabın oluşturulmasını sonlandırmadan önce, Bitwarden'ın kullanım koşulları ve gizlilik politikasını kabul etmeniz gerekecektir (<strong>4.</strong>).</p>
+<p>Tüm ayarlarınızdan memnun olduğunuzda, &quot;<code>Submit</code>&quot; butonuna <code>tıklayarak</code> hesabı oluşturabilirsiniz (<strong>5.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-15-Create-your-Bitwarden-Account.jpg" alt="Bitwarden için Hesap Oluşturma" /></p>
+<p><strong>4.</strong> Artık hesabınızı oluşturduğunuza göre, yeni Bitwarden kasanıza giriş yapabilirsiniz.</p>
+<p>Öncelikle, hesabınıza atadığınız e-posta adresini doldurmanız gerekiyor (<strong>1.</strong>).</p>
+<p>Ardından, yeni hesabınız için belirlediğiniz parolayı girmeniz gerekiyor (<strong>2.</strong>).</p>
+<p>Son olarak, &quot;<code>Log In</code>&quot; butonuna <code>tıklayarak</code> giriş yapabilirsiniz (<strong>3.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-16-Login-to-Newly-Created-Account.jpg" alt="Yeni Bitwarden Hesabınıza Giriş Yapma" /></p>
+<p><strong>5.</strong> Artık yepyeni Raspberry Pi Bitwarden kasanızda bilgi saklamaya başlayabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-17-Vault-Web-Interface.jpg" alt="Raspberry Pi Bitwarden Kasa Web Arayüzü" /></p>
+<h2>Bitwarden Admin Panelini Etkinleştirme</h2>
+<p>Bir hesap oluşturduğunuza göre, şimdi admin token'ı oluşturabiliriz.</p>
+<p>Admin token, Bitwarden admin paneline erişmek için kullanacağınız şeydir. Bu, Docker konteynerlerimizin yapılandırmasında değişiklikler yapmamızı gerektirecektir.</p>
+<p>Admin panelinde, kayıtlı tüm kullanıcıları görüntüleyebilir ve onları silebilirsiniz. İşlevselliği devre dışı bıraksanız bile yeni kullanıcılar için davetler bile oluşturabilirsiniz.</p>
+<p>Bu arayüz aynı zamanda çok sayıda Bitwarden seçeneğini yapılandırmak için de kullanılır. Örneğin insanların kayıt olabilmesini isteyip istemediğiniz gibi.</p>
+<h3>Admin Token Oluşturma</h3>
+<p>İlk adımımız, Bitwarden'ın kullanması için yeni bir admin token oluşturmaktır.</p>
+<p>Bu token'ın nispeten uzun, güçlü, rastgele oluşturulmuş karakterlerden oluşan bir dizi olması gerektiğinden, <code>openssl</code> kullanacağız.</p>
+<p>Bu güvenli dizeyi oluşturmak için, Raspberry Pi'nizde aşağıdaki komutu çalıştırabilirsiniz.</p>
+<pre><code>openssl rand -base64 48
+</code></pre>
+<p>Bu token'ı gizli tuttuğunuzdan emin olun, çünkü bu herkesin Bitwarden RS sunucusuna tam erişim sahip olmasına izin verecektir.</p>
+<h3>Admin Sayfasına Erişme</h3>
+<p>Şimdi bu yeni admin token'ı Raspberry Pi'nizin Bitwarden Docker konteynerine beslememiz gerekiyor.</p>
+<p>Bunu Portainer web arayüzünü kullanarak veya komut satırını değiştirerek beslemek mümkündür.</p>
+<h4>Portainer Kullanarak Admin Token Ayarlama</h4>
+<p>Admin token'ı ayarlamak için, Portainer arayüzünü açmanız ve konteyner listesine dönmeniz gerekecek.</p>
+<p><strong>1.</strong> Konteyner listesinde, Bitwarden konteynerini tanımlamanız gerekiyor.</p>
+<p>Onu bulduğunuzda bilgi sayfasına gitmek için ona <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-18-Select-Bitwarden-Container-to-Modify.jpg" alt="Değiştirmek için Bitwarden Konteynerini Seçme" /></p>
+<p><strong>2.</strong> Bir sonraki sayfanın üstünde, bir &quot;<code>Duplicate/Edit</code>&quot; butonu olmalı.</p>
+<p>Konteynerin ayarlarını düzenlemeye başlamak için bu butona <code>tıklamanız</code> gerekiyor.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-19-Edit-Existing-Container.jpg" alt="Mevcut Konteyneri Düzenleme" /></p>
+<p><strong>3.</strong> &quot;<code>Advanced container settings</code>&quot; başlığını bulana kadar bu sayfayı aşağı kaydırın.</p>
+<p>Bu başlığın altında, &quot;<code>ENV</code>&quot; seçeneğine tıklayarak sekmeleri değiştirmeniz gerekecek (<strong>1.</strong>).</p>
+<p>Admin token'ı ekleyebilmemiz için &quot;<code>add environment variable</code>&quot; butonuna <code>tıklamanız</code> gerekiyor (<strong>2.</strong>).</p>
+<p>Bu butona tıklamak, sayfanın altına iki yeni metin kutusu eklemelidir.</p>
+<p>&quot;<code>name</code>&quot; metin kutusunda, &quot;<code>ADMIN_TOKEN</code>&quot; yazmanız gerekiyor (<strong>3.</strong>).</p>
+<p>&quot;<code>value</code>&quot; kutusu için, kullanmak istediğiniz admin token'ı girmeniz gerekecek (<strong>4.</strong>).</p>
+<p>Son olarak, admin token oluşturulduktan sonra, &quot;<code>Deploy the container</code>&quot; butonuna <code>tıklayabilirsiniz</code> (<strong>5.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-20-Add-the-Admin-Token.jpg" alt="Admin Token Ekleme" /></p>
+<p><strong>4.</strong> Portainer, Raspberry Pi'nizin Bitwarden konteynerini güncellemeden önce, aşağıdaki mesajı göreceksiniz.</p>
+<p>Bu mesaj, ismin eşleşmesi nedeniyle mevcut konteynerin yerini alacağı konusunda sizi uyarıyor.</p>
+<p>&quot;<code>Replace</code>&quot; butonuna <code>tıklamanız</code> gerekiyor.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-21-Replace-Existing-Container.jpg" alt="Mevcut Konteynerin Yerini Alma" /></p>
+<h4>Komut Satırında Admin Token Ayarlama</h4>
+<p>Komut satırını kullanırken bir konteyneri güncellemek biraz daha karmaşıktır, çünkü mevcut konteyneri manuel olarak silmeniz gerekir.</p>
+<p><strong>1.</strong> Raspberry Pi'nizin Bitwarden konteynerini silmeden önce, onu çevrimdışı almamız gerekecek.</p>
+<p>Aşağıdaki komutu kullanarak şu anda çalışan bir konteyneri durdurabilirsiniz.</p>
+<pre><code>sudo docker stop bitwarden
+</code></pre>
+<p><strong>2.</strong> Ardından, mevcut konteyneri kaldırmamız gerekiyor.</p>
+<p>Aynı portları ve ismi kullanan bir konteyner zaten varsa Docker, konteyneri yeniden oluşturmamıza izin vermez.</p>
+<p>Aşağıdaki komutu çalıştırarak mevcut Bitwarden konteynerini kaldırın.</p>
+<pre><code>sudo docker rm bitwarden
+</code></pre>
+<p><strong>3.</strong> Son olarak, docker komutunu yeniden çalıştırmamız gerekiyor.</p>
+<p>Bu sefer, daha önce oluşturduğumuz admin token'ı içeri aktaracağız.</p>
+<pre><code>sudo docker run -d --name bitwarden \
+    -e ADMIN_TOKEN=&lt;strong&gt;ORNEKPIMYLIFEUPADMINTOKEN&lt;/strong&gt; \
+    --restart=always \
+    -v /bw-data/:/data/ \
+    -p 127.0.0.1:8080:80 \
+    -p 127.0.0.1:3012:3012 \
+    vaultwarden/server:latest
+</code></pre>
+<p>Bu yeni komutu çalıştırdığınızda, &quot;<code>ORNEKPIMYLIFEUPADMINTOKEN</code>&quot; kısmını daha önce oluşturduğunuz token ile değiştirdiğinizden emin olun.</p>
+<h3>Bitwarden Admin Paneline Erişme</h3>
+<p>Raspberry Pi'nizin Bitwarden kurulumunun yeni oluşturulan admin token'ı kabul etmesini sonunda sağladıktan sonra, artık admin sayfasına erişebilirsiniz.</p>
+<p><strong>1.</strong> Web tarayıcınızda, aşağıdaki adrese gitmeniz gerekiyor.</p>
+<p>&quot;<code>YOURPIIPADDRESS</code>&quot; kısmını Raspberry Pi'nizin adresi ile değiştirdiğinizden emin olun.</p>
+<pre><code>https://YOURPIIPADDRESS/admin
+</code></pre>
+<p>Bu adrese gitmek sizi Bitwarden admin paneline götürecektir.</p>
+<p><strong>2.</strong> Bu sayfada, oluşturduğunuz admin token'ı girmeniz gerekecek (<strong>1.</strong>).</p>
+<p>Token'ı girdikten sonra, &quot;<code>Enter</code>&quot; butonuna <code>tıklayarak</code> giriş yapabilirsiniz (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-22-Login-to-Admin-Panel.jpg" alt="Bitwarden Admin Paneline Giriş Yapma" /></p>
+<p><strong>3.</strong> Artık Bitwarden admin paneline erişiminiz olacak.</p>
+<p>Bu sayfaları kullanarak, kullanıcılarınızı yönetebilir ve Bitwarden'ın ayarlarını yapılandırabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-23-Admin-Panel.jpg" alt="Bitwarden Admin Paneli" /></p>
+<h2>Yeni Kullanıcı Oluşturmayı Devre Dışı Bırakma</h2>
+<p>Bir hesap oluşturduktan ve admin paneline erişim ayarladıktan sonra, kullanıcı kayıt menüsünü devre dışı bırakmayı seçebilirsiniz.</p>
+<p>Bu, yalnızca kişisel olarak davet ettiğiniz kullanıcıların Bitwarden kasanızda kullanıcı oluşturabileceği anlamına gelir.</p>
+<p><strong>1.</strong> Raspberry Pi Bitwarden menünüzde yeni kullanıcı oluşturmayı devre dışı bırakmak için, admin panelini açmanız gerekecek.</p>
+<p>Admin panelinin içine girdiğinizde, devam edebilirsiniz.</p>
+<p><strong>2.</strong> Yeni kullanıcı kayıtlarını devre dışı bırakma seçeneği genel ayarlar sayfasında bulunur.</p>
+<p>Bu panelin altında gizli olan tüm seçenekleri ortaya çıkarmak için &quot;<code>General settings</code>&quot; menüsüne <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-24-Open-General-Settings-Panel.jpg" alt="Genel Ayarlar Panelini Açma" /></p>
+<p><strong>3.</strong> &quot;<code>General settings</code>&quot; seçenekleri listesinde, &quot;<code>Allow new signups</code>&quot; adlı bir seçenek bulmalısınız.</p>
+<p>Bu seçeneği devre dışı bırakmak için yanındaki onay kutusuna <code>tıklamanız</code> gerekiyor.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-25-Disable-New-Signups.jpg" alt="Yeni Kayıtları Devre Dışı Bırakma" /></p>
+<p><strong>4.</strong> Ayar değişikliklerini onaylamak için, sayfanın altına kaydırmanız gerekiyor.</p>
+<p>Altta, üzerinde &quot;<code>Save</code>&quot; yazan mavi bir buton görmelisiniz. Bu değişiklikleri kaydetmek için bu butona <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Bitwarden-RS-26-Save-Admin-Settings-Changes.jpg" alt="Admin Ayar Değişikliklerini Kaydetme" /></p>
+<h2>Sonuç</h2>
+<p>Artık Raspberry Pi'nizde Bitwarden'ın çalışır durumda olması gerekiyor.</p>
+<p>Bitwarden, çoğu cihazda istemcileri bulunan açık kaynaklı ve ücretsiz bir parola yönetim yazılımıdır.</p>
+<p>Resmi istemcinin kaynak yoğun olmamayı hedefleyen bir portunu kullanarak Pi'nizde kendi Bitwarden bulut sunucunuzu çalıştırabilirsiniz.</p>
+<p>Cihazınızda sunucuyu çalıştırırken sorunlarla karşılaşırsanız, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-bitwarden.html&amp;text=Raspberry+Pi%27de+Bitwarden+ile+Kendi+Parola+Y%C3%B6neticinizi+Kurun" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-bitwarden.html&amp;text=Raspberry+Pi%27de+Bitwarden+ile+Kendi+Parola+Y%C3%B6neticinizi+Kurun" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-bitwarden.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-bitwarden.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-bitwarden.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-bitwarden.html&amp;title=Raspberry+Pi%27de+Bitwarden+ile+Kendi+Parola+Y%C3%B6neticinizi+Kurun" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+Bitwarden+ile+Kendi+Parola+Y%C3%B6neticinizi+Kurun%20codenfast.com%2Fposts%2Fraspberry-pi-bitwarden.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

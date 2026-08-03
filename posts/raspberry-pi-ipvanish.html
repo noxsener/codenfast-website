@@ -1,0 +1,376 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;den IPVanish&#39;e Bağlanma - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="IPVanish kullanımı için basit adımlar"/>
+    <meta property="og:title" content="Raspberry Pi&#39;den IPVanish&#39;e Bağlanma"/>
+    <meta property="og:description"
+          content="IPVanish kullanımı için basit adımlar"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-ipvanish.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-ipvanish.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2020/08/Raspberry-Pi-ipVanish-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;den IPVanish&#39;e Bağlanma"/>
+    <meta name="twitter:description"
+          content="IPVanish kullanımı için basit adımlar"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2020/08/Raspberry-Pi-ipVanish-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'den IPVanish'e Bağlanma","item":{"@id":"https://codenfast.com/posts/raspberry-pi-ipvanish.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/08/Raspberry-Pi-ipVanish-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/08/Raspberry-Pi-ipVanish-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/08/Raspberry-Pi-ipVanish-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/08/Raspberry-Pi-ipVanish-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'den IPVanish'e Bağlanma","description":"IPVanish kullanımı için basit adımlar","image":["https://pimylifeup.com/wp-content/uploads/2020/08/Raspberry-Pi-ipVanish-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T11:37:15.803276+03:00","dateModified":"2026-08-03T11:37:15.803297+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;den IPVanish&#39;e Bağlanma</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-ipvanish/">PiMyLifeUp - Connecting to IPVanish from your Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu rehberde, Raspberry Pi'nizden IPVanish VPN hizmetine nasıl bağlanacağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/08/Raspberry-Pi-ipVanish-Thumbnail.jpg" alt="Raspberry Pi IPVanish" /></p>
+<p>IPVanish, en popüler VPN hizmetlerinden biridir ve <a href="https://pimylifeup.com/raspberry-pi-surfshark/">Surfshark</a>, <a href="https://pimylifeup.com/raspberry-pi-nordvpn/">NordVPN</a> ve <a href="https://pimylifeup.com/raspberry-pi-expressvpn/">ExpressVPN</a> ile birlikte en iyilerden biri olarak kabul edilir.</p>
+<p>Hem gizliliği hem de güvenliğiyle bilinir. IPVanish, en son VPN ve şifreleme teknolojilerinden bazılarını desteklemektedir.</p>
+<p>Ayrıca, katı bir sıfır kayıt (zero-logs) politikasına sahiptirler. Bu, IPVanish'in sizi tanımlamak için kullanılabilecek hiçbir şeyi asla saklamayacağı anlamına gelir.</p>
+<p>IPVanish gibi bir hizmeti Raspberry Pi'nizde kullanmak, internette gizliliğinizi koruyabilmenizi sağlamaya yardımcı olur.</p>
+<p>IPVanish'in tüm altyapısı, uygulama geliştirmeden müşteri desteğine kadar kendileri tarafından yönetilir. Bu, herhangi bir dış tedarikçinin bilgilerinize bir şekilde erişim sağlayamayacağını garanti eder.</p>
+<p>Ayrıca IPVanish, 1500'den fazla VPN sunucusunun herhangi biri üzerinden bağlantınızı kısıtlamamayı (throttle etmemeyi) taahhüt etmiştir.</p>
+<p>Bu eğitime devam etmeden önce, bir IPVanish hesabına kaydolduğunuzdan emin olun. Ağlarına bağlanmak için bir kullanıcı adına, şifreye ve aktif bir aboneliğe ihtiyacınız olacak.</p>
+<h2>IPVanish İçin OpenVPN Kurulumu</h2>
+<p>IPVanish'e bağlanmak için OpenVPN yazılımını kullanacağız.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-vpn-server/">OpenVPN</a>, sağlam güvenliğiyle bilinen popüler bir VPN istemcisidir ve <a href="https://pimylifeup.com/raspberry-pi-wireguard/">WireGuard</a> ile birlikte bir endüstri standardı haline gelmiştir.</p>
+<p><strong>1.</strong> Raspberry Pi'mizi IPVanish'e bağlanacak şekilde ayarlamaya başlamadan önce, işletim sistemimizin güncel olduğundan emin olmamız gerekiyor.</p>
+<p>Raspberry Pi OS çalıştırdığımızdan, sistemi güncellemek için aşağıdaki iki komutu çalıştırabiliriz.</p>
+<pre><code>sudo apt update
+sudo apt full-upgrade
+</code></pre>
+<p><strong>2.</strong> Sistem güncel olduğuna göre, artık <code>OpenVPN</code> istemcisini kurmaya geçebiliriz.</p>
+<p>Bu istemci, Raspberry Pi'mizden IPVanish'in VPN'ine bağlanmamızı sağlayacak şeydir.</p>
+<p>Ayrıca <a href="https://pimylifeup.com/unzip-command-linux/">unzip paketini</a> de kuracağız. Bu paket, IPVanish'ten gelen tüm yapılandırma dosyalarını cihazımıza çıkarmamızı sağlayacak.</p>
+<p>Aşağıdaki komutu çalıştırarak bu gerekli paketleri kurabilirsiniz.</p>
+<pre><code>sudo apt install openvpn unzip
+</code></pre>
+<h2>Raspberry Pi'de IPVanish Kurulumu</h2>
+<p>Gerekli OpenVPN istemcisi artık Raspberry Pi'mize kurulu olduğuna göre, ihtiyacımız olan yapılandırma dosyalarını alabiliriz.</p>
+<p><strong>1.</strong> İlk görevimiz, <a href="https://pimylifeup.com/cd-command/">cd komutunu kullanarak</a> Raspberry Pi'mizdeki <code>openvpn</code> dizinine geçmektir.</p>
+<p>Kısa süre içinde gerekli dosyaları indirip çıkaracağımız dizin burasıdır.</p>
+<pre><code>cd /etc/openvpn
+</code></pre>
+<p><strong>2.</strong> Süreci kolaylaştırmak için IPVanish, gerekli tüm dosyaları almanın kolay bir yolunu sunmaktadır.</p>
+<p>Raspberry Pi'mizde aşağıdaki komutu çalıştırarak IPVanish OpenVPN dosyalarını doğrudan ağın web sitesinden indirebiliriz.</p>
+<pre><code>sudo wget https://configs.ipvanish.com/simpleconf/configs.zip
+</code></pre>
+<p><strong>3.</strong> IPVanish yapılandırma dosyaları artık Raspberry Pi'mize kaydedildiğine göre, şimdi onları çıkarmamız gerekiyor.</p>
+<p>OpenVPN dosyalarını aşağıdaki komutu çalıştırarak çıkarabiliriz.</p>
+<pre><code>sudo unzip configs.zip
+</code></pre>
+<p><strong>4.</strong> Yapılandırma dosyalarını Raspberry Pi'mize çıkardığımıza göre, artık arşivi silebiliriz.</p>
+<p>Dosyayı cihazımızdan silmek için <a href="https://pimylifeup.com/rm-command/">rm komutunu</a> kullanabiliriz.</p>
+<pre><code>sudo rm configs.zip
+</code></pre>
+<p><strong>5.</strong> Tüm dosyaları çıkardığımıza göre, ls komutunu kullanarak onları görüntüleyebiliriz.</p>
+<p><a href="https://pimylifeup.com/ls-command/">ls komutunu kullanarak</a>, mevcut dizindeki tüm dosyaları listeleyebiliriz.</p>
+<pre><code>ls
+</code></pre>
+<p>Komuttan sağlanan dosya listesini kullanarak, Raspberry Pi'nizin hangi IPVanish sunucusuna bağlanmasını istediğinizi görebilirsiniz.</p>
+<p>Örneğin, Avustralya merkezli bir sunucuya bağlanmak isteseydik, aşağıdaki gibi bir dosya seçebilirdik.</p>
+<pre><code>ipvanish-AU-Melbourne-mel-a01.ovpn
+</code></pre>
+<p>Hangi dosyayı seçerseniz seçin, o sunucuya bağlanmak için kullanacağınızdan dosya adını not edin.</p>
+<p><strong>6.</strong> İhtiyacımız olan OVPN dosyalarına sahip olduğumuza göre, artık IPVanish VPN'ine bağlanabiliriz.</p>
+<p>VPN'e bağlanmak için, OpenVPN'in dosyamızı çalıştırmasını sağlamak amacıyla aşağıdaki komutu çalıştırabiliriz.</p>
+<p><code>IPVANISH_OVPN_FILE</code> kısmını, bir önceki adımda aldığınız dosyanın adıyla değiştirdiğinizden emin olun.</p>
+<pre><code>sudo openvpn IPVANISH_OVPN_FILE
+</code></pre>
+<p>Örneğin, Raspberry Pi'mizden Melbourne merkezli IPVanish sunucumuza bağlanmak için aşağıdaki komutu kullanabiliriz.</p>
+<pre><code>sudo openvpn ipvanish-AU-Melbourne-mel-a01.ovpn
+</code></pre>
+<p><strong>7.</strong> IPVanish VPN'ine bağlanırken, kullanıcı adınızı ve şifrenizi girmeniz istenecektir.</p>
+<p>OpenVPN, IPVanish ağına bağlanabilmek için bu kimlik bilgilerine ihtiyaç duyar.</p>
+<p><strong>8.</strong> Bu noktada, artık Raspberry Pi'nizden IPVanish VPN'ine başarıyla bağlanmış olmalısınız.</p>
+<p><strong>9.</strong> IPVanish bağlantısını kesmek isterseniz, bunu başarmanın iki farklı yolu vardır.</p>
+<p>Terminal oturumunuz hâlâ açıksa, <code>CTRL</code> + <code>C</code> tuşlarına basarak şu anda çalışan uygulamayı sonlandırabilirsiniz.</p>
+<p>Alternatif olarak, aşağıdaki komutu kullanarak şu anda çalışan tüm OpenVPN işlemlerini sonlandırmak da mümkündür.</p>
+<pre><code>sudo killall openvpn
+</code></pre>
+<h2>Açılışta IPVanish'e Bağlanma</h2>
+<p>Bu bölümde, Raspberry Pi'nizin açıldığında IPVanish'e nasıl otomatik olarak bağlanacağını göstereceğiz.</p>
+<p>Devam etmeden önce, VPN'lerine bağlanmak için bir IPVanish hesabına ihtiyacınız olacak.</p>
+<p><strong>1.</strong> Pi'mizin açılışta IPVanish VPN'ine bağlanması için bir kimlik doğrulama (auth) dosyası oluşturmamız gerekiyor.</p>
+<p>Bu kimlik doğrulama dosyası, hesabınızın hem kullanıcı adını hem de şifresini saklayacaktır. <code>.ovpn</code> dosyasını, bu dosyada saklanan kimlik bilgilerini kullanacak şekilde değiştireceğiz.</p>
+<p>Bir <code>auth.txt</code> dosyası oluşturmaya başlamak için <a href="https://pimylifeup.com/nano-text-editor/">nano metin editörünü</a> kullanmak üzere aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo nano /etc/openvpn/auth.txt
+</code></pre>
+<p><strong>2.</strong> Bu dosyanın içine, IPVanish hesabınızın hem kullanıcı adını hem de şifresini girmeniz gerekiyor.</p>
+<p>Kullanıcı adı ve şifre iki ayrı satıra bölünmelidir.</p>
+<p>İlk satır kullanıcı adınız olmalıdır.<br />
+İkinci satır hesabınızın şifresi olmalıdır.</p>
+<pre><code>USERNAME
+PASSWORD
+</code></pre>
+<p><strong>3.</strong> Kimlik doğrulama bilgilerini girdikten sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra da <code>ENTER</code> tuşuna basarak dosyayı kaydedin.</p>
+<p><strong>4.</strong> Bu adım için, hazır bir <code>OVPN</code> dosyasına ihtiyacınız olacak. Bir önceki adımda birinin adını almış olmalısınız.</p>
+<p>Mevcut dosyaları tekrar listelemek için her zaman <code>ls</code> komutunu kullanabilirsiniz.</p>
+<p>Bu dosyanın bir kopyasını oluşturmamız gerekiyor çünkü dosya adını <code>.conf</code> ile bitecek şekilde biraz değiştirmemiz gerekiyor.</p>
+<p>Örneğin, daha önceki <code>ipvanish-AU-Melbourne-mel-a01.ovpn</code> dosyasını alırsak, dosyayı <code>ipvanish-melb.conf</code> olarak adlandırırdık.</p>
+<pre><code>sudo cp /etc/openvpn/ipvanish-AU-Melbourne-mel-a01.ovpn /etc/openvpn/ipvanish-melb.conf
+</code></pre>
+<p><strong>5.</strong> Dosyanın uzantısını <code>.conf</code> olarak değiştirdikten sonra, artık aşağıdaki komutu çalıştırarak nano ile düzenleyebilirsiniz.</p>
+<p>Dosya adını bir önceki adımda ayarladığınız her neyse onunla değiştirdiğinizden emin olun.</p>
+<pre><code>sudo nano /etc/openvpn/ipvanish-melb.conf
+</code></pre>
+<p><strong>6.</strong> Bu yapılandırma dosyasının içinde, aşağıdaki satırı bulup değiştirmeniz gerekiyor.</p>
+<p>Nano içinde <code>CTRL</code> + <code>W</code> kullanarak bu satırı daha kolay bulabilirsiniz.</p>
+<pre><code>auth-user-pass
+</code></pre>
+<p>Bu satırı, oluşturduğumuz auth dosyasına referans verecek şekilde aşağıdaki metinle değiştirmeniz gerekiyor.</p>
+<pre><code>auth-user-pass auth.txt
+</code></pre>
+<p><strong>7.</strong> Bu satırı değiştirdikten sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra da <code>ENTER</code> tuşuna basarak dosyayı kaydedin.</p>
+<p><strong>8.</strong> Şimdi OpenVPN'in varsayılan yapılandırmasını, IPVanish VPN'imize bağlanacak şekilde değiştirmemiz gerekiyor.</p>
+<p>Aşağıdaki komutu kullanarak yapılandırma dosyasını düzenlemeye başlayın.</p>
+<pre><code>sudo nano /etc/default/openvpn
+</code></pre>
+<p><strong>9.</strong> Bu dosyada, aşağıdaki satırı değiştirmemiz gerekiyor.</p>
+<pre><code>#AUTOSTART=&quot;all&quot;
+</code></pre>
+<p>Bu satırı aşağıdaki metinle değiştirin. Bu metin, <code>ipvanish-melb</code> (uzantısız) adlı dosyayı yüklemesini söyler.</p>
+<pre><code>AUTOSTART=&quot;ipvanish-melb&quot;
+</code></pre>
+<p><code>ipvanish-melb</code> kısmını daha önce kullandığınız dosya adıyla değiştirdiğinizden emin olun. Dosya adının <code>.conf</code> kısmını dahil etmediğinizden emin olun.</p>
+<p><strong>10.</strong> Dosyada değişiklik yapmayı bitirdiğinizde, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedin.</p>
+<p><strong>11.</strong> Bir sonraki adımımız, aşağıdaki komutu kullanarak OpenVPN servisini etkinleştirmektir.</p>
+<p>Servisi etkinleştirerek, Raspberry Pi başladığında başlayacak ve otomatik olarak IPVanish'e bağlanmaya başlayacaktır.</p>
+<pre><code>sudo systemctl enable openvpn
+</code></pre>
+<p><strong>12.</strong> Şimdi Raspberry Pi'mizi yeniden başlatarak her şeyin çalıştığını doğrulayabiliriz.</p>
+<p>Aşağıdaki komutu çalıştırarak cihazı yeniden başlatın.</p>
+<pre><code>sudo reboot
+</code></pre>
+<p>Raspberry Pi'niz yeniden başlatmayı tamamladığında, artık otomatik olarak IPVanish VPN'ine bağlanmaya çalışmalıdır.</p>
+<p><strong>12.</strong> Aşağıdaki komutu çalıştırarak Raspberry Pi'nizin genel (public) IP adresinin artık farklı olduğunu kontrol edebilirsiniz.</p>
+<pre><code>curl ifconfig.me
+</code></pre>
+<p>Bu komut, <code>ifconfig.me</code> web sitesinden genel IP adresini almak için curl kullanarak çalışır.</p>
+<h2>IPVanish ile DNS Sızıntılarını Önleme</h2>
+<p>Raspberry Pi gibi bir cihazda herhangi bir VPN kullanırken ortaya çıkabilecek bir sorun, DNS sunucularının IP adresinizi sızdırmasıdır.</p>
+<p>ISP DNS sunucuları bu davranışla ünlüdür, bu yüzden bu bölümde size bir çözüm göstereceğiz.</p>
+<p><strong>1.</strong> Bu sorunu çözmek için, Raspberry Pi'mizin kullandığı DNS sunucularını değiştireceğiz.</p>
+<p>Bunu yapmak için, aşağıdaki komutu kullanarak dhcpcd yapılandırma dosyasını değiştirmemiz gerekiyor.</p>
+<pre><code>sudo nano /etc/dhcpcd.conf
+</code></pre>
+<p><strong>2.</strong> Bu dosyanın içinde, aşağıdaki satırı bulmamız gerekiyor.</p>
+<p>Bu satır, ana bilgisayarın DNS aramaları için kullanması gereken alan adı sunucularını tanımlar.</p>
+<p>Dosya içinde metin aramak için <code>CTRL</code> + <code>W</code> kullanabilirsiniz.</p>
+<pre><code>#static domain_name_servers=192.168.0.1
+</code></pre>
+<p>Bu satırı aşağıdakiyle değiştirin. Bu satır, ana bilgisayara DNS isteklerini Cloudflare'in DNS hizmetini (1.1.1.1) kullanarak aramasını söyleyecektir.</p>
+<pre><code>static domain_name_servers=1.1.1.1
+</code></pre>
+<p><strong>3.</strong> DNS değişikliklerini yaptıktan sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak dosyayı kaydedin.</p>
+<p><strong>4.</strong> Tüm uygulamaların yeni DNS sunucusunu kullandığından emin olmanın en kolay yolu, Raspberry Pi'yi yeniden başlatmaktır.</p>
+<p>Cihazı yeniden başlatmak için aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo reboot
+</code></pre>
+<p><strong>5.</strong> Raspberry Pi'niz yeniden başlatmayı bitirdiğinde, IP adresinizin sızdırılıp sızdırılmadığını kontrol etmek için ipleak.net gibi bir hizmet kullanabilirsiniz.</p>
+<p>Bu hizmet, farklı protokoller kullanarak farklı bir IP bulup bulamayacağını görmek için birkaç farklı test gerçekleştirerek çalışır.</p>
+<p>Artık Raspberry Pi'nizin IPVanish VPN hizmetine başarıyla bağlanmış olması gerekir.</p>
+<p>IPVanish'e bağlanma konusunda herhangi bir geri bildiriminiz varsa veya bir sorunla karşılaştıysanız, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-ipvanish.html&amp;text=Raspberry+Pi%27den+IPVanish%27e+Ba%C4%9Flanma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-ipvanish.html&amp;text=Raspberry+Pi%27den+IPVanish%27e+Ba%C4%9Flanma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-ipvanish.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-ipvanish.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-ipvanish.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-ipvanish.html&amp;title=Raspberry+Pi%27den+IPVanish%27e+Ba%C4%9Flanma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27den+IPVanish%27e+Ba%C4%9Flanma%20codenfast.com%2Fposts%2Fraspberry-pi-ipvanish.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

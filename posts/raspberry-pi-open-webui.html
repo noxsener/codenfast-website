@@ -1,0 +1,357 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de Open WebUI ile Kendi Yapay Zeka Sohbet Botunuzu Barındırın - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Kendi kendine barındırılan ChatGPT benzeri bir deneyim"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de Open WebUI ile Kendi Yapay Zeka Sohbet Botunuzu Barındırın"/>
+    <meta property="og:description"
+          content="Kendi kendine barındırılan ChatGPT benzeri bir deneyim"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-open-webui.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-open-webui.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-Thumbnail-NoWm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de Open WebUI ile Kendi Yapay Zeka Sohbet Botunuzu Barındırın"/>
+    <meta name="twitter:description"
+          content="Kendi kendine barındırılan ChatGPT benzeri bir deneyim"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-Thumbnail-NoWm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de Open WebUI ile Kendi Yapay Zeka Sohbet Botunuzu Barındırın","item":{"@id":"https://codenfast.com/posts/raspberry-pi-open-webui.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-Thumbnail-NoWm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-Thumbnail-NoWm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-01-Open-Sign-up-Screen.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-01-Open-Sign-up-Screen.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-02-Create-new-account.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-02-Create-new-account.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-04-Changelog-pop-up.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-04-Changelog-pop-up.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-05-LLM-Model.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-05-LLM-Model.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-06-Type-in-message-to-Ollama-models.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-06-Type-in-message-to-Ollama-models.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-07-Generated-Response.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-07-Generated-Response.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-08-Open-Settings-panel.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-08-Open-Settings-panel.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-09-Select-and-install-new-models.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-09-Select-and-install-new-models.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de Open WebUI ile Kendi Yapay Zeka Sohbet Botunuzu Barındırın","description":"Kendi kendine barındırılan ChatGPT benzeri bir deneyim","image":["https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-Thumbnail-NoWm.jpg"],"datePublished":"2026-08-03T11:32:23.125669+03:00","dateModified":"2026-08-03T11:32:23.125691+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de Open WebUI ile Kendi Yapay Zeka Sohbet Botunuzu Barındırın</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-open-webui/">PiMyLifeUp - Self-hosting an AI Chatbot with Open WebUI on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu yazıda, Raspberry Pi üzerinde Open WebUI'yi nasıl kurup kullanacağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-Thumbnail.jpg" alt="Raspberry Pi Open WebUI" /></p>
+<p>Open Web UI (eski adıyla Ollama Web UI), büyük dil modelleriyle (LLM) etkileşim kurmak için açık kaynaklı ve kendi kendine barındırılan (self-hosted) bir web arayüzüdür.</p>
+<p>Bu projenin fikri, Llama 3 ve Phi3 gibi giderek artan sayıdaki ücretsiz ve açık LLM'lerle etkileşim kurmak için kullanabileceğiniz, kullanımı kolay ve kullanıcı dostu bir web arayüzü oluşturmaktır.</p>
+<p>Web tarayıcınız üzerinden hiç <a href="https://pimylifeup.com/raspberry-pi-chatgpt/">ChatGPT</a> kullandıysanız, Open WebUI'nin nasıl çalıştığına çok aşina olacaksınız. Arayüzü çok benzerdir ve beklediğiniz birçok özelliği barındırır.</p>
+<p>Bu web arayüzü, kendi çalıştırdığınız LLM'leri kullanırken ChatGPT hissini yeniden yaratmanın en iyi yollarından biridir. Hatta bu aracı inanılmaz derecede güçlü kılan çok sayıda özellik de sunar. Bu açık kaynaklı projenin birçok özelliğini <a href="https://github.com/open-webui/open-webui">GitHub sayfasını ziyaret ederek</a> keşfedebilirsiniz.</p>
+<p>Raspberry Pi'nizde Open WebUI'yi kullanmak için, bağlanabileceği bir şeye ihtiyacınız olacak. Bu yazılım modelleri kendisi çalıştırmaz ve sadece onlarla etkileşim kurmanın akıllı bir yoludur. Neyse ki, Ollama kurulumu ve çalıştırması oldukça kolaydır.</p>
+<p>Ollama gibi bir model çalıştırıcısı çalıştırmanız gerektiğinden, iyi hızlar elde etmek için en azından bir Raspberry Pi 5 kullanmanızı şiddetle tavsiye ederiz.</p>
+<h2>Pi'nizde Open WebUI Kurulumu ve Kullanımı</h2>
+<p>Aşağıdaki bölümlerde, Raspberry Pi'nizde Open WebUI'yi nasıl kurup kullanacağınızı göstereceğiz.</p>
+<h3>Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> Raspberry Pi'mizde Open WebUI'yi kurup ayarlamaya başlamadan önce, önce birkaç görevi yerine getirmemiz gerekir.</p>
+<p>İlk göreviniz, terminalde aşağıdaki iki komutu kullanarak işletim sisteminin güncel olduğundan emin olmaktır.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>2.</strong> Open WebUI'yi çalıştırmak için Docker'ı kullanacağız. Docker, bu web arayüzünü Pi'nizde kurup çalıştırmanın en kolay yoludur.</p>
+<p>Henüz <a href="https://pimylifeup.com/raspberry-pi-docker/">Docker kurmadıysanız</a>, rehberimizi takip etmenizi şiddetle tavsiye ederiz.</p>
+<p><strong>3.</strong> Docker artık kurulu olduğuna göre, bir sonraki adımınız <a href="https://pimylifeup.com/raspberry-pi-ollama/">Raspberry Pi'nize Ollama kurmaktır</a>.</p>
+<p>Open WebUI mesajları işlemez; yalnızca büyük dil modelleriyle etkileşim kurmak için şık bir arayüz sağlar. Bizim durumumuzda, arayüze gönderdiğimiz her mesajı işlemek için Ollama'yı kullanacağız.</p>
+<h3>Pi'nizde Docker'a Ollama Erişimi Verme</h3>
+<p><strong>4.</strong> Ollama, varsayılan olarak yalnızca yerel loopback adresini dinleyecek şekilde yapılandırılmıştır. Neyse ki, bunu tüm adresleri dinleyecek şekilde değiştirebiliriz. Bunu yapmazsak, Raspberry Pi'mizdeki Open WebUI, Ollama ile iletişim kuramayacaktır.</p>
+<p>Bu süreci başlatmak için, aşağıdaki komutu kullanarak Ollama servisini düzenlememiz gerekiyor.</p>
+<pre><code>sudo systemctl edit ollama.service
+</code></pre>
+<p><strong>5.</strong> Bu dosyanın içinde, aşağıdaki satırı bulmak isteyeceksiniz. Bu, dosyanın en üstüne yakın bir yerde olmalıdır.</p>
+<pre><code>### Anything between here and the comment below will become the new contents of the file
+</code></pre>
+<p><strong>6.</strong> Bu satırı bulduktan sonra, aşağıdakini eklemelisiniz. Bu satır, Ollama'ya tüm IP adreslerini dinlemesini söyleyen bir ortam değişkeni ayarlar.</p>
+<pre><code>[Service]
+Environment=&quot;OLLAMA_HOST=0.0.0.0&quot;
+</code></pre>
+<p><strong>7.</strong> Yukarıdaki satırları ekledikten sonra, <code>CTRL</code> + <code>X</code>, <code>Y</code> ve ardından <code>ENTER</code> tuşlarına basarak kaydedip çıkın.</p>
+<p><strong>8.</strong> Ollama servisinde bazı değişiklikler yaptığımızdan, aşağıdaki komutu kullanarak Systemd daemon'unu yeniden başlatmamız gerekecek.</p>
+<pre><code>sudo systemctl daemon-reload
+</code></pre>
+<p><strong>9.</strong> Daemon yeniden yüklendikten sonra, terminalde aşağıdaki komutu çalıştırarak Ollama'yı yeniden başlatabilirsiniz.</p>
+<pre><code>sudo systemctl restart ollama
+</code></pre>
+<h3>Raspberry Pi'nizde Open WebUI İçin Klasörler Oluşturma</h3>
+<p><strong>10.</strong> Ollama artık yeniden yapılandırıldığına göre, Raspberry Pi'mize Open WebUI kurabiliriz.</p>
+<p>Bu sürecin ilk kısmı, Open WebUI Compose dosyasını saklamak ve verilerini depolamak için bir dizin oluşturmaktır.</p>
+<p>Bu dizini, aşağıda gösterildiği gibi <a href="https://pimylifeup.com/mkdir-command-linux/">mkdir komutunu kullanarak</a> oluşturabilirsiniz.</p>
+<pre><code>sudo mkdir -p /opt/stacks/openwebui
+</code></pre>
+<p><strong>11.</strong> Yeni dizin oluşturulduktan sonra, <a href="https://pimylifeup.com/cd-command/">cd komutunu kullanarak</a> içine geçin.</p>
+<pre><code>cd /opt/stacks/openwebui
+</code></pre>
+<h3>Raspberry Pi'de Open WebUI İçin Bir Docker Compose Dosyası Yazma</h3>
+<p><strong>12.</strong> Open WebUI dizinine geçtikten sonra, yazılım için Compose dosyasını yazmaya geçebiliriz.</p>
+<p>Bu Compose dosyası, Docker'a Raspberry Pi'nizde Open WebUI'yi nasıl kurup çalıştıracağını söyleyecektir.</p>
+<pre><code>sudo nano compose.yaml
+</code></pre>
+<p><strong>13.</strong> Bu dosyanın içine aşağıdaki satırları girmek isteyeceksiniz.</p>
+<pre><code>services:
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    volumes:
+      - ./data:/app/backend/data
+    ports:
+      - 3000:8080
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    restart: unless-stopped
+</code></pre>
+<p><strong>14.</strong> Bitirdikten sonra, <code>CTRL</code> + <code>X</code>, <code>Y</code> ve ardından <code>ENTER</code> tuşlarına basarak kaydedip çıkın.</p>
+<h3>Open WebUI'yi Başlatma</h3>
+<p><strong>15.</strong> Compose dosyasını yazmayı bitirdikten sonra, aşağıdaki komutu çalıştırarak Raspberry Pi'nizde Open WebUI konteynerini başlatabilirsiniz.</p>
+<p>Docker çeşitli katmanları indirip servisi başlattığından bu süreç birkaç dakika sürebilir.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h3>Open WebUI Arayüzüne Erişim</h3>
+<p><strong>16.</strong> Open WebUI artık Raspberry Pi'nizde çalışır durumda olduğuna göre, arayüzüne erişmek isteyeceksiniz.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-ip-address/">Raspberry Pi'nizin IP adresini</a> bilmiyorsanız, <a href="https://pimylifeup.com/hostname-command/">hostname komutunu</a> kullanabilirsiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>17.</strong> Favori web tarayıcınızda, aşağıdaki URL'ye gidin.</p>
+<p>Devam etmek için &quot;<code>&lt;IPADRESI&gt;</code>&quot; kısmını Pi'nizin IP'siyle değiştirdiğinizden emin olun.</p>
+<pre><code>http://&lt;IPADRESI&gt;:3000
+</code></pre>
+<h3>Open WebUI ile Bir Hesap Oluşturma</h3>
+<p><strong>18.</strong> Open WebUI arayüzüne erişmeden önce, bir hesap oluşturmanız gerekir. Oluşturacağınız ilk hesap, web arayüzü için yönetici olacaktır.</p>
+<p>Yeni bir hesap oluşturmaya başlamak için &quot;<code>Sign up</code>&quot; bağlantısına <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-01-Open-Sign-up-Screen.jpg" alt="Kayıt ekranını açma" /></p>
+<p><strong>19.</strong> Bir sonraki ekranda, Open WebUI yönetici hesabınız için kullanmak istediğiniz bilgileri doldurun (<strong>1.</strong>).</p>
+<p>Kullanmak istediğiniz e-posta ve şifreyi yazdıktan sonra, &quot;<code>Create Account</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-02-Create-new-account.jpg" alt="Raspberry Pi'de Open WebUI için yeni hesap oluşturma" /></p>
+<p><strong>20.</strong> Hesabınızı oluşturduğunuzda, otomatik olarak web arayüzüne giriş yapmış olacaksınız.</p>
+<p>Open WebUI'yi ilk kez açtığınız için, sizi bir değişiklik günlüğü (changelog) karşılayacak. Arayüzü görmek için &quot;<code>Okay, Let's Go!</code>&quot; düğmesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-04-Changelog-pop-up.jpg" alt="Open WebUI Değişiklik Günlüğü" /></p>
+<h3>Raspberry Pi'nizde Open WebUI'nin Çalıştıracağı Modeli Seçme</h3>
+<p><strong>21.</strong> Raspberry Pi'nize Open WebUI kurulu olduğuna göre, muhtemelen onu nasıl kullanacağınızı bilmek isteyeceksiniz.</p>
+<p>Öncelikle, ekranın üstündeki seçim kutusuna (<strong>1.</strong>) <code>tıklayarak</code> Open WebUI için bir model seçmelisiniz.</p>
+<p>Ollama rehberimizi takip ettiyseniz, bu listede zaten bazı LLM'ler referans olarak gösterilmiş olmalıdır. Open WebUI'nin mevcut oturum için kullanmasını istediğiniz yapay zeka modelini seçin (<strong>2.</strong>).</p>
+<p>Lütfen unutmayın: Burada modeller eksikse, ya Ollama çalışmıyordur ya da henüz herhangi bir model kurmamışsınızdır. Yeni bir LLM'i nasıl çekeceğinizi görmek için Ollama eğitimimizi ziyaret edebilir veya bunu web arayüzü üzerinden nasıl yapacağınızı görmek için bir sonraki bölüme geçebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-05-LLM-Model.jpg" alt="Raspberry Pi'de OpenWebUI'nin kullanacağı modeli seçme" /></p>
+<p><strong>22.</strong> Bir dil modeli seçildikten sonra, ekranın altındaki metin kutusuna bir mesaj yazıp <code>ENTER</code> tuşuna basabilirsiniz.</p>
+<p>OpenWeb UI bu mesajı çalıştırıcınıza (bu durumda Ollama'ya) gönderecek ve sonucu kullanılabilir hale geldikçe geri döndürecektir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-06-Type-in-message-to-Ollama-models.jpg" alt="Seçilen modele mesaj yazma" /></p>
+<p><strong>23.</strong> Aşağıda, modele &quot;<code>Avustralya'nın başkenti nedir?</code>&quot; diye nasıl sorduğumuzu ve ardından yapay zeka tarafından üretilen yanıtı görebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-07-Generated-Response.jpg" alt="LLM tarafından üretilen yanıt" /></p>
+<h3>Open WebUI Üzerinden Modelleri Yönetme</h3>
+<p><strong>24.</strong> OpenWebUI, Raspberry Pi'nizde Ollama tarafından indirilen modelleri kolayca yönetmenizi sağlar.</p>
+<p>Web arayüzü üzerinden modelleri yönetmeye başlamak için, sağ üst köşedeki üç nokta (<code>...</code>) simgesine <code>tıklayın</code> (<strong>1.</strong>).</p>
+<p>Açılan kutuda, &quot;<code>Settings</code>&quot; seçeneğine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-08-Open-Settings-panel.jpg" alt="Ayarlar panelini açma" /></p>
+<p><strong>25.</strong> Ayarlar paneli açıkken, &quot;<code>Models</code>&quot; sekmesine geçin (<strong>1.</strong>).</p>
+<p>Bu sekmede, Ollama'nın kullanımınıza sunacağı modelleri yönetebilirsiniz (<strong>2.</strong>). Bu aracı yeni modeller kurmak için bile kullanabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Open-WebUI-09-Select-and-install-new-models.jpg" alt="Open WebUI Arayüzü Üzerinden LLM Modellerini Yönetme" /></p>
+<h2>Raspberry Pi'de Open WebUI'yi Güncelleme</h2>
+<p>Bu bölüm, Raspberry Pi'nizde Open WebUI'nin en son sürümüne nasıl kolayca güncelleyebileceğinizi gösterecek.</p>
+<p>Yazılımınızı çalıştırmak için Docker kullanmanın önemli bir avantajı, güncellemeyi basit bir işlem haline getirmesidir.</p>
+<p><strong>1.</strong> Terminalde aşağıdaki komutu kullanarak, Open WebUI Compose dosyasını yazdığımız dizine geçebilirsiniz.</p>
+<p>Docker'a yazılımın en son sürümünü çekmesini söylemek için bu dizinde olmamız gerekiyor.</p>
+<pre><code>cd /opt/stacks/openwebui
+</code></pre>
+<p><strong>2.</strong> Doğru yere geldiğinizde, aşağıdaki komut Open WebUI imajının en son sürümünü Pi'nize indirecektir.</p>
+<p>Docker, konteynerlerinizi otomatik olarak yeni sürüme taşımayacaktır.</p>
+<pre><code>docker compose pull
+</code></pre>
+<p><strong>3.</strong> Docker'ın çalışan konteynerimizi Open WebUI'nin yeni sürümüne taşımasını sağlamak için, yalnızca aşağıdaki komutu kullanmanız yeterlidir.</p>
+<p>Docker, Open WebUI'nin yeni sürümünü algılayacak, mevcut olanı durduracak ve ona taşıyacaktır.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h2>Sonuç</h2>
+<p>Bu eğitimin bu noktasında, artık Raspberry Pi'nizde Open WebUI çalışıyor olacak.</p>
+<p>Bu web arayüzü ChatGPT'ye çok benzer ve büyük dil modellerine erişmenin ve onlarla etkileşim kurmanın harika bir yolunu sunar.</p>
+<p>Ayrıca, bu araç tek bir sohbet oturumunda birden fazla model kullanma yeteneği de dahil olmak üzere ek özelliklerle doludur.</p>
+<p>Bu yazılımı Pi'nizde çalıştırırken herhangi bir sorunla karşılaşırsanız, lütfen aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-open-webui.html&amp;text=Raspberry+Pi%27de+Open+WebUI+ile+Kendi+Yapay+Zeka+Sohbet+Botunuzu+Bar%C4%B1nd%C4%B1r%C4%B1n" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-open-webui.html&amp;text=Raspberry+Pi%27de+Open+WebUI+ile+Kendi+Yapay+Zeka+Sohbet+Botunuzu+Bar%C4%B1nd%C4%B1r%C4%B1n" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-open-webui.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-open-webui.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-open-webui.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-open-webui.html&amp;title=Raspberry+Pi%27de+Open+WebUI+ile+Kendi+Yapay+Zeka+Sohbet+Botunuzu+Bar%C4%B1nd%C4%B1r%C4%B1n" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+Open+WebUI+ile+Kendi+Yapay+Zeka+Sohbet+Botunuzu+Bar%C4%B1nd%C4%B1r%C4%B1n%20codenfast.com%2Fposts%2Fraspberry-pi-open-webui.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

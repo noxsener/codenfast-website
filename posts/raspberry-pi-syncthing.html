@@ -1,0 +1,392 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de Syncthing ile Dosya Senkronizasyonu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Birden fazla cihaz arasında dosyaları senkronize edin"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de Syncthing ile Dosya Senkronizasyonu"/>
+    <meta property="og:description"
+          content="Birden fazla cihaz arasında dosyaları senkronize edin"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-syncthing.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-syncthing.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de Syncthing ile Dosya Senkronizasyonu"/>
+    <meta name="twitter:description"
+          content="Birden fazla cihaz arasında dosyaları senkronize edin"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de Syncthing ile Dosya Senkronizasyonu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-syncthing.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Initial-Website-With-Danger.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Initial-Website-With-Danger.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Changing-Password-in-Settings-Option-A.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Changing-Password-in-Settings-Option-A.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Changing-Password-in-Settings-Option-B.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Changing-Password-in-Settings-Option-B.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Setting-Page-Goto-GUI.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Setting-Page-Goto-GUI.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Setting-a-Username-and-Password.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Setting-a-Username-and-Password.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Actions-Find-Show-ID.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Actions-Find-Show-ID.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Device-Identification.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Device-Identification.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Adding-a-Remote-Device-Step.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Adding-a-Remote-Device-Step.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Adding-a-Remote-Device-Options.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Adding-a-Remote-Device-Options.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Remote-Device-Successfully-Connected.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Remote-Device-Successfully-Connected.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Edit-Existing-Folders-Settings.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Edit-Existing-Folders-Settings.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Edit-Folder-Change-to-Sharing-Tab.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Edit-Folder-Change-to-Sharing-Tab.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Share-Folder-with-Connected-Device.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Share-Folder-with-Connected-Device.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Successfully-Connected-and-Synchronizing.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Successfully-Connected-and-Synchronizing.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de Syncthing ile Dosya Senkronizasyonu","description":"Birden fazla cihaz arasında dosyaları senkronize edin","image":["https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T13:01:36.514534+03:00","dateModified":"2026-08-03T13:01:36.514556+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de Syncthing ile Dosya Senkronizasyonu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-syncthing/">PiMyLifeUp - Synchronizing Files on your Raspberry Pi with Syncthing</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'nizde Syncthing yazılımını nasıl kullanabileceğinizi göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Thumbnail.jpg" alt="Raspberry Pi Syncthing" /></p>
+<p>Syncthing, Raspberry Pi gibi birden fazla cihaz arasında dosyaları gerçek zamanlı olarak senkronize etmek için tasarlanmış bir yazılımdır.</p>
+<p>Veriler, düğümler arasında TLS kullanılarak senkronize edilir. Bu şifreleme, aktarım sırasında birinin veriyi çalmasını zorlaştırarak güvenlik ve gizlilik sağlar.</p>
+<p>Her düğümün güçlü bir kriptografik sertifika kullanarak kendini tanımlaması gerekir. Bir düğüm izin verilen bir sertifika sağlayamazsa, bağlanamayacak ve bu da şüpheli kullanıcıların kolayca erişim kazanamamasını sağlayacaktır.</p>
+<p>Syncthing kullanarak, Windows, Mac OS veya Linux tabanlı cihazlarınızdan Raspberry Pi'nize dosya senkronize edebilirsiniz.</p>
+<p><a href="https://syncthing.net/downloads/">Syncthing için istemciler</a>, kullanımını kolaylaştıran bu işletim sistemlerinin her biri için mevcuttur.</p>
+<h2>Syncthing'i Raspberry Pi'nize Kurma</h2>
+<p>Bu bölümde, Syncthing yazılımını basit adımlarla Raspberry Pi'nize nasıl kolayca kuracağınızı öğreneceksiniz.</p>
+<p>Yazılımı kurmak için, projenin PGP anahtarlarını eklememiz ve paket deposunu olası bir kaynak olarak eklememiz gerekecek.</p>
+<p><strong>1.</strong> Dosya senkronizasyon yazılımını Pi'mize kurmadan önce, önce sistemi güncellemeliyiz.</p>
+<p>Aşağıdaki iki komutu çalıştırarak Raspberry Pi'mizi güncelleyebiliriz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Ardından, <code>apt-transport-https</code> paketinin kurulu olduğundan emin olmamız gerekiyor.</p>
+<p>Bu paket, paket yöneticisinin HTTPS protokolü üzerinden çalışan kaynakları işlemesini sağlar. Varsayılan olarak bu desteklenmez.</p>
+<p>Genellikle bu, günümüzde çoğu işletim sistemiyle birlikte sağlanır, ancak Raspberry Pi OS Lite gibi sadeleştirilmiş olanlarda kaldırılmış olabilir.</p>
+<p>Aşağıdaki komutu çalıştırarak gerekli paketi kurabiliriz.</p>
+<pre><code>sudo apt install apt-transport-https
+</code></pre>
+<p><strong>3.</strong> Son olarak, Syncthing GPG anahtarlarını keyring dizinimizde saklayabiliriz.</p>
+<p>Bu anahtarlar, kurduğumuz paketlerin doğru şekilde imzalandığından ve beklenmedik bir kaynaktan gelmediğinden emin olmak için tasarlanmıştır.</p>
+<p>Raspberry Pi'nizde aşağıdaki komutu kullanarak anahtarları indirin ve kaydedin.</p>
+<pre><code>curl -s https://syncthing.net/release-key.txt | gpg --dearmor | sudo tee /usr/share/keyrings/syncthing-archive-keyring.gpg &gt;/dev/null
+</code></pre>
+<p><strong>4.</strong> Anahtar eklendiğine göre, artık deponun kendisini ekleyebiliriz.</p>
+<p>Bu Raspberry Pi projesi için, Syncthing yazılımının stable (kararlı) dalını kullanacağız.</p>
+<p>Aşağıdaki komutu kullanarak depoyu kaynak listemize ekleyin.</p>
+<pre><code>echo &quot;deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable&quot; | sudo tee /etc/apt/sources.list.d/syncthing.list
+</code></pre>
+<p><strong>5.</strong> Syncthing'i depodan kurmadan önce, paket listesini güncellememiz gerekiyor.</p>
+<p>Paket yöneticisinin yeni eklediğimiz kaynaktan okuması için listeyi güncellememiz gerekiyor.</p>
+<p>Cihazınızda aşağıdaki komutu çalıştırarak paket listesini yenileyin.</p>
+<pre><code>sudo apt update
+</code></pre>
+<p><strong>6.</strong> Son olarak, Syncthing yazılımını Raspberry Pi'mize kuralım.</p>
+<p>Paket deposu artık eklendiğine göre, yazılımı kurmak için yapmamız gereken tek şey aşağıdaki komutu çalıştırmaktır.</p>
+<pre><code>sudo apt install syncthing
+</code></pre>
+<h2>Syncthing Web Arayüzüne Dışarıdan Erişime İzin Verme</h2>
+<p>Varsayılan olarak, fiziksel olarak cihazda olmadan Syncthing web arayüzüne erişemeyeceğiz.</p>
+<p>Bu, <a href="https://pimylifeup.com/headless-raspberry-pi-setup/">headless bir Raspberry Pi çalıştıranlar</a> için sinir bozucu bir deneyim olacağından, yapılandırmayı dışarıdan erişime izin verecek şekilde değiştirebiliriz.</p>
+<p><strong>1.</strong> İlk görevimiz, Raspberry Pi'mize atanan <a href="https://pimylifeup.com/raspberry-pi-ip-address/">mevcut yerel IP adresini</a> almaktır.</p>
+<p>Bu bölümü tamamlamadan önce Raspberry Pi'nizin statik bir IP adresi ile kurulmuş olması gerektiğini lütfen unutmayın.</p>
+<p>Aşağıdaki komutu kullanarak Pi'nizin yerel IP'sini alabilirsiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>2.</strong> Daha ileri gitmeden önce, yapılandırma dosyalarını oluşturmak için Syncthing'i bir kez çalıştırmamız gerekecek.</p>
+<p>Bu rehber için, Syncthing'i yalnızca mevcut kullanıcı altında çalıştıracağız.</p>
+<pre><code>syncthing
+</code></pre>
+<p>İlk çalıştırmanın ardından, <code>CTRL</code> + <code>C</code> tuşlarına basarak uygulamayı sonlandırın.</p>
+<p><strong>3.</strong> İlk çalıştırmadan sonra, Syncthing ihtiyacımız olan tüm yapılandırma dosyalarını oluşturacaktır.</p>
+<p>Bu yapılandırma dosyası, yalnızca Syncthing yazılımını <code>pi</code> kullanıcımızla çalıştırdığımız sürece çalışacaktır.</p>
+<p>Aşağıdaki komutu kullanarak <a href="https://pimylifeup.com/nano-text-editor/">nano metin editörü</a> ile gerekli yapılandırma dosyasını düzenlemeye başlayın.</p>
+<pre><code>nano ~/.local/state/syncthing/config.xml
+</code></pre>
+<p><strong>4.</strong> Bu dosyanın içinde, aşağıdaki satırı bulmanız gerekiyor.</p>
+<p>Bu satırı bulmayı kolaylaştırmak için, arama yapmak üzere <code>CTRL</code> + <code>W</code> kısayolunu kullanabilirsiniz.</p>
+<pre><code>&lt;address&gt;127.0.0.1:8384&lt;/address&gt;
+</code></pre>
+<p>Bu satırda tanımlanan yerel IP'yi (<code>127.0.0.1</code>) <a href="https://pimylifeup.com/raspberry-pi-ip-address/">Pi'nizin yerel IP adresi</a> ile değiştirmemiz gerekecek.</p>
+<p>Örneğin, Pi'mizin IP'sini kullanarak, bu satır sonunda aşağıdakine dönüşecektir.</p>
+<pre><code>&lt;address&gt;192.168.0.193:8384&lt;/address&gt;
+</code></pre>
+<p>Yerel IP adresini kullanarak, web arayüzüne erişimi yalnızca aynı yerel ağdaki kullanıcılarla sınırlıyoruz.</p>
+<p>Alternatif olarak, herhangi bir adresten erişime izin vermek istiyorsanız, &quot;<code>0.0.0.0</code>&quot; IP'sini kullanın.</p>
+<p><strong>5.</strong> IP'yi değiştirdikten sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak dosyayı kaydedin.</p>
+<h2>Syncthing'i Raspberry Pi'de Servis Olarak Ayarlama</h2>
+<p>Syncthing'in web arayüzü artık Raspberry Pi dışından erişilebilir olduğuna göre, son bir görev daha yapmamız gerekiyor.</p>
+<p>Bu görev, yazılım için bir servis etkinleştirmektir. Servis, Syncthing'in önyüklemede başlamasını ve kolayca durdurulup başlatılabilmesini sağlayacaktır.</p>
+<p><strong>1.</strong> Syncthing, kurulum sırasında sistemimize otomatik olarak bir servis dosyası kaydedecektir.</p>
+<p>Yapmamız gereken tek şey, bu servise altında çalışması için bir kullanıcı adı beslemektir. &quot;<code>$USER</code>&quot; <a href="https://pimylifeup.com/environment-variables-linux/">ortam değişkenini</a> kullanarak, mevcut kullanıcının adını doğrudan komuta ekleyebiliriz.</p>
+<p>Syncthing'i farklı bir kullanıcı altında çalıştırmak istiyorsanız, &quot;<code>$USER</code>&quot; kısmını onların adıyla değiştirin.</p>
+<p>Aşağıdaki komut, işletim sistemi önyüklendiğinde Syncthing servisinin başlamasını etkinleştirecektir.</p>
+<pre><code>sudo systemctl enable syncthing@$USER
+</code></pre>
+<p><strong>2.</strong> Servis artık etkinleştirildiğine göre, aşağıdaki komutu kullanarak Raspberry Pi'nizde Syncthing'i başlatabilirsiniz.</p>
+<p>Burada, servisle her etkileşime girdiğinizde yapmanız gerektiği gibi, kullanıcı adımızı tekrar belirtmemiz gerektiğini göreceksiniz.</p>
+<pre><code>sudo systemctl start syncthing@$USER
+</code></pre>
+<p><strong>3.</strong> Raspberry Pi'mizde Syncthing servisini başarıyla başlattığımızı doğrulamalıyız.</p>
+<p>Merak etmeyin, Raspberry Pi'nizde Syncthing servisinin başarılı bir şekilde başladığını doğrulamak basit bir süreçtir. Servisin durumunu çıktı olarak vermesini sağlamak için sadece aşağıdaki komutu kullanın. Bu, her şeyin sorunsuz çalıştığını doğrulayacaktır.</p>
+<pre><code>sudo systemctl status syncthing@$USER
+</code></pre>
+<p>Servis doğru şekilde başladıysa ve çalışıyorsa, mesaj içinde aşağıdakinin görüntülendiğini görmelisiniz.</p>
+<pre><code>Active: active (running)
+</code></pre>
+<h2>Raspberry Pi'nizin Syncthing Web Arayüzünü Kullanma</h2>
+<p>Bu noktada, artık Raspberry Pi'nizde Syncthing yazılımının çalışır durumda olması gerekiyor.</p>
+<p>Sonunda yazılımı yapılandırmaya ve dosyaları senkronize etmek için bir cihaz eklemeye geçebiliriz. Takip etmesini kolaylaştırmak için, bunu daha küçük bölümlere ayıracağız.</p>
+<p>Web arayüzü, cihazları kurma ve onlara bağlanma sürecini çok basit hale getirir.</p>
+<h3>Syncthing Web Arayüzüne Bağlanma</h3>
+<p>Web arayüzünü kullanabilmeden önce, önce onu <a href="https://pimylifeup.com/category/guides/browsers/">favori web tarayıcınızda</a> açmanız gerekecek.</p>
+<p><strong>1.</strong> Web arayüzüne erişmek için, Raspberry Pi'nin IP adresini bilmeniz gerekecek.</p>
+<p>IP elinizde olduğunda, seçtiğiniz bir web tarayıcısında aşağıdaki web adresine gidebilirsiniz.</p>
+<pre><code>http://[PIIPADRESI]:8384
+</code></pre>
+<p>Ne yazarsanız yazın, port numarasının (<code>8384</code>) sonunda kalmasının önemli olduğunu unutmayın, çünkü Syncthing yazılımı burayı dinler.</p>
+<p><strong>2.</strong> Web adresine gittiğinizde, Syncthing web arayüzü ile tanışacaksınız.</p>
+<p>Bir kullanıcı adı ve parola ayarladıktan sonra aşağıdaki ekranı görmeden önce giriş yapmanız gerekeceğini lütfen unutmayın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Initial-Website-With-Danger.jpg" alt="Raspberry Pi Syncthing Başlangıç Web Sitesi Tehlike ile" /></p>
+<h3>Syncthing Arayüzünü Güvenli Hale Getirme</h3>
+<p>Varsayılan olarak, Syncthing tanımlanmış bir kullanıcı adı veya parola olmadan gelir. Bunun anlamı, herhangi bir kullanıcının arayüze erişip ayarlarınızı değiştirebileceğidir.</p>
+<p>Kullanıcıların istenmeyen herhangi bir zarar vermesini durdurmak için, giriş detayları tanımlayabilirsiniz.</p>
+<p><strong>1.</strong> Kullanıcı adı ve parolayı daha önce ayarlamadıysanız, sizi tehlikeler konusunda uyaran bir mesaj göreceksiniz.</p>
+<p>Ayarlar sayfasına hızlıca gitmek için, bu uyarıdaki &quot;<code>Settings</code>&quot; butonuna <code>tıklayabiliriz</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Changing-Password-in-Settings-Option-A.jpg" alt="Raspberry Pi Syncthing Ayarlarda Parola Değiştirme Seçenek A" /></p>
+<p>Bu mesaj sizde görüntülenmiyorsa, sağ üst köşedeki &quot;<code>Actions</code>&quot; (<strong>1.</strong>) açılır kutusuna <code>tıklayarak</code> ve &quot;<code>Settings</code>&quot; (<strong>2.</strong>) seçerek de ayarlar sayfasını bulabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Changing-Password-in-Settings-Option-B.jpg" alt="Ayarlarda Parola Değiştirme Seçenek B" /></p>
+<p><strong>2.</strong> Açılan ayarlar sayfasında, &quot;<code>GUI</code>&quot; sekmesine geçmeniz gerekecek.</p>
+<p>Açılan pencerenin üstündeki çubukta &quot;<code>GUI</code>&quot;ye <code>tıklayarak</code> bu sekmeye geçebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Setting-Page-Goto-GUI.jpg" alt="Ayarlar Sayfası GUI'ye Git" /></p>
+<p><strong>3.</strong> Bu sayfada, hem bir kullanıcı adı (<strong>1.</strong>) hem de bir parola (<strong>2.</strong>) girmeniz gerekecek.</p>
+<p>Kolayca tahmin edilemeyen güvenli bir parola ayarladığınızdan emin olun. Harf, sayı ve sembol kombinasyonu kullanmayı deneyin.</p>
+<p>Her ikisini de girdikten sonra, &quot;<code>Save</code>&quot; butonuna <code>tıklayarak</code> değişikliklerinizi kaydedebilirsiniz (<strong>3.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Setting-a-Username-and-Password.jpg" alt="Raspberry Pi Syncthing Kullanıcı Adı ve Parola Ayarlama" /></p>
+<p><strong>4.</strong> Yeni parolanızı kaydettiğinizde, web arayüzünden atılacaksınız.</p>
+<p>Syncthing'in arayüzünü her kullanmak istediğinizde, yeni giriş detaylarınızı girmeniz gerekecek.</p>
+<h3>Cihazınızın Syncthing ID'sini Alma</h3>
+<p>Syncthing, her bir cihaz için benzersiz bir ID oluşturarak çalışır. Cihazlar arasında veri senkronize etmek için, her birinin diğer cihazın ID'si eklenmiş olmalıdır.</p>
+<p>Raspberry Pi Syncthing kurulumunuzun ID'sini bulmak basit bir süreçtir ve web arayüzü içinde bulunabilir.</p>
+<p><strong>1.</strong> Web arayüzünün ana sayfasına geri dönerek, ekranın sağ üst köşesindeki &quot;<code>Actions</code>&quot; düğmesine <code>tıklayın</code> (<strong>1.</strong>).</p>
+<p>Açılır kutuda, aradığımız iletişim kutusunu getirmek için &quot;<code>Show ID</code>&quot; seçeneğine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Actions-Find-Show-ID.jpg" alt="Raspberry Pi Syncthing Actions Show ID Bulma" /></p>
+<p><strong>2.</strong> Bu sayfada, tanımlama dizesini (<strong>1.</strong>) ve ID için eşleşen QR kodunu (<strong>2.</strong>) göreceksiniz.</p>
+<p>Tanımlama dizesi 50-56 karakter uzunluğunda olmalı ve rakamlar, harfler ve tireler içermelidir. Tireler sistem tarafından yok sayılır ancak ID'yi okumayı kolaylaştırmak için oradadır.</p>
+<p>Raspberry Pi'nizin ID'sini bağlanacağınız diğer cihazlara eklemeniz gerekecek. Aynı şekilde, onların ID'sini de eklemeniz gerekecek.</p>
+<p>ID, Syncthing'in birden fazla cihazı aynı havuza bağlama yönteminin bir parçası olarak çalışır.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Device-Identification.jpg" alt="Raspberry Pi Syncthing Cihaz Tanımlama" /></p>
+<h3>Raspberry Pi'nizin Syncthing Havuzuna Bir Cihaz Ekleme</h3>
+<p>Artık cihazınızın ID'sini nasıl alacağınızı bildiğinize göre, şimdi başka bir cihazın ID'sini nasıl ekleyeceğinizi gösterelim.</p>
+<p>Unutmayın, eklediğiniz herhangi bir cihaz da Raspberry Pi'nizin ID'sini eklemelidir. Aksi takdirde, cihazlar bağlanamayacaktır.</p>
+<p><strong>1.</strong> Syncthing arayüzünde, sağ alt tarafta bulunan &quot;<code>Add Remote Device</code>&quot; butonuna <code>tıklamanız</code> gerekiyor.</p>
+<p>Bu butona tıklamak bizi, bir cihazı Syncthing havuzumuza eklememizi sağlayacak iletişim kutusuna götürecektir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Adding-a-Remote-Device-Step.jpg" alt="Raspberry Pi Syncthing Uzak Cihaz Ekleme Adımı" /></p>
+<p><strong>2.</strong> Bu iletişim kutusunda, havuzunuza istediğiniz cihaz ID'sini ekleyebilirsiniz.</p>
+<p>Üstteki metin kutusunda (<strong>1.</strong>), bağlanmak istediğiniz cihazın ID'sini girin. ID nispeten uzun olduğundan, muhtemelen ID'yi kopyalayıp yapıştırmak daha kolay olacaktır.</p>
+<p>Bittiğinde, cihazı eklemek ve bağlantı sürecini başlatmak için &quot;<code>Save</code>&quot; butonuna <code>tıklayabilirsiniz</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Adding-a-Remote-Device-Options.jpg" alt="Uzak Cihaz Ekleme Seçenekleri Sayfası" /></p>
+<p><strong>3.</strong> Her iki Syncthing sunucusu da birbirinin ID'sini eklediğinde, başarıyla bağlandığınızı görmelisiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Remote-Device-Successfully-Connected.jpg" alt="Raspberry Pi Syncthing Uzak Cihaz Başarıyla Bağlandı" /></p>
+<h3>Bağlı Cihazlarınızla Bir Klasörü Senkronize Etme</h3>
+<p>Raspberry Pi Syncthing'imize artık bir cihaz bağlandığına göre, cihazla bir klasörü paylaşmayı deneyebiliriz.</p>
+<p>Bu bölüm için, yalnızca varsayılan klasörü kullanacağız. Bu durumda, klasör Raspberry Pi'mizde &quot;<code>/home/pi/sync</code>&quot; konumundadır.</p>
+<p><strong>1.</strong> Mevcut bir klasörün paylaşım ayarlarını düzenlemeye başlamak için, o klasörün altındaki &quot;<code>Edit</code>&quot; butonuna <code>tıklayın</code>.</p>
+<p>Bu buton, o klasör için ayarlar iletişim kutusunu getirecek ve kiminle paylaşıldığını ayarlamamızı sağlayacaktır.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Edit-Existing-Folders-Settings.jpg" alt="Raspberry Pi Syncthing Mevcut Klasörler Ayarlarını Düzenleme" /></p>
+<p><strong>2.</strong> Dosya ayarları iletişim kutusunda paylaşım sekmesine geçmemiz gerekecek.</p>
+<p>Bu sekmeye &quot;<code>Sharing</code>&quot; sekmesine <code>tıklayarak</code> geçebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Edit-Folder-Change-to-Sharing-Tab.jpg" alt="Sharing Sekmesine Geçme" /></p>
+<p><strong>3.</strong> Bu iletişim kutusunu kullanarak, klasörü paylaşmak istediğiniz cihazları seçebilirsiniz (<strong>1.</strong>).</p>
+<p>Senkronize etmek istediğiniz cihazları seçtikten sonra, &quot;<code>Save</code>&quot; butonuna <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Share-Folder-with-Connected-Device.jpg" alt="Bağlı Cihazla Klasörü Paylaşma" /></p>
+<p>Bir klasörü başka bir cihazla paylaştıktan sonra, senkronizasyon başlamadan önce o cihazda kabul etmeniz gerektiğini lütfen unutmayın.</p>
+<p><strong>4.</strong> Artık klasörünüzün senkronize olmaya başladığını görmelisiniz.</p>
+<p>Senkronizasyon tamamlandığında, hem klasörün hem de cihazın &quot;Up to date&quot; olarak işaretlendiğini görmelisiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Syncthing-Successfully-Connected-and-Synchronizing.jpg" alt="Raspberry Pi Syncthing Başarıyla Bağlandı ve Senkronize Ediliyor" /></p>
+<h2>Sonuç</h2>
+<p>Artık Raspberry Pi'nizde Syncthing'in çalışır durumda olması ve dosyaları farklı cihazlar arasında senkronize etmek için onu nasıl kullanacağınızı bilmeniz gerekiyor.</p>
+<p>Syncthing, birden fazla cihaz arasında klasörleri senkronize etmenizi sağlayan, kullanımı basit bir yazılımdır.</p>
+<p>Yazılım, birden fazla bilgisayarın dizinleri gerçek zamanlı olarak senkronize tutmasına izin vermenin en etkili yollarından biridir.</p>
+<p>Dosyaları saklamak için Google Cloud veya Microsoft Azure gibi üçüncü bir tarafa güvenme ihtiyacını bile ortadan kaldırır.</p>
+<p>Raspberry Pi'nizde Syncthing kurmakla ilgili herhangi bir sorunla karşılaştıysanız, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-syncthing.html&amp;text=Raspberry+Pi%27de+Syncthing+ile+Dosya+Senkronizasyonu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-syncthing.html&amp;text=Raspberry+Pi%27de+Syncthing+ile+Dosya+Senkronizasyonu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-syncthing.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-syncthing.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-syncthing.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-syncthing.html&amp;title=Raspberry+Pi%27de+Syncthing+ile+Dosya+Senkronizasyonu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+Syncthing+ile+Dosya+Senkronizasyonu%20codenfast.com%2Fposts%2Fraspberry-pi-syncthing.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

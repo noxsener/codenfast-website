@@ -1,0 +1,337 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de ExpressVPN Kurulumu Nasıl Yapılır - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Raspberry Pi için bir başka harika VPN"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de ExpressVPN Kurulumu Nasıl Yapılır"/>
+    <meta property="og:description"
+          content="Raspberry Pi için bir başka harika VPN"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-expressvpn.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-expressvpn.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2019/01/Raspberry-Pi-ExpressVPN-no-wm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de ExpressVPN Kurulumu Nasıl Yapılır"/>
+    <meta name="twitter:description"
+          content="Raspberry Pi için bir başka harika VPN"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2019/01/Raspberry-Pi-ExpressVPN-no-wm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de ExpressVPN Kurulumu Nasıl Yapılır","item":{"@id":"https://codenfast.com/posts/raspberry-pi-expressvpn.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/01/Raspberry-Pi-ExpressVPN-no-wm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/01/Raspberry-Pi-ExpressVPN-no-wm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/01/Raspberry-Pi-ExpressVPN.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/01/Raspberry-Pi-ExpressVPN.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/01/Expressvpn-linux-screen-v1.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/01/Expressvpn-linux-screen-v1.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/01/ExpressVPN-Select-Raspbian-32bit-V1.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/01/ExpressVPN-Select-Raspbian-32bit-V1.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/01/ExpressVPN-Signature-File-v1.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/01/ExpressVPN-Signature-File-v1.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de ExpressVPN Kurulumu Nasıl Yapılır","description":"Raspberry Pi için bir başka harika VPN","image":["https://pimylifeup.com/wp-content/uploads/2019/01/Raspberry-Pi-ExpressVPN-no-wm.jpg"],"datePublished":"2026-08-03T11:41:00.424344+03:00","dateModified":"2026-08-03T11:41:00.424377+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de ExpressVPN Kurulumu Nasıl Yapılır</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-expressvpn/">PiMyLifeUp - How to Setup ExpressVPN on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu Raspberry Pi ExpressVPN eğitiminde, sizi ExpressVPN kurulum adımlarında yönlendireceğim.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/01/Raspberry-Pi-ExpressVPN.jpg" alt="Raspberry Pi ExpressVPN" /></p>
+<p>Bu, ağ trafiğinizin güvenli bir şekilde anonimleştirilmesiyle sonuçlanacak oldukça basit bir süreçtir.</p>
+<p>ExpressVPN, yaygın olarak övülen bir başka büyük VPN sağlayıcısıdır. Etkinlik günlükleri, bağlantı günlükleri yoktur ve şu anda veri saklama yasalarının bulunmadığı Britanya Virjin Adaları'nda konumlanmışlardır.</p>
+<p>94 ülkede 148 VPN konumu vardır, bu yüzden nereye bağlanacağınız konusunda seçenek bolluğu içindesiniz. Sunucu konumlarının tam listesini web sitelerinde görebilirsiniz. Bu listenin büyümeye devam etmesi muhtemel olduğunu unutmayın.</p>
+<p>Hizmette 30 günlük para iade garantisi vardır, bu yüzden beklentilerinizi karşılamadığını düşünürseniz iade talep edebilirsiniz.</p>
+<p>Bu eğitim, Raspbian'ın en son sürümüyle test edilmiştir. Karşılaşacağınız sorun sayısını en aza indirmek istiyorsanız, <a href="https://pimylifeup.com/update-raspbian/">işletim sisteminizi güncellemenizi</a> şiddetle tavsiye ederim.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-nordvpn/">NordVPN</a> veya <a href="https://pimylifeup.com/raspberry-pi-vyprvpn/">VyprVPN</a> gibi diğer VPN hizmetleri de ilginizi çekebilir. Öyle olursa, sizi bunları kurma sürecinde yönlendirecek eğitimlerim var.</p>
+<p>Raspberry Pi'ye ExpressVPN kurma konusundaki tam eğitim hemen aşağıda. Herhangi bir sorunla karşılaşırsanız lütfen bize bildirin.</p>
+<h2>Raspberry Pi ExpressVPN Yükleyicisini İndirme</h2>
+<p>İlk olarak, bir ExpressVPN hesabına ihtiyacınız olacak, bu yüzden buradan kaydolduğunuzdan emin olun. İhtiyaçlarınıza en uygun planı seçin, yıllık plan en iyi değeri sunar.</p>
+<p><strong>1.</strong> ExpressVPN hesabınıza giriş yapın ve sayfanın üstündeki <strong>set up</strong> kutusunda <strong>Set up on More Devices</strong> seçeneğine tıklayın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/01/Expressvpn-linux-screen-v1.png" alt="Expressvpn Linux Ekranı" /></p>
+<p><strong>2.</strong> Ekranın sol tarafında <strong>Linux</strong> seçeneğine tıklayın. Açılır kutudan <strong>Raspbian 32-bit</strong> seçin ve <strong>download</strong> üzerine tıklayın. Ayrıca <strong>aktivasyon koduna da ihtiyacınız olacak</strong>, bu yüzden onu da kopyalayın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/01/ExpressVPN-Select-Raspbian-32bit-V1.png" alt="ExpressVPN Raspbian 32bit Seçme" /></p>
+<p><strong>3.</strong> Alternatif olarak, aşağıdaki komutu kullanarak <strong>kurulum dosyasını</strong> doğrudan indirebilirsiniz.</p>
+<pre><code>wget https://download.expressvpn.xyz/clients/linux/expressvpn_1.5.1_armhf.deb
+</code></pre>
+<p><strong>4.</strong> Bu sonraki birkaç adım isteğe bağlıdır ancak <strong>indirmenizin değiştirilmeden geldiğini doğrulamak</strong> isterseniz önerilir. O halde, indirmemizin PGP (<a href="https://en.wikipedia.org/wiki/Pretty_Good_Privacy">Pretty Good Privacy</a>) imzasının doğru olduğunu kontrol edelim.</p>
+<p><strong>5.</strong> ExpressVPN için <strong>PGP anahtarını kurarak</strong> başlayın.</p>
+<pre><code>wget https://www.expressvpn.com/expressvpn_release_public_key_0xAFF2A1415F6A3A38.asc
+gpg --import expressvpn_release_public_key_0xAFF2A1415F6A3A38.asc
+</code></pre>
+<p><strong>6.</strong> Şimdi PGP'nin <strong>parmak izinin (fingerprint)</strong> doğru olduğunu doğrulayalım.</p>
+<pre><code>gpg --fingerprint release@expressvpn.com
+</code></pre>
+<p><strong>Anahtar parmak izi</strong> şuna benzer bir şey olmalıdır: 1D0B 09AD 6C93 FEE9 3FDD BD9D AFF2 A141 5F6A 3A38</p>
+<p><strong>7.</strong> Şimdi ExpressVPN'in yönetim alanına geri dönün ve imza dosyasını indirin.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/01/ExpressVPN-Signature-File-v1.png" alt="ExpressVPN İmza Dosyası" /></p>
+<p><strong>8.</strong> Alternatif olarak, dosyayı <a href="https://pimylifeup.com/wget-command-linux/">wget kullanarak indirebilirsiniz</a>. Sürümün daha önce indirdiğimiz dosyayla eşleştiğinden emin olun.</p>
+<pre><code>wget https://download.expressvpn.xyz/clients/linux/expressvpn_1.5.1_armhf.deb.asc
+</code></pre>
+<p><strong>9.</strong> Son olarak, doğrulamayı çalıştıralım; parmak izi <strong>6. adımda</strong> gördüğümüzle eşleşmelidir.</p>
+<pre><code>gpg --verify expressvpn_1.5.1_armhf.deb.asc
+</code></pre>
+<p>Parmak izleri aynıysa, Raspberry Pi'ye ExpressVPN kurulumuna devam edebilirsiniz. Aksi takdirde, yeniden indirip kontrolü tekrar çalıştırmanızı şiddetle öneririm.</p>
+<h2>ExpressVPN Kurulumu</h2>
+<p>ExpressVPN'i kurma süreci basittir ve kurulumu çok uzun sürmez.</p>
+<p><strong>1.</strong> Kurulum dosyasının bulunduğu konuma gidin. Bizim için, dosyayı indirmek için tarayıcıyı kullandığımızdan, indirilenler klasöründe.</p>
+<pre><code>cd ~/Downloads/
+</code></pre>
+<p><strong>2.</strong> Burada, aşağıdaki komutu kullanın. Sürüm numarası değiştiyse <strong>güncellemeniz</strong> gerekebilir.</p>
+<pre><code>sudo dpkg -i expressvpn_1.5.1_armhf.deb
+</code></pre>
+<p><strong>3.</strong> Kurulduktan sonra, aşağıdaki komutu çalıştırın.</p>
+<pre><code>expressvpn activate
+</code></pre>
+<p><strong>4.</strong> Ardından, bu eğitimin ilk bölümünde kopyaladığımız aktivasyon kodunu girin.</p>
+<p><strong>5.</strong> Artık anonim bilgi paylaşmak isteyip istemediğinizi soracaktır, reddetmek için <strong>n</strong>, kabul etmek için <strong>Y</strong> girin.</p>
+<p><strong>6.</strong> Yanlışlıkla yanlış seçeneği girdiyseniz, aşağıdaki satırı kullanın. Anonim bilgi paylaşmak isterseniz <strong>false</strong>'u <strong>true</strong> olarak değiştirin.</p>
+<pre><code>expressvpn preferences set send_diagnostics false
+</code></pre>
+<h2>Raspberry Pi'de ExpressVPN Kullanma</h2>
+<p>Uygulama artık kurulu olduğuna göre, ExpressVPN kullanmak son derece kolaydır.</p>
+<p><strong>1.</strong> VPN'i hızlıca başlatmak için, aşağıdaki komutu girebilirsiniz.</p>
+<pre><code>expressvpn connect
+</code></pre>
+<p>Daha önce bağlanmadıysanız, bu basit kod satırı sizi önerilen bir konuma bağlayacaktır. Alternatif olarak, daha önce bağlı olduğunuz sunucuya bağlanacaktır.</p>
+<p><strong>2.</strong> Bağlantıyı kesmek için, sadece aşağıdaki komutu çalıştırın.</p>
+<pre><code>expressvpn disconnect
+</code></pre>
+<p><strong>3.</strong> Aşağıdaki komutu kullanarak bir konum listesi alabilirsiniz.</p>
+<pre><code>expressvpn list
+</code></pre>
+<p><strong>4.</strong> Ardından, ya <strong>konum adlarını</strong> ya da <strong>takma adları (alias)</strong> kullanarak o belirli konuma bağlanabilirsiniz.</p>
+<p><strong>Takma Ad için:</strong></p>
+<pre><code>expressvpn connect aume
+</code></pre>
+<p><strong>Konum için:</strong></p>
+<pre><code>expressvpn connect &quot;Australia - Melbourne&quot;
+</code></pre>
+<p><strong>5.</strong> Yapılandırabileceğiniz daha fazla ayar var, ExpressVPN yazılımının <a href="https://pimylifeup.com/man-command/">kılavuzunu görüntülemek</a> için sadece aşağıdaki satırı kullanın.</p>
+<pre><code>man expressvpn
+</code></pre>
+<h2>Açılışta Otomatik Başlatma</h2>
+<p>Raspberry Pi'de <strong>ExpressVPN'in açılışta otomatik bağlanmasını sağlamak</strong> şaşırtıcı derecede kolaydır. Pi'nin her zaman bir VPN arkasında olmasını istiyorsanız, otomatik bağlanmasını sağlamak önemlidir. Bu, Raspberry Pi'niz sizin bilginiz olmadan yeniden başlarsa konumunuzun ifşa olmasını önlemeye yardımcı olur.</p>
+<pre><code>expressvpn autoconnect true
+</code></pre>
+<h2>DNS Sızıntılarını Önleme</h2>
+<p>Varsayılan olarak, ExpressVPN DNS'inizin sızmasını önlemek için önlemler alır. Bu ayarları kullanmak istemiyorsanız kapatabilirsiniz, ancak açık tutmanızı <strong>şiddetle tavsiye ederim</strong>.</p>
+<p><strong>Network lock</strong> özelliğini kapatmak ve VPN'iniz düşerse trafiğin akmaya devam etmesine izin vermek için aşağıdaki komutu girin. <strong>default</strong>'a geçmek orijinal işlevselliği geri yükleyecektir. Diğer bir seçenek ise <strong>strict</strong>'tir ve bu, ExpressVPN düşerse tüm trafiği engeller.</p>
+<pre><code>expressvpn preferences set network_lock off
+</code></pre>
+<p><strong>VPN DNS</strong>'ini kullanmak istemiyorsanız kapatabilirsiniz. Kendi seçtiğiniz bir DNS ayarlamadığınız sürece, bunsuz DNS sızıntısı yaşayabilirsiniz.</p>
+<pre><code>expressvpn perfeences set force_vpn_dns false
+</code></pre>
+<p>Yapabilecekleriniz hakkında daha fazla bilgi için ExpressVPN kılavuzuna göz atın.</p>
+<p>DNS'inizin sızmaya devam ettiğini fark ederseniz, varsayılan DNS'i internet servis sağlayıcınız yerine <a href="https://www.cloudflare.com/learning/dns/what-is-1.1.1.1/">Cloudflare'in DNS'ine</a> değiştirmeyi deneyebiliriz.</p>
+<p><strong>1.</strong> Başlamak için, <strong>dhcpcd yapılandırma dosyasını</strong> açın ve aşağıdaki satırı güncelleyin.</p>
+<p><strong>Açın</strong></p>
+<pre><code>sudo nano /etc/dhcpcd.conf
+</code></pre>
+<p><strong>Bulun</strong></p>
+<pre><code>#static domain_name_servers=192.168.0.1
+</code></pre>
+<p><strong>Şununla değiştirin</strong></p>
+<pre><code>static domain_name_servers=1.1.1.1
+</code></pre>
+<p><strong>2.</strong> Dosyayı kaydedip çıkın.</p>
+<p><strong>3.</strong> Şimdi aşağıdaki komutu girerek Pi'nizi yeniden başlatın.</p>
+<pre><code>sudo reboot
+</code></pre>
+<p><strong>4.</strong> <a href="https://ipleak.net/">ipleak.net</a> adresine gidin ve DNS'inizin artık sızdırmadığını kontrol edin.</p>
+<h2>Sorun Giderme</h2>
+<p>Raspberry Pi'nizden <strong>ExpressVPN yazılımını kaldırmanız</strong> gerekirse, bu aşağıdaki satırı çalıştırarak yapılabilir.</p>
+<pre><code>sudo dpkg -r expressvpn
+</code></pre>
+<p>ExpressVPN'e bağlanma sorunlarıyla ilgili daha fazla yardım için, <a href="https://www.expressvpn.com/support/">destek merkezlerini</a> ziyaret etmek isteyebilirsiniz. Ayrıca, ExpressVPN uygulamasının kılavuzunu görüntülemek için <strong>man</strong> komutunu kullanmayı unutmayın.</p>
+<p>Raspberry Pi için mevcut olan pek çok başka VPN de vardır. Hatta <a href="https://pimylifeup.com/raspberry-pi-vpn-server/">Pi'nizi bir VPN sunucusuna</a> bile dönüştürebilirsiniz, bu konudaki eğitimimize göz atmayı unutmayın.</p>
+<p>Umarım bu Raspberry Pi Express VPN eğitiminin sonunda her şey sorunsuz çalışıyordur. Herhangi bir sorunla karşılaşırsanız lütfen bana bildirin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-expressvpn.html&amp;text=Raspberry+Pi%27de+ExpressVPN+Kurulumu+Nas%C4%B1l+Yap%C4%B1l%C4%B1r" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-expressvpn.html&amp;text=Raspberry+Pi%27de+ExpressVPN+Kurulumu+Nas%C4%B1l+Yap%C4%B1l%C4%B1r" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-expressvpn.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-expressvpn.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-expressvpn.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-expressvpn.html&amp;title=Raspberry+Pi%27de+ExpressVPN+Kurulumu+Nas%C4%B1l+Yap%C4%B1l%C4%B1r" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+ExpressVPN+Kurulumu+Nas%C4%B1l+Yap%C4%B1l%C4%B1r%20codenfast.com%2Fposts%2Fraspberry-pi-expressvpn.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;ye Django Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Dinamik web siteleri için Python framework&#39;ü"/>
+    <meta property="og:title" content="Raspberry Pi&#39;ye Django Kurulumu"/>
+    <meta property="og:description"
+          content="Dinamik web siteleri için Python framework&#39;ü"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-django.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-django.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Django-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;ye Django Kurulumu"/>
+    <meta name="twitter:description"
+          content="Dinamik web siteleri için Python framework&#39;ü"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Django-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'ye Django Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-django.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Django-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Django-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Django-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Django-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Django-Successfully-Installed.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Django-Successfully-Installed.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'ye Django Kurulumu","description":"Dinamik web siteleri için Python framework'ü","image":["https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Django-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T13:03:27.833802+03:00","dateModified":"2026-08-03T13:03:27.833827+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;ye Django Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-django/">PiMyLifeUp - Installing Django on your Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu rehber, Django'yu Raspberry Pi'nize nasıl kuracağınızı gösterecek.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Django-Thumbnail.jpg" alt="Raspberry Pi Django" /></p>
+<p>Bilmeyenler için, <a href="https://www.djangoproject.com/">Django</a> yüksek ölçeklenebilir olacak şekilde tasarlanmış Python tabanlı bir web framework'üdür.</p>
+<p>Nihai amacı, web uygulamalarının hızlı ve daha az kodla yazılabilmesini sağlamaktır.</p>
+<p>Hem açık kaynaklı hem de ücretsiz olması, Django framework'ünü Python dilini kullanarak bir web uygulaması oluşturmak isteyenler için mükemmel bir seçim yapar.</p>
+<p>Bu rehberi takip ederek, Raspberry Pi'nizden Django web uygulamalarını nasıl çalıştıracağınızı öğreneceksiniz.</p>
+<p>Django'yu Raspberry Pi'nizde çalıştırmak için, Apache ve Python kurmamız gerekecek.</p>
+<h2>Raspberry Pi'de Django için Hazırlık</h2>
+<p>Django'yu Raspberry Pi'mize kurmadan önce, onu framework için hazırlamamız gerekiyor.</p>
+<p>Django için iki önemli bileşen kurmamız gerekiyor, bunlar Apache ve Python.</p>
+<h3>Django için Apache2 Kurma</h3>
+<p>Bu bölümde, Django yazılımını kullanabilmemiz için Apache'yi Raspberry Pi'mizde hızlıca çalışır hale getireceğiz.</p>
+<p>İlerleyen bölümlerde yapılandırma dosyamızda bazı değişiklikler yapmamız gerekecek ama şimdilik Apache'yi kurmaya başlayalım.</p>
+<p><strong>1.</strong> İlk göreviniz, <a href="https://pimylifeup.com/raspberry-pi-apache/">Apache web sunucusunu</a> Raspberry Pi'nize kurup ayarlamaktır.</p>
+<p>Rehberimiz size Apache yazılımını çalışır hale getirmenin basit adımlarında yol gösterecek.</p>
+<p>Django Python kullanarak çalıştığı için PHP kurmakla uğraşmanıza gerek yok.</p>
+<p><strong>2.</strong> Apache'nin temel sürümüne ek olarak, Apache'nin Python ile konuşabilmesi için bazı ek paketler kurmamız gerekecek.</p>
+<p>Raspberry Pi'nizde aşağıdaki komutu çalıştırarak ilgili paketi kurabiliriz.</p>
+<pre><code>sudo apt install libapache2-mod-wsgi-py3
+</code></pre>
+<p>Bu komut, Python 3 ile etkileşim kurmak için Web Server Gateway Interface'i (WSGI) kuracaktır.</p>
+<p><strong>3.</strong> Apache2 için WSGI modülünü kurduktan sonra, aşağıdaki komutu kullanarak onu etkinleştirmemiz gerekecek.</p>
+<pre><code>sudo a2enmod wsgi
+</code></pre>
+<h3>Django için Python 3 Kurma</h3>
+<p>Bir sonraki adımımız, Django için Raspberry Pi'mizde Python 3'ü kurup yapılandırmaktır.</p>
+<p>Bunun nedeni, Django framework'ünün Python programlama dilini kullanarak çalışmasıdır.</p>
+<p><strong>4.</strong> Python 3'ü ve gerekli tüm bağımlılıklarımızı kurarak başlayalım.</p>
+<p>Aşağıdaki komutu çalıştırarak Python'ı, paket yöneticisini ve sanal ortam yazılımını kuracağız.</p>
+<pre><code>sudo apt install python3 python3-venv python3-pip
+</code></pre>
+<h3>Django için Apache'yi Yapılandırma</h3>
+<p>Hem Apache hem de Python yazılımı Raspberry Pi'mize kurulduğuna göre, şimdi Django'yu çalıştırmak için hepsini yapılandıralım.</p>
+<p>Django'yu henüz kurmamız gerektiğinden bu yapılandırma tam olarak çalışmayacaktır.</p>
+<p><strong>5.</strong> Apache için varsayılan yapılandırma dosyasını değiştirerek başlayalım.</p>
+<p>Bu dosyayı aşağıdaki komutu çalıştırarak <a href="https://pimylifeup.com/nano-text-editor/">nano kullanarak</a> düzenleyebilirsiniz.</p>
+<pre><code>sudo nano /etc/apache2/sites-enabled/000-default.conf
+</code></pre>
+<p><strong>6.</strong> Bu dosyanın içine, Apache'ye dosyalarımızı nasıl işlemesi gerektiğini söylemek için bazı satırlar eklememiz gerekecek.</p>
+<p>Bu durumda, dizin içindeki dosyaları yorumlamak için Python kullanmasını söyleyeceğiz.</p>
+<p><strong>7.</strong> Önce dosya içinde <strong>aşağıdaki metin satırını bulun</strong>.</p>
+<pre><code>&lt;/VirtualHost&gt;
+</code></pre>
+<p>Satırı bulduğunuzda, aşağıdaki metni onun <strong>üzerine</strong> ekleyin.</p>
+<p><strong>8.</strong> Bu satırlar, script'imizin nerede saklanacağını ve nasıl çalıştırılacağını ayarlar.</p>
+<pre><code>  Alias /static /home/&lt;KULLANICIADI&gt;/pidjango/static
+    &lt;Directory /home/&lt;KULLANICIADI&gt;/pidjango/static&gt;
+        Require all granted
+    &lt;/Directory&gt;
+
+    &lt;Directory /home/&lt;KULLANICIADI&gt;/pidjango/pidjango&gt;
+        &lt;Files wsgi.py&gt;
+            Require all granted
+        &lt;/Files&gt;
+    &lt;/Directory&gt;
+
+    WSGIDaemonProcess django python-path=/home/&lt;KULLANICIADI&gt;/pidjango python-home=/home/&lt;KULLANICIADI&gt;/pidjango/djenv
+    WSGIProcessGroup django
+    WSGIScriptAlias / /home/&lt;KULLANICIADI&gt;/pidjango/pidjango/wsgi.py
+</code></pre>
+<p>Bu örnekte, Raspberry Pi'mizde &quot;<code>/home/pi/pidjango</code>&quot; klasöründe saklanacak &quot;<code>django</code>&quot; adlı bir uygulama olduğunu varsayacağız.</p>
+<p>Ayrıca Python'un ana dizinini, sonunda &quot;<code>/home/pi/pidjango/djenv</code>&quot; dizininde saklanacak olan sanal ortamımızın konumu olarak ayarlıyoruz.</p>
+<p><strong>9.</strong> Detayları girdikten sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, son olarak <code>ENTER</code> tuşuna basarak dosyayı kaydedebilirsiniz.</p>
+<p><strong>10.</strong> Yapılandırma değişikliklerimizin etkili olması için, Apache web servisini yeniden başlatmamız gerekecek.</p>
+<p>Bunu, servis yöneticisini kullanarak Apache'yi yeniden başlatmak için aşağıdaki komutu çalıştırarak yapabiliriz.</p>
+<pre><code>sudo systemctl restart apache2
+</code></pre>
+<h2>Yeni Bir Django Web Sitesi Kurma ve Çalıştırma</h2>
+<p>Django'yu Raspberry Pi'mizde çalıştırmak için Apache'yi ayarladığımıza göre, artık ihtiyacımız olan yazılımı kurabiliriz.</p>
+<p>Django'yu kurmak, proje için bir klasör oluşturmak gibi birkaç farklı adım atmamızı gerektirir.</p>
+<p>Ayrıca bir Python sanal ortamı kullanacağız. Bir sanal ortam, o ortam için özel olarak Python paketleri kurmamızı sağlayacaktır.</p>
+<h3>Django için Klasörler Kurma</h3>
+<p>Django framework'ünü Raspberry Pi'mizde tutmak için bazı klasörler ayarlayalım.</p>
+<p><strong>1.</strong> Django scriptlerimizi ve Python sanal ortamımızı saklayacağımız bir dizin oluşturalım.</p>
+<p>Bu eğitim için, ana dizinimizde &quot;<code>pidjango</code>&quot; adlı bir klasörde oluşturacağız. Tilde (~) sembolünü kullanarak, bu klasörler mevcut kullanıcı için oluşturulacaktır.</p>
+<p>Ayrıca <a href="https://pimylifeup.com/cd-command/">cd komutunu kullanarak</a> yeni oluşturduğumuz dizine geçeceğiz.</p>
+<pre><code>mkdir -p ~/pidjango/static
+cd ~/pidjango
+</code></pre>
+<p><strong>2.</strong> Apache ve Django, izinler söz konusu olduğunda oldukça titiz olabilir. Bunun düzgün çalışması için, kullanıcının ana dizininin aranabilir olduğundan emin olmamız gerekecek.</p>
+<p>Bunu yapmak için, aşağıdaki komutu kullanarak dosya izinlerini basitçe 755 olarak değiştirmemiz gerekiyor.</p>
+<pre><code>sudo chmod 755 ~
+</code></pre>
+<p><strong>3.</strong> Bu dizinin içinde, yeni Python sanal ortamımızı oluşturarak başlayabiliriz.</p>
+<pre><code>python3 -m venv djenv
+</code></pre>
+<p>Bu komutu çalıştırdıktan sonra, oluşturduğumuz Django dizini içinde &quot;<code>djenv</code>&quot; adlı bir klasöre sahip olmalısınız.</p>
+<p>Django'yu ve herhangi bir ek Python paketini kurduğumuzda, bu sanal ortamı kullanırken bu klasör içinde saklanacaklardır.</p>
+<h3>Raspberry Pi'de Django Kurma</h3>
+<p>Tüm klasörlerimiz artık kurulduğuna ve Python için sanal ortamımız hazır olduğuna göre, sonunda Django'yu kurabiliriz.</p>
+<p>Sonraki birkaç adımın sonunda, sanal ortamınızda Django kurulu olmalı ve yeni bir proje başlatılmış olmalıdır.</p>
+<p><strong>4.</strong> Sanal ortam oluşturulduğuna göre, onu kaynak olarak kullanmamız gerekiyor.</p>
+<p>Sanal ortamı kaynak olarak kullanmak için, aşağıdaki komutu çalıştırmanız gerekiyor.</p>
+<pre><code>source djenv/bin/activate
+</code></pre>
+<p>Bu komutu çalıştırdıktan sonra, komut satırının başında &quot;<code>(djenv)</code>&quot; görmelisiniz. Bu, yeni sanal ortamımızı kaynak olarak kullandığınızı gösterir.</p>
+<p><strong>5.</strong> Artık sanal ortamımızın içinde olduğumuza göre, Django framework'ünü kuralım.</p>
+<p>Django bir Python paketi olarak mevcut olduğundan, onu indirmek için aşağıdaki komutu çalıştıralım.</p>
+<pre><code>python3 -m pip install django
+</code></pre>
+<p>Bu komutu çalıştırmak, Django'nun mevcut en son sürümünü indirmenizi sağlayacaktır.</p>
+<p>Framework'ün belirli bir sürümünü indirmek istiyorsanız, <code>==</code> işaretini ve ardından sürüm numarasını ekleyin.</p>
+<p><strong>6.</strong> Django kurulduğuna göre, artık yepyeni bir proje oluşturabiliriz.</p>
+<p>Son metin parçası proje adı olmak üzere aşağıdaki komutu çalıştırabiliriz.</p>
+<pre><code>django-admin startproject pidjango .
+</code></pre>
+<p>Bu, Django ile başlamak için ihtiyacınız olan tüm dosyaları oluşturacak ve doğru şekilde kurduğumuzu doğrulamamızı sağlayacaktır.</p>
+<h3>Raspberry Pi Django Sunucunuza Erişime İzin Verme</h3>
+<p>Raspberry Pi'mizde yeni kurduğumuz Django framework'üne erişebilmeden önce, ayarlarını değiştirmemiz gerekecek.</p>
+<p>Varsayılan olarak, Django belirli bir IP veya hostname izin verilen listeye eklenmediği sürece herhangi bir erişime izin vermeyecek şekilde ayarlanmıştır.</p>
+<p><strong>7.</strong> <a href="https://pimylifeup.com/raspberry-pi-ip-address/">Raspberry Pi'nizin IP adresi</a> üzerinden erişime izin vermek için, onu almamız gerekiyor.</p>
+<p>Aşağıdaki komutu kullanarak cihazınızın yerel IP adresini alabilirsiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>8.</strong> Ayarlar dosyasını düzenleyelim. Bu ayarlar &quot;<code>settings.py</code>&quot; adlı bir python dosyası içinde saklanır.</p>
+<p>Aşağıdaki komutu çalıştırarak <a href="https://pimylifeup.com/nano-text-editor/">nano metin editörünü</a> kullanarak dosyayı düzenlemeye başlayabiliriz.</p>
+<pre><code>nano ~/pidjango/pidjango/settings.py
+</code></pre>
+<p><strong>9.</strong> Bu dosyanın içinde, aşağıdaki satırı bulup biraz değiştirmeniz gerekiyor.</p>
+<p>Aşağıdaki satırı bulun.</p>
+<pre><code>ALLOWED_HOSTS = []
+</code></pre>
+<p>Aşağıdakiyle değiştirin.</p>
+<pre><code>ALLOWED_HOSTS = [&quot;IPADRESINIZ&quot;]
+</code></pre>
+<p>&quot;<code>IPADRESINIZ</code>&quot; kısmını Raspberry Pi'nizin IP adresi ile değiştirdiğinizden emin olun.</p>
+<p>Her girdiyi virgülle ayırarak ek IP adresleri veya hostname'ler ekleyebilirsiniz. Tüm bu değerler <a href="https://pimylifeup.com/python-arrays/">bir Python dizisi içinde</a> saklanır.</p>
+<p><strong>10.</strong> Bittiğinde, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak dosyayı kaydedin.</p>
+<h3>Django Web Uygulamanızı Görüntüleme</h3>
+<p>Raspberry Pi'mizde Django'yu ayarladığımıza göre, sonunda onu çalışırken görebiliriz.</p>
+<p><strong>11.</strong> <a href="https://pimylifeup.com/category/guides/browsers/">Favori web tarayıcınızda</a>, aşağıdaki adrese gitmeniz gerekiyor. Bu bağlantı için bir SSL sertifikası ayarlamadığımızdan <code>http</code> protokolünü kullanıyoruz.</p>
+<pre><code>http://[PIIPADRESINIZ]
+</code></pre>
+<p>&quot;<code>IPADRESINIZ</code>&quot; kısmını Raspberry Pi'nizin IP adresi ile değiştirdiğinizden emin olun.</p>
+<p><strong>12.</strong> IP adresine gittiğinizde, Django karşılama ekranıyla karşılaşmalısınız.</p>
+<p>Bu ekran, Django framework'ünü Raspberry Pi'nizde başarıyla çalıştırdığınızı gösterir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-Django-Successfully-Installed.jpg" alt="Raspberry Pi Django Başarıyla Kuruldu" /></p>
+<p>Artık Django uygulamanızı yazmaya devam edebilirsiniz. Resmi <a href="https://docs.djangoproject.com/en/3.1/intro/tutorial01/">Django web sitesi başlamanız için sağlam bir eğitim sunar</a>.</p>
+<h2>Sonuç</h2>
+<p>Bu noktada, Raspberry Pi'nizde Django framework'ü kurulu olmalı.</p>
+<p>Ayrıca Django web sitenizi aktif olarak sunabilmesi için Apache'yi ayarlamış olmalısınız.</p>
+<p>Django ile daha iyi başa çıkmanıza yardımcı olması için, <a href="https://pimylifeup.com/category/coding/python/">Python eğitimlerimizin bazılarına</a> göz atmayı unutmayın.</p>
+<p>Bu eğitimle ilgili herhangi bir sorununuz varsa, lütfen aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-django.html&amp;text=Raspberry+Pi%27ye+Django+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-django.html&amp;text=Raspberry+Pi%27ye+Django+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-django.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-django.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-django.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-django.html&amp;title=Raspberry+Pi%27ye+Django+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27ye+Django+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-django.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

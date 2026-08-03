@@ -1,0 +1,340 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;ye Tailscale Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Neredeyse hiç yapılandırma olmadan bir VPN kurun"/>
+    <meta property="og:title" content="Raspberry Pi&#39;ye Tailscale Kurulumu"/>
+    <meta property="og:description"
+          content="Neredeyse hiç yapılandırma olmadan bir VPN kurun"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-tailscale.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-tailscale.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-Thumbnail.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;ye Tailscale Kurulumu"/>
+    <meta name="twitter:description"
+          content="Neredeyse hiç yapılandırma olmadan bir VPN kurun"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-Thumbnail.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'ye Tailscale Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-tailscale.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-Thumbnail.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-Thumbnail-NoWM.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-01-Login-or-signup-to-Tailscale.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-01-Login-or-signup-to-Tailscale.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-02-Authorization-Successful.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-02-Authorization-Successful.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-03-Add-Additional-Device.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-03-Add-Additional-Device.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-04-Devices-can-now-connect.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-04-Devices-can-now-connect.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-05-Whats-next.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-05-Whats-next.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-06-Admin-Console.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-06-Admin-Console.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'ye Tailscale Kurulumu","description":"Neredeyse hiç yapılandırma olmadan bir VPN kurun","image":["https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-Thumbnail.jpg"],"datePublished":"2026-08-03T12:37:44.349149+03:00","dateModified":"2026-08-03T12:37:44.349177+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;ye Tailscale Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-tailscale/">PiMyLifeUp - Installing Tailscale to the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'ye Tailscale'i nasıl kuracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-Thumbnail-NoWM.jpg" alt="Raspberry Pi Tailscale" /></p>
+<p>Tailscale, Raspberry Pi'nizde dakikalar içinde sıfır yapılandırmalı bir VPN kurmanızı sağlayan bir yazılımdır.</p>
+<p>Kendi VPN'inizi kurmanın karmaşıklığını ortadan kaldırmak için tasarlanan Tailscale, çalışması için güvenlik duvarınızda herhangi bir port açmanızı bile gerektirmez.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-wireguard/">Wireguard üzerine inşa edilmiş</a> olmasının da faydaları var. Tailscale size cihazınıza hızlı, güvenli ve özel bir bağlantı sağlar.</p>
+<p>Hepsinden iyisi, Tailscale kişisel kullanım için harika bir ücretsiz katman ile birlikte gelir. Bu ücretsiz katmanda, aynı VPN içinde 20'ye kadar farklı cihaz bağlayabilirsiniz.</p>
+<p>Bu yazılım, <a href="https://pimylifeup.com/headless-raspberry-pi-setup/">başsız (headless) bir Raspberry Pi çalıştıranlar</a> ve kolay uzaktan erişim elde etmek isteyenler için mükemmel bir çözümdür.</p>
+<h2>Raspberry Pi'nizi Tailscale İçin Hazırlama</h2>
+<p>Bu bölüm, Tailscale'i kurup çalıştırabilmemiz için Raspberry Pi'nizin işletim sistemini hazırlamanızı sağlayacak.</p>
+<p><strong>1.</strong> Başlamadan önce, paket listesini ve güncel olmayan tüm paketleri güncelleyelim.</p>
+<p>Bu güncellemeleri aşağıdaki iki komutu kullanarak gerçekleştirebilirsiniz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Bir sonraki adımımız, Tailscale kurulumunu tamamlamak için ihtiyaç duyacağımız paketleri kurmaktır. Neyse ki endişelenmemiz gereken sadece iki tane var.</p>
+<p>Hem &quot;<code>lsb-release</code>&quot; hem de &quot;<code>curl</code>&quot;u kurmak için aşağıdaki komutu kullanın.</p>
+<pre><code>sudo apt install lsb-release curl
+</code></pre>
+<ul>
+<li><code>lsb-release</code> – Bu paket, işletim sistemi sürüm adı gibi sistem hakkındaki bilgileri kolayca almamızı sağlar.</li>
+<li><code>curl</code> – Tailscale GPG anahtarını Raspberry Pi'mize indirmek için curl kullanacağız.</li>
+</ul>
+<p><strong>3.</strong> Paket kurulduktan sonra, aşağıdaki komutu kullanarak Tailscale deposu için GPG anahtarını almamız gerekiyor.</p>
+<p>GPG anahtarı, Raspberry Pi'nizin indirdiği paketin gerçek olduğunu tanımlamasına yardımcı olan şeydir.</p>
+<pre><code>curl -L https://pkgs.tailscale.com/stable/raspbian/$(lsb_release -cs).noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg &gt;/dev/null
+</code></pre>
+<p>Bu komutta &quot;<code>$(lsb_release -cs)</code>&quot; kullanarak, doğru işletim sistemi kod adını ekleyebiliriz.</p>
+<p><strong>4.</strong> PG anahtarı sisteminize kaydedildikten sonra, sonunda Tailscale deposunu ekleyebiliriz.</p>
+<p>Raspberry Pi'nize Tailscale deposunun bağlantısını eklemek için, aşağıdaki komutu kullanabilirsiniz.</p>
+<pre><code>echo &quot;deb [signed-by=/usr/share/keyrings/tailscale-archive-keyring.gpg] https://pkgs.tailscale.com/stable/raspbian $(lsb_release -cs) main&quot; | sudo tee  /etc/apt/sources.list.d/tailscale.list
+</code></pre>
+<p>Yukarıdaki komut, &quot;<code>sources.list.d</code>&quot; dizini içinde &quot;<code>tailscale.list</code>&quot; adında yeni bir dosya oluşturacaktır. Bu dosyanın içinde, paket yöneticisinin bir güncelleme sırasında okuyacağı Tailscale deposuna bir bağlantı bulunur.</p>
+<p><strong>5.</strong> Sisteminizin Tailscale deposundan haberdar olması için, başka bir paket listesi güncellemesi yapmamız gerekecek.</p>
+<p>Terminalde aşağıdaki komutu kullanarak paket listesini güncelleyin.</p>
+<pre><code>sudo apt update
+</code></pre>
+<h2>Raspberry Pi'ye Tailscale Kurulumu ve Çalıştırılması</h2>
+<p>Artık Tailscale deposunu Raspberry Pi'mize eklediğimize göre, yazılımı kurmaya devam edebiliriz.</p>
+<p><strong>1.</strong> Bu noktada, Tailscale'i kurmak için yapmamız gereken tek şey aşağıdaki komutu çalıştırmaktır.</p>
+<p>Bu komut, bu yazılımı bir önceki bölümde eklediğimiz depodan kuracaktır.</p>
+<pre><code>sudo apt install tailscale
+</code></pre>
+<p><strong>2.</strong> Raspberry Pi'mizde Tailscale ağını başlatmak için, cihazınızda aşağıdaki komutu kullanmanız gerekecek.</p>
+<p>Bu komut, Tailscale'e bağlanma ve VPN'inizi kurma sürecini başlatacaktır. Üç yoldan biriyle Tailscale'de kimliğinizi doğrulamanız gerekecek.</p>
+<pre><code>sudo tailscale up
+</code></pre>
+<p><strong>3.</strong> Yukarıdaki komutu çalıştırdıktan sonra, aşağıdakine benzer bir mesaj göreceksiniz.</p>
+<p>Tailscale'de kimliğinizi doğrulama sürecini başlatmak için, favori web tarayıcınızdaki URL'ye gitmeniz gerekecek.</p>
+<pre><code>To authenticate, visit:
+
+        https://login.tailscale.com/a/XXXXXXXXXXXX
+</code></pre>
+<p><strong>4.</strong> Bu noktada, cihazınızın kimliğini doğrulamak için Tailscale web sitesine giriş yapmanız gerekecek.</p>
+<p>Google, Microsoft veya GitHub hesabıyla giriş yapmanız gerekecek. Tailscale'i daha önce hiç kullanmadıysanız, giriş sırasında bir hesap oluşturulacaktır.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-01-Login-or-signup-to-Tailscale.jpg" alt="Tailscale'e Giriş Yapma" /></p>
+<p><strong>5.</strong> Giriş yaptıktan sonra, web tarayıcınızda aşağıdaki mesajı göreceksiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-02-Authorization-Successful.jpg" alt="Yetkilendirme Başarılı" /></p>
+<p>Ayrıca, Raspberry Pi'nizdeki konsolda, artık terminalde aşağıdaki mesajı görmelisiniz. Bu, Pi'nizin artık Tailscale'e bağlı olduğunu gösterir.</p>
+<pre><code>Success.
+</code></pre>
+<p><strong>6.</strong> Tailscale'i ilk kez kullanıyorsanız, bir ağ oluşturmak için başka bir cihaza da eklemeniz gerekecek.</p>
+<p>Bizim durumumuzda, cihazımıza uzaktan erişebilmek için Windows dizüstü bilgisayarımıza Tailscale kurmaya devam ettik.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-03-Add-Additional-Device.jpg" alt="Tailscale Ağına Ek Cihaz Ekleme" /></p>
+<p><strong>7.</strong> İki cihaza Tailscale kurduktan sonra, web tarayıcınızda aşağıdaki ekranı görmelisiniz.</p>
+<p>Tailscale size, Raspberry Pi'nizde Tailscale'in çalıştığını doğrulamak için kullanabileceğiniz bir komut sağlar (<strong>1.</strong>). Bu komut, belirtilen Tailscale IP adresine bir ping gönderecektir.</p>
+<p>Her şey sorunsuz çalışıyorsa, &quot;<code>Success, it works!</code>&quot; düğmesine <code>tıklayabilirsiniz</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-04-Devices-can-now-connect.jpg" alt="Tailscale'den Raspberry Pi'yi Ping'leme" /></p>
+<p><strong>8.</strong> Artık Raspberry Pi'de Tailscale yapılandırmanızı iyileştirmek için kullanabileceğiniz bir rehberler listesi alacaksınız.</p>
+<p>Admin konsoluna devam etmek için, &quot;<code>Go to the admin console</code>&quot; düğmesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-05-Whats-next.jpg" alt="Admin Konsoluna Geçme" /></p>
+<p><strong>9.</strong> Sizi karşılayacak son ekran Tailscale'in gösterge panelidir.</p>
+<p>Bu ekranı kullanarak, Tailscale ağınızın bir parçası olan tüm makineleri yönetebilirsiniz. Ayrıca erişim kontrolleri ve diğer ayarlar gibi şeyleri de yönetebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/10/Raspberry-Pi-Tailscale-06-Admin-Console.jpg" alt="Raspberry Pi Tailscale Admin Konsolu" /></p>
+<h2>Terminal Üzerinden Raspberry Pi'nizde Tailscale Kullanımı</h2>
+<p>Bu bölüm, terminal içinde kullanabileceğiniz birkaç komutu ele alacak. Bu komutlar, Raspberry Pi'de çalışan Tailscale hakkında ek bilgi alacaktır.</p>
+<h3>Tailscale'in Raspberry Pi'nize Atadığı IP'yi Alma</h3>
+<p>Raspberry Pi'nize atanan IP adresini almak için Tailscale komut satırı aracını kullanabilirsiniz.</p>
+<p>Bu IP'yi Tailscale gösterge panelinden de alabilseniz de, bazen aşağıdaki komutu çalıştırmak daha hızlıdır.</p>
+<pre><code>tailscale ip
+</code></pre>
+<p>Bu komutu çalıştırdıktan sonra, cihazınıza atanan her iki IP adresinin de bir listesini almalısınız. Biri bir IPv4 adresi, diğeri IPv6'dır.</p>
+<pre><code>100.XX.XXX.XXX
+fd7a:XXXX:XXXX:XXXX:XXXX:XXXX:XXXX:8079
+</code></pre>
+<h3>Tailscale'in Durumunu Alma</h3>
+<p>Terminalde aşağıdaki komutu kullanarak, Raspberry Pi'nizde Tailscale'in durumunu alabilirsiniz.</p>
+<p>Bu komut, Raspberry Pi'nizin ve ağın üyesi olan tüm diğer cihazların IP adresini döndürecektir.</p>
+<pre><code>tailscale status
+</code></pre>
+<p>Aşağıda, yukarıdaki komut kullanılarak döndürülen verilere bir örnek bulunmaktadır.</p>
+<pre><code>100.XX.XXX.XXX  raspberrypi          pimylifeup@ linux   -
+100.XXX.XX.XX   emmet-pc             pimylifeup@ windows idle, tx 1044 rx 540
+</code></pre>
+<h3>Raspberry Pi'de Tailscale'i Devre Dışı Bırakma</h3>
+<p>Cihazın yetkisini kaldırmadan Raspberry Pi'nizde Tailscale ağını geçici olarak devre dışı bırakmak isterseniz, aşağıdaki komutu kullanabilirsiniz.</p>
+<p>Bu, özel Tailscale ağınızdan geçici olarak bağlantıyı kesmek istediğinizde kullanışlıdır.</p>
+<pre><code>tailscale down
+</code></pre>
+<h3>Tailscale'i Etkinleştirme</h3>
+<p>Raspberry Pi'nizde Tailscale ağını tekrar açmak için aşağıdaki komutu kullanmak isteyeceksiniz. Bu, Tailscale'i ilk baştan kurmak için kullandığınız aynı komuttur.</p>
+<pre><code>tailscale up
+</code></pre>
+<p>Raspberry Pi'nizin ağdan yetkisi kaldırılmışsa, tekrar giriş yapmanız istenecektir.</p>
+<h3>Raspberry Pi'nizin Tailscale Yetkisini Kaldırma</h3>
+<p>Raspberry Pi'nizde Tailscale'i artık kullanmak istemiyorsanız, önce onu ağdan bağlantısını kesmek isteyeceksiniz.</p>
+<p>Bu işlemi terminalde aşağıdaki komutu kullanarak gerçekleştirebilirsiniz.</p>
+<pre><code>tailscale logout
+</code></pre>
+<p>Bu komut, Tailscale ağını kapatacak ve ardından düğüm anahtarının (node key) süresini sona erdirecektir, böylece tekrar kullanılamaz.</p>
+<h2>Sonuç</h2>
+<p>Umarız bu noktada, artık Raspberry Pi'de Tailscale'i nasıl kurup kullanacağınızı anlamış olursunuz.</p>
+<p>Tailscale, çok az veya hiç yapılandırma yapmadan cihazlarınız arasında bir VPN kurmanızı sağlayan kullanışlı bir ağ yazılımıdır.</p>
+<p>Tailscale'i cihazınızda çalışır hale getirirken herhangi bir sorunla karşılaştıysanız, aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-tailscale.html&amp;text=Raspberry+Pi%27ye+Tailscale+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-tailscale.html&amp;text=Raspberry+Pi%27ye+Tailscale+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-tailscale.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-tailscale.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-tailscale.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-tailscale.html&amp;title=Raspberry+Pi%27ye+Tailscale+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27ye+Tailscale+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-tailscale.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

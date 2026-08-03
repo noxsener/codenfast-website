@@ -1,0 +1,372 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de Python Flask Web Uygulaması Çalıştırma - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Kullanımı kolay bir Python web çerçevesi"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de Python Flask Web Uygulaması Çalıştırma"/>
+    <meta property="og:description"
+          content="Kullanımı kolay bir Python web çerçevesi"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-flask-web-app.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-flask-web-app.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2024/07/Raspberry-Pi-Flask-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de Python Flask Web Uygulaması Çalıştırma"/>
+    <meta name="twitter:description"
+          content="Kullanımı kolay bir Python web çerçevesi"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2024/07/Raspberry-Pi-Flask-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de Python Flask Web Uygulaması Çalıştırma","item":{"@id":"https://codenfast.com/posts/raspberry-pi-flask-web-app.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/07/Raspberry-Pi-Flask-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/07/Raspberry-Pi-Flask-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/07/Raspberry-Pi-Flask-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/07/Raspberry-Pi-Flask-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de Python Flask Web Uygulaması Çalıştırma","description":"Kullanımı kolay bir Python web çerçevesi","image":["https://pimylifeup.com/wp-content/uploads/2024/07/Raspberry-Pi-Flask-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T11:52:44.396866+03:00","dateModified":"2026-08-03T11:52:44.396893+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de Python Flask Web Uygulaması Çalıştırma</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-flask-web-app/">PiMyLifeUp - Running a Python Flask Web App on a Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitim, Raspberry Pi'de bir Python Flask web uygulamasını nasıl kurup çalıştırabileceğinizi gösterecek.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/07/Raspberry-Pi-Flask-Thumbnail.jpg" alt="Raspberry Pi Flask" /></p>
+<p><a href="https://github.com/pallets/flask">Flask</a>, Python kullanarak bir web uygulaması yazmanızı ve çalıştırmanızı sağlayan bir web çerçevesidir (framework).</p>
+<p>Bu çerçeve, Python betiklerinize bir web arayüzü eklemenin harika bir yoludur. Örneğin, bir sıcaklık sensöründen veri okuyan bir Raspberry Pi'niz varsa, bu değeri doğrudan bir web sayfasına yazdırabilirsiniz.</p>
+<p>Python'a aşinaysanız, Raspberry Pi'nizde bir web uygulaması geliştirmek oldukça basit bir süreç olacaktır. Flask, başlaması gerçekten kolay bir çerçevedir ve sadece birkaç satır kodla yeni rotalar (route) tanımlamanızı sağlar.</p>
+<p>Raspberry Pi'nizde Flask çerçevesiyle nasıl programlama yapılacağına çok derinlemesine girmeyeceğiz, ancak basit bir &quot;hello world&quot; betiğini gösterip açıklayacak ve bunu Apache kullanarak nasıl barındırabileceğinizi göstereceğiz.</p>
+<p>Flask ile <a href="https://pimylifeup.com/raspberry-pi-django/">Django çerçeveleri</a> arasında karar veriyorsanız, Flask'ın daha hafif olduğunu ama temelde her ek işlevselliği kendiniz yazmanız gerektiğini göreceksiniz. Django, geliştirme sürecini hızlandıran çok büyük miktarda ek kod içerir.</p>
+<h2>Raspberry Pi'nizde Bir Python Flask Web Uygulaması Kurma</h2>
+<p>Aşağıdaki adımlarda, Raspberry Pi'nize Python tabanlı bir Flask web uygulamasının nasıl kurulacağını göstereceğiz. Gerekli Python modüllerini kolayca nasıl kuracağınızı ve kendi basit web uygulamanızı nasıl yazacağınızı öğreneceksiniz.</p>
+<p>Flask'ın nasıl kullanılacağına çok derinlemesine girmeyeceğiz; bunun yerine, başlamanız için yeterli bilgiyi vermeyi hedefliyoruz. Bunu yeni bir eğitimde daha da genişletmemizi isterseniz, aşağıya bir yorum bırakmaktan çekinmeyin.</p>
+<h3>Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> Raspberry Pi'mizde bir Python Flask web uygulaması kurabilmemiz için, işletim sistemimizin güncel olduğundan emin olmamız gerekiyor.</p>
+<p>Aşağıdaki iki komutu kullanarak Pi'nizin paket listesi önbelleğini güncelleyebilir ve güncel olmayan tüm paketleri yükseltebilirsiniz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>2.</strong> Paket listesi önbelleği güncellendikten sonra, aşağıdaki komutu çalıştırarak Raspberry Pi'nize Python ve Flask'ı kurabiliriz.</p>
+<p>Pi OS'nin daha yeni sürümlerinde pip kullanmanın ekstra zahmetinden kaçınmak için Flask'ı bu şekilde kuruyoruz.</p>
+<pre><code>sudo apt install python3 python3-flask
+</code></pre>
+<h3>İlk Python Flask Web Uygulamanızı Yazma</h3>
+<p><strong>3.</strong> Raspberry Pi'mizde basit Flask Web uygulamamızı saklamak için bir dizin oluşturarak bu sürece başlayalım.</p>
+<p>&quot;<code>/opt/</code>&quot; klasörü içinde &quot;<code>flaskapp</code>&quot; adlı bir dizin oluşturmak için <a href="https://pimylifeup.com/mkdir-command-linux/">mkdir komutunu kullanabiliriz</a>.</p>
+<pre><code>sudo mkdir -p /opt/flaskapp/
+</code></pre>
+<p><strong>4.</strong> Artık Raspberry Pi'nizde Flask Python kütüphanesi kurulu olduğuna göre, ilk Python destekli web uygulamanızı yazmaya geçebiliriz.</p>
+<p>Aşağıdaki komutu çalıştırarak &quot;<code>app.py</code>&quot; adlı bir betik yazmaya başlayabilirsiniz.</p>
+<pre><code>sudo nano /opt/flaskapp/app.py
+</code></pre>
+<p><strong>5.</strong> Şimdi bu dosyanın içine, aşağıdaki Python satırlarını girmek isteyeceksiniz. İhtiyaçlarınıza göre nasıl ayarlayacağınızı öğrenebilmeniz için bu kodun her bölümünün ne yaptığını açıklayacağız.</p>
+<p><a href="https://pimylifeup.com/introduction-to-python-syntax/#indentation-in-python">Python ile programlama yaparken</a> hatırlamanız gereken bir şey, girintilemenin (indentation) son derece önemli olduğudur.</p>
+<h4>Örnek Kodun Açıklanması</h4>
+<p><strong>a.</strong> Bu betiğin en üstünde, daha önce Raspberry Pi'mize kurduğumuz Flask kütüphanesini içe aktarıyoruz. Bu kütüphane, HTML görüntülemeyi ve rotaları işlemeyi ele alacak olan şeydir.</p>
+<p>Flask kütüphanesini içe aktardıktan sonra, kütüphaneyi &quot;<code>app</code>&quot; değişkeninde örnekleyeceğiz (instantiate).</p>
+<pre><code>from flask import Flask
+
+app = Flask(__name__)
+</code></pre>
+<p><strong>b.</strong> Bir sonraki adımımız, ilk Flask rotamızı ve o belirli rota üzerinde çalıştırılacak fonksiyonu tanımlamaktır.</p>
+<p>Bir rota, çalıştırılan fonksiyondan hemen önce &quot;<code>@app.route()</code>&quot; kullanılarak tanımlanır. Parantez (<code>( )</code>) içinde, bu rotanın dinleyeceği yolu belirtirsiniz. Bu ilk örnek için, &quot;<code>/</code>&quot; kullanıyoruz, böylece bu rota, biri web sitenizin ana sayfasına ulaştığında, örneğin &quot;<code>http://pimylifeup.com/</code>&quot; adresine gittiğinde çalıştırılacaktır.</p>
+<p>Bir rota tanımlandıktan sonra, onun üzerinde çalıştırılacak fonksiyonu tanımlamanız gerekir. Bu durumda, &quot;<code>index</code>&quot; adında basit bir fonksiyon oluşturuyoruz.</p>
+<p>Bu fonksiyon tarafından döndürülen herhangi bir metin, son kullanıcıya gösterilecektir.</p>
+<pre><code>@app.route('/')
+def index():
+    return 'Hello world'
+</code></pre>
+<p><strong>c.</strong> Tüm Flask rotalarınızı tanımladıktan sonra, betiği Raspberry Pi'nizde Flask web sunucusunu başlatacak bir çağrıyla bitirmek isteyeceksiniz.</p>
+<p>Bu çağrı önce Python betiğinizin doğrudan çalıştırıldığından ve içe aktarılmadığından emin olmak için kontrol yapar. Bu, bağlantılarınızı işlemek için Apache gibi bir şey kullanırken dahili web sunucusunu çalıştırmamanızı sağlar.</p>
+<p>Ardından, betiğin başında oluşturduğumuz &quot;<code>app</code>&quot; değişkenini kullanır ve web sunucusunu başlatmak için Flask'ın &quot;<code>run()</code>&quot; fonksiyonunu kullanırız. Burada, ek bilgi çıktısı vermesi için &quot;<code>debug</code>&quot; değerini <code>True</code> olarak ayarlıyoruz. Ardından web sunucusunu mevcut tüm adreslere bağlamak için host'u &quot;<code>0.0.0.0</code>&quot; olarak ayarlıyoruz.</p>
+<pre><code>if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0')
+</code></pre>
+<h4>Flask Örnek Kodunun Son Sürümü</h4>
+<p><strong>6.</strong> Tüm kod satırlarını yazmayı bitirdiğinizde, dosyanız aşağıda gösterdiğimize benzer görünmelidir.</p>
+<pre><code>from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return 'Hello world'
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0')
+</code></pre>
+<p><strong>7.</strong> Bu dosyayı bitirdikten sonra, <code>CTRL</code> + <code>X</code>, <code>Y</code> ve ardından <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<h3>Yeni Python Flask Web Uygulamanızı Test Etme</h3>
+<p><strong>8.</strong> Raspberry Pi'nizde örnek Flask web uygulamamızı başlatmak için, terminalde aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo python3 /opt/flaskapp/app.py
+</code></pre>
+<p>Terminalde sunucunun başladığını ve debug modunun etkin olduğunu belirten bir metin göreceksiniz. Ayrıca sunucunuzun şu anda hangi IP adreslerinde çalıştığını da söyleyecektir.</p>
+<pre><code> * Serving Flask app 'flaskexample'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.32:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 114-446-032
+</code></pre>
+<p><strong>9.</strong> Şimdi, favori web tarayıcınızda, aşağıdaki adrese gidin. &quot;<code>&lt;IPADRESI&gt;</code>&quot; kısmını Raspberry Pi'nizin IP'siyle değiştirdiğinizden emin olun.</p>
+<pre><code>http://&lt;IPADRESI&gt;:5000/
+</code></pre>
+<p><strong>10.</strong> Artık sizi &quot;<code>Hello World</code>&quot; yazan çok basit bir ekran karşılamalıdır. Bu noktada, Raspberry Pi'nizde ilk Flask web uygulamanızı başarıyla yazmış ve başlatmış oldunuz.</p>
+<pre><code>Hello World
+</code></pre>
+<h2>Raspberry Pi'de Python Flask Web Uygulamanızı Çalıştırmak İçin Apache Kullanma</h2>
+<p>Flask kendi web sunucusunu içerse de, bunu gerçek üretim ortamında kullanmak önerilmez. Öncelikle web uygulamanızı geliştirmenize yardımcı olmak için dahil edilmiştir. Neyse ki, Raspberry Pi'nizde Flask web uygulamanızı sunmak için Apache kurmak çok da karmaşık değil.</p>
+<p>Bu bölüm, önceki örnek betiğimizi Apache web sunucusu üzerinden çalıştırma adımlarında size hızlıca rehberlik edecek.</p>
+<p>Bunu kendi web uygulamanız için kullanıyorsanız, yapmanız gereken asıl şey &quot;<code>/opt/flaskapp</code>&quot; dizinini web uygulamanızı sakladığınız konuma güncellemektir.</p>
+<h3>Gerekli Modülleri Kurma</h3>
+<p><strong>1.</strong> Devam edebilmemiz için, önce Apache web sunucusunu kurmanız gerekir.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-apache/">Raspberry Pi'nize Apache kurma</a> ile ilgili hızlı ve kolay rehberimizi takip edebilirsiniz.</p>
+<p><strong>2.</strong> Apache'yi kurduktan sonra, bir sonraki adımınız Apache ve Python 3 için mod wsgi kütüphanesini kurmaktır. Bu, Raspberry Pi'mizden Flask web uygulamamızı çalıştırmamızı sağlayacak temel kütüphanedir.</p>
+<p>Terminalde aşağıdaki komutu çalıştırarak bu gerekli modülü kurabilirsiniz.</p>
+<pre><code>sudo apt install libapache2-mod-wsgi-py3
+</code></pre>
+<h3>Flask Uygulamanız İçin Bir WSGI Uygulaması Yazma</h3>
+<p><strong>4.</strong> Tüm parçalar yerinde olduğuna göre, çok basit bir &quot;<code>wsgi</code>&quot; dosyası oluşturmanız gerekiyor. Bu dosya temelde Flask web uygulamanızı başlatmak için kullanılan biraz Python koddur.</p>
+<p>Bu dosyayı yazmaya terminalde aşağıdaki komutu çalıştırarak başlayabilirsiniz.</p>
+<pre><code>sudo nano /opt/flaskapp/app.wsgi
+</code></pre>
+<p><strong>5.</strong> Bu dosyanın içine, aşağıdaki satırları girmek isteyeceksiniz. Buradaki iki temel şey, Flask web uygulamamızın saklandığı yolun ve içe aktardığımız modülün ne olduğudur.</p>
+<pre><code>import sys
+sys.path.insert(0,'/opt/flaskapp')
+
+from app import app as application
+</code></pre>
+<p><strong>6.</strong> Bu dosyayı doldurduktan sonra, <code>CTRL</code> + <code>X</code>, <code>Y</code> ve ardından <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<h3>Raspberry Pi'de Flask Uygulamanızı Çalıştırmak İçin Apache Sanal Ana Bilgisayarını (Virtual Host) Değiştirme</h3>
+<p><strong>7.</strong> Bir sonraki adımınız, biri Apache web sunucunuza her ulaştığında Flask uygulamanızı çalıştıracak şekilde bir Apache sanal ana bilgisayarını değiştirmektir.</p>
+<p>Bu örnek için, aşağıdaki komutu kullanarak varsayılan yapılandırma dosyasını değiştireceğiz.</p>
+<pre><code>sudo nano /etc/apache2/sites-enabled/000-default.conf
+</code></pre>
+<p><strong>8.</strong> Bu örneğin içinde, sanal ana bilgisayarın kapanış etiketini görene kadar aşağı kaydırın. Yeni satırlarınızı bunun üzerine eklemek isteyeceksiniz.</p>
+<pre><code>&lt;/VirtualHost&gt;
+</code></pre>
+<p><strong>9.</strong> Sanal ana bilgisayar satırının üzerine, aşağıdaki satırları eklemek isteyeceksiniz. Bu satırlar, Apache'ye Flask uygulamanızı ve daha önce oluşturduğumuz, çalıştırması gereken &quot;<code>.wsgi</code>&quot; dosyasını nasıl ele alacağını söyler.</p>
+<pre><code>WSGIDaemonProcess app user=www-data group=www-data threads=4
+WSGIScriptAlias / /opt/flaskapp/app.wsgi
+
+&lt;Directory /opt/flaskapp&gt;
+    WSGIProcessGroup app
+    WSGIApplicationGroup %{GLOBAL}
+    Require all granted
+&lt;/Directory&gt;
+</code></pre>
+<p><strong>10.</strong> Bu dosyayı doldurmayı bitirdikten sonra, <code>CTRL</code> + <code>X</code>, <code>Y</code> ve ardından <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<p><strong>11.</strong> Şimdi, Raspberry Pi'nizin Apache web sunucusunun Flask web uygulamanızı sunmaya başlaması için, aşağıdaki komutu kullanmak isteyeceksiniz.</p>
+<p>Bu komut, yeni yapılandırma değişikliklerinizi yüklemesi için Apache'yi yeniden başlatacaktır.</p>
+<pre><code>sudo systemctl restart apache2
+</code></pre>
+<h3>Flask Web Uygulamanızın Raspberry Pi'nizde Erişilebilir Olduğunu Test Etme</h3>
+<p><strong>12.</strong> Apache varsayılan olarak 80 portunda çalıştığından, doğrudan Pi'nizin IP adresine giderek Flask web uygulamanızın sonuçlarını görebilmeniz gerekir.</p>
+<pre><code>http://&lt;IPADRESI&gt;
+</code></pre>
+<p><strong>13.</strong> Örnek betiğimizi kullandıysanız, komut satırında &quot;hello world&quot; metnini görmelisiniz.</p>
+<pre><code>Hello World
+</code></pre>
+<h2>Sonuç</h2>
+<p>Umarız bu eğitimin bu noktasında, Raspberry Pi'nizde bir Flask web uygulaması kurmayı başarmışsınızdır.</p>
+<p>Flask, kullanımı gerçekten kolay ama yine de güçlü bir mini çerçevedir. Python betikleriniz için çok hızlı bir şekilde basit bir web uygulaması oluşturabilirsiniz.</p>
+<p>Pi'nizde bir Flask uygulaması çalıştırma hakkında sorularınız varsa, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-flask-web-app.html&amp;text=Raspberry+Pi%27de+Python+Flask+Web+Uygulamas%C4%B1+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-flask-web-app.html&amp;text=Raspberry+Pi%27de+Python+Flask+Web+Uygulamas%C4%B1+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-flask-web-app.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-flask-web-app.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-flask-web-app.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-flask-web-app.html&amp;title=Raspberry+Pi%27de+Python+Flask+Web+Uygulamas%C4%B1+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+Python+Flask+Web+Uygulamas%C4%B1+%C3%87al%C4%B1%C5%9Ft%C4%B1rma%20codenfast.com%2Fposts%2Fraspberry-pi-flask-web-app.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

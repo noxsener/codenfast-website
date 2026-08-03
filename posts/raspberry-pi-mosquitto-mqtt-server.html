@@ -1,0 +1,289 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;ye Mosquitto MQTT Sunucusu Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="IoT cihazlarınız için hafif bir MQTT broker"/>
+    <meta property="og:title" content="Raspberry Pi&#39;ye Mosquitto MQTT Sunucusu Kurulumu"/>
+    <meta property="og:description"
+          content="IoT cihazlarınız için hafif bir MQTT broker"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-mosquitto-mqtt-server.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-mosquitto-mqtt-server.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-MQTT-Mosquitto-Server-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;ye Mosquitto MQTT Sunucusu Kurulumu"/>
+    <meta name="twitter:description"
+          content="IoT cihazlarınız için hafif bir MQTT broker"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-MQTT-Mosquitto-Server-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'ye Mosquitto MQTT Sunucusu Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-mosquitto-mqtt-server.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-MQTT-Mosquitto-Server-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-MQTT-Mosquitto-Server-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-MQTT-Mosquitto-Server-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-MQTT-Mosquitto-Server-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'ye Mosquitto MQTT Sunucusu Kurulumu","description":"IoT cihazlarınız için hafif bir MQTT broker","image":["https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-MQTT-Mosquitto-Server-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T13:02:24.144107+03:00","dateModified":"2026-08-03T13:02:24.144129+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;ye Mosquitto MQTT Sunucusu Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-mosquitto-mqtt-server/">PiMyLifeUp - Installing the Mosquitto MQTT Server to the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu Raspberry Pi projesi, açık kaynaklı MQTT Sunucusu olan Mosquitto'yu nasıl kuracağınızı gösterecek.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/01/Raspberry-Pi-MQTT-Mosquitto-Server-Thumbnail.jpg" alt="Raspberry Pi MQTT Mosquitto Sunucusu" /></p>
+<p>MQTT, Message Queuing Telemetry Transport'un kısaltmasıdır ve IoT cihazları arasında mesajlaşma için yaygın olarak kullanılan bir ağ mesajlaşma protokolüdür.</p>
+<p>Raspberry Pi'mizin MQTT protokolünü desteklemesini sağlamak için, Mosquitto adlı bir sunucu yazılımı kullanacağız.</p>
+<p>Mosquitto, en son 5.0 revizyonu da dahil olmak üzere MQTT protokolünün birkaç sürümünü uygulayan bir mesaj aracısıdır (message broker).</p>
+<p>Aynı zamanda nispeten hafif bir yazılımdır, bu da <a href="https://mosquitto.org/">Mosquitto'yu</a> Raspberry Pi'mizde MQTT protokolüyle ilgilenmek için mükemmel bir seçim yapar.</p>
+<p>MQTT protokolü, istemcilerin yayıncı (publisher) ve abone (subscriber) olarak hareket etmesiyle çalışır. Yayıncılar, mesajları aracı görevi gören bir broker'a gönderir.</p>
+<p>Aboneler, MQTT broker'ına bağlanır ve belirli bir konu (topic) altında yayınlanan mesajları okur.</p>
+<p>Birden fazla sensörün verilerini Raspberry Pi'nizin MQTT broker'ına göndermesi için MQTT kullanabilirsiniz, ardından istemci cihazlar bu veriyi alabilir.</p>
+<p>MQTT protokolü ve Raspberry Pi gibi IoT cihazları için neden mükemmel olduğu hakkında daha fazla bilgi edinmek istiyorsanız, <a href="https://mqtt.org/">resmi MQTT web sitesine göz atın</a>.</p>
+<h2>Mosquitto'yu Raspberry Pi'ye Kurma</h2>
+<p>Bu bölümde, Mosquitto broker'ını Raspberry Pi'nize nasıl kuracağınızı göstereceğiz.</p>
+<p>Devam etmeden önce, <a href="https://pimylifeup.com/raspberry-pi-static-ip-address/">Raspberry Pi'nizi statik bir IP adresi ile kurmaya</a> değer olabilir.</p>
+<p>Statik bir IP adresi, birden fazla yeniden başlatmada asla değişmeyecek kolay bir bağlantı noktası sağlar.</p>
+<p><strong>1.</strong> MQTT broker'ını Raspberry Pi'mize kurmadan önce, işletim sistemini güncellememiz gerekiyor.</p>
+<p>Sistemi güncellemek için yapmamız gereken tek şey aşağıdaki iki komutu çalıştırmaktır.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Sistem güncellemeyi bitirdikten sonra, artık Mosquitto yazılımını kurabiliriz.</p>
+<p>Neyse ki bizim için, Mosquitto MQTT broker'ı <a href="https://pimylifeup.com/raspbian-repository-mirror/">Raspbian deposunun</a> bir parçası olarak mevcuttur, bu yüzden yazılımı kurmak basittir.</p>
+<p>Mosquitto'yu istemci yazılımıyla birlikte kurmak için aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo apt install mosquitto mosquitto-clients
+</code></pre>
+<p>İstemci yazılımı, MQTT broker'ımızın Raspberry Pi'mizde doğru çalıştığını test etmemizi ve onunla etkileşim kurmamızı sağlayacak.</p>
+<p>Kurulum süreci sırasında, paket yöneticisi Mosquitto sunucusunu önyüklemede başlayacak şekilde otomatik olarak yapılandıracaktır.</p>
+<p><strong>3.</strong> Bu noktada, artık cihazınızda çalışır durumda bir Mosquitto MQTT broker'ına sahip olacaksınız.</p>
+<p>Aşağıdaki komutu kullanarak kurulu ve çalışır durumda olduğunu doğrulayabilirsiniz.</p>
+<pre><code>sudo systemctl status mosquitto
+</code></pre>
+<p>Bu komut, &quot;<code>mosquitto</code>&quot; servisinin durumunu döndürecektir.</p>
+<p>Servis düzgün başladıysa &quot;<code>active (running)</code>&quot; metnini görmelisiniz.</p>
+<h2>Raspberry Pi'de Mosquitto Kurulumunu Test Etme</h2>
+<p>Bir sonraki adımımız, servisin olması gerektiği gibi çalıştığını ve artık Raspberry Pi'mizde bir MQTT broker'ı olarak hareket ettiğini test etmek olacak.</p>
+<p>Bunu yapmak için, bu rehberde daha önce kurduğumuz Mosquitto istemcisini kullanacağız.</p>
+<p>Bu bölüm için, Raspberry Pi'nize iki terminal oturumu açmanız gerekecek (Yerel olarak veya <a href="https://pimylifeup.com/raspberry-pi-ssh/">SSH üzerinden</a>).</p>
+<p><strong>1.</strong> İlk görevimiz bir abone (subscriber) başlatmaktır. Abone, Raspberry Pi'de çalışan MQTT broker'ımızı dinleyecek olan şeydir.</p>
+<p>Bunu yapmak için daha önce kurduğumuz Mosquitto istemcisini aboneler için kullanabiliriz.</p>
+<p>Aşağıdaki örnekte, bir <code>localhost</code> bağlantısına bağlanıp &quot;<code>mqtt/pimylifeup</code>&quot; konusunda broker'dan gelen mesajları bekliyoruz.</p>
+<pre><code>mosquitto_sub -h localhost -t &quot;mqtt/pimylifeup&quot;
+</code></pre>
+<p>&quot;<code>-h</code>&quot; argümanını kullanarak, bağlanmak istediğiniz hostname'i belirtebilirsiniz. Bizim durumumuzda, Raspberry Pi'mize kurduğumuz yerel MQTT broker'ını kullanıyoruz.</p>
+<p>Ardından, MQTT broker'ından hangi konuyu dinlememiz gerektiğini Mosquitto abonesine söylemek için &quot;<code>-t</code>&quot; argümanını kullanıyoruz.</p>
+<p>Örneğimiz için, &quot;<code>mqtt/pimylifeup</code>&quot; adlı bir konuyu dinliyoruz.</p>
+<p><strong>2.</strong> Artık mesajları dinleyen yüklü bir istemcimiz olduğuna göre, ona bir mesaj yayınlamayı deneyelim.</p>
+<p>Konuya bir mesaj yayınlamak için daha önce Raspberry Pi'mize kurduğumuz MQTT yayıncı istemcisini kullanmamız gerekiyor.</p>
+<p>&quot;<code>mqtt/pimylifeup</code>&quot; konusu altında <code>localhost</code> sunucumuza &quot;<code>Hello World</code>&quot; mesajını yayınlamak için aşağıdaki komutu çalıştırın.</p>
+<pre><code>mosquitto_pub -h localhost -t &quot;mqtt/pimylifeup&quot; -m &quot;Hello world&quot;
+</code></pre>
+<p>Argümanlardan ikisi önceki komutla aynıdır, &quot;<code>-h</code>&quot; bağlanılacak sunucuyu, &quot;<code>-t</code>&quot; ise yayınlanacak konuyu belirtir.</p>
+<p>Burada kullandığımız ek argüman &quot;<code>-m</code>&quot; argümanıdır. Bu argüman, Raspberry Pi MQTT broker'ına göndermek istediğiniz mesajı belirtmenizi sağlar.</p>
+<p><strong>3.</strong> Mosquitto yayıncısını başlattığınız terminal oturumuna geri döndüğünüzde, artık mesajınızın göründüğünü görmelisiniz.</p>
+<p>Örneğimizi takip ettiyseniz, komut satırında aşağıdaki metnin göründüğünü görmelisiniz.</p>
+<pre><code>Hello world
+</code></pre>
+<h2>Sonuç</h2>
+<p>Bu noktada, artık Raspberry Pi'nizde çalışır durumda bir MQTT sunucusuna sahip olmanız gerekiyor.</p>
+<p>Bunu, Mosquitto adlı ücretsiz ve açık kaynaklı yazılımı kullanarak başardık.</p>
+<p>Ayrıca her şeyin amaçlandığı gibi çalıştığını doğrulamak için hızlı bir test de yapmış olacaksınız.</p>
+<p>Bunu <a href="https://pimylifeup.com/raspberry-pi-ufw/">UFW gibi bir güvenlik duvarıyla</a> birlikte kullanıyorsanız, <code>1883</code> portunu açtığınızdan emin olun.</p>
+<p>Diğer <a href="https://pimylifeup.com/category/projects/iot/">Raspberry Pi IoT projelerimize</a> ve <a href="https://pimylifeup.com/category/projects/server/">diğer sunucu fikirlerimize</a> göz atmayı unutmayın.</p>
+<p>Herhangi bir sorunla karşılaştıysanız, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-mosquitto-mqtt-server.html&amp;text=Raspberry+Pi%27ye+Mosquitto+MQTT+Sunucusu+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-mosquitto-mqtt-server.html&amp;text=Raspberry+Pi%27ye+Mosquitto+MQTT+Sunucusu+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-mosquitto-mqtt-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-mosquitto-mqtt-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-mosquitto-mqtt-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-mosquitto-mqtt-server.html&amp;title=Raspberry+Pi%27ye+Mosquitto+MQTT+Sunucusu+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27ye+Mosquitto+MQTT+Sunucusu+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-mosquitto-mqtt-server.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

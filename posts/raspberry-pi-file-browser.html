@@ -1,0 +1,370 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de File Browser Kurulumu ve Kullanımı - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Web tabanlı bir dosya yönetim aracı"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de File Browser Kurulumu ve Kullanımı"/>
+    <meta property="og:description"
+          content="Web tabanlı bir dosya yönetim aracı"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-file-browser.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-file-browser.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-File-Browser-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de File Browser Kurulumu ve Kullanımı"/>
+    <meta name="twitter:description"
+          content="Web tabanlı bir dosya yönetim aracı"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-File-Browser-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de File Browser Kurulumu ve Kullanımı","item":{"@id":"https://codenfast.com/posts/raspberry-pi-file-browser.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-File-Browser-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-File-Browser-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-File-Browser-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-File-Browser-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-File-Browser-01-Login-to-Web-Interface.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-File-Browser-01-Login-to-Web-Interface.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-File-Browser-02-File-Browser-Running-off-a-Raspberry-Pi.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-File-Browser-02-File-Browser-Running-off-a-Raspberry-Pi.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-File-Browser-03-Open-Settings-Panel.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-File-Browser-03-Open-Settings-Panel.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-File-Browser-04-Update-Default-Password.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-File-Browser-04-Update-Default-Password.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de File Browser Kurulumu ve Kullanımı","description":"Web tabanlı bir dosya yönetim aracı","image":["https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-File-Browser-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T11:55:20.059329+03:00","dateModified":"2026-08-03T11:55:20.059374+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de File Browser Kurulumu ve Kullanımı</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-file-browser/">PiMyLifeUp - Installing and Using File Browser on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu proje, Raspberry Pi'nize File Browser'ı nasıl kuracağınızı gösterecek.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-File-Browser-Thumbnail.jpg" alt="Raspberry Pi File Browser" /></p>
+<p><a href="https://github.com/filebrowser/filebrowser">File Browser</a>, tamamen web tarayıcınızdan kullanabileceğiniz, inanılmaz derecede kullanımı kolay bir dosya yöneticisidir. Bu web arayüzü, dosya sisteminizden dosya ve klasörleri yüklemenizi, indirmenizi ve silmenizi sağlar.</p>
+<p>Özel bir yazılıma ihtiyaç duymadan dosyaları uzaktan yönetmek istiyorsanız, bu yazılım Raspberry Pi'nizde çalıştırmak için harika olabilir.</p>
+<p>Hepsinden iyisi, File Browser kurulumu kolaydır ve bir Raspberry Pi'de çalışması için minimal yapılandırma gerektirir.</p>
+<p>Bu web tabanlı dosya yöneticisini kullanmayı daha da basitleştirmek için, onu Docker kullanarak kuracak ve çalıştıracağız. Yazılım tek bir çalıştırılabilir dosya olsa da, Docker onu izole ve çalışır tutmayı kolaylaştırır.</p>
+<p>Bu rehberin sonunda, istediğiniz dosya ve klasörlere doğrudan bir web tarayıcısından erişebileceksiniz.</p>
+<h2>Raspberry Pi'ye File Browser Web Arayüzü Kurulumu</h2>
+<p>Aşağıdaki bölümlerde, Raspberry Pi'nizde File Browser'ı kurma sürecinde size rehberlik edeceğiz.</p>
+<h3>Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> Raspberry Pi'mizde File Browser yazılımını kurup çalıştırmadan önce, işletim sisteminin güncel olduğundan emin olmalıyız.</p>
+<p>Aşağıdaki iki komutu kullanarak paket listesi önbelleğini güncelleyin ve güncel olmayan tüm paketleri yükseltin.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>2.</strong> Raspberry Pi'niz güncellendikten sonra, <a href="https://pimylifeup.com/raspberry-pi-docker/">Docker kurmaya geçebilirsiniz</a>. File Browser'ı kurmak için Docker çalışma zamanına ihtiyacınız olacak.</p>
+<p>Neyse ki, Raspberry Pi'nize Docker'ı nasıl kuracağınızı gösteren bir rehberimiz var. Bu rehberi takip edin, ardından bu eğitime geri dönün.</p>
+<p><strong>3.</strong> Docker kurulduktan sonra, bir sonraki adımımız File Browser'ın Docker Compose dosyasını, veritabanını ve yapılandırma dosyasını saklamak için bir dizin oluşturmaktır.</p>
+<p>Terminalde aşağıdaki komutu kullanarak bu dizini oluşturabilirsiniz.</p>
+<pre><code>sudo mkdir -p /opt/stacks/filebrowser
+</code></pre>
+<p><strong>4.</strong> Dizin oluşturulduktan sonra, <a href="https://pimylifeup.com/cd-command/">cd komutunu kullanarak</a> içine geçmemiz gerekiyor.</p>
+<pre><code>cd /opt/stacks/filebrowser
+</code></pre>
+<h3>File Browser İçin Gerekli Dosyaları Ayarlama</h3>
+<p><strong>5.</strong> File Browser'ın Raspberry Pi'de çalışması için, iki ek dizin oluşturmamız gerekiyor.</p>
+<ul>
+<li>Birincisi, veritabanı dosyasını saklayacağımız &quot;<code>data</code>&quot; klasörüdür.</li>
+<li>İkincisi, yapılandırma dosyasını saklamak için kullandığımız &quot;<code>config</code>&quot; dizinidir.</li>
+</ul>
+<p>Bu iki dizini de oluşturmak için <a href="https://pimylifeup.com/mkdir-command-linux/">mkdir komutunu kullanabilirsiniz</a>.</p>
+<pre><code>sudo mkdir data config
+</code></pre>
+<p><strong>6.</strong> File Browser Docker konteyneri, Raspberry Pi'mizde içine yazabileceği boş bir &quot;<code>database</code>&quot; dosyası olmasını bekler.</p>
+<p>Konteynerin kendisi bu dosyayı oluşturmayı denemez. Bu boş dosyayı touch komutunu kullanarak oluşturabiliriz.</p>
+<pre><code>sudo touch ./data/database.db
+</code></pre>
+<p><strong>7.</strong> Veritabanı dosyasına ek olarak, çok basit bir yapılandırma dosyası da yazmamız gerekiyor.</p>
+<p>Bu yapılandırma dosyasını yazmaya aşağıdaki komutu kullanarak başlayabilirsiniz.</p>
+<pre><code>sudo nano ./config/filebrowser.json
+</code></pre>
+<p><strong>8.</strong> Bu dosyanın içine, aşağıdaki satırları girmek isteyeceksiniz. Bu dosyada ayarlamak isteyebileceğiniz tek seçenekler &quot;<code>baseURL</code>&quot; ve &quot;<code>address</code>&quot;tir.</p>
+<pre><code>{
+  &quot;port&quot;: 80,
+  &quot;baseURL&quot;: &quot;&quot;,
+  &quot;address&quot;: &quot;&quot;,
+  &quot;log&quot;: &quot;stdout&quot;,
+  &quot;database&quot;: &quot;/database.db&quot;,
+  &quot;root&quot;: &quot;/srv&quot;
+}
+</code></pre>
+<p><strong>9.</strong> Yapılandırma dosyasını doldurduktan sonra, <code>CTRL</code> + <code>X</code>, <code>Y</code> ve ardından <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<p><strong>10.</strong> File Browser'ın çalışma şekli nedeniyle, bu yeni dosyaların ve dizinlerin kullanıcınıza ait olduğundan emin olmalısınız.</p>
+<p>Bu dosya ve dizinlerin sahipliğini <a href="https://pimylifeup.com/chown-command/">chown komutunu kullanarak</a> alabilirsiniz.</p>
+<p>&quot;<code>$USER</code>&quot; ortam değişkenini kullanarak, mevcut kullanıcınızın adını otomatik olarak ekliyoruz. Bunu farklı bir kullanıcı altında çalıştırmak isterseniz, bu kısmı onların kullanıcı adıyla değiştirin.</p>
+<pre><code>sudo chown -R $USER:$USER ./config ./data
+</code></pre>
+<h3>Raspberry Pi'de File Browser'ı Yönetmek İçin Bir Docker Compose Dosyası Yazma</h3>
+<p><strong>11.</strong> Artık Raspberry Pi'nizde File Browser için Compose dosyasını yazabileceğimiz noktadayız.</p>
+<p>Bir Compose dosyası, konteynerinizi kurup çalıştırırken Docker'ın takip edeceği bir talimatlar kümesidir.</p>
+<pre><code>sudo nano compose.yaml
+</code></pre>
+<p>Docker Compose dosyalarınızı daha etkili bir şekilde yönetmek istiyorsanız, Pi'nize <a href="https://pimylifeup.com/raspberry-pi-dockge/">Dockge kurmanızı şiddetle tavsiye ederiz</a>.</p>
+<p><strong>12.</strong> Bu Compose dosyasının içine, aşağıdaki satırları girmek isteyeceksiniz.</p>
+<p>Bu dosyayı doldururken, üç yer tutucuyu değiştirmek isteyeceksiniz.</p>
+<ul>
+<li>
+<p><code>&lt;USERID&gt;</code>: Bunu, File Browser'ın altında çalışmasını istediğiniz kullanıcının ID'siyle değiştirin. Bu yazılım aracılığıyla paylaştığınız dosyalar bu kullanıcı tarafından erişilebilir olmalıdır. Örneğin, Raspberry Pi OS'deki varsayılan kullanıcı için, &quot;<code>1000</code>&quot; ID'sini kullanırsınız.</p>
+</li>
+<li>
+<p><code>&lt;GROUPID&gt;</code>: Bu değeri, servisin hangi grup altında çalışması gerektiğini belirtmek için kullanın. Genellikle, bir kullanıcının aynı ID'yi kullanan bir grubu vardır, bu yüzden kullanıcınız için kullandığınız aynı değeri kullanabilirsiniz. Örneğin, Raspberry Pi OS'de varsayılan kullanıcınızı kullanıyorsanız, bunu &quot;<code>1000</code>&quot; ile değiştirebilirsiniz.</p>
+</li>
+<li>
+<p><code>&lt;DIRECTORY&gt;</code><strong>:</strong> Değiştirmeniz gereken son değer, File Browser web arayüzü üzerinden hangi dizinlerin kullanılabilir olması gerektiğini belirtmenizi sağlar. Örneğin, tüm sisteminize erişim vermek isterseniz, tek bir eğik çizgi &quot;<code>/</code>&quot; kullanabilirsiniz. Ancak, bunu gerçekten önermeyiz. Bunun yerine, bunu belirli bir dizinle değiştirmek en iyisi olacaktır. Örneğin, &quot;<code>pi</code>&quot; adlı bir kullanıcının ana dizinini paylaşmak için, &quot;<code>/home/pi/</code>&quot; değerini kullanırdık.</p>
+<p>services:<br />
+filebrowser:<br />
+image: filebrowser/filebrowser<br />
+user: &quot;<USERID>:<GROUPID>&quot;<br />
+ports:<br />
+- 8080:80<br />
+volumes:<br />
+- <DIRECTORY>:/srv<br />
+- /opt/stacks/filebrowser/data/database.db:/database.db<br />
+- /opt/stacks/filebrowser/config/filebrowser.json:/.filebrowser.json<br />
+restart: always</p>
+</li>
+</ul>
+<p><strong>13.</strong> Docker Compose dosyasını doldurmayı bitirdikten sonra, <code>CTRL</code> + <code>X</code>, <code>Y</code> ve ardından <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<h3>File Browser Konteynerini Başlatma</h3>
+<p><strong>14.</strong> Compose dosyası artık yazıldığına göre, Raspberry Pi'nizde File Browser yazılımını başlatmak aşağıdaki komutu kullanmak kadar kolaydır.</p>
+<p>Web arayüzüne erişmek için kullanacağınız şifre, ilk kurulum sürecinde görüntülenir, bu yüzden lütfen dikkat edin.</p>
+<pre><code>docker compose up
+</code></pre>
+<p><strong>15.</strong> Şimdi, başlatma sırasında, aşağıdakine biraz benzeyen bir satır görmelisiniz. Burada belirtilen şifreyi not edin, çünkü Filebrowser'a erişmek için kullanacağınız şey budur.</p>
+<p>Bu şifreyi bir daha göremeyeceksiniz.</p>
+<pre><code>filebrowser-1  | 2025/07/28 04:16:45 User 'admin' initialized with randomly generated password: ElDotpWrfVqE3krD
+</code></pre>
+<p><strong>16.</strong> Şifreyi not ettikten sonra, <code>CTRL</code> + <code>C</code> tuşuna basarak konteyneri durdurun.</p>
+<p><strong>17.</strong> Son olarak, aşağıdaki komutu kullanarak Raspberry Pi'nizde File Browser'ı tekrar başlatın.</p>
+<p>Bu sefer &quot;<code>-d</code>&quot; seçeneğini kullandığımızı fark edeceksiniz. Bu seçenek, yazılımı başlattıktan sonra Docker'ın terminalden ayrılmasını (detach) sağlar.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h3>File Browser Web Arayüzüne Erişim</h3>
+<p><strong>18.</strong> File Browser artık Raspberry Pi'nizde çalışır durumda olduğuna göre, muhtemelen web arayüzüne nasıl erişeceğinizi bilmek isteyeceksiniz.</p>
+<p>Öncelikle, <a href="https://pimylifeup.com/raspberry-pi-ip-address/">Raspberry Pi'nizin IP adresine</a> ihtiyacınız olacak. IP'yi bilmiyorsanız, aşağıda gösterildiği gibi her zaman <a href="https://pimylifeup.com/hostname-command/">hostname komutunu</a> kullanabilirsiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>19.</strong> Favori web tarayıcınızda aşağıdaki adrese gidin.</p>
+<p>&quot;<code>&lt;IPADRESI&gt;</code>&quot; kısmını Pi'nizin IP'siyle değiştirdiğinizden emin olun.</p>
+<pre><code>http://&lt;IPADRESI&gt;:8080
+</code></pre>
+<p><strong>20.</strong> File Browser'a eriştiğinizde, sizi aşağıdaki giriş ekranı karşılayacaktır.</p>
+<p>Varsayılan kullanıcı adı ve şifreyle giriş yapmanız gerekecek. Kullanıcı adı için &quot;<code>admin</code>&quot; yazın ve ardından File Browser'ın başlatılması sırasında oluşturulan şifreyi kullanın.</p>
+<p>Varsayılan bilgileri doldurduktan sonra, &quot;<code>Login</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-File-Browser-01-Login-to-Web-Interface.jpg" alt="Raspberry Pi'de File Browser Web Arayüzüne Giriş Yapma" /></p>
+<p><strong>21.</strong> File Browser'a giriş yaptıktan sonra, Raspberry Pi'nizdeki dosya ve klasörlere tam erişiminiz olacak.</p>
+<p>Bu arayüzü, sisteminizde dosya indirmek ve yeni dosyalar oluşturmak için kullanabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-File-Browser-02-File-Browser-Running-off-a-Raspberry-Pi.jpg" alt="Bir Raspberry Pi Üzerinde Çalışan File Browser" /></p>
+<h3>Varsayılan Şifreyi Değiştirme</h3>
+<p><strong>22.</strong> File Browser'ı kutudan çıktığı gibi kullanmanın büyük bir riski, admin kullanıcısının kullanıcı adının ve şifresinin inanılmaz derecede basit olmasıdır. Neyse ki, bu şifreyi güncellemek oldukça basit bir süreçtir.</p>
+<p>Ekranın sol tarafındaki kenar çubuğunu kullanarak &quot;<code>Settings</code>&quot; menüsüne geçin.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-File-Browser-03-Open-Settings-Panel.jpg" alt="Ayarlar Panelini Açma" /></p>
+<p><strong>23.</strong> &quot;<code>Change Password</code>&quot; başlığı altında, admin kullanıcısı için yeni ve güvenli bir şifre girin (<strong>1.</strong>).</p>
+<p>Yeni şifreyi doldurduktan sonra, yeni şifreyi onaylamak için &quot;<code>Update</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/03/Raspberry-Pi-File-Browser-04-Update-Default-Password.jpg" alt="Varsayılan şifreyi güncelleme" /></p>
+<h2>File Browser'ın En Son Sürümüne Güncelleme</h2>
+<p>Raspberry Pi'nizde File Browser'ı çalıştırmak için Docker kullanmanın bir avantajı, güncellemenin kolay olmasıdır.</p>
+<p>Bu bölüm, File Browser'ın en son sürümüne güncellemek için hızlı adımları gösterecek.</p>
+<p><strong>1.</strong> Terminalde, Docker Compose dosyasını yazdığınız dizine geçmek için aşağıdaki komutu kullanmak isteyeceksiniz.</p>
+<p>File Browser'ı güncellemek için bu dizinde olmanız gerekecek.</p>
+<pre><code>cd /opt/stacks/filebrowser
+</code></pre>
+<p><strong>2.</strong> Şimdi aşağıdaki komutu çalıştırarak File Browser imajının en son sürümünü çekmek için Docker kullanabiliriz.</p>
+<pre><code>docker compose pull
+</code></pre>
+<p><strong>3.</strong> Yeni bir sürüm indirildikten sonra, şu anda çalışan konteyneri buna güncellemek için aşağıdaki komutu kullanabiliriz.</p>
+<p>Docker yeni sürümü algılayacak, çalışan konteyneri durduracak ve ardından yeni sürümü kullanarak başlatacaktır.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h2>Sonuç</h2>
+<p>Umarız Raspberry Pi'nizde File Browser konteynerini başarıyla çalışır hale getirmişsinizdir.</p>
+<p>Bu yazılım oldukça kullanışlıdır ve kullanımı kolay bir web arayüzü üzerinden sisteminizdeki dosyaları yönetmenizi sağlar. Kullanışlılığını daha da artırmak için, <a href="https://pimylifeup.com/raspberry-pi-tailscale/">Tailscale gibi bir yazılıma</a> göz atmak isteyebilirsiniz.</p>
+<p>Bu dosya tarayıcısını çalıştırmak için yardıma ihtiyacınız olursa, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-file-browser.html&amp;text=Raspberry+Pi%27de+File+Browser+Kurulumu+ve+Kullan%C4%B1m%C4%B1" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-file-browser.html&amp;text=Raspberry+Pi%27de+File+Browser+Kurulumu+ve+Kullan%C4%B1m%C4%B1" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-file-browser.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-file-browser.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-file-browser.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-file-browser.html&amp;title=Raspberry+Pi%27de+File+Browser+Kurulumu+ve+Kullan%C4%B1m%C4%B1" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+File+Browser+Kurulumu+ve+Kullan%C4%B1m%C4%B1%20codenfast.com%2Fposts%2Fraspberry-pi-file-browser.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

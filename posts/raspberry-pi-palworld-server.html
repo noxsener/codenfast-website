@@ -1,0 +1,403 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de Palworld Sunucusu Çalıştırma - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Aksiyon-macera oyunu Palworld için özel bir sunucu çalıştırın"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de Palworld Sunucusu Çalıştırma"/>
+    <meta property="og:description"
+          content="Aksiyon-macera oyunu Palworld için özel bir sunucu çalıştırın"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-palworld-server.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-palworld-server.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de Palworld Sunucusu Çalıştırma"/>
+    <meta name="twitter:description"
+          content="Aksiyon-macera oyunu Palworld için özel bir sunucu çalıştırın"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de Palworld Sunucusu Çalıştırma","item":{"@id":"https://codenfast.com/posts/raspberry-pi-palworld-server.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-01-Join-Multiplayer-Game.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-01-Join-Multiplayer-Game.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-02-Connect-to-Dedicated-Server.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-02-Connect-to-Dedicated-Server.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-03-Change-to-Community-Servers.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-03-Change-to-Community-Servers.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-04-Select-Locked-Server.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-04-Select-Locked-Server.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-05-Type-in-Password.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-05-Type-in-Password.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-06-Dont-connect-to-community-server.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-06-Dont-connect-to-community-server.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-07-Connect-After-Setting-Password.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-07-Connect-After-Setting-Password.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de Palworld Sunucusu Çalıştırma","description":"Aksiyon-macera oyunu Palworld için özel bir sunucu çalıştırın","image":["https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T11:59:07.220915+03:00","dateModified":"2026-08-03T11:59:07.220954+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de Palworld Sunucusu Çalıştırma</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-palworld-server/">PiMyLifeUp - Running a Palworld Server on a Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'de bir Palworld sunucusunu nasıl çalıştıracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-Thumbnail.jpg" alt="Raspberry Pi Palworld Sunucusu" /></p>
+<p>Palworld, üretim yapmaya ve &quot;pal&quot; yakalamaya odaklanan popüler bir çok oyunculu hayatta kalma oyunudur. Devasa bir dünyaya ve 32 oyuncuya kadar oynama imkanına sahiptir.</p>
+<p>Palworld'ün özel sunucusunun ARM tabanlı bir sürümü olmasa da, bunu aşmanın yolları var. Bu yol, Box86 ve Box64 emülatörlerini kullanmaktır.</p>
+<p>Buradaki püf nokta, Raspberry Pi'nizde tam 32 oyuncuyu çalıştıramayacak olmanız, ancak özellikle 8GB belleğe sahip bir Pi'niz varsa, birkaç oyuncuyu idare edecek kadar iyi olması gerekir.</p>
+<p>Bu rehber boyunca, Palworld sunucusunu Raspberry Pi'nizde kurma ve çalıştırma sürecinde size rehberlik edeceğiz. Hatta sunucuyu çalıştırmak için kullandığımız Box86 ve Box64 sunucularını nasıl kurup ayarlayacağınızı da göstereceğiz.</p>
+<p>Palworld sunucusuyla en iyi deneyim için, 8GB belleğe sahip bir Raspberry Pi 5 kullanmalısınız. Bunu daha zayıf Raspberry Pi'lerde de kullanabilirsiniz ama sonuçlar değişebilir.</p>
+<p>Ayrıca, <a href="https://pimylifeup.com/raspberry-pi-64-bit/">64-bit bir işletim sistemi</a> çalıştırıyor olmanız gerekir, bu yüzden en azından bir Raspberry Pi 3 çalıştırıyor olmalısınız.</p>
+<h2>Raspberry Pi'nizde Bir Palworld Sunucusu Kurma ve Çalıştırma</h2>
+<p>Aşağıdaki bölümlerde, Raspberry Pi'nizde bir Palworld sunucusunu nasıl kurup çalıştıracağınızı öğreneceksiniz.</p>
+<p>Bu sunucuyu çalışır hale getirmek, Box86 ve Box64 emülatörlerine güvenmemizi gerektiriyor. Bu emülatörleri kullanmak zorunda olmak biraz performans kaybına neden olsa da, testlerimize göre birkaç oyuncunun sorunsuz oynaması için hâlâ yeterince iyiydi.</p>
+<h3>Palworld Özel Sunucusunu Çalıştırmak İçin Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> Raspberry Pi'mize Palworld sunucusunu kurabilmemiz için, birkaç görevi tamamlamamız gerekiyor.</p>
+<p>İlki, işletim sistemimizin tamamen güncel olduğundan emin olmaktır. Bunu aşağıdaki iki komutu kullanarak yapabilirsiniz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>2.</strong> Bir sonraki adımımız &quot;<code>curl</code>&quot; paketini kurmaktır. Bu rehberde daha sonra SteamCMD aracını Raspberry Pi'mize indirmek için curl kullanacağız.</p>
+<p>Bu paket genellikle önceden kurulu olsa da, aşağıdaki komutu çalıştırmak var olduğundan emin olur.</p>
+<pre><code>sudo apt install curl
+</code></pre>
+<p><strong>3.</strong> Ardından, <a href="https://pimylifeup.com/raspberry-pi-x86/">Raspberry Pi'nize Box86 kurma</a> rehberimizi takip etmeniz gerekiyor.</p>
+<p>Bu yazılım, Raspberry Pi'mizde 32-bit x86 mimarisini emüle etmemizi sağlar, bu da Palworld sunucusunu indirmek için kullanabileceğimiz SteamCMD aracını çalıştırmamızı sağlar.</p>
+<p>Bu eğitimi bir Raspberry Pi 5 kullanarak takip ediyorsanız, standart 8kb sayfa boyutuna geçmek için Box86 eğitimindeki sorun giderme bölümümüzü takip edin.</p>
+<p><strong>4.</strong> Box86'yı kurduktan sonra, <a href="https://pimylifeup.com/raspberry-pi-x64/">Raspberry Pi'nize Box64 nasıl kurulur</a> rehberimizi takip etmeniz gerekiyor. Bir Raspberry Pi 5 çalıştırıyorsanız, Pi 4 için olan adımları kullanmalısınız; aksi takdirde Box86 çalışmayacaktır.</p>
+<p>Bu yazılım Box86'ya benzer ama ARM64 üzerinde x64 mimarisini emüle etmeyi hedefler. Bu, Palworld özel sunucusunu çalıştırmanın kritik kısmıdır.</p>
+<h3>Sunucuyu Çalıştıracak Bir Kullanıcı Oluşturma</h3>
+<p><strong>5.</strong> Box86 ve Box64 artık Raspberry Pi'mize kurulu olduğuna göre, sonunda bu eğitime devam edebiliriz.</p>
+<p>Bir sonraki adımımız, özel sunucuyu çalıştırmak için kullanacağımız bir kullanıcı oluşturmak ve her şeyi saklamak için bir ana dizin oluşturmaktır.</p>
+<p>Aşağıdaki komutu kullanarak &quot;<code>palworld</code>&quot; adında bir kullanıcı oluşturabilirsiniz.</p>
+<pre><code>sudo useradd palworld -m
+</code></pre>
+<p><strong>6.</strong> &quot;<code>palworld</code>&quot; kullanıcımızı oluşturduktan sonra, bu kullanıcıya geçmek için &quot;<code>sudo</code>&quot; komutunu kullanabiliriz.</p>
+<p>Kullanıcıya geçmek, oluşturmak üzere olduğumuz tüm dosyalarda <a href="https://pimylifeup.com/chown-command/">chown komutunu kullanma</a> zahmetinden bizi kurtarır.</p>
+<pre><code>sudo -u palworld -s
+</code></pre>
+<h3>Raspberry Pi'de Palworld İçin SteamCMD Kurulumu</h3>
+<p><strong>7.</strong> Palworld özel sunucusunu kurmanın temel kısımlarına geçebilmemiz için Raspberry Pi'mize kurmamız gereken son parça SteamCMD'dir.</p>
+<p>SteamCMD, tam bir istemciye ihtiyaç duymadan Steam'den uygulama ve oyun indirmemizi sağlayan bir araçtır.</p>
+<p>Bu aracı saklamak için bir dizin oluşturarak ve cd komutunu kullanarak içine geçerek başlayalım.</p>
+<pre><code>mkdir ~/steamcmd
+cd ~/steamcmd
+</code></pre>
+<p><strong>8.</strong> Ardından, terminalde aşağıdaki komutu çalıştırmak isteyeceksiniz.</p>
+<p>Bu komut, SteamCMD yükleyicisinin en son sürümünü indirir ve mevcut dizine çıkarır.</p>
+<pre><code>curl -sqL &quot;https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz&quot; | tar zxvf -
+</code></pre>
+<p><strong>9.</strong> Bu aracın doğru çalıştığından emin olmak için, onu çalıştırmamız gerekiyor. SteamCMD'yi ilk başlattığınızda, otomatik olarak kendini güncelleyecek ve gereken tüm kütüphaneleri indirecektir.</p>
+<pre><code>./steamcmd.sh
+</code></pre>
+<p><strong>10.</strong> SteamCMD tamamen yüklendikten sonra, araç içinde aşağıdaki komutu kullanarak çıkabilirsiniz.</p>
+<pre><code>quit
+</code></pre>
+<h3>Palworld İçin Steamworks SDK Redistributable'ı Alma</h3>
+<p><strong>11.</strong> Palworld özel sunucusunu Raspberry Pi'mizde çalıştırabilmek için, önce Steamworks SDK Redistributable'ı indirmemiz gerekiyor.</p>
+<p>Bu redistributable'dan ihtiyacımız olan belirli bir kütüphane var.</p>
+<pre><code>./steamcmd.sh +force_install_dir ~/steamworkssdk +@sSteamCmdForcePlatformType linux +login anonymous +app_update 1007 validate +quit
+</code></pre>
+<p><strong>12.</strong> İndirme tamamlandıktan sonra, aşağıdaki komutu kullanarak bir dizin oluşturmamız gerekiyor. Bu dizin, Palworld sunucusunun &quot;<code>steamclient.so</code>&quot; kütüphanesini arayacağı yerdir.</p>
+<pre><code>mkdir -p ~/.steam/sdk64
+</code></pre>
+<p><strong>13.</strong> Son olarak, aşağıdaki komutu çalıştırarak kütüphaneyi doğru konuma kopyalayabilirsiniz.</p>
+<pre><code>cp ~/steamworkssdk/linux64/steamclient.so ~/.steam/sdk64/
+</code></pre>
+<h3>Raspberry Pi'ye Palworld Özel Sunucusunu Kurma</h3>
+<p><strong>14.</strong> Artık Palworld özel sunucusunu Raspberry Pi'nize indirip kurabileceğimiz noktadayız.</p>
+<p>Daha önce SteamCMD aracını kurup ayarlamamız sayesinde, bu aşağıdaki komutu kullanmak kadar kolaydır. Bu komut, sunucunun en son sürümünü indirmek için SteamCMD kullanacaktır.</p>
+<p>Sunucu büyük olduğundan, bu süreç birkaç dakika sürebilir.</p>
+<pre><code>./steamcmd.sh +force_install_dir ~/palworldserver +@sSteamCmdForcePlatformType linux +login anonymous +app_update 2394010 validate +quit
+</code></pre>
+<h3>Palworld Sunucusunu Çalıştırma</h3>
+<p><strong>15.</strong> Sunucu indirildikten sonra, aşağıdaki komutu çalıştırarak dizinine geçmeniz gerekiyor.</p>
+<pre><code>cd ~/palworldserver/
+</code></pre>
+<p><strong>16.</strong> Artık doğru yerde olduğunuza göre, Raspberry Pi'nizde Palworld özel sunucunuzu başlatmak için yapmanız gereken tek şey aşağıdaki komutu çalıştırmaktır.</p>
+<p>Sunucuyu çalıştırırken birkaç hata görebilirsiniz; bunların çoğu kritik değildir ve sunucu çalışmaya devam etmelidir.</p>
+<pre><code>./PalServer.sh
+</code></pre>
+<p>Artık sunucunuza Raspberry Pi'nizin IP adresi üzerinden erişebilmeniz gerekir. Bunu yapmadan önce, sunucuyu yapılandırmalısınız.</p>
+<p>Sunucuyu yapılandırmak için, <code>CTRL</code> + <code>C</code> tuşuna basarak geçici olarak durdurmanız gerekir.</p>
+<h3>Sunucuyu Yapılandırma</h3>
+<p><strong>17.</strong> Palworld sunucularının yapılandırma dosyası için üzerinde çalışacak iyi bir temel sağlamak amacıyla, varsayılanları kopyalayalım.</p>
+<p>Aşağıdaki komutu kullanarak, varsayılanları özel değerlerin yükleneceği yere kopyalayabilirsiniz.</p>
+<pre><code>cp ~/palworldserver/DefaultPalWorldSettings.ini ~/palworldserver/Pal/Saved/Config/LinuxServer/PalWorldSettings.ini
+</code></pre>
+<p><strong>18.</strong> Varsayılan değerleri kopyaladıktan sonra, aşağıdaki komutu yazarak yapılandırma dosyasını düzenlemeye başlayabilirsiniz.</p>
+<p>Kullanımı en kolay editörlerden biri olduğundan <a href="https://pimylifeup.com/nano-text-editor/">nano metin editörünü kullanıyoruz</a>. Ancak, kendinizi rahat hissettiğiniz herhangi bir metin editörünü kullanabilirsiniz.</p>
+<pre><code>nano ~/palworldserver/Pal/Saved/Config/LinuxServer/PalWorldSettings.ini
+</code></pre>
+<p><strong>19.</strong> Raspberry Pi'nizdeki Palworld sunucunuz için ayarlayabileceğiniz birçok ayar vardır. Buna maksimum oyuncu sayısını ayarlamak, bir şifre belirlemek, canavar yoğunluğunu değiştirmek ve daha fazlası dahildir.</p>
+<p>Çeşitli seçenekler hakkında daha fazla bilgiyi <a href="https://tech.palworldgame.com/optimize-game-balance">resmi dokümantasyonu görüntüleyerek</a> okuyabilirsiniz. Bunu bir Raspberry Pi'de çalıştırdığınızı düşünürsek, &quot;pal görünme oranını&quot; ve maksimum oyuncu sayısını azaltmayı düşünebilirsiniz.</p>
+<p>Bu rehberde odaklanacağımız seçenek &quot;<code>ServerPassword</code>&quot;dur. Bir şifre belirlemek, birinin sunucuya erişebilmeden önce bunu yazmasını zorunlu kılar.</p>
+<p>Şifreyi ayarlamak için, yapılandırma dosyasında aşağıdaki metni bulmalısınız.</p>
+<pre><code>ServerPassword=&quot;&quot;
+</code></pre>
+<p>Sunucu şifresi ayarını bulduktan sonra, şifrenizi çift tırnak işaretleri arasına yazın.</p>
+<pre><code>ServerPassword=&quot;pimylifeup&quot;
+</code></pre>
+<p><strong>20.</strong> Yapılandırma dosyasında değişiklik yaptıktan sonra, <code>CTRL</code> + <code>X</code>, <code>Y</code> ve ardından <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<h3>Raspberry Pi'niz Açıldığında Palworld Sunucusunu Başlatma</h3>
+<p><strong>21.</strong> Palworld Sunucunuzun, Raspberry Pi'nizi her açtığınızda otomatik olarak başlamasını istiyorsanız, bir servis dosyası yazmamız gerekecek.</p>
+<p>Bunu yapmadan önce, ana kullanıcınıza geçtiğinizden emin olun. Henüz yapmadıysanız, aşağıdaki komutu kullanarak &quot;<code>palworld</code>&quot; kullanıcısından çıkabilirsiniz.</p>
+<pre><code>exit
+</code></pre>
+<p><strong>22.</strong> Normal kullanıcınızı kullanmaya döndükten sonra, aşağıdaki komutu kullanarak Palworld sunucumuz için servis dosyasını yazmaya başlayabilirsiniz.</p>
+<pre><code>sudo nano /etc/systemd/system/palworld.service
+</code></pre>
+<p><strong>23.</strong> Bu dosyanın içine, aşağıdaki satırları yazın.</p>
+<p>Bu satırlar, Palworld sunucusunun Raspberry Pi'mizde nasıl başlayıp çalışacağını belirler. Bu dosyaya yapılan temel ek, sunucu başlatılmadan önce çalıştırdığımız komuttur.</p>
+<p>Bu komut, servis her başlatıldığında veya yeniden başlatıldığında Palworld sunucunuzu otomatik olarak güncelleyecektir.</p>
+<pre><code>[Unit]
+Description=Palworld Server
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=palworld
+Group=palworld
+WorkingDirectory=/home/palworld/
+ExecStartPre=/home/palworld/steamcmd/steamcmd.sh +force_install_dir '/home/palworld/palworldserver' +login anonymous +app_update 2394010 +quit
+ExecStart=/home/palworld/palworldserver/PalServer.sh -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS &gt; /dev/null
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p><strong>24.</strong> Yukarıdaki satırları servise ekledikten sonra, <code>CTRL</code> + <code>X</code>, <code>Y</code> ve ardından <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<p><strong>25.</strong> Servis artık yazıldığına göre, onu etkinleştirmek isteyeceksiniz. Etkinleştirmek, systemd'nin Raspberry Pi'niz açıldığında Palworld sunucusunu çalıştırmasını sağlayacaktır.</p>
+<p>Aşağıdaki komutu çalıştırarak servisi etkinleştirebilirsiniz.</p>
+<pre><code>sudo systemctl enable palworld
+</code></pre>
+<p><strong>26.</strong> Bir servisi etkinleştirmek onu otomatik olarak başlatmaz.</p>
+<p>Sunucunuzun hemen başlamasını istiyorsanız, terminalde aşağıdaki komutu kullanabilirsiniz.</p>
+<pre><code>sudo systemctl start palworld
+</code></pre>
+<p><strong>27.</strong> Palworld sunucunuzu durdurmak isterseniz, yapmanız gereken tek şey aşağıdaki komutu çalıştırmaktır.</p>
+<pre><code>sudo systemctl stop palworld
+</code></pre>
+<p><strong>28.</strong> Son olarak, Raspberry Pi'niz açıldığında Palworld sunucusunun otomatik olarak başlatılmasını durdurmak için servisi devre dışı bırakmanız gerekir.</p>
+<p>Yazdığımız servisi aşağıdaki komutu kullanarak devre dışı bırakabilirsiniz.</p>
+<pre><code>sudo systemctl disable palworld
+</code></pre>
+<h2>Raspberry Pi Palworld Sunucunuza Bağlanma</h2>
+<p>Bu noktada, umarız Raspberry Pi'nizde Palworld sunucusunu başarıyla çalışır hale getirmişsinizdir.</p>
+<p>Sunucunuz çalışırken, ona nasıl erişeceğinizi bilmek isteyeceksiniz. Öncelikle, bu sunucuya dışarıdan erişim sağlamayı planlıyorsanız, <code>8211</code> portunu Pi'nize yönlendirdiğinizden ve <a href="https://pimylifeup.com/raspberry-pi-static-ip-address/">statik bir IP adresi ayarladığınızdan</a> emin olun.</p>
+<p><strong>1.</strong> Raspberry Pi'nizin yerel IP adresini bilmiyorsanız, terminalde aşağıdaki komutu kullanarak listeleyebilirsiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<p>Terminalinizde aşağıdakine benzer bir şey görmelisiniz.</p>
+<pre><code>192.168.0.123
+</code></pre>
+<p><strong>2.</strong> IP adresiniz elinizde olduğuna göre, bilgisayarınızda Palworld'ü başlatın.</p>
+<p>Oyunu çalıştırdıktan sonra, &quot;<code>Join multiplayer game</code>&quot; seçeneğine <code>tıklamak</code> isteyeceksiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-01-Join-Multiplayer-Game.jpg" alt="Çok Oyunculu Oyuna Katıl Menüsünü Açma" /></p>
+<p><strong>3.</strong> Artık sizi resmi Palworld sunucularının bir listesi karşılamalıdır.</p>
+<p>Bu sayfanın altında, bir metin kutusu ve bir düğme görmelisiniz. Metin kutusunu kullanarak IP adresinizi, ardından &quot;<code>8211</code>&quot; portunu yazın (<strong>1.</strong>).</p>
+<p>Raspberry Pi'nizin IP'sini yazdıktan sonra, bağlanmak için &quot;<code>Connect</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-02-Connect-to-Dedicated-Server.jpg" alt="Raspberry Pi Palworld Sunucusuna Bağlanma" /></p>
+<h3>Şifreli Bir Palworld Sunucusuna Bağlanma Sorun Giderme</h3>
+<p><strong>4.</strong> Raspberry Pi Palworld sunucunuza bir şifre koyduysanız, bağlanırken bir sorunla karşılaşabilirsiniz.</p>
+<p>Bir nedenden ötürü, bir şifre kutusu hiç görünmez, yani bağlantınız sunucu tarafından reddedilir. Bunu düzeltmek için &quot;<code>Community Servers</code>&quot; sekmesine geçmeniz gerekecek.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-03-Change-to-Community-Servers.jpg" alt="Community Servers Sekmesine Geçme" /></p>
+<p><strong>5.</strong> Community servers sekmesindeyken, şifreli bir sunucu bulun ve üzerine <code>çift tıklayın</code>. Bir sunucunun şifreli olduğunu asma kilit simgesinden anlayabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-04-Select-Locked-Server.jpg" alt="Şifreli Community Sunucusunu Seçme" /></p>
+<p><strong>6.</strong> Bu sunucuya bağlanmayı denediğinizde, bir şifre girmeniz istenecektir (<strong>1.</strong>). Sunucunuz için belirlediğiniz şifreyi yazın.</p>
+<p>Şifrenizi yazdıktan sonra, devam etmek için &quot;<code>OK</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-05-Type-in-Password.jpg" alt="Raspberry Pi Palworld Sunucunuz İçin Şifre Yazma" /></p>
+<p><strong>7.</strong> Seçtiğiniz sunucuya bağlanmak isteyip istemediğiniz sorulacaktır.</p>
+<p>Bu rastgele sunucuya bağlanmak istemediğimizden, &quot;<code>No</code>&quot; düğmesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-06-Dont-connect-to-community-server.jpg" alt="Sunucuya bağlanmaya hayır deme" /></p>
+<p><strong>8.</strong> Son olarak, artık ekranın altındaki metin kutusunu kullanarak Raspberry Pi Palworld sunucunuza bağlanabilmeniz gerekir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Palworld-Server-07-Connect-After-Setting-Password.jpg" alt="Raspberry Pi Palworld Sunucu Detaylarını Tekrar Girme" /></p>
+<h2>Sonuç</h2>
+<p>Umarız bu aşamada, Raspberry Pi'nizde Palworld özel sunucusunu başarıyla çalışır hale getirmişsinizdir.</p>
+<p>Yalnızca birkaç oyuncuyu idare etmeyi planlıyorsanız, Raspberry Pi bir Palworld sunucusu için iyi bir çözümdür. Çok fazla güç harcamadığından, 7/24 çalışır durumda bırakabilirsiniz.</p>
+<p>Bu sunucuyu Pi'nizde çalıştırma konusunda herhangi bir sorunuz veya endişeniz varsa, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-palworld-server.html&amp;text=Raspberry+Pi%27de+Palworld+Sunucusu+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-palworld-server.html&amp;text=Raspberry+Pi%27de+Palworld+Sunucusu+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-palworld-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-palworld-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-palworld-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-palworld-server.html&amp;title=Raspberry+Pi%27de+Palworld+Sunucusu+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+Palworld+Sunucusu+%C3%87al%C4%B1%C5%9Ft%C4%B1rma%20codenfast.com%2Fposts%2Fraspberry-pi-palworld-server.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

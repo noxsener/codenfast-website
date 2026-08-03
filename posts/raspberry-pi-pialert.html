@@ -1,0 +1,330 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de NetAlert Ağ Güvenlik Tarayıcısını Kullanma - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Hızlı ve kolay bir ağ tarayıcısı"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de NetAlert Ağ Güvenlik Tarayıcısını Kullanma"/>
+    <meta property="og:description"
+          content="Hızlı ve kolay bir ağ tarayıcısı"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-pialert.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-pialert.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-PiAlert-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de NetAlert Ağ Güvenlik Tarayıcısını Kullanma"/>
+    <meta name="twitter:description"
+          content="Hızlı ve kolay bir ağ tarayıcısı"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-PiAlert-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de NetAlert Ağ Güvenlik Tarayıcısını Kullanma","item":{"@id":"https://codenfast.com/posts/raspberry-pi-pialert.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-PiAlert-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-PiAlert-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-PiAlert-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-PiAlert-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-PiAlert-01-Dashboard.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-PiAlert-01-Dashboard.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de NetAlert Ağ Güvenlik Tarayıcısını Kullanma","description":"Hızlı ve kolay bir ağ tarayıcısı","image":["https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-PiAlert-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:02:19.80737+03:00","dateModified":"2026-08-03T12:02:19.807397+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de NetAlert Ağ Güvenlik Tarayıcısını Kullanma</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-pialert/">PiMyLifeUp - Using the NetAlert Network Security Scanner on a Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'nizde NetAlertX'i (PiAlert) nasıl kuracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-PiAlert-Thumbnail.jpg" alt="Raspberry Pi PiAlert" /></p>
+<p><a href="https://github.com/jokob-sk/NetAlertX">NetAlertX</a> (eski adıyla PiAlert), bir Pi üzerinde çalışabilen bir Ağ Güvenlik Tarayıcısı ve bildirim çerçevesidir. Başlangıçta <a href="https://github.com/pucherot">Pucherot</a> tarafından geliştirilmiş olsa da, bu proje artık aktif olarak <a href="https://github.com/jokob-sk">jokob-sk</a> tarafından sürdürülmektedir.</p>
+<p>Bu tarayıcıyı kullanarak, yeni bir ağ cihazı veya bir port değişikliği olsun, herhangi bir ağ değişikliği hakkında sizi anında bilgilendirebilir.</p>
+<p>Bu yazılım ayrıca tüm ağınızı kolayca görselleştirmenizi ve açık portları gibi bilgileri görüntülemenizi sağlayan bir web arayüzüne de sahiptir.</p>
+<p>Raspberry Pi, ağınızı işlemek için fazlasıyla yeterli güce sahipken 7/24 çalıştırması nispeten ucuz olduğundan NetAlert kurmak için harika bir cihazdır.</p>
+<p>NetAlert, 32-bit ve 64-bit ARM sistemleri için bir docker konteyneri sağlar, bu yüzden Raspberry Pi OS'nin istediğiniz sürümünü kullanabilirsiniz.</p>
+<h2>Raspberry Pi'de PiAlert/NetAlert Kurulumu</h2>
+<p>Aşağıdaki bölümlerde, Raspberry Pi'nizde NetAlert (PiAlert) ağ tarayıcısını nasıl kuracağınızı göstereceğiz.</p>
+<p>Docker kullandığımızdan, özellikle Docker zaten kuruluysa, bu süreç nispeten basittir.</p>
+<h3>NetAlert İçin Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> NetAlert'i kurmadan önce, Raspberry Pi'mizin güncel olduğundan emin olmalıyız.</p>
+<p>Bunu yapmanın en kolay yolu, terminalde aşağıdaki iki komutu kullanmaktır.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>2.</strong> Raspberry Pi'nizi güncelledikten sonra, artık <a href="https://pimylifeup.com/raspberry-pi-docker/">Docker kurmanız gerekiyor</a>.</p>
+<p>Pi'mizde NetAlert Ağ tarayıcısını çalıştırmak için Docker kullanacağız. Yukarıda bağlantısını verdiğimiz rehber, birkaç kısa adımda Pi'nizde Docker'ı çalışır hale getirecek.</p>
+<p><strong>3.</strong> Bir sonraki adımımız, NetAlert için Compose dosyasını saklamak amacıyla bir dizin oluşturmaktır. NetAlert'i ve verilerini &quot;<code>/opt/stacks/netalertx</code>&quot; dizininde saklayacağız.</p>
+<p>Bu dizini aşağıdaki komutu kullanarak oluşturabiliriz. Tam dizinin oluşturulduğundan emin olmak için &quot;<code>-p</code>&quot; seçeneğini kullanıyoruz.</p>
+<pre><code>sudo mkdir -p /opt/stacks/netalertx
+</code></pre>
+<p><strong>4.</strong> Dizini oluşturduktan sonra, <a href="https://pimylifeup.com/cd-command/">cd komutunu kullanarak</a> içine geçmemiz gerekiyor.</p>
+<pre><code>cd /opt/stacks/netalertx
+</code></pre>
+<h3>NetAlert İçin Compose Dosyasını Yazma</h3>
+<p><strong>5.</strong> Artık Raspberry Pi'de NetAlert için Compose dosyasını yazmaya geçebiliriz. Bu Compose dosyası, Docker'ın takip edeceği bir talimatlar kümesi gibidir.</p>
+<p>Bu dosyayı yazmaya, terminalde aşağıdaki komutu kullanarak <a href="https://pimylifeup.com/nano-text-editor/">nano metin editörünü kullanarak</a> başlayabilirsiniz.</p>
+<pre><code>sudo nano compose.yaml
+</code></pre>
+<p><strong>6.</strong> Bu dosyanın içine, aşağıdaki satırları yazmak isteyeceksiniz.</p>
+<ul>
+<li>
+<p>&quot;<code>&lt;TIMEZONE&gt;</code>&quot;: Bu değeri geçerli bir TZ tanımlayıcısıyla değiştirmelisiniz. Bölgeniz için ne kullanacağınızdan emin değilseniz, <a href="https://wikipedia.org/wiki/List_of_tz_database_time_zones#List">TZ veritabanı Wikipedia sayfasına</a> göz atmanızı şiddetle tavsiye ederiz. Örneğin, kendi bölgemiz için &quot;<code>Australia/Hobart</code>&quot; kullanırdık; siz kendi saat diliminizi (örn. &quot;<code>Europe/Istanbul</code>&quot;) kullanmalısınız.</p>
+<p>services:<br />
+netalertx:<br />
+container_name: netalertx<br />
+image: &quot;jokobsk/netalertx:latest&quot;<br />
+network_mode: &quot;host&quot;<br />
+restart: unless-stopped<br />
+volumes:<br />
+- ./data/config:/app/config<br />
+- ./data/db:/app/db<br />
+- ./data/logs:/app/front/log<br />
+environment:<br />
+- TZ=<TIMEZONE><br />
+- PORT=20211</p>
+</li>
+</ul>
+<p><strong>7.</strong> Yukarıdaki satırları ekledikten sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code> ve son olarak <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<h3>NetAlert Konteynerini Başlatma</h3>
+<p><strong>8.</strong> Compose dosyası yazıldıktan sonra, Raspberry Pi'mizde NetAlert Ağ tarayıcısını başlatabiliriz.</p>
+<p>Bu yazılımı başlatmak için, terminalde aşağıdaki komutu kullanmalıyız. &quot;<code>-d</code>&quot; seçeneğini kullanarak, Docker'a konteyner başlatıldıktan sonra ayrılmasını (detach) söylüyoruz.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h3>Raspberry Pi'de NetAlert Yapılandırmasını İyileştirme</h3>
+<p><strong>9.</strong> NetAlert için varsayılan yapılandırma, &quot;<code>eth1</code>&quot; adaptörünü kullanarak &quot;<code>192.168.1.0/24</code>&quot; alt ağını (subnet) dinleyecek şekildedir.</p>
+<p>Kurulumunuz bizimkine benziyorsa, bunu yerine &quot;<code>192.168.0.0/24</code>&quot; alt ağını dinleyecek şekilde ayarlamanız ve &quot;<code>eth0</code>&quot; adaptörünü kullanacak şekilde değiştirmeniz gerekir.</p>
+<p>Neyse ki, NetAlert ağ tarayıcısı aynı anda birden fazla alt ağı izleyebilir; sadece yapılandırmasını değiştirmemiz gerekiyor.</p>
+<pre><code>sudo nano /opt/stacks/netalertx/data/config/app.conf
+</code></pre>
+<p><strong>10.</strong> Yapılandırma dosyasını açtıktan sonra, &quot;<code>SCAN_SUBNETS</code>&quot; ile başlayan satırı bulmak isteyeceksiniz.</p>
+<p>Varsayılan olarak, aşağıda gösterdiğimize benzer görünmelidir.</p>
+<pre><code>SCAN_SUBNETS=['192.168.1.0/24 --interface=eth1']
+</code></pre>
+<p>Yeni bir alt ağ eklemek için, mevcut olanın ardından bir virgül, ardından alt ağı ve taramak istediğiniz arayüzü eklememiz gerekiyor.</p>
+<p>Örneğin, &quot;<code>192.168.0.0/24</code>&quot; alt ağını ve &quot;<code>eth0</code>&quot; arayüzünü taramak istersek, satırı aşağıdaki gibi görünecek şekilde değiştirirdik.</p>
+<pre><code>SCAN_SUBNETS=['192.168.1.0/24 --interface=eth1','192.168.0.1/24 --interface=eth0']
+</code></pre>
+<p><strong>11.</strong> Yukarıdaki değişiklikleri yaptıktan sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code> ve sonra <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<p>NetAlert yazılımı bu yapılandırmadaki değişiklikleri otomatik olarak algılayacak ve yeni ayarları kullanmak üzere güncellenecektir.</p>
+<h3>NetAlert Web Arayüzüne Erişim</h3>
+<p><strong>12.</strong> NetAlert web arayüzüne erişmek için, Raspberry Pi'nizin IP adresini bilmeniz gerekir.</p>
+<p>Raspberry Pi'nizin yerel IP adresinin ne olduğundan emin değilseniz, aşağıda gösterildiği gibi <a href="https://pimylifeup.com/hostname-command/">hostname komutunu kullanabilirsiniz</a>.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>13.</strong> Raspberry Pi'nizin IP adresini öğrendikten sonra, favori web tarayıcınızda aşağıdaki adrese gitmek isteyeceksiniz.</p>
+<p>&quot;<code>&lt;IPADRESI&gt;</code>&quot; kısmını Pi'nizin IP'siyle değiştirdiğinizden emin olun.</p>
+<pre><code>http://&lt;IPADRESI&gt;:20211
+</code></pre>
+<p><strong>14.</strong> Artık sizi NetAlert gösterge paneli karşılamalıdır. Şimdi bu yazılımı nasıl kullanacağınızı gezinip öğrenmek için zaman ayırabilirsiniz.</p>
+<p>Bu yazılım hakkında daha fazla bilgi edinmek için <a href="https://github.com/jokob-sk/Pi.Alert/blob/main/docs/README.md">resmi dokümantasyona</a> göz atabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-PiAlert-01-Dashboard.jpg" alt="Raspberry Pi PiAlert Gösterge Paneli" /></p>
+<h2>Raspberry Pi'de NetAlert'i Güncelleme</h2>
+<p>NetAlert'i (PiAlert) Raspberry Pi'mizde bir Docker konteyneri olarak çalıştırmak, güncellemeyi basit hale getirir.</p>
+<p>Terminaldeki birkaç basit komutu kullanarak konteyneri güncelleyebiliriz.</p>
+<p><strong>1.</strong> NetAlert'i güncelleyebilmemiz için, önce daha önce Compose dosyasını yazdığımız dizinde olduğumuzdan emin olmalıyız.</p>
+<p>Aşağıdaki komutu kullanarak bu dizine geçebilirsiniz.</p>
+<pre><code>cd /opt/stacks/netalertx
+</code></pre>
+<p><strong>2.</strong> Doğru dizinde olduğumuzda, aşağıdaki komutu kullanarak Docker'a NetAlert'in yeni sürümünü çekmesini söyleyebilirsiniz.</p>
+<p>Docker, imajın en son indirdiğinden bu yana değişen kısımlarını çekecektir.</p>
+<pre><code>docker compose pull
+</code></pre>
+<p><strong>3.</strong> Son olarak, NetAlert'in yeni bir sürümünü indirdikten sonra, konteynerimizin bunu kullanmasını sağlamamız gerekiyor.</p>
+<p>En kolay yol, NetAlert'i başlatmak için kullandığınız komutu çalıştırmaktır. Docker, konteynerin çalıştığını algılayacak ve onu yeni imajı kullanarak yeniden başlatacaktır.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h2>Sonuç</h2>
+<p>Artık Raspberry Pi'nizde NetAlert/PiAlert ağ tarayıcısı çalışıyor olmalıdır.</p>
+<p>Yazılım başladığında, tüm cihazlar için ağınızı otomatik olarak taramaya başlayacaktır.</p>
+<p>Web arayüzünü kullanarak, yazılımı yapılandırabilirken ağınızın görselleştirmesini de görebilirsiniz.</p>
+<p>NetAlert yazılımını çalıştırma hakkında sorularınız varsa, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-pialert.html&amp;text=Raspberry+Pi%27de+NetAlert+A%C4%9F+G%C3%BCvenlik+Taray%C4%B1c%C4%B1s%C4%B1n%C4%B1+Kullanma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-pialert.html&amp;text=Raspberry+Pi%27de+NetAlert+A%C4%9F+G%C3%BCvenlik+Taray%C4%B1c%C4%B1s%C4%B1n%C4%B1+Kullanma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-pialert.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-pialert.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-pialert.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-pialert.html&amp;title=Raspberry+Pi%27de+NetAlert+A%C4%9F+G%C3%BCvenlik+Taray%C4%B1c%C4%B1s%C4%B1n%C4%B1+Kullanma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+NetAlert+A%C4%9F+G%C3%BCvenlik+Taray%C4%B1c%C4%B1s%C4%B1n%C4%B1+Kullanma%20codenfast.com%2Fposts%2Fraspberry-pi-pialert.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

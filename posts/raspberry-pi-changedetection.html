@@ -1,0 +1,378 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de Changedetection.io Çalıştırma - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Bir web sitesindeki değişiklikleri kolayca tespit edin"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de Changedetection.io Çalıştırma"/>
+    <meta property="og:description"
+          content="Bir web sitesindeki değişiklikleri kolayca tespit edin"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-changedetection.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-changedetection.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de Changedetection.io Çalıştırma"/>
+    <meta name="twitter:description"
+          content="Bir web sitesindeki değişiklikleri kolayca tespit edin"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de Changedetection.io Çalıştırma","item":{"@id":"https://codenfast.com/posts/raspberry-pi-changedetection.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-01-Add-new-Website-to-watch-for-changes.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-01-Add-new-Website-to-watch-for-changes.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-02-General-Watcher-Settings.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-02-General-Watcher-Settings.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-03-Request-Settings.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-03-Request-Settings.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-04-Filters-and-triggers.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-04-Filters-and-triggers.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-05-Notification-Settings.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-05-Notification-Settings.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-06-Updated-Change-Detection-Dashboard.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-06-Updated-Change-Detection-Dashboard.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de Changedetection.io Çalıştırma","description":"Bir web sitesindeki değişiklikleri kolayca tespit edin","image":["https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:44:28.184781+03:00","dateModified":"2026-08-03T12:44:28.184815+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de Changedetection.io Çalıştırma</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-changedetection/">PiMyLifeUp - Running Changedetection.io on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitim, Raspberry Pi'nizde changedetection.io'yu nasıl çalıştırabileceğinizi gösterecek.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-Thumbnail.jpg" alt="Raspberry Pi Changedetection.io" /></p>
+<p>Changedetction.io, belirli bir web sitesinde değişiklik yapılıp yapılmadığını tespit etmek üzere tasarlanmış bir hizmettir. Bu, <a href="https://pimylifeup.com/raspberry-pi-monitor-website/">Python web sitesi izleyici projemizin</a> daha gelişmiş bir sürümü gibidir.</p>
+<p>Bu hizmet, bir sayfanın çıktısını periyodik olarak alarak çalışır. Ardından, bir değişiklik fark edildiğinde, hizmet size bir bildirim gönderebilir ve son güncellemeden bu yana tam olarak neyin değiştiğini görmenizin kolay bir yolunu sunar.</p>
+<p>Raspberry Pi, 7/24 çalışır bırakılması uygun fiyatlı olan nispeten düşük güçlü bir cihaz olduğundan, Changedetection.io için mükemmel bir seçimdir.</p>
+<p>En iyi deneyim için, Raspberry Pi OS'nin 64-bit sürümünü kullanmanız gerektiğini lütfen unutmayın. Ancak, Changedetection.io yine de 32-bit'te iyi çalışır. Sadece görüntülemek için JavaScript gerektiren web sitelerindeki değişiklikleri tespit edemezsiniz.</p>
+<h2>Raspberry Pi'nizi Changedetection.io İçin Hazırlama</h2>
+<p>Bu web sitesi değişiklik tespit aracını kurabilmemiz için, bazı ilk yazılımları kurmamız gerekiyor. Kurmamız gereken ana şey Docker'dır.</p>
+<p>Raspberry Pi'de Changedetection.io'yu kurup çalıştırmanın en kolay yolu bir docker konteyneri üzerindendir.</p>
+<p><strong>1.</strong> Devam etmeden önce, paket listelerinde ve güncel olmayan tüm paketlerde bir güncelleme yapmalıyız.</p>
+<p>Her iki işlemi de gerçekleştirmek için aşağıdaki iki komutu çalıştırabilirsiniz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Paket listeniz güncel olduğuna göre, şimdi <a href="https://pimylifeup.com/raspberry-pi-docker/">Raspberry Pi'ye Docker kurma</a> rehberimizi takip etmeniz gerekecek.</p>
+<p>Raspberry Pi'mizde Changedetection.io'yu kurup ayarlamayı nispeten basit bir süreç haline getirmek için Docker kullanacağız.</p>
+<h2>Raspberry Pi'ye Changedetection.io Kurulumu</h2>
+<p>Raspberry Pi'nize Docker kurduktan sonra, üzerine Changedetection.io kurmaya geçebiliriz.</p>
+<p>Bu web sitesi değişiklik izleyicisi bir docker imajı olarak mevcut olduğundan, yapmamız gereken tek şey hızlı bir Docker yapılandırma dosyası yazmak ve ardından onu &quot;çalıştırmak&quot;tır.</p>
+<p><strong>1.</strong> Oluşturmak üzere olduğumuz &quot;<code>compose.yml</code>&quot; dosyasını saklayacağımız bir dizin oluşturarak başlayalım.</p>
+<p><a href="https://pimylifeup.com/mkdir-command-linux/">mkdir komutunu kullanarak</a> mevcut kullanıcınızın ana dizini içinde &quot;<code>changedetection</code>&quot; adlı bir dizin oluşturabiliriz.</p>
+<pre><code>sudo mkdir -p /opt/stacks/changedetection
+</code></pre>
+<p><strong>2.</strong> Yeni dizinimiz oluşturulduktan sonra, aşağıda gösterildiği gibi <a href="https://pimylifeup.com/cd-command/">cd komutunu kullanarak</a> içine geçmemiz gerekiyor.</p>
+<pre><code>cd /opt/stacks/changedetection
+</code></pre>
+<p><strong>3.</strong> Nano metin editörünü kullanarak &quot;<code>docker-compose.yml</code>&quot; dosyasını yazmaya başlayabiliriz.</p>
+<p>Bu dosya, Docker'a bir veya birden fazla konteyneri nasıl kuracağını söyler. Bizim durumumuzda, bu &quot;<code>changedetection.io</code>&quot; ve Chromium web sürücüsü olacak.</p>
+<pre><code>sudo nano compose.yaml
+</code></pre>
+<p><strong>4.</strong> Bu dosyanın içine, Raspberry Pi OS'nin 64-bit veya 32-bit bir sürümünü çalıştırmanıza bağlı olarak aşağıdaki satırları girmek isteyeceksiniz.</p>
+<p>Bu iki kod grubu arasındaki tek fark, 32-bit bir Raspberry Pi OS'de Changedetection.io'nun istediği bağımsız (standalone) Chrome tarayıcısını çalıştıramamamızdır.</p>
+<p><strong>Raspberry Pi OS 64-bit İçin Compose.yaml</strong></p>
+<pre><code>services:
+    changedetection:
+      image: ghcr.io/dgtlmoon/changedetection.io
+      container_name: changedetection
+      hostname: changedetection
+      environment:
+        - PLAYWRIGHT_DRIVER_URL=ws://playwright-chrome:3000
+      volumes:
+        - changedetection-data:/datastore
+      ports:
+        - 5000:5000
+      restart: unless-stopped
+      depends_on:
+          playwright-chrome:
+              condition: service_started
+
+    playwright-chrome:
+        hostname: playwright-chrome
+        image: dgtlmoon/sockpuppetbrowser:latest
+        cap_add:
+            - SYS_ADMIN
+        restart: unless-stopped
+        environment:
+            - SCREEN_WIDTH=1920
+            - SCREEN_HEIGHT=1024
+            - SCREEN_DEPTH=16
+            - MAX_CONCURRENT_CHROME_PROCESSES=10
+volumes:
+  changedetection-data:
+</code></pre>
+<p><strong>Raspberry Pi OS 32-bit İçin Compose.yaml</strong></p>
+<pre><code>services:
+    changedetection:
+      image: ghcr.io/dgtlmoon/changedetection.io
+      container_name: changedetection
+      hostname: changedetection
+      volumes:
+        - changedetection-data:/datastore
+      ports:
+        - 5000:5000
+      restart: unless-stopped
+volumes:
+  changedetection-data:
+</code></pre>
+<p><strong>5.</strong> Raspberry Pi OS sürümünüz için Changedetection.io yapılandırmasını yazdıktan sonra, artık metin editöründen kaydedip çıkabilirsiniz.</p>
+<p><code>CTRL</code> + <code>X</code>, ardından <code>Y</code> ve son olarak <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<p><strong>6.</strong> Son olarak, terminalde aşağıdaki komutu çalıştırarak Raspberry Pi'mizde Changedetection.io'yu başlatabiliriz.</p>
+<p>Bu komutu çalıştırarak, Docker &quot;<code>compose.yaml</code>&quot; dosyamızda belirtilen tüm imajları indirecek ve konteynerleri başlatacaktır.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h2>Changedetection.io Web Arayüzü</h2>
+<p>Artık <a href="https://github.com/dgtlmoon/changedetection.io">Changedetection.io</a> yazılımını Raspberry Pi'mize kurduğumuza göre, sonunda web arayüzüne erişebiliriz.</p>
+<p>Eğitimin bu kısmı, web arayüzüne nasıl erişeceğinizi gösterecek ve size hızlı bir genel bakış sunacak.</p>
+<h3>Web Arayüzüne Erişim</h3>
+<p><strong>1.</strong> changedetection.io web arayüzüne ya doğrudan Raspberry Pi'nizde ya da yerel bir cihazdan erişerek ulaşabilirsiniz.</p>
+<p>Raspberry Pi'nizin yerel IP adresini almak için, hostname komutundan yararlanabilirsiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<p>Docker tarafından oluşturulan bir sürü farklı IP adresi göreceğinizi lütfen unutmayın. Genellikle, cihazınızın IP adresi listelenen ilk adres olacaktır.</p>
+<p>Örneğin, Raspberry Pi'miz için yerel IP adresi aşağıdakiydi.</p>
+<pre><code>192.168.0.134
+</code></pre>
+<p><strong>2.</strong> IP adresiniz elinizin altında olduğunda, web tarayıcınızda aşağıdaki adrese gidin.</p>
+<p>Burada fark edeceğiniz ana şey &quot;<code>5000</code>&quot; portunu kullandığımızdır, çünkü changedetection.io varsayılan olarak bunu kullanır.</p>
+<p>&quot;<code>IPADDRESS</code>&quot; kısmını bir önceki adımda aldığınız IP adresiyle veya yerel olarak bağlanıyorsanız &quot;<code>localhost</code>&quot; ile değiştirdiğinizden emin olun.</p>
+<pre><code>http://IPADRESI:5000
+</code></pre>
+<h3>Raspberry Pi'nizin Changedetection.io Web Arayüzünü Kullanma</h3>
+<p><strong>3.</strong> Changedetection.io web arayüzü açık olduğunda, yapmak isteyeceğiniz ilk şeylerden biri değişiklikleri izlemek için bir web sitesi eklemektir.</p>
+<p>Bunu doğrudan gösterge panelinden kolayca yapabilirsiniz.</p>
+<ol>
+<li>Öncelikle, Raspberry Pi'nizin değişiklikler için izlemesini istediğiniz URL'yi (<strong>1.</strong>) girmek isteyeceksiniz.</li>
+<li>Ardından, isteğe bağlı olarak bu belirli değişiklik tespit izleyicisi için bir grup adı (<strong>2.</strong>) belirtebilirsiniz.</li>
+<li>Şimdi &quot;<code>Watch</code>&quot; düğmesine <code>tıklayarak</code> bu izleyiciyi hemen kaydetme seçeneğiniz var (<strong>3.</strong>). Alternatif olarak, izleme başlamadan önce &quot;<code>Edit &gt; Watch</code>&quot; düğmesine <code>tıklayarak</code> gelişmiş seçenekleri düzenlemeyi seçebilirsiniz (<strong>4.</strong>).</li>
+</ol>
+<p>Sonraki adımlarda, Raspberry Pi'nizin web sitesi değişiklik dedektörünü daha fazla yapılandırmak istediğinizi varsayacağız.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-01-Add-new-Website-to-watch-for-changes.jpg" alt="Değişiklikleri izlemek için yeni web sitesi ekleme" /></p>
+<p><strong>4.</strong> Changedetection.io web arayüzündeki &quot;<strong>General</strong>&quot; ayarlar sayfasına göz atarak başlayacağız.</p>
+<p>Değişiklikler için izlenmesini istediğiniz URL gibi ayrıntıları kontrol edebilirsiniz. Ayarlamak isteyebileceğiniz temel şeylerden biri &quot;<code>Time Between Check</code>&quot; seçeneğidir.</p>
+<p>Bu seçeneği kullanarak, Changedetection.io'nun bir değişiklik olup olmadığını kontrol etmeden önce ne kadar bekleyeceğini seçebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-02-General-Watcher-Settings.jpg" alt="Genel İzleyici Ayarları" /></p>
+<p><strong>5.</strong> Sıradaki &quot;<code>Request</code>&quot; sekmesi. Bu sayfadaki seçenekler, Raspberry Pi'nizin web sitesi değişiklik dedektörünün isteğini nasıl yapacağını kontrol eder.</p>
+<p>Bu sayfadaki seçenekleri kullanarak bir istek yapıldığında kullanılan başlıkları (header) ve gövdeyi (body) kontrol edebilirsiniz.</p>
+<p>Ayarlamak isteyebileceğiniz temel seçeneklerden biri &quot;<strong>fetch method</strong>&quot;tur.</p>
+<ol>
+<li><strong>Basic fast Plaintext/HTTP Client</strong>: Bu, bir web sitesinde değişiklik olup olmadığını kontrol etmenin en hızlı yoludur. Basitçe sayfayı alıp düz metni karşılaştırır. Bu yöntem, JavaScript konusunda endişelenmeniz gerekmediğinde harikadır.</li>
+<li><strong>WebDriver Chrome/JavaScript</strong>: Kontrol ettiğiniz web sitesi görüntülenmek için JavaScript gerektiriyorsa, bu seçeneği kullanmak isteyeceksiniz. Bonus olarak, Changedetection.io kontrolünü gerçekleştirdiğinde web sitesinin bir ekran görüntüsünü de alacaktır. Raspberry Pi'nizde 32-bit bir işletim sistemi çalıştırıyorsanız bu seçeneği seçemeyeceğinizi lütfen unutmayın.</li>
+</ol>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-03-Request-Settings.jpg" alt="Raspberry Pi Changedetection.io İstek Ayarları" /></p>
+<p><strong>6.</strong> İnceleyeceğimiz bir sonraki sekme &quot;<code>Filters &amp; Triggers</code>&quot; sekmesidir.</p>
+<p>Bu sekmedeki seçenekleri içeriği filtrelemek veya ek tetikleyiciler eklemek için kullanabilirsiniz. Örneğin, sürekli değişen belirli bir öğe varsa, bunu görmezden gelmek için bu seçenekleri kullanabilirsiniz.</p>
+<p>Ayrıca, bir değişiklik bildirimini tetiklemek için metin de ayarlayabilirsiniz. &quot;<code>Trigger/wait for text</code>&quot; seçeneği yapılandırıldığında, bir bildirim yalnızca o metin veya regex sayfada bulunursa gönderilir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-04-Filters-and-triggers.jpg" alt="Filtreler ve Tetikleyiciler" /></p>
+<p><strong>7.</strong> İncelediğimiz son sekme muhtemelen en önemlilerden biri, &quot;<code>Notifications</code>&quot; sekmesi.</p>
+<p>Bu sekmeyle, Raspberry Pi'niz web sitenizde bir değişiklik olduğunu fark ettiğinde bildirimlerin nereye gönderilmesi gerektiğini ayarlayabilirsiniz.</p>
+<p>Desteklenen URL'ler ve biçimleri hakkında <a href="https://github.com/caronc/apprise#supported-notifications">AppRise GitHub'ında</a> bilgi alabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-05-Notification-Settings.jpg" alt="Changedetection.io Bildirim Ayarları" /></p>
+<p><strong>8.</strong> Aşağıda, artık Raspberry Pi'mizde Changedetection.io'nun çalıştığını ve yeni eklediğimiz URL'nin değişiklikler için izlendiğini görebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Changedetection.io-06-Updated-Change-Detection-Dashboard.jpg" alt="Raspberry Pi'de Çalışan Changedetection.io" /></p>
+<h2>Raspberry Pi'de Changedetection.io'yu Güncelleme</h2>
+<p>Bu bölümde, Raspberry Pi'nizde Changedetection yazılımını güncellemenin hızlı ve kolay adımlarında size rehberlik edeceğiz.</p>
+<p>Bu yazılımı çalıştırmak için Docker kullandığımızdan, onu birkaç kısa komutla güncelleyebiliriz.</p>
+<p><strong>1.</strong> İlk adımınız, Changedetection için Compose dosyasını yazdığımız dizine geçmektir.</p>
+<p>Bu eğitimi tam olarak takip ettiyseniz, aşağıdaki komutu kullanarak bu dizine ulaşabilmeniz gerekir.</p>
+<pre><code>cd /opt/stacks/changedetection
+</code></pre>
+<p><strong>2.</strong> Doğru yerdeyken, aşağıdaki komutu çalıştırarak Docker'ın Changedetection'ın en son sürümünü Raspberry Pi'mize çekmesini sağlayabiliriz.</p>
+<p>Docker, yalnızca yeni bir sürüm mevcutsa imajı indirecek ve ardından yalnızca güncellenen katmanları indirecektir.</p>
+<pre><code>docker compose pull
+</code></pre>
+<p><strong>3.</strong> Son olarak, yeni bir sürüm indirildikten sonra, Docker'ın konteyneri yeniden başlatıp yeni imaja geçmesini sağlamanız gerekir.</p>
+<p>Bunu, yazılımı başlatmak için kullandığınız aynı komutu kullanarak başarabilirsiniz. Docker'ın yeni imajı kontrol etmesini ve ona geçmesini sağlamak için aşağıdaki komutu çalıştırın.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h2>Sonuç</h2>
+<p>Bu eğitimin bu noktasında, artık Raspberry Pi'nizde Changedetection.io yazılımı çalışıyor olmalıdır.</p>
+<p>Bu yazılım, bir web sitesinde periyodik olarak bir değişiklik olup olmadığını kolayca kontrol etmenizi sağlar.</p>
+<p>Bu web sitesi değişiklik dedektörünü cihazınızda çalışır hale getirirken herhangi bir sorunla karşılaşırsanız, aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-changedetection.html&amp;text=Raspberry+Pi%27de+Changedetection.io+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-changedetection.html&amp;text=Raspberry+Pi%27de+Changedetection.io+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-changedetection.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-changedetection.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-changedetection.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-changedetection.html&amp;title=Raspberry+Pi%27de+Changedetection.io+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+Changedetection.io+%C3%87al%C4%B1%C5%9Ft%C4%B1rma%20codenfast.com%2Fposts%2Fraspberry-pi-changedetection.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

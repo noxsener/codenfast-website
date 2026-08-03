@@ -1,0 +1,517 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de NUT ile UPS İzleme - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Bir UPS&#39;ten bilgi okuyun"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de NUT ile UPS İzleme"/>
+    <meta property="og:description"
+          content="Bir UPS&#39;ten bilgi okuyun"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-nut-server.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-nut-server.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-UPS-Nut-Server-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de NUT ile UPS İzleme"/>
+    <meta name="twitter:description"
+          content="Bir UPS&#39;ten bilgi okuyun"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-UPS-Nut-Server-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de NUT ile UPS İzleme","item":{"@id":"https://codenfast.com/posts/raspberry-pi-nut-server.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-UPS-Nut-Server-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-UPS-Nut-Server-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-UPS-Nut-Server-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-UPS-Nut-Server-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-UPS-Nut-Server-01-Web-Interface.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-UPS-Nut-Server-01-Web-Interface.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-UPS-Nut-Server-02-UPS-Overview.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-UPS-Nut-Server-02-UPS-Overview.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de NUT ile UPS İzleme","description":"Bir UPS'ten bilgi okuyun","image":["https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-UPS-Nut-Server-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:27:49.597355+03:00","dateModified":"2026-08-03T12:27:49.597387+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de NUT ile UPS İzleme</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-nut-server/">PiMyLifeUp - Monitoring a UPS with NUT on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'nizde bir NUT sunucusu kurarak bir kesintisiz güç kaynağını (UPS) uzaktan nasıl yönetebileceğinizi göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-UPS-Nut-Server-Thumbnail.jpg" alt="Raspberry Pi UPS NUT Sunucusu" /></p>
+<p>NUT, <strong>N</strong>etwork <strong>U</strong>PS <strong>T</strong>ool (Ağ UPS Aracı) anlamına gelir ve Raspberry Pi'niz gibi bir cihazın bir UPS ile iletişim kurmasını ve onu izlemesini sağlar.</p>
+<p>Hepsinden iyisi, NUT UPS bilgisini diğer NUT istemcilerine yayınlamanızı sağlar. Bu sunucu işlevselliği, diğer sistemlerin UPS bilgilerinize erişmesine ve buna göre tepki vermesine olanak tanır.</p>
+<p>Örneğin, ağımızda NUT çalıştıran bir Raspberry Pi kullanıyoruz, bu da UPS'e bağlı diğer bilgisayarların kalan gücü okumasını ve buna göre kapanmasını sağlıyor.</p>
+<p>Raspberry Pi'de NUT kurmak, özellikle UPS'iniz bir USB bağlantısı sunuyorsa nispeten basittir.</p>
+<p>Devam etmeden önce, NUT'un UPS'inizi destekleyip desteklemediğini görmek için <a href="https://networkupstools.org/stable-hcl.html">resmi donanım uyumluluk listesine</a> bakmalısınız. UPS'iniz destekleniyorsa, onu Raspberry Pi'nize takın.</p>
+<h2>Raspberry Pi'ye NUT Sunucusu Kurulumu</h2>
+<p>Aşağıdaki adımlarda, Raspberry Pi'ye NUT sunucusunu kuracağız. Neyse ki, yazılım resmi paket deposu üzerinden mevcuttu, bu da bu süreci nispeten basit hale getiriyor.</p>
+<p><strong>1.</strong> Yapmamız gereken ilk şey, Raspberry Pi'mizin paket listesini güncellemek ve güncel olmayan tüm paketleri yükseltmektir.</p>
+<p>Aşağıdaki komutu kullanarak her iki görevi de tamamlayabilirsiniz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Güncelleme tamamlandıktan sonra, aşağıdaki komutu çalıştırarak Raspberry Pi'ye NUT'u kurabiliriz.</p>
+<pre><code>sudo apt install nut
+</code></pre>
+<p>NUT'un temel sürümünün yanı sıra, bu komutu çalıştırarak istemci ve sunucu da kurulacaktır. Ayrıca, apcupsd gibi çakışan bir yazılım kullanıyorsanız, bunu otomatik olarak kaldırabilir.</p>
+<h2>NUT'u UPS'inizi Okuyacak Şekilde Yapılandırma</h2>
+<p>NUT sunucusu artık Raspberry Pi'nize kurulu olduğuna göre, yazılımı UPS'ten okuma yapacak şekilde yapılandırmaya geçebiliriz.</p>
+<h3>UPS Satıcı ve Ürün Kimliğinizi Alma</h3>
+<p><strong>1.</strong> NUT'un Raspberry Pi'nize bağladığınız UPS'i bulmasını kolaylaştırmak için ek bilgilere ihtiyacımız olacak.</p>
+<p>Bilgi almanın en kolay yolu, NUT sunucusuyla birlikte kurulan &quot;<code>nut-scanner</code>&quot; aracını kullanmaktır.</p>
+<pre><code>sudo nut-scanner -U
+</code></pre>
+<p><strong>2.</strong> Bu komutu çalıştırdıktan sonra, aşağıda gösterilene benzer bir sonuç görmelisiniz. Örneğimizde, Raspberry Pi'mize bağlı aslında iki UPS var.</p>
+<p>Raspberry Pi'niz tarafından izlenmesini istediğiniz her UPS için, not etmeniz gereken beş bilgi parçası vardır:</p>
+<ul>
+<li>
+<p><strong>Driver:</strong> Bu değer, NUT'un UPS'inizle nasıl iletişim kuracağını anlamasına yardımcı olur.</p>
+</li>
+<li>
+<p><strong>Port:</strong> Çoğu durumda, bu &quot;<code>auto</code>&quot; olacaktır. Bununla, NUT üç ek bilgi parçasını kullanarak doğru cihazı otomatik olarak algılayacaktır.</p>
+</li>
+<li>
+<p><strong>VendorID:</strong> UPS'inizi üreten satıcıyı tanımlar. Örneğimizde, bu Cyber Power System'e karşılık gelir.</p>
+</li>
+<li>
+<p><strong>ProductID:</strong> Bağlı UPS'in hangi belirli ürün olduğunu tanımlamak için kullanılır.</p>
+</li>
+<li>
+<p><strong>Serial:</strong> UPS'iniz için benzersiz bir tanımlayıcı olarak kullanılır. Bazı UPS'lerin bunun için benzersiz bir değer belirlemediğini unutmayın, bu da işleri biraz karmaşıklaştırabilir. Birden fazla UPS bağlamaya çalışıyorsanız ama tam olarak aynı bilgilere sahiplerse, &quot;<code>auto</code>&quot;ya güvenmek yerine portu belirtmeniz gerekecektir.</p>
+<p>Scanning USB bus.<br />
+[nutdev1]<br />
+driver = &quot;usbhid-ups&quot;<br />
+port = &quot;auto&quot;<br />
+vendorid = &quot;0764&quot;<br />
+productid = &quot;0501&quot;<br />
+product = &quot;CP1500EPFCLCD&quot;<br />
+serial = &quot;CTLMN2000102&quot;<br />
+vendor = &quot;CPS&quot;<br />
+bus = &quot;001&quot;<br />
+[nutdev2]<br />
+driver = &quot;usbhid-ups&quot;<br />
+port = &quot;auto&quot;<br />
+vendorid = &quot;0764&quot;<br />
+productid = &quot;0501&quot;<br />
+product = &quot;CP1500EPFCLCD&quot;<br />
+serial = &quot;CTLMN2000105&quot;<br />
+vendor = &quot;CPS&quot;<br />
+bus = &quot;001&quot;</p>
+</li>
+</ul>
+<h3>Raspberry Pi'de NUT UPS Yapılandırmasını Değiştirme</h3>
+<p><strong>3.</strong> NUT'un Raspberry Pi'nize bağlı UPS'in farkında olması için, yapılandırma dosyalarından birini değiştirmeniz gerekir. NUT, tüm UPS tanımlarını &quot;<code>/etc/nut/ups.conf</code>&quot; dosyasında saklar.</p>
+<p>NUT'a hangi UPS ile iletişim kuracağını söyleyen yapılandırma dosyasını düzenlemek için aşağıdaki komutu çalıştırın.</p>
+<p>Bu yapılandırma dosyasını <a href="https://pimylifeup.com/nano-text-editor/">Nano metin editörünü kullanarak</a> düzenlemek için açabiliriz.</p>
+<pre><code>sudo nano /etc/nut/ups.conf
+</code></pre>
+<p><strong>4.</strong> Bu dosyanın en altına kaydırın ve Raspberry Pi'nizde NUT kullanarak izlemek istediğiniz her UPS için yeni bir bölüm ekleyin. Nano kullandığımızdan, <code>CTRL</code> + <code>W</code>, ardından <code>CTRL</code> + <code>V</code> tuşuna basarak en alta atlayabilirsiniz.</p>
+<p>Her bölümü doldururken, bir önceki bölümde aldığınız bilgileri yazmalısınız.</p>
+<ul>
+<li>
+<p><code>&lt;NAME&gt;</code><strong>:</strong> Bunu UPS'iniz için kullanmayı düşündüğünüz isimle değiştirin. Bu isim herhangi bir sembol veya boşluk içermemelidir. Bir UPS adını nasıl yazabileceğinize dair birkaç örnek &quot;<code>myups1</code>&quot;, &quot;<code>nasups</code>&quot;, &quot;<code>networkingups</code>&quot;tır.</p>
+</li>
+<li>
+<p><code>&lt;PORT&gt;</code><strong>:</strong> Bununla, UPS'inize bağlanmak için kullanılacak portu belirtmelisiniz. Çoğu durumda, &quot;<code>auto</code>&quot; kullanarak sorunsuz ilerleyebilirsiniz. Bu mod, NUT'un UPS'inizle bağlanmak için doğru portu otomatik olarak seçmesini sağlar.</p>
+</li>
+<li>
+<p><code>&lt;VENDORID&gt;</code><strong>:</strong> UPS'inizin Satıcı Kimliği. Geçerli bir satıcı kimliği örneği &quot;<code>0764</code>&quot;tür.</p>
+</li>
+<li>
+<p><code>&lt;PRODUCTID&gt;</code><strong>:</strong> UPS Ürün Kimliği. Örneğin, &quot;<code>0501</code>&quot;.</p>
+</li>
+<li>
+<p><code>&lt;SERIAL&gt;</code>: UPS için benzersiz Seri Numarası. Daha önceki örneğimizi kullanarak, geçerli bir seri numarası &quot;<code>CTLMN2000102</code>&quot; olurdu.</p>
+</li>
+<li>
+<p><code>&lt;DESCRIPTION&gt;</code><strong>:</strong> UPS'iniz için kısa bir açıklayıcı. Örneğin, &quot;<code>NAS UPS connected via USB</code>&quot; değerini kullanabilirsiniz.</p>
+</li>
+<li>
+<p><code>&lt;SHUTDOWNORDER&gt;</code><strong>:</strong> Bu seçenekle, Raspberry Pi NUT sunucunuzun bağlı UPS'leri hangi sırayla kapatacağını yapılandırabilirsiniz. <strong>Raspberry Pi'nizi yeniden başlatmanın</strong> aslında <strong>UPS'in kapatılmasını tetikleyebileceğini</strong> lütfen unutmayın. Bu davranışı aşmak için, bu değeri eksi 1'e (<code>-1</code>) ayarlayabilirsiniz. Eksi bire ayarlandığında, NUT UPS'inizi kapatmayacaktır.</p>
+<p>[<NAME>]<br />
+driver = &quot;<DRIVER>&quot;<br />
+port = <PORT><br />
+vendorid = &quot;<VENDORID>&quot;<br />
+productid = &quot;<PRODUCTID>&quot;<br />
+serial = &quot;<SERIAL>&quot;<br />
+desc = &quot;<DESCRIPTION>&quot;<br />
+sdorder = <SHUTDOWNORDER></p>
+</li>
+</ul>
+<p>Bunun nasıl çalıştığını göstermek için, aşağıda her iki UPS'imizi de yapılandırma dosyasına ekledikten sonra dosyamızın bir örneği bulunmaktadır.</p>
+<pre><code>[nasups]
+	driver = &quot;usbhid-ups&quot;
+	port = &quot;auto&quot;
+	vendorid = &quot;0764&quot;
+	productid = &quot;0501&quot;
+	serial = &quot;CTLMN2000102&quot;
+        desc = &quot;NAS UPS connected via USB&quot;
+        sdorder = -1
+[networknas]
+	driver = &quot;usbhid-ups&quot;
+	port = &quot;auto&quot;
+	vendorid = &quot;0764&quot;
+	productid = &quot;0501&quot;
+	serial = &quot;CTLMN2000105&quot;
+        desc = &quot;Networking UPS Connected via UPS&quot;
+        sdorder = -1
+</code></pre>
+<p><strong>5.</strong> Yeni UPS bloğunuzu NUT yapılandırma dosyasına ekledikten sonra, kaydedip çıkabilirsiniz.</p>
+<p><code>CTRL</code> + <code>X</code>, <code>Y</code> ve ardından <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<h3>NUT'un Raspberry Pi'nizin Dışından Erişilebilir Olmasını Sağlama</h3>
+<p><strong>6.</strong> Varsayılan olarak, Raspberry Pi'nizdeki NUT sunucusu yalnızca yerel IP adresini dinleyecek şekilde tasarlanmıştır. Bu, ağdaki istemcilerin sunucuyla iletişim kuramayacağı anlamına gelir.</p>
+<p>Neyse ki, NUT sunucunun tüm adresleri dinlemesi için varsayılan davranışı değiştirmemize ve ayarlamamıza olanak tanır.</p>
+<p>Aşağıdaki komutu kullanarak &quot;<code>upsd.conf</code>&quot; yapılandırma dosyasını düzenlemeye başlayın.</p>
+<pre><code>sudo nano /etc/nut/upsd.conf
+</code></pre>
+<p><strong>7.</strong> Şimdi bu dosyanın altına aşağıdaki satırı ekleyin. Bu satır, cihazlarınızın NUT sunucusuna bağlanmasına ve onunla konuşmasına izin verecektir.</p>
+<p>NUT'un yalnızca belirli bir IP adresini dinlemesini istiyorsanız, &quot;<code>0.0.0.0</code>&quot; kısmını o IP ile değiştirin. Çoğu temel ev kullanımı için, muhtemelen NUT'u tüm ağ arayüzlerinde açığa çıkarmakla sorunsuz ilerleyebilirsiniz.</p>
+<pre><code>LISTEN 0.0.0.0 3493
+</code></pre>
+<p><strong>8.</strong> Bu satırı ekledikten sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<h3>Bir NUT Kullanıcısı Ayarlama</h3>
+<p><strong>9.</strong> Kullanıcıları ayarlamak için, &quot;<code>upsd.users</code>&quot; dosyasını değiştirmeniz gerekir. Bu dosya, Raspberry Pi'nizde çalışan NUT sunucusuna erişebilecek kullanıcıları tanımlamanızı sağlar.</p>
+<p>Bu dosyayı aşağıdaki komutu çalıştırarak Nano metin editörünü kullanarak düzenleyebilirsiniz.</p>
+<pre><code>sudo nano /etc/nut/upsd.users
+</code></pre>
+<p><strong>10.</strong> Bu dosyanın içine, dosyanın altına ek bir blok ekleyerek yeni kullanıcılar tanımlamak isteyeceksiniz. Yeni bir kullanıcı tanımlamak için, aşağıdaki şablonu kullanın.</p>
+<ul>
+<li>
+<p><code>&lt;USERNAME&gt;</code><strong>:</strong> Kullanıcınız için kullanmak istediğiniz kullanıcı adını belirleyin. Bu kullanıcı adı yalnızca harf ve rakam içermelidir. Örneğin, &quot;<code>pimon</code>&quot; geçerli bir kullanıcı olurdu.</p>
+</li>
+<li>
+<p><code>&lt;PASSWORD&gt;</code><strong>:</strong> Kullanıcınız için uzun ve güvenli bir şifre tanımlayın. UPS durumunuzu almak için Raspberry Pi NUT sunucunuza bağlanırken kullanacağınızdan, bu şifreyi bir yere not etmeniz gerekecek.</p>
+</li>
+<li>
+<p><code>upsmon primary</code><strong>:</strong> Bu satırı ayarlamıyoruz, ama bu, NUT sunucusuna bu kullanıcının mevcut NUT kurulumuna erişmek için kullanılacağını söyler. Bu kullanıcıyı uzak bir NUT sunucusunu izlemek için kullanmak isterseniz, &quot;<code>primary</code>&quot; kısmını &quot;<code>secondary</code>&quot; olarak değiştirirsiniz.</p>
+<p>[<USERNAME>]<br />
+password = <PASSWORD><br />
+upsmon primary</p>
+</li>
+</ul>
+<p>Örneğin, &quot;<code>pimylifeup</code>&quot; şifresine sahip &quot;<code>upsmon</code>&quot; adlı bir kullanıcı oluşturmak isteseydik, aşağıdaki satırları kullanırdık.</p>
+<pre><code>[upsmon]
+    password = pimylifeup
+    upsmon primary
+</code></pre>
+<p><strong>11.</strong> Kullanıcılarınızı eklemeyi bitirdikten sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<h3>Raspberry Pi'de NUT'u Bir Ağ Sunucusu Olarak Ayarlama</h3>
+<p><strong>12.</strong> Artık kullanıcılarımızı oluşturduğumuza ve NUT'a hangi UPS'leri izlemesi gerektiğini söylediğimize göre, NUT'u Raspberry Pi'mizde bir sunucu olarak çalışacak şekilde yeniden yapılandırabiliriz.</p>
+<p>Ağ sunucu modunu etkinleştirmek için, terminalde aşağıdaki komutu kullanarak &quot;<code>/etc/nut/nut.conf</code>&quot; yapılandırma dosyasını düzenlememiz gerekiyor.</p>
+<pre><code>sudo nano /etc/nut/nut.conf
+</code></pre>
+<p><strong>13.</strong> NUT sunucusunu koyabileceğimiz aslında dört farklı mod vardır:</p>
+<ul>
+<li><strong>none:</strong> Bu seçenekle, NUT &quot;yapılandırılmamış&quot; modunda olacaktır. Bu, NUT sunucusunun Raspberry Pi'nizde bileşenlerinden herhangi birini başlatmayacağı anlamına gelir.</li>
+<li><strong>standalone:</strong> Bu modla, hiçbir dış cihaz NUT sunucunuza erişemeyecektir.</li>
+<li><strong>netserver:</strong> NUT sunucunuza dış erişimi etkinleştirmek için, kullanmak isteyeceğiniz mod budur. Mevcut makine dışındaki cihazların izlenen bir UPS'in durumunu alabilmesini sağlar.</li>
+<li><strong>netclient:</strong> NUT'un saf bir istemci olarak çalışmasını sağlar. Bu modla, NUT bir NUT sunucusundan UPS bilgisi alır.</li>
+</ul>
+<p><strong>14.</strong> Raspberry Pi'mizi bir NUT sunucusu olarak çalışacak şekilde ayarladığımızdan, &quot;<code>netserver</code>&quot; seçeneğini kullanmak isteyeceğiz.</p>
+<p>Bu yapılandırma dosyasında, MODE seçeneğini bulana kadar aşağı kaydırın. Nano'nun arama işlevini kullanarak <code>CTRL</code> + <code>W</code> tuşuna basıp &quot;<code>MODE</code>&quot; yazarak ve ardından <code>ENTER</code> tuşuna basarak bunu daha kolay bulabilirsiniz.</p>
+<pre><code>MODE=none
+</code></pre>
+<p>Bu satırı bulduktan sonra, &quot;<code>none</code>&quot; kısmını &quot;<code>netserver</code>&quot; ile değiştirin.</p>
+<pre><code>MODE=netserver
+</code></pre>
+<p><strong>15.</strong> Bu değişikliği yaptıktan sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code> tuşu, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<h3>UPS'iniz İçin Raspberry Pi'nin NUT Sunucusunu Yeniden Başlatma ve Test Etme</h3>
+<p><strong>16.</strong> Tüm bu değişiklikleri yaptıktan sonra, Raspberry Pi'nizde NUT sunucusunu yeniden başlatmanız gerekir.</p>
+<p>Terminalde aşağıdaki komutu kullanarak sunucuyu yeniden başlatabilirsiniz.</p>
+<pre><code>sudo systemctl restart nut-server
+</code></pre>
+<p><strong>17.</strong> Servis yeniden başladıktan sonra, NUT sunucumuzun çalışıp çalışmadığını ve UPS'inizden bilgi almayı başarıp başaramadığını test edebiliriz.</p>
+<p>Bunu yapmak için, yapmanız gereken tek şey aşağıdaki komutu kullanmaktır. &quot;<code>upsc</code>&quot; komutu NUT istemcisine bir çağrıdır, hemen sonrasındaki değer ise bilgi aldığımız UPS'in adıdır.</p>
+<p>&quot;<code>&lt;UPSNAME&gt;</code>&quot; kısmını bağlı bir UPS'e atadığınız bir isimle değiştirin. Bu, daha önce &quot;<code>/etc/nut/ups.conf</code>&quot; dosyasında tanımladığınız değerdir.</p>
+<pre><code>upsc &lt;UPSNAME&gt;
+</code></pre>
+<p>Kullanıcı adınızı ve şifrenizi komuta sağlayarak kullanıcınızın doğru çalıştığını da test edebilirsiniz.</p>
+<pre><code>upsc &lt;UPSNAME&gt; -u &lt;USERNAME&gt; -p &lt;PASSWORD&gt;
+</code></pre>
+<p><strong>18.</strong> Aşağıda, Raspberry Pi NUT sunucunuzun UPS'inizden alabileceği bilgilere bir örnek bulunmaktadır.</p>
+<pre><code>Init SSL without certificate database
+battery.charge: 100
+battery.charge.low: 10
+battery.charge.warning: 20
+battery.mfr.date: CPS
+battery.runtime: 9000
+battery.runtime.low: 300
+battery.type: PbAcid
+battery.voltage: 24.0
+battery.voltage.nominal: 24
+device.mfr: CPS
+device.model: CP900EPFCLCD
+device.serial: 000000000000
+device.type: ups
+driver.name: usbhid-ups
+driver.parameter.pollfreq: 30
+driver.parameter.pollinterval: 2
+driver.parameter.port: auto
+driver.parameter.synchronous: no
+driver.version: 2.7.4
+driver.version.data: CyberPower HID 0.4
+driver.version.internal: 0.41
+input.transfer.high: 260
+input.transfer.low: 170
+input.voltage: 236.0
+input.voltage.nominal: 230
+output.voltage: 268.0
+ups.beeper.status: disabled
+ups.delay.shutdown: 20
+ups.delay.start: 30
+ups.load: 0
+ups.mfr: CPS
+ups.model: CP900EPFCLCD
+ups.productid: 0501
+ups.realpower.nominal: 540
+ups.serial: 000000000000
+ups.status: OL
+ups.test.result: No test initiated
+ups.timer.shutdown: -60
+ups.timer.start: -60
+ups.vendorid: 0764
+</code></pre>
+<h2>Raspberry Pi NUT Sunucunuzu Görüntülemek İçin Bir GUI Etkinleştirme</h2>
+<p>Artık Raspberry Pi'niz NUT ile kurulu ve bağlı UPS'i izliyor olduğuna göre, topladığı bilgileri görüntülemenin kolay bir yolunu isteyebilirsiniz.</p>
+<p>Burada takip edebileceğiniz iki seçenek var. Sonraki bölümde yaptığımız gibi NUT-CGI kurabilir veya alternatif olarak <a href="https://pimylifeup.com/raspberry-pi-peanut/">Pi'nize PeaNUT kurabilirsiniz</a>.</p>
+<p>Neyse ki, bu nispeten basittir çünkü NUT'un kendi web arayüzü vardır. Bu web arayüzü, bir NUT istemcisi kurmadan UPS'inizi uzaktan izlemenin kolay bir yolunu sağlar.</p>
+<p>Bu web sunucusu CGI betikleri kullanarak çalıştığından, aşağıdaki adımlar için Raspberry Pi'mizde <a href="https://pimylifeup.com/raspberry-pi-apache/">Apache</a> kullanacağız.</p>
+<h3>Nut-GUI Sunucusunu Kurma</h3>
+<p><strong>1.</strong> Bazı ek paketler kurmamız gerektiğinden, aşağıdaki komutu kullanarak paket listesinin güncel olduğundan emin olun.</p>
+<pre><code>sudo apt update
+</code></pre>
+<p><strong>2.</strong> Ardından, Apache web sunucusunu ve NUT-CGI yazılımını kurun. &quot;<code>NUT-CGI</code>&quot;, Raspberry Pi'nize bağlı UPS'i web üzerinden izlemenizi sağlar.</p>
+<p>Terminalde aşağıdaki komutu kullanarak bu ek paketleri kurabilirsiniz.</p>
+<pre><code>sudo apt install apache2 nut-cgi
+</code></pre>
+<p><strong>3.</strong> NUT-GUI'nin Raspberry Pi'mizde çalışması için, &quot;<code>hosts</code>&quot; yapılandırma dosyasını değiştirmemiz gerekiyor.</p>
+<p>Bu dosyayı aşağıdaki komutu kullanarak düzenlemeye başlayabilirsiniz.</p>
+<pre><code>sudo nano /etc/nut/hosts.conf
+</code></pre>
+<p><strong>4.</strong> Bu dosyanın altına, aşağıdaki satırı girmek isteyeceksiniz. Bu satır yeni bir monitör tanımlar, izlenecek UPS'i belirtir ve ona bir görüntüleme adı atar.</p>
+<p>Bu satırı doldururken değiştirmeniz gereken iki yer tutucu vardır.</p>
+<ul>
+<li>
+<p><code>&lt;UPSNAME&gt;</code><strong>:</strong> &quot;<code>&lt;UPSNAME&gt;</code>&quot; kısmını bu rehberde daha önce bu belirli işletim sistemine atadığınız isimle değiştirin. Örneğimizde yapılandırdığımız UPS'e bağlanmak için, bunu &quot;<code>ups</code>&quot; ile değiştirirdik.</p>
+</li>
+<li>
+<p><code>&lt;DISPALYTEXT&gt;</code><strong>:</strong> Bu yer tutucuyu UPS'inizi kısaca açıklayan bir metinle değiştirin. Bu metin NUT web arayüzü içinde kullanılır. Bu örnek için, metnimiz olarak sadece &quot;<code>Local UPS</code>&quot; kullanacağız.</p>
+<p>MONITOR <UPSNAME>@localhost &quot;<DISPLAYTEXT>&quot;</p>
+</li>
+</ul>
+<p><strong>5.</strong> Bu değişikliği yaptıktan sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<p><strong>6.</strong> Bir sonraki adımımız, &quot;<code>CGI</code>&quot; Apache 2 modülünü etkinleştirmektir.</p>
+<p>Terminalde aşağıdaki komutu çalıştırarak bu modülü etkinleştirebilirsiniz.</p>
+<pre><code>sudo a2enmod cgi
+</code></pre>
+<p><strong>7.</strong> Her şeyin çalışması için, Apache web sunucusunu yeniden başlatmanız gerekir.</p>
+<p>Raspberry Pi'nizde aşağıdaki komutu çalıştırarak sunucuyu yeniden başlatın.</p>
+<pre><code>sudo systemctl restart apache2
+</code></pre>
+<h3>NUT-CGI Web Arayüzüne Erişim</h3>
+<p><strong>8.</strong> Artık Raspberry Pi'nizde NUT web sunucusu olduğuna göre, oluşturduğu arayüzü görüntüleyebilirsiniz.</p>
+<p>Bu web arayüzüne erişmek için, <a href="https://pimylifeup.com/raspberry-pi-ip-address/">Pi'nizin IP Adresini</a> bilmeniz gerekecek. Bu adresi <a href="https://pimylifeup.com/hostname-command/">hostname komutunu kullanarak</a> kolayca bulabilirsiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>9.</strong> Raspberry Pi'nizin IP adresini aldıktan sonra, favori web tarayıcınızda aşağıdaki URL'ye giderek NUT'un web arayüzüne erişebilirsiniz.</p>
+<p>&quot;<code>&lt;IPADDRESS&gt;</code>&quot; kısmını Raspberry Pi'nizin IP'siyle değiştirdiğinizden emin olun.</p>
+<pre><code>http://&lt;IPADRESI&gt;/cgi-bin/nut/upsstats.cgi
+</code></pre>
+<p><strong>10.</strong> URL'ye giderek aşağıdaki web arayüzünü görmelisiniz. Bu sayfa, Raspberry Pi'nizin bağlı olduğu tüm UPS'leri hızlıca izlemenizi sağlar.</p>
+<p>UPS'inizin daha ayrıntılı bir görünümünü istiyorsanız, &quot;<code>System</code>&quot; sütununun altındaki bağlantıya <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-UPS-Nut-Server-01-Web-Interface.png" alt="Raspberry Pi NUT Sunucusu UPS Listesi" /></p>
+<p><strong>11.</strong> Daha ayrıntılı görünüme erişirseniz, UPS'inizin önemli bilgilerini basit bir çubuk grafikle sunulmuş olarak göreceksiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-UPS-Nut-Server-02-UPS-Overview.png" alt="NUT UPS Genel Görünümü" /></p>
+<h2>Sonuç</h2>
+<p>Umarız bu eğitimin bu noktasında, artık Raspberry Pi'niz NUT ile kurulu ve bir UPS'i başarıyla izliyor olacaktır.</p>
+<p>Kapsamlı uyumluluk listesi sayesinde, NUT bir UPS'i izlemek için başvurulacak araçlardan biridir.</p>
+<p>Raspberry Pi'nizde bir NUT sunucusunu çalışır hale getirirken herhangi bir sorunla karşılaştıysanız, aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-nut-server.html&amp;text=Raspberry+Pi%27de+NUT+ile+UPS+%C4%B0zleme" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-nut-server.html&amp;text=Raspberry+Pi%27de+NUT+ile+UPS+%C4%B0zleme" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-nut-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-nut-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-nut-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-nut-server.html&amp;title=Raspberry+Pi%27de+NUT+ile+UPS+%C4%B0zleme" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+NUT+ile+UPS+%C4%B0zleme%20codenfast.com%2Fposts%2Fraspberry-pi-nut-server.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

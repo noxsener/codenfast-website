@@ -1,0 +1,323 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de Kendi TeamSpeak Sunucunuzu Oluşturun - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Popüler VoIP sistemi Pi üzerinde"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de Kendi TeamSpeak Sunucunuzu Oluşturun"/>
+    <meta property="og:description"
+          content="Popüler VoIP sistemi Pi üzerinde"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-teamspeak.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-teamspeak.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-TeamSpeak-Server-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de Kendi TeamSpeak Sunucunuzu Oluşturun"/>
+    <meta name="twitter:description"
+          content="Popüler VoIP sistemi Pi üzerinde"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-TeamSpeak-Server-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de Kendi TeamSpeak Sunucunuzu Oluşturun","item":{"@id":"https://codenfast.com/posts/raspberry-pi-teamspeak.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-TeamSpeak-Server-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-TeamSpeak-Server-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-TeamSpeak-Server-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-TeamSpeak-Server-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-pi-TeamSpeak-Server-Successfully-Running.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-pi-TeamSpeak-Server-Successfully-Running.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de Kendi TeamSpeak Sunucunuzu Oluşturun","description":"Popüler VoIP sistemi Pi üzerinde","image":["https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-TeamSpeak-Server-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T13:00:01.792249+03:00","dateModified":"2026-08-03T13:00:01.792274+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de Kendi TeamSpeak Sunucunuzu Oluşturun</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-teamspeak/">PiMyLifeUp - Creating your own Raspberry Pi TeamSpeak Server</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'nizde bir TeamSpeak sunucusunu nasıl çalıştıracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-TeamSpeak-Server-Thumbnail.jpg" alt="Raspberry Pi TeamSpeak Sunucusu" /></p>
+<p>TeamSpeak, çevrimiçi oyuna odaklanan, en popüler VoIP iletişim sistemlerinden biridir.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-mumble-server/">Mumble</a> veya Discord gibi rakip yazılımların yükselişine rağmen, TeamSpeak popülerliğini korumayı başarmıştır.</p>
+<p>Popülerliği büyük ölçüde düşük gecikmesine, harika yapılandırılabilirliğe sahip iyi kalitede sese borçludur.</p>
+<p>Raspberry Pi'nizde bir <a href="https://www.teamspeak.com/">TeamSpeak</a> sunucusu çalıştırmak en basit görev değildir, çünkü yalnızca bir x86 uygulaması olarak mevcuttur.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-x86/">box86 emülatörünün</a> gücü sayesinde, Pi destekli TeamSpeak sunucunuzu kısa sürede çalışır hale getirebiliriz.</p>
+<h2>Raspberry Pi'nizi TeamSpeak Sunucusu için Hazırlama</h2>
+<p>Raspberry Pi'nize TeamSpeak sunucusunu kurmadan önce, bazı ilk kurulum işlerini yapmanız gerekir.</p>
+<p>Bu adımlar esas olarak sunucu yazılımını Pi'mizde çalıştırabilmemiz için Box86 emülatörünü kurmayı içerir.</p>
+<p><strong>1.</strong> Bu rehbere devam etmeden önce, sisteminizde box86 emülatörünün kurulu olduğundan emin olmanız gerekir.</p>
+<p>Web sitemizde <a href="https://pimylifeup.com/raspberry-pi-x86/">box86'yı nasıl kuracağınızı</a> detaylandıran bir rehber yazdık.</p>
+<p>box86, x86 talimatlarını Pi'nizin işlemcisinin anlayabileceği ARM talimatlarına dönüştüren kullanışlı bir yazılım parçasıdır.</p>
+<p><strong>2.</strong> box86'yı kurduktan sonra, üzerinde çalışacağımız güncel bir sisteme sahip olduğumuzdan emin olalım.</p>
+<p>Aşağıdaki iki komutu çalıştırarak <a href="https://pimylifeup.com/raspberry-pi-update/">Raspberry Pi'nizi güncelleyebilirsiniz</a>.</p>
+<pre><code>sudo apt update
+sudo apt full-upgrade
+</code></pre>
+<p><strong>3.</strong> Son olarak, Pi'mize <code>jq</code> paketini kurmamız gerekiyor.</p>
+<p>Bu paketi aşağıdaki komutu kullanarak kurun.</p>
+<pre><code>sudo apt install jq
+</code></pre>
+<p>TeamSpeak yazılımı <code>jq</code>ya ihtiyaç duymasa da, en son sürümü indirme sürecini basitleştirir.</p>
+<h2>Raspberry Pi'ye TeamSpeak Sunucusunu Kurma</h2>
+<p>Raspberry Pi'miz artık hazır olduğuna göre, TeamSpeak Sunucusu yazılımını Raspberry Pi'mize kurabiliriz.</p>
+<p><strong>1.</strong> Yapmamız gereken tek şey, aşağıdaki <a href="https://pimylifeup.com/wget-command-linux/">wget komutunu</a> kullanarak sunucu yazılımının en son x86 Linux sürümünü indirmektir.</p>
+<pre><code>wget $(curl -Ls 'https://www.teamspeak.com/versions/server.json' | jq -r '.linux.x86.mirrors | values[]')
+</code></pre>
+<p>Bu küçük tek satırlık komut, işleri kolaylaştırmak için birkaç şey yapar.</p>
+<p>Öncelikle, sürüm numaralarını içeren <a href="https://www.teamspeak.com/versions/server.json">server.json</a> dosyasını alıp <code>jq</code> paketine iletiyoruz.</p>
+<p>Bu dosyadaki JSON verisini yorumlamak ve TeamSpeak sunucusunun en son sürümünün indirme bağlantısını almak için <code>jq</code> kullanıyoruz.</p>
+<p><strong>2.</strong> Komut tamamlanıp arşiv cihazınıza indirildiğinde, onu çıkarabiliriz.</p>
+<p>TeamSpeak sunucusunu Raspberry Pi'mize çıkarmak için, aşağıdaki <a href="https://pimylifeup.com/tar-command-linux/">tar komutunu</a> çalıştırabiliriz.</p>
+<pre><code>tar xvf teamspeak3-server_linux_x86-*
+</code></pre>
+<p>Komutun sonunda, &quot;<code>teamspeak3-server_linux_x86-</code>&quot; ile başlayan herhangi bir arşivi almak için yıldız işaretini (<code>*</code>) kullanıyoruz.</p>
+<p>Yıldız işaretini kullanmak, komutun arşivin herhangi bir yeni sürümüyle çalışmasına olanak tanır.</p>
+<p><strong>3.</strong> Arşivi çıkardığımıza göre, artık ona ihtiyacımız yok ve arkasını temizlemeliyiz.</p>
+<p>Raspberry Pi'nizde aşağıdaki komutu çalıştırarak arşivi silebiliriz.</p>
+<pre><code>rm teamspeak3-server_linux_x86-*
+</code></pre>
+<h2>TeamSpeak Sunucusunu Çalıştırma</h2>
+<p>Son olarak, TeamSpeak sunucu yazılımını Raspberry Pi'mizde çalışır hale getirmeye geçebiliriz.</p>
+<p>box86'nın çalışma şekli sayesinde süreç zahmetsiz hale getirilmiştir. Bu, TeamSpeak gibi bir x86 uygulamasını standart bir ARM programıymış gibi çalıştırmamıza olanak tanır.</p>
+<p><strong>1.</strong> Sunucu yazılımını çıkardığımız dizine geçin.</p>
+<p>Aşağıdaki komutu çalıştırarak dizine geçebiliriz.</p>
+<pre><code>cd teamspeak3-server_linux_x86
+</code></pre>
+<p><strong>2.</strong> TeamSpeak sunucusunu ilk kez çalıştırmadan önce, lisans sözleşmelerini kabul etmeniz gerekecek.</p>
+<p>Lisans sözleşmesini okuduktan sonra, kabul dosyasını oluşturmak için aşağıdaki komutu yazabilirsiniz.</p>
+<pre><code>touch .ts3server_license_accepted
+</code></pre>
+<p><strong>3.</strong> Lisansı kabul ettikten sonra, sonunda sunucu yazılımını çalıştırabilirsiniz.</p>
+<p>TeamSpeak sunucu yazılımını çalıştırmak için Raspberry Pi'nizde aşağıdaki komutu kullanın.</p>
+<pre><code>./ts3server
+</code></pre>
+<p><strong>4.</strong> TeamSpeak sunucusunu ilk çalıştırdığınızda, size birkaç önemli bilgi parçası sunulacaktır.</p>
+<p>Sağlanan ilk detaylar (<strong>1.</strong>), bir query hesabı olarak TeamSpeak sunucunuza giriş yapmak için gereken detaylardır. Bu hesabı, TeamSpeak sunucunuzun detaylarını almak için kullanabilirsiniz.</p>
+<p>Sağlanan ikinci token (<strong>2.</strong>), normal kullanıcınızı bir sunucu yöneticisine yükseltmenizi sağlar.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-pi-TeamSpeak-Server-Successfully-Running.png" alt="Raspberry Pi TeamSpeak Sunucusu Başarıyla Çalışıyor" /></p>
+<h2>Sunucuyu Önyüklemede Başlatma</h2>
+<p>Son bölümde, Raspberry Pi'nizi başlangıçta TeamSpeak sunucusunu başlatacak şekilde nasıl yapılandıracağınızı göstereceğiz.</p>
+<p>Bunu, çalışma dizinini ayarlayan ve sunucuyu başlatan bir servis dosyası oluşturarak yapıyoruz.</p>
+<p><strong>1.</strong> Servisimiz için dosyayı <a href="https://pimylifeup.com/nano-text-editor/">nano metin editörünü kullanarak</a> yazmaya başlayabiliriz.</p>
+<p>Terminalde, servisi yazmaya başlamak için aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo nano /etc/systemd/system/teamspeak3.service
+</code></pre>
+<p><strong>2.</strong> Bu dosyanın içine aşağıdaki metin satırlarını girin.</p>
+<p>Bu metin, servis yöneticisine hangi dosyayı çalıştırması gerektiğini ve hangi dizinden çalışması gerektiğini söyleyecektir.</p>
+<pre><code>[Unit]
+Description=TeamSpeak 3 Server
+After=network.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/teamspeak3-server_linux_x86/
+ExecStart=/home/pi/teamspeak3-server_linux_x86/ts3server
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p><strong>3.</strong> <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak bu dosyanın içeriğini kaydedin.</p>
+<p><strong>4.</strong> Şimdi yeni oluşturduğumuz servisi, sistem açıldığında başlayacak şekilde etkinleştirebiliriz.</p>
+<p>Yapmamız gereken tek şey, <code>systemctl</code>e servisi etkinleştirmesini söyleyen aşağıdaki komutu çalıştırmaktır.</p>
+<pre><code>sudo systemctl enable teamspeak3
+</code></pre>
+<p><strong>5.</strong> TeamSpeak sunucusunu Raspberry Pi'nizde şimdi başlatmak isterseniz, aşağıdaki komutu kullanabilirsiniz.</p>
+<p>Bu komut, servis yöneticisine servisimizi hemen başlatmasını talimatlandırır.</p>
+<pre><code>sudo systemctl start teamspeak3
+</code></pre>
+<h2>Sonuç</h2>
+<p>Bu rehber boyunca, TeamSpeak sunucusunu Raspberry Pi'ye nasıl kuracağınızı öğrenmiş olacaksınız.</p>
+<p>Bu yazılımı güçlü box86 emülatörünü kullanarak çalışır hale getirmeyi başardık.</p>
+<p>Ayrıca artık TeamSpeak için oluşturulmuş bir servise sahip olmalısınız, böylece onu nispeten kolay bir şekilde başlatıp durdurabilirsiniz.</p>
+<p>TeamSpeak sunucusunu Raspberry Pi'de doğru şekilde çalıştırmakla ilgili sorunlarla karşılaştıysanız, lütfen aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-teamspeak.html&amp;text=Raspberry+Pi%27de+Kendi+TeamSpeak+Sunucunuzu+Olu%C5%9Fturun" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-teamspeak.html&amp;text=Raspberry+Pi%27de+Kendi+TeamSpeak+Sunucunuzu+Olu%C5%9Fturun" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-teamspeak.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-teamspeak.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-teamspeak.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-teamspeak.html&amp;title=Raspberry+Pi%27de+Kendi+TeamSpeak+Sunucunuzu+Olu%C5%9Fturun" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+Kendi+TeamSpeak+Sunucunuzu+Olu%C5%9Fturun%20codenfast.com%2Fposts%2Fraspberry-pi-teamspeak.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

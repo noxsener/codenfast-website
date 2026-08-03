@@ -1,0 +1,347 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de OneDev Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Hafif ama özellik dolu bir Git sunucusu"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de OneDev Kurulumu"/>
+    <meta property="og:description"
+          content="Hafif ama özellik dolu bir Git sunucusu"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-onedev.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-onedev.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-OneDev-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de OneDev Kurulumu"/>
+    <meta name="twitter:description"
+          content="Hafif ama özellik dolu bir Git sunucusu"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-OneDev-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de OneDev Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-onedev.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-OneDev-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-OneDev-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-OneDev-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-OneDev-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-OneDev-01-Initial-Server-Setup.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-OneDev-01-Initial-Server-Setup.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-OneDev-02-Set-Server-URL.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-OneDev-02-Set-Server-URL.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-OneDev-03-OneDev-Installed-and-Running.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-OneDev-03-OneDev-Installed-and-Running.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de OneDev Kurulumu","description":"Hafif ama özellik dolu bir Git sunucusu","image":["https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-OneDev-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T11:57:27.474859+03:00","dateModified":"2026-08-03T11:57:27.474887+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de OneDev Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-onedev/">PiMyLifeUp - Setting up OneDev on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'nize OneDev'i nasıl kuracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-OneDev-Thumbnail.jpg" alt="Raspberry Pi OneDev" /></p>
+<p>OneDev, GitHub, GitLab ve BitBucket gibi bulut hizmetlerinden beklediğiniz özelliklerin birçoğuna sahip, kendi kendine barındırılan bir GIT sunucusudur.</p>
+<p>Bu yazılımın temel özelliklerinden biri, kodunuzu analiz edebilmesi ve OneDev'in mükemmel web arayüzü üzerinden kolayca aranabilir hale getirmesidir.</p>
+<p>Bu GIT sunucusunun hatta yerleşik CI (Sürekli Entegrasyon) ve CD (Sürekli Teslimat) özelliği ve Docker konteynerleri gibi ikili paketleri yayınlama yeteneği bile vardır.</p>
+<p>OneDev'in burada ele almayacağımız başka birçok özelliği var, ancak ilgileniyorsanız, <a href="https://github.com/theonedev/onedev">GitHub sayfasına</a> göz atmaya değer.</p>
+<p>Hepsinden iyisi, OneDev oldukça hafif olduğundan bir Raspberry Pi'de mükemmel çalışacaktır. İhtiyacınız olan tek şey, en az 2GB belleğe ve 64-bit desteğine sahip bir Pi'dir.</p>
+<h2>Raspberry Pi'ye OneDev Kurulumu</h2>
+<p>Aşağıdaki bölümlerde, OneDev Git sunucusunu Raspberry Pi'nize kurma sürecinde size rehberlik edeceğiz.</p>
+<p>Devam etmeden önce, Raspberry Pi OS'nin 64-bit bir sürümünü çalıştırıyor olmanız gerekir. OneDev, 32-bit sistemler için Docker imajları sağlamaz.</p>
+<h3>OneDev'i Çalıştırmak İçin Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> Başlamadan önce, terminalde aşağıdaki iki komutu kullanarak Raspberry Pi'nizin güncel olduğundan emin olmalısınız.</p>
+<p>İlk komut paket listesi önbelleğini güncelleyecektir. İkincisi ise güncel olmayan tüm paketleri yükseltecektir.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>2.</strong> Bir sonraki adımınız, Raspberry Pi'nize Docker kurmaktır. Bu yazılımı çalıştırmayı basitleştirdiğinden, OneDev'i çalıştırmak için Docker kullanacağız.</p>
+<p>Her şeyi bu eğitimin beklediği gibi ayarlayacağından, <a href="https://pimylifeup.com/raspberry-pi-docker/">Docker kurma rehberimizi</a> takip etmenizi şiddetle tavsiye ederiz.</p>
+<p><strong>3.</strong> Docker'ı kurduktan sonra, Raspberry Pi'mizi OneDev için hazırlamaya devam edebiliriz.</p>
+<p>Bir sonraki adımımız, OneDev için bir Compose dosyasını saklamak amacıyla bir dizin oluşturmaktır. Bu, OneDev'in veritabanı gibi verilerini de saklayacağımız aynı dizin olacaktır.</p>
+<p>Bu dizini oluşturmak için, aşağıda gösterildiği gibi <a href="https://pimylifeup.com/mkdir-command-linux/">mkdir komutunu kullanmak</a> isteyeceksiniz.</p>
+<pre><code>sudo mkdir /opt/stacks/onedev
+</code></pre>
+<p><strong>4.</strong> Dizini oluşturduktan sonra, içine geçmek isteyeceksiniz.</p>
+<p>Eğitimin geri kalanı için, bu klasörde olmanız beklenecektir.</p>
+<pre><code>cd /opt/stacks/onedev
+</code></pre>
+<h3>Raspberry Pi'de OneDev'i Çalıştırmak İçin Bir Docker Compose Dosyası Yazma</h3>
+<p><strong>5.</strong> Artık Raspberry Pi'miz, OneDev için Compose dosyasını yazabileceğimiz bir noktada.</p>
+<p>Bir Compose dosyası, OneDev gibi bir konteyner kurarken Docker'ın takip edeceği bir talimatlar kümesi gibidir. Konteynerlerinizi yönetmeyi önemli ölçüde daha basit bir süreç haline getirir.</p>
+<p>Bu Compose dosyasını yazmaya, aşağıdaki komutu kullanarak <a href="https://pimylifeup.com/nano-text-editor/">nano metin editörünü kullanarak</a> başlayabilirsiniz.</p>
+<pre><code>sudo nano compose.yaml
+</code></pre>
+<p>Raspberry Pi'nizde Compose dosyalarını yönetmenin harika bir yolunu istiyorsanız, <a href="https://pimylifeup.com/raspberry-pi-dockge/">Dockge'ye göz atmanızı</a> şiddetle tavsiye ederiz.</p>
+<p><strong>6.</strong> Bu dosyanın içine, aşağıdaki satırları yazmak isteyeceksiniz.</p>
+<p>&quot;<code>&lt;DATABASEPASSWORD&gt;</code>&quot; kısmını güvenli bir şifreyle değiştirdiğinizden emin olun. Bu, OneDev'in aynı Compose dosyasında kurduğumuz PostgreSQL sunucusuyla konuşmak için kullanacağı şifredir.</p>
+<pre><code>version: '3.8'
+
+services:
+   app:
+      image: '1dev/server:latest'
+      container_name: 'onedev-app'
+      restart: unless-stopped
+      environment:
+         - hibernate_dialect=io.onedev.server.persistence.PostgreSQLDialect
+         - hibernate_connection_driver_class=org.postgresql.Driver
+         - hibernate_connection_url=jdbc:postgresql://onedev-db:5432/onedevb
+         - hibernate_connection_username=onedevusr
+         - hibernate_connection_password=&lt;DATABASEPASSWORD&gt;
+      volumes:
+         - ./data:/opt/onedev
+         - /var/run/docker.sock:/var/run/docker.sock
+      ports:
+         - '6610:6610'
+      depends_on:
+         db:
+            condition: service_healthy
+   db:
+      image: 'postgres:latest'
+      container_name: 'onedev-db'
+      restart: 'unless-stopped'
+      environment:
+         - PGUSER=onedevusr
+         - POSTGRES_USER=onedevusr
+         - POSTGRES_PASSWORD=&lt;DATABASEPASSWORD&gt;
+         - POSTGRES_DB=onedevdb
+      volumes:
+         - ./postgresql:/var/lib/postgresql/data
+      healthcheck:
+         test: [&quot;CMD-SHELL&quot;, &quot;pg_isready -U onedevusr -d onedevdb&quot;]
+         interval: 5s
+         timeout: 5s
+         retries: 60
+</code></pre>
+<p><strong>7.</strong> Yukarıdaki tüm satırları yazdıktan sonra, <code>CTRL</code> + <code>X</code>, <code>Y</code> ve ardından <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<h3>Raspberry Pi'nizde OneDev'i Başlatma</h3>
+<p><strong>8.</strong> Compose dosyasını yazdığımıza göre, Raspberry Pi'mizde OneDev sunucusunu başlatmak için yapmamız gereken tek şey aşağıdaki komutu çalıştırmaktır.</p>
+<p>Bu süreç, OneDev ve PostgreSQL için Docker imajlarını indirmesi gerektiğinden tamamlanması birkaç dakika sürebilir. İlk çalıştırmadan sonra, sunucu süper hızlı başlamalı.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h3>OneDev Web Arayüzüne Erişim</h3>
+<p><strong>9.</strong> OneDev'in web arayüzüne erişmek için, Raspberry Pi'nizin IP adresini bilmeniz gerekecek.</p>
+<p>Bu IP adresini çeşitli şekillerde alabilirsiniz, ancak en kolay yollarından biri <a href="https://pimylifeup.com/hostname-command/">hostname komutunu kullanmaktır</a>.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>10.</strong> IP adresinizi öğrendikten sonra, favori web tarayıcınızda aşağıdaki adrese gitmek isteyeceksiniz.</p>
+<p>&quot;<code>&lt;IPADRESI&gt;</code>&quot; kısmını Raspberry Pi'nizin IP'siyle değiştirdiğinizden emin olun.</p>
+<pre><code>http://&lt;IPADRESI&gt;:6610
+</code></pre>
+<h3>OneDev'in İlk Kurulum Deneyimi</h3>
+<p><strong>11.</strong> OneDev web arayüzüne ilk kez eriştiğinizde, bir admin kullanıcısı oluşturmanız gerekir.</p>
+<p>Bu metin kutularını admin hesabınız için kullanmak istediğiniz bilgilerle doldurun (<strong>1.</strong>).</p>
+<p>Bilgilerinizi tamamladıktan sonra, devam etmek için &quot;<code>Next</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-OneDev-01-Initial-Server-Setup.jpg" alt="Raspberry Pi OneDev sunucusu için Admin hesabı oluşturma" /></p>
+<p><strong>12.</strong> Ardından, OneDev sizden OneDev'e hangi adresten erişilebileceğini belirtmenizi isteyecektir.</p>
+<p>Bu metin kutusunu kullanarak, IP adresinizi veya alan adınızı (<strong>1.</strong>) yazıp ardından &quot;<code>6610</code>&quot; portunu ekleyeceksiniz. Raspberry Pi'mize ve OneDev'e yerel olarak bağlandığımızdan, adresimiz olarak &quot;<code>192.168.0.73:6610</code>&quot; kullanacağız.</p>
+<p>Doğru adresi girdiğinizden emin olduğunuzda, OneDev kurulumunu tamamlamak için &quot;<code>Finish</code>&quot; düğmesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-OneDev-02-Set-Server-URL.jpg" alt="Sunucu URL'sini yazma" /></p>
+<p><strong>13.</strong> Artık ilk projenizi oluşturarak ve kodunuzu bu Git sunucusuna göndererek veya taşıyarak OneDev'i kullanmaya başlayabilirsiniz.</p>
+<p>Arayüzde epey şey var, bu yüzden zaman ayırıp keşfetmeniz ve her şeye aşina olmanız buna değer.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-OneDev-03-OneDev-Installed-and-Running.jpg" alt="Raspberry Pi'de Kurulu ve Çalışan OneDev" /></p>
+<h2>Raspberry Pi'de OneDev Konteynerini Güncelleme</h2>
+<p>Raspberry Pi'nizde OneDev'i çalıştırmak için Docker kullanmanın bir avantajı, basit güncelleme sürecidir.</p>
+<p>Sonraki birkaç adım, en son sürüme güncellemenin ne kadar kolay olduğunu gösterecek.</p>
+<p><strong>1.</strong> Öncelikle, OneDev için Compose dosyasını yazdığımız dizine geçmelisiniz.</p>
+<p>Aşağıdaki komutu çalıştırarak bu dizine geçebilirsiniz.</p>
+<pre><code>cd /opt/stacks/onedev
+</code></pre>
+<p><strong>2.</strong> Doğru dizine geçtikten sonra, Docker'a OneDev'in en son sürümünü çekmesini söylemek isteyeceksiniz.</p>
+<p>Docker'ın en son imajı indirmesini sağlamak, aşağıdaki komutu kullanmak kadar basittir.</p>
+<pre><code>docker compose pull
+</code></pre>
+<p><strong>3.</strong> Docker OneDev'in yeni bir sürümünü indirmiş olsa da, çalışan konteyneri otomatik olarak buna geçirmeyecektir.</p>
+<p>Neyse ki OneDev'i başlatmak için kullandığımız aynı komutu kullanırsak, Docker yeni imajı otomatik olarak algılayacak ve çalışan konteynerimizi yeni sürümü kullanarak yeniden başlatacaktır.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h2>Sonuç</h2>
+<p>Bu rehberin bu noktasında, artık Raspberry Pi'nizde OneDev Git sunucusu çalışıyor olmalıdır.</p>
+<p>Artık bu sunucuyu, GitHub gibi bulut hizmetlerinin sunduğu birçok özellikle tüm kodunuzu barındırmak için kullanabilirsiniz.</p>
+<p>OneDev'i Pi'nizde kullanma hakkında sorularınız varsa, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-onedev.html&amp;text=Raspberry+Pi%27de+OneDev+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-onedev.html&amp;text=Raspberry+Pi%27de+OneDev+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-onedev.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-onedev.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-onedev.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-onedev.html&amp;title=Raspberry+Pi%27de+OneDev+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+OneDev+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-onedev.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

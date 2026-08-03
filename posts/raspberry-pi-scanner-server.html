@@ -1,0 +1,436 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>SANE Kullanarak Raspberry Pi Tarayıcı Sunucusu Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="SANE Yazılımını Kullanma"/>
+    <meta property="og:title" content="SANE Kullanarak Raspberry Pi Tarayıcı Sunucusu Kurulumu"/>
+    <meta property="og:description"
+          content="SANE Yazılımını Kullanma"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-scanner-server.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-scanner-server.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2021/11/Raspberry-Pi-Scanner-Server-using-SANE-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="SANE Kullanarak Raspberry Pi Tarayıcı Sunucusu Kurulumu"/>
+    <meta name="twitter:description"
+          content="SANE Yazılımını Kullanma"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2021/11/Raspberry-Pi-Scanner-Server-using-SANE-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"SANE Kullanarak Raspberry Pi Tarayıcı Sunucusu Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-scanner-server.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/11/Raspberry-Pi-Scanner-Server-using-SANE-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/11/Raspberry-Pi-Scanner-Server-using-SANE-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/11/Raspberry-Pi-Scanner-Server-using-SANE-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/11/Raspberry-Pi-Scanner-Server-using-SANE-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"SANE Kullanarak Raspberry Pi Tarayıcı Sunucusu Kurulumu","description":"SANE Yazılımını Kullanma","image":["https://pimylifeup.com/wp-content/uploads/2021/11/Raspberry-Pi-Scanner-Server-using-SANE-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:47:10.629594+03:00","dateModified":"2026-08-03T12:47:10.629616+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>SANE Kullanarak Raspberry Pi Tarayıcı Sunucusu Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-scanner-server/">PiMyLifeUp - Setting up a Raspberry Pi Scanner Server using SANE</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitim, SANE yazılımını kullanarak Raspberry Pi'nizi bir tarayıcı sunucusu olarak nasıl kurabileceğinizi gösterecek.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/11/Raspberry-Pi-Scanner-Server-using-SANE-Thumbnail.jpg" alt="SANE Kullanarak Raspberry Pi Tarayıcı Sunucusu" /></p>
+<p>Bu yazılımı daha önce hiç duymayanlar için, SANE <strong>S</strong>canner <strong>A</strong>ccess <strong>N</strong>ow <strong>E</strong>asy anlamına gelir. Bu yazılım, tarayıcılara erişmek için standartlaştırılmış bir yol görevi görür.</p>
+<p>Bu rehberde, Raspberry Pi'nize bağlı desteklenen bir tarayıcıyla konuşmak için SANE'yi nasıl kullanacağınızı öğreneceksiniz.</p>
+<p>Hatta Raspberry Pi'nizi bir tarayıcı sunucusuna dönüştürerek bunu bir adım öteye nasıl taşıyabileceğinizi de göstereceğiz, bu da bağlı olmayan bir bilgisayardan belge taramanızı sağlar.</p>
+<p>Pi'nizi bir tarayıcı sunucusu olarak kurmak, eski tarayıcınızı modernize etmenin harika bir yoludur. Örneğin, Wi-Fi özellikli bir tarayıcı satın almak yerine, Raspberry Pi Zero gibi bir cihaz kullanarak bu işlevselliği ekleyebilirsiniz.</p>
+<p>Bu proje, zaten <a href="https://pimylifeup.com/raspberry-pi-print-server/">Raspberry Pi'lerini bir yazıcı sunucusu olarak kullananlar</a> için mükemmel bir eşlik eder.</p>
+<p>Windows kendi tescilli API'sini kullandığından, SANE'nin yerleşik araçlarla doğal olarak çalışmadığını lütfen unutmayın. Bunun yerine, SANE protokolünü destekleyen üçüncü taraf bir istemci kullanmanız gerekecek.</p>
+<h2>Raspberry Pi'ye SANE Yazılımı Kurulumu</h2>
+<p>Resmi paket deposundan mevcut olduğundan, bir Raspberry Pi'ye SANE yazılımını kurmak basit bir süreçtir.</p>
+<p>Bunun tek dezavantajı, Pi'nin deposundaki SANE sürümünün genellikle resmi sürümden çok daha eski olmasıdır.</p>
+<p><strong>1.</strong> Bu yazının yayınlandığı tarih itibarıyla, depo üzerinden sağlanan tarayıcı yazılımının sürümü <strong>1.0.27</strong>'dir. Bu sürümün desteklediği tarayıcıların listesini <a href="http://www.sane-project.org/sane-backends-1.0.27.html">resmi SANE web sitesinde</a> kontrol edebilirsiniz.</p>
+<p>Bu <strong>sürüm tarayıcınızı desteklemiyorsa</strong>, <a href="http://www.sane-project.org/sane-mfgs.html">en son uyumluluk listesini kontrol edin</a>. En son sürüm tarayıcıyı destekliyorsa, lütfen &quot;Kaynak Koddan SANE Derleme&quot; bölümüne geçin.</p>
+<p><strong>2.</strong> SANE'yi kurmadan önce, paket listesini güncellemeli ve güncel olmayan tüm paketleri yükseltmeliyiz.</p>
+<p>Cihazınızda aşağıdaki iki komutu kullanarak her iki işlemi de gerçekleştirebiliriz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>3.</strong> Paket listesi güncel olduğuna göre, artık aşağıdaki komutu kullanarak SANE'yi kurabiliriz.</p>
+<pre><code>sudo apt install sane
+</code></pre>
+<p>Bir Raspberry Pi'de SANE'yi çalıştırmak için ihtiyacınız olan tek şey bu. Çoğu tarayıcı umarız kutudan çıktığı gibi çalışacaktır.</p>
+<p>Ancak, bazı markalar bazı ek sürücülerin kurulmasını gerektirecektir. Bu gereksinime sahip en önde gelen tarayıcı ve yazıcı üreticilerinden biri HP'dir.</p>
+<p><strong>4.</strong> Bir HP tarayıcı kullanıyorsanız, Raspberry Pi'nizde SANE yazılımıyla çalışması için ek sürücüler kurmanız gerekecek.</p>
+<p>Gerekli sürücüleri içeren paketi aşağıdaki komutu çalıştırarak kurabilirsiniz.</p>
+<pre><code>sudo apt install hplip
+</code></pre>
+<p><strong>5.</strong> Tarayıcı sunucusu Raspberry Pi'nize kurulduktan sonra, artık &quot;SANE ile tarayıcınızı test etme&quot; başlıklı bölüme geçebilirsiniz.</p>
+<h2>Kaynak Koddan SANE Derleme</h2>
+<p>SANE'nin en son sürümünü Raspberry Pi'mize almak için, onu kaynak koddan derlememiz gerekecek. Bu yazılımı derlemek, birkaç yeni paket kurmamızı ve birkaç ek adımı tamamlamamızı gerektirecek.</p>
+<p>Ancak, bu bölümün sonunda, mevcut en iyi uyumluluğa sahip bir tarayıcı sunucusu sürümüne sahip olmalısınız.</p>
+<p><strong>1.</strong> İlk adımımız, paket listemizin tamamen güncel olduğundan emin olmaktır. Paket listesini güncellemek, o anda mevcut olmayan yansılardan (mirror) paket indirmeye çalışmamızı önlemeli.</p>
+<p>Aşağıdaki komutu kullanarak Raspberry Pi'nizde paket listesini güncelleyin.</p>
+<pre><code>sudo apt update
+</code></pre>
+<p><strong>2.</strong> Artık paket listemiz güncellendiğine göre, Raspberry Pi'mize &quot;<code>sane-backend</code>&quot;i derlemek için gereken birkaç kütüphane ve derleyici kurmamız gerekiyor.</p>
+<p>Raspberry Pi'nizin terminalinde aşağıdaki komutu çalıştırarak gereken tüm kütüphaneleri kurun.</p>
+<pre><code>sudo apt install libusb-dev libjpeg-dev libgphoto2-dev libieee1284-3-dev git build-essential autoconf autoconf-archive automake libtool autopoint
+</code></pre>
+<p><strong>3.</strong> Yeni paketlerimizden birini kullanarak SANE backend kodunu Raspberry Pi'mize klonlayarak başlayalım.</p>
+<p>Aşağıdaki komutu kullanarak <code>git</code> paketiyle bu kodu klonlayın.</p>
+<pre><code>git clone https://gitlab.com/sane-project/backends.git sane-backend
+</code></pre>
+<p><strong>4.</strong> Aşağıdaki komutu kullanarak yeni klonladığımız kodu içeren dizine geçmemiz gerekiyor.</p>
+<pre><code>cd sane-backend
+</code></pre>
+<p><strong>5.</strong> SANE'yi doğrudan kamuya açık depolarından Raspberry Pi'mize klonladığımızdan, devam etmeden önce &quot;<code>autogen.sh</code>&quot; betiklerini çalıştırmamız gerekiyor.</p>
+<p>Bu betik, kodun sistemde derlenebilmesi için hazırlanmasına yardımcı olur.</p>
+<pre><code>./autogen.sh
+</code></pre>
+<p><strong>6.</strong> Bir sonraki adımımız, aşağıdaki komutu kullanarak configure betiğini çalıştırmaktır.</p>
+<p>Bu betik, kodu mevcut sistem kurulumumuz için hazırlayacaktır. Gerekli paketin mevcut sistemde olup olmamasına bağlı olarak özellikleri etkinleştirecek veya devre dışı bırakacaktır.</p>
+<pre><code>./configure \
+    --prefix=/usr/local \
+    --libdir=/usr/local/lib \
+    --sysconfdir=/etc \
+    --localstatedir=/var
+</code></pre>
+<p><strong>7.</strong> Artık terminale aşağıdaki komutu girerek SANE kodunu Raspberry Pi'mize derleyebilirsiniz.</p>
+<p>Derleme sürecinin, bir Raspberry Pi 400'de bile epey zaman alabileceğini lütfen unutmayın.</p>
+<pre><code>make -j$(nproc)
+</code></pre>
+<p>Raspberry Pi'nizin derleme sırasında takılı kaldığı sorunlarla karşılaşırsanız, lütfen bunun yerine aşağıdaki komutu deneyin.</p>
+<pre><code>make
+</code></pre>
+<p><strong>8.</strong> SANE derlemeyi bitirdikten sonra, aşağıdaki komutla onu Pi'nize kurabilirsiniz.</p>
+<p>Bu komut, her şeyi çalıştırabilmeniz için sisteminizdeki doğru yerlere kopyalayacaktır.</p>
+<pre><code>sudo make install
+</code></pre>
+<p><strong>9.</strong> Yeni bir kütüphane eklediğimizden, sistemin bağlantı önbelleğini yenilememiz gerekiyor. Yenilemeden, çalışma zamanı bağlayıcısı (run-time linker) az önce kurduğumuz SANE kütüphanesinden habersiz olacaktır.</p>
+<p>Bağlantı önbelleğini yenilemek için, yapmanız gereken tek şey sisteminizde aşağıdaki komutu kullanmaktır.</p>
+<pre><code>sudo ldconfig
+</code></pre>
+<p><strong>10.</strong> Ardından, SANE deposundan &quot;<code>udev</code>&quot; kurallarını Raspberry Pi'mizdeki yapılandırma dizinine kopyalamamız gerekiyor.</p>
+<p>Yapmamız gereken tek şey, <a href="https://pimylifeup.com/cp-command-linux/">dosyayı</a> doğru konuma kopyalamak için aşağıdaki komutu çalıştırmaktır.</p>
+<pre><code>sudo cp tools/udev/libsane.rules /etc/udev/rules.d
+</code></pre>
+<p>udev, Linux çekirdeği için cihaz yöneticisidir. Kopyaladığımız bu kurallar, &quot;<code>udev</code>&quot;e belirli bir cihaz takıldığında hangi izinlerin, grubun ve ortam değişkenlerinin ayarlanması gerektiğini söyler.</p>
+<p><strong>11.</strong> Bir sonraki görevimiz için, &quot;<code>scanner</code>&quot; adlı bir grup oluşturmamız gerekiyor. Bu gruba eklenen herhangi bir kullanıcı, SANE yazılımı üzerinden tarayıcıya erişim sahibi olacak.</p>
+<p>Aşağıdaki &quot;<code>addgroup</code>&quot; komutunu kullanarak Pi'nizde &quot;<code>scanner</code>&quot; grubunu oluşturun.</p>
+<pre><code>sudo addgroup scanner
+</code></pre>
+<p><strong>12.</strong> Grup oluşturulduktan sonra, Pi kullanıcımızı buna eklememiz gerekecek. Bu, süper kullanıcıyı kullanmak zorunda kalmadan tarayıcıya erişebilmenizi sağlayacaktır.</p>
+<p>Aşağıdaki komutu kullanarak &quot;<code>pi</code>&quot; kullanıcısını &quot;scanner&quot; grubuna ekleyin.</p>
+<pre><code>sudo adduser pi scanner
+</code></pre>
+<p><strong>13.</strong> Son olarak, değişikliklerin etkili olması için ya çıkış yapmanız ya da Pi'nizi yeniden başlatmanız gerekecek.</p>
+<p>Raspberry Pi'yi yeniden başlatmak, aşağıdaki komutu yazmak kadar basittir.</p>
+<pre><code>sudo reboot
+</code></pre>
+<h2>Raspberry Pi'nizde SANE ile Tarayıcınızı Test Etme</h2>
+<p>SANE yazılımı Raspberry Pi'nize kurulduğuna göre, sonunda tarayıcınızın yazılımla çalışıp çalışmayacağını görebilirsiniz.</p>
+<p>Devam etmeden önce, tarayıcınızı artık Raspberry Pi'ye taktığınızdan emin olun.</p>
+<p><strong>1.</strong> İlk adımımız, tarayıcı yazılımının Raspberry Pi'nize bağlı cihazı algılayıp algılayamadığını kontrol etmektir.</p>
+<p>Bunu başarmak için, terminalde aşağıdaki komutu kullanacağız.</p>
+<pre><code>sudo sane-find-scanner -q
+</code></pre>
+<p>SANE tarayıcınızı bulabilirse, aşağıdakine benzer bir mesajla karşılaşmalısınız. Bunun SANE'nin çalışacağının bir göstergesi olmadığını, sadece tarayıcınızı görebildiğini gösterdiğini lütfen unutmayın.</p>
+<pre><code>found USB scanner (vendor=0x04a9 [Canon], product=0x1827 [TS3100 series]) at libusb:001:006
+</code></pre>
+<p>Herhangi bir mesaj görünmezse, SANE yazıcınızı bulamıyor demektir. Bir USB 2.0 portu kullanmayı veya tarayıcınızı kapatıp açmayı deneyin.</p>
+<p><strong>2.</strong> Artık SANE'nin tarayıcınızı görebildiğini bildiğinize göre, desteklenen tüm cihazları listelemek için &quot;<code>scanimage</code>&quot; aracını kullanabilirsiniz.</p>
+<p>&quot;<code>-L</code>&quot; seçeneğini kullanarak, araca desteklenen tüm cihazları listelemek istediğimizi söylüyoruz.</p>
+<pre><code>scanimage -L
+</code></pre>
+<p>Yazıcınız SANE'nin kullanabileceği bir şey olarak başarıyla tanımlanırsa, aşağıdaki gibi bir mesaj görmelisiniz.</p>
+<pre><code>device `pixma:04A91827' is a CANON Canon PIXMA TS3100 Series multi-function peripheral
+</code></pre>
+<p>Bu mesaj, tarayıcımızı bir Canon Pixma TS3100 serisi yazıcı/tarayıcı olarak başarıyla tanımlar.</p>
+<p>Alternatif olarak, herhangi bir mesaj görüntülenmezse, tarayıcınız SANE tarafından desteklenmiyor olabilir. Cihazı kapatıp açmayı veya resmi uyumluluk dokümantasyonunu kontrol etmeyi deneyebilirsiniz.</p>
+<p><strong>3.</strong> Artık tarayıcımızın Raspberry Pi'mizle çalıştığını bildiğimize göre, ona tarama yapmasını ve görüntüleyebileceğimiz bir görüntü olarak kaydetmesini söyleyebiliriz.</p>
+<p>Raspberry Pi'nizden bir görüntü taramak, aşağıdaki komutu kullanmak kadar basittir.</p>
+<pre><code>scanimage &gt; pimylifeup.jpg --format jpeg --resolution=300 -p
+</code></pre>
+<p>Bu komutu kullanırken yaptığımız birkaç şey var. İlk olarak, ona taramanın içeriğini &quot;pimyllifeup.jpg&quot; adlı bir dosyaya çıktı vermesini söylüyoruz.</p>
+<p>İkincisi, en yaygın desteklenen formatlardan biri olduğundan format (<code>--format</code>) seçeneğini &quot;<code>jpeg</code>&quot; görüntü formatına ayarlıyoruz.</p>
+<p>Üçüncüsü, çözünürlük (<code>--resolution</code>) seçeneğini kullanarak, taramayı 300 DPI çözünürlüğe ayarlıyoruz.</p>
+<p>Son olarak, mevcut taramanın ilerlemesini komut satırında görüntülemek için ilerleme (<code>-p</code>) seçeneğini kullanıyoruz.</p>
+<p><strong>4.</strong> Bu komut çalışırken, tarayıcınızın çalışmaya başladığını duymalısınız ve tamamlandıktan sonra, Raspberry Pi'nizde &quot;<code>pimylifeup.jpg</code>&quot; adlı bir dosyaya sahip olacaksınız.</p>
+<p>Görüntünün sonucunu görüntülemek ve doğrulamak istiyorsanız, bu dosyayı Pi'nizden kopyalayabilirsiniz.</p>
+<p>Alternatif olarak, görüntü hakkında bilgi yazdırmak için &quot;<code>file</code>&quot; komutunu kullanabilirsiniz.</p>
+<pre><code>file pimylifeup.jpg
+</code></pre>
+<p>Bu komutu kullanarak, aşağıdakine benzer bir şey görmelisiniz.</p>
+<pre><code>pimylifeup.jpg: JPEG image data, JFIF standard 1.01, resolution (DPI), density 300x300, segment length 16, baseline, precision 8, 2552x3508, components 3
+</code></pre>
+<p>Bu bilgi, görüntünün çözünürlüğü, codec'i ve boyutu gibi şeyleri bilmenizi sağlayacaktır.</p>
+<h2>Raspberry Pi'nizi Bir Tarayıcı Sunucusuna Dönüştürme</h2>
+<p>Artık Raspberry Pi'mizde SANE çalıştığına göre, onu bir tarayıcı sunucusu olarak çalışacak şekilde yapılandırabiliriz.</p>
+<p>SANE'yi bir tarayıcı sunucusu görevi görecek şekilde ayarlamak, birkaç farklı dosyayı değiştirmemizi gerektirir, bu yüzden bunu birkaç bölüme ayıracağız.</p>
+<h3>SANED Servisini Oluşturma</h3>
+<p>İlk görevimiz, Raspberry Pi'miz başladığında SANE daemon'unu çalıştıracak bir servis oluşturmaktır. Bu servisi kurmazsak, cihazınız her yeniden başladığında SANE'yi manuel olarak başlatmanız gerekir.</p>
+<p><strong>1.</strong> Oluşturmamız gereken ilk dosya, SANE için bir Systemd soket dosyasıdır. Bir systemd soketi, belirli bir sokete veri gönderildiğinde bir servisin başlatılmasını sağlar; SANE durumunda bu port 6566'dır.</p>
+<p>Aşağıdaki komutu kullanarak bu yeni soket dosyasını oluşturmaya başlayın.</p>
+<pre><code>sudo nano /etc/systemd/system/saned.socket
+</code></pre>
+<p><strong>2.</strong> Bu dosyanın içine, aşağıdaki satırları girmek isteyeceksiniz.</p>
+<pre><code>[Unit]
+Description=saned incoming socket
+
+[Socket]
+ListenStream=6566
+Accept=yes
+MaxConnections=1
+
+[Install]
+WantedBy=sockets.target
+</code></pre>
+<p>Bu satırlar, bu servisin hangi portu dinleyeceğini, gelen bağlantıları kabul edip etmeyeceğini ve maksimum bağlantı sayısını belirler.</p>
+<p><strong>3.</strong> Dosyada bu değişiklikleri yaptıktan sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<p><strong>4.</strong> Bir soket dosyasının her zaman eşlik eden bir servis dosyası olmalıdır. Bu servis, sisteme Raspberry Pi'mizde SANE'yi nasıl çalıştıracağını ve ele alacağını söyleyecektir.</p>
+<p>Aşağıdaki komutu çalıştırarak bu dosyayı düzenlemeye başlayabilirsiniz.</p>
+<pre><code>sudo nano /etc/systemd/system/@saned.service
+</code></pre>
+<p><strong>5.</strong> Devam etmeden önce, aşağıdaki satırları dosyaya yazmanız gerekecek.</p>
+<pre><code>[Unit]
+Description=Scanner Service
+Requires=saned.socket
+
+[Service]
+ExecStart=/usr/local/sbin/saned
+User=saned
+Group=saned
+StandardInput=null
+StandardOutput=syslog
+StandardError=syslog
+Environment=SANE_CONFIG_DIR=/etc/sane.d
+</code></pre>
+<p><strong>6.</strong> Bitirdikten sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak değişikliklerinizi kaydedin.</p>
+<h3>SANE'yi Uzaktan Erişim İçin Yapılandırma</h3>
+<p>SANE için servis dosyasını oluşturduğumuza göre, Raspberry Pi'nizde sunucuya kimlerin erişebileceğini bilmesi için onu yapılandırmamız gerekecek.</p>
+<p><strong>1.</strong> SANE daemon'unu yapılandırmak için, &quot;<code>saned.conf</code>&quot; dosyasını düzenlememiz gerekecek.</p>
+<p>Cihazınızda aşağıdaki komutu çalıştırarak bu yapılandırma dosyasını nano ile düzenleyebilirsiniz.</p>
+<pre><code>sudo nano /etc/sane.d/saned.conf
+</code></pre>
+<p><strong>2.</strong> Bu dosyanın içinde, aşağıdaki bölümü aramanız gerekecek.</p>
+<p><a href="https://pimylifeup.com/nano-text-editor/">Nano metin editörünü kullanıyorsanız</a>, dosyayı aramak için <code>CTRL</code> + <code>W</code> kısayolunu kullanabilirsiniz.</p>
+<pre><code>## Access list
+</code></pre>
+<p><strong>3.</strong> Bu başlığın altına, Raspberry Pi SANE tarayıcı sunucunuza erişmesini istediğiniz IP veya IP aralığını eklemeniz gerekecek.</p>
+<p>Bu örnek için, yerel ağınızın &quot;129.168.0.0&quot; alt ağını kullandığını varsayacağız.</p>
+<pre><code>192.168.0.0/24
+</code></pre>
+<p><strong>4.</strong> Dosyada bu düzenlemeleri yaptıktan sonra, <code>CTRL</code> + <code>X</code>, <code>Y</code> tuşu ve son olarak <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<h3>Raspberry Pi'nizde Tarayıcı Sunucusunu Başlatma</h3>
+<p>Artık her şey sonunda yapılandırıldığına göre, daha önce oluşturduğumuz SANE servisini başlatabiliriz. Bu servis başlatıldıktan sonra, ağınız genelinde görüntü taramak için <a href="http://www.sane-project.org/sane-frontends.html">SANE uyumlu bir ön yüz kullanabilmeniz</a> gerekir.</p>
+<p><strong>1.</strong> SANE servisini etkinleştirerek başlayalım. Servisi etkinleştirmek, açılışta otomatik olarak başlamasını sağlayacak olan şeydir.</p>
+<p>Aşağıdaki komutu çalıştırarak sane servisini etkinleştirmek için systemctl kullanabiliriz.</p>
+<pre><code>sudo systemctl enable saned.socket
+</code></pre>
+<p><strong>2.</strong> Servis artık etkinleştirildiğine göre, systemctl kullanarak onu da başlatabiliriz.</p>
+<p>Terminalde aşağıdaki komutu kullanarak Raspberry Pi'nizde tarayıcı servisini başlatabilirsiniz.</p>
+<pre><code>sudo systemctl start saned.socket
+</code></pre>
+<p><strong>3.</strong> SANE daemon'unun artık Pi'nizde çalıştığını systemctl ile &quot;<code>status</code>&quot; seçeneğini kullanarak doğrulayabilirsiniz.</p>
+<pre><code>systemctl status saned.socket
+</code></pre>
+<p>Her şey gerektiği gibi çalışıyorsa, durumun &quot;<code>Active: active (listening)</code>&quot; olarak listelendiğini göreceksiniz.</p>
+<p>Ayrıca, bu komutu SANE tarafından kaç bağlantının kabul edildiğini izlemek için de kullanabilirsiniz.</p>
+<p><strong>4.</strong> Artık Raspberry Pi tarayıcı sunucunuz sayesinde uzaktan tarama yapmaya başlayabilmeniz gerekir.</p>
+<p>Yapmanız gereken tek şey SANE uyumluluğuna sahip bir istemci kullanmaktır. Bir IP adresi girmeniz istenirse, Pi'nizin yerel adresini kullanın.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-ip-address/">Raspberry Pi'nizin IP adresini</a> aşağıdaki komutu kullanarak alabilirsiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<h2>Sonuç</h2>
+<p>Bu eğitimin bu noktasında, artık Raspberry Pi'nizde SANE derlenmiş ve çalışır durumda olmalıdır.</p>
+<p>SANE, Raspberry Pi'nizin bağlı bir USB tarayıcıdan görüntü taramasını sağlamanın en iyi yollarından biridir.</p>
+<p>Hatta SANE'yi, diğer cihazların tarayıcınıza uzaktan bağlanmasına izin verecek şekilde yapılandırabilirsiniz.</p>
+<p>SANE'yi Raspberry Pi'de çalışır hale getirirken sorun yaşadıysanız, lütfen aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-scanner-server.html&amp;text=SANE+Kullanarak+Raspberry+Pi+Taray%C4%B1c%C4%B1+Sunucusu+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-scanner-server.html&amp;text=SANE+Kullanarak+Raspberry+Pi+Taray%C4%B1c%C4%B1+Sunucusu+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-scanner-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-scanner-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-scanner-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-scanner-server.html&amp;title=SANE+Kullanarak+Raspberry+Pi+Taray%C4%B1c%C4%B1+Sunucusu+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=SANE+Kullanarak+Raspberry+Pi+Taray%C4%B1c%C4%B1+Sunucusu+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-scanner-server.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

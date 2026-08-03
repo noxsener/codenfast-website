@@ -1,0 +1,325 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;ye AnyDesk Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Pi için optimize edilmiş uzak masaüstü yazılımı"/>
+    <meta property="og:title" content="Raspberry Pi&#39;ye AnyDesk Kurulumu"/>
+    <meta property="og:description"
+          content="Pi için optimize edilmiş uzak masaüstü yazılımı"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-anydesk.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-anydesk.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;ye AnyDesk Kurulumu"/>
+    <meta name="twitter:description"
+          content="Pi için optimize edilmiş uzak masaüstü yazılımı"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'ye AnyDesk Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-anydesk.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-01-Desktop-Method-for-Loading-AnyDesk.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-01-Desktop-Method-for-Loading-AnyDesk.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-02-Location-of-the-Join-Code.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-02-Location-of-the-Join-Code.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-05-Enter-Code-for-Remote-Desktop-Connection.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-05-Enter-Code-for-Remote-Desktop-Connection.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-03-Incoming-Remote-Desktop-Connection.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-03-Incoming-Remote-Desktop-Connection.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-04-Currently-Connected-Remote-Desktop-User.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-04-Currently-Connected-Remote-Desktop-User.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-06-Opening-the-settings-panel.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-06-Opening-the-settings-panel.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-07-Unlock-Security-Settings.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-07-Unlock-Security-Settings.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-08-Type-password-for-current-account.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-08-Type-password-for-current-account.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-09-Enable-Unattended-Access.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-09-Enable-Unattended-Access.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-10-Set-password-for-access.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-10-Set-password-for-access.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-11-Enabling-Two-Factor-Authentication.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-11-Enabling-Two-Factor-Authentication.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-12-Close-settings-pannel.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-12-Close-settings-pannel.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'ye AnyDesk Kurulumu","description":"Pi için optimize edilmiş uzak masaüstü yazılımı","image":["https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:51:50.103433+03:00","dateModified":"2026-08-03T12:51:50.103462+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;ye AnyDesk Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-anydesk/">PiMyLifeUp - Installing AnyDesk to the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitim, uzak masaüstü yazılımı AnyDesk'i Raspberry Pi'ye nasıl kuracağınızı gösterecek.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-Thumbnail.jpg" alt="Raspberry Pi AnyDesk" /></p>
+<p>AnyDesk, Raspberry Pi'nize uzak masaüstü desteği eklemenin en iyi çözümlerinden biridir.</p>
+<p>Bu yazılımı kullanarak, güvenli bir bağlantı üzerinden dünyanın herhangi bir yerinden Raspberry Pi'nize uzaktan erişebilirsiniz.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-teamviewer/">Raspberry Pi için TeamViewer'ın</a> aksine, bu yazılımı AnyDesk yazılımını çalıştıran diğer cihazları uzaktan yönetmek için bile kullanabilirsiniz.</p>
+<p>Hepsinden iyisi, AnyDesk ekibi özellikle Raspberry Pi için yazılımlarının optimize edilmiş bir sürümünü geliştirdi.</p>
+<p>AnyDesk'in Pi için yerel bir derlemeye sahip olması sayesinde, mükemmel performansa, düşük gecikmeye ve iyi bant genişliği kullanımına sahiptir.</p>
+<p>Bu rehber, <a href="https://pimylifeup.com/download-raspbian/">Raspberry Pi OS Buster'ın en son sürümünü</a> çalıştıran bir <a href="https://pimylifeup.com/raspberry-pi-400/">Raspberry Pi 400</a> üzerinde AnyDesk kurulumu için test edilmiştir.</p>
+<h2>Raspberry Pi'ye AnyDesk Kurulumu</h2>
+<p>AnyDesk uzak masaüstü yazılımını kurma süreci nispeten basittir.</p>
+<p>Yazılımın en son sürümünü indirip kurmamızı gerektirecektir.</p>
+<p><strong>1.</strong> Başlamadan önce, öncelikle <a href="https://pimylifeup.com/raspberry-pi-update/">Raspberry Pi OS kurulumumuzu güncellemeliyiz</a>.</p>
+<p>Bu, mevcut en son yazılımı çalıştırdığınızdan ve AnyDesk yazılımıyla sorunsuz bir deneyim yaşadığınızdan emin olmaya yardımcı olur.</p>
+<p>Raspberry Pi'nizin işletim sistemini güncellemek, aşağıdaki iki komutu çalıştırmak kadar basittir.</p>
+<pre><code>sudo apt update
+sudo apt full-upgrade
+</code></pre>
+<p><strong>2.</strong> Raspberry Pi'niz güncellemeyi bitirdikten sonra, AnyDesk kurmaya geçebiliriz.</p>
+<p>Bunu yapmak için, AnyDesk Debian paketini indirmemiz gerekecek.</p>
+<p>Cihazınızda aşağıdaki komutu çalıştırarak AnyDesk'i Pi'nize indirin.</p>
+<pre><code>wget https://download.anydesk.com/rpi/anydesk_6.1.1-1_armhf.deb
+</code></pre>
+<p>Bunun en son sürüm olmayabileceğini lütfen unutmayın. Bunu <a href="https://anydesk.com/en/downloads/raspberry-pi">Raspberry Pi için AnyDesk</a> web sitesini ziyaret ederek doğrulayabilirsiniz.</p>
+<p><strong>3.</strong> AnyDesk Debian paketi artık Raspberry Pi'ye indirildiğine göre, artık kurabiliriz.</p>
+<p>Bu paketi kurmak, aşağıdaki komutu çalıştırmak kadar basittir.</p>
+<pre><code>sudo dpkg -i anydesk_6.1.1-1_armhf.deb
+</code></pre>
+<p>dpkg aracı, paketi çıkararak tüm AnyDesk dosyalarını doğru konuma kuracaktır.</p>
+<p><strong>4.</strong> AnyDesk artık Raspberry Pi'nize kurulu olduğuna göre, eksik paket olmadığından emin olmamız gerekiyor.</p>
+<p>Neyse ki bizim için, eksik paketleri düzeltmek üzere apt paket yöneticisini kullanmak için aşağıdaki komutu çalıştırabiliriz.</p>
+<pre><code>sudo apt-get install -f
+</code></pre>
+<p>Bu komut çalışmayı bitirdikten sonra, artık yazılımı çalışır hale getirmeye hazır olmalısınız.</p>
+<h2>AnyDesk Yazılımını Çalıştırma</h2>
+<p>Bu bölüm, artık kurulmuş olduğuna göre AnyDesk yazılımını açmanın ne kadar kolay olduğunu gösterecek.</p>
+<p>Ayrıca, gelen bir uzak masaüstü bağlantısını nasıl ele alacağınızı da göstereceğiz.</p>
+<p><strong>1.</strong> AnyDesk'i kurduktan sonra, uzak masaüstünü açmanın basit bir süreç olduğunu göreceksiniz.</p>
+<p>Raspberry Pi'nizde AnyDesk'i açmanın iki farklı yolu vardır.</p>
+<p>En kolay yol, ekranın üstündeki görev çubuğuna otomatik olarak eklenmiş olması gereken AnyDesk simgesine <code>tıklamaktır</code> (<strong>4.</strong>).</p>
+<p>Alternatif olarak, masaüstü arayüzünün başlat menüsünde bulabilirsiniz (<strong>1.</strong>).</p>
+<p>Başlat menüsünde, &quot;<code>Internet</code>&quot; seçeneğinin üzerine <code>gelmeniz</code> gerekecek (<strong>2.</strong>).</p>
+<p>Bir alt menü açılacaktır ve artık &quot;<code>AnyDesk</code>&quot; seçeneğini görmelisiniz, yazılımı açmak için ona <code>tıklayın</code> (<code>3.</code>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-01-Desktop-Method-for-Loading-AnyDesk.jpg" alt="Raspberry Pi Masaüstünden AnyDesk'i Yükleme" /></p>
+<p><strong>2.</strong> Artık sizi AnyDesk uzak masaüstü arayüzü karşılayacak.</p>
+<p>Dikkatinizi çekeceğimiz ilk şey, &quot;<code>This Desk</code>&quot; başlığı altında bulunan ID'dir.</p>
+<p>Bu ID'yi, AnyDesk yazılımını çalıştıran başka bir bilgisayardan Raspberry Pi'nize bağlanmak için kullanacaksınız.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-02-Location-of-the-Join-Code.jpg" alt="AnyDesk Uzak Masaüstü Katılma Kodu" /></p>
+<p><strong>3.</strong> AnyDesk Raspberry Pi istemcisini başka bir bilgisayara bağlanmak için de kullanmak mümkündür.</p>
+<p>&quot;<code>Remote Desk</code>&quot; başlığı altında, bir metin kutusu görmelisiniz. Bu metin kutusunu, bağlanmak istediğiniz bilgisayarın ID'sini girmek için kullanın (<strong>1.</strong>)</p>
+<p>Bir kod girdikten sonra, satırın sonundaki oynat düğmesine <code>tıklayarak</code> bağlantıyı başlatabilirsiniz (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-05-Enter-Code-for-Remote-Desktop-Connection.jpg" alt="AnyDesk'i Bir Cihaza Uzaktan Bağlanmak İçin Kullanma" /></p>
+<p>Başka bir cihaza bağlandığınızda, bağlantıyı onaylamalarını beklemeniz gerekecek. Denetimsiz erişim kurmuşlarsa, giriş yapmak için bir şifre yazma seçeneğiniz de olabilir.</p>
+<h2>Bir Uzak Masaüstü Bağlantısı Alma</h2>
+<p>Raspberry Pi'niz bir AnyDesk istemcisinden uzak bir bağlantı aldığında, bağlantı süreci inanılmaz derecede basittir.</p>
+<p><strong>1.</strong> Gelen bir bağlantı aldığınızda, aşağıdakine benzer bir ekranın belirdiğini göreceksiniz.</p>
+<p>Bu ekranı kullanarak, gelen bir bağlantıyı kabul edebilir veya reddedebilirsiniz. Bu iletişim kutusunu gelen bağlantıdaki kişiyle sohbet etmek için bile kullanabilirsiniz.</p>
+<p>Bu kullanıcının uzak masaüstü bağlantısını almak istediğiniz kişi olduğundan eminseniz, &quot;<code>Accept</code>&quot; düğmesine <code>tıklayabilirsiniz</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-03-Incoming-Remote-Desktop-Connection.jpg" alt="Raspberry Pi'ye Gelen AnyDesk Uzak Bağlantısı" /></p>
+<p><strong>2.</strong> Bağlantıyı kabul ederseniz, kullanıcıyla bağlantıyı kesmek oldukça basit bir süreçtir.</p>
+<p>Yapmanız gereken tek şey &quot;<code>Disconnect</code>&quot; düğmesine <code>tıklamaktır</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-04-Currently-Connected-Remote-Desktop-User.jpg" alt="Bağlı Uzak Masaüstü Kullanıcısı" /></p>
+<p>Kullanıcı bağlıyken, sanki oradaymış gibi işletim sisteminizi kontrol edebilecektir, bu yüzden kime erişim verdiğinize dikkat edin.</p>
+<h2>Denetimsiz Erişimi Yapılandırma</h2>
+<p>Bağlantıyı onaylamak için orada olmadan AnyDesk kullanarak Raspberry Pi'nize erişmek istiyorsanız, endişelenmeyin. AnyDesk yazılımı, denetimsiz erişim için yerleşik destekle birlikte gelir.</p>
+<p>Bu seçeneği kullanarak, birinin sisteminize uzaktan erişmek için bir şifre girmesine izin verebilirsiniz. Ayrıca, iki faktörlü kimlik doğrulama desteğini bile zorunlu kılabilirsiniz.</p>
+<p><strong>1.</strong> Bu seçeneği etkinleştirmek için, önce AnyDesk ayarlar sayfasına gitmemiz gerekiyor.</p>
+<p>Ayarları bulmak için, ekranın sağ üstündeki hamburger simgesine <code>tıklayın</code> (<strong>1.</strong>).</p>
+<p>Bir açılır menü belirmeli, &quot;<code>Settings</code>&quot; seçeneğini bulup <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-06-Opening-the-settings-panel.jpg" alt="Ayarlar panelini açma" /></p>
+<p><strong>2.</strong> Ayarlar menüsünde, &quot;<code>Security</code>&quot; paneline geçmemiz gerekecek (<strong>1.</strong>).</p>
+<p>Ayarların kilidini açana kadar bu ayarları değiştiremeyeceğiz. Kilit açma sürecini başlatmak için, &quot;<code>Unlock Security Settings...</code>&quot; seçeneğine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-07-Unlock-Security-Settings.jpg" alt="Raspberry Pi İçin AnyDesk Güvenlik Ayarlarının Kilidini Açma" /></p>
+<p><strong>3.</strong> Şimdi kimliğinizi doğrulamanız istenecektir.</p>
+<p>Kimlik, otomatik olarak mevcut kullanıcıya ayarlanmış olmalıdır, bizim durumumuzda bu &quot;<code>pi</code>&quot; kullanıcısı olurdu.</p>
+<p>Belirtilen kullanıcı için şifreyi girin, ardından ayarların kilidini açmak için &quot;<code>OK</code>&quot; düğmesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-08-Type-password-for-current-account.jpg" alt="Mevcut hesap için şifre yazma" /></p>
+<p><strong>4.</strong> Artık Raspberry Pi'mize denetimsiz erişimi etkinleştirmek gibi güvenlik ayarlarını ayarlayabiliriz.</p>
+<p>Bu sayfada &quot;<code>Enable unattended access</code>&quot; seçeneğini bulun, ayarı yapılandırmaya başlamak için ona <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-09-Enable-Unattended-Access.jpg" alt="Denetimsiz Erişimi Etkinleştirme" /></p>
+<p><strong>5.</strong> Denetimsiz erişimi kullanabilmeniz için, bir şifre belirlemeniz gerekecek.</p>
+<p>AnyDesk bağlantısını tamamlamadan önce kullanıcının girmesini istediğiniz şifreyi girin (<strong>1.</strong>).</p>
+<p>Şifreyi girdikten sonra, onaylamak için &quot;<code>OK</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-10-Set-password-for-access.jpg" alt="Raspberry Pi'ye Uzaktan AnyDesk Erişimi İçin Şifre Belirleme" /></p>
+<p><strong>6.</strong> Denetimsiz erişim için ilk kez bir şifre belirlediğinizde, iki faktörlü kimlik doğrulamayı etkinleştirmeniz istenebilir.</p>
+<p>Cihazınızın güvenliğini artırmaya yardımcı olduğundan bu özelliği etkinleştirmenizi öneririz. 2FA kullanmamayı tercih ederseniz, &quot;<code>Cancel</code>&quot; düğmesine <code>tıklayın</code>.</p>
+<p>2FA kullanmak isterseniz, <a href="https://authy.com/download/">Authy</a> veya <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2">Google Authenticator</a> gibi bir 2FA uygulaması kullanarak sağlanan QR kodunu tarayın (<strong>1.</strong>).</p>
+<p>Kodu taradıktan sonra, cihazınızda oluşturulan kodları görmeye başlamalısınız. Bu kodu sağlanan metin kutusuna yazın (<strong>2.</strong>).</p>
+<p>Her şey doğru ayarlandıktan sonra, &quot;<code>Enable authentication</code>&quot; düğmesine <code>tıklayın</code> (<strong>3.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-11-Enabling-Two-Factor-Authentication.jpg" alt="İki Faktörlü Kimlik Doğrulamayı Etkinleştirme" /></p>
+<p><strong>7.</strong> Raspberry Pi'nizde AnyDesk'in denetimsiz erişimi etkinleştirildiğine göre, artık ayarlardan çıkabilirsiniz.</p>
+<p>Ayarlar sayfasından çıkmak için, sayfanın altındaki &quot;<code>Close</code>&quot; düğmesine <code>tıklayabilirsiniz</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/04/Raspberry-Pi-AnyDesk-12-Close-settings-pannel.jpg" alt="Ayarlar panelini kapatma" /></p>
+<p>Bir dahaki sefere biri AnyDesk kodunuzu kullanarak bağlandığında, sizin bağlantıyı manuel olarak onaylamanız yerine artık bir şifre kullanarak bağlanabilecekler.</p>
+<h2>Sonuç</h2>
+<p>Umarız bu rehber, Raspberry Pi'nizde AnyDesk yazılımını nasıl çalışır hale getireceğinizi göstermiştir.</p>
+<p>AnyDesk, performanslı bir masaüstü istemcisine sahip, kullanımı süper kolay bir uzak masaüstü yazılımıdır.</p>
+<p>TeamViewer istemcisine harika bir alternatiftir ve hatta diğer uzak cihazlara bağlanmanızı bile sağlar.</p>
+<p>AnyDesk'i kurmakta herhangi bir sorunla karşılaştıysanız, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-anydesk.html&amp;text=Raspberry+Pi%27ye+AnyDesk+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-anydesk.html&amp;text=Raspberry+Pi%27ye+AnyDesk+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-anydesk.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-anydesk.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-anydesk.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-anydesk.html&amp;title=Raspberry+Pi%27ye+AnyDesk+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27ye+AnyDesk+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-anydesk.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

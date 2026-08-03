@@ -1,0 +1,580 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;ye Mastodon Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Kendi kendine barındırılan bir mikroblog sosyal ağı"/>
+    <meta property="og:title" content="Raspberry Pi&#39;ye Mastodon Kurulumu"/>
+    <meta property="og:description"
+          content="Kendi kendine barındırılan bir mikroblog sosyal ağı"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-mastodon.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-mastodon.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2022/11/Raspberry-Pi-Mastodon-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;ye Mastodon Kurulumu"/>
+    <meta name="twitter:description"
+          content="Kendi kendine barındırılan bir mikroblog sosyal ağı"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2022/11/Raspberry-Pi-Mastodon-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'ye Mastodon Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-mastodon.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/11/Raspberry-Pi-Mastodon-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/11/Raspberry-Pi-Mastodon-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/11/Raspberry-Pi-Mastodon-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/11/Raspberry-Pi-Mastodon-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/11/Raspberry-Pi-Mastodon-01-Login-to-Admin-Account.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/11/Raspberry-Pi-Mastodon-01-Login-to-Admin-Account.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/11/Raspberry-Pi-Mastodon-02-Open-Preferences.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/11/Raspberry-Pi-Mastodon-02-Open-Preferences.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/11/Raspberry-Pi-Mastodon-03-Open-Administration-Panel.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/11/Raspberry-Pi-Mastodon-03-Open-Administration-Panel.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/11/Raspberry-Pi-Mastodon-04-Admin-Dashboard.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/11/Raspberry-Pi-Mastodon-04-Admin-Dashboard.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'ye Mastodon Kurulumu","description":"Kendi kendine barındırılan bir mikroblog sosyal ağı","image":["https://pimylifeup.com/wp-content/uploads/2022/11/Raspberry-Pi-Mastodon-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:33:55.477454+03:00","dateModified":"2026-08-03T12:33:55.477486+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;ye Mastodon Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-mastodon/">PiMyLifeUp - Installing Mastodon on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'ye Mastodon'u nasıl kuracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/11/Raspberry-Pi-Mastodon-Thumbnail.jpg" alt="Raspberry Pi Mastodon" /></p>
+<p>Mastodon, Raspberry Pi'nizde kendi sosyal ağınızı kendi kendinize barındırmanızı sağlayan ücretsiz ve açık kaynaklı bir yazılımdır.</p>
+<p>Bu yazılım, Twitter'a çok benzeyen bir mikroblog platformudur. Ancak, Twitter'ın aksine, Mastodon'u özel bir sosyal ağ çalıştırmak için kullanmak mümkündür.</p>
+<p>Mastodon'un nispeten ağır bir yazılım parçası olduğunu lütfen unutmayın. En iyi deneyimi, en az 2GB belleğe sahip bir Raspberry Pi 4 kullanarak yaşarsınız.</p>
+<p>Ayrıca, kullanacağımız PostgreSQL'in daha yeni sürümü nedeniyle 64-bit bir işletim sistemi kullanıyor olmanız gerekir.</p>
+<h2>Başlamadan Önce</h2>
+<p>Raspberry Pi'nizde Mastodon'a başlamadan önce, bu kendi kendine barındırılan sosyal ağla en iyi deneyimi yaşamak için birkaç şeye ihtiyacınız olacak.</p>
+<ul>
+<li>Raspberry Pi'nizin IP adresine yönlendiren bir alan adı. Mastodon'un düzgün çalışması için bir alan adı gerekir. Yapılandırılmamış bir ana bilgisayar (host) üzerinden bağlanmaya çalışırsanız, bağlantıyı engelleyecektir. Dinamik bir IP adresiniz varsa, <a href="https://pimylifeup.com/raspberry-pi-port-forwarding/#setting-up-raspberry-pi-dynamic-dns">Pi'nizde dinamik DNS kurulumu</a> hakkında bir rehberimiz var. Mastodon'u yerel olarak kullanmak için &quot;<code>pimylifeup.local</code>&quot; gibi bir alan adı belirtebilir ve sisteminizdeki hosts dosyasını o alan adını Pi'nizin yerel IP'sine işaret edecek şekilde değiştirebilirsiniz.</li>
+<li>Genel olarak yönlendirilebilir bir IP adresi (CG-NAT arkasında olmayan). Ayrıca <code>80</code> ve <code>443</code> portlarını Raspberry Pi'nizin yerel IP'sine yönlendirme yeteneğine de ihtiyacınız olacak.</li>
+<li><a href="https://sendgrid.com/">Sendgrid</a>, <a href="https://www.mailgun.com/">Mailgun</a> veya <a href="https://aws.amazon.com/ses/">Amazon SES</a> gibi işlemsel bir e-posta hizmeti de kullanmalısınız. Bu zorunlu olmasa da, Mastodon tarafından gönderilen e-postaların alınma olasılığını artırmaya yardımcı olacaktır.</li>
+</ul>
+<h2>Raspberry Pi'nizi Mastodon'u Çalıştırmaya Hazırlama</h2>
+<p>Raspberry Pi'de Mastodon yazılımını çalıştırmadan önce, onu çalıştırmak için gereken tüm yazılımları kurmamız gerekiyor.</p>
+<p>Aşağıdaki bölümlerde, Mastodon'u çalıştırmak için gereken her şeyi kurma sürecinde size rehberlik edeceğiz.</p>
+<h3>Kurulum İçin Gereken Yazılımı Kurma</h3>
+<p><strong>1.</strong> Mastodon'u çalıştırmak için gereken yazılımı kurmadan önce, bir güncelleme yapmalıyız.</p>
+<p>Aşağıdaki iki komutu kullanarak paket listesi önbelleğini ve güncel olmayan tüm paketleri güncelleyin.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Güncelleme tamamlandıktan sonra, Raspberry Pi'miz için Mastodon'un dayandığı çeşitli yazılım parçalarını kurmak için ihtiyaç duyduğumuz yazılımı kurabiliriz.</p>
+<p>Mastodon'u çalıştırmak için ihtiyaç duyduğumuz hemen hemen her şeyi kurmak için aşağıdaki komutu kullanın. Çok fazla yazılım kuruyor olsak da, ayarlamamız gereken birkaç şey daha var.</p>
+<pre><code>sudo apt install curl lsb-release imagemagick ffmpeg libpq-dev libxml2-dev libxslt1-dev file git-core g++ libprotobuf-dev protobuf-compiler pkg-config nodejs gcc autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm-dev nginx redis-server redis-tools certbot python3-certbot-nginx libidn11-dev libicu-dev libjemalloc-dev
+</code></pre>
+<h3>Raspberry Pi'nizde Mastodon İçin Bir Kullanıcı Oluşturma</h3>
+<p><strong>3.</strong> Temel yazılım kurulduktan sonra, Mastodon'un Raspberry Pi'mizde altında çalışacağı bir kullanıcı oluşturabiliriz.</p>
+<p>Aşağıda gösterildiği gibi <a href="https://pimylifeup.com/useradd-command/">useradd komutunu kullanarak</a> bu kullanıcıyı oluşturabiliriz. Bu kullanıcı &quot;<code>mastodon</code>&quot; adına sahip olacak.</p>
+<pre><code>sudo useradd mastodon -m
+</code></pre>
+<p>&quot;<code>-m</code>&quot; seçeneğini kullanarak, bu komut kullanıcıyı oluştururken bir ana dizin de oluşturacaktır.</p>
+<h3>NodeJS Kurulumu</h3>
+<p><strong>4.</strong> Mastodon sosyal ağı, akış (streaming) işlevselliği için Node.JS çalışma zamanına dayanır.</p>
+<p>Daha ileri gitmeden önce, <a href="https://pimylifeup.com/raspberry-pi-nodejs/">Raspberry Pi'ye Node.JS kurma</a> rehberimizi takip edin.</p>
+<p><strong>5.</strong> Cihazınızda Node.JS kurulu olduğunda, bu eğitime güvenle devam edebilirsiniz.</p>
+<h3>Mastodon İçin PostgreSQL Kurulumu</h3>
+<p><strong>6.</strong> PostgreSQL, Mastodon için Raspberry Pi'mizde kurmamız gereken bir sonraki yazılım parçasıdır.</p>
+<p>Mastodon, kendi kendine barındırılan sosyal ağınızdaki tüm verileri saklamak için PostgreSQL kullanacaktır.</p>
+<p>PostgreSQL'in en son sürümünü kurmak için resmi depoyu eklememiz gerekecek.</p>
+<p>Aşağıdaki komutu kullanarak Postgre deposunun GPG anahtarını cihazınıza kaydederek başlayın.</p>
+<pre><code>curl -L https://www.postgresql.org/media/keys/ACCC4CF8.asc | gpg --dearmor | sudo tee /usr/share/keyrings/postgresql-archive-keyring.gpg &gt;/dev/null
+</code></pre>
+<p><strong>7.</strong> Artık PostgreSQL için GPG anahtarını eklediğimize göre, aşağıdaki komutu kullanarak depoyu kaynak listemize ekleyebiliriz.</p>
+<pre><code>echo &quot;deb [arch=arm64 signed-by=/usr/share/keyrings/postgresql-archive-keyring.gpg] http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&quot; | sudo tee  /etc/apt/sources.list.d/postgresql.list
+</code></pre>
+<p><strong>8.</strong> Mevcut depoları değiştirdiğimizden, paket listesi önbelleğini tekrar güncellememiz gerekiyor.</p>
+<p>Aşağıdaki komutu çalıştırarak paket listesi önbelleğini güncelleyin.</p>
+<pre><code>sudo apt update
+</code></pre>
+<p><strong>9.</strong> Sonunda Mastodon'un kullanması için Raspberry Pi'mize PostgreSQL'i kurabiliriz.</p>
+<p>Bu veritabanı yazılımını kurmak için, terminalde aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo apt install postgresql postgresql-contrib
+</code></pre>
+<h3>Raspberry Pi'de Mastodon İçin Bir PostgreSQL Kullanıcısı Oluşturma</h3>
+<p><strong>10.</strong> <a href="https://pimylifeup.com/raspberry-pi-postgresql/">PostgreSQL artık Raspberry Pi'ye kurulduğuna</a> göre, bir sonraki adımımız Mastodon'un veritabanına bağlanırken kullanacağı yeni bir SQL &quot;kullanıcısı&quot; oluşturmaktır.</p>
+<p>Bu kullanıcıyı oluşturabilmek için, PostgreSQL CLI'sini başlatmak üzere aşağıdaki komutu kullanmamız gerekecek.</p>
+<pre><code>sudo -u postgres psql
+</code></pre>
+<p><strong>11.</strong> PostgreSQL varsayılan olarak &quot;<code>ident</code>&quot; eklentisini kullandığından, sadece kullanıcının daha önce oluşturulan kullanıcıyla aynı isme sahip olduğundan emin olmamız gerekiyor.</p>
+<p>CLI içinde aşağıdaki komutu kullanarak &quot;<code>mastodon</code>&quot; adlı bir Postgre kullanıcısı oluşturun.</p>
+<pre><code>CREATE USER mastodon CREATEDB;
+</code></pre>
+<p>Satırın sonunda &quot;<code>CREATEDB</code>&quot; kullanarak, Postgres'e bu yeni kullanıcının veritabanı oluşturabileceğini söylüyoruz. Bu izin, Mastodon'un kendisini düzgün şekilde kurabilmesi için gereklidir.</p>
+<p><strong>12.</strong> Kullanıcı artık oluşturulduğuna göre, aşağıdakini yazarak CLI'den çıkabilirsiniz.</p>
+<pre><code>\q
+</code></pre>
+<h3>Yarn'ı Etkinleştirme</h3>
+<p><strong>13.</strong> Raspberry Pi'mizde Mastodon'u derleyip çalıştırmak için, Yarn'ı etkinleştirmemiz gerekecek. Yarn, Node.JS için bir paket yöneticisidir.</p>
+<p>Sisteminizde Yarn'ı aşağıdaki iki komutu kullanarak etkinleştirebilirsiniz.</p>
+<pre><code>sudo corepack enable
+sudo yarn set version classic
+</code></pre>
+<h3>Raspberry Pi'de Mastodon İçin Ruby Kurulumu</h3>
+<p><strong>14.</strong> Sonunda Raspberry Pi'nize Ruby kurabiliriz. Mastodon, web sayfalarını ve REST API'sini oluşturmak için Ruby kullanır.</p>
+<p>Ruby'yi kurmak için, aşağıdaki komutu çalıştırarak Mastodon kullanıcısına geçmemiz gerekiyor.</p>
+<pre><code>sudo su mastodon
+</code></pre>
+<p><strong>15.</strong> Raspberry Pi'mizde Ruby'yi kurmak ve ayarlamak için, &quot;<code>rbenv</code>&quot; adlı bir araç kullanacağız. Bu araç, Mastodon kullanıcımız için Ruby ortamını kolayca kurmamızı sağlar.</p>
+<p>Aşağıdaki komutu kullanarak &quot;<code>rbenv</code>&quot; aracının kod deposunu klonlayın.</p>
+<pre><code>git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+</code></pre>
+<p><strong>16.</strong> Ayrıca &quot;<code>rbenv</code>&quot; aracı için &quot;<code>ruby-build</code>&quot; eklentisini de klonlamamız gerekiyor.</p>
+<p>Terminalde aşağıdaki komutu çalıştırarak bu aracı klonlayabilirsiniz.</p>
+<pre><code>git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+</code></pre>
+<p><strong>17.</strong> Şimdi &quot;<code>.bashrc</code>&quot; dosyasını değiştirmek için aşağıdaki komutu çalıştırın. Bu dosyadaki komutlar, bash terminali başladığında çalıştırılacaktır.</p>
+<p>Eklediğimiz komut, Ruby ortamını kurmak için kullanılan &quot;<code>rbenv</code>&quot; aracını başlatacaktır.</p>
+<pre><code>echo 'eval &quot;$(~/.rbenv/bin/rbenv init - bash)&quot;' &gt;&gt; ~/.bashrc
+</code></pre>
+<p><strong>18.</strong> Yaptığımız değişikliklerin hemen kullanılabilir olduğundan emin olmak için, aşağıdaki komutu kullanın.</p>
+<pre><code>exec bash
+</code></pre>
+<p><strong>19.</strong> Şimdi terminalde aşağıdaki komutu kullanarak Raspberry Pi'mize Ruby 3.0.4'ü kurmaya başlayabiliriz.</p>
+<p>Ruby'yi bu şekilde kurmak, Raspberry Pi'mizde Mastodon'un beklediği tam sürüme sahip olmamızı sağlar.</p>
+<pre><code>RUBY_CONFIGURE_OPTS=--with-jemalloc rbenv install 3.0.4
+</code></pre>
+<p>Derleme sürecinin biraz zaman alabileceğini lütfen unutmayın.</p>
+<p><strong>20.</strong> Ruby kurulumu bittikten sonra, bir sonraki adımımız onu kullanılacak küresel Ruby sürümü olarak belirlemektir.</p>
+<p>Bunu yapmak için, sadece aşağıdaki komutu kullanmanız gerekiyor.</p>
+<pre><code>rbenv global 3.0.4
+</code></pre>
+<p><strong>21.</strong> Son olarak, &quot;<code>bundler</code>&quot;ı kurmak için Ruby paket yöneticisinden yararlanmamız gerekiyor.</p>
+<p>Bu paketi aşağıda gösterildiği gibi &quot;<code>gem</code>&quot; kullanarak kurabilirsiniz.</p>
+<pre><code>gem install bundler --no-document
+</code></pre>
+<h2>Raspberry Pi'ye Mastodon Kurulumu</h2>
+<p>Artık her şeyi hazırladığımıza göre, Raspberry Pi'mizde Mastodon'u çalıştırmamız gerekiyor, artık bu sosyal ağ yazılımını kurmaya geçebiliriz.</p>
+<p>Aşağıdaki bölümlerde, Mastodon'u cihazınıza nasıl derleyip kuracağınızı öğreneceksiniz.</p>
+<h3>Mastodon Deposunu Raspberry Pi'nize Klonlama</h3>
+<p><strong>1.</strong> Devam etmeden önce, hâlâ Mastodon kullanıcısı olarak çalıştığınızdan emin olmalısınız.</p>
+<p>Kabuk oturumunuzun &quot;<code>mastodon@</code>&quot; ile başladığını görmüyorsanız, aşağıdaki komutu çalıştırmanız gerekecek.</p>
+<pre><code>sudo su mastodon
+</code></pre>
+<p><strong>2.</strong> &quot;<code>mastodon</code>&quot; kullanıcısına geçtikten sonra, <a href="https://pimylifeup.com/cd-command/">cd komutunu kullanarak</a> ana dizine geçebilirsiniz.</p>
+<pre><code>cd ~
+</code></pre>
+<p><strong>3.</strong> Artık ana dizinde olduğumuza göre, Mastodon kod tabanını Raspberry Pi'mize klonlayabiliriz.</p>
+<p>Depoyu klonlamak için, aşağıdaki komutu kullanmalısınız.</p>
+<pre><code>git clone https://github.com/mastodon/mastodon.git live
+</code></pre>
+<p><strong>4.</strong> Mastodon deposunu klonladıktan sonra, &quot;<code>live</code>&quot; dizinine geçmek için tekrar cd komutunu kullanmak isteyeceğiz.</p>
+<pre><code>cd live
+</code></pre>
+<p><strong>5.</strong> Artık Mastodon'un en son kararlı &quot;<code>etiketli (tagged)</code>&quot; sürümüne geçmek için &quot;<code>git checkout</code>&quot; komutunu kullanabiliriz.</p>
+<pre><code>git checkout $(git tag -l | grep -v 'rc[0-9]*$' | sort -V | tail -n 1)
+</code></pre>
+<h3>Mastodon'u ve Bağımlılıklarını Kurma</h3>
+<p><strong>6.</strong> İlk adımımız, aşağıdaki komutu kullanarak &quot;<code>deployment</code>&quot; seçeneğini &quot;<code>true</code>&quot; olarak ayarlamaktır.</p>
+<pre><code>bundle config deployment 'true'
+</code></pre>
+<p><strong>7.</strong> Ardından, yalnızca geliştirme veya test amaçlı kullanılan paketleri hariç tutmak için &quot;<code>bundle</code>&quot; aracından yararlanıyoruz.</p>
+<pre><code>bundle config without 'development test'
+</code></pre>
+<p><strong>8.</strong> Son olarak, Mastodon'un tüm Ruby bağımlılıklarını Raspberry Pi'mize kurmak için bundle komutunu tekrar kullanabiliriz.</p>
+<p>&quot;<code>-j</code>&quot; seçeneğini kullanarak, paket yöneticisine sahip olduğumuz kadar çok CPU çekirdeğini kullanmasını söyleyebiliriz.</p>
+<pre><code>bundle install -j$(nproc)
+</code></pre>
+<p><strong>9.</strong> Ruby paketleri kurulduktan sonra, Mastodon için Node.JS bağımlılıklarını kurmak için yarn kullanabiliriz.</p>
+<p>Aşağıdaki komutu kullanarak bu bağımlılıkları kurun.</p>
+<pre><code>yarn install --pure-lockfile
+</code></pre>
+<h3>Raspberry Pi'niz İçin Mastodon'u Yapılandırma</h3>
+<p><strong>10.</strong> Sonunda Raspberry Pi'nizde Mastodon'un kendisini yapılandırma sürecine başlayabiliriz.</p>
+<p>Bu süreci başlatmak için, komut satırında aşağıdaki komutu çalıştırın.</p>
+<pre><code>RAILS_ENV=production bundle exec rake mastodon:setup
+</code></pre>
+<h4>Genel Ayarlar</h4>
+<p><strong>11.</strong> Önce Mastodon örneğiniz için alan adını girmeniz istenecektir. Bunu kullanmayı planladığınız tam alan adına ayarlamak kritik önem taşır. Başka herhangi bir alan adı üzerinden bağlanırsanız, bağlantı engellenecektir.</p>
+<p>Örneğimiz için, &quot;<code>mastodon.pimylifeup.com</code>&quot; kullanacağız.</p>
+<pre><code>Your instance is identified by its domain name. Changing it afterward will break things.
+Domain name:
+</code></pre>
+<p><strong>12.</strong> Ardından, Raspberry Pi'nizin Mastodon örneğini tek kullanıcı modunda çalıştırmak isteyip istemediğiniz sorulacaktır. Tek kullanıcı modu, yalnızca tek bir genel profil olacağı anlamına gelir.</p>
+<p>Bu Mastodon sunucusunu yalnızca kendiniz için istiyorsanız &quot;<code>Y</code>&quot; yazın.</p>
+<p>Alternatif olarak, birden fazla kullanıcıya sahip olmak için &quot;<code>N</code>&quot; tuşuna ve ardından <code>ENTER</code> tuşuna basın.</p>
+<pre><code>Single user mode disables registrations and redirects the landing page to your public profile.
+Do you want to enable single user mode?
+</code></pre>
+<p><strong>13.</strong> Mastodon'u bir docker konteyneri olarak çalıştırıp çalıştırmadığınız sorulacaktır.</p>
+<p>Mastodon'u çalıştırmak için Docker kullanmadığımızdan, &quot;<code>N</code>&quot; tuşuna ve ardından <code>ENTER</code> tuşuna basın.</p>
+<pre><code>Are you using Docker to run Mastodon?
+</code></pre>
+<h4>PostgreSQL Ayarları</h4>
+<p><strong>14.</strong> Aşağıdaki istem, PostgreSQL için ana bilgisayarı ayarlamanızı isteyecektir.</p>
+<p>Varsayılan değer &quot;<code>/var/run/postgresql</code>&quot;dir, bu yüzden güvenle <code>ENTER</code> tuşuna basabilirsiniz.</p>
+<pre><code>PostgreSQL host: (/var/run/postgresql)
+</code></pre>
+<p><strong>15.</strong> Ardından, PostgreSQL için portu belirtmeniz istenecektir.</p>
+<p>Yine, varsayılan değer sorunsuzdur, bu yüzden <code>ENTER</code> tuşuna basın.</p>
+<pre><code>PostgreSQL port: (5432)
+</code></pre>
+<p><strong>16.</strong> Aşağıdaki seçenek Mastodon veritabanının adını soracaktır.</p>
+<p>Devam etmek için, güvenle varsayılan değeri kabul edip <code>ENTER</code> tuşuna basabilirsiniz.</p>
+<pre><code>Name of PostgreSQL database: (mastodon_production)
+</code></pre>
+<p><strong>17.</strong> Ardından Mastodon için hangi PostgreSQL kullanıcısını kullanacağınızı belirleme şansınız olacak.</p>
+<p>Bu eğitimi takip ettiyseniz, güvenle varsayılan değeri kullanıp <code>ENTER</code> tuşuna basabilirsiniz.</p>
+<pre><code>Name of PostgreSQL user: (mastodon)
+</code></pre>
+<p><strong>18.</strong> PostgreSQL için yapılandırmamız gereken son ayar şifresidir.</p>
+<p>PostgreSQL kullanıcımızı şifresiz oluşturduğumuzdan, kimlik doğrulama için varsayılan olarak &quot;<code>ident</code>&quot; kullanacaktır. Mastodon'u çalıştıran kullanıcı ile PostgreSQL kullanıcısı eşleştiği sürece, veritabanına erişebileceğiz.</p>
+<p>Alanı boş bırakın, ardından devam etmek için <code>ENTER</code> tuşuna basın.</p>
+<pre><code>Password of PostgreSQL user:
+</code></pre>
+<h4>Redis Ayarları</h4>
+<p><strong>19.</strong> Bir sonraki adımınız, Redis sunucunuz için ana bilgisayarı ayarlamaktır.</p>
+<p>Bunu yerel olarak kurduğumuzdan, <code>ENTER</code> tuşuna basarak varsayılan seçeneği kullanabiliriz.</p>
+<pre><code>Redis host: (localhost)
+</code></pre>
+<p><strong>20.</strong> Ardından, Redis sunucusuna bağlanırken kullanılan portu ayarlamamız gerekiyor.</p>
+<p>Bu rehberde varsayılan portu değiştirmediğimizden, varsayılan değeri kullanmak için <code>ENTER</code> tuşuna basın.</p>
+<pre><code>Redis port: (6379)
+</code></pre>
+<p><strong>21.</strong> Ayarlamamız gereken son seçenek şifredir.</p>
+<p>Redis'i yerel olarak kurduğumuz şekilde, bir şifre belirtmeden <code>ENTER</code> tuşuna basın.</p>
+<pre><code>Redis password:
+</code></pre>
+<h4>Bulut Depolama Ayarları</h4>
+<p><strong>22.</strong> Şimdi Mastodon'u yüklenen dosyalar için bulut depolama kullanacak şekilde yapılandırma şansınız olacak.</p>
+<p>Bu, bu rehberde ele almayı planladığımız bir şey olmadığından, &quot;<code>N</code>&quot; yazıp <code>ENTER</code> tuşuna basacağız.</p>
+<p>AWS gibi bir Bulut depolama kullanmak isterseniz, &quot;<code>Y</code>&quot; yazıp yönergeleri takip etmek isteyeceksiniz.</p>
+<pre><code>Do you want to store uploaded files on the cloud?
+</code></pre>
+<h4>SMTP Seçenekleri</h4>
+<p><strong>23.</strong> Ardından, Mastodon için Raspberry Pi'nizden e-posta göndermek isteyip istemediğiniz sorulacaktır. Bu önerilmez, çünkü Outlook ve Gmail gibi e-posta sağlayıcıları muhtemelen sunucunuzu engelleyecektir.</p>
+<p>Bunun yerine, <a href="https://sendgrid.com/">Sendgrid</a>, <a href="https://www.mailgun.com/">Mailgun</a> veya <a href="https://aws.amazon.com/ses/">Amazon SES</a> gibi işlemsel bir e-posta hizmeti kullanmalısınız.</p>
+<p>Kurulumunuzu basit tutmak istiyorsanız ve e-postalarınızın ulaşabilirliği konusunda endişeniz yoksa, &quot;<code>Y</code>&quot; yazıp <code>ENTER</code> tuşuna basabilirsiniz.</p>
+<p>Aksi takdirde, işlemsel bir e-posta hizmeti kullanmak için &quot;<code>N</code>&quot; yazıp <code>ENTER</code> tuşuna basın.</p>
+<pre><code>Do you want to send e-mails from localhost?
+</code></pre>
+<p>Raspberry Pi'nizden doğrudan e-posta göndermeyi seçerseniz, <strong>30. adıma</strong> geçin.</p>
+<p><strong>24.</strong> Şimdi kullanacağınız SMTP hizmetinin bilgilerini bilmeniz gerekecek.</p>
+<p>Bilmeniz gereken ilk ayrıntı, SMTP sunucusu için IP veya alan adıdır. Örneğin, Mailgun kullanıyor olsaydınız, &quot;<code>smtp.mailgun.org</code>&quot; kullanırdınız.</p>
+<pre><code>SMTP Server: (smtp.mailgain.org)
+</code></pre>
+<p><strong>25.</strong> Ardından SMTP mesajını göndermek için portu ayarlamamız gerekecek. Bu port hizmetten hizmete farklılık gösterir.</p>
+<p>Örneğin, Mailgun hizmetini kullanırken, &quot;<code>587</code>&quot; portunu kullanırdınız.</p>
+<pre><code>SMTP port: (587)
+</code></pre>
+<p><strong>26.</strong> SMTP üzerinden herhangi bir mesaj gönderebilmek için bir kullanıcı adı ve şifreye ihtiyacınız olacak.</p>
+<p>Öncelikle, SMTP bağlantınız için şifreyi girmeniz istenecektir. Bu bilgileri e-posta işlem hizmetiniz sağlar.</p>
+<pre><code>SMTP username:
+</code></pre>
+<p><strong>27.</strong> SMTP bağlantısı için kullanılacak kullanıcı adını girdikten sonra, şifreyi de girmeniz gerekecek.</p>
+<pre><code>SMTP password:
+</code></pre>
+<p><strong>28.</strong> Ayrıca SMTP için kullanılan kimlik doğrulama türünü de kontrol edebiliriz.</p>
+<p>Bu seçenek için varsayılan değer &quot;<code>plain</code>&quot;dir. Doğru değer için sağlayıcınızı kontrol ettiğinizden emin olun.</p>
+<pre><code>SMTP authentication: (plain)
+</code></pre>
+<p><strong>29.</strong> Ardından SMTP doğrulama modunu belirtmeniz gerekecek. Burada ne seçeceğinizden emin değilseniz, &quot;<code>none</code>&quot; seçeneğini seçebilirsiniz.</p>
+<pre><code>SMTP OpenSSL verify mode:
+</code></pre>
+<p><strong>30.</strong> Artık Raspberry Pi'nizin Mastodon e-postalarını göndermek için kullanacağı e-posta adresini seçebilirsiniz.</p>
+<p>Kendinizinkini kullanmak için, şu biçimi kullanmanız gerekiyor: &quot;<code>NAME &lt;EMAILADDRESS&gt;</code>&quot;. Örneğin, bunu web sitemiz için kuruyor olsaydık, &quot;<code>PiMyLifeUP &lt;mastodon@pimylifeup.com&gt;</code>&quot; şeklinde yazılırdı.</p>
+<p><code>ENTER</code> tuşuna basarak varsayılan değeri de kullanabilirsiniz.</p>
+<pre><code>E-mail address to send e-mails &quot;from&quot;: (Mastodon &lt;notifications@DOMAINNAME&gt;)
+</code></pre>
+<p><strong>31.</strong> Son olarak, yapılandırma e-postasını test etmek isteyip istemediğiniz sorulacaktır.</p>
+<p>Tüm ayarlarınızın çalışıp çalışmadığını test etmek için, &quot;<code>Y</code>&quot;ye basın, ardından <code>ENTER</code> tuşuna basın.</p>
+<pre><code>Send a test e-mail with this configuration right now? (Y/n)
+</code></pre>
+<h4>Yapılandırmayı Tamamlama</h4>
+<p><strong>32.</strong> Sonunda Raspberry Pi'nizde Mastodon'u yapılandırmayı bitirebiliriz.</p>
+<p>Şimdi yapılandırmayı &quot;<code>.env.production</code>&quot; dosyasına kaydetmek isteyip istemediğiniz sorulacaktır.</p>
+<p>Değişiklikleri kaydetmek için, &quot;<code>Y</code>&quot; yazın ve ardından <code>ENTER</code> tuşuna basın.</p>
+<pre><code>Save configuration?
+</code></pre>
+<p><strong>33.</strong> Mastodon artık veritabanını kurmak ve tüm verilerini yüklemek isteyecektir.</p>
+<p>Mastodon'un veritabanını oluşturması için &quot;<code>y</code>&quot; yazın ve <code>ENTER</code> tuşuna basın.</p>
+<pre><code>Now that configuration is saved, the database schema must be loaded.
+If the database already exists, this will erase its contents.
+Prepare the database now?
+</code></pre>
+<p><strong>34.</strong> Yapılandırma sırasında sorulacak son şey, Raspberry Pi'nizin Mastodon'un CSS ve JS varlıklarını derlemesini isteyip istemediğinizdir.</p>
+<p>Bunların derlenmesine ihtiyacımız olduğundan, &quot;<code>Y</code>&quot; yazın ve <code>ENTER</code> tuşuna basın.</p>
+<pre><code>The final step is compiling CSS/JS assets.
+This may take a while and consume a lot of RAM.
+Compile the assets now?
+</code></pre>
+<h4>Bir Admin Hesabı Oluşturma</h4>
+<p><strong>35.</strong> Yapılandırma betiği sona ermeden önce, bir Mastodon admin hesabı oluşturmak isteyip istemediğiniz sorulacaktır.</p>
+<p>Bu hesabı oluşturmak için şimdi en iyi zaman, bu yüzden devam etmek için &quot;<code>y</code>&quot; yazın ve <code>ENTER</code> tuşuna basın.</p>
+<pre><code>Do you want to create an admin user straight away?
+</code></pre>
+<p><strong>36.</strong> Şimdi admin hesabınız için bir kullanıcı adı belirtmeniz istenecektir.</p>
+<p>Bu kullanıcıya istediğiniz herhangi bir adı verebilirsiniz. Kullanıcı adını yazın, ardından <code>ENTER</code> tuşuna basın.</p>
+<pre><code>Username: (admin)
+</code></pre>
+<p><strong>37.</strong> Ardından, admin hesabınıza atanacak bir e-posta adresi belirtebilirsiniz. Bu e-posta adresi, admin hesabınıza giriş yapmak için kullanacağınız adrestir.</p>
+<p>Bunun kullanıldığı için size ulaşılabilecek bir e-posta adresi olduğundan emin olun.</p>
+<pre><code>E-mail:
+</code></pre>
+<p><strong>38.</strong> Hesabınızı oluşturduktan sonra, otomatik olarak bir şifre oluşturacaktır. Bu şifreyi kaydedin, çünkü hesabınıza giriş yapmak için bunu kullanacaksınız.</p>
+<pre><code>You can login with the password: 9a1792ae3228847855d6d415875a1a79
+</code></pre>
+<h3>Mastodon Sunucunuz İçin Bir SSL Sertifikası Alma</h3>
+<p><strong>39.</strong> Bu noktada, sonunda Mastodon kullanıcısıyla işimiz bitti.</p>
+<p>Aşağıdaki komutu çalıştırarak normal kullanıcınıza dönün.</p>
+<pre><code>exit
+</code></pre>
+<p><strong>40.</strong> Raspberry Pi'nizin Mastodon bağlantısını güvende tutmaya yardımcı olmak için, bunu HTTPS altında çalıştırmalısınız. Bunun çalışması için, alan adınız için bir sertifika oluşturmanız gerekecek.</p>
+<p>Bu rehberde daha önce certbot'u kurmuş olmamız sayesinde, aşağıdaki komutu çalıştırarak Let's Encrypt'ten bir sertifika talep edebiliriz.</p>
+<p>&quot;<code>YOURDOMAIN.com</code>&quot; kısmını kullandığınız alan adıyla değiştirdiğinizden emin olun.</p>
+<pre><code>certbot --nginx -d YOURDOMAIN.com
+</code></pre>
+<p>Sertifika oluşturma sırasında, bir dizi soru ile karşılaşacaksınız.</p>
+<h3>Raspberry Pi'nizde Mastodon İçin NGINX'i Yapılandırma</h3>
+<p><strong>41.</strong> Şimdi örnek Nginx yapılandırmasını Mastodon dizininden &quot;<code>sites-available</code>&quot; dizinine kopyalayalım.</p>
+<p>Bu işlemi gerçekleştirmek için aşağıdaki komutu kullanın.</p>
+<pre><code>sudo cp /home/mastodon/live/dist/nginx.conf /etc/nginx/sites-available/mastodon
+</code></pre>
+<p><strong>42.</strong> &quot;<code>sites-available</code>&quot; dizinindeki mastodon yapılandırma dosyası ile &quot;<code>sites-enabled</code>&quot; dizini arasında sembolik bir bağlantı oluşturmamız gerekiyor.</p>
+<p>Aşağıdaki komutu kullanarak bu sembolik bağlantıyı oluşturabilirsiniz.</p>
+<pre><code>sudo ln -s /etc/nginx/sites-available/mastodon /etc/nginx/sites-enabled/mastodon
+</code></pre>
+<p><strong>43.</strong> Bir sonraki adımımız, Raspberry Pi'nizin Mastodon Nginx yapılandırma dosyasını alan adınızı kullanacak şekilde düzenlemektir.</p>
+<p>Aşağıda gösterilen komutu kullanarak <a href="https://pimylifeup.com/nano-text-editor/">nano metin editörünü kullanarak</a> yapılandırma dosyasını düzenlemeye başlayın.</p>
+<pre><code>sudo nano /etc/nginx/sites-enabled/mastodon
+</code></pre>
+<p><strong>44.</strong> Bu dosyanın içinde, aşağıdaki satırı bulup değiştirmeniz gerekecek. Dosyada bunun değiştirilmesi gereken iki tekrarı olacak.</p>
+<p>Bu satırlar her &quot;<code>server {</code>&quot; bloğunun üstüne yakın olmalıdır.</p>
+<pre><code>server_name example.com;
+</code></pre>
+<p>Bunu kullandığınız alan adıyla değiştirin. Örneğin, biz &quot;<code>mastodon.pimylifeup.com</code>&quot; kullandık.</p>
+<pre><code>server_name mastodon.pimylifeup.com;
+</code></pre>
+<p><strong>45.</strong> Bir sonraki adımımız, Nginx dosyasını daha önce aldığınız SSL sertifikasını işaret edecek şekilde yapılandırmaktır.</p>
+<p>Dosyanın içinde aşağıdaki iki satırı bulun.</p>
+<pre><code>  # ssl_certificate     /etc/letsencrypt/live/example.com/fullchain.pem;
+  # ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
+</code></pre>
+<p>Bu iki satırı bulduktan sonra, önlerindeki kare işaretini kaldırmanız gerekiyor. Ayrıca &quot;<code>example.com</code>&quot; kısmını alan adınızla değiştirmeniz gerekiyor.</p>
+<p>Örneğin, &quot;<code>mastodon.pimylifeup.com</code>&quot; alan adımızı kullanarak, satırlar aşağıdaki gibi görünürdü.</p>
+<pre><code>  ssl_certificate     /etc/letsencrypt/live/mastodon.pimylifeup.com/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/mastodon.pimylifeup.com/privkey.pem;
+</code></pre>
+<p><strong>46.</strong> Değişiklikleri yaptıktan sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<p><strong>47.</strong> Nginx'in yapılandırmasında değişiklikler yaptığımızdan, aşağıdaki komutu çalıştırarak bir yeniden yükleme gerçekleştirmemiz gerekecek.</p>
+<pre><code>sudo systemctl reload nginx
+</code></pre>
+<h3>Raspberry Pi'de Mastodon İçin Bir Servis Dosyası Ayarlama</h3>
+<p><strong>48.</strong> Yapmamız gereken son görev, Raspberry Pi'mizde Mastodon'u çalıştırmayı yönetecek bir servis kurmaktır.</p>
+<p>Neyse ki, bu servis dosyaları Mastodon kod tabanıyla birlikte gelir.</p>
+<p>Aşağıda gösterilen <a href="https://pimylifeup.com/cp-command-linux/">cp komutunu kullanarak</a> systemd servislerini ilgili dizine kopyalayın.</p>
+<pre><code>sudo cp /home/mastodon/live/dist/mastodon-*.service /etc/systemd/system/
+</code></pre>
+<p><strong>59.</strong> Servis dosyaları kopyalandıktan sonra, artık aşağıdaki komutu kullanarak hepsini etkinleştirip başlatabiliriz.</p>
+<p>&quot;<code>--now</code>&quot; seçeneği systemd'ye Mastodon'u başlatmasını söyler.</p>
+<pre><code>sudo systemctl enable --now mastodon-web mastodon-sidekiq mastodon-streaming
+</code></pre>
+<p><strong>60.</strong> Bu noktada, Mastodon artık Raspberry Pi'nizde çalışıyor ve seçtiğiniz alan adı üzerinden tam olarak erişilebilir durumda.</p>
+<h2>Raspberry Pi Mastodon Sunucunuza Bağlanma</h2>
+<p>Bu noktada, sonunda Raspberry Pi'nize Mastodon'u kurmuş olacaksınız ve ona erişmeye hazır olacaksınız.</p>
+<p><strong>1.</strong> Mastodon'a erişmek için, daha önce yapılandırdığınız alan adına gitmeniz gerekiyor.</p>
+<p>Örneğimiz için, web tarayıcımızda aşağıdaki adrese gideceğiz.</p>
+<pre><code>https://mastodon.pimylifeup.com/
+</code></pre>
+<p><strong>2.</strong> Sizi Mastodon'un giriş ekranı karşılamalıdır. Sağ üstteki formu kullanarak, kurulum sırasında oluşturduğunuz yönetici hesabıyla giriş yapabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/11/Raspberry-Pi-Mastodon-01-Login-to-Admin-Account.jpg" alt="Raspberry Pi'de Mastodon Admin Hesabına Giriş Yapma" /></p>
+<p><strong>3.</strong> Artık Mastodon hesabınıza giriş yaptınız. Şimdi profilinizde &quot;tut&quot; (toot) atmaya başlayabilirsiniz.</p>
+<p>Alternatif olarak, admin olduğunuzdan, tercihler ekranına gidip yönetim panelinden de yararlanabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/11/Raspberry-Pi-Mastodon-02-Open-Preferences.jpg" alt="Sağ kenar çubuğundaki Tercihler'i açma" /></p>
+<p><strong>4.</strong> Tercihler ekranındayken, &quot;<code>Administration</code>&quot; seçeneğini bulmak için sol kenar çubuğuna bakın ve ona <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/11/Raspberry-Pi-Mastodon-03-Open-Administration-Panel.jpg" alt="Yönetim panelini açma" /></p>
+<p><strong>5.</strong> Yönetim ekranında, kendi kendine barındırılan Mastodon kurulumunuzun birçok yönünü kontrol edebilirsiniz.</p>
+<p>Bu ekranda bulunan tüm araçları öğrenmek için zaman ayırın, çünkü topluluğunuzu yönetmenize yardımcı olacaktır.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/11/Raspberry-Pi-Mastodon-04-Admin-Dashboard.jpg" alt="Raspberry Pi Mastodon Admin Gösterge Paneli" /></p>
+<h2>Sonuç</h2>
+<p>Bu rehberin bu noktasında, umarız Raspberry Pi'nize Mastodon kurulu ve çalışır durumdadır.</p>
+<p>Mastodon, Twitter'ın popülerleştirdiği mikroblog tarzını kullanan, kendi kendine barındırılan bir sosyal ağdır.</p>
+<p>Mastodon'u Pi'nizde çalışır hale getirirken sorun yaşadıysanız, aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-mastodon.html&amp;text=Raspberry+Pi%27ye+Mastodon+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-mastodon.html&amp;text=Raspberry+Pi%27ye+Mastodon+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-mastodon.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-mastodon.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-mastodon.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-mastodon.html&amp;title=Raspberry+Pi%27ye+Mastodon+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27ye+Mastodon+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-mastodon.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;nizi Wake-on-LAN Sunucusu Olarak Çalıştırma - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Etherwake kullanarak"/>
+    <meta property="og:title" content="Raspberry Pi&#39;nizi Wake-on-LAN Sunucusu Olarak Çalıştırma"/>
+    <meta property="og:description"
+          content="Etherwake kullanarak"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-wake-on-lan-server.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-wake-on-lan-server.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Wake-on-LAN-Server-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;nizi Wake-on-LAN Sunucusu Olarak Çalıştırma"/>
+    <meta name="twitter:description"
+          content="Etherwake kullanarak"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Wake-on-LAN-Server-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'nizi Wake-on-LAN Sunucusu Olarak Çalıştırma","item":{"@id":"https://codenfast.com/posts/raspberry-pi-wake-on-lan-server.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Wake-on-LAN-Server-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Wake-on-LAN-Server-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Wake-on-LAN-Server-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Wake-on-LAN-Server-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'nizi Wake-on-LAN Sunucusu Olarak Çalıştırma","description":"Etherwake kullanarak","image":["https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Wake-on-LAN-Server-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:25:53.292842+03:00","dateModified":"2026-08-03T12:25:53.292867+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;nizi Wake-on-LAN Sunucusu Olarak Çalıştırma</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-wake-on-lan-server/">PiMyLifeUp - Running your Raspberry Pi as a Wake-on-LAN Server</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'nizi bağlı herhangi bir cihaza Wake-on-LAN (WoL) paketi göndermek için nasıl kullanacağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Wake-on-LAN-Server-Thumbnail.jpg" alt="Raspberry Pi Wake-on-LAN Sunucusu" /></p>
+<p>Wake-On-LAN, ağ üzerinden belirli bir paket göndererek bir cihazı uyandırmanızı sağlayan bir işlevselliktir.</p>
+<p>Raspberry Pi, Wake-on-LAN paketlerini almayı desteklemese de, bunları göndermeye fazlasıyla muktedirdir.</p>
+<p>Bu işlevselliği kullanabileceğiniz çeşitli yollar vardır. Ağımızda, bir elektrik kesintisi olduktan sonra bir NAS'ı tekrar açmak için ayarlanmış bir Raspberry Pi'miz var. Her ikisi de bir kesintisiz güç kaynağına (UPS) takılı olduğundan, bu, daha fazla güç tüketen NAS'ın güvenli bir şekilde kapanmasını ve her şey güvenli olduğunda tekrar açılmasını sağlar.</p>
+<p>Pi'nizden Wake-on-LAN paketleri göndermek için, <a href="https://packages.debian.org/unstable/etherwake">etherwake</a> adlı bir yazılım parçası kullanacağız.</p>
+<p>Etherwake, Raspberry Pi'nizin bir Wake-on-LAN sunucusu görevi görmesini ve diğer cihazlara paket göndermesini sağlar.</p>
+<h2>Cihazlarınızı Wake-on-LAN'ı Kabul Edecek Şekilde Hazırlama</h2>
+<p>Başlamadan önce, Raspberry Pi'nizden bir Wake-on-LAN paketi gönderildiğinde uyanabilmeleri için diğer cihazlarınızı ayarlamak isteyeceksiniz.</p>
+<p>Bu adımlar cihazdan cihaza önemli ölçüde farklılık gösterir, bu yüzden bu rehberde bunu ele almayacağız. Wake-on-LAN'ı kurmanın en iyi yolu cihazınızın BIOS'u üzerindendir. Bu, cihaz kapatılmış olsa bile açmanızı sağlar.</p>
+<p>Hedef cihazınızda Wake-on-LAN'ı etkinleştirdikten sonra, mesajı gönderebilmeniz için MAC adresini de bilmeniz gerekir.</p>
+<p>Çoğu yönlendirici, cihaz listesine göz atarsanız bu MAC adreslerini gösterecektir.</p>
+<h2>Raspberry Pi'nizi Bir Wake-on-LAN Sunucusu Olarak Ayarlama</h2>
+<p>Aşağıdaki adımlar, Raspberry Pi'nizi bir Wake-on-LAN Sunucusu olarak çalışacak şekilde ayarlama sürecinde size rehberlik edecek. Bunu, Etherwake adlı ücretsiz bir yazılım parçasını kurarak başaracağız.</p>
+<h3>Raspberry Pi'ye Etherwake Kurulumu</h3>
+<p>Raspberry Pi'nizi bir Wake-on-LAN sunucusu olarak çalıştırmak için, etherwake yazılımına güveneceğiz. Bu yazılım paket deposu üzerinden mevcut olduğundan, sonraki birkaç adım inanılmaz derecede basit olacak.</p>
+<p><strong>1.</strong> Raspberry Pi'mize Etherwake kurmadan önce, paket listesini ve paketlerin kendisini güncellememiz gerekiyor.</p>
+<p>Aşağıdaki iki komutu kullanarak Raspberry Pi'nizin işletim sistemini güncelleyin.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>2.</strong> Güncelleme tamamlandıktan sonra, aşağıdaki komutu kullanarak Etherwake yazılımını kurabiliriz.</p>
+<pre><code>sudo apt install etherwake
+</code></pre>
+<h3>Raspberry Pi'nizde Wake-on-LAN İçin Etherwake Kullanma</h3>
+<p><strong>3.</strong> Raspberry Pi'nizde etherwake kurulu olduğunda, onu kullanabilir ve Wake-on-LAN paketleri gönderebilirsiniz.</p>
+<p>Ancak, bunun çalışması için, uyandırmak istediğiniz cihazın MAC adresini bilmeniz gerekecek. Bir MAC adresi, ağ adaptörlerini tanımlamak için kullanılır, yani örneğin Wi-Fi'niz ve Ethernet'iniz farklı MAC adreslerine sahip olacaktır.</p>
+<p>Bir MAC adresiniz hazır olduğunda bir sonraki adıma geçebilirsiniz.</p>
+<p><strong>4.</strong> Raspberry Pi'nizden bir Wake-on-LAN paketi göndermek için, sadece &quot;<code>etherwake</code>&quot; komutunu, ardından &quot;<code>-b</code>&quot; seçeneğini ve son olarak MAC adresini kullanmanız gerekiyor.</p>
+<p>&quot;<code>-b</code>&quot; seçeneği, etherwake'e Wake-on-LAN paketini belirtilen adrese yayınlamasını (broadcast) söyler.</p>
+<pre><code>sudo etherwake MACADDRESS
+</code></pre>
+<p><strong>5.</strong> Artık etherwake'in nasıl kullanılacağını bildiğinize göre, ağınızdaki çeşitli cihazları uyandırmak için Raspberry Pi'nize SSH ile bağlanabilirsiniz.</p>
+<p>Sadece uyandırmak istediğiniz herhangi bir cihazın &quot;<code>Wake-on-LAN</code>&quot; işlevselliğinin etkin olduğundan emin olun. Tüm cihazlar bunu desteklemez.</p>
+<h2>Raspberry Pi Wake-on-LAN Sunucunuzu Kullanarak Bir Cihazı Uyanık Tutma</h2>
+<p>Raspberry Pi'nizin Wake-on-LAN sunucusunu bir cihazı uyanık tutmak için kullanmanız da mümkündür.</p>
+<p>Bunu, belirtilen bir IP Adresini ping'leyen ve bağlantısı düştüğünde, Raspberry Pi'mize kurduğumuz etherwake yazılımını kullanarak bir Wake-on-LAN paketi gönderen kısa bir betik yazarak başarıyoruz.</p>
+<h3>Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> Betiğimizi Python'da yazacağımızdan, önce yorumlayıcının sistemde kurulu olduğundan emin olmalıyız.</p>
+<p>Raspberry Pi'nizde aşağıdaki komutu kullanarak Python'u kurun.</p>
+<pre><code>sudo apt install python
+</code></pre>
+<h3>Raspberry Pi'nizde Bir Wake-on-LAN Betiği Yazma</h3>
+<p><strong>2.</strong> Kurulduktan sonra, aşağıdaki komutu kullanarak &quot;<code>wake_on_lan_server.py</code>&quot; adlı bir Python betiği yazalım.</p>
+<p>Dosya adının önünde tilde (<code>~</code>) sembolünü kullanarak, bunu kullanıcınızın ana dizinine kaydedeceğiz.</p>
+<pre><code>nano ~/wake_on_lan_server.py
+</code></pre>
+<p><strong>3.</strong> Şimdi, bu dosyanın içine, aşağıdaki kod satırlarını girin. Nasıl çalıştığını anlayabilmeniz için ilerledikçe her bölümü açıklayacağız.</p>
+<pre><code>import subprocess, time
+</code></pre>
+<p>Bu ilk satırla, betik içinde kullanacağımız iki paketi içe aktarıyoruz.</p>
+<ul>
+<li>
+<p><code>subprocess</code> – Bu paket, Python dışında programlar çalıştırmamızı sağlar. Bu paketi kullanarak, Raspberry Pi'mizdeki Etherwake yazılımını cihazlarınıza Wake-On-LAN paketleri göndermek için kullanabiliriz.</p>
+</li>
+<li>
+<p><code>time</code> – time paketi, cihazı doldurmasını önlemek için döngüler arasında betiği duraklatmamızı sağlar.</p>
+<p>def _main():</p>
+</li>
+</ul>
+<p>Şimdi &quot;<code>_main()</code>&quot; fonksiyonumuzu tanımlıyoruz. Betik çalıştırıldığında, bu fonksiyon çağrılacak ve ana döngümüzü içerecek.</p>
+<pre><code>    while True:
+</code></pre>
+<p>Ardından, &quot;<code>while</code>&quot; ve ardından &quot;<code>True</code>&quot; kullanarak sonsuz bir döngü tanımlayalım.</p>
+<pre><code>        is_alive = subprocess.call(['ping', '-c', '1', &quot;&lt;IPADDRESS&gt;&quot;], stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT) == 0
+</code></pre>
+<p>Ardından, her döngüde, &quot;<code>ping</code>&quot; komutunu çağırmak ve sonucu &quot;<code>is_alive</code>&quot; değişkeninde saklamak istiyoruz. &quot;<code>&lt;IPADDRESS&gt;</code>&quot; kısmını uyandırmak istediğiniz makinenin IP'siyle değiştirdiğinizden emin olun.</p>
+<p>Denenecek ping sayısını &quot;<code>-c</code>&quot; seçeneğini kullanarak kontrol ediyoruz.</p>
+<pre><code>        if not is_alive:
+</code></pre>
+<p>Şimdi &quot;<code>is_alive</code>&quot; değişkeninin doğru olup olmadığını kontrol ettiğimiz yeni bir koşullu blok oluşturuyoruz. Bu noktadan sonra, uyandırma komutunu göndermeden önce bir UPS'nin durumu gibi ek şeyleri kontrol ederek betiği daha da genişletebilirsiniz.</p>
+<pre><code>            print(&quot;Sending Wake Command&quot;)
+            subprocess.Popen('/usr/sbin/etherwake -b ' + &quot;&lt;MACADDRESS&gt;&quot;, shell=True, stdout=subprocess.PIPE)
+</code></pre>
+<p>Sistem bir ping'e yanıt vermiyorsa, komut satırına &quot;<code>Sending Wake Command</code>&quot; metnini yazdırarak başlıyoruz. Ardından Raspberry Pi'ye Etherwake kullanarak MAC adresinize bir Wake-on-LAN isteği göndermesini sağlıyoruz.</p>
+<p>&quot;<code>&lt;MACADDRESS&gt;</code>&quot; kısmını uyandırmak istediğiniz cihazın MAC adresiyle değiştirdiğinizden emin olun.</p>
+<pre><code>        time.sleep(10)
+</code></pre>
+<p>Python betiği tekrar döngüye girmeden önce, onu 10 saniye uyutacağız. Raspberry Pi'nizin bir hostu ne sıklıkla ping'lediğini hızlandırmak için bu sayıyı azaltın.</p>
+<pre><code>if __name__ == '__main__':
+    _main()
+</code></pre>
+<p>Betiğimizde ihtiyacımız olan son kod parçası, Python betiği çalıştırıldığında &quot;<code>_main()</code>&quot; fonksiyonunu çalıştıracak olan şeydir.</p>
+<p><strong>4.</strong> Wake-on-LAN betiğinizin son sürümü aşağıda gösterdiğimize benzer görünmelidir. Betiği çalıştırırken sorun yaşarsanız, girintilemenin (indentation) doğru olduğundan emin olun.</p>
+<pre><code>import subprocess, time
+
+def _main():
+    while True:
+
+        is_alive = subprocess.call(['ping', '-c', '1', &quot;&lt;IPADDRESS&gt;&quot;], stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT) == 0
+
+        if not is_alive:
+            subprocess.Popen('/usr/sbin/etherwake -b ' + &quot;&lt;MACADDRESS&gt;&quot;, shell=True, stdout=subprocess.PIPE)
+
+        time.sleep(10)
+
+if __name__ == '__main__':
+    _main()
+</code></pre>
+<p><strong>5.</strong> Betikten memnun olduğunuzda, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<h3>Betiği Test Etme</h3>
+<p><strong>6.</strong> Basit betiğimiz artık yazıldığına göre, her şeyin doğru çalıştığından emin olmak için onu test etmeliyiz.</p>
+<p>Betiği çalıştırmak, terminalde aşağıdaki komutu kullanmak kadar basittir.</p>
+<pre><code>sudo python3 ~/wake_on_lan_server.py
+</code></pre>
+<p><strong>7.</strong> Şimdi, Raspberry Pi'nizin bir wake-on-LAN sinyali göndermesini istediğiniz cihazı kapatırsanız, sonunda terminalde &quot;<code>Sending Wake Command</code>&quot; metninin göründüğünü görmelisiniz.</p>
+<p>Alıcı cihazınız doğru şekilde yapılandırıldıysa, umarım açılacaktır.</p>
+<h3>Raspberry Pi'niz İçin Bir Wake-on-LAN Servisi Oluşturma</h3>
+<p><strong>8.</strong> Küçük Wake-on-LAN sunucu betiğiniz artık yazıldığına göre, muhtemelen Raspberry Pi'niz açıldığında başlamasını isteyeceksiniz.</p>
+<p>Bunu yapmak için, bir servis dosyası oluşturmanız gerekecek. Bu durumda, &quot;<code>wake-on-lan-server</code>&quot; olarak adlandırılacak.</p>
+<pre><code>sudo nano /etc/systemd/system/wake-on-lan-server.service
+</code></pre>
+<p><strong>9.</strong> Bu dosyanın içine, aşağıdaki satırları yazın.</p>
+<p>Bunu yazarken &quot;<code>&lt;USERNAME&gt;</code>&quot; kısmını kullanıcınızın adıyla değiştirdiğinizden emin olun. Dosyanın geri kalanı aynı kalabilmelidir.</p>
+<pre><code>[Unit]
+Description=UPS Tracker
+
+[Service]
+User=root
+Group=root
+ExecStart=/usr/bin/python3 /home/&lt;USERNAME&gt;/wake_on_lan_server.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p><strong>10.</strong> Tüm satırları girdikten sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<p><strong>11.</strong> Servis oluşturulduktan sonra, artık Raspberry Pi'miz açıldığında Wake-on-LAN sunucu betiğimizin de başlaması için onu etkinleştirmek isteyeceğiz.</p>
+<p>Bir servisi etkinleştirmek için yapmanız gereken tek şey aşağıdaki komutu çalıştırmaktır.</p>
+<pre><code>sudo systemctl enable wake-on-lan-server
+</code></pre>
+<p><strong>12.</strong> Ardından, aşağıdaki komutu çalıştırarak servisi başlatmak isteyeceksiniz.</p>
+<pre><code>sudo systemctl start wake-on-lan-server
+</code></pre>
+<p><strong>13.</strong> Bu noktada, wake-on-lan sunucunuz artık tamamen çalışıyor olmalıdır.</p>
+<p>İzlediğiniz cihaz kapanırsa, 10 saniye içinde otomatik olarak bir Wake-on-LAN paketi göndermelidir.</p>
+<h2>Sonuç</h2>
+<p>Bu eğitimin bu noktasında, artık Raspberry Pi'nizi ağınızdaki diğer cihazlara Wake-on-LAN sinyalleri göndermek için nasıl kullanacağınızı anlamış olmalısınız.</p>
+<p>Bunu başarmak için, Raspberry Pi'nizde Etherwake adlı bir yazılım parçasından yararlandık. Bu yazılımı kullanmayı basit bulduğunuzu umuyoruz.</p>
+<p>Bu eğitimi çalıştırmakta herhangi bir sorunla karşılaşırsanız, lütfen aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-wake-on-lan-server.html&amp;text=Raspberry+Pi%27nizi+Wake-on-LAN+Sunucusu+Olarak+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-wake-on-lan-server.html&amp;text=Raspberry+Pi%27nizi+Wake-on-LAN+Sunucusu+Olarak+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-wake-on-lan-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-wake-on-lan-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-wake-on-lan-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-wake-on-lan-server.html&amp;title=Raspberry+Pi%27nizi+Wake-on-LAN+Sunucusu+Olarak+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27nizi+Wake-on-LAN+Sunucusu+Olarak+%C3%87al%C4%B1%C5%9Ft%C4%B1rma%20codenfast.com%2Fposts%2Fraspberry-pi-wake-on-lan-server.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

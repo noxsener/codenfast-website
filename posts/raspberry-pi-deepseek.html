@@ -1,0 +1,361 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de Deepseek Çalıştırma - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Deepseek yapay zeka modellerini damıtılmış sürümleriyle Raspberry Pi&#39;de çalıştırın"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de Deepseek Çalıştırma"/>
+    <meta property="og:description"
+          content="Deepseek yapay zeka modellerini damıtılmış sürümleriyle Raspberry Pi&#39;de çalıştırın"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-deepseek.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-deepseek.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2025/02/Raspberry-Pi-Deepseek-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de Deepseek Çalıştırma"/>
+    <meta name="twitter:description"
+          content="Deepseek yapay zeka modellerini damıtılmış sürümleriyle Raspberry Pi&#39;de çalıştırın"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2025/02/Raspberry-Pi-Deepseek-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de Deepseek Çalıştırma","item":{"@id":"https://codenfast.com/posts/raspberry-pi-deepseek.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2025/02/Raspberry-Pi-Deepseek-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2025/02/Raspberry-Pi-Deepseek-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2025/02/Raspberry-Pi-Deepseek-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2025/02/Raspberry-Pi-Deepseek-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de Deepseek Çalıştırma","description":"Deepseek yapay zeka modellerini damıtılmış sürümleriyle Raspberry Pi'de çalıştırın","image":["https://pimylifeup.com/wp-content/uploads/2025/02/Raspberry-Pi-Deepseek-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T11:31:05.125802+03:00","dateModified":"2026-08-03T11:31:05.125822+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de Deepseek Çalıştırma</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-deepseek/">PiMyLifeUp - Running Deepseek on a Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu projede, Deepseek R1'in damıtılmış (distilled) sürümlerini Raspberry Pi'nize nasıl kurup çalıştıracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2025/02/Raspberry-Pi-Deepseek-Thumbnail.jpg" alt="Raspberry Pi'de Deepseek Yapay Zekasını Çalıştırma" /></p>
+<p><a href="https://www.deepseek.com/">Deepseek</a>, en iyilerle rekabet edebilecek açık kaynaklı bir yapay zeka sunarak dünyayı hızla kasıp kavuran yapay zeka şirketlerinden biridir.</p>
+<p>Sihirli formüllerinin bir kısmı, daha büyük modellerinin &quot;damıtılmış&quot; adını verdikleri sürümlerinin mevcut olmasıdır. Bu damıtılmış sürümler, ana modelin önemli ölçüde daha hafif varyantlarıdır; önemli ölçüde daha az parametre içermelerine rağmen, bu parametrelerin seçilme biçimiyle bunu telafi ederler.</p>
+<p>Bu damıtılmış Deepseek varyantları sayesinde, bu yapay zeka modelini bir Raspberry Pi üzerinde çalışır hale getirebiliyoruz. Kullanacağımız modeller, Deepseek-R1'in tam sürümüyle aynı doğruluğa sahip olmasa da, çalışabiliyor olmaları bile etkileyicidir.</p>
+<p>Bir Pi üzerinde yerel olarak çalışabilen beş farklı Deepseek yapay zeka varyantı vardır. İlk ve en kullanışlı olanı, &quot;tek başına&quot; 1.5B parametreye sahiptir. Bundan en iyi sonuçları beklemeyin, ama bu size en hızlı sonuçları verecek modeldir.</p>
+<p>Raspberry Pi'de hâlâ çalıştırılabilen ancak önemli ölçüde daha yavaş çalışan diğer damıtılmış varyantlar &quot;7b&quot;, &quot;8b&quot; ve &quot;16b&quot; varyantlarıdır. &quot;16b&quot; varyantındaki tek püf nokta, bunu çalıştırmak için 16GB RAM'e sahip bir Raspberry Pi'ye ihtiyacınız olmasıdır.</p>
+<p>Elbette, bir Pi üzerindeki her yapay zeka modelinde olduğu gibi, ne kadar yeni bir Raspberry Pi'ye sahip olursanız, o kadar iyi bir deneyim yaşarsınız. Bu modeller, mevcut performansın her zerresini gerçekten tüketecektir.</p>
+<h2>Raspberry Pi'de Deepseek Kurulumu ve Kullanımı</h2>
+<p>Aşağıdaki bölümlerde, Deepseek yapay zeka modelini Raspberry Pi'nize kurma ve kullanma sürecinde size adım adım rehberlik edeceğiz.</p>
+<p>Bu adımlar tamamen terminal içinde çalıştırılacağından, Raspberry Pi OS Lite kullanmanızı öneririz. Daha hafif bir işletim sistemi çalıştırmak, bu yapay zeka modellerinden en iyi verimi almanıza da yardımcı olacaktır. Deepseek'ten bir yanıt üretmek, daha küçük parametreli modellerle bile inanılmaz derecede yüksek hesaplama gücü gerektirir.</p>
+<h3>Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> Raspberry Pi'mizde Deepseek damıtılmış modellerini çalıştırmaya başlamadan önce, <a href="https://pimylifeup.com/raspberry-pi-update/">işletim sistemimizin güncel olduğundan</a> emin olmalıyız.</p>
+<p>Aşağıdaki iki komutu kullanarak paket listesini ve güncel olmayan tüm paketleri yükseltin.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Bir sonraki adımımız, Pi'nizde curl paketinin mevcut olduğundan emin olmak için aşağıdaki komutu çalıştırmaktır.</p>
+<p>Bunu, Deepseek yapay zeka modellerini çalıştırmak için kullanacağımız programı almak ve kurmak için kullanacağız.</p>
+<pre><code>sudo apt install curl
+</code></pre>
+<p><strong>3.</strong> Bu hazırlığın son kısmı, <a href="https://pimylifeup.com/raspberry-pi-ollama/">Pi'nize Ollama yazılımını kurmaktır</a>. Bu, terminalde aşağıdaki komutu kullanarak kolayca yapılabilir.</p>
+<p>Kurulum süreci tamamlanması birkaç dakika sürebilir.</p>
+<pre><code>curl -fsSL https://ollama.com/install.sh | sh
+</code></pre>
+<h3>Pi'nizde Deepseek Modellerini Çalıştırma</h3>
+<p><strong>4.</strong> Artık Raspberry Pi'niz hazır olduğuna göre, Deepseek R1'in damıtılmış sürümlerini çalıştırmaya ve denemeye başlayabiliriz.</p>
+<p>Bu modellerin her birini test etmek için, Raspberry Pi'mizde bunu nasıl değerlendirdiğini ve ne kadar hızlı bir yanıt üretebildiğini görmek amacıyla çok basit bir soru kullanacağız.</p>
+<h4>Deepseek R1 1.5b</h4>
+<p><strong>a.</strong> Deepseek'in damıtılmış sürümlerinin en küçüğünü, aynı zamanda Raspberry Pi'nin nispeten zayıf donanımında en iyi çalışacak modeli test ederek başlayalım.</p>
+<p>Aşağıdaki komutu kullanarak, Deepseek R1'in 1.5 milyar parametreli sürümünü Pi'nizde çalıştırabilirsiniz. Bu yapay zeka modelini çalıştırmak için cihazınızda en az 1GB boş alana ihtiyacınız olacağını unutmayın.</p>
+<pre><code>ollama run deepseek-r1:1.5b
+</code></pre>
+<p><strong>b.</strong> Başladıktan sonra, gerçek zamanlı olarak bir yanıt ürettiğini göreceksiniz. Bu örnek için, Deepseek yapay zeka modeline basitçe &quot;neden kar yağar&quot; diye soracağız.</p>
+<p>Verdiği yanıttan, bu modelin bilgi çekebileceği çok büyük miktarda veriye sahip olmadığını hemen hissedebilirsiniz. Bazı yanıtlarda, çoğu zaman işleri oldukça yanlış anladığını göreceksiniz.</p>
+<p>Ancak bunlar, daha büyük bir modeli zayıf donanımda çalışacak kadar damıtırken feda ettiğiniz şeylerdir.</p>
+<pre><code>&gt;&gt;&gt; Why does it snow?
+&lt;think&gt;
+
+&lt;/think&gt;
+The answer to &quot;why does it snow?&quot; depends on the weather conditions, time of year, and location.
+Snowfall can occur due to natural phenomena like the North Atlantic Oscillation, human activities
+(e.g., melting ice, urban heat island effect), or climate change. To get more specific
+information about why a particular place is experiencing snowfall, you should check local
+meteorological data or use an online weather calculator.
+</code></pre>
+<p><strong>c.</strong> Aşağıda, bu modelin Raspberry Pi'mizde ne kadar hızlı çalıştığına dair bir fikir edinebilirsiniz. Örneğin, yukarıdaki yanıtın Raspberry Pi'mizde Deepseek modeli kullanılarak üretilmesi 9.7 saniye sürdü.</p>
+<p>İstem 8 token'a denk geldi ve yapay zekanın bunu değerlendirmesi yalnızca 612ms sürdü. Yanıtın kendisi, saniyede 9 token hızıyla üretilmek üzere tam 9 saniye sürdü.</p>
+<pre><code>total duration:       9.765056893s
+load duration:        41.498181ms
+prompt eval count:    8 token(s)
+prompt eval duration: 612ms
+prompt eval rate:     13.07 tokens/s
+eval count:           89 token(s)
+eval duration:        9.11s
+eval rate:            9.77 tokens/s
+</code></pre>
+<h4>Deepseek R1 7b</h4>
+<p><strong>a.</strong> Terminalde aşağıdaki komutu kullanarak Raspberry Pi'mizde Deepseek'in 7 milyar parametreli damıtılmış sürümünü çalıştırarak işleri biraz daha zorlaştıralım.</p>
+<p>Bu model, en küçük damıtılmış sürümden neredeyse beş kat daha büyüktür ve kısa süre sonra göreceğiniz gibi, bu durum Pi'mizin sınırlı donanımında bir yanıt üretme hızını önemli ölçüde etkiler.</p>
+<p>Bu modeli çalıştırmak için 4.7GB boş alana ihtiyacınız olacak.</p>
+<pre><code>ollama run deepseek-r1:7b
+</code></pre>
+<p><strong>b.</strong> Raspberry Pi'mizde çalışan Deepseek yapay zeka modelinden gelen yanıt hemen çok daha kullanışlı hale geliyor.</p>
+<p>Üretilmesi önemli ölçüde daha uzun sürse de, yapay zeka modelinin en küçük damıtılmış sürümden çok daha fazla veriye erişimi olduğunu anlayabilirsiniz.</p>
+<pre><code>&gt;&gt;&gt; Why does it snow?
+&lt;think&gt;
+
+&lt;/think&gt;
+
+Snow occurs when water vapor in the atmosphere freezes and falls to the ground as ice. This
+process is influenced by several factors, including temperature, humidity, and wind. When the
+temperature drops below freezing (0°C or 32°F) and there are enough water droplets in the air,
+they can freeze and form snowflakes. These snowflakes then come together to create snowstorms
+when the wind blows them into the air.
+
+In summary, snow forms due to the freezing of water vapor in the atmosphere under cold and moist
+conditions.
+</code></pre>
+<p><strong>c.</strong> Daha önce de belirtildiği gibi, Deepseek'in bu daha büyük damıtılmış sürümünü Raspberry Pi'mizde çalıştırmanın dezavantajı, performansın önemli ölçüde düşmesidir.</p>
+<p>Çok daha küçük olan &quot;1.5b&quot; modeliyle karşılaştırıldığında, değerlendirme hızı neredeyse dört kat daha yavaştır. Saniyede 2.29 token üretirken, daha küçük model saniyede 9.77 token üretir.</p>
+<pre><code>total duration:       52.792391411s
+load duration:        37.262035ms
+prompt eval count:    8 token(s)
+prompt eval duration: 2.903s
+prompt eval rate:     2.76 tokens/s
+eval count:           114 token(s)
+eval duration:        49.845s
+eval rate:            2.29 tokens/s
+</code></pre>
+<h4>Raspberry Pi'de Deepseek R1 8b</h4>
+<p><strong>a.</strong> Deepseek R1'in bir sonraki damıtılmış sürümü, çoğu Raspberry Pi'de çalıştırılabilecek sonuncusudur. Daha büyük olan herhangi bir şey, çoğu Pi'nin sahip olduğundan daha fazla RAM gerektirir.</p>
+<p>Bu sürüm yalnızca bir milyar daha fazla parametreye sahiptir, bu nedenle 1.5b ile 7b arasındaki kadar büyük bir iyileşme görmeyeceksiniz. Kullanılabilir bir model arıyorsanız, hangisinin tutarlı olarak istenen sonuçları ürettiğini görmek için hem 7b hem de 8b modellerini test etmeye değer.</p>
+<p>Bu Deepseek yapay zeka modelini Raspberry Pi'nizde terminalde aşağıdaki komutu kullanarak çalıştırabilirsiniz.</p>
+<pre><code>ollama run deepseek-r1:8b
+</code></pre>
+<p><strong>b.</strong> Deepseek'in Raspberry Pi'mizde ürettiği yanıt, biraz daha küçük olan &quot;7b&quot; varyantının ürettiğine çok benzer.</p>
+<p>Her iki sonuç da oldukça kullanışlıdır ve GPU gibi çok daha güçlü bir hesaplama cihazı eklemeden bir Raspberry Pi üzerinde yerel olarak üretebileceğiniz en iyi yapay zeka sonuçlarından bazılarıdır.</p>
+<pre><code>&gt;&gt;&gt; Why does it snow?
+&lt;think&gt;
+
+&lt;/think&gt;
+
+The phenomenon of snowfall occurs when the water vapor in the atmosphere condenses into ice
+crystals due to low temperatures, which then fall to the ground. This process is part of the
+Earth's hydrological cycle and is influenced by various factors such as temperature, humidity,
+and atmospheric pressure. The exact mechanisms behind snowfall are complex and involve a
+combination of physical processes in the atmosphere.
+</code></pre>
+<p><strong>c.</strong> Bu modelden elde edilen kıyaslama sonuçları ilginçtir, çünkü biraz daha küçük olan Deepseek modelinden 10 saniye daha hızlı üretim yaptı.</p>
+<p>Ancak bunun püf noktası, daha küçük bir sonuç üretmiş olması, yani sonucu üretmek için daha az token gerektirmiş olmasıdır. Bu hız artışı, daha az token üretilmesinden kaynaklanıyor.</p>
+<pre><code>total duration:       40.411836103s
+load duration:        51.13561ms
+prompt eval count:    8 token(s)
+prompt eval duration: 3.108s
+prompt eval rate:     2.57 tokens/s
+eval count:           81 token(s)
+eval duration:        37.25s
+eval rate:            2.17 tokens/s
+</code></pre>
+<h4>Deepseek R1 14b</h4>
+<p><strong>a.</strong> Şimdi, bir Raspberry Pi üzerinde çalıştırılabilen Deepseek'in son varyantı 14 milyar parametreli sürümdür. Ancak buradaki büyük püf nokta, Raspberry Pi'nin 16GB'lık varyantını kullanıyor olmanız gerektiğidir.</p>
+<p>Ne yazık ki şu anda elimizde bir tane olmadığından, sonuçları kendimiz test edemiyoruz, ancak yeterli RAM'iniz olmadığında bir Deepseek R1 modelini çalıştırmaya çalıştığınızda ne olduğunu size gösterebiliriz.</p>
+<p>Deepseek yapay zeka modelinin bu sürümünü Pi'nizde aşağıdaki komutu kullanarak çalıştırın. Bu daha büyük modelin en az 9 GB boş alana ihtiyaç duyacağını unutmayın.</p>
+<pre><code>ollama run deepseek-r1:14b
+</code></pre>
+<p><strong>b.</strong> Raspberry Pi'mizde yeterli RAM olmadığından aşağıdaki hata mesajıyla karşılaştık.</p>
+<pre><code>Error: model requires more system memory (10.6 GiB) than is available (7.6 GiB)
+</code></pre>
+<h2>Sonuç</h2>
+<p>Umarız bu noktada, Deepseek R1 yapay zeka modelini Raspberry Pi'nizde nasıl gerçekten çalıştırabileceğiniz konusunda sağlam bir fikre sahip olmuşsunuzdur.</p>
+<p>Deepseek R1, tamamen açık kaynaklı olması sayesinde ortaya çıkan en etkileyici yapay zeka projelerinden biridir. Açık kaynaklı olması, üçüncü taraf bir hizmete bağımlı kalmadan bu yapay zeka modelini yerel olarak çalıştırmanıza olanak tanır; bu da verilerinizle ne yaptıkları konusunda endişelenmenize gerek kalmadığından gizliliği artırmaya yardımcı olur.</p>
+<p>Deepseek hakkında etkileyici olan bir diğer şey de, damıtılmış varyantlarının nispeten kullanılabilir olması ve Raspberry Pi gibi beklediğinizden önemli ölçüde daha zayıf bir cihazda çalıştırılabilmesidir.</p>
+<p>Bu yapay zeka modelini Pi'nizde çalıştırırken herhangi bir sorunla karşılaştıysanız, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-deepseek.html&amp;text=Raspberry+Pi%27de+Deepseek+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-deepseek.html&amp;text=Raspberry+Pi%27de+Deepseek+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-deepseek.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-deepseek.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-deepseek.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-deepseek.html&amp;title=Raspberry+Pi%27de+Deepseek+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+Deepseek+%C3%87al%C4%B1%C5%9Ft%C4%B1rma%20codenfast.com%2Fposts%2Fraspberry-pi-deepseek.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

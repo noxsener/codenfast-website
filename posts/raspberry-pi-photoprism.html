@@ -1,0 +1,365 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de PhotoPrism Nasıl Çalıştırılır - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Bu fotoğraf uygulamasını cihazınızda kendi kendinize barındırın"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de PhotoPrism Nasıl Çalıştırılır"/>
+    <meta property="og:description"
+          content="Bu fotoğraf uygulamasını cihazınızda kendi kendinize barındırın"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-photoprism.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-photoprism.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de PhotoPrism Nasıl Çalıştırılır"/>
+    <meta name="twitter:description"
+          content="Bu fotoğraf uygulamasını cihazınızda kendi kendinize barındırın"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de PhotoPrism Nasıl Çalıştırılır","item":{"@id":"https://codenfast.com/posts/raspberry-pi-photoprism.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-01-Login-to-PhotoPrism.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-01-Login-to-PhotoPrism.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-02-No-Photos-Dashboard.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-02-No-Photos-Dashboard.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-03-Change-to-Settings-Page.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-03-Change-to-Settings-Page.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-04-General-Settings.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-04-General-Settings.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-05-Library-Settings.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-05-Library-Settings.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-06-Advanced-Settings.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-06-Advanced-Settings.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-07-Sync-Settings.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-07-Sync-Settings.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-08-Account-Settings.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-08-Account-Settings.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-09-Go-to-upload-screen.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-09-Go-to-upload-screen.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-10-Uploading-Photos.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-10-Uploading-Photos.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-11-Populated-PhotoPrism-Interface.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-11-Populated-PhotoPrism-Interface.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de PhotoPrism Nasıl Çalıştırılır","description":"Bu fotoğraf uygulamasını cihazınızda kendi kendinize barındırın","image":["https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:43:11.079296+03:00","dateModified":"2026-08-03T12:43:11.079324+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de PhotoPrism Nasıl Çalıştırılır</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-photoprism/">PiMyLifeUp - How to Run PhotoPrism on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'nizde PhotoPrism'i nasıl çalıştıracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-Thumbnail.jpg" alt="Raspberry Pi PhotoPrism" /></p>
+<p>PhotoPrism, Raspberry Pi'nizde fotoğraflarınızı etiketlemek ve kategorize etmek için yapay zeka kullanan açık kaynaklı ve ücretsiz bir fotoğraf uygulamasıdır.</p>
+<p>PhotoPrism'in en umut verici özelliklerinden biri yapay zeka işlevselliğidir. Bu yapay zeka ile, fotoğraf uygulaması fotoğraflarınızı sınıflandırabilir, aile üyelerinizin ve arkadaşlarınızın yüzlerini tanıyabilir ve daha fazlasını yapabilir.</p>
+<p>Hepsinden iyisi, PhotoPrism'de saklanan fotoğraflarınızı görüntülemek için yerel uygulamalar kurmanıza gerek yok. Bir web uygulaması olarak inşa edildiğinden, herhangi bir modern web tarayıcısı web sitesini cihazınızda yerel bir uygulamaymış gibi çalıştırabilir.</p>
+<p>Bir docker konteyneri olarak sunulduğundan, PhotoPrism'i Raspberry Pi'de çalıştırmak basit bir süreç olacaktır.</p>
+<h2>Raspberry Pi'nizi PhotoPrism İçin Hazırlama</h2>
+<p>Raspberry Pi'mizde <a href="https://photoprism.app/">PhotoPrism</a> kurup çalıştırmadan önce, ihtiyaç duyduğumuz her şeyin kurulu olduğundan emin olmalıyız.</p>
+<p>Neyse ki PhotoPrism bir Docker konteyneri olarak sağlandığından, sadece Docker çalışma zamanına ve PhotoPrism'in yapılandırma dosyasını almak için bir araca ihtiyacımız var.</p>
+<p><strong>1.</strong> <a href="https://pimylifeup.com/raspberry-pi-docker/">Docker'ı kurmadan</a> önce, hem paket listemizi hem de kurulu paketlerimizi güncelleyeceğiz.</p>
+<p>Her ikisini de güncellemek için yapmanız gereken tek şey terminalde aşağıdaki komutu çalıştırmaktır.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Artık güncel olduğumuza göre, sonunda Pi'mizde PhotoPrism'i çalıştırmak için ihtiyaç duyduğumuz paketleri kurabiliriz.</p>
+<p>Bizim durumumuzda, terminalde aşağıdaki komutu kullanarak sadece &quot;<code>wget</code>&quot;in kurulu olduğundan emin olmamız gerekiyor. Bu aracı, PhotoPrism GitHub'ından &quot;<code>docker-compose.yml</code>&quot; dosyasını almak için kullanacağız.</p>
+<pre><code>sudo apt install wget
+</code></pre>
+<p><strong>3.</strong> Raspberry Pi'nizde &quot;wget&quot; paketi kurulu olduğunda, şimdi <a href="https://pimylifeup.com/raspberry-pi-docker/">Docker kurma rehberimizi takip etmek</a> isteyeceksiniz.</p>
+<p>Bu, Raspberry Pi'nizde Docker'ın en son sürümünü çalışır hale getirecek.</p>
+<h2>PhotoPrism İçin Docker-Compose Dosyasını Yapılandırma</h2>
+<p>PhotoPrism'i kurmanın en karmaşık süreci &quot;<code>docker-compose.yaml</code>&quot; dosyasını yapılandırmaktır. Bu bölümde, örnek yapılandırma dosyasını alacağız ve neyi ayarlamanız gerektiğini göstereceğiz.</p>
+<h3>Raspberry Pi İçin PhotoPrism'i Yapılandırmaya Hazırlanma</h3>
+<p><strong>1.</strong> Bu yapılandırma dosyasını saklayacağımız bir dizin oluşturmak için <a href="https://pimylifeup.com/mkdir-command-linux/">mkdir komutunu kullanarak</a> başlayın.</p>
+<p>Aşağıdaki komutla, &quot;<code>/opt/stacks/</code>&quot; dizini içinde &quot;<code>photoprism</code>&quot; adlı bir dizin oluşturacaksınız.</p>
+<pre><code>sudo mkdir -p /opt/stacks/photoprism
+</code></pre>
+<p><strong>2.</strong> Dizin oluşturulduktan sonra, artık içine geçmek için <a href="https://pimylifeup.com/cd-command/">cd komutunu kullanabilirsiniz</a>.</p>
+<pre><code>cd /opt/stacks/photoprism
+</code></pre>
+<p><strong>3.</strong> Artık doğru dizinde olduğumuza göre, bir sonraki adımımız PhotoPrism için Docker composer dosyasını Raspberry Pi'mize indirmektir.</p>
+<p>Burada, daha önce kurduğumuz wget aracını &quot;<code>docker-compose.yml</code>&quot; dosyasını mevcut dizine indirmek için kullanacağız.</p>
+<p>Bu komutun sürümünün 32-bit veya 64-bit bir sistem çalıştırmanıza bağlı olarak biraz değiştiğini lütfen unutmayın. Bu eğitimi takip ederken 64-bit bir işletim sistemi kullanmanızı öneririz.</p>
+<p><strong>64-Bit İşletim Sistemi</strong></p>
+<pre><code>sudo wget https://dl.photoprism.app/docker/arm64/compose.yaml
+</code></pre>
+<p><strong>32-Bit İşletim Sistemi</strong></p>
+<pre><code>sudo wget https://dl.photoprism.app/docker/armv7/compose.yaml
+</code></pre>
+<h3>PhotoPrism'i Yapılandırma</h3>
+<p><strong>4.</strong> Artık docker compose dosyasına sahip olduğumuza göre, yapılandırmasında bazı ayarlamalar yapmak isteyeceğiz.</p>
+<p>Bu dosyayı aşağıdaki komutu kullanarak düzenlemeye başlayabilirsiniz.</p>
+<pre><code>sudo nano compose.yaml
+</code></pre>
+<p>Kullanımı nispeten kolay olduğundan <a href="https://pimylifeup.com/nano-text-editor/">nano metin editörünü kullanmayı</a> seviyoruz. Kendinizi en rahat hissettiğiniz metin editörünü kullanabilirsiniz.</p>
+<p><strong>5.</strong> Bu yapılandırma dosyasında değiştirmek isteyeceğiniz ilk seçenek, admin paneli için kullanılan ilk şifredir.</p>
+<p>Dosyanın içinde aşağıdaki satırı bularak başlayın. Nano kullanırken dosyada arama yapmak için <code>CTRL</code> + <code>W</code> kullanabilirsiniz.</p>
+<pre><code>PHOTOPRISM_ADMIN_PASSWORD: &quot;insecure&quot;
+</code></pre>
+<p>Yukarıdaki metni bulduktan sonra, &quot;<code>insecure</code>&quot; kısmını seçtiğiniz güvenli bir şifreyle değiştirin. Seçtiğiniz şifre en az sekiz karakter uzunluğunda olmalıdır.</p>
+<pre><code>PHOTOPRISM_ADMIN_PASSWORD: &quot;YOURPASSWORDGOESHERE&quot;
+</code></pre>
+<p><strong>6.</strong> Şifre daha güvenli bir şeyle değiştirildikten sonra, volume'leri yapılandırmaya geçebilirsiniz. PhotoPrism içinde erişilebilir olmasını istediğiniz herhangi bir ek klasör, bir volume olarak dahil edilmelidir.</p>
+<p>O klasörün tüm alt dizinleri elbette erişilebilir olacaktır, bu yüzden tüm bir sürücüyü dahil etmek istiyorsanız, sadece bağlantı noktasını (mount path) eklemeniz gerekir.</p>
+<p>Bu dosyanın içinde, aşağıdaki satırı bulmak isteyeceksiniz. Bu, nasıl yazıldıklarına dair bir örnek verir ve ek klasörleri nereye eklemeniz gerektiğini gösterir.</p>
+<pre><code>      # &quot;/host/folder:/photoprism/folder&quot;                # Example
+</code></pre>
+<p>Burada, volume, sol taraf (<code>/host/folder</code>) volume'e bağlanmasını istediğiniz Raspberry Pi'nizdeki klasör olacak şekilde belirtilir.</p>
+<p>Sağ taraf (<code>/photoprism/folder</code>), konteyner içinde kullanılabilir hale getirileceği konumdur. PhotoPrism için yeni bir volume ayarlarken, konteyner yolu her zaman &quot;<code>/photoprism/</code>&quot; ile başlamalıdır.</p>
+<p><strong>7.</strong> Bunu göstermek için, bu listeye yeni bir volume ekleyeceğiz; &quot;<code>/mnt/holidayphotos</code>&quot; konumundaki harici sürücümüzü &quot;<code>/photoprism/holidayphotos</code>&quot;a bağlayacağız.</p>
+<p>Bu satırı eklemek için, &quot;<code>volumes:</code>&quot; etiketinin altına aşağıdakini ekleyeceğiz.</p>
+<pre><code>      - &quot;/mnt/holidayphotos:/photoprism/holidayphotos&quot;
+</code></pre>
+<p>Bunu kafa karıştırıcı bulursanız, lütfen aşağıya yorum yapın veya <a href="https://docs.photoprism.app/getting-started/docker-compose/#volumes">volume'lerle ilgili resmi PhotoPrism dokümantasyonuna</a> göz atın.</p>
+<p><strong>8.</strong> Dosyada değişiklik yapmayı bitirdikten sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<h2>Raspberry Pi'de PhotoPrism Çalıştırma</h2>
+<p>Artık &quot;<code>docker-compose.yml</code>&quot; dosyamızı oluşturduğumuza göre, PhotoPrism'i Raspberry Pi'de çalıştırmak çok basit.</p>
+<p>Bu noktada, fotoğraf uygulamasını çalışır hale getirmek için yapmamız gereken tek şey tek bir komut çalıştırmaktır.</p>
+<p><strong>1.</strong> Aşağıdaki adımın çalışması için, hâlâ &quot;<code>docker-compose.yml</code>&quot; dosyasını oluşturduğumuz dizinde olduğunuzdan emin olmanız gerekecek.</p>
+<p>Hâlâ doğru yerdeyseniz, artık aşağıdaki komutu kullanarak Raspberry Pi'nizde PhotoPrism'i başlatabilirsiniz.</p>
+<pre><code>sudo docker compose up -d
+</code></pre>
+<p><strong>2.</strong> PhotoPrism için ilk başlatma süreci, Docker'ın gereken tüm konteyner imajlarını indirmesi gerektiğinden biraz zaman alabilir.</p>
+<p>İndirme tamamlandıktan sonra, PhotoPrism cihazınızda hemen başlatılmalıdır.</p>
+<h2>PhotoPrism Web Arayüzünü Kullanma</h2>
+<p>Artık Raspberry Pi'nize PhotoPrism kurulduğuna göre, web arayüzüne erişebilirsiniz. Rehberin bu kısmı, web arayüzüne nasıl erişeceğinizi gösterir ve hızlı bir genel bakış sunar.</p>
+<h3>PhotoPrism Web Arayüzüne Erişim</h3>
+<p><strong>1.</strong> Başlamadan önce, yerel ağınızın başka bir yerinden bağlanmak için Pi'nizin IP adresini bilmeniz gerekecek.</p>
+<p>Cihazınızın IP'sini almanın en kolay yollarından biri hostname komutunu kullanmaktır.</p>
+<pre><code>hostname -I
+</code></pre>
+<p>Docker, kendi dahili kullanımı için birkaç IP adresi oluşturur. Bu nedenle, Pi'nizin yerel IP'si genellikle bu komutla listelenen ilk adres olur.</p>
+<p><strong>2.</strong> Artık Pi'nizin IP adresini bildiğimize göre, web tarayıcınızda aşağıdaki adrese gidebilirsiniz.</p>
+<p>Varsayılan olarak, PhotoPrism Raspberry Pi'nizde <code>2342</code> portunu dinler.</p>
+<pre><code>http://IPADRESINIZ:2342/
+</code></pre>
+<p><strong>3.</strong> PhotoPrism web arayüzünü yüklediğinizde, bir hesaba giriş yapmanız istenecektir. Varsayılan olarak, bu &quot;<code>admin</code>&quot; hesabı olacaktır.</p>
+<p>Ekranın ortasındaki metin kutularını kullanarak (<strong>1.</strong>), kullanıcı adı olarak &quot;<code>admin</code>&quot; yazın. Ardından şifre için, bu rehberde daha önce &quot;<code>docker-compose.yml</code>&quot; dosyasında belirttiğiniz şifreyi kullanın.</p>
+<p>Giriş bilgilerinizi yazdıktan sonra, &quot;<code>SIGN IN</code>&quot; düğmesine <code>tıklayabilirsiniz</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-01-Login-to-PhotoPrism.jpg" alt="Raspberry Pi'de Çalışan PhotoPrism'e Giriş Yapma" /></p>
+<p><strong>4.</strong> Artık sizi PhotoPrism ana sayfası karşılayacak. Bizim gibiyseniz ve sadece boş klasörleriniz varsa, gösterge paneli boş olacaktır.</p>
+<p>Bu rehberde daha sonra PhotoPrism'e fotoğraf yükleme konusunda size rehberlik edeceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-02-No-Photos-Dashboard.jpg" alt="PhotoPrism Gösterge Panelinde Fotoğraf Yok" /></p>
+<h3>PhotoPrism Ayarlar Sayfasını Görüntüleme</h3>
+<p><strong>1.</strong> PhotoPrism'in ayarlar sayfasına gitmek basit bir süreçtir ve kenar çubuğu kullanılarak kolayca erişilebilir.</p>
+<p>Kenar çubuğunda bir dişli simgesi görmelisiniz, ayarlar sayfasına geçmek için bu simgeye <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-03-Change-to-Settings-Page.jpg" alt="Ayarlar Sayfasına Geçme" /></p>
+<p><strong>2.</strong> Artık ayarlar ekranında olduğumuza göre, her sayfayı ve ayarların ne için kullanıldığını inceleyelim.</p>
+<p>Aşağıda gösterildiği gibi genel ayarlar sayfası, öncelikle kullanıcı arayüzünü kontrol eden seçeneklere odaklanır. Örneğin, bunu kenar çubuğundan menüleri gizlemek veya temayı ya da arayüz dilini değiştirmek için kullanabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-04-General-Settings.jpg" alt="Genel Ayarlar Sayfası" /></p>
+<p><strong>3.</strong> &quot;<code>Library</code>&quot; seçenekleri sayfası, PhotoPrism'in Raspberry Pi'de fotoğraflarınızı nasıl işleyeceğini kontrol etmenizi sağlar.</p>
+<p>Örneğin, PhotoPrism'in yüklediğiniz fotoğraflar için otomatik olarak JPEG oluşturup oluşturmayacağını kontrol edebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-05-Library-Settings.jpg" alt="Library Ayarlar Sayfası" /></p>
+<p><strong>4.</strong> Gelişmiş sekmesi, adının söylediği şeyi içerir: gelişmiş seçenekler.</p>
+<p>Bu seçenekler, PhotoPrism'in daha karmaşık kısımlarından bazılarını yapılandırmanızı sağlar. Örneğin, bunu belirli işlevleri devre dışı bırakmak veya PhotoPrism'in RAW dosyaları nasıl dönüştürdüğünü kontrol etmek için kullanabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-06-Advanced-Settings.jpg" alt="Gelişmiş Ayarlar Sayfası" /></p>
+<p><strong>5.</strong> Sync sekmesiyle, Raspberry Pi'nizin PhotoPrism örneğine senkronize olmasını istediğiniz sunucuları kontrol edebilirsiniz.</p>
+<p>Ayrıca WebDAV kullanarak PhotoPrism'e bağlanabilirsiniz. WebDAV, PhotoPrism'i sanki ağ üzerinden bağlı bir sürücüymüş gibi bağlamanızı sağlar.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-07-Sync-Settings.jpg" alt="Sync Ayarlar Sayfası" /></p>
+<p><strong>6.</strong> Son seçenekler sayfası, giriş yapmak için kullandığınız PhotoPrism hesabı içindir. Bu sayfayla, hesabınızın şifresini değiştirebilirsiniz.</p>
+<p>&quot;<code>docker-compose.yml</code>&quot; dosyasını yazarken ayarladığınız şifreyi hâlâ kullanıyorsanız, şimdi bunu değiştirmek için iyi bir zaman.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-08-Account-Settings.jpg" alt="Hesap Ayarları Sayfası" /></p>
+<h3>PhotoPrism ile Raspberry Pi'nize Fotoğraf Yükleme</h3>
+<p><strong>1.</strong> PhotoPrism web arayüzü, fotoğrafları arayüzünden doğrudan Raspberry Pi'nize yüklemenizi sağlar.</p>
+<p>Yükleme ekranına gitmek, arayüzün sağ üst köşesindeki bulut simgesine <code>tıklamak</code> kadar basittir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-09-Go-to-upload-screen.jpg" alt="Yükleme Ekranına Geçme" /></p>
+<p><strong>2.</strong> Artık web arayüzünüzde aşağıda gösterilen ekranı görmelisiniz.</p>
+<p>Sayfanın üstündeki metin kutusu (<strong>1.</strong>), yeni fotoğraflarınızı saklamak için yeni albümler seçmenizi veya oluşturmanızı sağlar. Yeni bir albüm oluşturmak istiyorsanız, yapmanız gereken tek şey adını yazıp <code>ENTER</code> tuşuna basmaktır.</p>
+<p>Seçtiğiniz albümlerden memnun olduğunuzda, fotoğraflarınızı PhotoPrism'e yüklemeye başlamak için &quot;<code>UPLOAD</code>&quot; düğmesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-10-Uploading-Photos.jpg" alt="Raspberry Pi PhotoPrism'e Fotoğraf Yükleme" /></p>
+<p><strong>3.</strong> PhotoPrism'e fotoğraf yüklemek biraz zaman alabilir. Yükledikten sonra, Raspberry Pi'nizin her birini analiz etmesi gerekecek.</p>
+<p>Süreç tamamlandıktan sonra, yeni görsellerinizin web arayüzünde görüntülendiğini görmelisiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-PhotoPrism-11-Populated-PhotoPrism-Interface.jpg" alt="Raspberry Pi'de Başarıyla Çalışan PhotoPrism" /></p>
+<h2>Raspberry Pi'de Photoprism'in Yeni Bir Sürümüne Güncelleme</h2>
+<p>Raspberry Pi'nizde Photoprism'i çalıştırmak için Docker kullanmanın temel bir avantajı, en son sürüme güncellemenin oldukça basit bir süreç olmasıdır.</p>
+<p><strong>1.</strong> İlk adımınız, rehberde daha önce &quot;<code>docker-compose.yml</code>&quot; dosyasını indirdiğimiz dizine geçmektir.</p>
+<pre><code>cd /opt/stacks/photoprism
+</code></pre>
+<p><strong>2.</strong> Artık aşağıdaki komutu çalıştırarak Photoprism'in en son imajını Pi'mize çekmek için Docker kullanabiliriz.</p>
+<pre><code>docker compose pull
+</code></pre>
+<p><strong>3.</strong> Photoprism'in yeni bir sürümü indirildikten sonra, aşağıdaki komutu çalıştırarak çalışan konteynerinizi bu yeni sürüme taşıyabilirsiniz.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h2>Sonuç</h2>
+<p>Raspberry Pi projemizin bu noktasında, PhotoPrism fotoğraf uygulaması çalışıyor olmalı ve umarız fotoğraflarınızdan bazılarını yüklemişsinizdir.</p>
+<p>PhotoPrism, üçüncü taraf bir hizmete güvenmeden fotoğraflarınızı kategorize etmenizi ve sunmanızı sağlayan etkileyici bir web uygulamasıdır.</p>
+<p>PhotoPrism'i Raspberry Pi'de çalışır hale getirirken herhangi bir sorunla karşılaştıysanız, aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-photoprism.html&amp;text=Raspberry+Pi%27de+PhotoPrism+Nas%C4%B1l+%C3%87al%C4%B1%C5%9Ft%C4%B1r%C4%B1l%C4%B1r" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-photoprism.html&amp;text=Raspberry+Pi%27de+PhotoPrism+Nas%C4%B1l+%C3%87al%C4%B1%C5%9Ft%C4%B1r%C4%B1l%C4%B1r" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-photoprism.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-photoprism.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-photoprism.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-photoprism.html&amp;title=Raspberry+Pi%27de+PhotoPrism+Nas%C4%B1l+%C3%87al%C4%B1%C5%9Ft%C4%B1r%C4%B1l%C4%B1r" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+PhotoPrism+Nas%C4%B1l+%C3%87al%C4%B1%C5%9Ft%C4%B1r%C4%B1l%C4%B1r%20codenfast.com%2Fposts%2Fraspberry-pi-photoprism.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

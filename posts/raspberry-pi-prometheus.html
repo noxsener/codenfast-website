@@ -1,0 +1,504 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;ye Prometheus Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Basit bir veri izleme çözümü"/>
+    <meta property="og:title" content="Raspberry Pi&#39;ye Prometheus Kurulumu"/>
+    <meta property="og:description"
+          content="Basit bir veri izleme çözümü"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-prometheus.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-prometheus.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2020/11/Raspberry-Pi-Prometheus-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;ye Prometheus Kurulumu"/>
+    <meta name="twitter:description"
+          content="Basit bir veri izleme çözümü"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2020/11/Raspberry-Pi-Prometheus-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'ye Prometheus Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-prometheus.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/11/Raspberry-Pi-Prometheus-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/11/Raspberry-Pi-Prometheus-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/11/Raspberry-Pi-Prometheus-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/11/Raspberry-Pi-Prometheus-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/11/Raspberry-Pi-Prometheus-Web-Interface.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/11/Raspberry-Pi-Prometheus-Web-Interface.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/11/Getting-to-the-Prometheus-Targets-page.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/11/Getting-to-the-Prometheus-Targets-page.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/11/Promethes-Targets-on-the-Raspberry-Pi.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/11/Promethes-Targets-on-the-Raspberry-Pi.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/11/Raspberry-Pi-Prometheus-Added-new-Node.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/11/Raspberry-Pi-Prometheus-Added-new-Node.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'ye Prometheus Kurulumu","description":"Basit bir veri izleme çözümü","image":["https://pimylifeup.com/wp-content/uploads/2020/11/Raspberry-Pi-Prometheus-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T13:05:41.524205+03:00","dateModified":"2026-08-03T13:05:41.524232+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;ye Prometheus Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-prometheus/">PiMyLifeUp - Installing Prometheus on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Prometheus izleme çözümünü Raspberry Pi'ye nasıl kuracağınızı öğrenin.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/11/Raspberry-Pi-Prometheus-Thumbnail.jpg" alt="Raspberry Pi Prometheus" /></p>
+<p>Prometheus, Raspberry Pi'nizden sistem metriklerini kolayca izlemenizi sağlayan açık kaynaklı bir izleme çözümüdür.</p>
+<p>Diğer cihazlardaki sistem metriklerini okuyabilmek ve verilerini Prometheus kurulumunuza geri döndürebilmek için &quot;<strong>node exporter</strong>&quot; adı verilen şeyi kurabilirsiniz.</p>
+<p><a href="https://github.com/prometheus/prometheus">Prometheus yazılımı</a>, alınan verilere dayalı bir bildirim göndermenizi sağlayan yerleşik bir uyarı yöneticisine sahiptir.</p>
+<p>İzleme yazılımı, Prometheus'un yakaladığı tüm verileri kolayca görselleştirmenizi sağlayan yerleşik Grafana desteğine bile sahiptir.</p>
+<p>Prometheus, çalışması için ek bağımlılık gerektirmediğinden kurulumu son derece kolaydır.</p>
+<h2>Prometheus'u Raspberry Pi'ye İndirme</h2>
+<p>Bu bölümde, Raspberry Pi'nin donanımı için Prometheus'un doğru sürümünü nasıl indireceğinizi göstereceğiz.</p>
+<p>Bu adımlar, ARMv7 mimarisini kullanan herhangi bir cihaz için çalışacaktır. Bu cihazlar arasında Raspberry Pi 2, 3 ve 4 bulunur.</p>
+<p><strong>1.</strong> Devam etmeden önce, tüm paketlerimizin güncel olduğundan emin olmalıyız.</p>
+<p>Bunu yapmak, her şeyi temiz bir temelden kurduğumuzdan emin olmamızı sağlar ve güncel olmayan hiçbir paket sorun yaratmamalıdır.</p>
+<p>Şu anda kurulu olan tüm paketleri güncellemek için, Raspberry Pi'nizde aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo apt update
+sudo apt full-upgrade
+</code></pre>
+<p><strong>2.</strong> ARMv7 mimarisi için önceden derlenmiş Prometheus sürümünü indirebiliriz.</p>
+<p>Bu yazılımı indirmek için, cihazınızda aşağıdaki komutu çalıştırın.</p>
+<pre><code>wget https://github.com/prometheus/prometheus/releases/download/v2.22.0/prometheus-2.22.0.linux-armv7.tar.gz
+</code></pre>
+<p>Bu <a href="https://pimylifeup.com/wget-command-linux/">komut, Prometheus'un 2.22.0 sürümünü</a> Raspberry Pi'nize indirmek için wget kullanacaktır.</p>
+<p><strong>3.</strong> İndirdiğiniz arşivdeki ikili dosyaları aşağıdaki komutu çalıştırarak çıkarın.</p>
+<p>Arşivimizi çıkarmak için <a href="https://pimylifeup.com/tar-command-linux/">tar programını</a> kullanabiliriz.</p>
+<pre><code>tar xfz prometheus-2.22.0.linux-armv7.tar.gz
+</code></pre>
+<p><strong>4.</strong> Bir sonraki adımımız, çıkarılan klasörün adından sürümü kaldırmak için yeniden adlandırmaktır.</p>
+<p>Bunu yapmak, dizin içindeki dosyalara referans vermeyi kolaylaştırır. Dizini prometheus olarak yeniden adlandırmak için <a href="https://pimylifeup.com/mv-command-linux/">mv komutunu kullanın</a>.</p>
+<pre><code>mv prometheus-2.22.0.linux-armv7/ prometheus/
+</code></pre>
+<p><strong>5.</strong> Son adımımız, kurulumumuzu temizlemektir.</p>
+<p>Yapmamız gereken tek şey, daha önce indirdiğimiz arşivi silmektir. Tutmak güvenli olsa da, dosyayı etrafta tutmaya artık gerek yoktur.</p>
+<p>Raspberry Pi'nizde aşağıdaki komutu çalıştırarak Prometheus arşivini silin.</p>
+<pre><code>rm prometheus-2.22.0.linux-armv7.tar.gz
+</code></pre>
+<p>Bununla birlikte, artık Raspberry Pi'mizde Prometheus kurulu.</p>
+<h2>Prometheus için Bir Servis Ayarlama</h2>
+<p>Bu bölümde, Raspberry Pi'nizde Prometheus için nasıl bir servis kuracağınızı göstereceğiz.</p>
+<p>Bir servis, bir yazılımın önyüklemede otomatik olarak başlatılmasını sağlayan şeydir. Ayrıca yazılımı hızlı bir şekilde başlatıp durdurmanızı da sağlar.</p>
+<p><strong>1.</strong> Bir servis oluşturmak için, &quot;<code>/etc/systemd/system/</code>&quot; dizini içinde yeni bir dosya oluşturmamız gerekiyor.</p>
+<p>Bu dizin, servislerin varsayılan olarak işlendiği yerdir.</p>
+<p>Bu dosyayı oluşturmak için <a href="https://pimylifeup.com/nano-text-editor/">nano metin editörünü</a> kullanacağız.</p>
+<p>Pi'nizde aşağıdaki komutu çalıştırarak yeni servis dosyasını yazmaya başlayın.</p>
+<pre><code>sudo nano /etc/systemd/system/prometheus.service
+</code></pre>
+<p><strong>2.</strong> Bu dosyanın içine, aşağıdaki metni girin.</p>
+<p>Bu metin, servisin nasıl çalıştığını ve Prometheus yazılımını nasıl çalıştırması gerektiğini tanımlar.</p>
+<pre><code>[Unit]
+Description=Prometheus Server
+Documentation=https://prometheus.io/docs/introduction/overview/
+After=network-online.target
+
+[Service]
+User=pi
+Restart=on-failure
+
+ExecStart=/home/pi/prometheus/prometheus \
+  --config.file=/home/pi/prometheus/prometheus.yml \
+  --storage.tsdb.path=/home/pi/prometheus/data
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p>Bu servis dosyasının yazılma şekliyle, ağ çevrimiçi olduğunda Raspberry Pi'nizde Prometheus yazılımını çalıştıracaktır.</p>
+<p>Başladığında, &quot;<code>/home/pi/prometheus/prometheus</code>&quot; konumundaki Prometheus çalıştırılabilir dosyasını çalıştıracaktır.</p>
+<p>Hem yapılandırma dosyası konumunu hem de izleme yazılımının gerektirdiği veritabanı için bir depolama konumunu iletiyoruz.</p>
+<p>Yapılandırma dosyasını değiştirmeniz gerekirse, onu &quot;<code>/home/pi/prometheus/prometheus.yml</code>&quot; konumunda bulabilirsiniz.</p>
+<p><strong>2.</strong> Servis dosyasına yazmayı bitirdikten sonra, kaydedin.</p>
+<p><code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak dosyayı kaydedip çıkabilirsiniz.</p>
+<p><strong>3.</strong> Yeni servis oluşturulduğuna göre, artık devam edip onu etkinleştirebiliriz.</p>
+<p>Prometheus servisini etkinleştirmek için, aşağıdaki komutu çalıştırabiliriz.</p>
+<pre><code>sudo systemctl enable prometheus
+</code></pre>
+<p>Servisi etkinleştirmek, Raspberry Pi önyüklendiğinde başlamasını sağlar.</p>
+<p><strong>4.</strong> Servis etkinleştirildiğine göre, şimdi Prometheus yazılımını başlatalım.</p>
+<p>Servisi başlatmak için, aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo systemctl start prometheus
+</code></pre>
+<p><strong>5.</strong> Durumunu kontrol ederek Prometheus'un Raspberry Pi'mizde başarıyla başladığını doğrulayabiliriz.</p>
+<p>Servisin durumunu almak için Raspberry Pi'nizde aşağıdaki komutu yazın.</p>
+<pre><code>sudo systemctl status prometheus
+</code></pre>
+<p><strong>6.</strong> Her şey doğru şekilde başladıysa, durum komutu tarafından aşağıdakinin döndürüldüğünü görmelisiniz.</p>
+<pre><code>Active: active (running)
+</code></pre>
+<p>Durum çalışıyor olarak görünmüyorsa, lütfen aşağıya bir yorum bırakın.</p>
+<h2>Prometheus Web Arayüzünü Yükleme</h2>
+<p>Artık Raspberry Pi'nizde Prometheus kurulu ve ayarlanmış olduğuna göre, şimdi web arayüzünü keşfedebiliriz.</p>
+<p><strong>1.</strong> Devam etmeden önce, Raspberry Pi'nizin IP adresini bilmeniz gerekiyor.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-ip-address/">Pi'niz için IP'yi almanın</a> en kolay yolu aşağıdaki komutu kullanmaktır, ancak başka yöntemler de vardır.</p>
+<pre><code>hostname -I
+</code></pre>
+<p>IP'nizi not edin, ardından bir sonraki adıma geçin.</p>
+<p><strong>2.</strong> <a href="https://pimylifeup.com/category/guides/browsers/">Favori web tarayıcınızda</a>, Prometheus arayüzüne ulaşmak için aşağıdaki adrese gidin.</p>
+<pre><code>http://[PIADRESI]:9090
+</code></pre>
+<p><strong>3.</strong> Arayüzü yüklediğinizde, aşağıdaki arayüzle karşılaşacaksınız.</p>
+<p>Bu arayüz, metrikleriniz üzerinde sorgular yapmanıza ve bunları ham veri olarak veya zaman tabanlı bir grafik içinde göstermenize olanak tanır.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/11/Raspberry-Pi-Prometheus-Web-Interface.jpg" alt="Raspberry Pi Prometheus Web Arayüzü" /></p>
+<p><strong>4.</strong> Ayrıca bu web arayüzünü, Prometheus için hedef olarak hangi cihazlara sahip olduğunuzu görüntülemek için de kullanabilirsiniz.</p>
+<p>Üst menü çubuğundaki &quot;<code>Status</code>&quot; seçeneğine <code>tıklayarak</code> hedefler ekranına gidebilirsiniz (<strong>1.</strong>).</p>
+<p>Ardından, açılan alt menüde &quot;<strong>Targets</strong>&quot; seçeneğine <code>tıklamanız</code> gerekiyor (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/11/Getting-to-the-Prometheus-Targets-page.jpg" alt="Prometheus Targets Sayfasına Gitme" /></p>
+<p><strong>5.</strong> Hedefler ekranı, şu anda Raspberry Pi'nizin Prometheus kurulumuna bağlı olan tüm cihazları gösterecektir.</p>
+<p>Her mevcut hedefinizin durumunu, en son ne zaman scrape edildiğini ve scrape süresinin ne kadar sürdüğünü görebilirsiniz.</p>
+<p>Prometheus'u Pi'mize yeni kurduğumuz için, yalnızca mevcut cihazımız kullanılabilir olacaktır.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/11/Promethes-Targets-on-the-Raspberry-Pi.jpg" alt="Raspberry Pi'de Prometheus Hedefleri" /></p>
+<h2>Bir Cihazı Prometheus Node'u Olarak Ayarlama</h2>
+<p>Bu bölümde, Raspberry Pi'nizde Prometheus için başka bir cihazı nasıl node olarak ayarlayacağınızı göstereceğiz.</p>
+<p>Bu örnek için, başka bir Raspberry Pi'de Prometheus'a geri bildirim yapan node exporter yazılımını kuracağız.</p>
+<p>Ancak, mimariniz için doğru sürümü indirdiğiniz sürece bu adımlar diğer çoğu Linux sistemi için de çalışmalıdır.</p>
+<p>Devam etmeden önce, cihazınızın <a href="https://pimylifeup.com/raspberry-pi-static-ip-address/">statik bir IP adresine sahip olduğundan</a> emin olun. IP adresiniz dinamik olarak atanıyorsa, muhtemelen bu node'a bağlantının kesilmesine neden olacaktır.</p>
+<h3>Node Exporter Yazılımını Kurma</h3>
+<p><strong>1.</strong> Yapmamız gereken ilk şey, aşağıdaki komutu kullanarak &quot;<code>/opt</code>&quot; içinde yeni bir dizin oluşturmaktır.</p>
+<p>Bu dizin, konumun işletim sisteminin dağıtımı tarafından sağlanmayan paketler için tasarlandığı için node exporter'ı tutacağımız yerdir.</p>
+<pre><code>sudo mkdir /opt/node-exporter
+</code></pre>
+<p><strong>2.</strong> Ardından, yeni oluşturduğumuz dizine geçin.</p>
+<p>Dizine geçmek, indirmek üzere olduğumuz arşivlerin doğru yerde olmasını sağlayacaktır.</p>
+<pre><code>cd /opt/node-exporter
+</code></pre>
+<p><strong>3.</strong> Bir sonraki adımımız, Prometheus node exporter'ın arşivini cihazımıza indirmektir.</p>
+<p>İndirmek istediğiniz sürüm cihazınıza göre değişir. Örneğin, bir <strong>Raspberry Pi 4</strong> kullandığımız için, Prometheus exporter'ın <strong>ARMv7</strong> sürümünü indirmek isteyeceğiz.</p>
+<p>Cihazınızın ve işletim sisteminizin hangi mimariyi kullandığını not aldığınızdan emin olun.</p>
+<p><strong>ARMv7 (Örn. Raspberry Pi 2, 3, 4)</strong><br />
+Node exporter'ın ARMv7 sürümünü cihazınıza indirmek için aşağıdaki komutu kullanın.<br />
+64-bit bir işletim sistemi kullanıyorsanız, bunun yerine bir ARM64 sürümü kullanmanız gerektiğini lütfen unutmayın.</p>
+<pre><code>sudo wget -O node-exporter.tar.gz https://github.com/prometheus/node_exporter/releases/download/v1.0.1/node_exporter-1.0.1.linux-armv7.tar.gz
+</code></pre>
+<p><strong>ARMv6 (Örn. Raspberry Pi 1, Zero, CM1)</strong><br />
+ARMv6 sürümü, Raspberry Pi 1 gibi eski IoT ARM cihazları için kullanışlıdır. Cihazınızın hangi mimariyi kullandığından emin değilseniz, bunu araştırmanız yardımcı olabilir.<br />
+Aşağıdaki komutu kullanarak, node exporter'ın ARMv6 sürümünü indirebilirsiniz.</p>
+<pre><code>sudo wget -O node-exporter.tar.gz https://github.com/prometheus/node_exporter/releases/download/v1.0.1/node_exporter-1.0.1.linux-armv6.tar.gz
+</code></pre>
+<p><strong>ARM64 (Örn. Raspberry Pi 3, 4, Rock64)</strong><br />
+Prometheus Node exporter'ın ARM64 sürümü, tamamen 64-bit bir işletim sistemi çalıştıran 64-bit ARM cihazları içindir.<br />
+Cihazınızda aşağıdaki komutu çalıştırarak ARM64 sürümünün arşivini indirin.</p>
+<pre><code>sudo wget -O node-exporter.tar.gz https://github.com/prometheus/node_exporter/releases/download/v1.0.1/node_exporter-1.0.1.linux-arm64.tar.gz
+</code></pre>
+<p><strong>x64</strong><br />
+Linux sisteminiz için Node exporter sisteminin x64 sürümünü indirmek için komut aşağıda sağlanmıştır.<br />
+x64, çoğu ARM olmayan cihazla kullanılan en yaygın işletim sistemidir.</p>
+<pre><code>sudo wget -O node-exporter.tar.gz https://github.com/prometheus/node_exporter/releases/download/v1.0.1/node_exporter-1.0.1.linux-amd64.tar.gz
+</code></pre>
+<p><strong>4.</strong> Prometheus'un arşivi cihazınıza indirildiğine göre. Artık onu çıkarmak için tar paketini kullanabiliriz.</p>
+<p>Arşivi mevcut dizine çıkarmak için aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo tar -xvf node-exporter.tar.gz --strip-components=1
+</code></pre>
+<p>Yalnızca arşiv içindeki dosyaları almak ve üst düzey dizini almamak için &quot;<code>strip-components</code>&quot; seçeneğini kullanıyoruz.</p>
+<p><strong>5.</strong> Prometheus node exporter cihazımıza çıkarıldığına göre, artık arşivi silebiliriz.</p>
+<p>Arşivi silmek için aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo rm node-exporter.tar.gz
+</code></pre>
+<p>Arşivi silmek mutlaka gerekli değildir, ancak sisteminizi gereksiz dosyalardan temiz tutmaya yardımcı olur.</p>
+<p><strong>6.</strong> Son olarak, aşağıdaki komutu kullanarak node exporter'ı çevrimiçi hale getirebiliriz.</p>
+<pre><code>./node_exporter
+</code></pre>
+<p><strong>7.</strong> Şu anda çıktı verdiği metrikler sayfasına giderek yeni node'unuzun çalıştığını doğrulayabilirsiniz.</p>
+<p>Bu sayfaya gitmek için, cihazınızın IP adresini bilmeniz gerekecek, bunun en kolay yollarından biri <code>hostname -I</code> komutunu kullanmaktır.</p>
+<p>Ayrıca şuna ihtiyacınız olacak:</p>
+<pre><code>http://[IPADRESINIZ]:9100
+</code></pre>
+<p>Bu adrese gittiğinizde, Prometheus node exporter'ın raporladığı tüm metrikleri göreceksiniz.</p>
+<h3>Node Exporter'ı Servis Olarak Ayarlama</h3>
+<p>Artık cihazınızda node exporter'ı çalışır hale getirdiğimize göre, şimdi onu bir servis olarak ayarlamalıyız.</p>
+<p>Onu bir servis olarak yapılandırmak, önyüklemede otomatik olarak başlamasını sağlayacak ve yazılımı yönetmenizi kolaylaştıracaktır.</p>
+<p><strong>1.</strong> Servisimizi tanımlayacak dosyayı yazarak başlayalım.</p>
+<p>Yeni bir dosyaya yazmaya başlamak için aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo nano /etc/systemd/system/nodeexporter.service
+</code></pre>
+<p><strong>2.</strong> Bu dosyanın içine, aşağıdaki kod satırlarını yazın.</p>
+<pre><code>[Unit]
+Description=Prometheus Node Exporter
+Documentation=https://prometheus.io/docs/guides/node-exporter/
+After=network-online.target
+
+[Service]
+User=pi
+Restart=on-failure
+
+ExecStart=/opt/node-exporter/node_exporter
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p><strong>3.</strong> Yukarıdaki satırları yazmayı bitirdikten sonra, dosyayı kaydedebiliriz.</p>
+<p>Dosyayı kaydetmek için <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basın.</p>
+<p><strong>4.</strong> Servis artık kaydedildiğine göre, şimdi onu etkinleştirmeliyiz.</p>
+<p>Aşağıdaki komutu çalıştırmak, cihaz açıldığında node exporter'ımızın başlamasını sağlayacaktır.</p>
+<pre><code>sudo systemctl enable nodeexporter
+</code></pre>
+<p><strong>5.</strong> Ardından, yeniden başlatmayı beklememize gerek kalmaması için Prometheus node exporter'ı şimdi başlatalım.</p>
+<pre><code>sudo systemctl start nodeexporter
+</code></pre>
+<p><strong>6.</strong> Prometheus node exporter'ın cihazınızda başarıyla çalıştığını doğrulamak için, ya daha önce belirttiğimiz URL'ye gidebilir ya da aşağıdaki komutu çalıştırabilirsiniz.</p>
+<p>Bu komut, az önce oluşturduğumuz servisin durumunu alacaktır.</p>
+<pre><code>sudo systemctl status nodeexporter
+</code></pre>
+<p>Servis doğru şekilde çalışıyorsa, aşağıdaki mesajı görmelisiniz, &quot;<code>Active: active (running)</code>&quot;.</p>
+<h2>Raspberry Pi Prometheus Node'unuza Node Ekleme</h2>
+<p>Bu noktada, artık iki ayrı şeyin çalışıyor olması gerekiyor. Raspberry Pi'nizde Prometheus yazılımının başarıyla çalışması gerekiyor.</p>
+<p>Ayrıca, ister bir Raspberry Pi ister başka bir cihaz olsun, node exporter ile kurulmuş bir cihazınız da olmalı.</p>
+<p>Bir sonraki bölümde, Raspberry Pi'nizde Prometheus'u node'umuza bağlanacak ve ondan veri okuyacak şekilde nasıl yapılandıracağınızı göstereceğiz.</p>
+<p>Bu bölüme devam etmeden önce node'unuzun IP adresini bilmeniz gerektiğini lütfen unutmayın.</p>
+<p><strong>1.</strong> Bu sürece Prometheus yapılandırma dosyasını düzenleyerek başlayalım.</p>
+<p>Raspberry Pi'nizde aşağıdaki komutu kullanarak bu dosyayı düzenlemeye başlayabilirsiniz.</p>
+<pre><code>nano /home/pi/prometheus/prometheus.yml
+</code></pre>
+<p><strong>2.</strong> Bu dosyanın içinde, Prometheus'un nasıl çalışacağını tanımlayan bir dizi satır göreceksiniz.</p>
+<p>İlgilendiğimiz kısım &quot;<code>scrape_configs</code>&quot; bölümüdür. Bu bölüm, scrape yapmak için ek işler eklememizi sağlayacak olan bölümdür.</p>
+<pre><code>scrape_configs:
+  # The job name is added as a label `job=` to any timeseries scraped from this config.
+  - job_name: 'prometheus'
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+    - targets: ['localhost:9090']
+</code></pre>
+<p><strong>3.</strong> Bu bölümün altında, başka bir node eklemek için gereken yapılandırmayı eklemeye başlayalım.</p>
+<p>Burada, scrape yaptığımız bu belirli hedef için bir isim tanımlamamız gerekiyor. Bir isim tanımlayarak, bu yapılandırmadan scrape edilen verilere bir etiket eklenecektir.</p>
+<p>Ayrıca hedef endpoint'imizi belirtmek için bu yapılandırmayı kullanmamız gerekiyor. Node'larımız durumunda, bu cihazın IP adresi, ardından <code>9100</code> portu olacaktır.</p>
+<p>Aşağıdaki satırları dosyaya girerken, &quot;<code>[IPADRESI]</code>&quot; kısmını cihazınızın IP'si ile değiştirdiğinizden emin olun.</p>
+<pre><code>  - job_name: 'node1'
+
+    static_configs:
+    - targets: ['[IPADRESI]:9100']
+</code></pre>
+<p><strong>4.</strong> Yeni yapılandırma eklendiğinde, aşağıda gösterdiğimize biraz benzeyen bir şeyle karşılaşmalısınız.</p>
+<pre><code># my global config
+global:
+  scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+  # scrape_timeout is set to the global default (10s).
+
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+      # - alertmanager:9093
+
+# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+rule_files:
+  # - &quot;first_rules.yml&quot;
+  # - &quot;second_rules.yml&quot;
+
+scrape_configs:
+  # The job name is added as a label `job=` to any timeseries scraped from this config.
+  - job_name: 'prometheus'
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+    - targets: ['localhost:9090']
+  - job_name: 'node1'
+
+    static_configs:
+    - targets: ['192.168.0.193:9100']
+</code></pre>
+<p><strong>5.</strong> Her şeyi doğru şekilde yapılandırdığınızdan memnun olduğunuzda, artık dosyayı kaydedebilirsiniz.</p>
+<p><code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedin.</p>
+<p><strong>6.</strong> Prometheus yapılandırmasında değişiklik yaptığımız için, yazılımı yeniden başlatmamız gerekiyor.</p>
+<p>Raspberry Pi'mizde onun için zaten bir servis oluşturduğumuzdan, yeniden başlatmak aşağıdaki komutu çalıştırmak kadar basittir.</p>
+<pre><code>sudo systemctl restart prometheus
+</code></pre>
+<p><strong>7.</strong> Prometheus web arayüzünüze geri dönerseniz, artık node'unuzdan çekilen verileri görmelisiniz.</p>
+<p>Örneğin, node'umuzun artık hedefler sayfasında olası bir veri kaynağı olarak görüldüğünü görebiliriz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/11/Raspberry-Pi-Prometheus-Added-new-Node.jpg" alt="Prometheus Yeni Node Eklendi" /></p>
+<h2>Sonuç</h2>
+<p>Bu noktada, artık Raspberry Pi'niz Prometheus izleme yazılımıyla kurulmuş olmalı.</p>
+<p>Ayrıca, ek bir cihazda node exporter yazılımını nasıl kuracağınızı ve Raspberry Pi'nizin ondan verileri nasıl okuyacağını öğrenmiş olmanız gerekiyor.</p>
+<p>Prometheus, kullanımı oldukça basit bir yazılımdır ve sistemlerinden metrikler almak isteyenler için mükemmeldir.</p>
+<p>Ayrıca, Prometheus'u <a href="https://pimylifeup.com/raspberry-pi-grafana/">Grafana gibi bir analitik görselleştirme aracıyla</a> birleştirebilirsiniz. Grafana, verilerinizi daha kolay görüntülemenizi ve kolayca kullanışlı grafikler oluşturmanızı sağlayacaktır. En iyisi, Raspberry Pi üzerinde de çalışır.</p>
+<p>Prometheus'u Raspberry Pi'nizde çalıştırmakla ilgili herhangi bir sorunla karşılaştıysanız, aşağıya yorum bırakmaktan çekinmeyin.</p>
+<p>Cihazınızla neler yapabileceğinizi görmek için <a href="https://pimylifeup.com/category/projects/">diğer Raspberry Pi projelerimize</a> de göz atmalısınız.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-prometheus.html&amp;text=Raspberry+Pi%27ye+Prometheus+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-prometheus.html&amp;text=Raspberry+Pi%27ye+Prometheus+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-prometheus.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-prometheus.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-prometheus.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-prometheus.html&amp;title=Raspberry+Pi%27ye+Prometheus+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27ye+Prometheus+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-prometheus.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

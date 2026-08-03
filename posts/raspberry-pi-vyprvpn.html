@@ -1,0 +1,345 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de VyprVPN Kurulumu Nasıl Yapılır - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Raspberry Pi&#39;de VyprVPN hakkında bilmeniz gereken her şey"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de VyprVPN Kurulumu Nasıl Yapılır"/>
+    <meta property="og:description"
+          content="Raspberry Pi&#39;de VyprVPN hakkında bilmeniz gereken her şey"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-vyprvpn.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-vyprvpn.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2018/12/Raspberry-Pi-VyprVPN-no-wm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de VyprVPN Kurulumu Nasıl Yapılır"/>
+    <meta name="twitter:description"
+          content="Raspberry Pi&#39;de VyprVPN hakkında bilmeniz gereken her şey"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2018/12/Raspberry-Pi-VyprVPN-no-wm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de VyprVPN Kurulumu Nasıl Yapılır","item":{"@id":"https://codenfast.com/posts/raspberry-pi-vyprvpn.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2018/12/Raspberry-Pi-VyprVPN-no-wm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2018/12/Raspberry-Pi-VyprVPN-no-wm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2018/09/Raspberry-Pi-VyprVPN-v1.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2018/09/Raspberry-Pi-VyprVPN-v1.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de VyprVPN Kurulumu Nasıl Yapılır","description":"Raspberry Pi'de VyprVPN hakkında bilmeniz gereken her şey","image":["https://pimylifeup.com/wp-content/uploads/2018/12/Raspberry-Pi-VyprVPN-no-wm.jpg"],"datePublished":"2026-08-03T11:41:56.309096+03:00","dateModified":"2026-08-03T11:41:56.309124+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de VyprVPN Kurulumu Nasıl Yapılır</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-vyprvpn/">PiMyLifeUp - How to Setup VyprVPN on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'de VyprVPN kurmanın tüm adımlarını ele alacağım.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2018/09/Raspberry-Pi-VyprVPN-v1.jpg" alt="Raspberry Pi VyprVPN" /></p>
+<p>Pi'nizi VyprVPN hizmetine bağlamak istiyorsanız bu eğitim işinize yarayacaktır.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-vpn-server/">Raspberry Pi'de bir VPN kurmak</a> istemenizin birçok nedeni olabilir. En yaygını, <a href="https://pimylifeup.com/category/projects/network/">ağ etkinliklerinize</a> ekstra bir güvenlik ve anonimlik katmanı istemenizdir. Bu avantajlar, çeşitli farklı Raspberry Pi projeleri için kullanışlıdır.</p>
+<p>Projelerimizin çoğu <a href="https://pimylifeup.com/raspberry-pi-os-install/">Raspberry Pi OS'nin en son sürümü</a> için test edilmiştir. Bu eğitimi takip ederken en iyi deneyimi yaşamak için en son sürüme güncellemenizi öneririm.</p>
+<p>VyprVPN ilginizi çekmiyorsa, ExpressVPN veya <a href="https://pimylifeup.com/raspberry-pi-nordvpn/">NordVPN</a> gibi hizmetleri ele alan başka eğitimlerimiz de var.</p>
+<p>Eğitimi hemen aşağıda bulabilirsiniz, herhangi bir sorun yaşarsanız bu sayfanın altındaki yorum bölümünde bize bildirmeyi unutmayın.</p>
+<h2>Raspberry Pi'ye VyprVPN Kurulumu</h2>
+<p>VyprVPN, çoğu VPN hizmeti OpenVPN yazılımını kullandığından, Raspberry Pi'de çoğu VPN hizmetini kurmaktan pek farklı değildir.</p>
+<p><strong>1.</strong> Henüz yapmadıysanız, VyprVPN'e kaydolmanız gerekecek.</p>
+<p><strong>2.</strong> Raspberry Pi'de terminali açın veya uzaktan erişmek için <a href="https://pimylifeup.com/raspberry-pi-ssh/">SSH kullanın</a>.</p>
+<p><strong>3.</strong> Raspberry Pi OS'yi en son paketlere güncelleyin.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>4.</strong> Şimdi, OpenVPN paketini kuralım, bunu aşağıdaki komutu girerek yapabilirsiniz.</p>
+<pre><code>sudo apt install openvpn
+</code></pre>
+<p><strong>5.</strong> Aşağıdakini girerek OpenVPN dizinine <a href="https://pimylifeup.com/cd-command/">dizin değiştirin</a>.</p>
+<pre><code>cd /etc/openvpn/
+</code></pre>
+<p><strong>6.</strong> Şimdi VyprVPN ovpn dosyalarını <a href="https://pimylifeup.com/wget-command-linux/">wget kullanarak</a> indirmemiz gerekecek.</p>
+<pre><code>sudo wget -O vyprvpn.zip \
+https://support.vyprvpn.com/hc/article_attachments/360052617332/Vypr_OpenVPN_20200320.zip
+</code></pre>
+<p><strong>7.</strong> Ardından, ihtiyacımız olan dosyaları çıkarmamız gerekecek.</p>
+<pre><code>sudo unzip -j vyprvpn.zip &quot;GF_OpenVPN_20200320/OpenVPN256/*&quot; -d &quot;/etc/openvpn/&quot;
+</code></pre>
+<p>Yalnızca ihtiyacımız olan dosyaları çıkarmak için <a href="https://pimylifeup.com/unzip-command-linux/">unzip komutunun bazı argümanlarını</a> kullanıyoruz.</p>
+<p><strong>8.</strong> VyprVPN'e bağlanmak için sadece aşağıdaki komutu kullanın.</p>
+<pre><code>sudo openvpn file_name
+</code></pre>
+<p><code>file_name</code> kısmını bağlanmak istediğiniz konumun dosyasıyla değiştirin.</p>
+<p>Örneğin, Kanada'yı istersem, <strong>Canada.ovpn</strong> dosyasını kullanırım.</p>
+<p>Aşağıdaki <a href="https://pimylifeup.com/ls-command/">ls komutunu</a> kullanarak tüm konumları görüntüleyebilirsiniz.</p>
+<pre><code>ls -l /etc/openvpn
+</code></pre>
+<p>Aşağıda Kanada'ya bağlanmaya bir örnek bulunmaktadır.</p>
+<pre><code>sudo openvpn /etc/openvpn/Canada.ovpn
+</code></pre>
+<p><strong>9.</strong> Şimdi kimlik bilgilerinizi soracak ve VyprVPN'e bağlanabilmek için bunları girmeniz gerekecek.</p>
+<p>Bağlantınızı ipleak.net adresine giderek test edin. Her zamankinden farklı bir IP'niz olmalıdır.</p>
+<p><strong>10.</strong> Bağlantıyı kesmeniz gerekirse, <code>CTRL</code> + <code>C</code> veya aşağıdaki <a href="https://pimylifeup.com/linux-kill-process/">killall komutunu</a> kolayca kullanabilirsiniz.</p>
+<pre><code>sudo killall openvpn
+</code></pre>
+<h2>VyprVPN'i Otomatik Başlatma</h2>
+<p>Çoğumuz teknoloji söz konusu olduğunda gereken manuel girdi miktarını azaltmayı severiz.</p>
+<p>Aşağıdaki adımlar, VyprVPN'i açılışta otomatik olarak bağlanacak şekilde nasıl ayarlayacağınızı gösterecek.</p>
+<p><strong>1.</strong> Öncelikle, hem kullanıcı adımızı hem de şifremizi bir dosyaya kaydetmemiz gerekecek.</p>
+<pre><code>sudo nano /etc/openvpn/auth.txt
+</code></pre>
+<p><strong>2.</strong> Bu dosyaya, hizmet için seçtiğiniz kullanıcı adını ve şifreyi ekleyin. Kullanıcı adı ve şifrenin ayrı satırlarda olduğundan emin olun.</p>
+<pre><code>username
+password
+</code></pre>
+<p><strong>3.</strong> <code>CTRL</code> + <code>X</code>, ardından <code>Y</code> ve son olarak <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<p><strong>4.</strong> Şimdi ovpn dosyasını <a href="https://pimylifeup.com/cp-command-linux/">kopyalamamız</a> gerekecek, aynı zamanda adını da basitleştirelim.</p>
+<pre><code>sudo cp &quot;/etc/openvpn/Australia - Sydney.ovpn&quot; /etc/openvpn/aussyd.conf
+</code></pre>
+<p><strong>5.</strong> Şimdi bu yeni dosyayı düzenleyelim.</p>
+<pre><code>sudo nano /etc/openvpn/aussyd.conf
+</code></pre>
+<p><strong>6.</strong> Bu dosyada yalnızca basit bir düzenleme yapmamız gerekecek.</p>
+<p><strong>Bulun</strong></p>
+<pre><code>auth-user-pass
+</code></pre>
+<p><strong>Şununla değiştirin</strong></p>
+<pre><code>auth-user-pass auth.txt
+</code></pre>
+<p><strong>7.</strong> Son olarak, OpenVPN'i ovpn dosyamızı kullanarak otomatik başlayacak şekilde ayarlamamız gerekiyor.</p>
+<pre><code>sudo nano /etc/default/openvpn
+</code></pre>
+<p><strong>Bulun</strong></p>
+<pre><code>#AUTOSTART=&quot;all&quot;
+</code></pre>
+<p><strong>Şununla değiştirin</strong></p>
+<pre><code>AUTOSTART=&quot;aussyd&quot;
+</code></pre>
+<p><code>aussyd</code> kısmını belirlediğiniz dosya adıyla değiştirin.</p>
+<p><strong>8.</strong> Kaydedip çıkın.</p>
+<p><strong>9.</strong> Yeni yapılandırmamızı test etmek için Raspberry Pi'yi yeniden başlatın.</p>
+<pre><code>sudo reboot
+</code></pre>
+<p><strong>10.</strong> Şimdi <a href="https://ipleak.net/">ipleak.net</a> veya benzer bir web sitesine giderek VPN'i test edin. IP, sizinki değil VyprVPN'inki olmalıdır.</p>
+<p>Bu adımı yapmak, Raspberry Pi'de VyprVPN'i başarıyla kurduğumuzu doğrulayacaktır.</p>
+<h2>DNS Sızıntılarını Önleme</h2>
+<p>DNS'inizin konumunuzu sızdırmadığından emin olmak için Pi'nizde bir ayar değişikliği yapmanız gerekecek.</p>
+<p>Bunu düzeltmek için, DNS'imizi internet servis sağlayıcımızın (ISP) DNS'i yerine <a href="https://www.cloudflare.com/learning/dns/what-is-1.1.1.1/">Cloudflare'in genel DNS'ini</a> kullanmaya zorlayacağız.</p>
+<p>Bu süreç oldukça kolaydır ve uzun sürmeyecektir.</p>
+<p><strong>1.</strong> Öncelikle, dhcpcd yapılandırma dosyasını açın ve aşağıdaki satırı güncelleyin.</p>
+<p><strong>Açın</strong></p>
+<pre><code>sudo nano /etc/dhcpcd.conf
+</code></pre>
+<p><strong>Bulun</strong></p>
+<pre><code>#static domain_name_servers=192.168.0.1
+</code></pre>
+<p><strong>Şununla değiştirin</strong></p>
+<pre><code>static domain_name_servers=1.1.1.1
+</code></pre>
+<p><strong>2.</strong> Dosyayı kaydedip çıkın.</p>
+<p><strong>3.</strong> Şimdi aşağıdaki komutu girerek Pi'nizi yeniden başlatın.</p>
+<pre><code>sudo reboot
+</code></pre>
+<p><strong>4.</strong> <a href="https://ipleak.net/">ipleak.net</a> adresine gidin ve DNS'inizin artık sızdırmadığını kontrol edin. Hâlâ sızdırıyorsanız, daha fazla bilgi için <a href="https://forum.goldenfrog.com/t/webrtc-ip-leak-concerns-and-vyprvpn/648">WebRTC istekleriyle ilgili bu sayfaya</a> göz atmak isteyebilirsiniz.</p>
+<h2>Sorun Giderme</h2>
+<p>Raspberry Pi VyprVPN kurulumu sırasında sorunla karşılaşırsanız, aşağıdaki sorun giderme ipuçları size yardımcı olabilir.</p>
+<ul>
+<li>
+<p>VPN'inizi aşağıdaki komutu kullanarak başlatıp durdurabilirsiniz. <code>stop</code> yerine <code>start</code> kullanmak VPN'i tekrar başlatacaktır. Bu komut yalnızca otomatik başlatma için ayarladıysanız çalışır.</p>
+<p>sudo systemctl stop openvpn</p>
+</li>
+<li>
+<p>Kimlik bilgilerini düz metin olarak sakladığımızı bilmek önemlidir. Bu güvenlik eksikliği, Pi'nizi yetkisiz erişime karşı güvende tutmanızı zorunlu kılar. Sadece varsayılan şifreyi değiştirmek bile güvenliğinizi büyük ölçüde artıracaktır.</p>
+</li>
+</ul>
+<h2>Sonuç</h2>
+<p>Yukarıda belirttiğim gibi, bir VPN ile harika çalışan pek çok başka proje vardır. <a href="https://pimylifeup.com/raspberry-pi-torrentbox/">Basit bir Torrentbox</a> gibi bir şey bile fayda sağlayacaktır. Sadece VPN sağlayıcınızın torrent kullanımına izin verdiğinden emin olun, çünkü bazıları çok fazla bant genişliği kullandığınız için sizi yasaklayabilir.</p>
+<p>Umarım bu Raspberry Pi VyprVPN eğitiminin sonunda her şeyi kurup gerektiği gibi çalışır hale getirmişsinizdir. Daha fazla yardıma ihtiyacınız olursa, bir yorum bırakmanızı şiddetle tavsiye ederim.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-vyprvpn.html&amp;text=Raspberry+Pi%27de+VyprVPN+Kurulumu+Nas%C4%B1l+Yap%C4%B1l%C4%B1r" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-vyprvpn.html&amp;text=Raspberry+Pi%27de+VyprVPN+Kurulumu+Nas%C4%B1l+Yap%C4%B1l%C4%B1r" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-vyprvpn.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-vyprvpn.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-vyprvpn.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-vyprvpn.html&amp;title=Raspberry+Pi%27de+VyprVPN+Kurulumu+Nas%C4%B1l+Yap%C4%B1l%C4%B1r" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+VyprVPN+Kurulumu+Nas%C4%B1l+Yap%C4%B1l%C4%B1r%20codenfast.com%2Fposts%2Fraspberry-pi-vyprvpn.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

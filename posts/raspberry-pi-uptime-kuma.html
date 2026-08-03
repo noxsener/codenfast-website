@@ -1,0 +1,323 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de Uptime Kuma Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Ücretsiz ve açık kaynaklı çalışma süresi izleyicisi"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de Uptime Kuma Kurulumu"/>
+    <meta property="og:description"
+          content="Ücretsiz ve açık kaynaklı çalışma süresi izleyicisi"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-uptime-kuma.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-uptime-kuma.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Uptime-Kuma-NoWM-Thumbnail.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de Uptime Kuma Kurulumu"/>
+    <meta name="twitter:description"
+          content="Ücretsiz ve açık kaynaklı çalışma süresi izleyicisi"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Uptime-Kuma-NoWM-Thumbnail.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de Uptime Kuma Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-uptime-kuma.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Uptime-Kuma-NoWM-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Uptime-Kuma-NoWM-Thumbnail.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Uptime-Kuma-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Uptime-Kuma-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Uptime-Kuma-01-Initial-Setup-Screen.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Uptime-Kuma-01-Initial-Setup-Screen.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Uptime-Kuma-02-Empty-Dashboard.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Uptime-Kuma-02-Empty-Dashboard.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Uptime-Kuma-03-Adding-a-New-Monitor.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Uptime-Kuma-03-Adding-a-New-Monitor.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Uptime-Kuma-04-Dashboard-with-running-monitor.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Uptime-Kuma-04-Dashboard-with-running-monitor.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de Uptime Kuma Kurulumu","description":"Ücretsiz ve açık kaynaklı çalışma süresi izleyicisi","image":["https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Uptime-Kuma-NoWM-Thumbnail.jpg"],"datePublished":"2026-08-03T12:45:31.278643+03:00","dateModified":"2026-08-03T12:45:31.27867+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de Uptime Kuma Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-uptime-kuma/">PiMyLifeUp - Setting up Uptime Kuma on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitim, Uptime Kuma yazılımını kullanarak Raspberry Pi'nizde bir çalışma süresi (uptime) izleyicisi nasıl kurabileceğinizi gösterecek.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Uptime-Kuma-Thumbnail.jpg" alt="Raspberry Pi Uptime Kuma" /></p>
+<p>Uptime Kuma, bir Raspberry Pi'ye kolayca kurabileceğiniz ücretsiz ve açık kaynaklı bir çalışma süresi izleme aracıdır.</p>
+<p>Bu yazılımı kullanarak, çeşitli hizmetlerin çalışma süresini ve yanıt süresini ölçebilirsiniz.</p>
+<p>Uptime Kuma'nın izleyebileceği bazı hizmetler HTTP(s), TCP, PING, DNS Kayıtları, Steam Oyun Sunucuları, Docker konteynerleri ve daha fazlasıdır.</p>
+<p>Raspberry Pi'niz bir kesinti tespit ederse, Uptime Kuma çeşitli hizmetlere bir bildirim gönderebilir. Bu hizmetler arasında Discord, Telegram, Slack ve E-posta bulunur.</p>
+<h2>Çalışma Süresi İzleyicisi İçin Raspberry Pi'nizi Hazırlama</h2>
+<p>Uptime Kuma'yı çalıştırmak için gereken tüm yazılımı kurarak Raspberry Pi'mizi hazırlayarak başlayalım. Neyse ki, yazılımın çok az gereksinimi var ve hazırlanması nispeten basit.</p>
+<p><strong>1.</strong> Devam etmeden önce, güncel bir paket listemiz olduğundan emin olmalı ve güncel olmayan tüm paketleri yükseltmeliyiz.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-update/">Raspberry Pi'nizi güncellemek</a> için terminalde aşağıdaki iki komutu kullanın.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> İşletim sistemimiz güncel olduğuna göre, <a href="https://pimylifeup.com/raspberry-pi-docker/">Raspberry Pi OS'ye Docker kurmanız</a> gerekiyor. Süreç basittir ve tamamlanması çok uzun sürmeyecektir. Docker'ı doğru şekilde kurmak için rehberimizi takip etmenizi öneririz.</p>
+<p>Aşağıdaki komutu çalıştırarak Docker'ın kurulu olup olmadığını kontrol edebilirsiniz.</p>
+<pre><code>docker --version
+</code></pre>
+<p><strong>3.</strong> Uptime Kuma Docker'ı için compose dosyalarımızı saklamak amacıyla bir dizin oluşturmak isteyeceğiz. Özellikle <a href="https://pimylifeup.com/raspberry-pi-dockge/">Dockge kullanmayı</a> da planlıyorsanız, bunu <code>/opt/stacks/</code> dizini içinde saklamanızı öneririz.</p>
+<pre><code>sudo mkdir -p /opt/stacks/uptimekuma
+</code></pre>
+<p><strong>5.</strong> Bir sonraki bölüme geçmeden önce, <a href="https://pimylifeup.com/cd-command/">dizini değiştirdiğinizden</a> emin olun ve yeni oluşturduğumuz dizine geçin.</p>
+<pre><code>cd /opt/stacks/uptimekuma
+</code></pre>
+<p><strong>6.</strong> Raspberry Pi'nizi hazırladıktan sonra, bu eğitimin bir sonraki bölümüne devam edebilirsiniz.</p>
+<h2>Raspberry Pi'de Uptime Kuma Kurulumu</h2>
+<p>Bu bölüm, Raspberry Pi'ye Uptime Kuma yazılımını nasıl kuracağınızı gösterecek. Kullanabileceğimiz bazı ek yazılımlar sayesinde, Uptime Kuma'yı kurup ayarlamak basit bir süreçtir.</p>
+<h3>Uptime Kuma Docker Compose Dosyasını Ayarlama</h3>
+<p><strong>7.</strong> Şimdi Docker yığınımız için compose dosyasını yazmamız gerekecek. <a href="https://pimylifeup.com/nano-text-editor/">Nano metin editörünü</a> veya tercih ettiğiniz editörü kullanarak <code>compose.yaml</code> dosyasını oluşturup açın.</p>
+<pre><code>sudo nano compose.yaml
+</code></pre>
+<p><strong>8.</strong> Bu dosyada, birkaç satır yazmanız gerekecek, ama bunlar çok basit. Ayrıca yalnızca tek bir hizmet kullanacağız.</p>
+<p>Aşağıdaki kodu compose dosyasına kopyalayın. Kodu kod bloğunun altında kısaca açıklıyoruz.</p>
+<pre><code>services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:2
+    volumes:
+      - ./data:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 3001:3001
+    restart: unless-stopped
+</code></pre>
+<p>Önce <code>uptime-kuma</code> hizmetini tanımlıyoruz ve <code>image</code>'ı Uptime Kuma imajının en son sürümüne işaret edecek şekilde ayarlıyoruz.</p>
+<p>Ardından, iki farklı volume tanımlıyoruz. İlki, harici veri (<code>/opt/stacks/uptimekuma/data</code>) dizinini dahili <code>app/data</code> dizinine eşleyecek. İkinci volume, Uptime Kuma'ya <code>docker.sock</code> dosyasına erişim sağlayacak, bu da Uptime Kuma'nın diğer Docker hizmetlerini izlemesini sağlayacaktır.</p>
+<p>Port yapılandırması, harici <code>3001</code> portunu dahili <code>3001</code> portuna eşleyecektir. Gerekirse harici portu değiştirebilirsiniz; ancak dahili portu değiştirmeyin. Örneğin, port biçimi şu şekildedir: <code>external_port:internal_port</code>.</p>
+<p>Son olarak, Docker, çökerse veya yanıt vermeyi bırakırsa hizmeti yeniden başlatacaktır. Hizmeti manuel olarak durdurursanız, otomatik olarak yeniden başlamayacaktır.</p>
+<p><strong>9.</strong> Compose dosyasından memnun olduğunuzda, <code>CTRL</code> + <code>X</code>, <code>Y</code> ve ardından <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<p><strong>10.</strong> Artık Uptime Kuma Docker konteynerini başlatmaya hazırsınız. Bunu yapmak için, aşağıdaki komutu çalıştırın.</p>
+<p><code>-d</code> seçeneği, Docker'ın hizmeti arka plana almasını sağlayacaktır.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h2>Uptime Kuma Web Arayüzünü Kullanma</h2>
+<p>Artık Raspberry Pi'ye Uptime Kuma kurduğumuza göre, web arayüzüne erişebiliriz.</p>
+<p><strong>11.</strong> Devam etmeden önce, bunu Pi'nizde çalıştırmıyorsanız, yerel IP adresini bilmeniz gerekecek.</p>
+<p>Raspberry Pi'nizin yerel IP adresini almanın en kolay yolu <a href="https://pimylifeup.com/hostname-command/">hostname komutunu kullanmaktır</a>.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>12.</strong> IP adresiniz elinizde olduğunda, favori web tarayıcınızda aşağıdaki adrese gidin. Görebileceğiniz gibi, Raspberry Pi'nizde Uptime Kuma varsayılan olarak <code>3001</code> portunda çalışır.</p>
+<p>&quot;<code>[IPADDRESS]</code>&quot; kısmını IP'nizle değiştirdiğinizden emin olun.</p>
+<pre><code>http://[IPADRESI]:3001
+</code></pre>
+<p><strong>13.</strong> Uptime Kuma web arayüzünü ilk kez yüklediğinizde, sizi aşağıdaki ekran karşılayacak.</p>
+<p>Bu ekranı kullanarak, web arayüzüne giriş yapmak için kullanacağınız hesabı oluşturacaksınız. Yeni hesabınız için giriş bilgilerini doldurun (<strong>1.</strong>).</p>
+<p>Tüm bilgilerinizi doldurduktan sonra, devam etmek için &quot;<code>Create</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Uptime-Kuma-01-Initial-Setup-Screen.png" alt="Uptime Kuma Hesabı Oluşturma" /></p>
+<p><strong>14.</strong> Hesabınızı oluşturduktan sonra, herhangi bir izleyici eklememiş olacağınızdan boş bir gösterge paneli ile karşılaşacaksınız.</p>
+<p>Web arayüzünü kullanarak bir izleyici eklemek, &quot;<code>Add New Monitor</code>&quot; düğmesine <code>tıklayarak</code> başlatabileceğiniz süper kolay bir süreçtir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Uptime-Kuma-02-Empty-Dashboard.png" alt="Boş Çalışma Süresi İzleyici Gösterge Paneli" /></p>
+<p><strong>15.</strong> Uptime Kuma, ekranın sol tarafında bir dizi metin kutusu görüntüleyecek. Bunları kullanarak yepyeni izleyicinizi yapılandırabilirsiniz.</p>
+<p>Varsayılan seçeneklerle, izleyicinin oluşturulması için en az iki bilgi belirtmelisiniz.</p>
+<ul>
+<li>Ayarlamanız gereken ilk seçenek &quot;<code>Friendly Name</code>&quot;dir (<strong>1.</strong>). Bu alan, web arayüzü içinde bu izleyici için kullanılacak adı belirler.</li>
+<li>İkincisi, izlemek istediğiniz URL'yi de belirtmelisiniz (<strong>2.</strong>). Varsayılan izleyici türüyle (HTTP(s)), Raspberry Pi sürekli olarak sayfayı alacak ve durum kodunun OK (200-299) olduğunu kontrol edecektir.</li>
+</ul>
+<p>Yeni çalışma süresi izleyicinizi yapılandırdıktan sonra, sayfanın altında bulunan &quot;Save&quot; düğmesine tıklayın (3.).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Uptime-Kuma-03-Adding-a-New-Monitor.png" alt="Raspberry Pi'de Yeni Çalışma Süresi İzleyicinizi Ekleme" /></p>
+<p><strong>16.</strong> Raspberry Pi'niz artık seçtiğiniz hizmeti izlemek için Uptime Kuma yazılımını başarıyla kullanıyor olacak.</p>
+<p>Seçtiğiniz hizmet için hemen veri doldurulduğunu görmeye başlamalısınız. Örneğin, aşağıda, çalışma süresi izleyicisini birkaç dakika çalıştırdıktan sonra bizimkinin nasıl göründüğünü görebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2022/09/Raspberry-Pi-Uptime-Kuma-04-Dashboard-with-running-monitor.png" alt="Uptime Kuma Gösterge Paneli" /></p>
+<h2>Raspberry Pi'de Uptime Kuma'yı Güncelleme</h2>
+<p>Uptime Kuma ekibi bir güncelleme yayınladığında, muhtemelen ona yükseltmek isteyeceksiniz. Aşağıdaki bölüm, yazılımı birkaç basit adımda nasıl güncelleyeceğinizi gösterecek.</p>
+<p><strong>1.</strong> Öncelikle, Uptime Kuma'yı Raspberry Pi'mize klonladığımız dizine geçmemiz gerekecek.</p>
+<p>Aşağıdaki komutu kullanarak bu dizine geçebilirsiniz.</p>
+<pre><code>cd /opt/stacks/uptimekuma
+</code></pre>
+<p><strong>2.</strong> Artık doğru dizinde olduğunuza göre, Uptime Kuma yazılımının en son sürümünü çekmek için Docker kullanmak isteyeceksiniz.</p>
+<pre><code>docker compose pull
+</code></pre>
+<p><strong>3.</strong> Docker'ın hizmetinizi en son sürüme taşımasını sağlamak için, sadece aşağıdaki komutu çalıştırın.</p>
+<p>Docker yeni bir sürüm algılayacak ve hizmeti otomatik olarak güncelleyip yeniden başlatacaktır.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h2>Sonuç</h2>
+<p>Bu eğitimde, Raspberry Pi'nizi Uptime Kuma yazılımını kullanarak bir çalışma süresi izleyicisi olarak nasıl kuracağınızı gösterdik.</p>
+<p>Gördüğünüz gibi, Uptime Kuma işlevsellikle dolu, süper modern, şık ve ücretsiz bir çalışma süresi izleyicisidir.</p>
+<p>Raspberry Pi'de Uptime Kuma çalıştırırken herhangi bir sorunla karşılaştıysanız, aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-uptime-kuma.html&amp;text=Raspberry+Pi%27de+Uptime+Kuma+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-uptime-kuma.html&amp;text=Raspberry+Pi%27de+Uptime+Kuma+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-uptime-kuma.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-uptime-kuma.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-uptime-kuma.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-uptime-kuma.html&amp;title=Raspberry+Pi%27de+Uptime+Kuma+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+Uptime+Kuma+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-uptime-kuma.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

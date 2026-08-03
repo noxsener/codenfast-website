@@ -1,0 +1,354 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de Dockge Kurulumu ve Çalıştırılması - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Docker yığınlarınızı kolayca yönetin"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de Dockge Kurulumu ve Çalıştırılması"/>
+    <meta property="og:description"
+          content="Docker yığınlarınızı kolayca yönetin"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-dockge.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-dockge.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de Dockge Kurulumu ve Çalıştırılması"/>
+    <meta name="twitter:description"
+          content="Docker yığınlarınızı kolayca yönetin"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de Dockge Kurulumu ve Çalıştırılması","item":{"@id":"https://codenfast.com/posts/raspberry-pi-dockge.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-01-Create-Account.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-01-Create-Account.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-02-Dockge-Dashboard.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-02-Dockge-Dashboard.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-03-Create-New-Stack-in-Dockge.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-03-Create-New-Stack-in-Dockge.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-04-Stack-Overview.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-04-Stack-Overview.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-05-Container-not-managed-by-Dockge.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-05-Container-not-managed-by-Dockge.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-06-Start-Moved-container.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-06-Start-Moved-container.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-07-Moved-Container-running-under-dockge.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-07-Moved-Container-running-under-dockge.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de Dockge Kurulumu ve Çalıştırılması","description":"Docker yığınlarınızı kolayca yönetin","image":["https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:09:39.17992+03:00","dateModified":"2026-08-03T12:09:39.179962+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de Dockge Kurulumu ve Çalıştırılması</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-dockge/">PiMyLifeUp - Installing and Running Dockge on a Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, bir Raspberry Pi'ye Dockge'yi nasıl kurup çalıştıracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-Thumbnail.jpg" alt="Raspberry Pi Dockge" /></p>
+<p>Dockge, popüler <a href="https://pimylifeup.com/raspberry-pi-uptime-kuma/">Uptime Kuma</a> yazılımının arkasındaki aynı kişi tarafından geliştirilen, kendi kendine barındırılan bir Docker yığın (stack) yöneticisidir.</p>
+<p>Bu yazılım, tek, kullanımı kolay bir arayüzden birden fazla Docker compose dosyasını yönetmenizi sağlar. <a href="https://pimylifeup.com/raspberry-pi-portainer/">Portainer'ın uyguladığı yığın sistemine</a> benzer ama daha temiz ve kullanımı daha basit.</p>
+<p><a href="https://github.com/louislam/dockge">Dockge</a> arayüzü içinde komut satırına dokunmadan birden fazla işlem gerçekleştirebilirsiniz. Örneğin, Compose dosyalarını kolayca oluşturabilir, düzenleyebilir, başlatabilir, yeniden başlatabilir ve silebilirsiniz. Konteynerlerinizi kolayca güncelleyebilirsiniz bile.</p>
+<p>Compose dosyalarınız için tamamen etkileşimli bir editöre bile sahiptir, bu da biçimlendirme hataları konusunda endişelenmeden düzenleme yapmayı basitleştirir.</p>
+<p>Her bir konteynerinize, kullanımı çok kolay bir web tabanlı terminal üzerinden bile erişebilirsiniz.</p>
+<p>Kısacası, Dockge, Raspberry Pi gibi bir sistemde Docker konteynerlerini basitçe yönetmek için çok yönlü bir çözüm olmayı hedefliyor.</p>
+<p>Aşağıdaki adımlarda, Raspberry Pi'ye Dockge'yi nasıl kuracağınızı gösterecek ve nasıl çalıştığını açıklayacağız.</p>
+<h2>Raspberry Pi'ye Dockge Kurulumu</h2>
+<p>Bu bölümde, Raspberry Pi'nize Dockge'yi nasıl kuracağınızı öğreneceksiniz. Yazılım bir Docker konteyneri olarak mevcut olduğundan bu süreç çok basittir.</p>
+<p>Bu kurulum adımlarının tümü terminal içinde çalıştırılmalıdır. Raspberry Pi OS masaüstünü kullanıyorsanız, klavyenizde <code>CTRL</code> + <code>ALT</code> + <code>T</code> tuşlarına basarak bunu açabilirsiniz.</p>
+<h3>Dockge'yi Çalıştırmak İçin Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> Devam etmeden önce, ilk adımımız Dockge'yi çalıştırmak için güncel bir işletim sistemine sahip olduğumuzdan emin olmaktır.</p>
+<p>Aşağıdaki iki komutu kullanarak paket listesini güncelleyebilir ve güncel olmayan tüm paketleri yükseltebilirsiniz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>2.</strong> Şimdi sistemimizde &quot;<code>wget</code>&quot; paketinin kurulu olduğundan emin olmamız gerekiyor.</p>
+<p>Bunun nedeni, Dockge için Compose dosyasını Raspberry Pi'mize indirmek için <a href="https://pimylifeup.com/wget-command-linux/">wget kullanacak olmamızdır</a>.</p>
+<pre><code>sudo apt install wget
+</code></pre>
+<p><strong>3.</strong> Ardından, <a href="https://pimylifeup.com/raspberry-pi-docker/">Raspberry Pi'nize Docker kurmanız gerekiyor</a>. Bağlantısını verdiğimiz rehberi takip edin, çünkü sisteminizde düzgün çalışması için her şeyi doğru şekilde ayarlayacak.</p>
+<p>Dockge Docker konteynerlerini yönetmek için inşa edilmiş olsa da, kendisi de bir Docker konteyneridir.</p>
+<p><strong>4.</strong> Docker'ı kurduktan sonra, artık Raspberry Pi'mizde Dockge compose dosyasını saklayacağımız bir dizin oluşturabiliriz.</p>
+<p>Terminalde aşağıdaki komutu kullanarak &quot;<code>/opt/dockge</code>&quot; dizinini oluşturun.</p>
+<pre><code>sudo mkdir -p /opt/dockge
+</code></pre>
+<p><strong>5.</strong> Oluşturacağımız bir sonraki klasör, Dockge'nin yöneteceği yığın (stack) dosyalarınızı saklayabileceğiniz yerdir.</p>
+<p>Bunları herhangi bir yerde saklayabilirsiniz, ama rehberimiz için &quot;<code>/opt/stacks</code>&quot; kullanacağız. Bu klasörü aşağıdaki komutu kullanarak oluşturabilirsiniz.</p>
+<pre><code>sudo mkdir -p /opt/stacks
+</code></pre>
+<p>Önceden var olan compose dosyalarınız varsa, Dockge'nin bunları yönetebilmesi için o klasörleri buraya kopyalamalısınız. Örneğin, <a href="https://pimylifeup.com/raspberry-pi-immich/">Raspberry Pi'mizde Immich</a> için bir compose dosyamız olsaydı, bunu &quot;<code>/opt/stacks/immich/compose.yaml</code>&quot; konumunda saklardık.</p>
+<p><strong>6.</strong> Hazırlığımızın son kısmı için, terminalde aşağıdaki komutu çalıştırarak daha önce oluşturduğumuz &quot;<code>/opt/dockge</code>&quot; klasörüne geçmemiz gerekiyor.</p>
+<pre><code>cd /opt/dockge
+</code></pre>
+<h3>Dockge İçin Docker Compose Dosyasını İndirme</h3>
+<p><strong>7.</strong> Sonunda wget kullanarak Dockge için compose dosyasını Raspberry Pi'mize indirebileceğimiz noktaya geldik.</p>
+<p>Bu dosya, Docker'a Dockge imajını nereden indirmesi gerektiğini ve nasıl kuracağını söyler.</p>
+<pre><code>sudo wget https://raw.githubusercontent.com/louislam/dockge/master/compose.yaml
+</code></pre>
+<p>Bu compose dosyasını kullanarak, yığın dosyalarınız daha önce oluşturduğumuz &quot;<code>/opt/stacks</code>&quot; dizinine kaydedilecektir. Ayrıca, Dockge'nin web arayüzü &quot;<code>5001</code>&quot; portunda çalışacaktır.</p>
+<h3>Raspberry Pi'de Dockge'yi Çalıştırma</h3>
+<p><strong>8.</strong> Raspberry Pi'nizde Dockge sunucusunu başlatmak için yapmanız gereken tek şey aşağıdaki komutu çalıştırmaktır.</p>
+<p>Docker'a Dockge konteynerini indirmesi için birkaç dakika verin ve başlatın. &quot;<code>-d</code>&quot; seçeneğini kullanarak, Docker konteyneri çekmeyi bitirdikten sonra otomatik olarak terminalden ayrılacaktır.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h2>Dockge Web Arayüzünü Kullanma</h2>
+<p>Artık Dockge'yi kurup Raspberry Pi'mizde çalışır hale getirdiğimize göre, web arayüzünü kullanabiliriz.</p>
+<p>Aşağıdaki adımlar, web arayüzüne nasıl erişeceğinizi, ilk hesabınızı nasıl oluşturacağınızı ve ilk yönetilen konteynerinizi nasıl ekleyeceğinizi gösterecek.</p>
+<h3>Dockge'ye Erişim</h3>
+<p><strong>1.</strong> İlk adımımız, Raspberry Pi'mizin IP adresini almaktır. Bunu yapmanın en kolay yolu <a href="https://pimylifeup.com/hostname-command/">hostname komutunu kullanmaktır</a>.</p>
+<p>IP'nizi zaten biliyorsanız, bu adımı atlayabilirsiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>2.</strong> IP adresinizi öğrendiğinize göre, favori web tarayıcınızda aşağıdaki URL'ye gitmek isteyeceksiniz.</p>
+<p>&quot;<code>&lt;IPADRESI&gt;</code>&quot; kısmını <a href="https://pimylifeup.com/raspberry-pi-ip-address/">Raspberry Pi'nizin IP'siyle</a> değiştirdiğinizden emin olun.</p>
+<pre><code>http://&lt;IPADRESI&gt;:5001/
+</code></pre>
+<h3>İlk Kullanıcı Oluşturma</h3>
+<p><strong>3.</strong> Dockge'nin web arayüzünü ilk kez açtığınızda, bir hesap oluşturmanız gerekir.</p>
+<p>Hesabınız için bir kullanıcı adı ve şifre girmek üzere bu sayfadaki kutuları kullanın (<strong>1.</strong>).</p>
+<p>Hesabınız için bilgileri doldurduktan sonra, &quot;<code>Create</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-01-Create-Account.jpg" alt="Raspberry Pi'nizde Dockge için hesap oluşturma" /></p>
+<h3>Raspberry Pi'nizde Dockge Kullanımı</h3>
+<p><strong>4.</strong> Dockge kullanıcınızı oluşturduktan sonra, sizi gösterge paneli karşılayacaktır. Burada, sisteminizde çalışan tüm konteynerlerin bir genel görünümünü görebilirsiniz (<strong>1.</strong>).</p>
+<p>Dockge'nin otomatik olarak birkaçını algıladığını görebilirsiniz, ancak şu anda gri renkte gösteriliyorlar (<strong>2.</strong>). Bunun nedeni, Dockge'nin bunları yönetmemesi ve compose dosyalarının &quot;<code>/opt/stacks</code>&quot; dizininde olmamasıdır.</p>
+<p>Bu konteynerleri Dockge'nin yığınlarına nasıl taşıyacağımızı kısa süre içinde ele alacağız. Ama şimdilik, &quot;<code>+ Compose</code>&quot; düğmesine <code>tıklayarak</code> web arayüzünü kullanarak yeni bir tane oluşturalım (<strong>3.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-02-Dockge-Dashboard.jpg" alt="Dockge Gösterge Paneli" /></p>
+<p><strong>5.</strong> Bu ekranda, Raspberry Pi'nizde kendi Dockge yığınlarınızı kolayca oluşturabilirsiniz.</p>
+<p>Yeni bir yığın oluştururken ilk adımınız ona bir isim atamaktır (<strong>1.</strong>). İsmi, içinde ne çalıştırdığınızla ilgili tutmaya çalışın. Örneğin, NGINX için bir yığın oluşturuyorsanız, yığını &quot;<code>nginx</code>&quot; olarak etiketleyebilirsiniz.</p>
+<p>Compose dosyasını kendiniz manuel olarak yazabilirsiniz (<strong>2.</strong>). Alternatif olarak, konteynerler ve bu konteynerler için seçenekler eklemek üzere Dockge'nin arayüzünü kullanabilirsiniz (<strong>3.</strong>).</p>
+<p>Bu örnek için, önceden doldurulmuş gelen varsayılan &quot;<code>Nginx</code>&quot; kurulumuna bağlı kalacağız.</p>
+<p>Konteyneriniz için tüm bilgileri doldurduktan sonra, &quot;<code>Deploy</code>&quot; düğmesine <code>tıklayın</code> (<strong>4.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-03-Create-New-Stack-in-Dockge.jpg" alt="Yeni yığın oluşturma" /></p>
+<p><strong>6.</strong> Şimdi, Docker'ın Dockge'nin az önce oluşturduğu yığını indirip çalıştırması gerektiğinden biraz bekleyin.</p>
+<p>Konteyneri kurmayı bitirdiğinde, onu web arayüzü üzerinden yönetebilirsiniz. Bu arayüz, tüm yığınları kolayca güncellemenizi, yeniden başlatmanızı ve durdurmanızı sağlar.</p>
+<p>Bir yığın içindeki her konteynerin terminaliyle bile etkileşim kurabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-04-Stack-Overview.jpg" alt="Yığın genel görünümü" /></p>
+<h2>Raspberry Pi'nizde Dockge'yi Güncelleme</h2>
+<p>Neyse ki bizim için, Dockge'yi bir Docker konteyneri olarak çalıştırmak güncelleme sürecini inanılmaz derecede basit hale getirir.</p>
+<p>Sadece birkaç basit komutla, Raspberry Pi'nizde Dockge'nin en son sürümünü çalıştırıyor olacaksınız.</p>
+<p><strong>1.</strong> Raspberry Pi'mizde Dockge için compose dosyasını kaydettiğimiz dizine geçerek başlayın.</p>
+<p>Eğitimimizi takip ediyorsanız, dizine taşınmak için aşağıdaki <a href="https://pimylifeup.com/cd-command/">cd komutunu</a> kullanabilirsiniz.</p>
+<pre><code>cd /opt/dockge
+</code></pre>
+<p><strong>2.</strong> Doğru dizindeyken, Docker'a konteynerin yeni bir sürümünü çekmeyi denemesi gerektiğini söyleyebiliriz.</p>
+<p>Yeni bir sürüm çekmek için, terminalde aşağıdaki komutu kullanmalısınız.</p>
+<pre><code>docker compose pull
+</code></pre>
+<p><strong>3.</strong> Yeni bir imaj çektikten sonra, Docker'ın Dockge yığınını yeniden başlatmasını sağlamanız gerekir.</p>
+<p>Bunu yapmak için, aşağıdaki komutu kullanmak isteyeceksiniz. Docker, yeni bir imajın mevcut olup olmadığını otomatik olarak algılayacak ve konteyneri bunu kullanarak yeniden başlatacaktır.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h2>Bir Compose Dosyasını Dockge Tarafından Yönetilecek Şekilde Taşıma</h2>
+<p>Aşağıdaki adımlarda, mevcut bir Docker konteynerini Dockge'nin yönetmesi için nasıl taşıyacağınızda size rehberlik edeceğiz.</p>
+<p><strong>1.</strong> Dockge yığınları dizini içinde olmayan bir Docker konteynerine erişmeye çalışırsanız, aşağıda gösterilene benzer bir ekranla karşılaşırsınız.</p>
+<p>Neyse ki, Dockge diğer Docker compose dosyalarını içe aktarmayı tam olarak destekler. Yapmamız gereken tek şey, mevcut compose dosyamızı ve verilerini &quot;<code>/opt/stacks</code>&quot; dizinine taşımaktır.</p>
+<p>Bu örnek için, Dockge'nin yönetmesi için <a href="https://pimylifeup.com/raspberry-pi-homarr-dashboard/">Raspberry Pi'mizdeki Homarr'ı</a> taşıyacağız.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-05-Container-not-managed-by-Dockge.jpg" alt="Dockge tarafından yönetilmeyen konteyner" /></p>
+<p><strong>2.</strong> Homarr'ı başlangıçta kurduğumuz dizine geçerek başlayalım.</p>
+<p>Konteyneri geçici olarak çevrimdışı hale getirmek için bu dizine geçmemiz gerekiyor. Dizininde kaydedilmiş bir veri dizini var ki bunu taşımamız gerekiyor, bu da şu anda çalışan konteyneri bozacak.</p>
+<pre><code>cd ~/hommarr
+</code></pre>
+<p><strong>2.</strong> Dizine geçtikten sonra, konteynerimizi durdurmak için aşağıdaki komutu kullanabiliriz.</p>
+<pre><code>docker compose down
+</code></pre>
+<p><strong>3.</strong> Mevcut dizini taşıyacağımızdan, aşağıdaki komutu kullanarak hızlıca başka bir yere geçeceğiz.</p>
+<pre><code>cd ~
+</code></pre>
+<p><strong>4.</strong> Son olarak, homarr'ı Raspberry Pi'mizde Dockge tarafından yönetilecek şekilde taşıyabiliriz.</p>
+<p>Yapmamız gereken tek şey, aşağıdaki komutu kullanarak &quot;<code>homarr</code>&quot; dizinini &quot;<code>/opt/stacks</code>&quot; klasörüne taşımaktır.</p>
+<pre><code>sudo mv ~/homarr /opt/stacks/
+</code></pre>
+<p><strong>5.</strong> Son olarak, Compose dosyanız &quot;<code>docker-compose.yml</code>&quot; olarak adlandırıldıysa, Dockge'nin onu algılayabilmesi için &quot;<code>compose.yaml</code>&quot; olarak yeniden adlandırmamız gerekiyor.</p>
+<p><a href="https://pimylifeup.com/mv-command-linux/">mv komutunu kullanarak</a> &quot;<code>docker-compose.yml</code>&quot; dosyamızı &quot;<code>compose.yaml</code>&quot; olarak yeniden adlandıralım.</p>
+<pre><code>sudo mv /opt/stacks/homarr/docker-compose.yml /opt/stacks/homarr/compose.yaml
+</code></pre>
+<p><strong>6.</strong> Birkaç saniye bekleyin, Dockge az önce taşıdığımız konteyneri otomatik olarak algılayacaktır.</p>
+<p>Şu anda &quot;<code>inactive</code>&quot; (etkin değil) durumda, ama yapmamız gereken tek şey onu tekrar açmak için &quot;<code>Start</code>&quot; düğmesine <code>tıklamaktır</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-06-Start-Moved-container.jpg" alt="Raspberry Pi'de Dockge üzerinden taşınan konteyneri başlatma" /></p>
+<p><strong>7.</strong> Artık bu konteyneri Dockge'nin kullanımı kolay web arayüzü içinde yönetmeye devam edebiliriz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/11/Raspberry-Pi-Dockge-07-Moved-Container-running-under-dockge.jpg" alt="Taşınan Konteyner Çalışıyor" /></p>
+<h2>Sonuç</h2>
+<p>Bu eğitimin bu aşamasında, artık Raspberry Pi'nizde Dockge çalışıyor olmalıdır.</p>
+<p>Dockge, Docker konteynerleri için mükemmel bir yığın yöneticisidir. Çok sayıda konteyneri, kullanımı basit tek bir web arayüzü altında kolayca yönetmenizi sağlar.</p>
+<p>Dockge'yi cihazınızda çalışır hale getirirken herhangi bir sorunla karşılaştıysanız, aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-dockge.html&amp;text=Raspberry+Pi%27de+Dockge+Kurulumu+ve+%C3%87al%C4%B1%C5%9Ft%C4%B1r%C4%B1lmas%C4%B1" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-dockge.html&amp;text=Raspberry+Pi%27de+Dockge+Kurulumu+ve+%C3%87al%C4%B1%C5%9Ft%C4%B1r%C4%B1lmas%C4%B1" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-dockge.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-dockge.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-dockge.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-dockge.html&amp;title=Raspberry+Pi%27de+Dockge+Kurulumu+ve+%C3%87al%C4%B1%C5%9Ft%C4%B1r%C4%B1lmas%C4%B1" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+Dockge+Kurulumu+ve+%C3%87al%C4%B1%C5%9Ft%C4%B1r%C4%B1lmas%C4%B1%20codenfast.com%2Fposts%2Fraspberry-pi-dockge.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

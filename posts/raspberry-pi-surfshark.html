@@ -1,0 +1,368 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de Surfshark Kurulumu Nasıl Yapılır - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Raspberry Pi kullanırken anonim kalmanıza yardımcı olun"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de Surfshark Kurulumu Nasıl Yapılır"/>
+    <meta property="og:description"
+          content="Raspberry Pi kullanırken anonim kalmanıza yardımcı olun"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-surfshark.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-surfshark.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2020/07/Raspberry-Pi-Surfshark-VPN-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de Surfshark Kurulumu Nasıl Yapılır"/>
+    <meta name="twitter:description"
+          content="Raspberry Pi kullanırken anonim kalmanıza yardımcı olun"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2020/07/Raspberry-Pi-Surfshark-VPN-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de Surfshark Kurulumu Nasıl Yapılır","item":{"@id":"https://codenfast.com/posts/raspberry-pi-surfshark.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/Raspberry-Pi-Surfshark-VPN-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/Raspberry-Pi-Surfshark-VPN-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/Raspberry-Pi-Surfshark-VPN-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/Raspberry-Pi-Surfshark-VPN-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/Surfshark-website-login-page.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/Surfshark-website-login-page.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/07/Raspberry-Pi-Surfshark-Service-Credentials.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/07/Raspberry-Pi-Surfshark-Service-Credentials.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de Surfshark Kurulumu Nasıl Yapılır","description":"Raspberry Pi kullanırken anonim kalmanıza yardımcı olun","image":["https://pimylifeup.com/wp-content/uploads/2020/07/Raspberry-Pi-Surfshark-VPN-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T11:38:20.794692+03:00","dateModified":"2026-08-03T11:38:20.794718+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de Surfshark Kurulumu Nasıl Yapılır</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-surfshark/">PiMyLifeUp - How to Setup Surfshark on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu Raspberry Pi projesinde, Raspberry Pi'nizde Surfshark VPN'i nasıl kuracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/07/Raspberry-Pi-Surfshark-VPN-Thumbnail.jpg" alt="Raspberry Pi Surfshark VPN" /></p>
+<p>Surfshark, VPN dünyasında nispeten yenidir ancak gizliliği, güvenliği ve hızı sayesinde hızla büyük bir popülerlik kazanmıştır.</p>
+<p>Bu eğitimi takip ederek, Raspberry Pi'nizin ağ trafiğinin Surfshark'ın VPN sunucuları üzerinden yönlendirilmesini sağlayabileceksiniz.</p>
+<p>Surfshark gibi bir VPN kullanmak, internette gezinirken gizliliğinizi korumanıza yardımcı olabilir.</p>
+<p>Raspberry Pi'nizde Surfshark kullanmak, bir <a href="https://pimylifeup.com/raspberry-pi-torrentbox/">torrent kutusu</a> veya birçok <a href="https://pimylifeup.com/category/guides/browsers/">web tarayıcısından</a> biriyle birlikte yapılacak harika bir projedir.</p>
+<p>Bu eğitimi tamamlamadan önce, bir Surfshark hesabına kaydolmanız gerekecek.</p>
+<h2>Surfshark Servis Kimlik Bilgilerinizi Alma</h2>
+<p>Raspberry Pi'mizde Surfshark'ı kurmadan önce, Surfshark servis kimlik bilgilerinizi almamız gerekiyor.</p>
+<p>Bu kimlik bilgileri, Surfshark hesabınıza giriş yapmak için kullandığınızla aynı değildir.</p>
+<p><strong>1.</strong> Bu servis kimlik bilgilerini almak için, önce Surfshark hesabınıza giriş yapmanız gerekiyor.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/07/Surfshark-website-login-page.png" alt="Surfshark web sitesi giriş sayfası" /></p>
+<p><strong>2.</strong> Hesabınıza giriş yaptıktan sonra, <code>Devices</code> bölümüne, ardından <code>Manual</code> sekmesine gidin.</p>
+<p><strong>3.</strong> Sayfanın altında, servis kimlik bilgilerinizi bulacaksınız.</p>
+<p>Raspberry Pi'nizden Surfshark VPN'ine giriş yapmak için burada belirtilen kullanıcı adını ve şifreyi kullanmanız gerekecek.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/07/Raspberry-Pi-Surfshark-Service-Credentials.png" alt="Raspberry Pi Surfshark Servis Kimlik Bilgileri" /></p>
+<h2>Raspberry Pi'de Surfshark Kurulumu</h2>
+<p>Raspberry Pi'mizden Surfshark'a bağlanmak için, <a href="https://pimylifeup.com/raspberry-pi-vpn-server/">OpenVPN istemci yazılımını</a> kullanacağız.</p>
+<p>OpenVPN, VPN'lere bağlanmak ve barındırmak için en popüler standartlardan biridir ve en iyi desteklenenlerden biridir.</p>
+<p><strong>1.</strong> Surfshark kurulum sürecine başlamadan önce, her şeyin güncel olduğundan emin olalım.</p>
+<p>Bunu, Pi'nizde aşağıdaki iki komutu çalıştırarak yapabiliriz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Şimdi aşağıdaki komutu kullanarak Raspberry Pi'mizde Surfshark'ı kurmak için ihtiyacımız olan paketleri kuralım.</p>
+<p>Bu paketlerin ilki <code>OpenVPN</code>'dir. Surfshark'ın VPN sunucularına bağlanmak için OpenVPN kullanıyoruz.</p>
+<p>İkinci paket ise <code>unzip</code>'tir. <a href="https://pimylifeup.com/unzip-command-linux/">unzip paketi</a>, kullanacağımız Surfshark OpenVPN yapılandırma dosyalarını çıkarmak için kullanılır.</p>
+<pre><code>sudo apt install openvpn unzip
+</code></pre>
+<p><strong>3.</strong> Neyse ki bizim için, Surfshark ekibi gerekli yapılandırma dosyalarını almanın süper kolay bir yolunu sağlamıştır.</p>
+<p><code>openvpn</code> dizinine geçmek ve yapılandırma dosyalarını indirmek için aşağıdaki iki komutu kullanın.</p>
+<pre><code>cd /etc/openvpn
+sudo wget https://my.surfshark.com/vpn/api/v1/server/configurations
+</code></pre>
+<p><strong>4.</strong> Artık Surfshark yapılandırma dosyalarını Raspberry Pi'ye <code>unzip</code> ile çıkarabiliriz.</p>
+<p>Dosyaları çıkarmak için aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo unzip configurations
+</code></pre>
+<p><strong>5.</strong> Dosyalar çıkarıldıktan sonra, yapılandırma arşivini artık cihazımızda saklamamıza gerek yok.</p>
+<p>Raspberry Pi'nizde aşağıdaki <a href="https://pimylifeup.com/rm-command/">rm komutunu</a> kullanarak bu arşivi silin.</p>
+<pre><code>sudo rm configurations
+</code></pre>
+<p><strong>6.</strong> Şimdi erişimimiz olan tüm yapılandırma dosyalarını listelemek için <a href="https://pimylifeup.com/ls-command/">ls komutunu</a> kullanabiliriz.</p>
+<pre><code>ls
+</code></pre>
+<p>Hangi Surfshark VPN sunucusuna bağlanmak istediğinizi belirlemek için bu dosya listesini kullanın.</p>
+<p>Örneğin, UDP protokolünü kullanarak Sidney Surfshark sunucusuna bağlanmak isteseydik, aşağıdaki dosyayı kullanırdık.</p>
+<pre><code>au-syd.prod.surfshark.com_udp.ovpn
+</code></pre>
+<p><strong>7.</strong> OpenVPN kullanarak Surfshark'a bağlanmak için, aşağıdaki komutu kullanabilirsiniz.</p>
+<p><code>YOUR_FILENAME</code> kısmını, bağlanmak istediğiniz VPN'in dosyasıyla değiştirdiğinizden emin olun.</p>
+<pre><code>sudo openvpn YOUR_FILENAME
+</code></pre>
+<p>Örneğin, <strong>7. Adımda</strong> aldığımız dosyayı kullanmak isteseydik, aşağıdaki komutla bağlanabilirdik.</p>
+<pre><code>sudo openvpn au-mel.prod.surfshark.com_udp.ovpn
+</code></pre>
+<p><strong>8.</strong> Sunucuya bağlandığınızda, Surfshark servis kimlik bilgilerinizi girmeniz istenecektir.</p>
+<p>Bu kimlik bilgileri, bu rehberin ilk bölümünde bulduğunuz bilgilerdir.</p>
+<p><strong>9.</strong> Artık umarız Raspberry Pi'nizden Surfshark'a başarıyla bağlanmış olmalısınız.</p>
+<p><strong>10.</strong> Surfshark bağlantısını kesmek isterseniz, <code>CTRL</code> + <code>C</code> tuşlarına basarak şu anda çalışan terminalden çıkabilirsiniz.</p>
+<p>Terminali kapattıysanız, OpenVPN işlemini de sonlandırabilirsiniz.</p>
+<p>Şu anda çalışan tüm OpenVPN işlemlerini sonlandırmak için, aşağıdaki komutu kullanabilirsiniz.</p>
+<pre><code>sudo killall openvpn
+</code></pre>
+<h2>Açılışta Surfshark'ı Başlatma</h2>
+<p>Bu bölümde, Surfshark'ı açılışta nasıl başlatacağınızı göstereceğiz.</p>
+<p>Bunu yapmak, Raspberry Pi'niz açılır açılmaz VPN'inize bağlı olmanızı sağlayacaktır.</p>
+<p><strong>1.</strong> İlk olarak, Surfshark için kullanıcı adı ve şifreyi saklayacak bir dosya oluşturmamız gerekiyor.</p>
+<p>OVPN dosyalarını, kimlik bilgileri için buna referans verecek şekilde değiştireceğiz.</p>
+<p>Aşağıdaki komutu kullanarak <code>nano</code> ile dosyayı yazmaya başlayın.</p>
+<pre><code>sudo nano /etc/openvpn/auth.txt
+</code></pre>
+<p><strong>2.</strong> Bu dosyanın içine, bu rehberin ilk bölümünde aldığınız Surfshark kimlik bilgilerini girin.</p>
+<p>İlk satır kullanıcı adı olmalıdır.<br />
+İkinci satır şifre olmalıdır.</p>
+<pre><code>USERNAME
+PASSWORD
+</code></pre>
+<p><strong>3.</strong> Bitirdiğinizde, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak dosyayı kaydedin.</p>
+<p><strong>4.</strong> Bir sonraki adımımız için, kullanmayı düşündüğünüz bir OVPN dosyasına ihtiyacınız olacak.</p>
+<p>Mevcut tüm dosyaları listelemek için <code>ls</code> komutunu kullanabileceğinizi unutmayın.</p>
+<p>Bu dosyayı <a href="https://pimylifeup.com/cp-command-linux/">kopyalayacağız</a> ve orijinaliyle aynı ama farklı bir uzantıyla adlandıracağız.</p>
+<p>Örneğimiz için <code>au-mel.prod.surfshark.com_udp.ovpn</code> dosyasını kullanacağız ve onu kopyalayıp <code>au-mel.conf</code> olarak adlandıracağız.</p>
+<pre><code>sudo cp /etc/openvpn/au-mel.prod.surfshark.com_udp.ovpn /etc/openvpn/au-mel.conf
+</code></pre>
+<p>Bunu yapmamızın nedeni, OVPN yazılımının daemon olarak çalışırken dosyanın <code>.ovpn</code> değil <code>.conf</code> ile bitmesini beklemesidir.</p>
+<p><strong>5.</strong> Şimdi aşağıdaki komutu çalıştırarak dosyanın kopyalanmış sürümünü değiştirelim.</p>
+<p>Yazdığımız <code>auth.txt</code> dosyasını kullanmak için bu dosyada bazı değişiklikler yapmamız gerekiyor.</p>
+<pre><code>sudo nano /etc/openvpn/au-mel.conf
+</code></pre>
+<p><strong>6.</strong> Bu dosyanın içinde, aşağıdaki satırı bulmamız gerekiyor.</p>
+<pre><code>auth-user-pass
+</code></pre>
+<p>Bu satırı aşağıdakiyle değiştirin. Bu değişiklik, <code>auth.txt</code> dosyamızı kullanmasını söyler.</p>
+<pre><code>auth-user-pass auth.txt
+</code></pre>
+<p><strong>7.</strong> Şimdi <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak dosyamızdaki değişiklikleri kaydedin.</p>
+<p><strong>8.</strong> Bir sonraki adımımız için, OpenVPN varsayılanlarını Surfshark VPN'ine bağlanacak şekilde değiştirmemiz gerekiyor.</p>
+<p>Aşağıdaki komutu çalıştırarak dosyayı değiştirmeye başlayın.</p>
+<pre><code>sudo nano /etc/default/openvpn
+</code></pre>
+<p><strong>9.</strong> Bu dosyanın içinde, aşağıdaki satırı bulmanız gerekiyor.</p>
+<pre><code>#AUTOSTART=&quot;all&quot;
+</code></pre>
+<p>Ardından bunu aşağıdakiyle değiştirin.</p>
+<pre><code>AUTOSTART=&quot;au-mel&quot;
+</code></pre>
+<p><code>au-mel</code> kısmını daha önce oluşturduğunuz dosyanın adıyla değiştirdiğinizden emin olun. Dosya adının <code>.conf</code> kısmını dahil etmeyin.</p>
+<p><strong>9.</strong> Değişikliği yaptıktan sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedin.</p>
+<p><strong>10.</strong> Değişikliklerimizi yaptıktan sonra, OpenVPN servisini etkinleştirmemiz gerekiyor.</p>
+<p>Servisi etkinleştirmek, sistemin açılışta OpenVPN'i başlatmasını sağlayacaktır.</p>
+<pre><code>sudo systemctl enable openvpn
+</code></pre>
+<p><strong>11.</strong> Artık her şeyin çalıştığını test etmek için, Raspberry Pi'mizi yeniden başlatalım.</p>
+<p>Pi'mizi yeniden başlatmak için, aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo reboot
+</code></pre>
+<p>Cihazınız yeniden başladığında, otomatik olarak Surfshark VPN'ine bağlanmış olmanız gerekir.</p>
+<h2>DNS Sızıntılarını Önleme</h2>
+<p>Bir VPN kullanırken bazen ortaya çıkabilecek bir sorun, DNS sunucusunun IP adresinizi sızdırmasıdır.</p>
+<p>Bunu çözmek için, Raspberry Pi'mizin kullandığı DNS sunucularını alternatif bir sunucuyla değiştirebiliriz.</p>
+<p>Bu rehber için, Cloudflare'in 1.1.1.1 DNS hizmetini kullanacağız.</p>
+<p><strong>1.</strong> Aşağıdaki komutu çalıştırarak dhcpcd yapılandırma dosyasını değiştirmeye başlayın.</p>
+<pre><code>sudo nano /etc/dhcpcd.conf
+</code></pre>
+<p><strong>2.</strong> Bu dosyanın içinde, önce aşağıdaki satırı bulmamız gerekiyor.</p>
+<p>Bu satırı daha hızlı bulmak için <code>CTRL</code> + <code>W</code> de kullanabilirsiniz.</p>
+<pre><code>#static domain_name_servers=192.168.0.1
+</code></pre>
+<p>Bu satırı aşağıdakiyle değiştirin.</p>
+<pre><code>static domain_name_servers=1.1.1.1
+</code></pre>
+<p>Farklı bir DNS sunucusu kullanmak isterseniz, <code>1.1.1.1</code> kısmını değiştirdiğinizden emin olun.</p>
+<p><strong>3.</strong> <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak değişikliklerinizi kaydedin.</p>
+<p><strong>4.</strong> Değişikliklerimizi yüklemek için, cihazımızı yeniden başlatalım.</p>
+<p>Raspberry Pi'yi yeniden başlatmak için, aşağıdaki komutu çalıştırabilirsiniz.</p>
+<pre><code>sudo reboot
+</code></pre>
+<p><strong>5.</strong> <a href="https://ipleak.net/">ipleak.net</a> hizmetini kullanarak IP adresinizin artık sızdırılmadığını doğrulayabilirsiniz.</p>
+<p>Umarız bu noktada, Raspberry Pi'nizde Surfshark VPN hizmetine başarıyla bağlanmış olursunuz.</p>
+<p>Surfshark'a bağlanma konusunda sorun yaşadıysanız, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-surfshark.html&amp;text=Raspberry+Pi%27de+Surfshark+Kurulumu+Nas%C4%B1l+Yap%C4%B1l%C4%B1r" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-surfshark.html&amp;text=Raspberry+Pi%27de+Surfshark+Kurulumu+Nas%C4%B1l+Yap%C4%B1l%C4%B1r" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-surfshark.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-surfshark.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-surfshark.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-surfshark.html&amp;title=Raspberry+Pi%27de+Surfshark+Kurulumu+Nas%C4%B1l+Yap%C4%B1l%C4%B1r" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+Surfshark+Kurulumu+Nas%C4%B1l+Yap%C4%B1l%C4%B1r%20codenfast.com%2Fposts%2Fraspberry-pi-surfshark.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;ye Mealie Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Web tabanlı tarif yöneticisi"/>
+    <meta property="og:title" content="Raspberry Pi&#39;ye Mealie Kurulumu"/>
+    <meta property="og:description"
+          content="Web tabanlı tarif yöneticisi"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-mealie.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-mealie.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;ye Mealie Kurulumu"/>
+    <meta name="twitter:description"
+          content="Web tabanlı tarif yöneticisi"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'ye Mealie Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-mealie.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-01-Login-to-the-default-account.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-01-Login-to-the-default-account.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-02-Open-user-profile.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-02-Open-user-profile.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-03-Manage-User-profile.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-03-Manage-User-profile.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-04-Swap-to-the-Change-Password-Screen.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-04-Swap-to-the-Change-Password-Screen.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-05-Update-default-password.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-05-Update-default-password.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-06-Upddate-User-Information.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-06-Upddate-User-Information.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-07-Click-create-to-add-recipe.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-07-Click-create-to-add-recipe.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'ye Mealie Kurulumu","description":"Web tabanlı tarif yöneticisi","image":["https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:16:10.406675+03:00","dateModified":"2026-08-03T12:16:10.406712+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;ye Mealie Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-mealie/">PiMyLifeUp - Installing Mealie on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'ye Mealie'yi nasıl kurup çalıştıracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-Thumbnail.jpg" alt="Raspberry PI Mealie" /></p>
+<p>Mealie, tek, kullanımı kolay bir arayüzde tarif koleksiyonunuzu kolayca oluşturmanızı sağlayan bir tarif yönetim sistemidir.</p>
+<p>Bu yazılım, internette bulduğunuz tarifleri hızlıca alıp saklamanıza bile olanak tanır, yani sevdiğiniz o tarifi kaybetme konusunda endişelenmenize gerek kalmaz.</p>
+<p>Okuduğu tarifleri anlamaya yardımcı olmak için, <a href="https://mealie.io/">Mealie</a> New York Times üzerinde eğitilmiş bir makine modelinden yararlanır. Bu model, ilgili malzemeleri ve adımları daha iyi tanımlamasına yardımcı olur.</p>
+<p>Araç, yemeklerinizi planlamanıza ve pişirmeyi düşündüğünüz şeylere göre alışveriş listeleri oluşturmanıza yardımcı olacak işlevselliğe bile sahiptir.</p>
+<p>Raspberry Pi, nispeten düşük güçlü olması sayesinde Mealie web hizmetini barındırmak için harika bir yerdir, yani onu 7/24 güvenle çalışır durumda tutabilirsiniz.</p>
+<p>Sonraki birkaç adımda, Docker kullanarak Mealie'yi kurmanın süper basit sürecinde size rehberlik edeceğiz. Bu yazılımı kurmayı zahmetsiz hale getirdiğinden Docker kullanıyoruz.</p>
+<p>Devam etmeden önce, Pi'nizde <a href="https://pimylifeup.com/raspberry-pi-64-bit/">64-bit bir işletim sistemi</a> çalıştırıyor olmanız gerekir. Mealie'nin 32-bit sistemler için hiçbir desteği yoktur.</p>
+<h2>Raspberry Pi'nize Mealie Kurulumu</h2>
+<p>Bu bölümde, Raspberry Pi'nize Mealie'yi nasıl kurup çalıştıracağınızı göstereceğiz.</p>
+<p>Bu bölümün sonunda, bu tarif yöneticisi Pi'nizde herhangi bir sorun olmadan çalışıyor olacak.</p>
+<h3>Mealie İçin Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> Mealie'yi kurabilmemiz için, Raspberry Pi'mizde yapmamız gereken birkaç şey var.</p>
+<p>İlk adımımız, aşağıdaki iki komutu kullanarak paket listesini güncellemek ve güncel olmayan tüm paketleri yükseltmektir.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>2.</strong> Bir sonraki adımınız, <a href="https://pimylifeup.com/raspberry-pi-docker/">Raspberry Pi'ye Docker'ı nasıl kuracağınızı</a> gösteren rehberimizi takip etmektir.</p>
+<p>Bu rehber her şeyi doğru şekilde ayarlayacak, böylece sonraki birkaç adım herhangi bir aksaklık olmadan çalışmalıdır.</p>
+<p><strong>3.</strong> Docker kurulum rehberimizi takip ettikten sonra, Mealie için Docker compose dosyasını saklayacağımız bir dizin oluşturalım.</p>
+<p>Bir compose dosyası, Docker için bir talimatlar kümesi gibidir. Bu talimatlar, Docker'a hangi konteyneri alacağını ve nasıl kuracağını söyler.</p>
+<p>Terminalde <a href="https://pimylifeup.com/mkdir-command-linux/">aşağıdaki mkdir komutunu kullanarak</a> bu dizini oluşturun.</p>
+<pre><code>mkdir ~/mealie
+</code></pre>
+<p><strong>4.</strong> Bu yeni dizini oluşturduktan sonra, cd komutunu kullanarak içine geçelim.</p>
+<p>Sonraki birkaç bölüm, bu dizinde olmanızı bekleyecektir.</p>
+<pre><code>cd ~/mealie
+</code></pre>
+<h3>Raspberry Pi'nizde Mealie Docker Compose Dosyasını Ayarlama</h3>
+<p><strong>5.</strong> Raspberry Pi'mize Mealie'yi kurmak için, bir Docker compose dosyası yazmamız gerekecek.</p>
+<p>Bu compose dosyası, Docker'a Mealie'yi nasıl kurmak istediğimizi söyleyecektir. Aşağıdaki komutu kullanarak bu dosyayı yazmaya başlayın.</p>
+<pre><code>nano docker-compose.yml
+</code></pre>
+<p>Komut satırında kullanımı en kolay editörlerden biri olduğundan <a href="https://pimylifeup.com/nano-text-editor/">nano metin editörünü kullanıyoruz</a>.</p>
+<p><strong>6.</strong> Bu dosyanın içine, aşağıdaki satırları girmek isteyeceksiniz.</p>
+<p>Çalışması için bu dosyada bazı değerleri değiştirmeniz gerekecek, ama bunları bir sonraki adımda ele alacağız.</p>
+<pre><code>version: &quot;3.7&quot;
+services:
+  mealie:
+    image: ghcr.io/mealie-recipes/mealie:latest
+    container_name: mealie
+    ports:
+        - &quot;9925:9000&quot;
+    deploy:
+      resources:
+        limits:
+          memory: 1000M
+    depends_on:
+      - postgres
+    volumes:
+      - mealie-data:/app/data/
+    environment:
+    # Set Backend ENV Variables Here
+      - ALLOW_SIGNUP=true
+      - PUID=1000
+      - PGID=1000
+      - TZ=&lt;YOURTIMEZONE&gt;
+      - MAX_WORKERS=1
+      - WEB_CONCURRENCY=1
+      - BASE_URL=&lt;BASEURL&gt;
+
+    # Database Settings
+      - DB_ENGINE=postgres
+      - POSTGRES_USER=mealie
+      - POSTGRES_PASSWORD=&lt;POSTGRESPASSWORD&gt;
+      - POSTGRES_SERVER=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=mealie
+    restart: always
+  postgres:
+    container_name: postgres
+    image: postgres:15
+    restart: always
+    volumes:
+      - ./mealie-pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: &lt;POSTGRESPASSWORD&gt;
+      POSTGRES_USER: mealie
+
+volumes:
+  mealie-data:
+    driver: local
+  mealie-pgdata:
+    driver: local
+</code></pre>
+<p><strong>7.</strong> Şimdi, bu Docker compose dosyasında, bazı yer tutucular bıraktığımızı göreceksiniz. Bunların ne olduğunu ve neyle değiştirmeniz gerektiğini inceleyelim.</p>
+<ul>
+<li><code>&lt;POSTGREPASSWORD&gt;</code> – Bu yer tutucunun iki tekrarı var. Bunları seçtiğiniz güvenli bir şifreyle değiştirin. Tamamen rastgele bir dize olabilir. Bu şifre, Mealie'nin Postgres veritabanı sunucusuyla etkileşim kurması için kullanılır.</li>
+<li><code>&lt;BASEURL&gt;</code> – Temel URL bildirim sistemi için kullanılır. Bunu Mealie'ye erişilebilecek URL ile değiştirmeniz gerekiyor. Bir alan adı kullanmayı planlıyorsanız, &quot;<code>mealie.pimylifeup.com</code>&quot; gibi bir şey kullanabilirsiniz. Alternatif olarak, Raspberry Pi'nizde statik bir IP adresi ayarladıysanız, &quot;<code>http://192.168.0.1:9000</code>&quot; gibi bir şey kullanabilirsiniz.</li>
+<li><code>&lt;YOURTIMEZONE&gt;</code> – Bu değeri kendi saat diliminizle değiştirmelisiniz. Bu, tz veritabanı tanımlayıcılarını kullanır. Örneğin, Avustralya'nın Tazmanya eyaletinde yaşadığımdan &quot;<code>Australia/Tasmania</code>&quot; kullanırdım; siz kendi saat diliminizi (örn. &quot;<code>Europe/Istanbul</code>&quot;) kullanmalısınız. Wikipedia, takip etmesi çok kolay bir <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">TZ veritabanı saat dilimleri listesi</a> sunar.</li>
+</ul>
+<p><strong>8.</strong> Her şeyi doldurduktan sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<h3>Docker Kullanarak Mealie'yi Çalıştırma</h3>
+<p><strong>9.</strong> Docker Compose dosyası yazıldıktan sonra, Raspberry Pi'mizde Mealie'yi başlatmak çok basit bir süreçtir.</p>
+<p>Daha önce oluşturduğumuz dizindeyken, aşağıdaki komutu çalıştırarak Mealie'yi başlatabilirsiniz.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<p>Docker, Mealie'yi Raspberry Pi'nize indirip ardından başlattığından, bu başlangıç süreci birkaç dakika sürebilir.</p>
+<p>&quot;<code>-d</code>&quot; seçeneğini kullanarak, Docker'a mevcut terminal oturumundan ayrılmasını ve arka planda çalışmaya devam etmesini söylüyoruz.</p>
+<h3>Mealie Web Arayüzüne Erişim</h3>
+<p><strong>10.</strong> Bu noktada, Mealie web arayüzüne erişebilmeniz gerekir. Uzaktan bağlanıyorsanız, <a href="https://pimylifeup.com/raspberry-pi-ip-address/">Raspberry Pi'nizin IP adresini</a> bilmeniz gerekecek.</p>
+<p>Pi'nizin IP'sini almanın en kolay yollarından biri <a href="https://pimylifeup.com/hostname-command/">hostname komutunu kullanmaktır</a>.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>11.</strong> IP'niz elinizin altında olduğunda, favori web tarayıcınızda aşağıdaki sayfayı açın.</p>
+<p>&quot;<code>&lt;IPADRESI&gt;</code>&quot; kısmını Raspberry Pi'nizin IP'siyle değiştirdiğinizden emin olun.</p>
+<pre><code>http://&lt;IPADRESI&gt;:9925
+</code></pre>
+<p><strong>12.</strong> Sayfaya gittiğinizde, sizi Mealie giriş ekranı karşılayacak.</p>
+<p>Web arayüzüne giriş yapmak için &quot;<code>changeme@example.com</code>&quot; e-postasını ve &quot;<code>MyPassword</code>&quot; şifresini kullanmanız gerekecek. Bunları kısa süre içinde nasıl değiştireceğinizi göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-01-Login-to-the-default-account.jpg" alt="Raspberry Pi Mealie Varsayılan Hesabına Giriş Yapma" /></p>
+<h3>Kullanıcı Adınızı ve Şifrenizi Değiştirme</h3>
+<p><strong>13.</strong> Raspberry Pi'nizde Mealie'yi kullanırken yapmanız gereken ilk şey, varsayılan kullanıcı adını ve şifreyi değiştirmektir.</p>
+<p>Bu süreci başlatmak için, sayfanın sol üst köşesindeki profilinize <code>tıklayın</code>. Varsayılan olarak, bunun üzerinde &quot;<code>Change Me</code>&quot; metni olacaktır.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-02-Open-user-profile.jpg" alt="Kullanıcı Profili Ekranını Açma" /></p>
+<p><strong>14.</strong> Ardından, &quot;<code>Personal</code>&quot; başlığı altında &quot;<code>User Settings</code>&quot; seçeneğini görene kadar <code>aşağı kaydırın</code> ve &quot;<code>Manage User Profile</code>&quot; bağlantısına <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-03-Manage-User-profile.jpg" alt="Kullanıcı Profilini Yönetme" /></p>
+<p><strong>15.</strong> Sonunda doğru yerdeyiz. &quot;<code>Change Password</code>&quot; düğmesini ve adınızı, kullanıcı adınızı ve e-postanızı değiştirmek için bir alanı görene kadar aşağı kaydırın.</p>
+<p>&quot;<code>Change Password</code>&quot; düğmesine <code>tıklayarak</code> şifreyle başlayalım.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-04-Swap-to-the-Change-Password-Screen.jpg" alt="Şifre değiştirme ekranına geçme" /></p>
+<p><strong>16.</strong> Bu iletişim kutusunu kullanarak Mealie yöneticiniz için yeni bir şifre girin (<strong>1.</strong>).</p>
+<p>Yeni bir şifre girdikten sonra, değişikliği tamamlamak için &quot;<code>Update</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-05-Update-default-password.jpg" alt="Varsayılan şifreyi güncelleme" /></p>
+<p><strong>17.</strong> Ayrıca admin hesabınızın tam adını ve e-postasını da değiştirmek isteyeceksiniz (<strong>1.</strong>). Bu bilgileri hesabınız için kullanmak istediğiniz bilgilerle doldurun.</p>
+<p>Değişikliklerinizden memnun olduğunuzda, &quot;<code>Update</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-06-Upddate-User-Information.jpg" alt="Mealie kullanıcı bilgilerini güncelleme" /></p>
+<p><strong>18.</strong> Bu noktada, artık Raspberry Pi'nizde Mealie kurulu ve ayarlanmış durumda.</p>
+<p>Kenar çubuğundaki &quot;<code>Create</code>&quot; düğmesine <code>tıklayarak</code> bu yazılım içinde tarif eklemeye ve oluşturmaya başlayabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/10/Raspberry-Pi-Mealie-07-Click-create-to-add-recipe.jpg" alt="Raspberry Pi'de Mealie'de Yeni Tarif Oluşturma" /></p>
+<h2>Sonuç</h2>
+<p>Umarız artık Raspberry Pi'nizde Mealie tarif yöneticisi çalışıyor olacaktır.</p>
+<p>Bu, tarifleri arşivlemeyi ve takip etmeyi çok basit bir süreç haline getiren süper kullanışlı bir yazılımdır.</p>
+<p>Alışveriş listeleri oluşturmayı ve yemek planları kurmayı kolaylaştırmak için tariflerin içindeki malzemeleri tanımlamaya yardımcı olan akıllı bir işlevselliğe bile sahiptir.</p>
+<p>Mealie'yi Pi'nizde çalışır hale getirirken herhangi bir sorunla karşılaştıysanız, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-mealie.html&amp;text=Raspberry+Pi%27ye+Mealie+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-mealie.html&amp;text=Raspberry+Pi%27ye+Mealie+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-mealie.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-mealie.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-mealie.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-mealie.html&amp;title=Raspberry+Pi%27ye+Mealie+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27ye+Mealie+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-mealie.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

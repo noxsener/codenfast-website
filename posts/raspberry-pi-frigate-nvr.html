@@ -1,0 +1,355 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;ye Frigate NVR Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Yapay zeka tespitli ağ video kaydedici"/>
+    <meta property="og:title" content="Raspberry Pi&#39;ye Frigate NVR Kurulumu"/>
+    <meta property="og:description"
+          content="Yapay zeka tespitli ağ video kaydedici"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-frigate-nvr.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-frigate-nvr.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Frigate-NVR-Thumbnail-NoWm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;ye Frigate NVR Kurulumu"/>
+    <meta name="twitter:description"
+          content="Yapay zeka tespitli ağ video kaydedici"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Frigate-NVR-Thumbnail-NoWm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'ye Frigate NVR Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-frigate-nvr.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Frigate-NVR-Thumbnail-NoWm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Frigate-NVR-Thumbnail-NoWm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Frigate-NVR-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Frigate-NVR-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Frigate-NVR-01-Login-to-Frigate.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Frigate-NVR-01-Login-to-Frigate.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Frigate-NVR-02-Frigate-Web-Interface.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Frigate-NVR-02-Frigate-Web-Interface.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'ye Frigate NVR Kurulumu","description":"Yapay zeka tespitli ağ video kaydedici","image":["https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Frigate-NVR-Thumbnail-NoWm.jpg"],"datePublished":"2026-08-03T12:24:29.782465+03:00","dateModified":"2026-08-03T12:24:29.782491+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;ye Frigate NVR Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-frigate-nvr/">PiMyLifeUp - Installing Frigate NVR On the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu projede, Raspberry Pi'nize Frigate NVR'ı nasıl kuracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Frigate-NVR-Thumbnail.jpg" alt="Raspberry Pi Frigate NVR" /></p>
+<p>Frigate, kamera akışlarınızı gerçek zamanlı olarak işleyebilen açık kaynaklı ve ücretsiz bir ağ video kaydedicisidir (NVR).</p>
+<p>Raspberry Pi en güçlü cihaz olmasa da, Frigate üzerinde birkaç kamerayı idare edebilir. Ayrıca, Pi'yi bir Coral hızlandırıcısıyla birleştirmek akışlarınızda yapay zeka modelleri bile çalıştırabilir.</p>
+<p>Raspberry Pi'nizde Home Assistant ve MQTT kuruluysa, Frigate bunlarla güzel bir şekilde entegre olacaktır.</p>
+<p>Aşağıdaki bölümlerde, Raspberry Pi'nize Frigate'i nasıl kuracağınızı ve donanım hızlandırmasından yararlanacak şekilde nasıl yapılandıracağınızı göstereceğiz.</p>
+<p>Frigate ile en iyi deneyim için, bir Raspberry Pi 4 veya daha yenisini kullanmanızı şiddetle tavsiye ederiz. Pi'nizdeki Frigate performansını önemli ölçüde artıracağından bir Coral TPU'ya yatırım yapmanız şiddetle önerilir.</p>
+<p>Bu eğitime devam etmeden önce, beklentilerinizi düşük tutmayı unutmayın. Raspberry Pi, H264 kodeğini kullanıyorlarsa sadece birkaç kamerayı idare edebilecektir. H265, Pi'de o kodek için donanım hızlandırması olmadığından önemli ölçüde yavaşlamaya neden olacaktır.</p>
+<p>Frigate NVR'ın 64-bit bir işletim sistemi gerektirdiğini lütfen unutmayın. Bu, Pi 3 ve daha eskisinde çalışmayacağı anlamına gelir. Ayrıca Raspberry Pi OS'nin 32-bit sürümünü kullanmadığınızdan emin olmanız gerekecek.</p>
+<p>32-bit mi yoksa 64-bit bir sistem mi çalıştırdığınızdan emin değilseniz, <a href="https://pimylifeup.com/raspberry-pi-os-check-32-bit-64-bit/">bunu nasıl doğrulayacağınızı gösteren</a> rehberimizi öneririz.</p>
+<h2>Raspberry Pi'ye Frigate NVR Kurulumu</h2>
+<p>Aşağıdaki bölümde, Frigate NVR'ı nasıl kuracağınızı ve Raspberry Pi'nizde çalışır hale getireceğinizi öğreneceksiniz.</p>
+<p>Yazılımı kurmak nispeten basit bir süreçtir. Ancak, Frigate NVR'ı yapılandırmak biraz zaman ve okuma gerektirir.</p>
+<h3>Frigate İçin Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> İlk adımımız, üzerinde çalışacağımız güncel bir sisteme sahip olduğumuzdan emin olmaktır.</p>
+<p>Aşağıdaki iki komutu kullanarak mevcut tüm paketleri yükseltebilir ve paket listesini güncelleyebilirsiniz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>2.</strong> Ardından, <a href="https://pimylifeup.com/raspberry-pi-docker/">Raspberry Pi'ye Docker kurma</a> rehberimizi takip edin.</p>
+<p>Docker, Frigate'i çalıştırmayı süper basit bir süreç haline getirir. Aşağıdaki komutu çalıştırarak Docker'ı kurabilirsiniz.</p>
+<p><strong>3.</strong> Docker'ı kurduktan sonra, bu rehbere devam edebilirsiniz.</p>
+<h3>Frigate NVR İçin Dizinler Oluşturma</h3>
+<p><strong>4.</strong> Bir sonraki adımımız, Raspberry Pi'mizde Frigate için docker-compose dosyamızı saklamak için bir dizin oluşturmaktır.</p>
+<p>Bu dizini <a href="https://pimylifeup.com/mkdir-command-linux/">mkdir komutunu kullanarak</a> oluşturacağız. &quot;<code>frigate-nvr</code>&quot; adında olacak ve &quot;<code>/opt/stacks/frigate-nvr</code>&quot; klasöründe saklanacak.</p>
+<pre><code>sudo mkdir -p /opt/stacks/frigate-nvr
+</code></pre>
+<p><strong>5.</strong> Ardından, Frigate NVR'ın Raspberry Pi'mizde verilerini saklayacağı bir dizin oluşturacağız.</p>
+<p>Verilerinizin bağlı bir sürücüde veya bir ağ sürücüsünde saklanmasını istiyorsanız, bu rehbere devam etmeden önce bağlayın ve bağlantı noktasını (mount point) not edin.</p>
+<pre><code>sudo mkdir -p /opt/stacks/frigate-nvr/storage
+</code></pre>
+<h3>Raspberry Pi'nizde Frigate NVR İçin Temel Bir Yapılandırma Dosyası Yazma</h3>
+<p><strong>6.</strong> Frigate NVR'ın Raspberry Pi'nizde çalışması için, temel bir yapılandırma dosyası oluşturulması gerekir. Kameranızın kurulu ve okunabilir bir giriş akışına sahip olması gerekecek.</p>
+<p>Bu yapılandırma dosyasını yazmaya aşağıdaki komutu kullanarak başlayabiliriz.</p>
+<pre><code>sudo nano /opt/stacks/frigate-nvr/config.yml
+</code></pre>
+<p><strong>7.</strong> Bu dosyanın içinde, NVR kurulumunuz büyüdükçe üzerine ekleyebileceğiniz temel bir yapılandırmayla başlamak isteyeceksiniz. Bu, karmaşıklaşabileceğinden ve bu kurulum rehberinin kapsamı dışında olduğundan buna çok fazla girmeyeceğiz.</p>
+<p>Raspberry Pi'nizdeki Frigate NVR'ın h264 akışlarıyla uğraşırken donanım hızlandırması kullanması için &quot;<code>hwaccel</code>&quot; etiketini ekledik.</p>
+<p><a href="https://docs.frigate.video/configuration/">Frigate NVR'ı yapılandırma</a> hakkında daha fazla bilgi edinmek isterseniz, <a href="https://docs.frigate.video/guides/getting_started/">resmi rehberlerine göz atın</a>. Belirli kameralar, Frigate içinde çalışmak için ek ayarlar gerektirecektir.</p>
+<pre><code>mqtt:
+  enabled: False
+
+ffmpeg:
+  hwaccel_args: preset-rpi-64-h264 #Donanım Hızlandırmayı Etkinleştir
+
+cameras:
+  name_of_your_camera: #Yorumunuz için isim
+    ffmpeg:
+      inputs:
+        - path: rtsp://10.0.10.10:554/rtsp #İzlemek istediğiniz akış
+          roles:
+            - detect
+    detect:
+      enabled: False # Algılama devre dışı
+      width: 1280 # Kameranın çözünürlüğü
+      height: 720 # Kameranın çözünürlüğü
+</code></pre>
+<p><strong>8.</strong> Bu yapılandırma dosyasını doldurduktan sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<h3>Docker Compose Dosyasını Ayarlama</h3>
+<p><strong>9.</strong> Bir sonraki adımımız, Raspberry Pi'de Frigate NVR'ı yönetmesi için Docker'a bir compose dosyası yazmaktır.</p>
+<p>Terminalde aşağıdaki komutu kullanarak bu dosyayı yazmaya başlayın.</p>
+<pre><code>sudo nano /opt/stacks/frigate-nvr/docker-compose.yml
+</code></pre>
+<p><strong>10.</strong> Bu dosyanın içine, aşağıdaki satırları yazın.</p>
+<p>&quot;<code>&lt;USERNAME&gt;</code>&quot; kısmını kullanıcınızın adıyla değiştirdiğinizden emin olun. Ayrıca, &quot;<code>&lt;PASSWORD&gt;</code>&quot; kısmını seçtiğiniz bir şifreyle değiştirmek isteyeceksiniz.</p>
+<p>Ayrıca, &quot;<code>./storage</code>&quot; kısmını Frigate'in Raspberry Pi'nizde kayıtlarını saklamasını istediğiniz yeri işaret edecek şekilde değiştirebilirsiniz.</p>
+<pre><code>services:
+  frigate:
+    container_name: frigate
+    privileged: true # tüm kurulumlar için gerekli olmayabilir
+    restart: unless-stopped
+    image: ghcr.io/blakeblackshear/frigate:0.14.1-standard-arm64
+    shm_size: &quot;64mb&quot;
+    devices:
+      - /dev/bus/usb:/dev/bus/usb #Coral varsa kullanılır
+      - /dev/video10 #Pi donanım hızlandırmasını eşle
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./config.yml:/config/config.yml
+      - ./storage:/media/frigate
+      - type: tmpfs #2GB veya daha az RAM'e sahip bir Pi kullanıyorsanız kaldırın
+        target: /tmp/cache
+        tmpfs:
+          size: 1000000000
+    ports:
+      - &quot;8971:8971&quot;
+      - &quot;8554:8554&quot; # RTSP akışları
+      - &quot;8555:8555/tcp&quot; # tcp üzerinden WebRTC
+      - &quot;8555:8555/udp&quot; # udp üzerinden WebRTC
+    environment:
+      FRIGATE_RTSP_PASSWORD: &quot;&lt;PASSWORD&gt;&quot;
+</code></pre>
+<p><strong>11.</strong> Dosyayı doldurduktan sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<h3>Raspberry Pi'nizde Frigate NVR'ı Başlatma</h3>
+<p><strong>12.</strong> Şimdi daha önce Docker compose dosyasını yazdığımız dizinde olduğumuzdan emin olmamız gerekiyor.</p>
+<p>Bu dizine geçmek için, aşağıdaki komutu kullanın.</p>
+<pre><code>cd /opt/stacks/frigate-nvr
+</code></pre>
+<p><strong>13.</strong> Artık doğru yerde olduğumuza göre, aşağıdaki komutu kullanarak Raspberry Pi'mizde Frigate NVR'ı çevrimiçi hale getirebiliriz.</p>
+<p>Bu komutu çalıştırdıktan sonra, Docker Frigate'in konteynerini indirecek ve hemen başlatacaktır.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<p>&quot;<code>-d</code>&quot; seçeneğini kullanarak, Docker'a uygulamayı ayrılmış (detached) olarak başlatmasını söylüyoruz. Herhangi bir nedenle Frigate başlamazsa, Frigate'ten günlükleri görüntülemek için bu seçeneği kaldırmayı deneyin.</p>
+<h3>Frigate NVR İçin Giriş Bilgilerinizi Alma</h3>
+<p><strong>14.</strong> Frigate, açılış sırasında admin hesabınız için otomatik olarak bir şifre oluşturacaktır. Bu genellikle günlük dosyalarının içine gömülür, ama neyse ki biraz grep sihriyle bunu kolayca kullanabiliriz.</p>
+<p>Frigate Docker konteynerinizin <a href="https://pimylifeup.com/docker-container-view-logs/">günlüklerini yazdırmak</a> ve grep tarafından işlenmesini sağlamak için aşağıdaki komutu kullanın. Bu <a href="https://pimylifeup.com/grep-command-linux/">grep komutuyla</a>, sadece &quot;<code>Password:</code>&quot; içeren herhangi bir satırı alıyoruz.</p>
+<pre><code>docker compose logs | grep Password:
+</code></pre>
+<p>Her şey doğru çalıştıysa, aşağıda gösterdiğimize benzer bir şey görmelisiniz. Admin hesabınız için varsayılan şifre &quot;<code>Password:</code>&quot; metninden sonra gösterilir.</p>
+<p>Aşağıdaki örnekten, hesabımız için oluşturulan şifrenin &quot;<code>23399f47adcdf1b376b214e83f62afe0</code>&quot; olduğunu görebilirsiniz.</p>
+<pre><code>[2024-11-15 14:55:47] frigate.app                    INFO    : ***    Password: 23399f47adcdf1b376b214e83f62afe0   ***
+</code></pre>
+<h3>Frigate NVR Web Arayüzüne Erişim</h3>
+<p><strong>15.</strong> Artık Raspberry Pi'nizde Frigate NVR çalışıyor olacak.</p>
+<p>Şimdi web tarayıcınızda aşağıdaki adrese giderek web arayüzüne erişmek isteyeceksiniz. &quot;<code>&lt;RASPBERRYPIIP&gt;</code>&quot; kısmını cihazınızın IP'siyle değiştirdiğinizden emin olun.</p>
+<pre><code>https://&lt;RASPBERRYPIIP&gt;:8971
+</code></pre>
+<p><strong>16.</strong> Frigate web arayüzüne eriştiğinizde, admin hesabınıza giriş yapmanız gerekir.</p>
+<p>Varsayılan olarak, bu hesap için kullanıcı adı her zaman &quot;admin&quot;dir (<strong>1.</strong>). Ancak, şifre otomatik olarak oluşturulur ve her kurulum için farklı olacaktır (<strong>2.</strong>). Bu değeri bir önceki adımdan almış olmalısınız.</p>
+<p>Kullanıcı adınızı ve şifrenizi girdikten sonra, Frigate'e giriş yapmak için <code>ENTER</code> tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Frigate-NVR-01-Login-to-Frigate.jpg" alt="Raspberry Pi Frigate NVR Web Arayüzüne Giriş Yapma" /></p>
+<p><strong>17.</strong> Artık aşağıdakine benzer bir ekran görmelisiniz.</p>
+<p>Siyah ekranın gösterdiği gibi, kameramızı henüz doğru şekilde yapılandırmadık. Buna benzer bir şey görürseniz, ayarlarınızı düzenlemeniz gerekecek.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2023/08/Raspberry-Pi-Frigate-NVR-02-Frigate-Web-Interface.jpg" alt="Raspberry Pi'de Frigate NVR Web Arayüzü" /></p>
+<h2>Sonuç</h2>
+<p>Bu eğitimin bu noktasında, artık Raspberry Pi'nizde Frigate NVR olmalı.</p>
+<p>Raspberry Pi çok fazla video akışını işleyemese de, sadece birkaç kamerayı yönetmeniz gerekiyorsa kullanışlıdır. Pi'yi bir Coral Hızlandırıcı ile eşleştirmek, bir video akışı üzerinde yapay zeka tespitleri yapmanıza bile olanak tanır.</p>
+<p>Frigate NVR'ı cihazınızda çalışır hale getirme hakkında sorularınız varsa, aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-frigate-nvr.html&amp;text=Raspberry+Pi%27ye+Frigate+NVR+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-frigate-nvr.html&amp;text=Raspberry+Pi%27ye+Frigate+NVR+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-frigate-nvr.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-frigate-nvr.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-frigate-nvr.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-frigate-nvr.html&amp;title=Raspberry+Pi%27ye+Frigate+NVR+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27ye+Frigate+NVR+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-frigate-nvr.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de LiteLLM ile Yapay Zeka Proxy Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Birden fazla yapay zeka modelini tek bir API üzerinden yönetin"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de LiteLLM ile Yapay Zeka Proxy Kurulumu"/>
+    <meta property="og:description"
+          content="Birden fazla yapay zeka modelini tek bir API üzerinden yönetin"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-litellm-ai-proxy.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-litellm-ai-proxy.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de LiteLLM ile Yapay Zeka Proxy Kurulumu"/>
+    <meta name="twitter:description"
+          content="Birden fazla yapay zeka modelini tek bir API üzerinden yönetin"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de LiteLLM ile Yapay Zeka Proxy Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-litellm-ai-proxy.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-01-Login-to-LiteLLM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-01-Login-to-LiteLLM.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-02-Open-Models-Screen.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-02-Open-Models-Screen.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-03-Open-Add-Model-Screen.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-03-Open-Add-Model-Screen.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-04-Add-your-first-model.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-04-Add-your-first-model.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-05-Begin-Testing-your-Key.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-05-Begin-Testing-your-Key.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-06-Test-your-new-model.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-06-Test-your-new-model.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-07-Create-yoru-first-API-key.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-07-Create-yoru-first-API-key.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-08-Create-your-first-key.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-08-Create-your-first-key.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-09-Grab-API-Key.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-09-Grab-API-Key.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de LiteLLM ile Yapay Zeka Proxy Kurulumu","description":"Birden fazla yapay zeka modelini tek bir API üzerinden yönetin","image":["https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T11:29:47.680717+03:00","dateModified":"2026-08-03T11:29:47.680757+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de LiteLLM ile Yapay Zeka Proxy Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-litellm-ai-proxy/">PiMyLifeUp - Setting up an AI Proxy on the Raspberry Pi with LiteLLM</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu projede, LiteLLM kullanarak Raspberry Pi'nizi nasıl uygun maliyetli bir yapay zeka proxy'sine dönüştürebileceğinizi göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-Thumbnail.jpg" alt="Raspberry Pi LiteLLM Yapay Zeka Proxy" /></p>
+<p><a href="https://www.litellm.ai/">LiteLLM</a>, mevcut çok sayıdaki büyük dil modeli için bir proxy görevi görmek üzere tasarlanmış bir yazılımdır. Bu proxy'yi kullanışlı kılan temel özellik, farklı tüm LLM API'lerini tek bir API'ye dönüştürmesidir.</p>
+<p>Tutarlı bir istek biçimi ve yanıt, farklı LLM'leri iş akışınıza entegre etmeyi çok daha kolay hale getirir. Ayrıca, Raspberry Pi'nizdeki OpenWebUI gibi yazılımları yalnızca OpenAI ile değil, daha fazla yapay zeka sağlayıcısıyla kullanmanızı sağlar.</p>
+<p>Raspberry Pi, özellikle bunu yalnızca kendi ev kullanımınız için kullanmayı düşünüyorsanız, 7/24 çalışır durumda tutması uygun maliyetli olduğundan bir LiteLLM yapay zeka proxy'si olarak çalıştırmak için harika bir cihazdır.</p>
+<p>Bu yazılımı çalıştırmanın Raspberry Pi'nizde 64-bit bir işletim sistemi gerektirdiğini lütfen unutmayın. Bu, bir Pi 3 veya daha yenisini kullanmanız gerektiği anlamına gelir. Kullandığımız LiteLLM Docker konteyneri, 32-bit sistemler için hiçbir destek sunmuyor.</p>
+<h2>Raspberry Pi'nizde LiteLLM Kurulumu ve Çalıştırılması</h2>
+<p>Aşağıdaki bölümlerde, Raspberry Pi'nizde LiteLLM Yapay Zeka Proxy'sini kurma ve ayarlama sürecinde size adım adım rehberlik edeceğiz.</p>
+<h3>Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> Raspberry Pi'mizde LiteLLM yapay zeka proxy'sini kurmadan önce, işletim sistemimizin güncel olduğundan emin olmak isteyeceğiz.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-update/">Sisteminizin mevcut paketlerini güncellemek</a> için aşağıdaki iki komutu kullanabilirsiniz. İlki paket listesi önbelleğini günceller, ikincisi ise güncel olmayan paketleri yükseltir.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>2.</strong> Güncelledikten sonra, bir sonraki adımda Docker çalışma zamanını kurmanız gerekir. LiteLLM'in Raspberry Pi'nizde kurulumunu çok daha basit bir işlem haline getirmek için Docker kullanacağız. Bu, kodu manuel olarak klonlama ve derleme zahmetinden bizi kurtarır.</p>
+<p>Daha önce Docker kurmadıysanız, <a href="https://pimylifeup.com/raspberry-pi-docker/">Raspberry Pi'ye Docker kurulumu</a> hakkındaki kendi rehberimizi takip etmenizi şiddetle tavsiye ederiz. Bu eğitimimiz, bunu takip ettiğinizi varsayacaktır.</p>
+<p><strong>3.</strong> Docker'ı kurduktan sonra, LiteLLM proxy'sini çalışır hale getirmeye geçebiliriz. Bu sürecin ilk kısmı, hem Compose dosyasını hem de proxy'nin veritabanını saklayacağımız bir dizin oluşturmaktır.</p>
+<p>Aşağıdakini çalıştırarak bu dizini oluşturmak için <a href="https://pimylifeup.com/mkdir-command-linux/">mkdir komutunu kullanabilirsiniz</a>.</p>
+<pre><code>sudo mkdir -p /opt/stacks/litellm
+</code></pre>
+<p><strong>4.</strong> Dizini oluşturduktan sonra, <a href="https://pimylifeup.com/cd-command/">cd komutunu kullanarak</a> içine girmek isteyeceksiniz.</p>
+<p>Sonraki birkaç adım için bu klasörde olmamız gerekiyor.</p>
+<pre><code>cd /opt/stacks/litellm
+</code></pre>
+<h3>Raspberry Pi'nizde LiteLLM Proxy'sini Çalıştırmak İçin Bir Compose Dosyası Yazma</h3>
+<p><strong>5.</strong> Artık Raspberry Pi'mizde LiteLLM Yapay Zeka Proxy'sini kuracak ve çalıştıracak Docker Compose dosyasını yazabileceğimiz noktadayız.</p>
+<p>Aşağıdaki komutu çalıştırarak bu dosyayı <a href="https://pimylifeup.com/nano-text-editor/">Nano metin editörünü kullanarak</a> yazabilirsiniz.</p>
+<pre><code>sudo nano compose.yaml
+</code></pre>
+<p><strong>6.</strong> Bu dosyanın içine aşağıdaki satırları girin. Bu satırlar iki ayrı Docker konteyneri kuracaktır. Biri, Raspberry Pi'nizdeki yapay zeka isteklerini işleyip proxy'leyecek olan LiteLLM içindir.</p>
+<p>İkinci konteyner ise bir Postgres veritabanıdır. LiteLLM, verilerini saklamak için bunu kullanacaktır ve yazılımın web arayüzünü etkinleştirmesi için gereklidir.</p>
+<p>Bu dosyada herhangi bir şey yapılandırmamıza gerek yok, çünkü bunların tümü daha sonra bir ortam (environment) dosyası içinde yapılacak.</p>
+<pre><code>services:
+  litellm:
+    image: ghcr.io/berriai/litellm:main-latest
+    restart: unless-stopped
+    depends_on:
+      - litellm-db
+    environment:
+      DATABASE_URL: postgresql://litellm:litellm@litellm-db:5432/litellm
+      LITELLM_MASTER_KEY: ${LITELLM_MASTER_KEY}
+      UI_USERNAME: ${UI_USERNAME}
+      UI_PASSWORD: ${UI_PASSWORD}
+      STORE_MODEL_IN_DB: &quot;True&quot;
+    ports:
+      - 4000:4000
+  litellm-db:
+    image: postgres:16-alpine
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U litellm -d litellm
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - ./db:/var/lib/postgresql/data:rw
+    environment:
+      POSTGRES_DB: litellm
+      POSTGRES_USER: litellm
+      POSTGRES_PASSWORD: litellm
+    restart: on-failure:5
+</code></pre>
+<p><strong>7.</strong> Bu dosyayı doldurmayı bitirdikten sonra, <code>CTRL</code> + <code>X</code>, <code>Y</code> ve ardından <code>ENTER</code> tuşlarına basarak kaydedip çıkın.</p>
+<h3>LiteLLM'i .env Dosyası Üzerinden Yapılandırma</h3>
+<p><strong>8.</strong> Compose dosyası artık yazıldığına göre, LiteLLM konteyneri başlatıldığında otomatik olarak okunacak olan &quot;<code>.env</code>&quot; dosyasını yazabiliriz.</p>
+<p>Raspberry Pi'nizde aşağıdaki komutu kullanarak bu dosyayı yazmaya başlayın.</p>
+<pre><code>sudo nano .env
+</code></pre>
+<p><strong>9.</strong> Bu dosyanın içine aşağıdaki satırları girin. Bunu doldururken değiştirmeniz gereken birkaç önemli yer tutucu vardır.</p>
+<ul>
+<li>
+<p><code>&lt;MASTERKEY&gt;</code><strong>:</strong> Bunu, LiteLLM proxy'niz için &quot;ana anahtar (master key)&quot; olarak kullanılacak uzun bir anahtarla değiştirmelisiniz. Bu, esasen proxy'de kurduğunuz tüm modellere tam erişim verecek bir API anahtarıdır. Bunun uzun, güvenli ve rastgele bir dize olduğundan emin olun. LiteLLM proxy'sinin web arayüzü üzerinden daha ayrıntılı API anahtarları oluşturabileceksiniz.</p>
+</li>
+<li>
+<p><code>&lt;USERNAME&gt;</code><strong>:</strong> Bu yer tutucuyu, web arayüzü üzerinden giriş yapmak için kullanacağınız kullanıcı adıyla değiştirin.</p>
+</li>
+<li>
+<p><code>&lt;PASSWORD&gt;</code><strong>:</strong> Ayrıca, hesabınıza giriş yapmak için kullanılacak bir şifre de belirlemelisiniz.</p>
+<p>LITELLM_MASTER_KEY=<MASTERKEY><br />
+UI_USERNAME=<USERNAME><br />
+UI_PASSWORD=<PASSWORD></p>
+</li>
+</ul>
+<p><strong>10.</strong> &quot;<code>.env</code>&quot; dosyası artık yazıldığına göre, <code>CTRL</code> + <code>X</code>, <code>Y</code> ve ardından <code>ENTER</code> tuşlarına basarak kaydedip çıkın.</p>
+<h3>Raspberry Pi'de LiteLLM Yapay Zeka Proxy'sini Başlatma</h3>
+<p><strong>11.</strong> Sonunda her şey hazır ve Raspberry Pi'mizde LiteLLM yapay zeka proxy'mizi başlatabiliriz.</p>
+<p>Bu komutu çalıştırdığınızda, Docker hem LiteLLM hem de PostgresDB konteynerlerini indirip başlatacaktır. Başlangıç sırasında, ana anahtarı ve arayüz kullanıcı adı ile şifresini doldurmak için &quot;<code>.env</code>&quot; dosyasını okuyacaktır.</p>
+<p>Ayrıca, konteynerleri başlattıktan sonra Docker'ın arka planda çalışmaya devam etmesini sağlamak için &quot;<code>-d</code>&quot; seçeneğini kullanıyoruz.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h3>LiteLLM Web Arayüzüne Bağlanma</h3>
+<p><strong>12.</strong> LiteLLM artık Raspberry Pi'nizde çalışır durumda olduğuna göre, web arayüzüne erişmek isteyeceksiniz. Bu web arayüzü, yapay zeka proxy'nize model ekleyeceğiniz, API anahtarları oluşturacağınız, kullanımı görüntüleyeceğiniz ve daha fazlasını yapacağınız yerdir.</p>
+<p>Bu arayüze erişmek için, Pi'nizin IP adresini bilmeniz gerekecek. <a href="https://pimylifeup.com/raspberry-pi-ip-address/">Raspberry Pi'nizin IP adresini</a> almanın en kolay yollarından biri hostname komutunu kullanmaktır.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>13.</strong> Şimdi, favori web tarayıcınızda aşağıdaki adrese gitmek isteyeceksiniz.</p>
+<p>&quot;<code>&lt;IPADRESI&gt;</code>&quot; kısmını Pi'nizin IP'siyle değiştirdiğinizden emin olun.</p>
+<pre><code>http://&lt;IPADRESI&gt;:4000/ui
+</code></pre>
+<p>Örneğin, IP adresiniz &quot;<code>192.168.0.22</code>&quot; ise, aşağıdaki adresi kullanırdınız.</p>
+<pre><code>http://192.168.0.22:4000/ui
+</code></pre>
+<p><strong>14.</strong> Şimdi sizi LiteLLM Web arayüzü giriş ekranı karşılamalıdır. Daha önce belirlediğiniz kullanıcı adı ve şifreyi (<strong>1.</strong>) kullanmak isteyeceksiniz.</p>
+<p>Giriş bilgilerinizi doldurduktan sonra, &quot;<code>Submit</code>&quot; düğmesine (<strong>2.</strong>) <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-01-Login-to-LiteLLM.jpg" alt="Raspberry Pi'de LiteLLM Yapay Zeka Proxy'sine Giriş Yapma" /></p>
+<h3>Yapay Zeka Proxy'sine Bir Model Ekleme</h3>
+<p><strong>15.</strong> Raspberry Pi'nizde LiteLLM yapay zeka proxy'sini kurarken yapmak isteyeceğiniz ilk şey bir model eklemektir.</p>
+<p>Bu süreci başlatmak için, kenar çubuğunu kullanarak &quot;<code>Models</code>&quot; ekranına geçin.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-02-Open-Models-Screen.jpg" alt="Modeller Ekranını Açma" /></p>
+<p><strong>16.</strong> Modeller ekranına geçtikten sonra, &quot;<code>Add Model</code>&quot; sekmesine <code>tıklamak</code> isteyeceksiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-03-Open-Add-Model-Screen.jpg" alt="Model Ekle Ekranına Geçme" /></p>
+<p><strong>17.</strong> Bu ekran, Proxy'nize herhangi bir mevcut modeli eklemenize izin verecektir. İhtiyacınız olan tek şey, eklemeyi planladığınız sağlayıcı için bir API anahtarıdır.</p>
+<ol>
+<li><code>Provider</code><strong>:</strong> Öncelikle kullanmayı düşündüğünüz modelin sağlayıcısını seçmelisiniz. Örneğimizde OpenAI kullanacağız.</li>
+<li><code>LiteLLM Model Name(s)</code><strong>:</strong> Sonraki seçenek, LiteLLM proxy üzerinden kullanılabilir hale getirmek istediğiniz modelleri seçmenize izin verir. Bunu göstermek için, &quot;<code>gpt-4o</code>&quot; ve &quot;<code>gpt-4o-mini</code>&quot; olmak üzere iki farklı model seçeceğiz.</li>
+<li><code>Model Mappings</code><strong>:</strong> Bu seçeneklerle, eklediğiniz her model için kullanılan genel (public) adı kontrol etmek mümkündür. Genel adı değiştirmek, LiteLLM proxy üzerinden bu adı kullanmanıza olanak tanır.</li>
+<li><code>API Key</code><strong>:</strong> Son olarak, LiteLLM'in sağlayıcınızla konuşması için kullanılacak bilgileri belirtmelisiniz. Sağlayıcıların büyük çoğunluğu için bu bir API anahtarı olacaktır. OpenAI ile bu alan &quot;<code>OpenAI API Key</code>&quot; olarak etiketlenecektir.</li>
+</ol>
+<p>Her şeyi ayarladıktan sonra memnun kaldığınızda, &quot;<code>Add Model</code>&quot; düğmesine (<strong>5.</strong>) <code>tıklayarak</code> bu modeli LiteLLM'e ekleyebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-04-Add-your-first-model.jpg" alt="Raspberry Pi LiteLLM Proxy'nize İlk Yapay Zeka Modelinizi Ekleme" /></p>
+<h3>Yapay Zeka Proxy'sini Test Etme</h3>
+<p><strong>18.</strong> Raspberry Pi LiteLLM yapay zeka proxy'mize bir modele erişim verdiğimize göre, her şeyin düzgün çalıştığını test edelim.</p>
+<p>Neyse ki web arayüzü, modelleri ve API anahtarlarını test etmeyi kolaylaştıran yerleşik bir işlevselliğe sahiptir. Bunu test etmek için, kenar çubuğunu kullanarak &quot;<code>Test Key</code>&quot; ekranına geçin.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-05-Begin-Testing-your-Key.jpg" alt="API anahtarınızı test etmeye başlama" /></p>
+<p><strong>19.</strong> Bu ekranda, &quot;<code>API Key Source</code>&quot; seçeneğini &quot;<code>Current UI Session</code>&quot; (<strong>1.</strong>) olarak değiştirin. Bunu yapmamız gerekiyor çünkü Raspberry Pi'mizde henüz benzersiz API anahtarları oluşturmadık.</p>
+<p>Anahtar kaynağını ayarladıktan sonra, test etmeyi düşündüğünüz modeli seçmek için ikinci seçim kutusunu kullanabilirsiniz (<strong>2.</strong>).</p>
+<p>Son olarak, yapay zeka modeliyle konuşmak ve her şeyin amaçlandığı gibi çalıştığını doğrulamak için metin kutusunu kullanabilirsiniz (<strong>3.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-06-Test-your-new-model.jpg" alt="Yeni bağlanan yapay zeka modelinizi test etme" /></p>
+<h3>Raspberry Pi'de LiteLLM Proxy İçin Bir API Anahtarı Oluşturma</h3>
+<p><strong>20.</strong> Raspberry Pi'nizde çalışan LiteLLM Proxy'sine bir Yapay Zeka Modeli eklediğinize göre, proxy ile konuşmak için kullanılabilecek bazı API anahtarları oluşturmak isteyeceksiniz.</p>
+<p>Yeni bir API anahtarı oluşturmak için önce kenar çubuğunu kullanarak &quot;<code>Virtual Keys</code>&quot; ekranına geçin (<strong>1.</strong>). Bu ekrana geçtikten sonra, ekranın üstündeki &quot;<code>Create New Key</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-07-Create-yoru-first-API-key.jpg" alt="LiteLLM Proxy için API anahtarı oluşturma menüsünü açma" /></p>
+<p><strong>21.</strong> Bu ekranda yapmanız gereken ilk şey bu API anahtarına bir isim vermektir (<strong>1.</strong>). Bu, bu anahtarın ne için kullanılacağını belirlemenizi sağlar.</p>
+<p>Bir anahtar belirledikten sonra, &quot;<code>Create Key</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-08-Create-your-first-key.jpg" alt="Raspberry Pi'nizdeki LiteLLM proxy'sine erişmek için anahtar oluşturma" /></p>
+<p><strong>22.</strong> Bir anahtar oluşturulduğunda, ekranınızda görüntülenecektir. Bir daha size gösterilmeyeceği için bu anahtarı kopyalamanız gerekir.</p>
+<p>Bu menüyü yanlışlıkla anahtarı kopyalamadan kapatırsanız, sadece silin ve yeni bir anahtar oluşturmak için adımları tekrarlayın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2025/03/Raspberry-Pi-LiteLLM-AI-Proxy-09-Grab-API-Key.jpg" alt="API anahtarını alma" /></p>
+<h3>Raspberry Pi'nizde LiteLLM'i Test Etmek İçin Curl Kullanma</h3>
+<p><strong>23.</strong> Bu noktada, Raspberry Pi'mizde LiteLLM yapay zeka proxy'sini başarıyla kurup başlattık. Şimdi terminali kullanarak, LiteLLM'in API uç noktalarından birine istek göndermek için curl kullanarak bunu test edebiliriz.</p>
+<p>LiteLLM, OpenAI API'sini birebir kopyaladığından, kullandığımız completions uç noktası hakkında daha fazla bilgiyi <a href="https://platform.openai.com/docs/api-reference/completions">OpenAI dokümantasyonunu okuyarak</a> edinebilirsiniz.</p>
+<p>Bu komutu yazarken değiştirmeniz gereken birkaç yer tutucu vardır.</p>
+<ul>
+<li>
+<p><code>&lt;IPADDRESS&gt;</code><strong>:</strong> Bu yer tutucuyu, LiteLLM proxy'sinin çalıştığı Raspberry Pi'nizin IP adresiyle değiştirin.</p>
+</li>
+<li>
+<p><code>&lt;APIKEY&gt;</code><strong>:</strong> Bunu, LiteLLM web arayüzünden oluşturduğunuz API anahtarıyla değiştirin.</p>
+</li>
+<li>
+<p><code>&lt;MODEL&gt;</code><strong>:</strong> Ardından, çalıştırmak istediğiniz yapay zeka modelinin adını belirtmelisiniz. Bu, LiteLLM içinde ayarlandığı şekliyle modelin genel adıyla eşleşmelidir.</p>
+</li>
+<li>
+<p><code>&lt;MESSAGE&gt;</code><strong>:</strong> Son olarak, uç noktaya göndermek istediğiniz mesajı yazabilirsiniz.</p>
+<p>curl -X POST http://<IPADDRESS>:4000/v1/chat/completions <br />
+-H &quot;Content-Type: application/json&quot; <br />
+-H &quot;Authorization: Bearer <APIKEY>&quot; <br />
+-d '{<br />
+&quot;model&quot;: &quot;<MODEL>&quot;,<br />
+&quot;messages&quot;: [<br />
+{<br />
+&quot;role&quot;: &quot;user&quot;,<br />
+&quot;content&quot;: &quot;<MESSAGE>&quot;<br />
+}<br />
+]<br />
+}'</p>
+</li>
+</ul>
+<p>Aşağıda, bu komutun doldurulmuş bir sürümünün nasıl görünebileceğine dair bir örnek bulunmaktadır.</p>
+<pre><code>curl -X POST http://192.168.0.22:4000/v1/chat/completions \
+-H &quot;Content-Type: application/json&quot; \
+-H &quot;Authorization: Bearer sk-BcZHz5DJud5thC3f0E5HvA&quot; \
+-d '{
+    &quot;model&quot;: &quot;gpt-4o&quot;,
+    &quot;messages&quot;: [
+        {
+            &quot;role&quot;: &quot;user&quot;,
+            &quot;content&quot;: &quot;What is pimylifeup&quot;
+        }
+    ]
+}'
+</code></pre>
+<p><strong>26.</strong> Aşağıda, LiteLLM proxy API uç noktasından gelen yanıtın nasıl göründüğüne dair bir örnek görebilirsiniz. Ardından, yeni proxy'nizi kullanarak çeşitli yapay zeka modelleriyle etkileşim kurmak için bir Python betiği veya benzeri bir şey yazabilirsiniz.</p>
+<p>Bu yazılım, <a href="https://pimylifeup.com/raspberry-pi-open-webui/">inanılmaz derecede kullanışlı OpenWebUI arayüzüne</a> entegre etmek için bile kullanılabilir.</p>
+<pre><code>{&quot;id&quot;:&quot;chatcmpl-pfBnfbt12lzL7h&quot;,&quot;created&quot;:1742788843,&quot;model&quot;:&quot;gpt-4o-2024-08-06&quot;,&quot;object&quot;:&quot;chat.completion&quot;,&quot;system_fingerprint&quot;:&quot;fp_90d33c15d4&quot;,&quot;choices&quot;:[{&quot;finish_reason&quot;:&quot;stop&quot;,&quot;index&quot;:0,&quot;message&quot;:{&quot;content&quot;:&quot;PiMyLifeUp is a website dedicated to providing tutorials, projects, and guides related to the Raspberry Pi, a popular single-board computer.&quot;,&quot;role&quot;:&quot;assistant&quot;,&quot;tool_calls&quot;:null,&quot;function_call&quot;:null}}],&quot;usage&quot;:{&quot;completion_tokens&quot;:123,&quot;prompt_tokens&quot;:13,&quot;total_tokens&quot;:136}}
+</code></pre>
+<h2>Raspberry Pi'de LiteLLM Yapay Zeka Proxy'sini Güncelleme</h2>
+<p>LiteLLM yapay zeka proxy'si oldukça hızlı güncellemeler alır. Bu güncellemeler genellikle kritik yeni düzeltmeler ve özellikler sunar. Neyse ki, bu proxy'yi Raspberry Pi'nizde çalıştırmak için Docker kullanmanın temel avantajı, yeni sürüme güncellemeyi çok basit bir işlem haline getirmesidir.</p>
+<p><strong>1.</strong> Raspberry Pi'nizde LiteLLM'i güncellemek için önce Docker Compose dosyasını yazdığımız dizine geçmelisiniz.</p>
+<p>Klasör yapımıza sadık kaldıysanız, terminalde aşağıdaki komutu kullanarak doğru yere geçebilirsiniz.</p>
+<pre><code>cd /opt/stacks/litellm
+</code></pre>
+<p><strong>2.</strong> Doğru dizine geçtikten sonra, LiteLLM'in en son sürümünü Pi'mize çekmek için Docker kullanmalıyız.</p>
+<p>Bu, en son imajı indirecek ancak zaten çalışmakta olan konteyneri güncellemeyecektir. Bunun için başka bir komut gerekecektir.</p>
+<pre><code>docker compose pull
+</code></pre>
+<p><strong>3.</strong> Docker'ın zaten çalışan LiteLLM proxy konteynerinizi güncellemesini sağlamak için yalnızca aşağıdaki komutu kullanmanız yeterlidir.</p>
+<p>Docker, yeni bir imajın mevcut olduğunu algılayacak, konteyneri güvenli bir şekilde kapatacak ve ardından yeni imaj üzerinde tekrar başlatacaktır.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h2>Sonuç</h2>
+<p>Umarız bu rehberin sonunda, Raspberry Pi'nizde LiteLLM'i başarıyla çalışır hale getirmişsinizdir.</p>
+<p>LiteLLM, birden fazla sağlayıcıdan birden fazla yapay zeka modelini işlemeyi basitleştiren, bu işlemi çok daha kolay bir hale getiren zarif bir yapay zeka proxy'sidir. Birçok farklı API uç noktasıyla uğraşmak yerine, Anthropic'ten bir modelle uğraşıyor olsanız bile yalnızca popüler OpenAI API'siyle uğraşmanız yeterlidir.</p>
+<p>LiteLLM'i bir yapay zeka proxy'si olarak kurma ve kullanma hakkında sorularınız varsa aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-litellm-ai-proxy.html&amp;text=Raspberry+Pi%27de+LiteLLM+ile+Yapay+Zeka+Proxy+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-litellm-ai-proxy.html&amp;text=Raspberry+Pi%27de+LiteLLM+ile+Yapay+Zeka+Proxy+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-litellm-ai-proxy.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-litellm-ai-proxy.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-litellm-ai-proxy.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-litellm-ai-proxy.html&amp;title=Raspberry+Pi%27de+LiteLLM+ile+Yapay+Zeka+Proxy+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+LiteLLM+ile+Yapay+Zeka+Proxy+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-litellm-ai-proxy.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

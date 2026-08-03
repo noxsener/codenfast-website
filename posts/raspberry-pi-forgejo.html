@@ -1,0 +1,349 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de Forgejo Çalıştırma - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Kendi kendine barındırılan bir Git kaynağı"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de Forgejo Çalıştırma"/>
+    <meta property="og:description"
+          content="Kendi kendine barındırılan bir Git kaynağı"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-forgejo.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-forgejo.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Forgejo-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de Forgejo Çalıştırma"/>
+    <meta name="twitter:description"
+          content="Kendi kendine barındırılan bir Git kaynağı"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Forgejo-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de Forgejo Çalıştırma","item":{"@id":"https://codenfast.com/posts/raspberry-pi-forgejo.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Forgejo-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Forgejo-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Forgejo-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Forgejo-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Forgejo-01-Set-Domain-and-base-URL.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Forgejo-01-Set-Domain-and-base-URL.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Forgejo-02-Create-Admin-User-and-Install-Forgejo.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Forgejo-02-Create-Admin-User-and-Install-Forgejo.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Forgejo-03-Forgejo-Dashboard.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Forgejo-03-Forgejo-Dashboard.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de Forgejo Çalıştırma","description":"Kendi kendine barındırılan bir Git kaynağı","image":["https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Forgejo-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T11:53:52.826136+03:00","dateModified":"2026-08-03T11:53:52.826161+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de Forgejo Çalıştırma</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-forgejo/">PiMyLifeUp - Running Forgejo on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'de Forgejo'yu nasıl çalıştıracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Forgejo-Thumbnail.jpg" alt="Raspberry Pi Forgejo" /></p>
+<p>Forgejo, GitHub gibi bulut hizmetlerinden beklediğiniz hizmet ve özelliklerin çoğunu sunan, kendi kendine barındırılan (self-hosted), hafif bir Git hizmetidir.</p>
+<p>Bu özel yazılım paketi aslında popüler <a href="https://pimylifeup.com/raspberry-pi-gitea/">Gitea projesinin bir çatalıdır (fork)</a>. Bu çatal, Gitea'nın yönetilme şeklinde önemli değişiklikler olduktan sonra oluşturuldu.</p>
+<p>Hafif olması, Forgejo'yu Raspberry Pi'nizde kod depolarınızı kendi kendinize barındırmak için mükemmel bir çözüm haline getirir. Tüm kaynakları tüketmeden Pi'nin sınırlı donanımında kolayca çalışabilir.</p>
+<p>Kullandığımız Forgejo konteyneri yalnızca ARM64'ü desteklediğinden, 64-bit bir işletim sistemi çalıştırıyor olmanız gerektiğini lütfen unutmayın. Ayrıca, bir Raspberry Pi 3 veya daha yenisini çalıştırıyor olmanız gerekecek.</p>
+<h2>Raspberry Pi'de Forgejo Kurulumu</h2>
+<p>Aşağıdaki adımlarda, Raspberry Pi'nizde Forgejo'yu çalışır hale getirmek için gereken tüm adımlarda size rehberlik edeceğiz.</p>
+<p>Devam etmeden önce, bu rehber için 64-bit bir işletim sistemi çalıştırıyor olmanız gerektiğini unutmayın. Ayrıca, <a href="https://pimylifeup.com/raspberry-pi-static-ip-address/">Pi'nizi statik bir IP adresiyle</a> ayarlamalısınız.</p>
+<h3>Forgejo İçin Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> Raspberry Pi'ye Forgejo kurabilmemiz için, bazı ilk kurulum adımlarını gerçekleştirmemiz gerekiyor.</p>
+<p>İlk komutla paket listesi önbelleğini en son sürüme güncelleyeceğiz. İkinci komut, bu güncellenmiş listeyi kullanarak güncel olmayan paketleri yükseltecek.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Güncelledikten sonra, Raspberry Pi'nize Docker çalışma zamanını kurmanız gerekiyor.</p>
+<p>Zaten Docker kurulu ise, doğrudan bir sonraki adıma geçebilirsiniz. Aksi takdirde, aşağıda bağlantısını verdiğimiz rehberi takip edin.</p>
+<p><strong>3.</strong> Docker çalışma zamanı kurulduktan sonra, bir sonraki adımımız Raspberry Pi'mizde Forgejo için Compose dosyasını saklamak amacıyla bir dizin oluşturmaktır.</p>
+<p>Bu dizini oluşturmak için, <a href="https://pimylifeup.com/mkdir-command-linux/">mkdir komutunu</a> &quot;<code>-p</code>&quot; seçeneğiyle birlikte kullanacağız.</p>
+<pre><code>sudo mkdir -p /opt/stacks/forgejo
+</code></pre>
+<p><strong>4.</strong> Dizin oluşturulduktan sonra, <a href="https://pimylifeup.com/cd-command/">cd komutunu kullanarak</a> içine geçebiliriz.</p>
+<pre><code>cd /opt/stacks/forgejo
+</code></pre>
+<h3>Forgejo İçin Bir Docker Compose Dosyası Yazma</h3>
+<p><strong>5.</strong> Artık oluşturduğumuz dizinde olduğumuza göre, Raspberry Pi'mizde Forgejo için Docker Compose dosyasını yazmaya geçebiliriz.</p>
+<p>Bir Compose dosyası, Docker'ın bir veya birden fazla konteyner kurmak için takip edeceği bir talimatlar kümesidir. Bu dosyayı, nispeten kullanımı kolay olduğundan <a href="https://pimylifeup.com/nano-text-editor/">nano metin editörünü kullanarak</a> yazacağız.</p>
+<pre><code>sudo nano compose.yaml
+</code></pre>
+<p><strong>6.</strong> Bu Compose dosyasının içine, aşağıdaki satırları doldurmalısınız. Bu Compose dosyasını, Raspberry Pi'mizde hem Forgejo'yu hem de <a href="https://pimylifeup.com/raspberry-pi-postgresql/">Postgres'i çalıştırmak için</a> kullanacağız.</p>
+<p>Bu dosyada, değiştirmeniz gereken bir yer tutucu var.</p>
+<ul>
+<li><code>&lt;DBPASSWORD&gt;</code><strong>:</strong> Bu yer tutucuyu, Forgejo'nun veritabanıyla etkileşim kurmak için kullanacağı şifreyle değiştirin. Dosyada bu yer tutucunun iki tekrarı var.</li>
+</ul>
+<p>Raspberry Pi'nizde depolarınızı saklamak istediğiniz belirli bir yer varsa, &quot;<code>./forgejo</code>&quot; kısmını tam yolla değiştirin.</p>
+<pre><code>services:
+  server:
+    image: codeberg.org/forgejo/forgejo:16
+    container_name: forgejo
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - FORGEJO__database__DB_TYPE=postgres
+      - FORGEJO__database__HOST=db:5432
+      - FORGEJO__database__NAME=forgejo
+      - FORGEJO__database__USER=forgejo
+      - FORGEJO__database__PASSWD=&lt;DBPASSWORD&gt;
+    restart: always
+    networks:
+      - forgejo
+    volumes:
+      - ./forgejo:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - &quot;3000:3000&quot;
+      - &quot;222:22&quot;
+    depends_on:
+      - db
+
+  db:
+    image: postgres:14
+    restart: always
+    environment:
+      - POSTGRES_USER=forgejo
+      - POSTGRES_PASSWORD=&lt;DBPASSWORD&gt;
+      - POSTGRES_DB=forgejo
+    networks:
+      - forgejo
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+
+networks:
+  forgejo:
+    external: false
+</code></pre>
+<p><strong>7.</strong> Bu Compose dosyasını doldurduktan sonra, <code>CTRL</code> + <code>X</code>, <code>Y</code> ve ardından <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<h3>Raspberry Pi'nizde Forgejo'yu Başlatma</h3>
+<p><strong>8.</strong> Artık her şey ayarlandığına göre, aşağıdaki komutu çalıştırarak Raspberry Pi'mizde Forgejo'yu başlatabiliriz.</p>
+<p>Pi'nin hem Forgejo hem de Postgres konteynerlerini indirmesi gerektiğinden, başlatma süreci birkaç dakika sürebilir.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h3>Forgejo Web Arayüzüne Erişim</h3>
+<p><strong>9.</strong> Forgejo artık Raspberry Pi'de çalışır durumda olduğuna göre, web arayüzüne nasıl erişeceğinizi bilmek isteyeceksiniz.</p>
+<p>Web arayüzüne erişmek için, <a href="https://pimylifeup.com/raspberry-pi-ip-address/">Pi'nizin IP adresini</a> bilmeniz gerekir. Bu adresi <a href="https://pimylifeup.com/hostname-command/">hostname komutunu kullanarak</a> kolayca alabilirsiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>10.</strong> Raspberry Pi'nizin IP'sini öğrendikten sonra, Forgejo'ya erişmek için aşağıdaki adrese gidin.</p>
+<p>&quot;<code>&lt;IPADRESI&gt;</code>&quot; kısmını Pi'nizin IP'siyle değiştirdiğinizden emin olun.</p>
+<pre><code>http://&lt;IPADRESI&gt;:3000
+</code></pre>
+<h3>İlk Kurulum Ekranını Tamamlama</h3>
+<p><strong>11.</strong> Forgejo'ya ilk kez eriştiğinizde, bazı ilk kurulum adımlarını tamamlamanız gerekecek. Bu ayarların çoğu varsayılan olarak bırakılmalıdır; ancak, değiştirmek isteyeceğiniz birkaç seçenek var.</p>
+<ol>
+<li>Ayarlamak isteyebileceğiniz ilk seçenek &quot;<code>Server domain</code>&quot;dir. Bu seçeneği kullanarak, Raspberry Pi'nizin IP'sini, harici IP adresinizi veya Pi'nize yönlendirdiğiniz bir alan adını ayarlamak isteyeceksiniz. Bu eğitimde, Forgejo'yu sadece yerel ağımız için çalıştırdığımızdan, bunu Pi'mizin yerel IP'sinde tuttuk.</li>
+<li>Ayarlamak isteyeceğiniz diğer seçenek ise &quot;<code>Base URL</code>&quot;dir. Bu URL, e-posta bildirimleri ve klonlama URL'leri için yollar oluşturmak amacıyla kullanılacaktır. Genellikle, bu protokolle (<code>http</code>, <code>https</code>) başlar, ardından Forgejo kurulumunuza erişmek için kullanmayı planladığınız IP veya alan adı gelir.</li>
+</ol>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Forgejo-01-Set-Domain-and-base-URL.jpg" alt="Raspberry Pi'de Forgejo için alan adı ve temel URL belirleme" /></p>
+<p><strong>12.</strong> Ardından yönetici kullanıcı adını ve şifresini yapılandırmak isteyeceksiniz. &quot;<code>Administrator account settings</code>&quot; açılır menüsüne <code>tıklayarak</code> bu seçenekleri getirin.</p>
+<p>Artık admin hesabınız için kullanmak istediğiniz bilgileri doldurmak amacıyla metin kutularını (<strong>1.</strong>) kullanabilmeniz gerekir.</p>
+<p>Bir kullanıcı adı ve şifre girdikten sonra, kurulumu tamamlamak için &quot;<code>Install Forgejo</code>&quot; düğmesine <code>tıklayın</code> (2.).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Forgejo-02-Create-Admin-User-and-Install-Forgejo.jpg" alt="Forgejo için bir yönetici kullanıcı oluşturma" /></p>
+<p><strong>13.</strong> Bu noktada, Raspberry Pi'nizde Forgejo'yu başarıyla çalışır hale getirdiniz. Artık depo eklemeye ve kodunuzu saklamaya başlayabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/05/Raspberry-Pi-Forgejo-03-Forgejo-Dashboard.jpg" alt="Boş Forgejo Gösterge Paneli" /></p>
+<h2>Raspberry Pi'nizde Forgejo'yu Güncelleme</h2>
+<p>Bu bölümde, Raspberry Pi'nizde Forgejo konteynerinizi en son sürüme güncellemek için basit adımları göstereceğiz.</p>
+<p><strong>1.</strong> Forgejo'yu en son sürüme güncellemeden önce, Compose dosyasını orijinal olarak yazdığımız dizine geçmeniz gerekir.</p>
+<p>Bu rehberi daha önce takip ettiyseniz, aşağıdaki komutu kullanarak doğru dizine geçebilirsiniz.</p>
+<pre><code>cd /opt/stacks/forgejo
+</code></pre>
+<p><strong>2.</strong> Doğru yere geldiğinizde, terminalde aşağıdaki komutu kullanarak Docker'ın Forgejo'nun en son sürümünü indirmesini sağlayabilirsiniz.</p>
+<p>Bu komut yeni bir imaj indirecek ancak çalışan konteynerlerinizi güncellemeyecektir.</p>
+<pre><code>docker compose pull
+</code></pre>
+<p><strong>3.</strong> Neyse ki, Docker konteynerleri yeni bir imaja taşımayı da basit hale getiriyor.</p>
+<p>Aşağıdaki komutu kullanarak, Docker Compose dosyasında belirtilen tüm konteynerleri kontrol edecek. Docker bir konteyner için yeni bir imajın mevcut olduğunu görürse, onu durdurup yeni sürümü kullanarak yeniden başlatacaktır.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h2>Sonuç</h2>
+<p>Bu rehberin bu aşamasında, artık Raspberry Pi'nizde Forgejo Git sunucusu çalışıyor olmalıdır.</p>
+<p>Forgejo, hafif olmasına rağmen özellik bakımından zengin kalması sayesinde, kod depolarınızı kendi kendinize barındırmak için mükemmel bir çözümdür.</p>
+<p>Bu yazılımı Pi'nizde çalıştırırken herhangi bir sorunla karşılaştıysanız, aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-forgejo.html&amp;text=Raspberry+Pi%27de+Forgejo+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-forgejo.html&amp;text=Raspberry+Pi%27de+Forgejo+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-forgejo.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-forgejo.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-forgejo.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-forgejo.html&amp;title=Raspberry+Pi%27de+Forgejo+%C3%87al%C4%B1%C5%9Ft%C4%B1rma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+Forgejo+%C3%87al%C4%B1%C5%9Ft%C4%B1rma%20codenfast.com%2Fposts%2Fraspberry-pi-forgejo.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi ile Chia Farming Nasıl Yapılır - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Pi&#39;yi enerji verimli bir Chia farmer&#39;ı olarak kullanma"/>
+    <meta property="og:title" content="Raspberry Pi ile Chia Farming Nasıl Yapılır"/>
+    <meta property="og:description"
+          content="Pi&#39;yi enerji verimli bir Chia farmer&#39;ı olarak kullanma"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-chia.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-chia.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2021/08/Raspberry-Pi-Chia-Blockchain-Farmer-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi ile Chia Farming Nasıl Yapılır"/>
+    <meta name="twitter:description"
+          content="Pi&#39;yi enerji verimli bir Chia farmer&#39;ı olarak kullanma"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2021/08/Raspberry-Pi-Chia-Blockchain-Farmer-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi ile Chia Farming Nasıl Yapılır","item":{"@id":"https://codenfast.com/posts/raspberry-pi-chia.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/08/Raspberry-Pi-Chia-Blockchain-Farmer-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/08/Raspberry-Pi-Chia-Blockchain-Farmer-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/08/Raspberry-Pi-Chia-Blockchain-Farmer-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/08/Raspberry-Pi-Chia-Blockchain-Farmer-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/08/Raspberry-Pi-Chia-Blockchain-01-Show-status-of-node.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/08/Raspberry-Pi-Chia-Blockchain-01-Show-status-of-node.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/08/Raspberry-Pi-Chia-Blockchain-02-Get-Farm-Summary.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/08/Raspberry-Pi-Chia-Blockchain-02-Get-Farm-Summary.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi ile Chia Farming Nasıl Yapılır","description":"Pi'yi enerji verimli bir Chia farmer'ı olarak kullanma","image":["https://pimylifeup.com/wp-content/uploads/2021/08/Raspberry-Pi-Chia-Blockchain-Farmer-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:50:35.456959+03:00","dateModified":"2026-08-03T12:50:35.456979+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi ile Chia Farming Nasıl Yapılır</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-chia/">PiMyLifeUp - How to Farm Chia with a Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, bir Raspberry Pi ile Chia coin'ini nasıl &quot;farming&quot; yapacağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/08/Raspberry-Pi-Chia-Blockchain-Farmer-Thumbnail.jpg" alt="Raspberry Pi Chia Farmer" /></p>
+<p>Chia hakkında havalı şeylerden biri, önceden plotlanmış bir sabit diskte coin'leri farming yapmak için bir Raspberry Pi kullanabilmemizdir, çünkü çok fazla işlem gücüne dayanmaz.</p>
+<p>Bunun tam olarak nasıl çalıştığıyla ilgileniyorsanız, tüm bunların tam olarak nasıl çalışması gerektiğini açıklayan <a href="https://www.chia.net/greenpaper/">Chia yeşil kağıdını (green paper)</a> okuyabilirsiniz.</p>
+<p>Chia hakkında havalı şeylerden biri, önceden plotlanmış bir sabit diskte coin'leri farming yapmak için bir Raspberry Pi kullanabilmemizdir. Bunun nedeni, Chia'nın önemli miktarda işlem gücü gerektirmemesidir.</p>
+<p>Düşük güç tüketimi sayesinde, Chia coin'lerini farming yapmak için bir Raspberry Pi harika bir seçimdir. Kullandığınız güç miktarı konusunda stres yapmadan Pi'nizin Chia plotlarınızı farming yapmasını sağlayabilirsiniz.</p>
+<p>Bu rehbere daha fazla devam etmeden önce, zaten plotlanmış harici bir sabit diske ihtiyacınız olacak. Ne yazık ki, Pi plot oluşturmak için pek yeterince güçlü değil, bu yüzden bu rehberde bunu ele almayacağız.</p>
+<p>Bu rehber için, Chia'yı <a href="https://pimylifeup.com/headless-raspberry-pi-setup/">başsız (headless) bir kurulum</a> için ayarlamaya odaklanacağız. Bu, cihazınıza <a href="https://pimylifeup.com/raspberry-pi-ssh/">ihtiyacınız olan tek şeyin SSH erişimi</a> olduğu anlamına gelir.</p>
+<h2>Raspberry Pi'nizi Chia İçin Hazırlama</h2>
+<p>Raspberry Pi'nizi bir Chia farmer'ı olarak çalışacak şekilde hazırlamak nispeten basit bir süreçtir.</p>
+<p>Ancak büyük bir uyarı var, 64-bit bir işletim sistemine ihtiyacımız var. Bu, bir Raspberry Pi 3 veya daha yenisini kullanmakla sınırlı olacağınız anlamına gelir. Kişisel olarak, bir Pi 4 kullanmanızı öneririz.</p>
+<p><strong>1.</strong> Devam etmeden önce, 64-bit bir işletim sistemi kullandığınızdan emin olun. En popüler iki seçenek, <a href="https://pimylifeup.com/raspberry-pi-64-bit/">Raspberry Pi OS'nin 64-bit beta sürümünü</a> veya <a href="https://pimylifeup.com/ubuntu-server-raspberry-pi/">Ubuntu server'ı</a> kullanmaktır.</p>
+<p>Eğitimimiz için, <strong>Raspberry Pi OS 64-bit beta</strong>'yı kullanacağız. Ancak, bu adımlar Ubuntu server için de çalışacaktır, ama küçük ayarlamalar gerektirecektir.</p>
+<p><strong>2.</strong> Raspberry Pi'nize 64-bit bir işletim sistemi kurduktan sonra, devam edebiliriz.</p>
+<p>İlk adımımız, en son paket listesine sahip olduğumuzdan emin olmak ve güncel olmayan tüm paketleri yükseltmektir.</p>
+<p>Bu görevi sistemde aşağıdaki iki komutu çalıştırarak gerçekleştirebiliriz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>3.</strong> Raspberry Pi'miz güncel olduğuna göre, şimdi resmi Chia blok zincirini kurmak için gereken paketleri kurmamız gerekiyor.</p>
+<p>Sisteminizde aşağıdaki komutu kullanarak ihtiyacımız olan paketleri kurun.</p>
+<pre><code>sudo apt install git build-essential python3-dev
+</code></pre>
+<p>Bu komutla, üç farklı paket kuruyoruz. Bunların ne için olduğu hakkında bir fikir vermek için, şimdi hızlıca üzerlerinden geçeceğiz.</p>
+<ul>
+<li>Kurduğumuz ilk paket &quot;<code>git</code>&quot;tir. Bu paketi, resmi Chia blok zinciri kodunu Raspberry Pi'mize klonlamak için kullanacağız.</li>
+<li>İkinci paketimiz &quot;<code>build-essential</code>&quot; adını taşır. Bu aslında Chia blok zinciri Python paketlerini kurarken kullanılacak bir dizi derleyici kuran bir meta pakettir.</li>
+<li>Son paketimiz &quot;<code>python3-dev</code>&quot;dir. Bu paket, Python uzantıları oluşturmak için gereken başlık dosyalarını içerir. Bunlar sisteminize Chia kurarken gerekli olacaktır.</li>
+</ul>
+<p><strong>4.</strong> Artık ihtiyacımız olan tüm paketlere sahip olduğumuza göre, sonunda Chia blok zinciri deposunu Raspberry Pi'mize klonlayabiliriz.</p>
+<p>Önceki adımda git'i kurduğumuz sayesinde, sadece aşağıdaki komutu çalıştırmamız gerekiyor.</p>
+<pre><code>git clone https://github.com/Chia-Network/chia-blockchain.git -b latest
+</code></pre>
+<p>Komutun sonunda, &quot;<code>latest</code>&quot; adlı dalı (branch) seçmek için &quot;<code>-b</code>&quot; argümanını kullanıyoruz. Bu dal, en son kararlı sürümün kodu ile güncel tutulur.</p>
+<h2>Raspberry Pi'nizde Chia Blok Zincirini Kurma</h2>
+<p>Artık Chia blok zincirini Raspberry Pi'mize klonladığımıza göre, artık onu kurabiliriz. Klonladığımız depo ihtiyacımız olan her şeyi içerdiğinden, bu süreç nispeten basittir.</p>
+<p><strong>1.</strong> İlk adımımız, yeni klonlanan dizine geçmektir.</p>
+<p>Cihazınızda <a href="https://pimylifeup.com/cd-command/">cd komutunu kullanarak</a> bu dizine geçebiliriz.</p>
+<pre><code>cd chia-blockchain
+</code></pre>
+<p><strong>2.</strong> Şimdi Chia deposuyla birlikte gelen kurulum betiğini çalıştırabiliriz. Bu betik, her şeyin doğru şekilde ayarlandığını kontrol edecek ve Chia için kurulum sürecini başlatacaktır.</p>
+<p>Bu, esas olarak Chia için Python paketini indirmeyi ve derlemeyi içerir.</p>
+<p>Chia kurulum sürecini başlatmak için Raspberry Pi'nizde aşağıdaki komutu çalıştırın.</p>
+<pre><code>sh ./install.sh
+</code></pre>
+<p><strong>3.</strong> Bir sonraki adımımız, Chia kurulum sürecinde oluşturulan yeni sanal ortama geçmektir.</p>
+<p>Sanal ortama geçmek için, cihazınızda aşağıdaki komutu kullanın.</p>
+<pre><code>. ./activate
+</code></pre>
+<p><strong>4.</strong> Bir sonraki adımımız, aşağıdaki komutu kullanarak Raspberry Pi'mizde Chia'yı başlatmaktır (initialize).</p>
+<p>Bu komut, Chia mainnet'ine bağlantıyı güvence altına almak için gereken bazı temel şeyleri oluşturur.</p>
+<pre><code>chia init
+</code></pre>
+<p><strong>5.</strong> Bu son komutun adımları, Chia cüzdanınız için anahtar oluşturup oluşturmadığınıza bağlı olarak farklılık gösterir.</p>
+<p>Chia için zaten oluşturulmuş anahtarlarınız varsa, lütfen <strong>a) adımını</strong> takip edin. Alternatif olarak, yeni anahtarlar oluşturmak istiyorsanız, <strong>b) adımını</strong> takip etmelisiniz.</p>
+<p>Chia anahtarı, sabit diskinizi plotlarken oluşturmuş olmanız gereken benzersiz 24 kelimelik ifadedir.</p>
+<p><strong>a)</strong> Bu noktada, özel anahtarınızı oluşturan benzersiz 24 kelimeye zaten sahipseniz, bunları Raspberry Pi Chia farmer'ınıza girebilirsiniz.</p>
+<p><strong>1.</strong> Mevcut anahtarlarınızı Chia'ya eklemek için, cihazınızda aşağıdaki komutu çalıştırın.</p>
+<pre><code>chia keys add
+</code></pre>
+<p><strong>2.</strong> Bu komutu çalıştırdıktan sonra, 24 kelimelik ifadeyi girmeniz istenecektir.</p>
+<p>Girdikten sonra, ifadeyi onaylamak için sadece <code>ENTER</code> tuşuna basmanız gerekiyor.</p>
+<p><strong>b)</strong> Alternatif olarak, Chia için yepyeni bir özel anahtar oluşturmak amacıyla Raspberry Pi'nizi de kullanabilirsiniz. Bu süreç basittir ve Chia'ya yeni başlıyorsanız kullanışlıdır.</p>
+<p>Sabit diskinizi plotlamak istediğinizde bundan oluşturulan ifadeyi kullandığınızdan emin olun.</p>
+<p><strong>1.</strong> Yeni bir özel anahtar oluşturmak için, Raspberry Pi'nizde yapmanız gereken tek şey aşağıdaki komutu çalıştırmaktır.</p>
+<p>Bu komut, Chia'ya yepyeni bir özel anahtar oluşturması gerektiğini söyleyecektir.</p>
+<pre><code>chia keys generate
+</code></pre>
+<p><strong>2.</strong> Özel anahtarınızı oluşturduktan sonra, muhtemelen bunu bir yere yedeklemek isteyeceksiniz. Bu anahtar birine Chia cüzdanınıza erişim verdiğinden, bunu <strong>asla kimseyle paylaşmadığınızdan</strong> emin olun.</p>
+<p>Kimsenin bu anahtara asla erişmesine gerek yoktur ve yalnızca Chia farmer'larınızı veya cüzdanınızı kurarken kullanılmalıdır.</p>
+<p>Anahtarlarınız için hatırlatıcı ifadeyi (mnemonic phrase) almak için, aşağıdaki komutu kullanmanız gerekecek.</p>
+<pre><code>chia keys show --show-mnemonic-seed
+</code></pre>
+<p>Aradığınız ifade, çıktının altındaki 24 gizli kelime olacaktır. Burada gösterilen diğer anahtarları görmezden gelmek güvenlidir, çünkü 24 kelimelik ifade bu anahtarları tekrar oluşturmak için kullanılır.</p>
+<p><strong>5.</strong> Anahtarlar oluşturulup her şey yapılandırıldığına göre, sonunda Raspberry Pi'mizde Chia farmer'ını başlatabiliriz.</p>
+<p>Chia farmer'ını başlatmak için, aşağıdaki komutu çalıştırmamız gerekiyor.</p>
+<pre><code>chia start farmer
+</code></pre>
+<h2>Chia Farm'ınıza Bir Plot Ekleme</h2>
+<p>Artık Raspberry Pi'nizde Chia farmer çalıştığına göre, farm'a bir plot ekleyebiliriz.</p>
+<p><strong>1.</strong> Devam etmeden önce, Raspberry Pi'nize bağlı, üzerinde zaten plotlar bulunan harici bir sabit diske ihtiyacınız olacak.</p>
+<p>Bir sabit diski plotlamak için Pi 4 kullanmak mümkün olsa da, nispeten küçük bir plot için bile epey zaman alacağından önerilmez.</p>
+<p>Daha önce bir Raspberry Pi'ye bir sürücü bağlamadıysanız, <a href="https://pimylifeup.com/raspberry-pi-mount-usb-drive/">bir USB sürücüsünü bağlama eğitimimizi</a> takip ettiğinizden emin olun.</p>
+<p><strong>2.</strong> Pi'nize bir sürücü bağlandığında, plotların konumunu bulmanız gerekecek.</p>
+<p>Raspberry Pi'nize otomatik olarak bağlanan herhangi bir sürücü &quot;<code>/mnt/</code>&quot; dizini içinde bulunmalıdır. Bu dizinin içeriğini <a href="https://pimylifeup.com/ls-command/">ls komutundan yararlanarak</a> listeleyebilirsiniz.</p>
+<pre><code>ls -l /media/pi/
+</code></pre>
+<p>Chia plotlarınızı kaydettiğiniz sürücüyü belirleyin ve dizin adını not edin.</p>
+<p><strong>3.</strong> Chia plotlarınıza giden tam yola sahip olduğunuzda, sonunda bunu Raspberry Pi farmer'ımıza ekleyebiliriz.</p>
+<p>Yapmanız gereken tek şey aşağıdaki komutu kullanmaktır. &quot;<code>[DIRECTORY]</code>&quot; kısmını tam yolla değiştirdiğinizden emin olun.</p>
+<pre><code>chia plots add -d [DIRECTORY]
+</code></pre>
+<p>Örneğin, plotlarımızı &quot;<code>/media/pi/pimylifeupplots/</code>&quot;a bağlamak için aşağıdaki komutu kullandık.</p>
+<pre><code>chia plots add -d /media/pi/pimylifeupplots
+</code></pre>
+<p><strong>4.</strong> Sisteminizde aşağıdaki komutu çalıştırarak Chia'nın plotlarınızı görebildiğini doğrulayabilirsiniz.</p>
+<p>Bu komut, Chia'ya plotlarınızın geçerliliğini kontrol edip doğrulaması gerektiğini söyleyecektir.</p>
+<pre><code>chia plots check
+</code></pre>
+<p>Bu süreç, sabit disklerinizdeki plot sayısına bağlı olarak biraz zaman alabilir. Sonunda aşağıda gösterdiğimize benzer bir mesaj görmelisiniz.</p>
+<pre><code>chia.plotting.check_plots        : INFO     Summary
+chia.plotting.check_plots        : INFO     Found 1 valid plots, total size 0.09898 TiB
+chia.plotting.check_plots        : INFO     1 plots of size 32
+</code></pre>
+<h2>Raspberry Pi'niz Açıldığında Chia'yı Başlatma</h2>
+<p>Artık Raspberry Pi'nizde bir Chia farmer çalışır durumda olduğuna göre, muhtemelen açılışta başlamasını isteyeceksiniz.</p>
+<p>Chia'nın açılışta başlaması için, bunu ele alacak bir sistem dosyası oluşturmamız gerekecek.</p>
+<p><strong>1.</strong> Cihazınızda aşağıdaki komutu çalıştırarak yeni servisimizi yazmaya başlayalım.</p>
+<p>Kullanımı nispeten kolay olduğundan nano metin editörünü kullanıyoruz.</p>
+<pre><code>sudo nano /etc/systemd/system/chiafarmer.service
+</code></pre>
+<p><strong>2.</strong> Bu dosyanın içine, aşağıdaki metin satırlarını girmemiz gerekiyor. Bu satırlar servisimizi ve Raspberry Pi'mizde Chia farmer'ımızı nasıl başlatıp durdurmak istediğimizi tanımlar.</p>
+<pre><code>[Unit]
+Description=Chia Farmer
+Wants=network-online.target
+After=network.target network-online.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=forking
+Restart=always
+RestartSec=1
+User=pi
+
+Environment=PATH=/home/pi/chia-blockchain/venv/bin:${PATH}
+ExecStart=/usr/bin/env chia start farmer -r
+ExecStop=/usr/bin/env chia stop all -d
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p><strong>3.</strong> Bu dosyayı yazmayı bitirdikten sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedebilirsiniz.</p>
+<p><strong>4.</strong> Servis artık oluşturulduğuna göre, aşağıdaki komutu çalıştırarak etkinleştirebiliriz.</p>
+<p>Servisi etkinleştirerek, servisimiz başladığında otomatik olarak başlatılacaktır.</p>
+<pre><code>sudo systemctl enable chiafarmer
+</code></pre>
+<p><strong>5.</strong> Bu rehberde daha önceden hâlâ Chia çalıştırıyorsanız, şu anda çalışan düğümleri (node) durdurmalıyız. Bunun nedeni, bir sonraki adımda servisimizi başlattığımızda sorunlara neden olabilmesidir.</p>
+<p>Aşağıdaki komutu çalıştırarak şu anda çalışan tüm Chia işlemlerini sonlandırabilirsiniz.</p>
+<pre><code>chia stop all -d
+</code></pre>
+<p><strong>6.</strong> Yeni Chia servisimizi başlatmak için, aşağıdaki komutu kullanmamız gerekiyor.</p>
+<p>Aşağıdaki komutu kullanarak, servis Pi'mizde Chia farmer'ını başlatacaktır.</p>
+<pre><code>sudo systemctl start chiafarmer
+</code></pre>
+<p><strong>7.</strong> Raspberry Pi'nizde Chia'nın başarıyla başlatıldığını aşağıdaki komutu kullanarak kontrol edebilirsiniz.</p>
+<p>Bu komut, servisin mevcut durumunu alacaktır.</p>
+<pre><code>sudo systemctl status chiafarmer
+</code></pre>
+<p>Her şey doğru çalıştıysa, durumun &quot;<code>Active: active (running)</code>&quot; olarak işaretlendiğini görmelisiniz.</p>
+<h2>Raspberry Pi'de Chia'nın Durumunu Kontrol Etme</h2>
+<p>Zaman zaman Chia farm'ınızın durumunu kontrol etmek isteyebilirsiniz. Aşağıdaki adımlar, bunu komut satırını kullanarak nasıl yapabileceğinizi gösterecek.</p>
+<p><strong>1.</strong> Chia blok zinciri sanal ortamımızda olduğumuzdan emin olmamız gerekiyor. Bunu yapmak için, önce rehberde daha önce klonladığımız depoya geçin.</p>
+<p>Cihazınızda aşağıdaki komutu çalıştırarak klonladığımız dizine geçin.</p>
+<pre><code>cd ~/chia-blockchain/
+</code></pre>
+<p><strong>2.</strong> Şimdi, sanal ortamı etkinleştirmek için Raspberry Pi'nizde aşağıdaki komutu çalıştırın.</p>
+<p>Chia komutlarını çalıştırmak için bu ortamda olmamız gerekiyor.</p>
+<pre><code>. ./activate
+</code></pre>
+<p><strong>3.</strong> Artık sanal ortamda olduğumuza göre, sonunda farm'ınızın durumunu kontrol etmek için bazı Chia çağrıları yapabiliriz.</p>
+<p>Kullanacağımız ilk komut, Raspberry Pi'nizde çalışan Chia düğümünün durum güncellemesini verecek.</p>
+<p>Bu komut, blok zincirinin durumunu, tahmini ağ alanını ve şu anda bağlı olduğunuz düğümler gibi diğer bilgileri size söyleyecektir.</p>
+<pre><code>chia show -s -c
+</code></pre>
+<p>Aşağıdaki ekran görüntüsünde, düğümümüzün Chia mainnet'inin geri kalanıyla hâlâ senkronize olduğunu görebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/08/Raspberry-Pi-Chia-Blockchain-01-Show-status-of-node.png" alt="Raspberry Pi Chia Blok Zinciri - Düğüm Durumunu Gösterme" /></p>
+<p><strong>4.</strong> Ayrıca Raspberry Pi'mizin farming yaptığı Chia plotlarının durumunu da kontrol edebiliriz. Bu, Pi'nizin işlediği plotların sayısını ve boyutunu bilmenizi sağlayacaktır.</p>
+<p>Bunu farm'ın durumunu ve farming yaptığınız Chia coin'lerinin sayısını kontrol etmek için de kullanabilirsiniz.</p>
+<p>Farm'ınızın bir özetini almak için aşağıdaki komutu çalıştırın.</p>
+<pre><code>chia farm summary
+</code></pre>
+<p>Aşağıda, komut satırımıza çıktı olarak verilen özeti görebilirsiniz. Chia düğümümüzün hâlâ senkronize olduğunu görebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/08/Raspberry-Pi-Chia-Blockchain-02-Get-Farm-Summary.png" alt="Raspberry Pi Chia Farm Özeti" /></p>
+<h2>Chia Farmer'ınızı Güncelleme</h2>
+<p>Çoğu kripto para birimi gibi, Chia sürekli olarak güncellenip üzerinde çalışılmaktadır. Bu nedenle, zaman zaman Chia'nın mevcut en son sürümünü kullandığınızdan emin olmak isteyeceksiniz.</p>
+<p>Aşağıdaki adımlar, Raspberry Pi'nizde çalışan Chia farmer'ını nasıl güncelleyeceğinizi gösterecek.</p>
+<p><strong>1.</strong> Öncelikle, dosyasını güncellemek üzere olduğumuzdan, şu anda çalışan herhangi bir Chia oturumunu durdurmamız gerekiyor.</p>
+<p>Servisimizi kullanıyorsanız, bu aşağıdaki komutu çalıştırmak kadar basittir.</p>
+<pre><code>sudo systemctl stop chiafarmer
+</code></pre>
+<p><strong>2.</strong> Chia farmer artık durduğuna göre, her şeyi güncellemeye geçebiliriz.</p>
+<p>Bu süreci başlatmak için, önce Chia blok zinciri kodunu klonladığımız dizine geri dönmemiz gerekiyor.</p>
+<pre><code>cd ~/chia-blockchain
+</code></pre>
+<p><strong>3.</strong> Şimdi depoyu en son sürüme güncellemek için git kullanabiliriz.</p>
+<p>Kullanmamız gereken komut &quot;<code>pull</code>&quot; olarak adlandırılır. Bu, depodaki kodun en son sürümüne sahip olduğumuzdan emin olacaktır.</p>
+<pre><code>git pull
+</code></pre>
+<p>&quot;<code>Already up to date.</code>&quot; metnini görürseniz, zaten en son sürüme sahip olduğunuzdan <strong>7. adıma geçebilirsiniz</strong>.</p>
+<p><strong>4.</strong> Yeni bir güncelleme aldıysanız, her şeyi güncellemek için birkaç komut çalıştırmamız gerekecek.</p>
+<p>Yapmamız gereken ilk şey kurulum betiğini çalıştırmaktır. Bu betik, Chia Python paketlerini en son sürümlerine güncelleyecektir.</p>
+<pre><code>sh install.sh
+</code></pre>
+<p><strong>5.</strong> Ardından, Chia deposuyla birlikte gelen sanal ortamı yeniden etkinleştirmemiz gerekiyor.</p>
+<p>Bunu yapmak için, sadece aşağıdaki komutu çalıştırmanız gerekiyor.</p>
+<pre><code>. ./activate
+</code></pre>
+<p><strong>6.</strong> Bir sonraki adımımız, Chia initialize komutunu tekrar çalıştırmaktır.</p>
+<p>Bu komut, yükseltme gerektiren tüm Chia dosyalarını mevcut en son sürüme taşıyacaktır (migrate).</p>
+<pre><code>chia init
+</code></pre>
+<p><strong>7.</strong> Her şey tamamlandığına göre, sonunda Raspberry Pi'mizde Chia farmer'ını tekrar başlatabiliriz.</p>
+<p>Bu rehberde daha önce oluşturduğumuz servisi kullanıyorsanız, bu aşağıdaki komutu çalıştırmak kadar basittir.</p>
+<pre><code>sudo systemctl start chiafarmer
+</code></pre>
+<h2>Sonuç</h2>
+<p>Bu eğitim boyunca, Raspberry Pi'nizi bir Chia farmer'ı olarak nasıl kuracağınızı öğrenmiş olacaksınız.</p>
+<p>Pi, nispeten düşük miktarda güç tüketirken plotları sürdürmek için yeterli kaynaklara sahip olduğundan mükemmel bir Chia farmer'ı olarak çalışır.</p>
+<p>Raspberry Pi'nizde Chia kurmakta herhangi bir sorunla karşılaştıysanız, lütfen aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-chia.html&amp;text=Raspberry+Pi+ile+Chia+Farming+Nas%C4%B1l+Yap%C4%B1l%C4%B1r" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-chia.html&amp;text=Raspberry+Pi+ile+Chia+Farming+Nas%C4%B1l+Yap%C4%B1l%C4%B1r" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-chia.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-chia.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-chia.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-chia.html&amp;title=Raspberry+Pi+ile+Chia+Farming+Nas%C4%B1l+Yap%C4%B1l%C4%B1r" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi+ile+Chia+Farming+Nas%C4%B1l+Yap%C4%B1l%C4%B1r%20codenfast.com%2Fposts%2Fraspberry-pi-chia.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

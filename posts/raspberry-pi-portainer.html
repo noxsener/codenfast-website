@@ -1,0 +1,346 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;ye Portainer Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Docker konteynerlerinizi kolayca yönetin"/>
+    <meta property="og:title" content="Raspberry Pi&#39;ye Portainer Kurulumu"/>
+    <meta property="og:description"
+          content="Docker konteynerlerinizi kolayca yönetin"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-portainer.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-portainer.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;ye Portainer Kurulumu"/>
+    <meta name="twitter:description"
+          content="Docker konteynerlerinizi kolayca yönetin"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'ye Portainer Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-portainer.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-01-Creating-an-administrator-user.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-01-Creating-an-administrator-user.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-02-Choose-Docker-Enviornment.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-02-Choose-Docker-Enviornment.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-03-Portainer-Web-UI-Opened.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-03-Portainer-Web-UI-Opened.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-04-Open-Docker-Endpoint.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-04-Open-Docker-Endpoint.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-05-Change-to-Containers-Tab.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-05-Change-to-Containers-Tab.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-06-Container-List-Overview.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-06-Container-List-Overview.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-07-Create-New-Containers.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-07-Create-New-Containers.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'ye Portainer Kurulumu","description":"Docker konteynerlerinizi kolayca yönetin","image":["https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:59:10.517999+03:00","dateModified":"2026-08-03T12:59:10.518029+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;ye Portainer Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-portainer/">PiMyLifeUp - Installing Portainer to the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu rehberde, Portainer'ı Raspberry Pi'nize nasıl kuracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-Thumbnail.jpg" alt="Raspberry Pi Portainer" /></p>
+<p>Portainer, hafif ve açık kaynaklı bir konteyner yönetim aracıdır.</p>
+<p>Bu aracı kullanarak, Raspberry Pi'nizde çalışan Docker konteynerlerinizi kolayca oluşturabilir, yönetebilir ve silebilirsiniz.</p>
+<p>Yazılım yalnızca kullanımı kolay değil, aynı zamanda tamamen bir <a href="https://www.docker.com/resources/what-container">Docker konteyneri</a> içinde çalıştığı için kurulumu da son derece kolaydır.</p>
+<p><a href="https://www.portainer.io/">Portainer</a> nispeten düşük yük ile çalışacak şekilde tasarlandığından, yazılımı kullanmanın performans üzerinde fazla bir etkisi yoktur.</p>
+<p>Komut satırıyla uğraşmadan Docker konteynerlerinizi yönetmenin mükemmel bir yoludur.</p>
+<h2>Raspberry Pi'nizi Portainer için Hazırlama</h2>
+<p>Raspberry Pi'nizi Portainer çalıştırmaya hazırlamak için tamamlamamız gereken birkaç görev var.</p>
+<p>Yazılımın çalışır hale getirilmesi basit olsa da, onu yepyeni temiz bir kurulumda çalıştıramazsınız.</p>
+<p><strong>1.</strong> İlk göreviniz <a href="https://pimylifeup.com/raspberry-pi-docker/">Raspberry Pi'nize Docker kurmaktır</a>.</p>
+<p>Rehberimiz size Docker'ı nasıl kuracağınızı ve Raspberry Pi için nasıl doğru şekilde yapılandıracağınızı gösterir.</p>
+<p>Docker'ı kurduktan sonra, bir sonraki adıma güvenle geçebilirsiniz.</p>
+<p><strong>2.</strong> Docker zaten kuruluysa, <a href="https://pimylifeup.com/raspberry-pi-update/">Pi'mizin tamamen güncel olduğundan</a> emin olalım.</p>
+<p>Hem paket listesini hem de paketlerin kendisini güncellemek için cihazınızda aşağıdaki iki komutu çalıştırabilirsiniz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p>Güncelleme tamamlandığında, Portainer'ı Raspberry Pi üzerinde çalıştırmaya geçebiliriz.</p>
+<h2>Portainer'ı Raspberry Pi'ye Kurma</h2>
+<p>Raspberry Pi'mizi hazırladığımıza göre, sonunda Portainer yazılımını kurabiliriz.</p>
+<p>Neyse ki bizim için, Portainer bir Docker konteyneri içinde çalıştığından bu çok basit bir süreçtir.</p>
+<p><strong>1.</strong> Docker kurulup yapılandırıldığına göre, onu kullanarak Portainer'ı Raspberry Pi'mize kurabiliriz.</p>
+<p>Portainer, <a href="https://hub.docker.com/r/portainer/portainer-ce">resmi Docker hub'da</a> bir Docker konteyneri olarak mevcut olduğundan, aşağıdaki komutu kullanarak en son sürümü çekebiliriz.</p>
+<pre><code>docker pull portainer/portainer-ce:latest
+</code></pre>
+<p>Bu komut, docker imajını cihazınıza indirecek ve bu da onu çalıştırmamıza olanak tanıyacaktır.</p>
+<p>Pull isteğinin sonunda &quot;<code>:latest</code>&quot; kullanarak, konteynerin en son sürümünü indirmesini açıkça istiyoruz.</p>
+<p><strong>2.</strong> Docker, Portainer imajını Raspberry Pi'nize indirdikten sonra, aşağıdaki komutu çalıştırarak &quot;<code>portainer_data</code>&quot; adlı bir Docker volume'ü oluşturmak isteyeceğiz.</p>
+<p>Bu volume, tüm Portainer verilerinizin cihazınızda saklanacağı yerdir. Burada yaptığımız gibi isimlendirilmiş bir volume kullanmanın bazı avantajları vardır, bunlar esas olarak performansla ilgilidir.</p>
+<pre><code>docker volume create portainer_data
+</code></pre>
+<p><strong>3.</strong> Docker volume oluşturulduktan sonra, artık terminalde aşağıdaki komutu çalıştırarak Portainer'ı başlatabiliriz.</p>
+<p>Bu komut, Docker'a daha önce indirdiğimiz Portainer konteynerini, ona sağladığımız verileri kullanarak başlatmasını söyler.</p>
+<p>Bu seçeneklerin ne yaptığıyla ilgileniyorsanız, aşağıdaki hızlı listeyi okuduğunuzdan emin olun, aksi takdirde Portainer'ı çalışır hale getirmek için komutu Raspberry Pi'nizde çalıştırmanız yeterlidir.</p>
+<ul>
+<li>
+<p><code>-d</code><strong>:</strong> Bu seçenek, Docker'a Portainer Raspberry Pi'nizde çalışır hale geldikten sonra komut satırından ayrılıp arka planda çalışmasını söyler.</p>
+</li>
+<li>
+<p><code>-p 8000:8000</code><strong>:</strong> Bu, yazılımdan 8000 portunu açar. Yazılım bunu Portainer ile edge agent'ları arasında bir SSH tüneli kurmak için kullanır.</p>
+</li>
+<li>
+<p><code>-p 9443:9443</code><strong>:</strong> Bu seçenekle, 9443 portunu açığa çıkarıyoruz. Bu belirli port, Portainer'ın web arayüzü tarafından kullanılır ve yazılıma erişirken kullanmanız gereken porttur.</p>
+</li>
+<li>
+<p><code>--restart=always</code><strong>:</strong> Bu seçeneği kullanarak, Docker'ın Portainer çökerse Raspberry Pi'nizde otomatik olarak yeniden başlatmasını sağlayabilirsiniz.</p>
+</li>
+<li>
+<p><code>-v /var/run/docker.sock:/var/run/docker.sock</code><strong>:</strong> Bu, host makinenizin Docker socket'ini mount eder, böylece Portainer onunla etkileşim kurabilir. Portainer'ın konteynerlerinizi yönetmek için kullanacağı şey budur.</p>
+</li>
+<li>
+<p><code>-v portainer_data:/data</code><strong>:</strong> Bu seçenekle, daha önce oluşturduğumuz &quot;<code>portainer_data</code>&quot; adlı isimlendirilmiş volume'ü konteyner içindeki &quot;<code>/data</code>&quot; yoluna eşliyoruz.</p>
+</li>
+<li>
+<p><code>portainer/portainer-ce:latest:</code> Bu son satırla, Docker'a Pi'mizde Portainer'ı başlatmak için kullanmak istediğimiz imajı söylüyoruz.</p>
+<p>docker run -d -p 8000:8000 -p 9443:9443 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest</p>
+</li>
+</ul>
+<h2>Portainer'ın Web Kullanıcı Arayüzünü Kullanma</h2>
+<p>Bu bölüm, Raspberry Pi'nizde çalışan Portainer web arayüzüne nasıl erişebileceğinizi gösterecek.</p>
+<p>Ayrıca size yazılımın ilk kurulum deneyimini nasıl tamamlayacağınızı da göstereceğiz.</p>
+<h3>Web Arayüzüne Erişme</h3>
+<p>Yazılımla herhangi bir şey yapabilmeden önce, web arayüzüne bağlanmanız gerekecek.</p>
+<p>Bunu yapmak için, seçtiğiniz bir <a href="https://pimylifeup.com/category/guides/browsers/">web tarayıcısına</a> ihtiyacınız olacak ve <a href="https://pimylifeup.com/raspberry-pi-ip-address/">Raspberry Pi'nizin IP adresini</a> bilmeniz gerekecek.</p>
+<p><strong>1.</strong> Raspberry Pi'nizin yerel IP adresini bilmiyorsanız, onu almak nispeten basittir.</p>
+<p><a href="https://pimylifeup.com/hostname-command/">hostname komutunu kullanarak</a>, Pi'mize atanan yerel IP'yi yazdırmasını sağlayabiliriz.</p>
+<pre><code>hostname -I
+</code></pre>
+<p>Bu komutu kullanırken büyük harf <code>I</code> kullandığınızdan emin olun.</p>
+<p><strong>2.</strong> Şimdi, Portainer'a erişmek için yapmanız gereken tek şey tarayıcınızda aşağıdakine gitmektir.</p>
+<p>Bu adreste, sonunda &quot;<code>:9443</code>&quot; portuna referans verdiğimizi görebilirsiniz. Bu, Portainer'ın kendisini kullanılabilir yaptığı porttur.</p>
+<pre><code>https://[PIIPADRESI]:9443
+</code></pre>
+<p>&quot;<code>[PIIPADRESI]</code>&quot; kısmını Raspberry Pi'nizin yerel IP'si ile değiştirdiğinizden emin olun. Bu IP'yi bir önceki adımda almış olmalısınız.</p>
+<h3>Raspberry Pi'nizde Portainer'ı Yapılandırma</h3>
+<p>Portainer web arayüzüne ilk bağlandığınızda, bazı ilk kurulum adımlarını yapmanız gerekecek.</p>
+<p>Endişelenmeyin, çünkü bunlar takip etmesi son derece basittir ve istediğimiz gibi çalışmasını sağlamaya yardımcı olur.</p>
+<p><strong>1.</strong> Portainer'ın web arayüzünü ilk başlattığınızda, bir admin hesabı oluşturmanız gerekecek.</p>
+<p>Bu admin hesabını oluşturmak için, ona bir kullanıcı adı vermeniz gerekiyor (<strong>1.</strong>).</p>
+<p>Ardından, bu yeni hesaba bir parola atamanız gerekecek (<strong>2.</strong>). Portainer, en az 12 karakter uzunluğunda parolalara sahip olmanızı gerektirir.</p>
+<p>İstediğiniz kullanıcı adını ve parolayı ayarladıktan sonra, oluşturmayı tamamlamak için &quot;<code>Create user</code>&quot; butonuna <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-01-Creating-an-administrator-user.jpg" alt="Bir yönetici kullanıcı oluşturma" /></p>
+<p><strong>2.</strong> Şimdi Portainer'ın hangi konteyner ortamını yönetmesini istediğimizi seçmemiz gerekiyor.</p>
+<p>Bizim durumumuzda, <code>Docker</code> seçeneğini seçmemiz gerekiyor (<strong>1.</strong>).</p>
+<p>Bu seçeneği seçtikten sonra, <code>Connect</code> butonuna <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-02-Choose-Docker-Enviornment.jpg" alt="Portainer Docker Ortamını Seçme" /></p>
+<p><strong>3.</strong> Artık Raspberry Pi'nizde Portainer'ı başarıyla çalışır hale getirmiş olmalısınız.</p>
+<p>Şimdi cihazınızda çalışan Docker konteynerlerini yönetmek için kullanabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-03-Portainer-Web-UI-Opened.jpg" alt="Raspberry Pi Portainer Web UI Açıldı" /></p>
+<h3>Portainer Arayüzünün Temel Kullanımı</h3>
+<p>Bu bölüm, yeni bir Docker konteyneri oluşturmak için Portainer arayüzünü kullanmanın temellerini gösterecek.</p>
+<p>Bu adımları takip ederek, Portainer konteyner imajını Raspberry Pi'nize indirecek ve kuracaktır.</p>
+<p><strong>1.</strong> Portainer arayüzüne eriştiğinizde, aşağıdaki gibi bir ekran görmelisiniz.</p>
+<p>Raspberry Pi Docker kurulumumuzun bir Portainer endpoint'i olarak listelendiğini görebilirsiniz. Ayarlarını açmak için bu endpoint'e <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-04-Open-Docker-Endpoint.jpg" alt="Docker Endpoint Açma" /></p>
+<p><strong>2.</strong> Burada, sisteminizde çalışan Docker'ın hızlı bir özetini göreceksiniz.</p>
+<p>Bu ekran, sisteminizdeki konteyner, volume, imaj ve ağ sayısını listeleyecektir.</p>
+<p>Raspberry Pi'nizde hangi konteynerlerin çalıştığını görmek için, kenar çubuğundaki &quot;<code>Containers</code>&quot; seçeneğine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-05-Change-to-Containers-Tab.jpg" alt="Containers Sekmesine Geçme" /></p>
+<p><strong>3.</strong> Portainer şimdi cihazınızda şu anda kurulu olan konteynerlerin bir listesini sunacaktır (<strong>1.</strong>).</p>
+<p>Bir konteyner seçtiğinizde, konteyneri başlatmak, durdurmak veya sonlandırmak isteyip istemediğinizi seçerek onu kontrol edebilirsiniz (<strong>2.</strong>).</p>
+<p>Yepyeni bir konteyner eklemek isterseniz, &quot;<code>Add container</code>&quot; butonuna <code>tıklayabilirsiniz</code> (<strong>3.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-06-Container-List-Overview.jpg" alt="Konteyner Listesi Genel Görünümü" /></p>
+<p><strong>3.</strong> Son olarak, bu ekran size Portainer içinde yeni konteynerler oluşturmanızı sağlayacak olan ekrandır.</p>
+<p>Bu seçeneği kullanarak, çeşitli ayarlar seçebilirsiniz.</p>
+<p>Önce, bu konteynere vermek istediğiniz ismi tanımlamanız gerekir (<strong>1.</strong>).</p>
+<p>Ardından, Portainer'ın Raspberry Pi'nize çekmesini istediğiniz imajı seçmeniz gerekir (<strong>2.</strong>).</p>
+<p>Docker konteynerinizin kullanmasını istediğiniz ağ portlarını bile ayarlamak mümkündür (<strong>3.</strong>).</p>
+<p>Ayrıca, bu konteyneri Portainer web arayüzü içinde kimin yönetebileceğini de kontrol edebilirsiniz (<strong>4.</strong>).</p>
+<p>Son olarak, sayfanın altındaki kutuyu kullanarak ayarlayabileceğiniz çeşitli gelişmiş seçenekler vardır (<strong>5.</strong>). Muhtemelen en çok yapılandıracağınız şey &quot;<code>Restart Policy</code>&quot; olacaktır.</p>
+<p>Bunu kullanarak, Raspberry Pi'niz yeniden başlatıldığında docker konteynerinizin otomatik olarak yeniden başlatılmasını sağlayabilirsiniz.</p>
+<p>Yeni Docker konteyner ayarlarınızın tümünden memnun olduğunuzda, &quot;<code>Deploy the container</code>&quot; butonuna <code>tıklayabilirsiniz</code> (6.)</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/03/Raspberry-Pi-Portainer-07-Create-New-Containers.jpg" alt="Portainer'da Raspberry Pi için Yeni Konteynerler Oluşturma" /></p>
+<h2>Sonuç</h2>
+<p>Bu noktada, artık Raspberry Pi'nizde Portainer'ı başarıyla çalışır hale getirmiş olmalısınız.</p>
+<p>Portainer, Docker konteynerlerinizi kolayca yönetmenizi sağlayan kullanışlı bir yazılım parçasıdır.</p>
+<p>Web arayüzünü kullanarak, konteynerlerinizi oluşturabilir, düzenleyebilir ve silebilirsiniz.</p>
+<p>Raspberry Pi'nizde Portainer'ı çalıştırmayla ilgili herhangi bir sorun yaşarsanız, lütfen aşağıya yorum bırakın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-portainer.html&amp;text=Raspberry+Pi%27ye+Portainer+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-portainer.html&amp;text=Raspberry+Pi%27ye+Portainer+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-portainer.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-portainer.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-portainer.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-portainer.html&amp;title=Raspberry+Pi%27ye+Portainer+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27ye+Portainer+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-portainer.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

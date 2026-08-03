@@ -1,0 +1,429 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;ye Proxmox Nasıl Kurulur - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Kullanışlı bir web arayüzüne sahip hipervizör"/>
+    <meta property="og:title" content="Raspberry Pi&#39;ye Proxmox Nasıl Kurulur"/>
+    <meta property="og:description"
+          content="Kullanışlı bir web arayüzüne sahip hipervizör"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-proxmox.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-proxmox.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Proxmox-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;ye Proxmox Nasıl Kurulur"/>
+    <meta name="twitter:description"
+          content="Kullanışlı bir web arayüzüne sahip hipervizör"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Proxmox-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'ye Proxmox Nasıl Kurulur","item":{"@id":"https://codenfast.com/posts/raspberry-pi-proxmox.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Proxmox-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Proxmox-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Proxmox-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Proxmox-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Proxmox-03-Set-Postfix-Choice-to-Local.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Proxmox-03-Set-Postfix-Choice-to-Local.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Proxmox-04-Set-System-mail-name.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Proxmox-04-Set-System-mail-name.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Proxmox-01-Login-to-Proxmox-VE.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Proxmox-01-Login-to-Proxmox-VE.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Proxmox-02-Access-Web-Interface.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Proxmox-02-Access-Web-Interface.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'ye Proxmox Nasıl Kurulur","description":"Kullanışlı bir web arayüzüne sahip hipervizör","image":["https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Proxmox-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T12:01:06.703181+03:00","dateModified":"2026-08-03T12:01:06.703214+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;ye Proxmox Nasıl Kurulur</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-proxmox/">PiMyLifeUp - How to Install Proxmox on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'ye Proxmox Sanal Ortamını nasıl kuracağınızı öğreneceksiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Proxmox-Thumbnail.jpg" alt="Raspberry Pi Proxmox" /></p>
+<p><a href="https://www.proxmox.com/">Proxmox Virtual Environment</a>, inanılmaz derecede güçlü ve kullanışlı bir web arayüzüne sahip açık kaynaklı bir sanallaştırma platformudur.</p>
+<p>Yerleşik web arayüzünü kullanarak Raspberry Pi'nizde sanal makineleri ve konteynerleri kolayca yönetebilirsiniz.</p>
+<p>Bu web arayüzü, yazılım tanımlı depolama, ağ ve daha fazlasını kurmanızı bile sağlar. Raspberry Pi'nizde sanal makineler çalıştırmak istiyorsanız, Proxmox başvurulacak çözümlerden biridir.</p>
+<p>Proxmox VE'deki son gelişmeler sayesinde, artık ARM sistemlerini destekliyor. Dezavantajı, ekibin ARM64 için herhangi bir derleme sağlamamasıdır. Neyse ki, Pi'miz gibi ARM sistemleri için destek ekleyen üçüncü taraf bir Proxmox çatalını (fork) kullanabiliriz.</p>
+<p>Dayandığımız çatal <a href="https://github.com/jiangcuo/pxvirt">Pxvirt adını taşıyor</a>. Bu çatal, Proxmox VE ile özellik paritesini korurken, Proxmox'un ARM üzerinde daha da iyi çalışmasına yardımcı olan birçok ek optimizasyon içeriyor.</p>
+<p>Bu rehberde kuracağınız Proxmox Sanal Ortamının sürümü, çalıştırdığınız Raspberry Pi OS sürümüne bağlıdır. Bookworm çalıştırıyorsanız, <strong>Proxmox 8</strong>'i alacaksınız. Raspberry Pi OS Trixie çalıştırıyorsanız, <strong>Proxmox 9</strong>'u çalıştırıyor olacaksınız.</p>
+<p>Raspberry Pi'nizde sanal makineler çalıştırırken, çok ağır bir şey kullanmaktan kaçının. Raspberry Pi'ler en güçlü makineler değildir, ancak birkaç küçük VM'yi idare edebilmeleri gerekir. Raspberry Pi 5 gibi daha yeni Pi'leri Proxmox ile kullanarak daha iyi bir deneyim yaşarsınız.</p>
+<p>Bu eğitimin çalışması için, <strong>Raspberry Pi OS Lite Bookworm veya Trixie'nin 64-bit sürümünü çalıştırıyor olmanız gerektiğini</strong> lütfen unutmayın. Başka işletim sistemleri kullanmanın çalışacağı garanti edilmez ve muhtemelen sorunlara neden olur.</p>
+<h2>Raspberry Pi'ye Proxmox Kurulumu</h2>
+<p>Aşağıdaki bölümlerde, Raspberry Pi'nize Proxmox sanal ortamını kurma sürecinde size rehberlik edeceğiz.</p>
+<p>Bu adımları Raspberry Pi OS Lite'ın temiz bir kurulumunu kullanarak takip etmenizi şiddetle tavsiye ederiz. Özellikle, 64-bit sürümü kullanıyor olmalısınız.</p>
+<p>İşletim sisteminin temiz olmayan bir sürümü, Proxmox kurulum sürecinin bozulmasına neden olabilir.</p>
+<h3>Proxmox İçin Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> Raspberry Pi'ye Proxmox kurmadan önceki ilk görevimiz, paket listesi önbelleğini güncellemek ve güncel olmayan tüm paketleri yükseltmektir.</p>
+<p>Terminalde aşağıdaki iki komutu kullanarak her iki görevi de gerçekleştirebilirsiniz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Bir sonraki adımınız, curl'un Pi'nizde kurulu olduğundan emin olmaktır. Proxmox'u kurmak için dayanacağımız PXVirt deposunun GPG anahtarını almak için curl kullanacağız.</p>
+<p>Bu paketi terminalde aşağıdaki komutu kullanarak kurabilirsiniz.</p>
+<pre><code>sudo apt install curl
+</code></pre>
+<p><strong>3.</strong> Bu eğitime devam etmeden önce, <a href="https://pimylifeup.com/raspberry-pi-static-ip-address/">Raspberry Pi'nizi statik bir IP adresi kullanacak şekilde</a> ayarlamalısınız.</p>
+<p>Bunu yapmanın en iyi yolu, yönlendiricinizde DHCP rezervasyonu kullanmaktır. Ancak, yönlendiricinize erişiminiz yoksa, bunu Raspberry Pi'niz üzerinden nasıl yapacağınızı gösteren bir rehberimiz var.</p>
+<h3>Proxmox İçin Hosts Dosyanızı Değiştirme</h3>
+<p><strong>4.</strong> Statik bir IP adresi ayarladıktan sonra, artık hosts dosyasını düzenlememiz gerekiyor. Proxmox, ana bilgisayar adınızın (hostname) Raspberry Pi'nizin IP adresine işaret etmesini bekler.</p>
+<p>Aşağıdaki komutu çalıştırarak Raspberry Pi'de <a href="https://pimylifeup.com/nano-text-editor/">nano metin editörünü kullanarak</a> hosts dosyasını düzenlemeye başlayabilirsiniz.</p>
+<pre><code>sudo nano /etc/hosts
+</code></pre>
+<p><strong>5.</strong> Hosts dosyası açıkken, aşağıdakine benzer bir satır görmelisiniz. Bizim ana bilgisayar adımız varsayılan &quot;<code>raspberrypi</code>&quot; olarak ayarlı, ama sizinki farklı olabilir.</p>
+<pre><code>127.0.0.1            raspberrypi
+</code></pre>
+<p>Bu satırı bulduktan sonra, &quot;<code>127.0.0.1</code>&quot; kısmını Raspberry Pi'nizin yerel IP adresiyle değiştirmek isteyeceksiniz.</p>
+<p>Bizim durumumuzda, Pi'mizin IP'si &quot;<code>192.168.0.32</code>&quot; olduğundan, satırı aşağıdaki gibi görünecek şekilde değiştirdik.</p>
+<pre><code>192.168.0.32            raspberrypi
+</code></pre>
+<p><strong>6.</strong> Bu değişiklikleri yaptıktan sonra, <code>CTRL</code> + <code>X</code>, <code>Y</code> ve ardından <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<p><strong>7.</strong> Değişikliklerimizin çalıştığını doğrulamak için, Raspberry Pi'mizin IP adresini yazdırmak amacıyla <a href="https://pimylifeup.com/hostname-command/">hostname komutunu kullanabiliriz</a>.</p>
+<pre><code>hostname --ip-address
+</code></pre>
+<p>Her şeyi doğru yapılandırdıysanız, Pi'nizin statik IP'si döndürülmelidir.</p>
+<pre><code>192.168.0.32
+</code></pre>
+<h3>Cloud Init'in Hosts Dosyasını Yönetmesini Durdurma</h3>
+<p><strong>8.</strong> Raspberry Pi OS'nin yeni sürümlerinde artık Cloud-init kurulu geliyor. Bu kurulumun bir parçası olarak, artık hosts dosyasını otomatik olarak güncelleyecek ve değişikliklerimizi kaldıracaktır.</p>
+<p>Neyse ki, &quot;<code>cloud.cfg</code>&quot; dosyasını değiştirip belirli bir seçeneği devre dışı bırakarak bu işlevselliği kapatabiliriz.</p>
+<pre><code>sudo nano /etc/cloud/cloud.cfg
+</code></pre>
+<p><strong>9.</strong> Bu dosyanın içinde, aşağıdaki satırı bulmak isteyeceksiniz. Bu, &quot;<code>cloud_init_modules</code>&quot; başlığı altında olacaktır.</p>
+<pre><code>  - update_etc_hosts
+</code></pre>
+<p>Bu satırı bulduktan sonra, yapmanız gereken tek şey önüne bir kare işareti (#) eklemektir. Bu, o satırı yorum satırı yapar ve yeniden başlattığınızda Cloud-Init'in değişikliklerimizi geçersiz kılmayacağı anlamına gelir.</p>
+<pre><code>#  - update_etc_hosts
+</code></pre>
+<p><strong>10.</strong> Bu değişikliği yaptıktan sonra, <code>CTRL</code> + <code>X</code>, <code>Y</code> ve ardından <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<h3>root Kullanıcısı İçin Bir Şifre Belirleme</h3>
+<p><strong>11.</strong> Raspberry Pi'mizde Proxmox kullanmak için yapmamız gereken bir sonraki şey, &quot;<code>root</code>&quot; kullanıcısı için bir şifre belirlemektir. Bu kullanıcı için bir şifre belirlemezsek, Proxmox web arayüzü üzerinden giriş yapamayız.</p>
+<p>Terminalde aşağıdaki komutu kullanarak root kullanıcısı için bir şifre belirleyebilirsiniz.</p>
+<pre><code>sudo passwd root
+</code></pre>
+<p><strong>12.</strong> Bir şifre belirlemek için, aşağıda gösterildiği gibi iki kez girmeniz gerekir. Bunun için güçlü bir şifre belirlemenizi öneririz.</p>
+<p>Bir şifre yöneticisi, güçlü şifreler oluşturmayı ve saklamayı önemli ölçüde kolaylaştırır.</p>
+<pre><code>New password:
+Retype new password:
+</code></pre>
+<h3>Raspberry Pi'nize Proxmox Port Deposunu Ekleme</h3>
+<p><strong>13.</strong> Sonunda <a href="https://github.com/jiangcuo/pxvirt">PXVirt deposunu</a> Raspberry Pi'mize ekleyebileceğimiz aşamaya geldik. Bu depo üçüncü bir taraf tarafından yönetilir ancak Raspberry Pi'nin donanımında çalışabilecek Proxmox sürümlerini kurmamızı sağlar.</p>
+<p>Bu süreçteki ilk adımımız, depo için GPG anahtarını eklemektir. Bu anahtar, paketlerin gerçekten PXVirt deposundan geldiğini doğrulamaya yardımcı olur.</p>
+<pre><code>curl -L https://mirrors.lierfang.com/pxcloud/lierfang.gpg | sudo tee /usr/share/keyrings/lierfang.gpg &gt;/dev/null
+</code></pre>
+<p><strong>14.</strong> Proxmox'u kurup çalıştırmamızı sağlayan asıl depoyu eklemeden önce, &quot;<code>/etc/os-release</code>&quot; dosyasını okumak için &quot;<code>source</code>&quot; komutunu kullanmalıyız. Bu, mevcut işletim sistemi kod adını kolayca almamızı ve yazdırmamızı sağlayacaktır.</p>
+<p>Bu dosyayı aşağıdaki komutu çalıştırarak okuyabilirsiniz.</p>
+<pre><code>source /etc/os-release
+</code></pre>
+<p><strong>15.</strong> GPG anahtarı eklendikten sonra, artık deponun kendisini kaynak listemize ekleyebiliriz.</p>
+<p>Depo bağlantısını &quot;<code>pveport.list</code>&quot; adlı bir dosyaya kaydetmek için aşağıdaki komutu kullanın.</p>
+<pre><code>echo &quot;deb [arch=arm64 signed-by=/usr/share/keyrings/lierfang.gpg] https://mirrors.lierfang.com/pxcloud/pxvirt $VERSION_CODENAME main&quot; | sudo tee  /etc/apt/sources.list.d/pveport.list
+</code></pre>
+<p><strong>16.</strong> Kaynak listesinde değişiklik yaptığımızdan, aşağıdaki komutu çalıştırarak paket listesi önbelleğini tekrar güncellememiz gerekiyor.</p>
+<p>Bunu yapmazsak, paket yöneticisi az önce eklediğimiz depodan haberdar olmayacaktır.</p>
+<pre><code>sudo apt update
+</code></pre>
+<h3>Proxmox İçin Pi'nizin Ağını Hazırlama</h3>
+<p>Sonraki birkaç bölüm, Proxmox kurulduktan sonra ağınızın çalışmaya devam etmesini sağlayacak. Bu adımlar olmadan, daha sonra ağ bağlantısını kaybedersiniz.</p>
+<h4>Network Manager'ın Ağınızı Yönetmesini Önleme</h4>
+<p><strong>17.</strong> Varsayılan olarak, Raspberry Pi OS, açılışta başlayacak şekilde kurulmuş ve ayarlanmış Network Manager ile birlikte gelir. Proxmox'un kendi ağ yapılandırmasını otomatik olarak yönetip bozmasını önlemek için bu servisi devre dışı bırakmamız gerekiyor.</p>
+<p>Bu süreçteki ilk adım, Raspberry Pi'niz açıldığında otomatik olarak başlamaması için &quot;networkmanager&quot; servisini devre dışı bırakmaktır.</p>
+<pre><code>sudo systemctl disable NetworkManager
+</code></pre>
+<p><strong>18.</strong> Ardından, terminalde aşağıdaki komutu kullanarak NetworkManager'ın çalışmasını durdurabiliriz.</p>
+<p>Bu, servisi hemen durduracak ve Raspberry Pi'nizi yeniden başlatma zahmetinden sizi kurtaracaktır.</p>
+<pre><code>sudo systemctl stop NetworkManager
+</code></pre>
+<p><strong>19.</strong> Son olarak, güvenlik önlemi olarak, NetworkManager servisine bir maske de uygulayacağız. Bir maske uygulamak, önce maske kaldırılmadan bu servisin yeniden etkinleştirilmesini önler.</p>
+<pre><code>sudo systemctl mask NetworkManager
+</code></pre>
+<h4>ifupdown2 ve Resolvconf Kurulumu</h4>
+<p><strong>20.</strong> Her şey hazır olduğuna göre, sonunda Raspberry Pi'ye Proxmox kurmaya başlayabiliriz.</p>
+<p>Sistemimize kurulması gereken ilk iki paket &quot;<code>ifupdown2</code>&quot;dir. Proxmox, ağı yönetmek için &quot;<code>ifupdown2</code>&quot; paketini kullanır.</p>
+<pre><code>sudo apt install ifupdown2
+</code></pre>
+<p>&quot;<code>ifupdown2</code>&quot; kurarken aşağıdaki hata mesajını görürseniz, aşağıdaki &quot;<code>a</code>&quot; ve &quot;<code>b</code>&quot; adımlarını takip etmeniz gerekecek. Aksi takdirde, doğrudan <strong>21. adıma</strong> geçin.</p>
+<pre><code>error: Another instance of this program is already running.
+</code></pre>
+<p><strong>a.</strong> &quot;<code>already running</code>&quot; hatasını aşmak için, ifupdown2'yi çalışır hale getirmek amacıyla bazı geçici çözüm adımları uygulamamız gerekecek.</p>
+<p>Bu adım, ifupdown2 paketinin kurulum sırasında aradığı geçici bir dosyayı silmeyi içerir.</p>
+<pre><code>sudo rm /tmp/.ifupdown2-first-install
+</code></pre>
+<p><strong>b.</strong> Geçici dosya kaldırıldıktan sonra, aşağıdaki komutu kullanarak ifupdown2 için kurulum sürecini tekrar çalıştırmamız gerekiyor.</p>
+<p>Bu, son kurulum adımlarının doğru şekilde yürütülmesini sağlayacaktır.</p>
+<pre><code>sudo apt install ifupdown2
+</code></pre>
+<h4>Ağ Arayüzlerinizi Değiştirme</h4>
+<p><strong>21.</strong> Bir sonraki adımımız, interfaces dosyasında bazı düzenlemeler yapmaktır. Bu değişiklikleri yapmazsak, Raspberry Pi'niz yeniden başladığında Proxmox bozulacaktır.</p>
+<p>Bu değişikliklerle, &quot;<code>eth0</code>&quot; arayüzümüzü manuel olarak ayarlayacak ve bağlantılarınızı köprüleyecek (bridge) ve sanal makineleriniz tarafından kullanılacak yeni bir ağ arayüzü oluşturacağız.</p>
+<p>Bu dosyayı yazmaya aşağıdaki komutu kullanarak başlayabilirsiniz.</p>
+<pre><code>sudo nano /etc/network/interfaces
+</code></pre>
+<p><strong>22.</strong> Bu dosyanın içine, dosyanın altına aşağıdaki satırları eklemek isteyeceksiniz. Bu arayüzlerin bazılarının otomatik olarak belirtilmiş olma ihtimali var, onları silin ve burada belirttiğimiz değerlerle değiştirin.</p>
+<p>Bu dosyayı doldururken iki değeri değiştirmeniz gerekiyor.</p>
+<ul>
+<li>
+<p><code>&lt;IPADDRESS&gt;</code>: Bu yer tutucuyu Raspberry Pi'nizin IP adresiyle değiştirin. Bu, erişilebilir olduğu yerel IP olmalıdır.</p>
+</li>
+<li>
+<p><code>&lt;GATEWAY&gt;</code><strong>:</strong> Bu yer tutucuyu ağ geçidinizin IP adresiyle değiştirin. Genellikle bu, yönlendiricinizin IP'si olacaktır. Çoğu durumda bu aslında &quot;<code>192.168.0.1</code>&quot; olacaktır.</p>
+</li>
+<li>
+<p><code>&lt;DNSSERVER&gt;</code><strong>:</strong> Bu yer tutucuyu tercih ettiğiniz bir DNS çözücünün IP adresiyle değiştirin. Örneğin, Cloudflare'in DNS hizmetini kullanmak isterseniz, bu yer tutucuyu &quot;<code>1.1.1.1 1.0.0.1</code>&quot; ile değiştirirsiniz. Bir diğer popüler seçenek Google'ınkidir, bu durumda &quot;<code>8.8.8.8 8.8.4.4</code>&quot; kullanırsınız.</p>
+<p>auto lo<br />
+iface lo inet loopback</p>
+<p>auto eth0<br />
+iface eth0 inet manual</p>
+<p>auto vmbr0<br />
+iface vmbr0 inet manual<br />
+address <IPADDRESS><br />
+gateway <GATEWAY><br />
+dns-nameservers <DNS><br />
+netmask 255.255.255.0<br />
+bridge-ports eth0<br />
+bridge-stp off<br />
+bridge-fd 0</p>
+</li>
+</ul>
+<p>Aşağıda, bu dosyayı doldurmayı bitirdikten sonra nasıl görünebileceğine dair bir örnek bulunmaktadır.</p>
+<pre><code>auto lo
+  iface lo inet loopback
+
+auto eth0
+  iface eth0 inet manual
+
+auto vmbr0
+iface vmbr0 inet manual
+        address 192.168.0.200
+        gateway 192.168.0.1
+        dns-nameservers 1.1.1.1 1.0.0.1
+        netmask 255.255.255.0
+        bridge-ports eth0
+        bridge-stp off
+        bridge-fd 0
+</code></pre>
+<p><strong>23.</strong> Bu dosyayı doldurduktan sonra, <code>CTRL</code> + <code>X</code>, <code>Y</code> ve ardından <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<p><strong>24.</strong> Bu ağ değişikliklerinin çalıştığından emin olmak için, terminalde aşağıdaki komutu çalıştırarak Raspberry Pi'nizi yeniden başlatın.</p>
+<pre><code>sudo reboot
+</code></pre>
+<h3>Raspberry Pi'ye Depodan Proxmox Kurulumu</h3>
+<p><strong>25.</strong> Son olarak, terminalde aşağıdaki komutu yazarak Proxmox VE'yi ve birkaç gerekli paketi kurabilirsiniz.</p>
+<p>Bu kurulum süreci birkaç dakika sürebilir, bu yüzden birkaç dakika beklemeye hazır olun. Ayrıca, kurulum sırasında geçmeniz gereken birkaç istem olacaktır.</p>
+<pre><code>sudo apt install proxmox-ve postfix open-iscsi pve-edk2-firmware-aarch64
+</code></pre>
+<p><strong>26.</strong> Kurulum sırasında, Postfix'i yapılandırmanız istenecektir. Bu menüde hareket etmek için <code>ARROW</code> (ok) tuşlarını, seçmek için <code>ENTER</code> tuşunu kullanabilirsiniz.</p>
+<p>Burada ne yaptığınızdan emin değilseniz, &quot;<code>Local only</code>&quot; seçeneğini seçin.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Proxmox-03-Set-Postfix-Choice-to-Local.jpg" alt="Postfix Kurulum Seçimini Yapma" /></p>
+<p><strong>27.</strong> Ardından, Postfix'in kullanacağı posta adını ayarlamanız istenecektir (<strong>1.</strong>).</p>
+<p>Yine, burada ne yaptığınızdan emin değilseniz, varsayılan adı bırakın ve devam etmek için <code>ENTER</code> tuşuna basın (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Proxmox-04-Set-System-mail-name.jpg" alt="Sistem Posta Adını Belirleme" /></p>
+<p><strong>28.</strong> Kurulumdan sonra aşağıdakine benzer bir hata mesajıyla karşılaşırsanız, kurulum komutunu tekrar çalıştırmayı deneyin.</p>
+<pre><code>Errors were encountered while processing:
+ pxvirt-spdk
+</code></pre>
+<h3>Proxmox Web Arayüzüne Erişim</h3>
+<p><strong>29.</strong> Proxmox Raspberry Pi'nize kurulumunu tamamladığında, web arayüzüne erişmek güvenli olmalıdır.</p>
+<p>Web arayüzüne erişmek için ihtiyacınız olan tek şey Raspberry Pi'nizin IP adresidir.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>30.</strong> IP adresiniz elinizde olduğuna göre, favori web tarayıcınızda aşağıdaki adrese gitmek isteyeceksiniz. Bağlanamıyorsanız, Raspberry Pi'nizi yeniden başlatmayı ve birkaç dakika beklemeyi deneyin.</p>
+<p>&quot;<code>&lt;IPADRESI&gt;</code>&quot; kısmını Raspberry Pi'nizin IP'siyle değiştirdiğinizden emin olun.</p>
+<pre><code>https://&lt;IPADRESI&gt;:8006
+</code></pre>
+<p><strong>31.</strong> Proxmox web arayüzü artık web tarayıcınızda açık olduğuna göre, hesabınıza giriş yapmanız gerekiyor.</p>
+<p>Kullanıcı adı olarak &quot;<code>root</code>&quot; yazarak başlayın ve ardından bu kullanıcı için daha önce belirlediğiniz şifreyi kullanın (<strong>1.</strong>).</p>
+<p>Bilgilerinizi doldurduktan sonra, &quot;<code>Login</code>&quot; düğmesine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Proxmox-01-Login-to-Proxmox-VE.jpg" alt="Raspberry Pi'de Proxmox VE'ye Giriş Yapma" /></p>
+<p><strong>32.</strong> Artık Proxmox web arayüzüne erişiminiz olmalıdır.</p>
+<p>Bu arayüz üzerinden yeni VM'ler kurmaya ve Proxmox VE'nin kendisini yapılandırmaya başlayabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2024/01/Raspberry-Pi-Proxmox-02-Access-Web-Interface.jpg" alt="Proxmox Gösterge Paneli" /></p>
+<h2>Sonuç</h2>
+<p>Umarız bu eğitimin bu aşamasında, artık Raspberry Pi'nize Proxmox VE kurulu olur.</p>
+<p>Bu aracı, Pi'nizde sanal makineler kurmak ve yönetmek için kullanabilirsiniz. Özellikle birden fazla sanal makineyle uğraşanlar için güçlü bir hipervizördür.</p>
+<p>Bu yazılımı cihazınızda çalıştırırken herhangi bir sorunla karşılaştıysanız, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-proxmox.html&amp;text=Raspberry+Pi%27ye+Proxmox+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-proxmox.html&amp;text=Raspberry+Pi%27ye+Proxmox+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-proxmox.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-proxmox.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-proxmox.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-proxmox.html&amp;title=Raspberry+Pi%27ye+Proxmox+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27ye+Proxmox+Nas%C4%B1l+Kurulur%20codenfast.com%2Fposts%2Fraspberry-pi-proxmox.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>
