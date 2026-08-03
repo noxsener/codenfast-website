@@ -1,0 +1,357 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;ye Asterisk Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Raspberry Pi destekli VOIP PBX sistemi"/>
+    <meta property="og:title" content="Raspberry Pi&#39;ye Asterisk Kurulumu"/>
+    <meta property="og:description"
+          content="Raspberry Pi destekli VOIP PBX sistemi"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-asterisk.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-asterisk.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2020/08/Raspberry-Pi-Asterisk-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;ye Asterisk Kurulumu"/>
+    <meta name="twitter:description"
+          content="Raspberry Pi destekli VOIP PBX sistemi"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2020/08/Raspberry-Pi-Asterisk-Thumbnail-NoWM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'ye Asterisk Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-asterisk.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/08/Raspberry-Pi-Asterisk-Thumbnail-NoWM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/08/Raspberry-Pi-Asterisk-Thumbnail-NoWM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/08/Raspberry-Pi-Asterisk-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/08/Raspberry-Pi-Asterisk-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/08/01-Select-RasPBX-Asterisk-image-to-write.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/08/01-Select-RasPBX-Asterisk-image-to-write.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/08/02-Select-target-drive-for-Asterisk.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/08/02-Select-target-drive-for-Asterisk.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/08/03-Begin-Asterisk-flashing-process.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/08/03-Begin-Asterisk-flashing-process.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/08/04-Raspi-Config-cant-determine-user.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/08/04-Raspi-Config-cant-determine-user.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/08/05-Go-to-Config-Advanced-Options.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/08/05-Go-to-Config-Advanced-Options.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/08/06-Raspi-Config-Expand-Filesystem.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/08/06-Raspi-Config-Expand-Filesystem.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/08/07-root-partition-successfully-resized.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/08/07-root-partition-successfully-resized.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/08/08-Select-geographic-area-for-timezone.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/08/08-Select-geographic-area-for-timezone.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/08/09-Select-city-or-region-for-accurate-timezone.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/08/09-Select-city-or-region-for-accurate-timezone.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/08/10-Create-account-on-FreePBX.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/08/10-Create-account-on-FreePBX.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/08/13-Click-to-Login-to-FreePBX-Administration.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/08/13-Click-to-Login-to-FreePBX-Administration.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/08/14-Login-to-Asterisk-web-manage-on-Raspberry-Pi.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/08/14-Login-to-Asterisk-web-manage-on-Raspberry-Pi.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/08/11-Set-default-Locales-for-Asterisk-on-Raspberry-Pi.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/08/11-Set-default-Locales-for-Asterisk-on-Raspberry-Pi.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2020/08/12-freePBX-interface-on-Raspberry-Pi-Asterisk.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2020/08/12-freePBX-interface-on-Raspberry-Pi-Asterisk.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'ye Asterisk Kurulumu","description":"Raspberry Pi destekli VOIP PBX sistemi","image":["https://pimylifeup.com/wp-content/uploads/2020/08/Raspberry-Pi-Asterisk-Thumbnail-NoWM.jpg"],"datePublished":"2026-08-03T15:30:17.033681+03:00","dateModified":"2026-08-03T15:30:17.033712+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;ye Asterisk Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-asterisk/">PiMyLifeUp - Installing Asterisk on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu projede, Asterisk'i Raspberry Pi'ye nasıl kuracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/08/Raspberry-Pi-Asterisk-Thumbnail.jpg" alt="Raspberry Pi Asterisk" /></p>
+<p>Asterisk, Raspberry Pi'nin sınırlı donanımında çalışabilen açık kaynaklı bir voice over internet protocol özel santral (PBX) sistemidir.</p>
+<p>Asterisk'i PBX'iniz olarak kullanarak, gelen ve giden telefon çağrılarınızı otomatik olarak yönetebilir, çağrılarınızı farklı hatlar arasında dağıtabilirsiniz.</p>
+<p>Bir PBX'i sesli mesajları, konferans aramayı ve hatta etkileşimli sesli yanıtı (telefon menüleri) yönetmek için bile kullanabilirsiniz.</p>
+<p>Bunların hepsinin Raspberry Pi'nizde çalışması için, bir voice-over IP telefon sistemi kullanmanız gerekecek. PBX'inizin bir parçası olarak bilgisayarınızda veya akıllı telefonunuzda &quot;softphone&quot; bile kullanabilirsiniz. Asterisk ile kullanılabilecek iki farklı softphone sistemi 3CX ve Zoiper'dır.</p>
+<p>En iyi deneyim için, Raspberry Pi'niz ile VOIP telefonlar arasındaki bağlantı ethernet kullanmalıdır. Ethernet kullanmak, kablosuz çözümlerde yaşanabilecek gecikme veya bağlantı kopması sorunlarının olasılığını azaltacaktır.</p>
+<p>Asterisk yazılımını Raspberry Pi'mizde çalıştırmak için, RasPBX dağıtımını kullanacağız. Bu dağıtım, saatler sürebilen bir süreç olan Asterisk yazılımını derleme zahmetinden bizi kurtarır.</p>
+<h2>Raspberry Pi için Asterisk İndirme</h2>
+<p>Bu bölümde, RasPBX'in en son sürümünü indirmenizi sağlayacağız. RasPBX, Asterisk'in derlenmiş sürümlerini içeren dağıtımdır.</p>
+<p>Asterisk'i kaynak kodundan derlemek zorunda kalmamak önemli ölçüde zaman ve olası sorunlardan tasarruf sağlar. Ayrıca, Asterisk için açık kaynaklı, web tabanlı bir yönetim aracı olan FreePBX ile birlikte gelir.</p>
+<p>RasPBX'in en son sürümünü <a href="http://www.raspbx.org/downloads/">Raspberry Pi Asterisk resmi web sitesinden</a> veya web sitemizin CDN'inden indirebilirsiniz.</p>
+<p>RasPBX'in tüm sürümleri resmi Raspberry Pi OS sürümleri üzerine inşa edilmiştir.</p>
+<h3>Raspberry Pi 2, 3 ve 4 için Asterisk</h3>
+<p>RasPBX'in en son sürümü, Pi 4 dahil olmak üzere neredeyse her Raspberry Pi için destek içerir.</p>
+<p>Bu sürüm tarafından desteklenmeyen tek Pi'ler orijinal Raspberry Pi ve Pi Zero serisidir.</p>
+<p><a href="https://largefiles.pimylifeup.com/raspbx/raspbx-11-11-2019.zip">RasPBX'in (11-11-2019) mevcut en son sürümünü</a> doğrudan CDN'imizden indirebilirsiniz.</p>
+<h3>Raspberry Pi 1, Zero ve Zero W için Asterisk</h3>
+<p>Raspberry Pi 1 ve Pi Zero desteği en son sürümde kaldırıldı, bu yüzden daha eski bir sürüm indirmeniz gerekecek.</p>
+<p>RasPBX'in bu eski sürümü Raspbian Stretch üzerine inşa edilmiştir ve Asterisk'in 13. sürümünü ve FreePBX'in 14. sürümünü kullanır.</p>
+<p><a href="https://largefiles.pimylifeup.com/raspbx/raspbx-04-04-2018.zip">RasPBX'in (04-04-2018) bu eski derlemesini</a> CDN'imizden indirin.</p>
+<h2>Asterisk Dağıtımını Raspberry Pi'mize Yazma</h2>
+<p>RasPBX imajı cihazınıza indirildiğine göre, şimdi onu bir SD karta yazmak için <a href="https://www.balena.io/etcher/">Etcher aracını</a> kullanacağız.</p>
+<p>Etcher, Windows, Linux ve macOS sistemlerinde çalışabilen kullanışlı bir araçtır. Aynı görevi gerçekleştirmek için başka imaj yazma araçlarını da kullanabilirsiniz.</p>
+<p><strong>1.</strong> Etcher açıkken, &quot;<code>Select image</code>&quot; butonuna <code>tıklayın</code>.</p>
+<p>Bu buton, daha önce indirdiğiniz RasPBX imajını seçmenizi sağlayacak bir dosya iletişim kutusu getirecektir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/08/01-Select-RasPBX-Asterisk-image-to-write.png" alt="Yazılacak RasPBX Asterisk imajını seç" /></p>
+<p><strong>2.</strong> Bir sonraki adımımız, Asterisk dağıtımını yazmak istediğimiz SD kartı/sürücüyü seçmektir.</p>
+<p>Bir sürücü seçmek için, &quot;<code>Select target</code>&quot; butonuna <code>tıklayabilirsiniz</code>.</p>
+<p>Etcher yazılımı, yazmak için otomatik olarak mevcut bir sürücü seçmeye çalışacaktır.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/08/02-Select-target-drive-for-Asterisk.png" alt="Asterisk için hedef sürücü seç" /></p>
+<p><strong>3.</strong> Her şey ayarlandığına göre, artık RasPBX imajını SD kartınıza yazabilirsiniz.</p>
+<p>Bu süreci başlatmak için, &quot;<code>Flash</code>&quot; butonuna <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/08/03-Begin-Asterisk-flashing-process.png" alt="Asterisk yazma sürecini başlat" /></p>
+<p><strong>4.</strong> Artık SD kartı Raspberry Pi'nize takıp başlatabilirsiniz.</p>
+<h2>Raspberry Pi'nizde Asterisk'in İlk Önyüklemesi</h2>
+<p>Bu bölümde, Raspberry Pi'nizi ilk başlattığınızda yapmanız gereken bazı ilk görevlerde size yol göstereceğiz.</p>
+<p>Asterisk desteğini uygulamak için RasPBX imajını kullandığımızdan, her şeyin güncel olduğundan emin olmak için çalıştırabileceğimiz özel bir güncelleme komutu vardır.</p>
+<p>Bunu başarmak için, komut satırını kullanabilir veya <a href="https://pimylifeup.com/raspberry-pi-ssh/">SSH üzerinden bağlanabilirsiniz</a>.</p>
+<p><strong>1.</strong> Raspberry Pi'nize bağlanırken, size bazı giriş detaylarını girmeniz istenecektir.</p>
+<p>Kullanacağınız kullanıcı <code>root</code> kullanıcısıdır.</p>
+<p>Root kullanıcısının varsayılan parolası <code>raspberry</code>dir.</p>
+<p><strong>2.</strong> Giriş yaptıktan sonra, ilk göreviniz sistemi yükseltmektir.</p>
+<p>Aşağıdaki komutu kullanarak rasPBX'in yükseltme aracını kullanabiliriz.</p>
+<pre><code>raspbx-upgrade
+</code></pre>
+<p>Sistemi yükseltmek, en güncel paketleri çalıştırdığınızdan emin olmanızı sağlar, bu da sisteminizi daha güvenli ve kararlı hale getirir.</p>
+<p><strong>3.</strong> Devam etmeden önce, SSH host anahtarlarını yeniden oluşturmalıyız.</p>
+<p>Bunun nedeni, kullandığımız RasPBX dağıtımının zaten bazılarıyla birlikte gelmesidir. Bunlar etrafa dağıtılmıştır ve o kadar güvenli değildir.</p>
+<p>SSH host anahtarlarını yeniden oluşturmak için, aşağıdaki komutu çalıştırın.</p>
+<pre><code>regen-hostkeys
+</code></pre>
+<p>Raspberry Pi'nize bir sonraki bağlandığınızda, SSH anahtarlarının değiştiği konusunda uyarılacağınızı lütfen unutmayın.</p>
+<p>Aşağıda, Asterisk'i Raspberry Pi'nizde sorunsuz çalışır hale getirmek için yapmanız gereken bazı görevlerden geçeceğiz.</p>
+<h3>Dosya Sistemini Genişletme</h3>
+<p>RasPBX dağıtımı, varsayılan olarak yalnızca kendi imajının boyutunu kullanır. Bunun anlamı, SD kartınızın sunduğu dosya sisteminin geri kalanına erişiminizin olmayacağıdır.</p>
+<p>Bu bölümde, SD kart alanınıza tam erişime sahip olmanız için dosya sistemini nasıl genişleteceğinizi göstereceğiz.</p>
+<p><strong>1.</strong> Artık bölümü, SD kartın tamamını doldurması için genişletebiliriz.</p>
+<p>Dosya sistemini genişletmek için, <a href="https://pimylifeup.com/raspi-config-tool/">raspi-config aracını</a> kullanacağız.</p>
+<pre><code>raspi-config
+</code></pre>
+<p><strong>2.</strong> Bu özel Asterisk dağıtımında yapılandırma aracını başlattığınızda, kullanılacak kullanıcıyı yazmanız istenecektir.</p>
+<p>Bu bizim için önemli değildir çünkü sadece dosya sistemini genişletiyoruz, devam etmek için <code>ENTER</code> tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/08/04-Raspi-Config-cant-determine-user.png" alt="Raspi-Config kullanıcıyı belirleyemiyor" /></p>
+<p><strong>3.</strong> Artık yapılandırma aracında olduğumuza göre, gelişmiş seçenekleri açmamız gerekiyor.</p>
+<p><code>OK</code> tuşlarını kullanarak <code>7 Advanced Options</code>'a gidin, ardından <code>ENTER</code> tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/08/05-Go-to-Config-Advanced-Options.png" alt="Gelişmiş Seçenekler Yapılandırmasına Git" /></p>
+<p><strong>4.</strong> Gelişmiş seçenekler menüsünde, <code>A1 Expand Filesystem</code> seçeneğini seçin ve ardından <code>ENTER</code> tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/08/06-Raspi-Config-Expand-Filesystem.png" alt="Raspi-Config Dosya Sistemini Genişlet" /></p>
+<p><strong>5.</strong> Araç dosya sistemini yeniden boyutlandırmayı bitirdiğinde, aşağıdaki mesajla karşılaşacaksınız.</p>
+<p>Artık araçtan güvenle çıkabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/08/07-root-partition-successfully-resized.png" alt="Root bölümü başarıyla yeniden boyutlandırıldı" /></p>
+<p><strong>6.</strong> Dosya sistemi değişikliklerinin etkili olması için, Raspberry Pi'yi yeniden başlatmamız gerekiyor.</p>
+<p>Aşağıdaki komutu çalıştırarak Raspberry Pi'yi yeniden başlatabilirsiniz.</p>
+<pre><code>sudo reboot
+</code></pre>
+<h3>Asterisk için Saat Dilimini Düzeltme</h3>
+<p>Raspberry Pi'nizde Asterisk'i ayarlarken yapmanız gereken ilk görevlerden biri, doğru saat dilimini kullandığınızdan emin olmaktır.</p>
+<p><strong>1.</strong> Zaman telefon sistemleri için çok önemli olduğundan, Asterisk'in doğru saat diliminde çalıştığından emin olmamız gerekiyor.</p>
+<p>Saat dilimini yapılandırmaya başlamak için, aşağıdaki komutu çalıştırmamız gerekiyor.</p>
+<pre><code>configure-timezone
+</code></pre>
+<p><strong>2.</strong> İlk olarak, yaşadığınız coğrafi bölgeyi seçmeniz gerekecek.</p>
+<p>Bunu seçmek, saat dilimi aracının konumunuzu daraltmasına ve daha iyi bir şehir ve bölge seçimi sunmasına olanak tanıyacaktır.</p>
+<p>Bu menüde gezinmek için <code>OK</code> tuşlarını kullanın, bir alan seçtikten sonra <code>ENTER</code> tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/08/08-Select-geographic-area-for-timezone.png" alt="Saat dilimi için coğrafi bölge seç" /></p>
+<p><strong>3.</strong> Şimdi saat diliminize karşılık gelen şehri veya bölgeyi seçebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/08/09-Select-city-or-region-for-accurate-timezone.png" alt="Doğru saat dilimi için şehir veya bölge seç" /></p>
+<p>Araç artık sisteminizde saat dilimini güncelleyecektir.</p>
+<h3>Raspberry Pi Asterisk Kutunuzun IP Adresini Bulma</h3>
+<p>Bir sonraki adımlar için, Raspberry Pi'nizin IP adresini bilmemiz gerekecek.</p>
+<p>Bunu bulmanın en kolay yolu, cihazınızda aşağıdaki komutu çalıştırmaktır.</p>
+<pre><code>hostname -I
+</code></pre>
+<p>Bu komut, router'ınız tarafından Raspberry Pi'ye atanan yerel IP adresini döndürecektir.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-ip-address/">Raspberry Pi'nizin IP adresini</a> bulmanın başka yolları da vardır, ancak bu yöntem en kolaylarından biridir.</p>
+<p>Ayrıca Raspberry Pi'nizi <a href="https://pimylifeup.com/raspberry-pi-static-ip-address/">statik bir IP adresine sahip olacak</a> şekilde yapılandırmak da iyi bir fikir olabilir.</p>
+<h2>Raspberry Pi'nin Asterisk Web Arayüzüne Bağlanma</h2>
+<p>Bu bölümde, Raspberry Pi'mizde çalışan Asterisk için web arayüzüne nasıl erişeceğinizi göstereceğiz.</p>
+<p>Bu web arayüzü, Asterisk gibi PBX sistemleri için açık kaynaklı bir yönetim aracı olan <a href="https://www.freepbx.org/">FreePBX</a> tarafından sağlanır.</p>
+<p><strong>1.</strong> Raspberry Pi'mizde çalışan web arayüzüne erişmek için, bir web tarayıcısı kullanmamız gerekiyor.</p>
+<p>Favori web tarayıcınızda, aşağıdaki adrese gidin.</p>
+<pre><code>http://raspbx/
+</code></pre>
+<p>Bu bir nedenden dolayı çalışmazsa, bunun yerine Pi'nin IP adresini kullanmayı deneyebiliriz.</p>
+<pre><code>http://[RASPBERRY PI IP ADRESI]/
+</code></pre>
+<p><strong>2.</strong> Web arayüzünü ilk yüklediğinizde, bir yönetici kullanıcı oluşturmanız ve yapılandırmanız istenecektir.</p>
+<p>Hesabınız için detayları doldurun (<strong>1.</strong>). Kolayca tahmin edilemeyen bir parola ayarladığınızdan emin olun.</p>
+<p>Bittiğinde, sağ alt köşedeki &quot;<code>Setup System</code>&quot; butonuna <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/08/10-Create-account-on-FreePBX.png" alt="FreePBX'te hesap oluştur" /></p>
+<p><strong>3.</strong> Bir hesap oluşturduktan sonra, aşağıdaki ekranla karşılaşacaksınız.</p>
+<p>Yönetici ekranını istediğimiz için, &quot;<code>FreePBX Administration</code>&quot; simgesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/08/13-Click-to-Login-to-FreePBX-Administration.png" alt="FreePBX Administration'a Giriş Yapmak İçin Tıkla" /></p>
+<p><strong>4.</strong> Devam etmek için, yepyeni yönetici kullanıcınızla giriş yapmanız gerekecek (1.).</p>
+<p>Giriş detaylarınızı girdikten sonra, &quot;<strong>Continue</strong>&quot; butonuna <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/08/14-Login-to-Asterisk-web-manage-on-Raspberry-Pi.png" alt="Raspberry Pi'de Asterisk web yönetimine giriş yap" /></p>
+<p><strong>5.</strong> Ardından, Raspberry Pi'nizde Asterisk için varsayılan yerel ayarları seçmeniz istenecektir.</p>
+<p>Bu ayarlar, daha önce yapılandırdıklarımıza varsayılan olarak ayarlanacaktır. Bunlar yanlışsa, ses dilinizi, sistem dilinizi ve saat diliminizi düzeltebilirsiniz (<strong>1.</strong>).</p>
+<p>Değişiklikler yapıldıktan sonra, &quot;<code>Submit</code>&quot; butonuna <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/08/11-Set-default-Locales-for-Asterisk-on-Raspberry-Pi.png" alt="Raspberry Pi'de Asterisk için varsayılan Yerel Ayarları belirle" /></p>
+<p><strong>6.</strong> Artık FreePBX web arayüzüne erişiminiz var.</p>
+<p>Bu arayüzü kullanarak, Raspberry Pi'nizde çalışan Asterisk destekli PBX'inizi yapılandırabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2020/08/12-freePBX-interface-on-Raspberry-Pi-Asterisk.png" alt="Raspberry Pi Asterisk'te freePBX arayüzü" /></p>
+<p>Bu noktada, artık Raspberry Pi'nizde Asterisk çalışıyor olmalı.</p>
+<p>Artık FreePBX web arayüzünü kullanarak, VOIP sağlayıcılarınızı ekleyip dahili VOIP ağınız için dahili numaralar ekleyerek Asterisk'i yapılandırabilirsiniz.</p>
+<p>Çoğu VOIP sağlayıcısı, hizmetlerine bağlanmak için FreePBX web arayüzünü kullanma adımlarını size sağlayacaktır.</p>
+<p>Ayrıca her VOIP telefonunuzu Asterisk sunucusuna bağlanabilmeleri için Raspberry Pi'nizin IP adresine yönlendirmeniz gerekecek.</p>
+<p>Raspberry Pi'nizde Asterisk'i ayarlamayla ilgili herhangi bir sorunla karşılaşırsanız, aşağıya yorum bırakmaktan çekinmeyin.</p>
+<p>Diğer <a href="https://pimylifeup.com/category/projects/">harika Raspberry Pi projelerimize</a> de göz atmayı unutmayın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-asterisk.html&amp;text=Raspberry+Pi%27ye+Asterisk+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-asterisk.html&amp;text=Raspberry+Pi%27ye+Asterisk+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-asterisk.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-asterisk.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-asterisk.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-asterisk.html&amp;title=Raspberry+Pi%27ye+Asterisk+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27ye+Asterisk+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-asterisk.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

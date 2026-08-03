@@ -1,0 +1,327 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi Plex Sunucusu Nasıl Kurulur - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Kendi medya sunucunuzu kurun"/>
+    <meta property="og:title" content="Raspberry Pi Plex Sunucusu Nasıl Kurulur"/>
+    <meta property="og:description"
+          content="Kendi medya sunucunuzu kurun"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-plex-server.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-plex-server.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2016/06/Plex-Server-v3-watermarkless.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi Plex Sunucusu Nasıl Kurulur"/>
+    <meta name="twitter:description"
+          content="Kendi medya sunucunuzu kurun"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2016/06/Plex-Server-v3-watermarkless.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi Plex Sunucusu Nasıl Kurulur","item":{"@id":"https://codenfast.com/posts/raspberry-pi-plex-server.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2016/06/Plex-Server-v3-watermarkless.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2016/06/Plex-Server-v3-watermarkless.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2016/06/Raspberry-Pi-Plex-Server.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2016/06/Raspberry-Pi-Plex-Server.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2016/06/add-library.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2016/06/add-library.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2016/06/media-type.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2016/06/media-type.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2016/06/add-folder.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2016/06/add-folder.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi Plex Sunucusu Nasıl Kurulur","description":"Kendi medya sunucunuzu kurun","image":["https://pimylifeup.com/wp-content/uploads/2016/06/Plex-Server-v3-watermarkless.jpg"],"datePublished":"2026-08-03T15:46:02.673381+03:00","dateModified":"2026-08-03T15:46:02.673405+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi Plex Sunucusu Nasıl Kurulur</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-plex-server/">PiMyLifeUp - How to Setup a Raspberry Pi Plex Server</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, kendi Raspberry Pi plex sunucunuzu çalışır hale getirmek için tüm adımlardan geçiyorum.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2016/06/Raspberry-Pi-Plex-Server.jpg" alt="Raspberry Pi Plex Sunucusu" /></p>
+<p>Bu proje, bir hane içindeki herkesin erişebileceği bir medya sunucusuna sahip olmak isteyen herkes için mükemmeldir. Yerel ağınız dışından erişilebilecek şekilde de ayarlayabilirsiniz.</p>
+<p>Plex, istemcinin verileri doğrudan Plex medya sunucusundan aktardığı bir istemci-sunucu kurulumudur. Bu kurulum, tüm filmlerinizi, müziklerinizi ve fotoğraflarınızı tek bir cihazda, sunucuda bulundurabileceğiniz anlamına gelir. Bu durumda, Raspberry Pi'yi kullanacağız.</p>
+<p>Ardından, aynı sunucuya birden fazla istemcinin bağlanmasını sağlayabilirsiniz. Aynı medyanın birden fazla kopyasına birden fazla cihazda ihtiyaç duymadığınız için harikadır.</p>
+<p><a href="https://www.plex.tv/">Plex istemcisi</a>, Windows, Apple, Android, Amazon Fire TV, Chromecast, Xbox, PlayStation, Linux ve çok daha fazlası dahil olmak üzere çok sayıda cihazda desteklenir. Gerçekten muhteşem bir ev medya çözümüdür.</p>
+<p>Tüm sunucu kurulumu olmadan sadece tek bir istemci istiyorsanız, <a href="https://pimylifeup.com/raspberry-pi-kodi/">Raspberry Pi Kodi</a> medya merkezi gibi bir şey sizi daha çok ilgilendirebilir.</p>
+<p>Tamamen ücretsiz bir alternatif medya sunucusu peşindeyseniz, <a href="https://pimylifeup.com/raspberry-pi-jellyfin/">Jellyfin'e de göz atabilirsiniz</a>.</p>
+<h2>Raspberry Pi Plex Sunucusunu Ayarlama</h2>
+<p>Bu eğitimde Raspberry Pi OS kullanıyor olacağım, bu yüzden henüz kurmadıysanız <a href="https://pimylifeup.com/raspberry-pi-os-install/">Raspberry Pi OS'yi nasıl kuracağınız</a> rehberime göz atın.</p>
+<p>İşletim sisteminin sadeleştirilmiş bir sürümünü çalıştırmak istiyorsanız, <a href="https://pimylifeup.com/download-raspbian/">Raspberry Pi OS Lite kurulumuna</a> bakmalısınız.</p>
+<h3>Pi'nizi Plex için Hazırlama</h3>
+<p><strong>1.</strong> Şimdi Plex Media Server yazılımını Raspberry Pi'ye kurmadan önce, önce aşağıdaki iki komutu çalıştırarak işletim sistemimizin tamamen güncel olduğundan emin olmamız gerekiyor.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Plex paketlerini Raspberry Pi'ye kurmak için, resmi Plex paket deposunu eklememiz gerekecek.</p>
+<p>Bunu yapmadan önce &quot;<code>apt-transport-https</code>&quot; ve &quot;<code>gnupg2</code>&quot; paketlerini kurmamız gerekiyor.</p>
+<p>Bu paket, &quot;<code>apt</code>&quot; paket yöneticisinin Plex deposunun kullandığı &quot;<code>https</code>&quot; protokolü üzerinden paketleri almasına olanak tanır.</p>
+<p>Aşağıdaki komutu çalıştırarak paketi kurun.</p>
+<pre><code>sudo apt install apt-transport-https gnupg2
+</code></pre>
+<p><strong>3.</strong> Şimdi Plex depolarını &quot;<code>apt</code>&quot; keyring dizinine ekleyelim.</p>
+<p>Bu anahtar, indirdiğiniz dosyaların gerçekten o depodan geldiğinden ve o anahtarla imzalandığından emin olmak için kullanılır.</p>
+<p>Anahtarı indirip keyring dizinimize kaydetmek için aşağıdaki komutu çalıştırın.</p>
+<pre><code>curl -L https://downloads.plex.tv/plex-keys/PlexSign.v2.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/plexmediaserver.v2.gpg
+</code></pre>
+<p><strong>4.</strong> <strong>Plex GPG anahtarı</strong> artık eklendiğine göre, aşağıdaki komutu çalıştırarak sonunda resmi Plex deposunu kaynak listesine ekleyebiliriz.</p>
+<pre><code>echo &quot;deb [signed-by=/usr/share/keyrings/plexmediaserver.v2.gpg] https://repo.plex.tv/deb/ public main&quot; | sudo tee /etc/apt/sources.list.d/plex.list
+</code></pre>
+<p>Eklediğimiz satırda, bir önceki adımda indirdiğimiz keyring'e referans verdiğimizi görebilirsiniz.</p>
+<p><strong>5.</strong> Kaynaklarımıza yeni bir depo eklediğimiz için, paket listesini yenilemek üzere &quot;<strong>update</strong>&quot; komutunu tekrar çalıştırmamız gerekecek.</p>
+<pre><code>sudo apt update
+</code></pre>
+<p>&quot;<code>/usr/lib/apt/methods/https could not be found.</code>&quot; hatasını alırsanız, https transport paketi kurulmamıştır demektir. Doğru şekilde kurulduğunu iki kez kontrol edin.</p>
+<h3>Raspberry Pi'nize Plex Kurma</h3>
+<p><strong>6.</strong> Raspberry Pi'mizi artık Plex'in resmi paket depolarından okuyabileceği şekilde ayarladığımıza göre, artık Plex Media server paketini Pi'ye kurabiliriz.</p>
+<p>&quot;<code>plexmediaserver</code>&quot; paketini kurmak için, aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo apt install plexmediaserver
+</code></pre>
+<p><strong>7.</strong> Plex'in kurulum süreci bizim için birkaç farklı şeyi ayarlar.</p>
+<p>Bunlardan ilki, Plex'in altında çalışması için bir kullanıcı ve grup oluşturmasıdır. Bu kullanıcı ve grup &quot;<code>plex</code>&quot; olarak adlandırılır.</p>
+<p>Ayrıca iki dizin ayarlayacaktır, biri Plex'in transcode ettiği dosyaları geçici olarak saklamak içindir. Bu klasörü &quot;<code>/var/lib/plexmediaserver/tmp_transcoding</code>&quot; konumunda bulabilirsiniz.</p>
+<p>İkinci dizin, Plex'in medyanız için aldığı tüm meta verileri sakladığı yerdir. Bu klasör &quot;<code>/var/lib/plexmediaserver/Library/Application Support</code>&quot; konumunda bulunabilir.</p>
+<p><strong>8.</strong> Plex, Raspberry Pi'nin varsayılan &quot;<code>pi</code>&quot; kullanıcısından farklı bir kullanıcı altında çalıştığından, sürücünüzde izinlerin doğru şekilde ayarlandığından emin olmanız gerekecek.</p>
+<p>Plex ile harici sürücünüzü ayarlamak için yardıma ihtiyacınız varsa, <a href="https://pimylifeup.com/raspberry-pi-mount-usb-drive/">Raspberry Pi'de bir USB sürücüyü bağlama</a> rehberimizi takip etmeyi deneyebilirsiniz.</p>
+<h3>Plex Sunucunuz için Statik Bir IP Adresi Ayarlama</h3>
+<p><strong>9.</strong> Artık Plex'i Raspberry Pi'mize kurduğumuza göre, Raspberry Pi'niz için statik bir IP adresine sahip olduğunuzdan emin olmak isteyeceksiniz. Router'ınıza erişiminiz yoksa, yine de <a href="https://pimylifeup.com/raspberry-pi-static-ip-address/">Raspberry Pi'nizin kendisinde statik bir IP ayarlayabilirsiniz</a>.</p>
+<p>Statik bir IP kullanmanın iki nedeni vardır. Birincisi, IP'yi hatırlamak daha kolay olacaktır. İkincisi, Plex sunucunuzun her zaman aynı adreste bulunabileceğinden emin olmanızı sağlayacaktır.</p>
+<pre><code>https://pimylifeup.com/raspberry-pi-static-ip-address/
+</code></pre>
+<p><strong>10.</strong> Pi artık her zaman aynı IP ile başlamalıdır. Bunu ayrıca çoğu router'da ağ cihazınızın (WiFi veya Ethernet) mac adresini bir IP'ye bağlayarak da ayarlayabilirsiniz.</p>
+<p>Artık Raspberry Pi Plex medya sunucusu tamamen ayarlanmış olmalı ve medyanızı taramaya ve bağlanmak isteyen herhangi bir istemciye aktarmaya hazır olmalı. Aşağıda her şeyi ayarlamanın bazı temellerinden geçeceğim.</p>
+<h2>Raspberry Pi'de Medya Saklama</h2>
+<p>Şimdi medyanızı Raspberry Pi'de saklamanın birkaç yolu var. Aşağıda her yöntemden bahsedeceğim.</p>
+<p>Tüm müziğiniz, filmleriniz ve sahip olabileceğiniz başka her şeyle harici bir sabit disk bağlayabilirsiniz. Plex programını Pi kullanıcısı olarak çalışacak şekilde ayarlamak, herhangi bir sorun yaşamadan bir USB sabit disk takıp Plex'te medyaya erişebileceğiniz anlamına gelir.</p>
+<p>Sürücüleri kalıcı olarak da bağlayabilirsiniz; bunu zaten önceki bir eğitimde ele aldım, bu yüzden <a href="https://pimylifeup.com/raspberry-pi-mount-usb-drive/">bir USB sabit diski Raspberry Pi'ye nasıl bağlayacağınıza</a> dair rehberime göz atmayı unutmayın. Sürücünün kullanıcı ve grup sahibini <strong>Pi</strong> olarak ayarladığınızdan emin olun.</p>
+<p>Başka bir seçenek, Pi'nizi bir NAS olarak ayarlamaktır. Bu, bir sabit diski bağlantısını kesip yeniden bağlamaya gerek kalmadan medyanızı ona aktarmanıza olanak tanır.</p>
+<p>Bunun hepsini, <a href="https://pimylifeup.com/raspberry-pi-nas/">Raspberry Pi ağa bağlı depolama</a> kurma eğitimimi takip ederek ayarlayabilirsiniz.</p>
+<p>Son olarak, depolama için SD kartı kullanabilirsiniz, ancak tahmin edebileceğiniz gibi, bu hızlıca yer bitecektir. SD kartta ağ üzerinden erişilecek bir klasör ayarlayabilirsiniz.</p>
+<h2>Raspberry Pi'de Plex Media Server'a İstemcileri Bağlama</h2>
+<p>Telefonunuzda, bilgisayarınızda, Xbox'ınızda, PlayStation'ınızda veya başka herhangi bir cihazda bir uygulama kullanıyorsanız, Plex istemcisi sunucuyu otomatik olarak algılayabilmelidir.</p>
+<p>Ne yazık ki, resmi mobil Plex uygulamalarının bir ödeme duvarının arkasında olduğunu göreceksiniz. Örneğin, tüm özelliklere tam erişim elde etmek için para ödemeniz gerekecek. Ancak, web uygulaması dahil diğer tüm uygulamalar, yalnızca küçük bir özellik seti abonelik gerektirecek şekilde ücretsiz olmalıdır.</p>
+<p>Tarayıcıya bağlanmak için, IP'yi ve ardından <code>32400</code> portunu ve <code>/web/</code>'i girin. Örneğin, benimki şu şekilde.</p>
+<pre><code>192.168.1.100:32400/web/
+</code></pre>
+<p>Giriş yapmanız istenecek, sadece bir plex hesabına kaydolun veya mevcut bir hesaba giriş yapın. Yukarıdaki adresi tekrar girerek bunu atlayabilirsiniz.</p>
+<p>Ardından, müzik, film ve TV şovu kitaplıklarınızı ayarlamanız gerekecek. Bu süreç inanılmaz derecede kolaydır ve doğru şekilde ayarlaması çok zor olmamalı.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2016/06/add-library.png" alt="Kitaplık Ekle" /></p>
+<p><strong>1.</strong> Öncelikle sol taraftaki sütunda kitaplık ekle'yi seçin.</p>
+<p><strong>2.</strong> Ardından, klasörde bulunan medya türünü seçin. Birden fazla türünüz varsa, her medya türü için yeni bir kitaplık eklemeniz gerekecek.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2016/06/media-type.png" alt="Medya Türü" /></p>
+<p><strong>3.</strong> Ardından, tüm medyanızın bulunduğu klasörü seçmeniz gerekecek.</p>
+<p>Örneğin, benimki sol taraftaki sütunda görüntülenen bir USB sürücüde veya <code>/media/pi/ESD-USB</code> konumunda bulunabilir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2016/06/add-folder.png" alt="Klasör Ekle" /></p>
+<p><strong>4.</strong> Kitaplığı eklediğinizde, artık kliplerinizi göz atması kolay güzel bir arayüzde düzenleyecektir.</p>
+<p>Medya kitaplığınızı nasıl kuracağınız, adlandıracağınız ve düzenleyeceğiniz hakkında daha fazla bilgiye ihtiyacınız varsa, Plex'in <a href="https://support.plex.tv/articles/naming-and-organizing-your-tv-show-files/">adlandırma ve organizasyon</a> hakkında muazzam miktarda belgesi vardır.</p>
+<h2>Plex ile Dosya İzin Hatalarını Düzeltme</h2>
+<p>Raspberry Pi'nizde Plex ile karşılaşabileceğiniz en yaygın sorunlardan biri, dosyalarınıza erişememesidir. Bu sorunun en yaygın nedeni yanlış izinlerdir.</p>
+<p>Bu bölüm, bir ext4 sürücü için izinleri nasıl değiştireceğinizi gösterecek.</p>
+<p><strong>NTFS</strong> veya <strong>FAT</strong> biçimli bir sürücü çalıştırıyorsanız, <a href="https://pimylifeup.com/raspberry-pi-mount-usb-drive/">disk sürücünüzü yeniden bağlamayı</a> ve bağlama seçeneklerini ayarlamayı denemeniz gerekecek. Bunun nedeni, NTFS ve FAT dosya sistemlerinin <a href="https://pimylifeup.com/file-permissions-in-linux/">Linux izin sistemini</a> desteklememesidir.</p>
+<p><strong>1.</strong> Başlamak için, izinlerini ayarlamak istediğiniz sürücünün veya klasörün konumunu belirleyin.</p>
+<p>Örneğin, Raspberry Pi'mize <code>/mnt/pimounteddisk/</code> konumunda bağlı bir ext4 sürücümüz var.</p>
+<p><strong>2.</strong> Sonraki iki komutun süper kullanıcı olarak çalıştırılması gerektiğinden, aşağıdaki komutu çalıştırarak ona geçelim.</p>
+<pre><code>sudo su
+</code></pre>
+<p><strong>3.</strong> Sürücünüzün veya klasörünüzün yolu elinizde olduğuna göre, aşağıdaki iki komutu kullanacağız.</p>
+<p>Bunları çalıştırırken <code>[SÜRÜCÜYOLUNUZ]</code> kısmını izinlerini ayarlamak istediğiniz yolla değiştirdiğinizden emin olun.</p>
+<pre><code>find [SÜRÜCÜYOLUNUZ] -type d -exec chmod 755 {} \;
+find [SÜRÜCÜYOLUNUZ] -type f -exec chmod 644 {} \;
+</code></pre>
+<p>İkinci komut tüm dizinleri bulur ve sahibine &quot;<strong>okuma</strong>&quot;, &quot;<strong>yazma</strong>&quot; ve &quot;<strong>çalıştırma</strong>&quot; ayrıcalıkları atar ve diğer tüm kullanıcılara &quot;<strong>okuma</strong>&quot; ve &quot;<strong>çalıştırma</strong>&quot; ayrıcalıkları verir.</p>
+<p>Üçüncü komut tüm dosyaları bulmak için kullanılır ve sahibine &quot;<strong>okuma</strong>&quot; ve &quot;<strong>yazma</strong>&quot; ayrıcalıkları atayacak, diğer tüm kullanıcılar ise &quot;<strong>okuma</strong>&quot; iznini alacaktır.</p>
+<p><strong>4.</strong> Bu komutlar çalışmayı bitirdiğinde, süper kullanıcı modundan çıkabiliriz.</p>
+<pre><code>exit
+</code></pre>
+<p><strong>5.</strong> Artık Plex içinden medya dosyalarınızla başarıyla etkileşim kurabilmeniz gerekiyor.</p>
+<h2>Sonuç</h2>
+<p>Umarız, bu aşamada, artık Plex Raspberry Pi'nizde herhangi bir sorun olmadan çalışıyordur.</p>
+<p>Herhangi bir sorunla karşılaşırsanız veya bir geri bildiriminiz varsa, lütfen aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-plex-server.html&amp;text=Raspberry+Pi+Plex+Sunucusu+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-plex-server.html&amp;text=Raspberry+Pi+Plex+Sunucusu+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-plex-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-plex-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-plex-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-plex-server.html&amp;title=Raspberry+Pi+Plex+Sunucusu+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi+Plex+Sunucusu+Nas%C4%B1l+Kurulur%20codenfast.com%2Fposts%2Fraspberry-pi-plex-server.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

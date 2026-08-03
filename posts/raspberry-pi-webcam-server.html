@@ -1,0 +1,365 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Dakikalar İçinde Bir Raspberry Pi Webcam Sunucusu Kurun - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Raspberry Pi&#39;de bir Webcam sunucusu nasıl kurulur öğrenin"/>
+    <meta property="og:title" content="Dakikalar İçinde Bir Raspberry Pi Webcam Sunucusu Kurun"/>
+    <meta property="og:description"
+          content="Raspberry Pi&#39;de bir Webcam sunucusu nasıl kurulur öğrenin"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-webcam-server.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-webcam-server.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2015/02/Raspberry-Pi-Webcam-Server-no-wm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Dakikalar İçinde Bir Raspberry Pi Webcam Sunucusu Kurun"/>
+    <meta name="twitter:description"
+          content="Raspberry Pi&#39;de bir Webcam sunucusu nasıl kurulur öğrenin"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2015/02/Raspberry-Pi-Webcam-Server-no-wm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Dakikalar İçinde Bir Raspberry Pi Webcam Sunucusu Kurun","item":{"@id":"https://codenfast.com/posts/raspberry-pi-webcam-server.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2015/02/Raspberry-Pi-Webcam-Server-no-wm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2015/02/Raspberry-Pi-Webcam-Server-no-wm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2015/02/Raspberry-Pi-Webcam-Server-V1.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2015/02/Raspberry-Pi-Webcam-Server-V1.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2015/02/raspberry-pi-usb-webcam-in-action-v1.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2015/02/raspberry-pi-usb-webcam-in-action-v1.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2014/12/clips-and-ribbon-cable.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2014/12/clips-and-ribbon-cable.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2015/02/raspberry-pi-camera-server-in-action-v1.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2015/02/raspberry-pi-camera-server-in-action-v1.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Dakikalar İçinde Bir Raspberry Pi Webcam Sunucusu Kurun","description":"Raspberry Pi'de bir Webcam sunucusu nasıl kurulur öğrenin","image":["https://pimylifeup.com/wp-content/uploads/2015/02/Raspberry-Pi-Webcam-Server-no-wm.jpg"],"datePublished":"2026-08-03T16:10:42.558882+03:00","dateModified":"2026-08-03T16:10:42.558908+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Dakikalar İçinde Bir Raspberry Pi Webcam Sunucusu Kurun</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-webcam-server/">PiMyLifeUp - Build a Raspberry Pi Webcam Server in Minutes</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitim, Raspberry Pi'de bir webcam sunucusunu nasıl kuracağınız konusunda size yol gösterecek. Kendi Webcam'inizi bir web sayfasında görünür hale getirebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2015/02/Raspberry-Pi-Webcam-Server-V1.jpg" alt="Raspberry Pi Webcam Sunucusu" /></p>
+<p>Bu eğitimde, Motion adlı bir paket kullanacağız. Hakkında daha fazla bilgi edinmek isterseniz, <a href="https://motion-project.github.io/">Motion web sitesine</a> göz atabilirsiniz. Bu yazılım, Raspberry Pi'ye bağlı bir webcam'den görüntü akışı yapmamızı sağlayacak. Akışı favori tarayıcınızda bir web sayfası üzerinden görüntüleyebileceksiniz.</p>
+<p>Daha çok güvenlik benzeri bir sistem peşindeyseniz, tam teşekküllü web akışı, hareket algılama, kayıt ve çoklu kamera işlevselliği sunduğundan <a href="https://pimylifeup.com/raspberry-pi-security-camera/">Raspberry Pi güvenlik kamerası</a> eğitimine göz atın.</p>
+<p>Bu eğitim <strong>orta düzey</strong> olarak işaretlenmiştir çünkü özellikle bu eğitimde kullanılanlardan farklı donanımınız varsa çalışır hale getirmek zor olabilir. Bunu çalıştıramazsanız, yukarıda bağlantısı verilen güvenlik kamerası çözümü başlatmak çok daha kolaydır.</p>
+<h2>Raspberry Pi'de Webcam Sunucusu Kurma</h2>
+<p>Öncelikle, Raspberry Pi'ye Raspberry Pi OS kurmamız gerekecek. Bunu henüz yapmadıysanız, <a href="https://pimylifeup.com/raspberry-pi-os-install/">Raspberry Pi OS kurma</a> rehberimize göz atın. Çalışır hale getirmek için yapmanız gereken tüm adımlarda size yol gösterecektir.</p>
+<p><strong>1.</strong> Terminali kullanacağız, bu yüzden Pi'de terminali açın veya SSH üzerinden bağlanın.</p>
+<p><strong>2.</strong> Başlamak için, önce en son paketleri çalıştırdığınızdan emin olmak için Raspberry Pi OS'yi güncelleyin.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>3.</strong> Ardından, aşağıdaki paketleri kurun. Bu komut, Raspberry Pi OS'nin hem tam hem de lite sürümlerinde çalışacaktır.</p>
+<pre><code>sudo apt install autoconf automake build-essential pkgconf libtool git libzip-dev libjpeg-dev gettext libmicrohttpd-dev libavformat-dev libavcodec-dev libavutil-dev libswscale-dev libavdevice-dev default-libmysqlclient-dev libpq-dev libsqlite3-dev libwebp-dev libcamera-v4l2
+</code></pre>
+<p><strong>3.</strong> İlerideki işleri biraz kolaylaştırmak için, Raspberry Pi'mize kurmak istediğimiz Motion sürümünü saklayacak &quot;<code>MOTION_VERSION</code>&quot; adlı bir Bash değişkeni oluşturalım.</p>
+<p>Bu belirli komutla, Motion 4.7.0'ı kuracak şekilde ayarlayacağız. <a href="https://github.com/Motion-Project/motion/releases">Motion'ın Github'ındaki</a> tüm sürümleri görüntüleyebilirsiniz.</p>
+<pre><code>MOTION_VERSION=4.7.0
+</code></pre>
+<p><strong>4.</strong> Ardından, Motion paketini GitHub'dan Raspberry Pi'nize indirmek için aşağıdaki komutu kullanın. Doğru sürümü aldığımızdan emin olmak için birkaç diğer komutla birlikte <a href="https://pimylifeup.com/wget-command-linux/">wget komutunu kullanacağız</a>.</p>
+<pre><code>wget https://github.com/Motion-Project/motion/releases/download/release-$MOTION_VERSION/$(lsb_release -cs)_motion_$MOTION_VERSION-1_$(dpkg --print-architecture).deb -O motion.deb
+</code></pre>
+<p><strong>5.</strong> İndirildikten sonra, Motion'ı Raspberry Pi'mize kurmak için yapmamız gereken tek şey aşağıdaki komutu kullanmaktır.</p>
+<p>Bu komut, önceki adımda indirdiğimiz paketi kurmak için dpkg aracını kullanacaktır.</p>
+<pre><code>sudo dpkg -i motion.deb
+</code></pre>
+<p>Motion'ı Raspberry Pi'nizde çalışacak şekilde yapılandırmaya geçmeden önce yapmanız gereken şeylerin hepsi bu.</p>
+<h3>Motion'ı Yapılandırma</h3>
+<p><strong>1.</strong> Yapılandırma dosyasını, <strong>motion.conf</strong>'u düzenlememiz gerekiyor. Bunu yapmak için, dosyayı <a href="https://pimylifeup.com/nano-text-editor/">nano metin editöründe</a> açın.</p>
+<pre><code>sudo nano /etc/motion/motion.conf
+</code></pre>
+<p><strong>2.</strong> Aşağıdaki satırları bulun ve aşağıdaki değerlere ayarlandığından emin olun.</p>
+<ul>
+<li><code>daemon off</code></li>
+<li><code>stream_localhost off</code></li>
+</ul>
+<p><strong>Not:</strong> Hareket gerçekleştiğinde akışın donması gibi sorunlarınız varsa aşağıdaki iki satırı <strong>on'dan off'a</strong> değiştirin.</p>
+<ul>
+<li><code>picture_output off</code></li>
+<li><code>movie_output off</code></li>
+</ul>
+<p><strong>İsteğe Bağlı (# işaretinden sonraki metni dahil etmeyin)</strong></p>
+<ul>
+<li><code>stream_maxrate 100</code> <strong>#</strong> Bu değişiklik gerçek zamanlı akışa izin verir ancak daha fazla bant genişliği ve kaynak gerektirir. Yapılandırma dosyasına eklenmesi gerekir. <strong>Varsayılan 1'dir</strong></li>
+<li><code>framerate 100</code> <strong>#</strong> Bu seçeneği değiştirmek, saniyede 100 kare yakalanmasına izin vererek daha akıcı video sağlar. <strong>Varsayılan 50'dir</strong></li>
+<li><code>width 640</code> <strong>#</strong> Bu satır, görüntülenen görüntünün genişliğini değiştirir. <strong>Varsayılan 640'tır</strong></li>
+<li><code>height 480</code> <strong>#</strong> Bu seçenek, görüntülenen görüntünün yüksekliğini değiştirir. <strong>Varsayılan 480'dir</strong></li>
+</ul>
+<p>Bu seçenekleri değiştirmek performansı ciddi şekilde etkileyebilir. En iyi sonuçları almak için biraz uğraşmanız gerekebilir.</p>
+<p><strong>3.</strong> Bittiğinde, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code> tuşuna basarak kaydedip çıkın.</p>
+<p><strong>4.</strong> Aşağıdaki komutu çalıştırarak Motion servisini etkinleştirmemiz gerekiyor.</p>
+<p>Bu komut, Raspberry Pi'niz açıldığında Motion'ın başlamasını sağlayacaktır.</p>
+<pre><code>sudo systemctl enable motion
+</code></pre>
+<p><strong>5.</strong> Kameranın bağlı olduğundan emin olun ve aşağıdaki satırı çalıştırın.</p>
+<pre><code>sudo systemctl start motion
+</code></pre>
+<p>Servisi durdurmanız gerekirse, aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo systemctl stop motion
+</code></pre>
+<p><strong>6.</strong> Raspberry Pi'nin IP adresinde webcam akışına göz atabilmeniz gerekiyor. IP adresini almak için, <a href="https://pimylifeup.com/hostname-command/">hostname komutunu</a> kullanın.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>7.</strong> Tarayıcınızda, <a href="https://pimylifeup.com/raspberry-pi-ip-address/">Raspberry Pi'nizin IP adresine</a>, ardından 8081 portuna gidin.</p>
+<pre><code>192.168.1.121:8081
+</code></pre>
+<p>Bir Raspberry Pi kamerası kullanıyorsanız, sayfanın devamında belirtilen birkaç ekstra adım atmanız gerekecek. Bu adımları yapmazsanız bir hata ile gri bir kutu göreceksiniz.</p>
+<p><strong>8.</strong> Web sayfası yüklenmiyorsa, servisi yeniden başlatmayı deneyin.</p>
+<pre><code>sudo systemctl restart motion
+</code></pre>
+<p><strong>9.</strong> Artık istediğiniz yere (Wi-Fi menzili dahilinde olması koşuluyla) koyabileceğiniz ve web tarayıcısı üzerinden akışı görüntüleyebileceğiniz tamamen çalışan bir Raspberry Pi Webcam sunucunuz olmalı.</p>
+<p>Kameraya harici erişime izin vermek isterseniz, bu eğitimin altındaki talimatlarıma göz atın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2015/02/raspberry-pi-usb-webcam-in-action-v1.jpg" alt="raspberry pi USB webcam çalışırken" /></p>
+<h3>Bir Raspberry Pi Kamerası Kullanmak için Ek Adımlar</h3>
+<p>Raspberry Pi kamera modülünü kullanmak isterseniz, onu kurmak için birkaç ek adım atmanız gerekecek.</p>
+<p>Raspberry Pi 5 farklı bir port kullanır, bu yüzden yeni portlara sığacak şekilde tasarlanmış bir şerit kablo (<a href="https://amzn.to/4eDAfzf">Amazon</a>) edinmeniz gerekebilir.</p>
+<p><strong>1.</strong> İlk olarak, Pi'deki CSI (<strong>C</strong>amera <strong>S</strong>erial <strong>I</strong>nterface) şerit kablo yuvasına gidin ve konnektörün her iki yanında iki parmağınızla yukarı çekin. Bu teknik artık konnektörü açmalıdır. Bu port Raspberry Pi 5'te CAM/DISP 0 olarak etiketlenmiştir.</p>
+<p><strong>2.</strong> Şerit kabloyu, metal uçlar Ethernet Portundan uzağa bakacak şekilde takın. Bir Raspberry Pi 5 kullanıyorsanız, metal uçlar ethernet portuna doğru bakmalıdır.</p>
+<p><strong>3.</strong> Onu hizaladıktan sonra, konnektörü nazikçe geri bastırın ve kablo yerine kilitlenecektir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2014/12/clips-and-ribbon-cable.jpg" alt="Klipsler ve Şerit Kablo" /></p>
+<p><strong>4.</strong> Raspberry Pi kamerası libcamera adlı bir kütüphaneye dayandığından, servis dosyasını düzenlememiz gerekecek. Bunu yapmak için, aşağıdaki satırı girin.</p>
+<pre><code>sudo nano /lib/systemd/system/motion.service
+</code></pre>
+<p><strong>5.</strong> Bu dosyada, aşağıdaki metni içeren satırı bulun.</p>
+<pre><code>ExecStart=/usr/bin/motion
+</code></pre>
+<p>Satırı aşağıdaki metinle güncelleyin.</p>
+<pre><code>ExecStart=/usr/bin/libcamerify /usr/bin/motion
+</code></pre>
+<p>Bittiğinde, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code> tuşuna basarak dosyadan çıkın.</p>
+<p><strong>6.</strong> Kaynak servis dosyasını az önce değiştirdiğimiz için, systemctl daemon'unu yeniden yüklememiz gerekecek. Aşağıdaki komutu çalıştırarak bunu yapabilirsiniz.</p>
+<pre><code>sudo systemctl daemon-reload
+</code></pre>
+<p><strong>7.</strong> Son olarak, değişikliklerimizin etkili olduğundan emin olmak için motion servisini yeniden başlatın.</p>
+<pre><code>sudo systemctl restart motion
+</code></pre>
+<p><strong>8.</strong> Artık Pi'nin IP adresine <strong>8081 portundan</strong> giderek Raspberry Pi webcam akışına erişebilmeniz gerekiyor.</p>
+<pre><code>192.168.1.121:8081
+</code></pre>
+<p>Artık yerel ağınız içinde erişilebilir, tamamen çalışan bir Raspberry Pi kamera sunucunuz olmalı. Kameraya harici erişime izin vermek isterseniz, lütfen aşağıdaki talimatlarımı takip edin.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2015/02/raspberry-pi-camera-server-in-action-v1.jpg" alt="Webcam Sunucusu Tarayıcı" /></p>
+<h3>Motion Görüntülerini ve Fotoğraflarını Kaydetme</h3>
+<p>Varsayılan olarak, hareket tarafından tetiklenen fotoğrafları ve videoyu kaydederken muhtemelen izin sorunları yaşayacaksınız. Aşağıda bunu doğru çalışacak şekilde ayarlamanın adımlarından geçiyorum.</p>
+<p><strong>1.</strong> İlk olarak, fotoğraflarımız ve videolarımız için yeni bir dizin oluşturalım.</p>
+<pre><code>sudo mkdir /motion
+</code></pre>
+<p><strong>2.</strong> Ardından, motion'ın içine yazabilmesi için motion klasörünün grubunu değiştirmemiz gerekiyor. Bundan sonra, gruba <a href="https://pimylifeup.com/chmod-command/">chmod komutunu</a> kullanarak okuma, yazma ve çalıştırma izinleri veriyoruz.</p>
+<pre><code>sudo chgrp motion /motion 
+sudo chmod g+rwx /motion
+</code></pre>
+<p><strong>3.</strong> Motion yapılandırma dosyasına geri dönmemiz ve <code>target_dir</code>i yeni dizinimize değiştirmemiz gerekiyor. Önce, dosyayı <a href="https://pimylifeup.com/nano-text-editor/">nano metin editörüyle</a> açın.</p>
+<pre><code>sudo nano /etc/motion/motion.conf
+</code></pre>
+<p><strong>4.</strong> <strong>target_dir</strong> satırını aşağıdaki gibi görünecek şekilde güncelleyin. Satırın başındaki <code>;</code>'yi kaldırdığınızdan emin olun.</p>
+<pre><code>target_dir /motion
+</code></pre>
+<p><strong>5.</strong> Ardından, yapılandırmayı doğru şekilde yüklemesi için motion servisini yeniden başlatın.</p>
+<pre><code>sudo systemctl restart motion
+</code></pre>
+<p><strong>6.</strong> Kamera hareket algıladığında, belirtilen klasöre kaydedilecektir. Bunu aşağıdaki komutu çalıştırarak kontrol edebilirsiniz.</p>
+<pre><code>ls /motion
+</code></pre>
+<p>İzinleri doğru şekilde ayarlama hakkında daha fazla bilgi için <a href="https://pimylifeup.com/file-permissions-in-linux/">Linux izinleri rehberimize</a> göz atın.</p>
+<h2>Harici Erişim Ayarlama</h2>
+<p>Raspberry Pi webcam sunucusuna harici erişimi etkinleştirmek için, router'da bazı ayarları değiştirmemiz gerekecek. Ancak, tüm router'lar farklı şekilde tasarlandığından, router markanız için talimatları aramanız gerekebilir.</p>
+<p><strong>Lütfen</strong> internete port açmanın bir güvenlik riski taşıdığını unutmayın. Yerel ağınıza yetkisiz erişimi önlemek için lütfen güçlü güvenlik önlemleri kullanın.</p>
+<p>Daha kapsamlı bir rehbere ihtiyacınız varsa, <a href="https://pimylifeup.com/raspberry-pi-port-forwarding/">Raspberry Pi port yönlendirmesi ve dinamik DNS'yi nasıl kuracağınız</a> hakkındaki rehberime göz atmayı unutmayın.</p>
+<p>Yerel ağınız dışına bağlanamıyorsanız, aşağıdakini deneyebilirsiniz.</p>
+<ul>
+<li>Router ayarlarınızı kontrol edin ve doğru olduklarını onaylayın.</li>
+<li>IP'nizin değişmediğinden emin olun. Bazı internet servis sağlayıcıları size statik bir IP yerine dinamik bir IP sağlayacaktır. Buna karşı koymak için dinamik DNS kurabilirsiniz.</li>
+<li>Port eşleştirmesinin motion portuyla doğru şekilde eşleştiğinden emin olun. Örneğin, dahili port 8081'e ayarlanmalıdır.</li>
+<li>Router'ı yeniden başlatın.</li>
+</ul>
+<h2>Sonuç</h2>
+<p>Bir Raspberry Pi webcam sunucusunun nasıl kurulacağı hakkındaki bu eğitimden keyif almış olmanızı umuyorum. Artık bir web tarayıcısı kullanarak kamera akışınızı görüntüleyebilmeniz gerekiyor.</p>
+<p>Daha fazla proje isterseniz, lütfen tüm <a href="https://pimylifeup.com/category/projects/">Raspberry Pi projelerimize</a> göz atın. Her zaman daha fazlası üzerinde çalışıyoruz, bu yüzden ileride tekrar kontrol etmeyi veya bültenimize kaydolarak güncel kalmayı unutmayın.</p>
+<p>Bu eğitim için geri bildirim sağlamak üzere aşağıdaki yorumlar bölümünü kullanmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-webcam-server.html&amp;text=Dakikalar+%C4%B0%C3%A7inde+Bir+Raspberry+Pi+Webcam+Sunucusu+Kurun" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-webcam-server.html&amp;text=Dakikalar+%C4%B0%C3%A7inde+Bir+Raspberry+Pi+Webcam+Sunucusu+Kurun" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-webcam-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-webcam-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-webcam-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-webcam-server.html&amp;title=Dakikalar+%C4%B0%C3%A7inde+Bir+Raspberry+Pi+Webcam+Sunucusu+Kurun" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Dakikalar+%C4%B0%C3%A7inde+Bir+Raspberry+Pi+Webcam+Sunucusu+Kurun%20codenfast.com%2Fposts%2Fraspberry-pi-webcam-server.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;ye Gogs Nasıl Kurulur - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Self-hosted bir Git sunucusu için mükemmel"/>
+    <meta property="og:title" content="Raspberry Pi&#39;ye Gogs Nasıl Kurulur"/>
+    <meta property="og:description"
+          content="Self-hosted bir Git sunucusu için mükemmel"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-gogs.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-gogs.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-Gogs-Thumbnail-no-wm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;ye Gogs Nasıl Kurulur"/>
+    <meta name="twitter:description"
+          content="Self-hosted bir Git sunucusu için mükemmel"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-Gogs-Thumbnail-no-wm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'ye Gogs Nasıl Kurulur","item":{"@id":"https://codenfast.com/posts/raspberry-pi-gogs.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-Gogs-Thumbnail-no-wm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-Gogs-Thumbnail-no-wm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-Gogs-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-Gogs-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/07/01-gogs-install-screen-database-settings-and-app-settings.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/07/01-gogs-install-screen-database-settings-and-app-settings.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/07/02-gogs-install-screen-app-url-and-amdin-account.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/07/02-gogs-install-screen-app-url-and-amdin-account.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/07/03-gogs-main-screen.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/07/03-gogs-main-screen.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'ye Gogs Nasıl Kurulur","description":"Self-hosted bir Git sunucusu için mükemmel","image":["https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-Gogs-Thumbnail-no-wm.jpg"],"datePublished":"2026-08-03T15:33:56.183523+03:00","dateModified":"2026-08-03T15:33:56.183548+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;ye Gogs Nasıl Kurulur</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-gogs/">PiMyLifeUp - How to Install Gogs on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu Raspberry Pi Gogs eğitiminde, Gogs Git servisini Raspbian işletim sisteminde nasıl ayarlayacağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-Gogs-Thumbnail.jpg" alt="Raspberry Pi Gogs" /></p>
+<p>Gogs, <a href="https://golang.org/">Go programlama dilinde</a> yazılmış performans dostu bir <a href="https://gogs.io/">Git web arayüzüdür</a>. Raspberry Pi'de GIT depoları kurmayı ve yönetmeyi basit bir süreç haline getirir.</p>
+<p>Gogs'un, nispeten düşük bellek kullanımı sayesinde Raspberry Pi'de self-hosted bir Git web arayüzü kurmak için en iyi seçeneklerden biri olduğunu göreceksiniz.</p>
+<p>Gogs yazılımı ayrıca Github'unkine çok benzeyen bir arayüze sahiptir, bu da onun web arayüzüne alışıksanız ancak self-hosted bir Git çözümü istiyorsanız kolay bir geçiş yapar.</p>
+<h2>Raspberry Pi'de Gogs için Hazırlık</h2>
+<p><strong>1.</strong> İlk görevimiz, Raspberry Pi'mizdeki paketleri güncellemektir. Güncelleme, Raspberry Pi'mizi Gogs'u kurmaya ve ayarlamaya hazırlamaya yardımcı olur.</p>
+<p>Paket listesini ve paketleri güncellemek için Raspberry Pi'nizde aşağıdaki iki komutu çalıştırın.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Raspberry Pi'miz güncel olduğuna göre, artık Gogs yazılımı için güveneceğimiz tüm paketleri kurabiliriz.</p>
+<p>Kurmakla ilgilendiğimiz iki paket, MariaDB MySQL sunucusu ve <a href="https://pimylifeup.com/raspberry-pi-git-server/">Git yazılımıdır</a>.</p>
+<pre><code>sudo apt install mariadb-server git unzip
+</code></pre>
+<p><strong>3.</strong> Artık <a href="https://pimylifeup.com/raspberry-pi-mysql/">bir MySQL sunucusu kurulduğuna göre</a>, şimdi onu Gogs ile kullanmak için ayarlamamız gerekiyor.</p>
+<p>Başlamak için, kurulumu güvenli hale getirmemiz gerekiyor, bunu aşağıdaki komutu çalıştırarak yapabiliriz.</p>
+<pre><code>sudo mysql_secure_installation
+</code></pre>
+<p>&quot;<code>root</code>&quot; kullanıcısı için bir parola belirlemek ve MySQL kurulumunu güvenli hale getirmek için istemleri takip edin.</p>
+<p>&quot;<code>root</code>&quot; kullanıcısı için tanımladığınız parolayı hatırladığınızdan emin olun çünkü daha sonra buna ihtiyacınız olacak.</p>
+<p><strong>4.</strong> Şimdi aşağıdaki komutu çalıştırarak MySQL komut satırı arayüzüne giriş yapmamız gerekiyor.</p>
+<pre><code>sudo mysql -u root -p
+</code></pre>
+<p><strong>5.</strong> Bu MySQL arayüzü içinde aşağıdaki komutu çalıştırarak önce bir veritabanı oluşturalım.</p>
+<p>Bu veritabanını Gogs yazılımıyla kullanacağımız için &quot;<code>gogs</code>&quot; olarak adlandıracağız.</p>
+<pre><code>CREATE DATABASE gogs;
+</code></pre>
+<p><strong>6.</strong> Ardından, &quot;<code>gogs</code>&quot; veritabanımızla etkileşim kurmak için tüm ayrıcalıklara sahip bir kullanıcı oluşturacağız. Bu kullanıcıyı &quot;<code>goguser</code>&quot; olarak adlandıracağız ve &quot;<code>pimylifeup</code>&quot; parolasını atayacağız.</p>
+<p>Parolayı biraz daha güvenli bir şeyle değiştirdiğinizden emin olun, ne ayarladığınızı not edin.</p>
+<p>Kullanıcıyı oluşturmak ve ona ayrıcalıklar atamak için MySQL arayüzünde aşağıdaki komutu çalıştırın.</p>
+<pre><code>GRANT ALL PRIVILEGES ON gogs.* TO 'goguser'@'localhost' IDENTIFIED BY 'pimylifeup';
+</code></pre>
+<p><strong>7.</strong> Yeni bir kullanıcı oluşturup ayrıcalıklar atadığımız için, ayrıcalık tablosunu temizlememiz (flush) gerekiyor.</p>
+<pre><code>FLUSH PRIVILEGES;
+</code></pre>
+<p><strong>8.</strong> Bu yapıldıktan sonra, &quot;<code>exit</code>&quot; yazarak MySQL komut satırından çıkabilirsiniz.</p>
+<pre><code>exit
+</code></pre>
+<p><strong>9.</strong> Gogs için hazırlanırken yapmamız gereken son şeylerden biri, onun altında çalışması için bir kullanıcı oluşturmaktır.</p>
+<p>Bu kullanıcıyı &quot;<code>git</code>&quot; olarak adlandıracağız ve kimsenin bu kullanıcıyı kullanarak giriş yapamaması için &quot;<code>--disabled-login</code>&quot; kullanacağız.</p>
+<pre><code>sudo adduser --disabled-login git
+</code></pre>
+<p>Artık Raspberry Pi'mizde Gogs'u indirmeye ve ayarlamaya geçebiliriz. Gogs, bu bölümde oluşturduğumuz veritabanı ve kullanıcıyı kullanacaktır.</p>
+<h2>Raspberry Pi'ye Gogs Kurma</h2>
+<p><strong>1.</strong> Gogs için MySQL veritabanımızı ayarladığımıza göre, artık Gogs yazılımını indirip çalıştırmaya geçebiliriz.</p>
+<p>Gogs'u Raspberry Pi'mize indirmeden önce, önce &quot;<code>/home/git</code>&quot; dizinine geçmek için cd komutunu kullanalım.</p>
+<pre><code>cd /home/git
+</code></pre>
+<p><strong>2.</strong> Şimdi aşağıdaki komutu çalıştırarak Gogs yazılımını &quot;<code>/home/git</code>&quot; dizinine indirelim.</p>
+<p>Bu komutlar, Raspberry Pi OS'nin 64-bit veya 32-bit sürümünü kullanmanıza bağlı olarak biraz farklılık gösterir.</p>
+<p><strong>32-Bit İşletim Sistemi</strong></p>
+<pre><code>sudo wget https://dl.gogs.io/0.12.9/gogs_0.12.9_linux_armv7.zip -O gogs.zip
+</code></pre>
+<p><strong>64-Bit İşletim Sistemi</strong></p>
+<pre><code>sudo wget https://dl.gogs.io/0.12.9/gogs_0.12.9_linux_armv8.zip -O gogs.zip
+</code></pre>
+<p><strong>3.</strong> Gogs arşivi artık cihazımızda olduğuna göre, daha önce kurduğumuz <a href="https://pimylifeup.com/unzip-command-linux/">&quot;unzip&quot; aracını kullanarak</a> onu çıkarmamız gerekecek.</p>
+<p>&quot;<code>gogs.zip</code>&quot; dosyasının içeriğini çıkarın ve ardından aşağıda gösterildiği gibi <a href="https://pimylifeup.com/rm-command/">rm komutunu kullanarak</a> onu silin.</p>
+<pre><code>sudo unzip gogs.zip
+sudo rm gogs.zip
+</code></pre>
+<p><strong>4.</strong> Gogs artık indirildiğine ve <a href="https://pimylifeup.com/unzip-command-linux/">çıkarıldığına</a> göre, <strong>git kullanıcısının</strong> az önce oluşturduğumuz tüm dosyalar üzerinde haklara sahip olduğundan emin olmak için <a href="https://pimylifeup.com/chown-command/">chown</a> komutunu kullanalım.</p>
+<pre><code>sudo chown -R git:git /home/git
+</code></pre>
+<p><strong>5.</strong> Ardından, Gogs kurulumumuzla birlikte gelen Gogs servis dosyasını etkinleştirebiliriz.</p>
+<p>Aşağıdaki komutu çalıştırarak, <strong>systemctl</strong> sistem başladığında servis dosyasını çalıştıracaktır.</p>
+<pre><code>sudo systemctl enable /home/git/gogs/scripts/systemd/gogs.service
+</code></pre>
+<p><strong>6.</strong> Son olarak, az önce etkinleştirdiğimiz servisi başlatalım. Bu komut Gogs web servisini başlatacak ve hemen erişilebilir hale gelecektir.</p>
+<p>Aşağıdaki komutu çalıştırarak Gogs servisini etkinleştirebilirsiniz.</p>
+<pre><code>sudo systemctl start gogs.service
+</code></pre>
+<p><strong>7.</strong> Gogs servisinin doğru şekilde başladığından emin olmak için, aşağıdaki komutu çalıştırmamız gerekiyor.</p>
+<p>Bu komut, <strong>systemctl</strong> servis yöneticisinden servisin durumunu alacaktır.</p>
+<pre><code>sudo systemctl status gogs.service
+</code></pre>
+<p>Durum komutu &quot;<code>Active: active (running)</code>&quot; gösteriyorsa, her şey doğru çalışıyor demektir.</p>
+<p><strong>8.</strong> Son olarak, aşağıdaki komutu çalıştırarak Raspberry Pi'mizin yerel IP adresini almalıyız. Hatırlaması daha kolay olması için <a href="https://pimylifeup.com/raspberry-pi-static-ip-address/">statik bir IP ayarlamak</a> isteyebilirsiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<h2>Raspberry Pi'de Gogs'u Yapılandırma</h2>
+<p><strong>1.</strong> Favori web tarayıcınızda, aşağıdaki adrese gidin. &quot;<code>&lt;IPADRESI&gt;</code>&quot; kısmını Raspberry Pi Gogs kurulumunuzun IP adresi ile değiştirdiğinizden emin olun.</p>
+<p>Bu sizi Gogs web arayüzüne götürecektir.</p>
+<pre><code>http://&lt;IPADRESI&gt;:3000
+</code></pre>
+<p><strong>2.</strong> Gogs web arayüzünü ilk yüklediğinizde, önce bir ilk kurulum ekranıyla karşılaşacaksınız.</p>
+<p>Bu ekran, Gogs kurulumunu tamamlamak için sizden birkaç detay isteyecektir.</p>
+<p>İlk olarak, &quot;<strong>Database Settings</strong>&quot;i ayarlamamız gerekiyor (<strong>1.</strong>). Burada veritabanı kullanıcı adı için &quot;<strong>gogsuser</strong>&quot; belirtiyoruz. Ayrıca bu eğitimde daha önce ayarladığınız kullanıcı için &quot;<strong>Password</strong>&quot;ü belirtmemiz gerekiyor.</p>
+<p>Ayrıca, &quot;<strong>Application General Settings</strong>&quot; bölümünde, mevcut &quot;<strong>Domain</strong>&quot; değerini (<strong>2.</strong>) Raspberry Pi'nizin yerel IP adresi ile değiştirmemiz gerekiyor.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/07/01-gogs-install-screen-database-settings-and-app-settings.png" alt="Veritabanı ve Genel Ayarlar için GoGs Kurulum Ekranı" /></p>
+<p><strong>3.</strong> Ardından, &quot;<code>Application URL</code>&quot;i güncellememiz gerekiyor (<strong>1.</strong>), bu dizedeki &quot;<code>localhost</code>&quot; kısmını Raspberry Pi'nizin IP adresi ile değiştirin.</p>
+<p>Şimdi Gogs arayüzü için bir admin kullanıcı ayarlamamız gerekiyor. Bunu yapmak için, önce admin hesabı seçeneklerini ortaya çıkarmak için &quot;<code>Admin account Settings</code>&quot; (<strong>2.</strong>) açılır kutusuna <code>tıklamanız</code> gerekir.</p>
+<p>&quot;<code>Admin Account Settings</code>&quot; bölümünün altında görünen dört metin kutusuna (<strong>3.</strong>), admin hesabınızı ayarlamak için çeşitli detayları girin.</p>
+<p>Bu adımı atlayıp daha sonra tamamlayabilseniz de, ilk kullanıcıyı oluşturan kişi admin olacağından, bunu ilk kurulum aşamasında tamamlamak daha güvenlidir.</p>
+<p>Son olarak, tüm ayarlar istediğiniz gibi değiştirildiğinde, &quot;<code>Install Gogs</code>&quot; butonuna <code>tıklayın</code> (<strong>4.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/07/02-gogs-install-screen-app-url-and-amdin-account.png" alt="İsteğe Bağlı Ayarlar için Gogs Kurulum Ekranı" /></p>
+<p><strong>4.</strong> Gogs kurulum süreci tamamlandığında, aşağıdaki ekranla karşılaşacaksınız.</p>
+<p>Bu ekran, Gogs'un artık Raspberry Pi'nizde başarıyla kurulduğu ve artık web arayüzü üzerinden Git depoları oluşturabilmeniz gerektiği anlamına gelir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/07/03-gogs-main-screen.png" alt="Gogs Dashboard" /></p>
+<h2>Sonuç</h2>
+<p>Bu noktada umarız Gogs Raspberry Pi'nizde çalışır durumdadır.</p>
+<p>Gogs sizin zevkinize uymuyorsa, her zaman <a href="https://pimylifeup.com/raspberry-pi-gitea/">Gitea gibi</a> veya hatta çok daha ağır olan <a href="https://pimylifeup.com/raspberry-pi-gitlab/">GitLab</a> gibi başka çözümler de vardır. Hepsi kişisel tercihe bağlıdır.</p>
+<p>Raspberry Pi'de Gogs'u ayarlamak için elimizde bulunanların hepsi bu kadar. Herhangi bir geri bildiriminiz, ipucunuz veya başka bir şeyiniz varsa, lütfen aşağıya yorum bırakmaktan çekinmeyin.</p>
+<p>Bu rehberden hoşlandıysanız keşfetmeye değer <a href="https://pimylifeup.com/raspberry-pi-index/">başka birçok Raspberry Pi projemiz</a> var.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-gogs.html&amp;text=Raspberry+Pi%27ye+Gogs+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-gogs.html&amp;text=Raspberry+Pi%27ye+Gogs+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-gogs.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-gogs.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-gogs.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-gogs.html&amp;title=Raspberry+Pi%27ye+Gogs+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27ye+Gogs+Nas%C4%B1l+Kurulur%20codenfast.com%2Fposts%2Fraspberry-pi-gogs.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

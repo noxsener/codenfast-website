@@ -1,0 +1,295 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de Grafana Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Verilerinizi kısa sürede görselleştirmeye başlayın"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de Grafana Kurulumu"/>
+    <meta property="og:description"
+          content="Verilerinizi kısa sürede görselleştirmeye başlayın"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-grafana.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-grafana.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-Grafana-Thumbnail-No-WM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de Grafana Kurulumu"/>
+    <meta name="twitter:description"
+          content="Verilerinizi kısa sürede görselleştirmeye başlayın"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-Grafana-Thumbnail-No-WM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de Grafana Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-grafana.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-Grafana-Thumbnail-No-WM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-Grafana-Thumbnail-No-WM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-Grafana-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-Grafana-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/06/Raspberry-Pi-Grafana-01-Initial-Login-Screen.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/06/Raspberry-Pi-Grafana-01-Initial-Login-Screen.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/06/Raspberry-Pi-Grafana-02-Initial-Setup-Set-New-Password.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/06/Raspberry-Pi-Grafana-02-Initial-Setup-Set-New-Password.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2021/06/Raspberry-Pi-Grafana-03-Initial-Setup-Complete.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2021/06/Raspberry-Pi-Grafana-03-Initial-Setup-Complete.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de Grafana Kurulumu","description":"Verilerinizi kısa sürede görselleştirmeye başlayın","image":["https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-Grafana-Thumbnail-No-WM.jpg"],"datePublished":"2026-08-03T15:32:51.91776+03:00","dateModified":"2026-08-03T15:32:51.917793+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de Grafana Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-grafana/">PiMyLifeUp - Setting up Grafana on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu Raspberry Pi Grafana eğitiminde, Grafana'yı Raspbian işletim sistemine kurup ayarlamanın tüm adımlarında size yol göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-Grafana-Thumbnail.jpg" alt="Raspberry Pi Grafana" /></p>
+<p>Bu eğitimin sonunda, Grafana'yı Raspberry Pi'de nasıl başarıyla kuracağınız ve web arayüzüne nasıl erişeceğiniz konusunda bir fikriniz olmalı.</p>
+<p>Grafana'nın ne olduğunu bilmeyenler için, bu açık kaynaklı bir metrik analitik ve görselleştirme paketidir. Basitçe söylemek gerekirse, zaman bazlı verileri görselleştirmeye yardımcı olmak için tasarlanmış bir araçtır.</p>
+<p>Grafana, grafiklerin render edilmesi gibi en talepkar görevlerin çoğunu istemciye devrettiği için hızlı bir araçtır. Bu, yazılımın grafikler için veri sağlamaya odaklanmasını sağlar ve işlenecek daha az veri olduğundan Raspberry Pi için mükemmel bir uyum olmasına yardımcı olur.</p>
+<p><a href="https://grafana.com/">Grafana yazılımı</a>, çok çeşitli farklı veri girişlerini destekler ve hatta önemli metrikler üzerinde uyarı kuralları tanımlamanızı sağlar, böylece bir şeyler yolunda gitmiyorsa otomatik olarak bildirim alabilirsiniz.</p>
+<p>Bu olası Grafana veri girişlerinden biri popüler InfluxDB'dir. <a href="https://pimylifeup.com/raspberry-pi-influxdb/">InfluxDB, Grafana'ya eşlik etmek için popüler bir veritabanıdır</a> çünkü hızlıdır ve &quot;zaman serisi&quot; tabanlıdır, yani her kayıt bir zaman damgasıyla gelir.</p>
+<p>Grafana'nın donanım sıcaklığı ve sistem kullanımı gibi sistem metriklerini izlemek için kullanıldığını sıklıkla göreceksiniz. Hatta gün boyunca hava durumu gibi verileri çizmek için kolay bir yol olarak da kullanılabilir.</p>
+<p>Raspberry Pi'niz tarafından kaydedilen verileri hızlıca görüntülemenin bir yolunu arıyorsanız, Grafana'yı geçemezsiniz.</p>
+<h2>Grafana'yı Raspberry Pi'ye Kurma</h2>
+<p><strong>1.</strong> Grafana'yı Raspberry Pi'ye kurmaya başlamadan önce, şu anda kurulu olan tüm paketlerin güncel olduğundan emin olmalıyız.</p>
+<p>Bunu, aşağıdaki iki komutu çalıştırarak yapabiliriz. Bu komutlar paket listesini güncelleyecek ve ardından kurulu tüm paketleri en son sürümlerine yükseltecektir.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Grafana'yı Raspberry Pi'ye kurmak için, Grafana paket deposunu eklememiz gerekiyor.</p>
+<p>Depoyu eklemeden önce, APT anahtarını eklememiz gerekiyor. APT anahtarı, paketlerin gerçekten Grafana paket sunucusundan geldiğini ve doğru şekilde imzalandığını doğrulamak için kullanılır.</p>
+<p>Grafana APT anahtarını Raspberry Pi'nizin anahtarlığına eklemek için, aşağıdaki komutu çalıştırın.</p>
+<pre><code>curl https://apt.grafana.com/gpg.key | gpg --dearmor | sudo tee /usr/share/keyrings/grafana-archive-keyrings.gpg &gt;/dev/null
+</code></pre>
+<p><strong>3.</strong> Anahtar eklendiğine göre, artık Grafana deposunu Pi'nizin paket kaynakları listesine güvenle ekleyebiliriz.</p>
+<p>Depoyu listeye eklemek için Raspberry Pi'nizde aşağıdaki komutu kullanın.</p>
+<pre><code>echo &quot;deb [signed-by=/usr/share/keyrings/grafana-archive-keyrings.gpg] https://apt.grafana.com stable main&quot; | sudo tee /etc/apt/sources.list.d/grafana.list
+</code></pre>
+<p>Bunu çalıştırıp güncellediğinizde, Raspberry Pi'niz artık paketler için Grafana deposundan otomatik olarak okuyacaktır.</p>
+<p><strong>4.</strong> Paket listemizde değişiklik yaptığımız için, bir güncelleme çalıştırmamız gerekiyor.</p>
+<p>apt ile bir güncelleme çalıştırmak, tüm kaynaklardan en son paket listesini almasını sağlar.</p>
+<p>Bunu yapmak için, Pi'nizin terminalinde aşağıdaki komutu kullanın.</p>
+<pre><code>sudo apt update
+</code></pre>
+<p><strong>5.</strong> Raspberry Pi'niz artık Grafana'nın cihaz için mevcut bir paket olduğunun farkında olmalı.</p>
+<p>Cihazınızda aşağıdaki komutu çalıştırarak Grafana'nın en son sürümünü kurabiliriz.</p>
+<pre><code>sudo apt install grafana
+</code></pre>
+<p><strong>6.</strong> Bir sonraki adımımız, Grafana'yı başlangıçta başlayacak şekilde ayarlamaktır. Neyse ki bizim için, Grafana bir systemd servis dosyasıyla birlikte gelir.</p>
+<p>Grafana'nın önyüklemede başlamasını etkinleştirmek için, yapmamız gereken tek şey aşağıdaki komutu çalıştırmaktır.</p>
+<pre><code>sudo systemctl enable grafana-server
+</code></pre>
+<p>Bu komut, sistem servis yöneticisine &quot;grafana-server.service&quot; adlı servis dosyasını etkinleştirmesini söyleyecektir.</p>
+<p>Servis yöneticisi, Grafana sunucusuyla nasıl başa çıkacağı konusunda bu dosyayı bir rehber olarak kullanacaktır.</p>
+<p><strong>7.</strong> Son olarak, Pi'nin terminalinde aşağıdaki komutu çalıştırarak Grafana sunucu yazılımını başlatalım.</p>
+<pre><code>sudo systemctl start grafana-server
+</code></pre>
+<h2>Raspberry Pi Grafana Kurulumunuza Bağlanma</h2>
+<p><strong>1.</strong> Artık Grafana'yı Raspberry Pi'nize kurduğumuza göre, web arayüzüne erişebileceğiz.</p>
+<p>Ancak bunu yapmadan önce, önce Raspberry Pi'nizin yerel IP adresini alacağız. Bu IP'yi Grafana'ya yerel ağınız içinde uzaktan erişmek için kullanabiliriz.</p>
+<p>Aşağıdaki komutu çalıştırarak Pi'nize atanan IP adresini alabilirsiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<p>Pi'ye sık sık eriştiğinizi fark ederseniz, <a href="https://pimylifeup.com/raspberry-pi-static-ip-address/">statik bir IP ayarlamayı</a> düşünmek isteyebilirsiniz.</p>
+<p><strong>2.</strong> IP adresiniz elinizde olduğunda, aşağıdaki web adresine gidin. Grafana'nın web arayüzü, Raspberry Pi'nizin IP adresinin <code>3000</code> portunda bulunur.</p>
+<p>&quot;<code>&lt;IPADRESI&gt;</code>&quot; kısmını bir önceki adımda aldığınız IP ile değiştirdiğinizden emin olun.</p>
+<pre><code>http://&lt;IPADRESI&gt;:3000
+</code></pre>
+<p><strong>3.</strong> Grafana'yı yüklediğinizde göreceğiniz ilk şey bir giriş ekranıdır.</p>
+<p>Bu ekranda, Grafana'yı Raspberry Pi'nize ilk kurduğunuzda oluşturulan varsayılan admin kullanıcısını kullanarak giriş yapabileceksiniz.</p>
+<p>Bu kullanıcının <strong>kullanıcı adı</strong> &quot;<code>admin</code>&quot; ve <strong>parolası</strong> &quot;<code>admin</code>&quot;dir (<strong>1.</strong>). Varsayılan parola son derece güvensiz olsa da, bunu bir sonraki adımda değiştirebiliriz.</p>
+<p>Kullanıcı adını ve parolayı girdikten sonra, &quot;<code>Log In</code>&quot; butonuna <code>tıklayarak</code> Grafana'ya giriş yapabilirsiniz (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/06/Raspberry-Pi-Grafana-01-Initial-Login-Screen.jpg" alt="Grafana İlk Giriş Ekranı" /></p>
+<p><strong>4.</strong> Grafana web arayüzüne ilk giriş yaptığınızda, kullanıcının parolasını değiştirmeniz istenecektir.</p>
+<p>Bu adımı atlamak mümkün olsa da, yapmamanızı şiddetle tavsiye ederiz. Varsayılan parola son derece güvensizdir ve derhal değiştirilmelidir.</p>
+<p>Grafana dashboard'una geçmek için, yeni bir parola girin (<strong>1.</strong>) ve ardından &quot;<strong>Save</strong>&quot; butonuna <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/06/Raspberry-Pi-Grafana-02-Initial-Setup-Set-New-Password.jpg" alt="Grafana İlk Kurulum Yeni Parola Belirleme" /></p>
+<p><strong>5.</strong> Giriş yaptıktan ve varsayılan parolayı değiştirdikten sonra, artık aşağıdaki ekranla karşılaşmalısınız.</p>
+<p>Bu ekran, artık Raspberry Pi'nizde veri kaynakları eklemeye ve Grafana dashboard'unuzu ayarlamaya başlamaya hazır olduğunuz anlamına gelir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2021/06/Raspberry-Pi-Grafana-03-Initial-Setup-Complete.jpg" alt="Grafana İlk Kurulum Tamamlandı" /></p>
+<p>Bu noktada, artık Grafana'nız Raspberry Pi'nizde çalışıyor olmalı ve web arayüzüne erişebilmelisiniz.</p>
+<p>Grafana'yı kurmakla ilgili sorunlarla karşılaştıysanız veya bu eğitimle ilgili herhangi bir geri bildiriminiz varsa, aşağıdaki yorumlar bölümüne bir yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-grafana.html&amp;text=Raspberry+Pi%27de+Grafana+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-grafana.html&amp;text=Raspberry+Pi%27de+Grafana+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-grafana.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-grafana.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-grafana.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-grafana.html&amp;title=Raspberry+Pi%27de+Grafana+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+Grafana+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-grafana.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Kendi Raspberry Pi Git Sunucunuzu Kurun - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Kendi özel GIT deponuzu oluşturun"/>
+    <meta property="og:title" content="Kendi Raspberry Pi Git Sunucunuzu Kurun"/>
+    <meta property="og:description"
+          content="Kendi özel GIT deponuzu oluşturun"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-git-server.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-git-server.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2015/11/Raspberry-PI-Git-server-no-wm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Kendi Raspberry Pi Git Sunucunuzu Kurun"/>
+    <meta name="twitter:description"
+          content="Kendi özel GIT deponuzu oluşturun"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2015/11/Raspberry-PI-Git-server-no-wm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Kendi Raspberry Pi Git Sunucunuzu Kurun","item":{"@id":"https://codenfast.com/posts/raspberry-pi-git-server.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2015/11/Raspberry-PI-Git-server-no-wm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2015/11/Raspberry-PI-Git-server-no-wm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2015/11/Raspberry-PI-Git-server.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2015/11/Raspberry-PI-Git-server.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Kendi Raspberry Pi Git Sunucunuzu Kurun","description":"Kendi özel GIT deponuzu oluşturun","image":["https://pimylifeup.com/wp-content/uploads/2015/11/Raspberry-PI-Git-server-no-wm.jpg"],"datePublished":"2026-08-03T16:06:05.755737+03:00","dateModified":"2026-08-03T16:06:05.755759+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Kendi Raspberry Pi Git Sunucunuzu Kurun</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-git-server/">PiMyLifeUp - Build your own Raspberry Pi Git Server</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, bir sonraki kod projenizi barındırmak için mükemmel olan basit ama havalı bir Raspberry Pi Git sunucusu yapıyoruz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2015/11/Raspberry-PI-Git-server.jpg" alt="Raspberry PI Git sunucusu" /></p>
+<p>Bir programcıysanız, muhtemelen Git'i daha önce duymuşsunuzdur. Duymayanlar için, Git yazılım geliştirme için son derece popüler bir versiyon kontrol yazılımıdır.</p>
+<p>Dışarıda birçok hosted Git çözümü var, ancak bir nedenden veya diğerinden dolayı kendi özel Git sunucunuzu istiyor olabilirsiniz. Kodunuz üzerinde tam kontrole sahip olmak ve onu mümkün olduğunca özel tutabilmek gibi.</p>
+<p>Kendi Git Sunucunuzu nasıl çalıştıracağınızı öğrenmenin iyi bir faydası, çoğu Git komutu hakkında bir anlayış kazanmanızdır. Bu komutları bilmek, özellikle bir GIT grafik arayüzü kullanmayan işlerde son derece kullanışlıdır.</p>
+<h2>Raspberry Pi Git Sunucusunu Kurma</h2>
+<p>Raspberry pi Git sunucusunu kurma süreci oldukça basittir. Git'e ve komutlarına aşina değilseniz, onları öğrenmek için zaman ayırmanızı şiddetle öneririm. Sayfanın devamında birkaç temel konuya değineceğim ve Git kullanımı hakkında daha fazla bilgi edinebileceğiniz birkaç iyi yer de belirteceğim.</p>
+<p><strong>1.</strong> Her zamanki gibi önce Pi'nin güncel olduğundan emin olalım. Aşağıdaki komutları çalıştırın.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p>İlk olarak, Git'in kurulu olduğundan emin olun. Zaten kurulu olmalıdır.</p>
+<pre><code>sudo apt install git-core
+</code></pre>
+<p><strong>2.</strong> SSH'nizin etkinleştirildiğinden emin olmanız gerekecek. Bunu henüz yapmadıysanız, <a href="https://pimylifeup.com/raspberry-pi-ssh/">SSH eğitimimizde</a> bunu nasıl yapacağınızı bulabilirsiniz.</p>
+<p><strong>3.</strong> Şimdi bunu bir USB sürücüde saklamak isteyebilirsiniz. Bunu yapmak istiyorsanız, USB sürücüyü bağlamanız (mount) gerekecek. <a href="https://pimylifeup.com/raspberry-pi-mount-usb-drive/">Raspberry Pi'de bir USB sürücüyü bağlama</a> rehberimizi son derece kullanışlı bulacaksınız.</p>
+<p>Git sunucusunu çalışır hale getirmek için yapmanız gereken şeylerin hepsi bu süreçtir. Gerçekten oldukça kolay, bir sonraki bölümde ilk deponuzu oluşturmaya ve ona güncellemeler göndermeye bakacağız.</p>
+<h2>İlk Deponuzu Kurma</h2>
+<p>Şimdi koda/veriye göndermeye başlayabilmemiz için kendi ilk deponuzu yapalım. Muhtemelen öğrenmek isteyeceğiniz daha karmaşık komutlar var, ancak bu temeller sizi başlatmak için mükemmel olacak.</p>
+<p><strong>1.</strong> İlk olarak, yeni deponuzun saklanacağı yer için bir dizin oluşturmamız gerekiyor. <em>-p</em> etiketi, yolumuzda henüz mevcut olmayan tüm dizinleri oluşturacaktır.</p>
+<pre><code>mkdir -p /home/pi/git/myFirstRepository
+</code></pre>
+<p><strong>2.</strong> Şimdi <a href="https://pimylifeup.com/cd-command/">cd komutunu kullanarak</a> dizine geçelim.</p>
+<pre><code>cd /home/pi/git/myFirstRepository
+</code></pre>
+<p><strong>3.</strong> Şimdi <strong>bare</strong> komutunu kullanarak Git deposunu başlatalım.</p>
+<pre><code>git init --bare
+</code></pre>
+<p><strong>4.</strong> Yeni bir depo oluşturmanız gerektiğinde bu adımları tekrarlamanız gerekecek. Bunların hepsi yapıldığına göre, ilk commit'imizi yapmaya hazırız.</p>
+<p><strong>5.</strong> Windows veya Mac bilgisayarda, deponuza kod göndermeye başlayabilmek için Git'i indirmeniz gerekecek. <a href="https://git-scm.com/">git-scm</a> indirip kullanmanızı öneririm.</p>
+<p><strong>6.</strong> Kurduktan sonra, bir klasörün içinde <strong>sağ tıkladığınızda</strong> bazı ek seçenekleriniz olmalı.</p>
+<p><strong>7.</strong> Commit etmek istediğiniz klasörde, <strong>sağ tıklayın</strong> ve ardından <strong>Git bash</strong>'e gidin. Bir komut istemine benzeyen bir pencere açmalı.</p>
+<p><strong>8.</strong> Bu <strong>zaten</strong> bir Git dizini <strong>değilse</strong>, koda Pi'mize göndermeden önce onu başlatmanız gerekecek. Bunu yapmak için aşağıdaki komutu girin:</p>
+<pre><code>git init
+</code></pre>
+<p><strong>9.</strong> Şimdi aşağıdaki satırı ekleyerek uzak Git dizinimizi eklememiz gerekiyor.</p>
+<pre><code>git remote add myFirstRepository pi@192.168.1.108:/home/pi/git/myFirstRepository
+</code></pre>
+<p><strong>10.</strong> Şimdi kolayca deponuza veri gönderebiliriz. Bunu yapmak için aşağıdaki komutları girin.</p>
+<pre><code>git add .
+git commit -m &quot;Our first commit&quot;
+git push myFirstRepository master
+</code></pre>
+<p><strong>11.</strong> Bir başarı mesajı gelmesi gerekiyor. Bu mesaj, kodumuzun Git sunucumuza gönderildiği anlamına gelir.</p>
+<p><strong>12.</strong> Her şeyin doğru çalıştığından emin olmak için, az önce kurduğumuz depoyu yeni bir klasöre klonlayabilirsiniz. Önce, farklı bir klasörde Git bash'i açın ve ardından aşağıdaki komutları çalıştırın:</p>
+<pre><code>git clone pi@192.168.1.108:/home/pi/git/myFirstRepository/
+</code></pre>
+<p><strong>13.</strong> Görebileceğiniz gibi, Raspberry Pi Git sunucusu artık kodumuzu doğru şekilde saklıyor. Şimdi, bu Git'in çok temelleri ve öğrenilecek çok daha fazla şey var.</p>
+<p>Şimdi Git ve kullanabileceğiniz komutlar hakkında öğrenilecek çok daha fazla şey var. Git hakkında ve nasıl çalıştığı hakkında daha fazla bilgi edinmede son derece yardımcı olan birkaç web sitesiyle karşılaştım. Programlamaya girmeyi düşünüyorsanız, kod versiyon kontrol sistemleri hakkında bilgi edinmeniz önemlidir.</p>
+<p>Git hakkında daha fazla bilgi edinmek isterseniz, <a href="https://www.codecademy.com/learn/learn-git">codecademy'nin</a> göz atabileceğiniz muhteşem eğitimleri var. Ayrıca, <a href="https://git-scm.com/docs">Git-scm</a> kullanabileceğiniz birçok farklı komut hakkında bol miktarda harika belgeye sahiptir.</p>
+<h2>Özel Git Sunucusuna Uzaktan Erişme</h2>
+<p>Şimdi Git depolarınıza yerel ağınız dışından erişmek isteyebilirsiniz. Bunu yapmak için, router'ınızda port yönlendirmesi kurmanız gerekecek.</p>
+<p>Bir port üzerinden iletişime izin vermenin bazı güvenlik riskleri vardır ancak sunucunuza erişim kazanmanın en kolay yoludur.</p>
+<p>Dış erişime izin verecekseniz, pi kullanıcısının parolasını çok daha güçlü bir şeyle güncellemeniz önemlidir.</p>
+<p>Dış erişim kurmak isterseniz, <a href="https://pimylifeup.com/raspberry-pi-port-forwarding/">Raspberry Pi ile port yönlendirme</a> rehberimize göz atın. Yerel ağınız dışından erişim kazanmak için SSH portunu (22) port yönlendirmeniz gerekecek.</p>
+<p>22 dışında harici bir port kullanıyorsanız, bunu ya <code>~/.shh/ssh_config</code> içinde belirtmeniz ya da aşağıdaki gibi bunun yerine bir URL tarzı adres kullanmanız gerekecek.</p>
+<pre><code>ssh://pi@XXX.XXX.XXX.XXX:23/home/pi/git/myFirstRepository.git/
+</code></pre>
+<p>Burada X, harici IP'nizi ve 23 harici portu temsil eder.</p>
+<p>Umarım artık tamamen çalışan bir Raspberry Pi Git sunucunuz vardır. Herhangi bir sorunla karşılaşırsanız, bir şey kaçırdıysam veya başka bir şey varsa, aşağıya bir yorum bırakmayı unutmayın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-git-server.html&amp;text=Kendi+Raspberry+Pi+Git+Sunucunuzu+Kurun" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-git-server.html&amp;text=Kendi+Raspberry+Pi+Git+Sunucunuzu+Kurun" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-git-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-git-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-git-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-git-server.html&amp;title=Kendi+Raspberry+Pi+Git+Sunucunuzu+Kurun" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Kendi+Raspberry+Pi+Git+Sunucunuzu+Kurun%20codenfast.com%2Fposts%2Fraspberry-pi-git-server.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

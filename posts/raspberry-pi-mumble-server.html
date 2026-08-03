@@ -1,0 +1,322 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Kendi Raspberry Pi Mumble Sunucunuzu Kurun - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Pi&#39;nizde çalışabilecek basit bir VOIP sunucusu"/>
+    <meta property="og:title" content="Kendi Raspberry Pi Mumble Sunucunuzu Kurun"/>
+    <meta property="og:description"
+          content="Pi&#39;nizde çalışabilecek basit bir VOIP sunucusu"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-mumble-server.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-mumble-server.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2015/02/Raspberry-Pi-Mumble-Server-no-wm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Kendi Raspberry Pi Mumble Sunucunuzu Kurun"/>
+    <meta name="twitter:description"
+          content="Pi&#39;nizde çalışabilecek basit bir VOIP sunucusu"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2015/02/Raspberry-Pi-Mumble-Server-no-wm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Kendi Raspberry Pi Mumble Sunucunuzu Kurun","item":{"@id":"https://codenfast.com/posts/raspberry-pi-mumble-server.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2015/02/Raspberry-Pi-Mumble-Server-no-wm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2015/02/Raspberry-Pi-Mumble-Server-no-wm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2015/02/raspberry-pi-mumble-server-v1.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2015/02/raspberry-pi-mumble-server-v1.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2015/02/mumble-connect-server.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2015/02/mumble-connect-server.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2015/02/port-fowarding-mumble-server.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2015/02/port-fowarding-mumble-server.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Kendi Raspberry Pi Mumble Sunucunuzu Kurun","description":"Pi'nizde çalışabilecek basit bir VOIP sunucusu","image":["https://pimylifeup.com/wp-content/uploads/2015/02/Raspberry-Pi-Mumble-Server-no-wm.jpg"],"datePublished":"2026-08-03T16:12:53.589307+03:00","dateModified":"2026-08-03T16:12:53.589336+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Kendi Raspberry Pi Mumble Sunucunuzu Kurun</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-mumble-server/">PiMyLifeUp - Build your own Raspberry Pi Mumble Server</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu projede, Raspberry Pi'de bir Mumble sunucusu kuracağım. Kendi VOIP sisteminizi kurmak istiyorsanız harika bir proje.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2015/02/raspberry-pi-mumble-server-v1.jpg" alt="Raspberry Pi Mumble Sunucusu" /></p>
+<p>Mumble'ı daha önce duymayanlar için, düşük gecikmeli yüksek kaliteli sesli sohbet sağlayan açık kaynaklı bir VOIP (Voice Over Internet Protocol) sohbet yazılımıdır.</p>
+<p>Mumble, <a href="https://pimylifeup.com/category/projects/gaming/">video oyunları oynarken</a> sesli sohbet üzerinden koordine olmak için oyuncular arasında sıklıkla kullanılır. TeamSpeak'e çok benzer. Ayrıca açık bir sesli sohbet odası olarak veya sesli sohbet odaları gerektiren hemen hemen her şey için kullanılabilir.</p>
+<p>Mumble, tek Raspberry Pi VOIP çözümü değildir. Asterisk gibi diğer VOIP çözümleri çok daha eksiksiz bir paket sunar. Gelen ve giden aramalar, ses ve video konferans gibi özellikler ve çok daha fazlasını sunar. Mumble'ın kurulumu çok daha kolaydır ve çoğu insan için yeterli işlevsellik sağlar.</p>
+<h2>Raspberry Pi Mumble Sunucusunu Kurma</h2>
+<p>Yapmanız gereken ilk adım, Raspberry Pi'nizde iyi bir işletim sisteminin kurulu olduğundan emin olmaktır. Bunu henüz yapmadıysanız, <a href="https://pimylifeup.com/raspberry-pi-os-install/">Raspberry Pi OS kurma</a> rehberimi takip edebilirsiniz. Başlamak için ihtiyacınız olan tüm bilgiyi size sağlayacaktır.</p>
+<h3>Mumble Sunucusunu Kurma</h3>
+<p><strong>1.</strong> Raspberry Pi'de, terminal uygulamasını açın veya <a href="https://pimylifeup.com/raspberry-pi-ssh/">Pi'ye SSH ile bağlanın</a>.</p>
+<p><strong>2.</strong> İlk olarak, terminale aşağıdaki komutu yazarak Mumble sunucusunu Raspberry Pi'ye kurun.</p>
+<pre><code>sudo apt install mumble-server
+</code></pre>
+<p><strong>3.</strong> Şimdi bağlanabilmemiz için bir süper kullanıcı ayarlamak gibi bazı temel yapılandırmalar yapmamız gerekiyor. Bunu aşağıdaki komutu çalıştırarak yapabilirsiniz.</p>
+<pre><code>sudo dpkg-reconfigure mumble-server
+</code></pre>
+<p><strong>4.</strong> Bu komut size birkaç seçenek sunacak, bunları Mumble'ın nasıl çalışmasını istediğinize göre ayarlayın.</p>
+<ul>
+<li><strong>Autostart</strong>: <strong>Yes</strong>'i seçtim</li>
+<li><strong>High Priority</strong>: <strong>Yes</strong>'i seçtim (Bu, Pi çok stres altındayken bile Mumble'a her zaman en yüksek önceliğin verilmesini sağlar)</li>
+<li><strong>SuperUser</strong>: Parolayı buraya belirleyin. Bu hesap sunucu üzerinde tam kontrole sahip olacaktır.</li>
+</ul>
+<p><strong>5.</strong> Sunucuya bağlanmak için IP adresine ihtiyacınız olacak. Bunu terminale aşağıdaki komutu yazarak alabilirsiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>6.</strong> Komut birden fazla IP adresiyle yanıt verebilir. Not etmeniz gereken tek IP adresi listedeki ilkidir. Aşağıdaki örneğe benzer görünmelidir.</p>
+<pre><code>192.168.1.103
+</code></pre>
+<h3>Mumble Sunucusunu Yapılandırma</h3>
+<p>Şimdi Mumble sunucusunda bir hoş geldin mesajı ve parola gibi birkaç şey ayarlamak isteyeceğiz.</p>
+<p><strong>1.</strong> <a href="https://pimylifeup.com/raspberry-pi-ssh/">SSH</a> veya terminal uygulamasını kullanarak aşağıdaki komutu girin. Bu komut, sunucu yapılandırmasını <a href="https://pimylifeup.com/nano-text-editor/">nano metin editöründe</a> açacaktır.</p>
+<pre><code>sudo nano /etc/mumble-server.ini
+</code></pre>
+<p><strong>2.</strong> Buradaki her şey oldukça kendini açıklıyor:</p>
+<ul>
+<li><code>welcomeText</code>'i bulun ve bir kullanıcı kanala katıldığında görüntülenmesini istediğiniz herhangi bir şeye güncelleyin.</li>
+<li>Sunucuya katılmak isteyen kullanıcılar için bir parola istiyorsanız <code>serverpassword</code>ü bulun ve güncelleyin.</li>
+<li><code>registerserver</code>ı, # işaretini kaldırarak yorumdan çıkarın ve <code>mumble server</code>ı temel kanal için kullanmak istediğiniz isimle değiştirin.</li>
+</ul>
+<p><strong>3.</strong> Değişikliklerin gerçekleşmesi için sunucuyu yeniden başlatmanız gerekecek. Aşağıdaki komutu girin.</p>
+<pre><code>sudo /etc/init.d/mumble-server restart
+</code></pre>
+<p>Sunucu yeniden başladıktan sonra, artık Mumble istemcisi üzerinden ona erişmeye geçebilirsiniz.</p>
+<h3>Mumble Sunucusuna Erişme</h3>
+<p>Sunucuya erişmek için yapmamız gereken birkaç şey var ve bu Mumble yazılımını indirmeyi de içerir.</p>
+<p><strong>1.</strong> <a href="https://www.mumble.com/mumble-download.php">Mumble web sitesinden</a> <strong>Mumble istemcisini</strong> indirip kurun.</p>
+<p><strong>2.</strong> Programı açın ve <code>Server-&gt;Connect</code>'e gidin.</p>
+<p><strong>3.</strong> Burada, detayları ekleyin:</p>
+<ul>
+<li><strong>Label</strong>: Sunucu listenizde görünecek isim.</li>
+<li><strong>Address</strong>: Bu, daha önce yazdığımız IP Adresidir.</li>
+<li><strong>Port</strong>: 64738 (değiştirmediyseniz)</li>
+<li><strong>Username</strong>: superuser</li>
+<li><strong>Password</strong>: Daha önce dpkg komutunu kullanarak ayarladığınız.</li>
+</ul>
+<p>Artık sunucunuza bağlanabilmeniz gerekiyor.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2015/02/mumble-connect-server.jpg" alt="Mumble Sunucusuna Bağlan" /></p>
+<p><strong>4.</strong> Artık çalışır durumda olduğuna göre, yapılandırmak ve kurmak isteyebileceğiniz birkaç şey daha var.</p>
+<h3>Bir Admin Kullanıcısı Ayarlama</h3>
+<p>Süper kullanıcıya tekrar giriş yapmanız gerekmemesi için kendinize admin hakları vermek isteyebilirsiniz.</p>
+<p><strong>1.</strong> Mumble istemcisinde süper kullanıcı olarak giriş yapın. Önce farklı bir hesap altında giriş yaptığınızdan emin olun.</p>
+<p><strong>2.</strong> <code>servername</code>e sağ tıklayın ve edit'e gidin.</p>
+<p><strong>3.</strong> Burada, group'lar sekmesine gidin ve açılır kutudan admin'i seçin.</p>
+<p><strong>4.</strong> Members sütununa eklemek için açılır kutunun yanına kullanıcı adınızı yazın veya ekleyin.</p>
+<p><strong>5.</strong> Add'e tıklayın ve ardından çıkın.</p>
+<p><strong>6.</strong> Şimdi az önce eklediğiniz kullanıcı adı altında giriş yapın. Raspberry Pi murmur sunucunuzda kanallar ekleyebilmeniz, düzenleyebilmeniz ve diğer admin görevlerini tamamlayabilmeniz gerekiyor.</p>
+<h2>Mumble Sunucusuna Harici Erişim Ayarlama</h2>
+<p>Harici erişim kurmak için, port yönlendirmesine Mumble sunucusuna izin vermek üzere router'da bazı ayarları değiştirmemiz gerekecek.</p>
+<p>Tüm router'lar farklıdır, bu yüzden benimkinde ne yaptığımın detaylarını sağlayacağım ve muhtemelen farklı markalara veya modellere uyarlamanız gerekecek. Benimki AC1750 TP-Link Router.</p>
+<p><strong>1.</strong> Router admin sayfanıza gidin. Bu genellikle <code>192.168.1.1</code> veya <code>192.168.254</code> olacaktır.</p>
+<p><strong>2.</strong> Kullanıcı adını ve parolayı girin. Varsayılan genellikle admin ve admin'dir. Durum buysa bunu değiştirmelisiniz.</p>
+<p><strong>3.</strong> <code>forwarding-&gt;Virtual Server</code>e gidin ve ardından <code>add new</code>e tıklayın.</p>
+<p><strong>4.</strong> Şimdi, aşağıdakini girin.</p>
+<ul>
+<li><strong>Service port</strong>: Bu durumda <code>64738</code>. İsterseniz bu portu değiştirebilirsiniz.</li>
+<li><strong>IP Address</strong>: <code>192.168.1.103</code></li>
+<li><strong>Internal Port</strong>: Bunun sunucumuzla aynı olmasını istiyoruz, yani <code>64738</code></li>
+<li><strong>Protocol</strong>: All</li>
+<li><strong>Status</strong>: Enabled</li>
+</ul>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2015/02/port-fowarding-mumble-server.png" alt="Mumble Sunucusu Port Yönlendirmesi" /></p>
+<p><strong>5.</strong> Bu ayarlar, <code>64738</code> portuna yönelik tüm trafiği <code>64738</code> portundaki Mumble sunucusuna (<code>192.168.1.103</code>) yönlendirecektir.</p>
+<p><strong>6.</strong> Ağınız dışından Raspberry Pi'deki Mumble sunucusuna bağlanabilmeniz gerekiyor. Değişikliklerin etkili olması için router'ı yeniden başlatmanız gerekebilir.</p>
+<p>Bunun çalışıp çalışmadığını test etmenin en iyi yolu, Mumble kurulu olan veya istemciyi kurmaya istekli bir arkadaşınızın sunucunuza bağlanmasını sağlamaktır. Onlara harici IP'nizi ve/veya dinamik DNS'nizi verin, Raspberry Pi Mumble sunucusuna bağlanabilmeleri gerekiyor.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-port-forwarding/">Dinamik DNS'nin nasıl kurulacağını</a> öğrenmek isterseniz, hakkındaki rehberimize göz atmayı unutmayın.</p>
+<h3>Sorun Giderme</h3>
+<p>Bağlanamıyorlarsa, aşağıdakileri deneyebilirsiniz:</p>
+<ul>
+<li>Router ayarlarınızı kontrol edin ve doğru olduklarını onaylayın.</li>
+<li>IP'nizin değişmediğinden emin olun (Bazı ISP'ler size statik bir IP yerine dinamik bir IP sağlayacaktır)</li>
+<li>Router'ı yeniden başlatın.</li>
+<li>Raspberry Pi'yi yeniden başlatın.</li>
+</ul>
+<h2>Sonuç</h2>
+<p>Bu eğitimin size Raspberry Pi Mumble sunucusunu çalışır hale getirmek için gereken tüm adımları gösterdiğini umuyorum.</p>
+<p>Herhangi bir sorunla karşılaşırsanız, geri bildiriminiz varsa veya başka bir şey varsa, lütfen aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-mumble-server.html&amp;text=Kendi+Raspberry+Pi+Mumble+Sunucunuzu+Kurun" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-mumble-server.html&amp;text=Kendi+Raspberry+Pi+Mumble+Sunucunuzu+Kurun" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-mumble-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-mumble-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-mumble-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-mumble-server.html&amp;title=Kendi+Raspberry+Pi+Mumble+Sunucunuzu+Kurun" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Kendi+Raspberry+Pi+Mumble+Sunucunuzu+Kurun%20codenfast.com%2Fposts%2Fraspberry-pi-mumble-server.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

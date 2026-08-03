@@ -1,0 +1,351 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi Apache Web Sunucusu Nasıl Kurulur - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Kendi web sunucunuzu oluşturun"/>
+    <meta property="og:title" content="Raspberry Pi Apache Web Sunucusu Nasıl Kurulur"/>
+    <meta property="og:description"
+          content="Kendi web sunucunuzu oluşturun"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-apache.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-apache.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Apache-no-wm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi Apache Web Sunucusu Nasıl Kurulur"/>
+    <meta name="twitter:description"
+          content="Kendi web sunucunuzu oluşturun"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Apache-no-wm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi Apache Web Sunucusu Nasıl Kurulur","item":{"@id":"https://codenfast.com/posts/raspberry-pi-apache.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Apache-no-wm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Apache-no-wm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Apache.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Apache.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-Apache-Web-Server-Default-Page-v2.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-Apache-Web-Server-Default-Page-v2.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi Apache Web Sunucusu Nasıl Kurulur","description":"Kendi web sunucunuzu oluşturun","image":["https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Apache-no-wm.jpg"],"datePublished":"2026-08-03T15:39:29.335496+03:00","dateModified":"2026-08-03T15:39:29.335525+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi Apache Web Sunucusu Nasıl Kurulur</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-apache/">PiMyLifeUp - How to Setup a Raspberry Pi Apache Web Server</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu Raspberry Pi Apache projesinde, Raspberry Pi'de bir Apache web sunucusunu nasıl kurup ayarlayacağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Apache.jpg" alt="Raspberry Pi Apache" /></p>
+<p>Tek başına Apache, HTML dosyalarını HTTP ve HTTPS web protokolleri üzerinden sunabilir. PHP gibi ek modüllerle birlikte, Apache dinamik içerik de sunabilir.</p>
+<p>Apache, Raspberry Pi için mevcut en popüler web sunucularından biridir. Apache tek başına dünyadaki tüm web sunucularının kabaca <a href="https://w3techs.com/technologies/details/ws-apache/all/all">%27'sini</a> oluşturur.</p>
+<p>Apache'ye bir alternatif <a href="https://pimylifeup.com/raspberry-pi-nginx/">Nginx web sunucusudur</a> ve belirli görevlerde Apache'den çok daha hızlı olduğu düşünülür. Hangi teknolojiyle devam etmek istediğiniz tamamen size bağlıdır.</p>
+<p>Bu Raspberry Pi Apache eğitiminde, Apache'yi kurma, PHP kurma ve ayrıca ilk temel Apache VirtualHost dosyanızı oluşturma adımlarında size yol göstereceğiz.</p>
+<p>Bu eğitimde, Apache'nin tüm temellerine değiniyoruz, ancak <a href="https://pimylifeup.com/raspberry-pi-mysql/">MYSQL</a> ve <a href="https://pimylifeup.com/raspberry-pi-phpmyadmin/">PHPMyAdmin</a> kurulumuna değinmiyoruz. Ayrıca <a href="https://pimylifeup.com/raspberry-pi-wordpress/">Raspberry Pi'de WordPress</a> kurulumunu da kapsamıyoruz. Bunların hepsi ayrı eğitimlerde ele alınan konulardır.</p>
+<p>Bu Raspberry Pi Apache web sunucusu eğitimi, Raspberry Pi OS'nin (Bookworm) en son sürümünü çalıştıran bir <a href="https://pimylifeup.com/raspberry-pi-5/">Raspberry Pi 5</a> üzerinde son olarak test edilmiştir.</p>
+<h2>Raspberry Pi'ye Apache Web Sunucusu Nasıl Kurulur</h2>
+<p><strong>1.</strong> Apache'yi Raspberry Pi'mize kurmadan önce, aşağıdaki iki komutu çalıştırarak paket listesinin güncel olduğundan emin olmalıyız.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> İlk olarak, Raspberry Pi'mize Apache2 paketini kurmamız gerekecek.</p>
+<p><a href="https://www.apache.org/">Apache'nin ne olduğunu</a> bilmeyenler için, bu bir bilgisayardan web tarayıcısına HTML dosyalarını sunan bir sunucu yazılımıdır.</p>
+<p>Raspberry Pi'nize apache2'yi kurmak için, terminale aşağıdaki komutu girin.</p>
+<pre><code>sudo apt install apache2 -y
+</code></pre>
+<p><strong>3.</strong> Apache2 Raspberry Pi'mize kurulduğuna göre, artık son derece temel bir web sunucusu çalışır durumdadır. Sunucu, HTML dosyaları gibi dinamik olmayan içerik sağlayabilecektir.</p>
+<p>Bir sonraki bölümde, Raspberry Pi'ye PHP kurarak bu temel Apache web sunucusunu genişleteceğiz.</p>
+<p>Apache'nin Raspberry Pi'nizde çalışır durumda olduğunu kontrol etmek için, Raspberry Pi'nin IP adresini bir <a href="https://pimylifeup.com/category/guides/browsers/">web tarayıcısına</a> girebilirsiniz. Sunucu, üzerinde basit bir metin bulunan bir web sayfası döndürmelidir.</p>
+<p>IP'yi bilmiyorsanız, onu almak için terminale <a href="https://pimylifeup.com/hostname-command/">hostname komutunu</a> girebilirsiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>4.</strong> Bir web tarayıcısında, <a href="https://pimylifeup.com/raspberry-pi-ip-address/">Raspberry Pi'nizin IP Adresini</a> girin, aşağıdaki gibi bir sayfaya bağlanıp yüklemesi gerekir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-Apache-Web-Server-Default-Page-v2.png" alt="Raspberry Pi Apache Web Sunucusu Varsayılan Sayfa" /></p>
+<p><strong>5.</strong> <code>/var/www/html</code> içindeki dosyalarda root kullanmadan değişiklik yapabilmek için <a href="https://pimylifeup.com/file-permissions-in-linux/">bazı izinleri</a> ayarlamamız gerekiyor.</p>
+<p>İlk olarak, <code>$USER</code> kullanıcısını (mevcut kullanıcımız) Apache2'nin varsayılan grubu olan <code>www-data</code> grubuna ekliyoruz.</p>
+<p>İkinci olarak, <code>/var/www/html</code> dizinindeki tüm dosya ve klasörlerin sahipliğini <code>www-data</code> grubuna veriyoruz.</p>
+<pre><code>sudo usermod -a -G www-data $USER
+sudo chown -R -f www-data:www-data /var/www/html
+sudo chmod -R 770 /var/www/html
+</code></pre>
+<p>Bu komutu çalıştırdıktan sonra, değişikliklerin etkili olması için çıkış yapıp tekrar giriş yapmanız gerekecek. Herhangi bir sorunla karşılaşmamanıza yardımcı olacağından yeniden başlatmanızı öneririz.</p>
+<pre><code>sudo reboot
+</code></pre>
+<p><strong>6.</strong> Artık aşağıdaki komutu çalıştırarak varsayılan web sayfasında değişiklik yapabilirsiniz.</p>
+<p>Bu komut, <code>index.html</code> dosyasını değiştirmek için <a href="https://pimylifeup.com/nano-text-editor/">nano metin editörünü</a> kullanacaktır.</p>
+<p>Web sunucusu, <code>/var/www/html/</code> dizini içindeki tüm dosyaları sunacaktır.</p>
+<pre><code>nano /var/www/html/index.html
+</code></pre>
+<p>Apache temel bir web sunucusudur ve HTML, JS veya CSS öğrenmek istiyorsanız harikadır.</p>
+<p>Ancak, PHP (dinamik web sayfaları için kullanılır) peşindeyseniz, Raspberry Pi Apache eğitimimizin bir sonraki bölümüne devam edin.</p>
+<h2>Apache için PHP Ayarlama</h2>
+<p><strong>1.</strong> Bu bölüme başlamadan önce, <strong>en azından Raspberry Pi OS Bullseye çalıştırıyor olmanız</strong> gerektiğini lütfen unutmayın. Rehberimizde <a href="https://pimylifeup.com/upgrade-raspberry-pi-os-bullseye/">Raspberry Pi OS Bullseye'a nasıl yükseltileceğini</a> öğrenebilirsiniz.</p>
+<p>Bu bölüme başlamak için, Raspberry Pi'mize PHP 8.2 ve diğer birkaç paketi kurmamız gerekecek. Kurduğumuz ek paketler, PHP uygulamaları tarafından yaygın olarak kullanılanlardır.</p>
+<p>Tüm PHP paketlerini Raspberry Pi'nize kurmak için aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo apt install php8.2 libapache2-mod-php8.2 php8.2-mbstring php8.2-mysql php8.2-curl php8.2-gd php8.2-zip -y
+</code></pre>
+<p>Bir &quot;<code>package not found</code>&quot; hatasıyla karşılaşırsanız, lütfen <a href="https://pimylifeup.com/raspberry-pi-latest-php/">üçüncü taraf bir PHP deposu eklemeyi</a> kapsayan rehberimizi takip edin. Bu depo size PHP'nin daha yeni sürümlerine erişim sağlamalıdır.</p>
+<p><strong>2.</strong> PHP artık Raspberry Pi'mize kurulduğuna göre, çalıştığından emin olmak için test edebiliriz.</p>
+<p>Apache algılandığında bu otomatik olarak yapıldığından, herhangi bir yapılandırma dosyasını değiştirmekle uğraşmamıza gerek yok.</p>
+<p>PHP'nin çalıştığını görmek için <code>/var/www/html/</code> dizini içinde bir PHP dosyası oluşturarak test edebiliriz. Bu dizinde bir dosya oluşturmak, bir web tarayıcısında açtığınızda işlenmesine ve görüntülenmesine izin verecektir.</p>
+<p>Örneğimiz için, <code>example.php</code> adlı bir PHP dosyası oluşturacağız. Bu dosyayı aşağıdaki komutu vererek oluşturabiliriz.</p>
+<pre><code>nano /var/www/html/example.php
+</code></pre>
+<p><strong>3.</strong> Bu dosyaya, aşağıdaki PHP kod satırlarını eklememiz gerekiyor.</p>
+<pre><code>&lt;?php
+echo &quot;Today's date is &quot;.date('Y-m-d H:i:s');
+</code></pre>
+<p>Yukarıdaki kod, PHP'nin <code>date()</code> fonksiyonu kullanılarak alınan bugünün tarihini yazdıran son derece basit bir PHP script'idir. PHP'nin gerçekten çalıştığını söylemek için yeterli olacaktır.</p>
+<p><strong>4.</strong> Şimdi <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak dosyayı kaydedin.</p>
+<p><strong>5.</strong> Web tarayıcınızda, <code>http://192.168.1.103/example.php</code> adresine gidin.</p>
+<p><code>192.168.1.103</code> kısmını Raspberry Pi'nizin IP Adresi ile değiştirdiğinizden emin olun.</p>
+<p>Aşağıdaki URL'ye gitmek aşağıdaki gibi bir şey görüntülemelidir.</p>
+<pre><code>Today's date is 2019-06-28 21:30:45
+</code></pre>
+<h2>Bir Apache Sanal Host'u Ayarlama</h2>
+<p>Sanal host'lar (virtual host), Apache'nin çalışma şeklinin önemli bir parçasıdır. <a href="https://httpd.apache.org/docs/2.4/vhosts/examples.html">Apache, tek bir siteyi nasıl işleyeceğini bilmek için</a> bu Virtualhost dosyalarını kullanır.</p>
+<p>Bu bölümde, Raspberry Pi Apache web sunucunuzda nasıl temel bir sanal host dosyası oluşturacağınızı göstereceğiz. Sanal host'lar, Apache'nin her bir Virtual Host dosyasının belirli bir alan adını ayarlayıp yapılandırdığı, birden fazla web sitesini işleme yöntemidir.</p>
+<p><strong>1.</strong> <code>/etc/apache2/sites-available</code> klasörü içinde <code>example.com.conf</code> adlı temel bir sanal host dosyası oluşturmak için aşağıdaki komutu çalıştırarak başlayın.</p>
+<p>Bunu gerçek bir alan adı için kullanmayı planlıyorsanız, <code>example.com</code> kısmını alan adıyla değiştirdiğinizden emin olun.</p>
+<pre><code>sudo nano /etc/apache2/sites-available/example.com.conf
+</code></pre>
+<p><strong>2.</strong> Bu dosyanın içine, aşağıdaki metni girin.</p>
+<p>Çok temel bir sanal host'un nasıl kurulacağı hakkında bir fikir sahibi olmanız için sanal host dosyasının her bölümünü ilerledikçe açıklayacağız.</p>
+<pre><code>&lt;VirtualHost *:80&gt;
+</code></pre>
+<p>Bu satır, sanal host'un başlangıcını ve bu sanal host'un 80 portunu dinlemesi gerektiğini belirtir.</p>
+<p>Bilmeyenler için <strong>port 80</strong>, <strong>http</strong> için varsayılan porttur. Aynı şekilde, <strong>https</strong> için kullanılan port <strong>443</strong>'tür.</p>
+<pre><code>ServerName example.com
+ServerAlias www.example.com
+</code></pre>
+<p>Burada sanal host'umuza iki direktif ekliyoruz. <code>ServerName</code> adlı bu direktiflerin ilki, temel alan adını belirtir. Bu sunucu adı, VirtualHost'u bir alan adıyla eşleştirmek için kullanılır.</p>
+<p>İkinci direktif, <code>ServerAlias</code>, temel alan adıymış gibi eşleştirilecek ek alan adlarını tanımlar.</p>
+<p>Bu direktif, bir <code>www.</code> alt alan adı gibi ek adları eşleştirmek için kullanışlıdır.</p>
+<pre><code>DocumentRoot /var/www/example.com/public_html
+</code></pre>
+<p><code>DocumentRoot</code> direktifi, Apache tarafından tüm dosyaların sunulacağı dizini tanımlar.</p>
+<pre><code>ErrorLog ${APACHE_LOG_DIR}/example.com_error.log
+CustomLog ${APACHE_LOG_DIR}/example.com_access.log combined
+</code></pre>
+<p>Bu son iki direktifte, <code>ErrorLog</code> ve <code>CustomLog</code>, log dosyalarının tutulmasını istediğimiz konumları belirtiyoruz.</p>
+<pre><code>&lt;/VirtualHost&gt;
+</code></pre>
+<p>Son olarak, VirtualHost bölümünü kapatıyoruz.</p>
+<p><strong>3.</strong> Her şey tamamlandığında, kod aşağıda gösterdiğimize benzer görünmelidir. Tabii ki, <code>example.com</code> yerine kendi alan adınızı kullanarak.</p>
+<pre><code>&lt;VirtualHost *:80&gt;
+      ServerName example.com
+      ServerAlias www.example.com
+      DocumentRoot /var/www/example.com/public_html
+      ErrorLog ${APACHE_LOG_DIR}/example.com_error.log
+      CustomLog ${APACHE_LOG_DIR}/example.com_access.log combined
+&lt;/VirtualHost&gt;
+</code></pre>
+<p>Bittiğinde, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak dosyayı kaydedin.</p>
+<p><strong>4.</strong> Şimdi HTML dosyalarımızı saklayacağımız klasörü oluşturalım. Bu klasörün sahipliğini de <code>www-data</code> grubu için alacağız.</p>
+<p>İhtiyacımız olan klasörü oluşturmak ve sahipliğini almak için aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo mkdir -p /var/www/example.com/public_html
+sudo chown -R www-data:www-data /var/www/example.com/public_html
+sudo chmod -R 770 /var/www/example.com/public_html
+</code></pre>
+<p><strong>5.</strong> VirtualHost'umuzu ve onun için klasörü oluşturduğumuza göre, artık aşağıdaki komutu çalıştırarak onu etkinleştirelim.</p>
+<p>Bu komut, <code>/etc/apache2/sites-available/</code> ve <code>/etc/apache2/sites-enabled/</code> dizinleri arasında yapılandırma dosyamız için bir symlink oluşturur.</p>
+<pre><code>sudo a2ensite example.com.conf
+</code></pre>
+<p><strong>6.</strong> Son olarak, yeni sanal host dosyamızın yüklenmesi için, Apache2 servisine yapılandırmasını yeniden yüklemesini söylememiz gerekiyor.</p>
+<p>Bu, basitçe aşağıdaki komutu çalıştırarak yapılabilir.</p>
+<pre><code>sudo systemctl reload apache2
+</code></pre>
+<p>Artık bir alan adı sunucusunu (DNS) Raspberry Pi'nin herkese açık IP'sine yönlendirebilir ve istenen alan adı için dosyalar sunmasını sağlayabilirsiniz. Bunun doğru çalışması için <a href="https://pimylifeup.com/raspberry-pi-port-forwarding/">port yönlendirmesi ayarlamanız</a> gerekecek.</p>
+<h2>Sonuç</h2>
+<p>Artık Raspberry Pi'nizde Apache web sunucusu çalışıyor olmalı. Ayrıca Apache'de PHP ve sanal host'ları nasıl ayarlayacağınız hakkında iyi bir fikre sahip olmalısınız.</p>
+<p>Herhangi bir geri bildiriminiz, sorunuz, ipucunuz veya başka bir şeyiniz varsa, lütfen aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-apache.html&amp;text=Raspberry+Pi+Apache+Web+Sunucusu+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-apache.html&amp;text=Raspberry+Pi+Apache+Web+Sunucusu+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-apache.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-apache.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-apache.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-apache.html&amp;title=Raspberry+Pi+Apache+Web+Sunucusu+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi+Apache+Web+Sunucusu+Nas%C4%B1l+Kurulur%20codenfast.com%2Fposts%2Fraspberry-pi-apache.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

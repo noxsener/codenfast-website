@@ -1,0 +1,323 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi GITLab Sunucusu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Pi&#39;nizde kod versiyon kontrolü kurun"/>
+    <meta property="og:title" content="Raspberry Pi GITLab Sunucusu"/>
+    <meta property="og:description"
+          content="Pi&#39;nizde kod versiyon kontrolü kurun"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-gitlab.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-gitlab.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2017/02/Raspberry-Pi-Gitlab-no-wm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi GITLab Sunucusu"/>
+    <meta name="twitter:description"
+          content="Pi&#39;nizde kod versiyon kontrolü kurun"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2017/02/Raspberry-Pi-Gitlab-no-wm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi GITLab Sunucusu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-gitlab.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/02/Raspberry-Pi-Gitlab-no-wm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/02/Raspberry-Pi-Gitlab-no-wm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/02/Raspberry-Pi-Gitlab.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/02/Raspberry-Pi-Gitlab.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/02/1-Postfix.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/02/1-Postfix.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/02/2-Postfix-select-config.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/02/2-Postfix-select-config.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/02/2-2-Postfix-configuration.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/02/2-2-Postfix-configuration.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/02/3-Gitlab-first-screen-e1488001267328.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/02/3-Gitlab-first-screen-e1488001267328.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/02/4-Gitlab-login-screen-e1488001299346.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/02/4-Gitlab-login-screen-e1488001299346.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/02/5-Gitlab-main-screen-e1488002353590.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/02/5-Gitlab-main-screen-e1488002353590.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/02/6-New-Project-e1488001389719.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/02/6-New-Project-e1488001389719.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/02/7-Project-Screen-e1488001361407.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/02/7-Project-Screen-e1488001361407.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/02/8-COmmit-addedpng-e1488001413722.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/02/8-COmmit-addedpng-e1488001413722.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi GITLab Sunucusu","description":"Pi'nizde kod versiyon kontrolü kurun","image":["https://pimylifeup.com/wp-content/uploads/2017/02/Raspberry-Pi-Gitlab-no-wm.jpg"],"datePublished":"2026-08-03T16:03:33.68016+03:00","dateModified":"2026-08-03T16:03:33.680179+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi GITLab Sunucusu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-gitlab/">PiMyLifeUp - Raspberry Pi GITLab Server</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'de GITLab adlı bir yazılım parçasını kurma adımlarından geçeceğim.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/02/Raspberry-Pi-Gitlab.jpg" alt="Raspberry Pi Gitlab" /></p>
+<p>Bu yazılım temel olarak GIT eğitimimizin daha kapsamlı özelliklere sahip bir sürümüdür, ancak Raspberry Pi'de de çok daha talepkardır.</p>
+<p>GitHub gibi bir GIT hosting hizmeti kullandıysanız, <a href="https://about.gitlab.com/">GITLab'i buna çok benzer bulacaksınız</a>, GIT'e kullanışlı bir web önyüzü sağlar.</p>
+<p>Web önyüzü, GIT deponuzda neler olduğuna dair yararlı bir görsel yorum sağladığından oldukça kullanışlı olabilir.</p>
+<p>Ayrıca pull request'ler ve fork'lar gibi şeyleri kolayca yönetme yeteneği de sunar. GIT'i sık sık veya bir ekiple kullanmayı planlıyorsanız kurmak çok kullanışlı olabilir. Daha önce ele aldığım <a href="https://pimylifeup.com/raspberry-pi-git-server/">temel Raspberry Pi GIT sunucusundan</a> biraz daha ileri bir adımdır.</p>
+<p>Bu eğitim, Raspbian Jessie çalıştıran bir Raspberry Pi 3 üzerinde son olarak test edilmiştir.</p>
+<h2>Raspberry Pi GITLab Sunucusunu Kurma</h2>
+<p>Gitlab yazılımını kurma süreci oldukça basittir. GITLab yazılımı oldukça kaynak yoğun olabileceğinden bunu yalnızca <a href="https://pimylifeup.com/raspberry-pi-os-install/">temiz bir Raspberry Pi OS kurulumunda</a> yapmanızı öneririm.</p>
+<p>Gitlab'in community edition'ını kuracağız ve deposuna <a href="https://gitlab.com/gitlab-org/gitlab-ce">community edition GIT sayfalarına</a> giderek göz atabilirsiniz.</p>
+<p><strong>1.</strong> GITLab'in kendisini kurmadan önce, önce birkaç başka şey kurmamız gerekiyor. Kurmamız gereken paketler CURL, OpenSSH sunucusu, postfix ve &quot;deb&quot;in HTTPS protokolünü desteklemesini sağlayan bir pakettir.</p>
+<p>Bunları aşağıdaki komutu kullanarak kurabiliriz:</p>
+<pre><code>sudo apt install curl openssh-server ca-certificates postfix apt-transport-https
+</code></pre>
+<p><strong>Not</strong>: Postfix'i kurarken birkaç ekstra şey yapmamız gerekecek.</p>
+<p><strong>2.</strong> Postfix kurulmaya başladığında aşağıdaki ekranla karşılaşacaksınız; bu ekran seçebileceğiniz çeşitli seçenekleri açıklar.</p>
+<p>Kurulacak en kolay iki seçenek <strong>Internet Site</strong> seçeneği ve <strong>Local Only</strong> teslimat seçeneğidir.</p>
+<p><strong>Internet site</strong> seçeneği, tüm mail trafiğinizin SMTP (Simple Mail Transfer Protocol) üzerinden çalışmasına izin verir. Öte yandan, <strong>local only</strong> tam olarak söylediği şeyi yapar ve mail trafiğini yalnızca yerel olarak yönlendirir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/02/1-Postfix.png" alt="Postfix" /></p>
+<p><strong>OK</strong>'i seçin ve devam etmek için <code>ENTER</code> tuşuna basın.</p>
+<p><strong>3.</strong> Bir sonraki ekranda, <strong>Local only</strong>'i seçeceğiz, çünkü bu kurulumu en kolay olanıdır.</p>
+<p>Ayrıca kullanışlıdır çünkü bu GITLab kurulumunu yalnızca yerel ağımız içinde kullanmayı planlıyoruz, bu yüzden zaten e-postaların yerel ağ dışına gönderilmesini istemiyoruz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/02/2-Postfix-select-config.png" alt="Postfix Yapılandırma" /></p>
+<p>Kullanmak istediğiniz seçeneği seçtikten sonra, <strong>OK</strong>'i seçin ve <code>ENTER</code> tuşuna basın.</p>
+<p><strong>4.</strong> Bir sonraki ekran, Postfix'in kullanması için <strong>mail name</strong>'i (mail adı) ayarlamamızı isteyecektir. Bunu e-posta için kullanmayı planladığınız tam nitelikli alan adına ayarlamalısınız.</p>
+<p>Örneğin, <strong><a href="mailto:gus@example.com">gus@example.com</a></strong>'u kullanmak isteseydim, <strong>System mail name:</strong>'i <strong>example.com</strong>'a ayarlardım.</p>
+<p>Mail kullanmayı planlamadığımız için, sadece <strong>raspberrypi</strong> olarak bırakacağız.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/02/2-2-Postfix-configuration.png" alt="Postfix Local Only" /></p>
+<p>Kurulumu sonlandırmak için <strong>OK</strong>'i seçin ve <code>ENTER</code> tuşuna basın.</p>
+<p><strong>5.</strong> Bunların hepsi yapıldıktan sonra, GITLab GPG (GNU Privacy Guard) anahtarını almamız gerekiyor, bu Raspberry Pi'nin onların sunucularıyla iletişim kurarken verinizi şifrelemesine ve imzalamasına izin verecektir.</p>
+<p>Anahtarı aşağıdaki komutla indirip ekleyebiliriz:</p>
+<pre><code>curl https://packages.gitlab.com/gpg.key | sudo apt-key add -
+</code></pre>
+<p><strong>6.</strong> Bu sonunda yapıldığına göre, bir sonraki sürece başlayabiliriz. Bu, GITLab'in bağımlı olduğu tüm paketlerin kurulumunu başlatmaktır, lütfen bunun bu script'in yapması gereken oldukça fazla şey olduğundan biraz zaman alabileceğini unutmayın.</p>
+<p>Kurulum script'ini indirip çalıştırmak için aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo curl -sS https://packages.gitlab.com/install/repositories/gitlab/raspberry-pi2/script.deb.sh | sudo bash
+</code></pre>
+<p><strong>7.</strong> Bu kurulumu bitirdikten sonra, sonunda gerçekten Raspberry Pi GITLab sunucusunun kendisini kurmaya devam edebiliriz, bu da biraz zaman alacak bir başka süreçtir ve yaklaşık 150mb'lık bir indirmedir.</p>
+<p>Kurulum sürecini başlatmak için terminalde bu komutu çalıştırın.</p>
+<pre><code>sudo apt-get install gitlab-ce
+</code></pre>
+<p><strong>8.</strong> GITLab kurulumunu sonlandırmak için çalıştırılması gereken son komut aşağıda gösterilendir, bu komut tüm GITLab ayarlarını yapılandırıp kurar ve gerekli tüm veritabanlarını kurar.</p>
+<pre><code>sudo gitlab-ctl reconfigure
+</code></pre>
+<p>Artık GITLab başarıyla kurulmuş ve kullanıma hazır olmalı, sonraki birkaç adımda ilk deponuzu oluşturmayı ve ilk commit'i yapmayı ele alacağım.</p>
+<h2>İlk GITLab Projenizi Oluşturma</h2>
+<p>Artık Raspberry Pi Gitlab sunucunuz çalışıyor olmalı. Muhtemelen kendi projenizi ve deponuzu kurmak isteyeceksiniz, bunu daha önce hiç yapmadıysanız, aşağıdaki bilgiyi son derece kullanışlı bulmalısınız.</p>
+<p><strong>1.</strong> Yeni kurduğumuz GitLab sayfasına erişmek için, Raspberry Pi'nin yerel IP Adresine gitmemiz gerekecek, IP adresine sahip değilseniz <a href="https://pimylifeup.com/hostname-command/">hostname komutuyla</a> hızlıca alabilirsiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<p>Raspberry Pi'nizin IP adresini aldıktan sonra, favori web tarayıcınızda yükleyin, benim durumumda, web tarayıcıma aşağıdakini yazardım.</p>
+<pre><code>http://192.168.1.105/
+</code></pre>
+<p><strong>2.</strong> Şimdi root hesabı için parola belirlemenizi isteyen bir ekranla karşılaşacaksınız ve bu hesap GitLab'in hesabı üzerinde tam kontrole sahip olduğundan bunun için güvenli bir şey ayarlamanızı öneririm.</p>
+<p>Seçtiğiniz parolayla mutlu olduğunuzda, <strong>Change your password</strong> butonuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/02/3-Gitlab-first-screen-e1488001267328.png" alt="Gitlab ilk ekran" /></p>
+<p><strong>3.</strong> Artık yeni parolanızla GitLab'e giriş yapabilirsiniz, kullanıcı adı için root kullandığınızdan emin olun.</p>
+<p>Hazır olduğunuzda, <strong>sign in</strong>'e basın ve bir sonraki ekrana geçecektir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/02/4-Gitlab-login-screen-e1488001299346.png" alt="Gitlab Giriş Ekranı" /></p>
+<p><strong>4.</strong> Raspberry Pi GitLab sunucusuna giriş yaptığımızda, yeni bir grup veya proje oluşturmak için birkaç buton içeren dashboard sayfası ile karşılaşacağız.</p>
+<p>Eğitimimiz için <strong>New Project</strong> butonuna basacağız.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/02/5-Gitlab-main-screen-e1488002353590.png" alt="Gitlab Ana Ekran" /></p>
+<p><strong>5.</strong> <strong>New Project</strong> ekranı çeşitli farklı seçeneklerle doludur. GitLab, GitHub ve Bitbucket gibi çok çeşitli farklı hizmetlerden GIT projeleri içe aktarmanıza olanak tanır. Ancak, eğitimimiz için, sadece yeni bir depo oluşturacağız.</p>
+<p>Burada ayarlamamız gereken ana şey proje adıdır; bu, proje yolu için en sağdaki metin kutusudur. <strong>pimylifeup</strong> adını kullanacağız.</p>
+<p>Görünürlük seviyesini <strong>Private</strong> olarak bırakacağız ve bu, açıkça başka birine izin vermediğimiz sürece yalnızca kullanıcımızın depoyla etkileşim kurabileceği anlamına gelir.</p>
+<p>Diğer iki seçenek, giriş yapmış herhangi bir kullanıcının onu klonlayabilmesine izin veren <strong>Internal</strong> ve herkesin depoyu klonlamasına izin veren <strong>Public</strong>'tir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/02/6-New-Project-e1488001389719.png" alt="Gitlab Yeni Proje" /></p>
+<p>Burada ayarladığınız şeyden memnun olduğunuzda, &quot;<strong>Create Project</strong>&quot; butonuna <code>tıklayın</code>.</p>
+<p><strong>6.</strong> Şimdi karşılaşacağınız ekran boş proje sayfasıdır, şu anda burada yapılacak çok fazla şey yok, ancak yakında buna bazı dosyalar ekleyip dolduracağız.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/02/7-Project-Screen-e1488001361407.png" alt="Gitlab Proje Ekranı" /></p>
+<p><strong>7.</strong> Şimdi terminale geri dönerek, yepyeni deponuzu klonlayacağız ve ilk dosyamızı ekleyeceğiz.</p>
+<p>Başlamak için önce bazı detayları ayarlamamız gerekiyor, aşağıdaki <strong>username</strong> ve <strong>email</strong>'i istediğiniz herhangi bir şeye değiştirebilirsiniz.</p>
+<pre><code>git config --global user.name &quot;Administrator&quot;
+git config --global user.email &quot;admin@example.com&quot;
+</code></pre>
+<p><strong>8.</strong> Bu yapıldıktan sonra, farklı bir proje adı kullanmayı seçtiyseniz <strong>pimylifeup</strong>'ı kendi adınızla değiştirdiğinizden emin olarak yeni deponuzu klonlamaya devam edebiliriz.</p>
+<p>Şimdi depoyu klonlamak için aşağıdaki birkaç komutu çalıştıracağız, bu depoyu alacak ve bizi onun dizinine taşıyacaktır.</p>
+<pre><code>cd ~
+git clone http://raspberrypi/root/pimylifeup.git
+cd pimylifeup
+</code></pre>
+<p><strong>9.</strong> Depoyu klonladığımıza göre, ilk dosyamızı oluşturup commit edelim. Bu komut, Readme adlı boş bir dosya oluşturacaktır, ancak bu size dosyaları nasıl commit edeceğiniz konusunda bir fikir vermelidir.</p>
+<p>Bu dosyayı eklemek ve commit etmek için, aşağıdaki birkaç komutu çalıştırın, biraz kendini açıklayıcı olmalılar.</p>
+<pre><code>touch README.md
+git add README.md
+git commit -m &quot;add readme&quot;
+git push -u origin master
+</code></pre>
+<p><strong>10.</strong> Artık proje sayfanızı yenileyebilir ve yeni commit'inizi görebilirsiniz.</p>
+<p>Artık commit'e tıklayabilir ve Git'in komut satırına güvenmek yerine değişiklikleri web arayüzü içinde inceleyebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/02/8-COmmit-addedpng-e1488001413722.png" alt="GITLab Commit Eklendi" /></p>
+<p>Tebrikler, GitLab sunucunuz artık ilk projesi oluşturulmuş şekilde çalışıyor olmalı.</p>
+<p>GitLab'in yapabileceklerinin sadece yüzeyini çizdik, ayrıca onu CI Build'leri kurmak, fork'ları ve merge request'leri yönetmek ve sorunları kaydetmeye ve proje kilometre taşları belirlemeye yardımcı olmak için de kullanabilirsiniz.</p>
+<h2>Sonuç</h2>
+<p>Bu eğitimin size bir Raspberry Pi GITLab Sunucusunu nasıl kuracağınızı gösterdiğini ve herhangi bir sorunla karşılaşmadığınızı umuyorum. Sağlam bir GIT kurulumu ayarlamak isteyen herkes için kesinlikle <a href="https://pimylifeup.com/category/projects/">harika bir Pi projesi</a>.</p>
+<p>Herhangi bir geri bildiriminiz, ipucunuz varsa veya paylaşmak istediğiniz herhangi bir sorunla karşılaştıysanız, lütfen aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-gitlab.html&amp;text=Raspberry+Pi+GITLab+Sunucusu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-gitlab.html&amp;text=Raspberry+Pi+GITLab+Sunucusu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-gitlab.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-gitlab.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-gitlab.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-gitlab.html&amp;title=Raspberry+Pi+GITLab+Sunucusu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi+GITLab+Sunucusu%20codenfast.com%2Fposts%2Fraspberry-pi-gitlab.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi Yazdırma Sunucusu: Bir Ağ Yazıcısı Kurun - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Pi ile bir ağ yazıcısı nasıl kurulur"/>
+    <meta property="og:title" content="Raspberry Pi Yazdırma Sunucusu: Bir Ağ Yazıcısı Kurun"/>
+    <meta property="og:description"
+          content="Pi ile bir ağ yazıcısı nasıl kurulur"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-print-server.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-print-server.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2017/02/Raspberry-Pi-Print-Server-no-wm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi Yazdırma Sunucusu: Bir Ağ Yazıcısı Kurun"/>
+    <meta name="twitter:description"
+          content="Pi ile bir ağ yazıcısı nasıl kurulur"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2017/02/Raspberry-Pi-Print-Server-no-wm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi Yazdırma Sunucusu: Bir Ağ Yazıcısı Kurun","item":{"@id":"https://codenfast.com/posts/raspberry-pi-print-server.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/02/Raspberry-Pi-Print-Server-no-wm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/02/Raspberry-Pi-Print-Server-no-wm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/02/Raspberry-Pi-Print-Server-v2.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/02/Raspberry-Pi-Print-Server-v2.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/02/CUPS-Main-screen-e1488003024322.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/02/CUPS-Main-screen-e1488003024322.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/02/CUPS-Administrative-Screen-e1488003169417.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/02/CUPS-Administrative-Screen-e1488003169417.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/02/Cups-select-printerpng-e1488003248213.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/02/Cups-select-printerpng-e1488003248213.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/02/cups-select-model-e1488003289609.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/02/cups-select-model-e1488003289609.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/02/cups-add-printer-e1488003329967.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/02/cups-add-printer-e1488003329967.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/02/Cups-final-screen-e1488003372862.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/02/Cups-final-screen-e1488003372862.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/02/Cups-Network-01-Network-page-e1488003430881.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/02/Cups-Network-01-Network-page-e1488003430881.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/02/Cups-Network-02-Network-page-e1488003487988.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/02/Cups-Network-02-Network-page-e1488003487988.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/02/Cups-Network-03-Network-page-e1488003540232.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/02/Cups-Network-03-Network-page-e1488003540232.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/02/Cups-Network-04-Network-page-e1488003588878.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/02/Cups-Network-04-Network-page-e1488003588878.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/02/Cups-Network-05-Network-page-e1488003637943.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/02/Cups-Network-05-Network-page-e1488003637943.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/02/Cups-Network-06-e1488003678798.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/02/Cups-Network-06-e1488003678798.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi Yazdırma Sunucusu: Bir Ağ Yazıcısı Kurun","description":"Pi ile bir ağ yazıcısı nasıl kurulur","image":["https://pimylifeup.com/wp-content/uploads/2017/02/Raspberry-Pi-Print-Server-no-wm.jpg"],"datePublished":"2026-08-03T16:05:07.364938+03:00","dateModified":"2026-08-03T16:05:07.364961+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi Yazdırma Sunucusu: Bir Ağ Yazıcısı Kurun</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-print-server/">PiMyLifeUp - Raspberry Pi Print Server: Setup a Network Printer</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, bir Raspberry Pi Yazdırma Sunucusunu nasıl kuracağınız adımlarından geçeceğim.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/02/Raspberry-Pi-Print-Server-v2.jpg" alt="Raspberry Pi Yazdırma Sunucusu" /></p>
+<p>Yazılımı kurma süreci oldukça basittir, ancak onu yapılandırmak ve bir Windows ağının yazdırma sunucusunu bulmasını sağlamak biraz daha meşguliyetli bir süreçtir.</p>
+<p>Bir yazdırma sunucusu kurmak, yüzlerce dolar harcamak zorunda kalmadan normal USB yazıcınızı daha modern standartlara getirmenin basit bir yoludur.</p>
+<p>Yazılım, yazıcıyı istediğiniz yere taşımanıza ve onu tek bir bilgisayara doğrudan bağlamak yerine birden fazla bilgisayar tarafından erişilebilir hale getirmenize olanak tanır.</p>
+<p>Ayrıca sürekli çalışan pahalı bir tower bilgisayara ihtiyaç duymadan bir yazıcıyı paylaşmanın harika bir yoludur.</p>
+<p>Bunların hepsinin çalışması için, CUPS adlı bir yazılım parçası kullanacağız. CUPS, <strong>C</strong>ommon <strong>U</strong>nix <strong>P</strong>rinting <strong>S</strong>ystem'in kısaltmasıdır ve çoğu Linux yazdırma yazılımının bel kemiğidir.</p>
+<p>Temel olarak, yazıcınızla iletişim kuran ve dosyaları doğru şekilde yazdırmasını sağlayan yazılımdır.</p>
+<p>CUPS yazdırma yazılımının yazıcınızı desteklediğinden emin olmak isterseniz, <a href="https://www.openprinting.org/printers">open printing</a> adresindeki web sitelerine gidin ve belirli model numaranızı arayın.</p>
+<h2>Raspberry Pi Yazdırma Sunucusu Yazılımını Kurma</h2>
+<p>Raspberry Pi için yazdırma sunucusunu kurmak, bir yazılım paketi olarak mevcut olduğundan basit bir süreçtir.</p>
+<p>Bu eğitim boyunca Raspberry Pi OS'nin en son sürümünü kullanacağım, bu yüzden kurmanız gerekiyorsa <a href="https://pimylifeup.com/raspberry-pi-os-install/">Raspberry Pi OS nasıl kurulur eğitimime</a> göz atmayı unutmayın.</p>
+<p><strong>1.</strong> Başlamak için önce Raspberry Pi'yi en son yazılımı çalıştırdığımızdan emin olmak için güncellemeliyiz.</p>
+<p>Terminale aşağıdaki komutları girerek bunu yapabilirsiniz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Raspberry Pi güncellendikten sonra, artık yazdırma sunucusu yazılımını kurmaya başlayabiliriz.</p>
+<p>Bu durumda, CUPS'u kuracağız. Bu yazılım, USB üzerinden veya ağ üzerinden bağlanan yazıcıları yönetir ve internet üzerinden görüntüleyebileceğiniz bir yönetim arayüzü sağlama bonusuna sahiptir.</p>
+<p>Cups'un yanında, çalışabileceği yazıcı sayısını artırmaya yardımcı olan iki ek paket de kuracağız.</p>
+<ul>
+<li><code>printer-driver-gutenprint</code><strong>:</strong> Bu belirli paket, Canon'dan Epson'a kadar birçok farklı yazıcı markası için sürücüler sağlar. CUPS ile çalışacak yazıcı sayısını büyük ölçüde artırır.</li>
+<li><code>hplip</code><strong>:</strong> Gutenprint paketinden eksik olan büyük markalardan biri HP'dir, neyse ki, bu marka bu paketle kurulabilen kendi sürücülerini sağlar.</li>
+</ul>
+<p>Bu iki pakete ek olarak, yazıcınızı Windows cihazlarıyla biraz daha kolay paylaşmanıza olanak tanıyacağından <a href="https://pimylifeup.com/raspberry-pi-samba/">Samba'yı da kuracağız</a>.</p>
+<p>Raspberry Pi'nizde terminale aşağıdaki komutu yazarak CUPS'u ve bu paketleri kurun.</p>
+<pre><code>sudo apt install cups printer-driver-gutenprint hplip samba
+</code></pre>
+<p><strong>3.</strong> CUPS kurulumu bittiğinde, yapmamız gereken birkaç ekstra şey var.</p>
+<p>Yapılacak ilk şey, kullanıcınızı <code>lpadmin</code> grubuna eklemektir.</p>
+<p>Bu grup, kullanıcınızın süper kullanıcıyı kullanmaya gerek kalmadan CUPS'un yönetimsel işlevlerine erişmesine izin verecektir.</p>
+<pre><code>sudo usermod -a -G lpadmin $USER
+</code></pre>
+<p><strong>4.</strong> Ev ağında iyi çalışmasını sağlamak için CUPS'a yapmamız gereken bir başka şey daha var, o da CUPS'u tüm ağınız genelinde erişilebilir hale getirmektir.</p>
+<p>Şu anda Cups, localhost olmayan tüm trafiği engelleyecek şekilde ayarlanmıştır.</p>
+<p>Aşağıdaki iki komutu çalıştırarak tüm trafiği kabul etmesini sağlayabiliriz:</p>
+<pre><code>sudo cupsctl --remote-any
+sudo systemctl restart cups
+</code></pre>
+<p><strong>5.</strong> Şimdi ağdaki herhangi bir bilgisayardan Raspberry Pi yazdırma sunucusuna erişebilmemiz gerekiyor.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-ip-address/">Raspberry Pi'nizin yerel IP Adresinin</a> ne olduğundan emin değilseniz aşağıdaki komutu kullanabilirsiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>6.</strong> Raspberry Pi'nizin IP Adresini aldıktan sonra, favori web tarayıcınızda aşağıdaki web adresine gidin.</p>
+<p>IP adresimi (<code>192.168.1.105</code>) kendinizinkiyle değiştirdiğinizden emin olun.</p>
+<pre><code>http://192.168.1.105:631
+</code></pre>
+<p>Aşağıda, Windows'un Raspberry Pi'de çalışan yazdırma sunucusunu doğru şekilde tanıyabilmesi için SAMBA'yı doğru şekilde ayarlamaya bakıyoruz.</p>
+<p>Ayrıca CUPS arayüzünü kullanarak nasıl bir yazıcı ekleyeceğinizi de göstereceğiz.</p>
+<h2>Pi Yazdırma Sunucusu için SAMBA Ayarlama</h2>
+<p>Yazdırma sunucunuzu Windows ile kullanmayı planlıyorsanız, SAMBA'yı doğru şekilde ayarlamak gereklidir.</p>
+<p>SAMBA'yı kurmamız ve doğru çalışmasını ve CUPS yazdırma sürücülerini kullanmasını sağlamak için yapılandırmasında birkaç değişiklik yapmamız gerekecek.</p>
+<p><strong>1.</strong> Şimdi ilk olarak, SAMBA'nın kurulu olduğundan emin olmalıyız, bunu yapmanın en kolay yolu terminalde basitçe kurulum komutunu çalıştırmaktır.</p>
+<p>Bunu terminale aşağıdaki komutu girerek yapabiliriz.</p>
+<pre><code>sudo apt install samba
+</code></pre>
+<p><strong>2.</strong> <a href="https://pimylifeup.com/raspberry-pi-nas/">SAMBA artık Raspberry Pi'mize kurulduğuna göre</a>, yapılandırma dosyasını açmamız ve birkaç düzenleme yapmamız gerekecek.</p>
+<p>Dosyayı aşağıdaki komutu kullanarak <a href="https://pimylifeup.com/nano-text-editor/">nano metin editörüyle</a> açabiliriz:</p>
+<pre><code>sudo nano /etc/samba/smb.conf
+</code></pre>
+<p><strong>3.</strong> Şimdi dosya açıkken, dosyanın altına kaydırmamız gerekecek. Bunu yapmanın en hızlı yolu şu tuş kombinasyonunu kullanmaktır: <code>CTRL</code> + <code>V</code>.</p>
+<p>Dosyanın altına ulaştığınızda, aşağıdaki satırları eklemeli veya değiştirmelisiniz.</p>
+<p>Benim durumumda, &quot;<code>[printers]</code>&quot; ve &quot;<code>[print$]</code>&quot; bölümleri dosyada zaten vardı, bu yüzden sadece değerleri aşağıdakiyle eşleşecek şekilde değiştirmem gerekti.</p>
+<pre><code># CUPS printing.
+[printers]
+comment = All Printers
+browseable = no
+path = /var/spool/samba
+printable = yes
+guest ok = yes
+read only = yes
+create mask = 0700
+
+# Windows clients look for this share name as a source of downloadable
+# printer drivers
+[print$]
+comment = Printer Drivers
+path = /var/lib/samba/printers
+browseable = yes
+read only = no
+guest ok = no
+</code></pre>
+<p><code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak dosyayı kaydedin.</p>
+<p><strong>4.</strong> Şimdi yeni yapılandırmamızı yüklemesi için SAMBA'yı yeniden başlatabiliriz.</p>
+<p>SAMBA'yı yeniden başlatmak için, yapmamız gereken tek şey terminale aşağıdaki komutu yazmaktır.</p>
+<pre><code>sudo systemctl restart smbd
+</code></pre>
+<h2>CUPS'a Bir Yazıcı Ekleme</h2>
+<p><strong>1.</strong> CUPS'a bir yazıcı eklemek oldukça basit bir süreçtir, ancak önce CUPS web arayüzünü yüklememiz gerekiyor.</p>
+<p>Raspberry Pi'nizin IP adresinin ne olduğundan emin değilseniz, terminalde <a href="https://pimylifeup.com/change-hostname-ubuntu/">hostname komutunu</a> çalıştırın.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>2.</strong> Raspberry Pi'nizin IP adresi elinizde olduğunda, web tarayıcınızda aşağıdaki adrese gitmeniz gerekiyor.</p>
+<p>Bu adresi yazarken IP adresimizi (&quot;<code>192.168.1.105</code>&quot;) kendinizinkiyle değiştirdiğinizden emin olun.</p>
+<pre><code>https://192.168.1.105:631
+</code></pre>
+<p><strong>3.</strong> Aşağıdaki ana sayfa ile karşılaşmalısınız.</p>
+<p>Burada ekranın üstündeki navigasyon menüsünde &quot;<code>Administration</code>&quot;a <code>tıklamamız</code> gerekiyor.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/02/CUPS-Main-screen-e1488003024322.png" alt="CUPS Ana ekran" /></p>
+<p><strong>4.</strong> Cups yönetim sayfasına götürüleceksiniz.</p>
+<p>Burada, &quot;<code>Add Printer</code>&quot; butonuna <code>tıklamamız</code> gerekiyor.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/02/CUPS-Administrative-Screen-e1488003169417.png" alt="CUPS Yönetim Ekranı" /></p>
+<p><strong>5.</strong> &quot;Add Printer&quot; ekranı artık yüklendiğine göre, CUPS'u ayarlamak istediğimiz yazıcıyı seçebiliriz.</p>
+<p>Bizim durumumuzda, bu yazıcı &quot;<code>Canon MG2500 series</code>&quot; yazıcısıdır.</p>
+<p>Yazıcınızı seçtikten sonra, &quot;<code>Continue</code>&quot; butonuna <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/02/Cups-select-printerpng-e1488003248213.png" alt="Cups Yazıcı Seç" /></p>
+<p>Yazıcınız bu ekranda görünmüyorsa, onu Raspberry Pi'deki USB portlarından birine taktığınızdan ve açık olduğundan emin olun.</p>
+<p>Hala görünmeyi reddediyorsa Raspberry Pi'nizi yeniden başlatmanız gerekebilir, yeniden başlatırken yazıcının açık ve takılı olduğundan emin olun.</p>
+<p><strong>6.</strong> Bu ekranda, yazıcınızın modelini seçmeniz gerekiyor. CUPS, modeli otomatik olarak algılamaya ve doğru sürücüyü seçmeye çalışacaktır.</p>
+<p>Ancak, bazı durumlarda bu doğru şekilde çalışmayacaktır, bu yüzden listeye kendiniz göz atıp en ilgili sürücüyü bulmanız gerekecek.</p>
+<p>Her şeyin doğru olduğundan memnun olduğunuzda, &quot;<code>Add Printer</code>&quot; butonuna <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/02/cups-select-model-e1488003289609.png" alt="cups model seç" /></p>
+<p><strong>7.</strong> Şimdi, yazıcı başarıyla eklenmeden önce ele almanız gereken son ekran budur.</p>
+<p>Bu ekranda ismi ve açıklamayı istediğiniz herhangi bir şeye ayarlayabilirsiniz.</p>
+<p>Evinizde uğraşmanız gereken birden fazla yazıcı varsa konumu ayarlamak yardımcı olur.</p>
+<p>Ayrıca &quot;<code>Share This Printer</code>&quot;i etkinleştirdiğinizden emin olun, aksi takdirde diğer bilgisayarlar <strong>ona erişemeyecektir</strong>.</p>
+<p>Ayarlardan memnun olduğunuzda, &quot;<code>Continue</code>&quot; butonuna <code>tıklamaktan</code> çekinmeyin.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/02/cups-add-printer-e1488003329967.png" alt="cups yazıcı ekle" /></p>
+<p><strong>8.</strong> Yazıcınızı ayarladıktan sonra karşılaşacağınız son ekran hemen aşağıda gösterilmiştir.</p>
+<p>Bu ekran, yazıcının belirli birkaç ayarını değiştirmenizi sağlar. Sayfa yazdırma boyutu, yazdırma kalitesi ve diğer çeşitli seçenekler gibi.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/02/Cups-final-screen-e1488003372862.png" alt="Cups son ekran" /></p>
+<p>Şimdi yeni kurduğumuz Raspberry Pi yazdırma sunucusunu Windows'a nasıl ekleyeceğimize bakacağız.</p>
+<p>Eğitimde daha önce SAMBA'yı ayarlamamız sayesinde bu nispeten kolay bir süreç olmalı.</p>
+<h2>Windows'a Raspberry Pi Yazdırma Sunucusu Ekleme</h2>
+<p><strong>1.</strong> CUPS yazıcısını Windows'a eklemek biraz iş olabilir, esas olarak Windows'un yazıcıya bağlanabilmesi ve anlayabilmesi için sürücüyü seçmeniz gerektiğinden.</p>
+<p>Başlamak için, önce Windows'ta ağ sayfasına gidin, buna ulaşmanın en hızlı yollarından biri &quot;<code>My Computer</code>&quot; veya &quot;<code>This PC</code>&quot;yi yükleyip kenar çubuğundaki &quot;<code>network</code>&quot;e <code>tıklamaktır</code>.</p>
+<p>Orada Raspberry Pi'nizin hostname'inin bulunduğu, benim durumumda <code>RASPBERRYPI</code> olan, aşağıdakine benzer bir ekran görmelisiniz.</p>
+<p>Raspberry Pi'nizin paylaşımına <code>çift tıklayın</code>, bir kullanıcı adı ve parola isteyebilir.</p>
+<p>Sadece enter'a basmak işe yaramazsa, kullanıcı adı olarak <code>pi</code> girmeyi deneyin.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/02/Cups-Network-01-Network-page-e1488003430881.png" alt="Cups Ağ sayfası" /></p>
+<p><strong>2.</strong> Artık Raspberry Pi yazdırma sunucunuzda mevcut olan yazıcıları görüntüleyen bir ekranla karşılaşacaksınız.</p>
+<p>Bilgisayarınıza bağlanmasını istediğiniz yazıcıya <code>çift tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/02/Cups-Network-02-Network-page-e1488003487988.png" alt="CUPS Ağ sayfası 2" /></p>
+<p><strong>3.</strong> Buna çift tıkladığınızda, muhtemelen aşağıdaki uyarı mesajıyla karşılaşacaksınız.</p>
+<p>Eğitime devam etmek için sadece &quot;<code>OK</code>&quot; butonuna <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/02/Cups-Network-03-Network-page-e1488003540232.png" alt="CUPS Ağ sayfası 3" /></p>
+<p><strong>4.</strong> Şimdi bu listede yazıcınızı bulmanız gerekecek, solda tüm markaların bir listesi, sağda ise Windows'un o marka için sürücüleri olan tüm yazıcıların bir listesi var.</p>
+<p>Yazıcınızı burada bulamazsanız, yazıcınızın modelini çevrimiçi olarak aramayı ve onun için uygun sürücüleri indirmeyi deneyin.</p>
+<p>Benim durumumda, aşağıda gösterildiği gibi Canon MG2500 serisini aramam gerekti.</p>
+<p>Yazıcınızı seçtikten sonra, devam etmek için &quot;<code>Ok</code>&quot; butonuna <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/02/Cups-Network-04-Network-page-e1488003588878.png" alt="CUPS Ağ sayfası 4" /></p>
+<p><strong>5.</strong> Bu süreç şimdi yazıcınızla bir bağlantı yükleyecektir.</p>
+<p>Bunu bilgisayar için varsayılan yazıcı yapmak isterseniz, &quot;<code>Printer</code>&quot; -&gt; &quot;<code>Set as Default Printer</code>&quot;a <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/02/Cups-Network-05-Network-page-e1488003637943.png" alt="CUPS Ağ sayfası 5" /></p>
+<p><strong>6.</strong> Yazıcı artık bilgisayarınıza başarıyla eklenmiş olmalı ve herhangi bir program tarafından kullanılabilir olmalı.</p>
+<p>Bir dosya yazdırarak yazıcının doğru şekilde ayarlandığından emin olabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/02/Cups-Network-06-e1488003678798.png" alt="CUPS Ağ Sayfası 6" /></p>
+<p>Dosya yazdırma ile ilgili herhangi bir sorununuz varsa, hem CUPS'ta hem de Windows'ta doğru yazıcı sürücüsünü seçtiğinizden emin olun.</p>
+<p>Yazıcınızın da açık olduğundan emin olun, Canon MG2500 serisi gibi bazı yazıcılar, yazdırılması için kendisine bir dosya gönderildiğinde otomatik olarak tekrar açılmaz.</p>
+<p>Raspberry Pi yazdırma sunucunuzu ona <a href="https://pimylifeup.com/raspberry-pi-airprint/">Apple AirPrint desteği ekleyerek</a> daha da genişletebilirsiniz.</p>
+<h2>Sonuç</h2>
+<p>Bu eğitimin size bir Raspberry Pi yazdırma sunucusunu nasıl kuracağınızı gösterdiğini ve herhangi bir sorunla karşılaşmadığınızı umuyorum.</p>
+<p>Herhangi bir geri bildiriminiz, ipucunuz varsa veya paylaşmak istediğiniz herhangi bir sorunla karşılaştıysanız, lütfen aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-print-server.html&amp;text=Raspberry+Pi+Yazd%C4%B1rma+Sunucusu%3A+Bir+A%C4%9F+Yaz%C4%B1c%C4%B1s%C4%B1+Kurun" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-print-server.html&amp;text=Raspberry+Pi+Yazd%C4%B1rma+Sunucusu%3A+Bir+A%C4%9F+Yaz%C4%B1c%C4%B1s%C4%B1+Kurun" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-print-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-print-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-print-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-print-server.html&amp;title=Raspberry+Pi+Yazd%C4%B1rma+Sunucusu%3A+Bir+A%C4%9F+Yaz%C4%B1c%C4%B1s%C4%B1+Kurun" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi+Yazd%C4%B1rma+Sunucusu%3A+Bir+A%C4%9F+Yaz%C4%B1c%C4%B1s%C4%B1+Kurun%20codenfast.com%2Fposts%2Fraspberry-pi-print-server.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

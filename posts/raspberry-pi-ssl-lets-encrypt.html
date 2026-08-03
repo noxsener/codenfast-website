@@ -1,0 +1,331 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Let&#39;s Encrypt Kullanarak Raspberry Pi SSL Sertifikaları - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Pi için ücretsiz otomatik SSL sertifikaları ayarlayın"/>
+    <meta property="og:title" content="Let&#39;s Encrypt Kullanarak Raspberry Pi SSL Sertifikaları"/>
+    <meta property="og:description"
+          content="Pi için ücretsiz otomatik SSL sertifikaları ayarlayın"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-ssl-lets-encrypt.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-ssl-lets-encrypt.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2017/10/Raspberry-Pi-Lets-Encrypt-no-wm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Let&#39;s Encrypt Kullanarak Raspberry Pi SSL Sertifikaları"/>
+    <meta name="twitter:description"
+          content="Pi için ücretsiz otomatik SSL sertifikaları ayarlayın"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2017/10/Raspberry-Pi-Lets-Encrypt-no-wm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Let's Encrypt Kullanarak Raspberry Pi SSL Sertifikaları","item":{"@id":"https://codenfast.com/posts/raspberry-pi-ssl-lets-encrypt.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/10/Raspberry-Pi-Lets-Encrypt-no-wm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/10/Raspberry-Pi-Lets-Encrypt-no-wm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/10/lets-encrypt-v1-mini-watermark.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/10/lets-encrypt-v1-mini-watermark.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Let's Encrypt Kullanarak Raspberry Pi SSL Sertifikaları","description":"Pi için ücretsiz otomatik SSL sertifikaları ayarlayın","image":["https://pimylifeup.com/wp-content/uploads/2017/10/Raspberry-Pi-Lets-Encrypt-no-wm.jpg"],"datePublished":"2026-08-03T15:51:40.740986+03:00","dateModified":"2026-08-03T15:51:40.741009+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Let&#39;s Encrypt Kullanarak Raspberry Pi SSL Sertifikaları</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-ssl-lets-encrypt/">PiMyLifeUp - Raspberry Pi SSL Certificates using Let's Encrypt</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu Raspberry Pi SSL sertifikası projesi, Let's Encrypt Certbot istemcisini Pi'de kurup ayarlama adımlarında size yol gösterecek.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/10/lets-encrypt-v1-mini-watermark.jpg" alt="Let's Encrypt ile Raspberry Pi SSL" /></p>
+<p>Bu Certbot istemcisi, kullanıcının ya web sunucusunu kullanarak ya da geçici bir sunucu çalıştırarak Let's Encrypt'ten bir SSL sertifikası almasını sağlar.</p>
+<p>Let's Encrypt, Raspberry Pi'niz için tamamen ücretsiz olarak <a href="https://letsencrypt.org/">güvenli ve sertifikalı bir SSL sertifikası</a> elde etmenin en iyi yoludur.</p>
+<p>Raspberry Pi'nizde SSL ayarlamaya başlamadan önce, bir IP Adresinin sertifikalı bir SSL Sertifikasına sahip olamayacağından, IP adresinize zaten kurulu ve yönlendirilmiş bir alan adına sahip olduğunuzdan emin olun.</p>
+<p>DNS sağlayıcınız olarak Cloudflare kullanıyorsanız, DNS'in Cloudflare'in proxy'sini atlayacak şekilde ayarlandığından emin olun. Proxy, IP adresinizi gizler, bu da Let's Encrypt aracının Raspberry Pi'nizin IP adresini doğrulayamayacağı ve bir SSL sertifikası oluşturamayacağı anlamına gelir.</p>
+<p>Bir SSL Sertifikası almayla ilgili bu eğitim, Raspberry Pi OS Bullseye ve Raspberry Pi 3 üzerinde son olarak test edilmiştir.</p>
+<h2>LetsEncrypt'i Kurma ve Çalıştırma</h2>
+<p><strong>1.</strong> Raspberry Pi'mizde LetsEncrypt'i ayarlamadan önce, önce her şeyin güncel olduğundan emin olmalıyız.</p>
+<p>Bunu aşağıdaki iki komutu çalıştırarak yapabiliriz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Şimdi aşağıdaki komutlardan birini çalıştırarak Raspberry Pi'mize gerçek LetsEncrypt yazılımını kurabiliriz.</p>
+<p>Bu yazılım parçası &quot;Cerbot&quot; olarak adlandırılır. Apache çalıştırıyorsanız, onun için certbot modülünü kurabilirsiniz, aksi takdirde certbot'un standart sürümünü kurun.</p>
+<p><strong>Apache</strong></p>
+<pre><code>sudo apt install python3-certbot-apache
+</code></pre>
+<p><strong>Diğer Her Şey</strong></p>
+<pre><code>sudo apt install certbot
+</code></pre>
+<p><strong>3.</strong> Certbot sonunda kurulduğuna göre, Raspberry Pi'miz için Let's Encrypt'ten bir SSL sertifikası almaya devam edebiliriz. Bunu ele almanın birkaç yolu var.</p>
+<p>Apache kullanmıyorsanız, bu adımı atlayabilirsiniz. <a href="https://pimylifeup.com/raspberry-pi-web-server/">Apache kullanıyorsanız</a>, bir sertifika almanın en kolay yolu aşağıda gösterilen komutu çalıştırmaktır, bu otomatik olarak sertifikayı alacak ve Apache'nin yapılandırmasına kuracaktır.</p>
+<p>Bunu yapmadan önce, önce <a href="https://pimylifeup.com/raspberry-pi-port-forwarding/">80 portu ve 443 portunun port yönlendirmesinin yapıldığından</a> emin olmanız gerekecek. Ayrıca, DNS sağlayıcınız olarak Cloudflare kullanıyorsanız, gerçek IP adresinizi gizlediğinden geçici olarak onu atlamanız gerekecek.</p>
+<pre><code>sudo certbot --apache
+</code></pre>
+<p><strong>4.</strong> Apache çalıştırmıyorsanız, Let's Encrypt'ten bir sertifika almak için iki farklı yol izleyebiliriz. Certbot yazılımı sayesinde, sunucuyu bağımsız bir python sunucusu kullanarak alabiliriz.</p>
+<p>Alternatif olarak, NGINX gibi başka bir web sunucusu çalıştırıyorsanız, sertifikayı almak için onu da kullanabiliriz. Ancak alındıktan sonra sertifikayı manuel olarak ayarlamanız gerekecek.</p>
+<p>Başka bir web sunucusu çalıştırmıyorsanız <strong>5a</strong> adımına, aksi takdirde <strong>5b</strong> adımına gidin.</p>
+<p><strong>5a.</strong> Bağımsız yerleşik web sunucusunu kullanmak inanılmaz derecede kolaydır, ancak önce 80 portunuzun engellenmediğinden ve yönlendirildiğinden emin olmanız gerekecek. example.com kısmını kullanmayı planladığınız alan adıyla değiştirdiğinizden emin olun.</p>
+<pre><code>sudo certbot certonly --standalone -d example.com -d www.example.com
+</code></pre>
+<p><strong>5b.</strong> Web root kullanmak, yerleşik web sunucusunu kullanmaktan biraz daha fazla bilgi gerektirir. <code>/var/www/example</code>in internetten erişilebilen çalışan bir web sitesi dizinine işaret ettiğinden emin olun. Ayrıca, <code>example.com</code> kısmını web siteniz için kullandığınız alan adıyla değiştirdiğinizden emin olun.</p>
+<pre><code>sudo certbot certonly --webroot -w /var/www/example -d example.com -d www.example.com
+</code></pre>
+<p><strong>6.</strong> Bu komutları çalıştırdıktan sonra, e-posta adresiniz gibi bazı detayları girmeniz istenecektir. Bu detaylar, Let's Encrypt'in sağladığı sertifikaları takip etmesi ve sertifikada herhangi bir sorun ortaya çıkarsa sizinle iletişime geçebilmesi için gereklidir.</p>
+<p>Gerekli bilgileri doldurduktan sonra, Let's Encrypt'ten sertifikayı almaya devam edecektir.</p>
+<p>Herhangi bir sorunla karşılaşırsanız, IP'nize işaret eden geçerli bir alan adınız olduğundan, 80 portu ve 443 portunun engellenmediğinden emin olun. Son olarak, DNS sağlayıcınız olarak Cloudflare kullanıyorsanız, DNS'in şu anda proxy sunucularını atlayacak şekilde ayarlandığından emin olun.</p>
+<p>Certbot istemcisi tarafından alınan sertifikalar aşağıdaki klasörde saklanacaktır. Tabii ki, <code>example.com</code> kısmını kendi alan adınızla değiştirerek.</p>
+<pre><code>/etc/letsencrypt/live/example.com/
+</code></pre>
+<p>Bu klasörlerin içinde hem <strong>full chain</strong> dosyasını (fullchain.pem) hem de sertifikanın <strong>private key</strong> dosyasını (privkey.pem) bulacaksınız. SSL bağlantınızı güvenli tutan ve onu meşru bir bağlantı olarak tanımlayan şeyler bunlar olduğundan, başkalarının bu dosyalara erişmesine izin vermediğinizden emin olun.</p>
+<p>Dosyalar artık başarıyla alındığına göre, onları kullanmanız gereken herhangi bir yazılım parçasını ayarlamaya devam edebilirsiniz. Örneğin, SSL sertifikalarını kullanmak için <a href="https://pimylifeup.com/raspberry-pi-nginx/">NGINX'i ayarlamak istiyorsanız</a>, aşağıdaki Raspberry Pi SSL Nginx rehberimizi takip edin.</p>
+<h2>Yeni SSL Sertifikanızı NGINX ile Kullanma</h2>
+<p><strong>1.</strong> NGINX yapılandırma dosyanızı açarak başlayın. Bunlar genellikle <code>/etc/nginx/</code> veya <code>/etc/nginx/sites-available/</code> içinde saklanır.</p>
+<p>Yapılandırma dosyanızı bulduktan sonra, favori metin editörünüzü kullanarak onu açın, örneğin benimki <a href="https://pimylifeup.com/nano-text-editor/">nano</a>. Dosyanın içindeyken, aşağıda gösterilene benzer bir metin bloğu arayın.</p>
+<p>example.com kısmımızı kullandığınız alan adıyla değiştirdiğinizden emin olun.</p>
+<pre><code>server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        root /usr/share/nginx/html;
+        index index.html index.htm;
+
+        server_name example.com;
+
+        location / {
+                try_files $uri $uri/ =404;
+        }
+}
+</code></pre>
+<p><strong>2.</strong> Bu kod bloğuna, bazı değişiklikler yapmamız gerekecek. Adımlarımızı takip edin ve aşağıda değişikliği neden yaptığımıza dair açıklamalarımızı okuyun.</p>
+<p><strong>Bulun</strong></p>
+<pre><code>listen [::]:80 default_server
+</code></pre>
+<p><strong>Altına Ekleyin</strong></p>
+<pre><code>listen 443 ssl;
+</code></pre>
+<p>Bu değişiklik, NGINX'e <strong>443</strong> portunu dinlemeye başlamasını söyler. Port 443 önemlidir çünkü HTTPS/SSL trafiğini işleyen porttur ve <strong>https://</strong> kullanırken web tarayıcılarının bağlanmaya çalışacağı porttur.</p>
+<p><strong>Bulun</strong></p>
+<pre><code>server_name example.com;
+</code></pre>
+<p><strong>Altına Ekleyin</strong></p>
+<pre><code>ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
+</code></pre>
+<p>Bu değişiklik, NGINX'e sertifika dosyalarımızı nerede bulacağını söyler. SSL/HTTPS bağlantısını ayarlamak için bunları kullanacaktır.</p>
+<p><strong>private key</strong>, gerçek bağlantıyı güvenli hale getirir. Bu dosyayı yalnızca sunucunuz okuyup görebilir ve bu dosya güvende tutulmalıdır, aksi takdirde insanlar potansiyel olarak trafiğinizi ele geçirip şifresini çözebilir.</p>
+<p><strong>fullchain</strong>, sunucuyla HTTPS bağlantısı üzerinden konuşmak için gereken tüm bilgileri içerir. Ayrıca meşru şekilde imzalanmış bir SSL dosyası olduğunu doğrulamak için gereken bilgileri de içerir.</p>
+<p><strong>3.</strong> Tüm bu değişiklikler yapıldıktan sonra, aşağıda gösterdiğimize benzer bir şeyle karşılaşmalısınız. Tabii ki, <strong>example.com</strong> kısmını alan adınızla değiştirdiğinizden emin olun.</p>
+<p>Yeni veriyi doğru girdiğinizden emin olduktan sonra, dosyayı kaydedip çıkabilir ve ardından yeni yapılandırmayı yüklemesi için NGINX'i yeniden başlatabilirsiniz.</p>
+<pre><code>server {
+        listen 80 default_server;
+        listen [::]:80 default_server
+
+        listen 443 ssl;
+
+        root /usr/share/nginx/html;
+        index index.html index.htm;
+
+        server_name example.com;
+
+        ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
+
+        location / {
+                try_files $uri $uri/ =404;
+        }
+}
+</code></pre>
+<p><strong>4.</strong> Artık Let's Encrypt ile oluşturduğumuz sertifikayı kullanan NGINX web sunucunuz için tamamen çalışan bir HTTPS bağlantısına sahip olmalısınız.</p>
+<h2>Sonuç</h2>
+<p>Umarız artık Let's Encrypt tarafından size sağlanan tamamen doğrulanmış bir SSL sertifikasına sahip olursunuz. Bu eğitimi geniş bir proje yelpazesinde, özellikle <a href="https://pimylifeup.com/category/projects/server/">sunucu tabanlı Raspberry Pi projelerinde</a> oldukça kullanışlı bulacaksınız.</p>
+<p>Umarım bu Raspberry Pi SSL eğitimini yararlı bulmuşsunuzdur, herhangi bir sorununuz veya geri bildiriminiz varsa aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-ssl-lets-encrypt.html&amp;text=Let%27s+Encrypt+Kullanarak+Raspberry+Pi+SSL+Sertifikalar%C4%B1" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-ssl-lets-encrypt.html&amp;text=Let%27s+Encrypt+Kullanarak+Raspberry+Pi+SSL+Sertifikalar%C4%B1" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-ssl-lets-encrypt.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-ssl-lets-encrypt.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-ssl-lets-encrypt.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-ssl-lets-encrypt.html&amp;title=Let%27s+Encrypt+Kullanarak+Raspberry+Pi+SSL+Sertifikalar%C4%B1" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Let%27s+Encrypt+Kullanarak+Raspberry+Pi+SSL+Sertifikalar%C4%B1%20codenfast.com%2Fposts%2Fraspberry-pi-ssl-lets-encrypt.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

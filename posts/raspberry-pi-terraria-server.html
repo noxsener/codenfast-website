@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi Terraria Sunucusu Nasıl Kurulur - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Raspberry Pi&#39;nizde bir Terraria Sunucusu kurmayı öğrenin"/>
+    <meta property="og:title" content="Raspberry Pi Terraria Sunucusu Nasıl Kurulur"/>
+    <meta property="og:description"
+          content="Raspberry Pi&#39;nizde bir Terraria Sunucusu kurmayı öğrenin"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-terraria-server.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-terraria-server.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2018/03/Raspberry-Pi-Terraria-no-wm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi Terraria Sunucusu Nasıl Kurulur"/>
+    <meta name="twitter:description"
+          content="Raspberry Pi&#39;nizde bir Terraria Sunucusu kurmayı öğrenin"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2018/03/Raspberry-Pi-Terraria-no-wm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi Terraria Sunucusu Nasıl Kurulur","item":{"@id":"https://codenfast.com/posts/raspberry-pi-terraria-server.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2018/03/Raspberry-Pi-Terraria-no-wm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2018/03/Raspberry-Pi-Terraria-no-wm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2018/03/Raspberry-Pi-Terraria-Server-Thumbnail.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2018/03/Raspberry-Pi-Terraria-Server-Thumbnail.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi Terraria Sunucusu Nasıl Kurulur","description":"Raspberry Pi'nizde bir Terraria Sunucusu kurmayı öğrenin","image":["https://pimylifeup.com/wp-content/uploads/2018/03/Raspberry-Pi-Terraria-no-wm.jpg"],"datePublished":"2026-08-03T15:49:42.548164+03:00","dateModified":"2026-08-03T15:49:42.548195+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi Terraria Sunucusu Nasıl Kurulur</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-terraria-server/">PiMyLifeUp - How to set up a Raspberry Pi Terraria Server</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu projede, kendi Raspberry Pi Terraria sunucunuzu kurmanın tüm adımlarında size yol göstereceğiz, bu da düşük maliyetli ve enerji verimli bir Terraria sunucusu kurmanızı sağlayacak.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2018/03/Raspberry-Pi-Terraria-Server-Thumbnail.png" alt="Raspberry Pi Terraria Sunucusu" /></p>
+<p>Pi'nizde bir Terraria sunucusu çalıştırma yeteneği, TShock adlı açık kaynaklı bir proje sayesinde mümkün olur.</p>
+<p>TShock, resmi Terraria sunucusunun daha da fazla özellikle dolu bir yeniden uygulamasıdır. Daha fazla özelliğe sahip olmanın yanı sıra, önemli ölçüde daha fazla işletim sistemine ve cihaza da taşınmıştır.</p>
+<p>ARM32 ve ARM64 derlemeleri, Raspberry Pi'mizden uygun fiyatlı ve düşük güçlü bir Terraria sunucusu çalıştırmamızı sağlayan şeydir.</p>
+<p>Bu oyun sunucusunu Raspberry Pi'nizde çalışır hale getirmek, büyük ölçüde TShock yazılımı sayesinde aslında oldukça basit bir süreçtir. Kendi kurulum aracını içerir, bu da Pi'nizde .NET Framework'ün doğru sürümünü almakla uğraşmanıza gerek kalmadığından her şeyi önemli ölçüde basitleştirecektir.</p>
+<p>Terraria sunucunuza ev ağınızın dışından erişmek istiyorsanız, Pi'nizde <a href="https://pimylifeup.com/raspberry-pi-static-ip-address/">statik bir IP adresi kurmak</a> ve port yönlendirmesini etkinleştirmek isteyeceksiniz.</p>
+<p>İnsanların Raspberry Pi destekli Terraria sunucunuza bağlanmasına izin veren port yönlendirmesine <a href="https://pimylifeup.com/raspberry-pi-tailscale/">Tailscale</a> veya <a href="https://pimylifeup.com/pangolin-linux/">Pangolin</a> gibi başka alternatifler de vardır.</p>
+<p>Bu rehber, Raspberry Pi OS Trixie (64-bit) çalıştıran bir <a href="https://pimylifeup.com/raspberry-pi-4/">Raspberry Pi 4</a> üzerinde test edilmiştir.</p>
+<h2>Raspberry Pi'de Bir Terraria Sunucusu Kurma</h2>
+<p>Bu eğitimde, Raspberry Pi'de bir Terraria Sunucusu kuracağız. Bunu Tshock sunucu yazılımını kullanarak başarıyoruz.</p>
+<p>.NET Framework'ün daha yeni sürümlerinin açık kaynaklı olması ve ARM için aktif olarak geliştirilmesi sayesinde, Tshock'u Raspberry Pi'mizde nispeten kolayca çalıştırabiliyoruz.</p>
+<h3>Raspberry Pi'nizi Hazırlama</h3>
+<p><strong>1.</strong> Şimdi, Raspberry Pi'mizde Terraria sunucu yazılımını kurmaya başlamadan önce, <a href="https://pimylifeup.com/update-raspbian/">Raspberry Pi'mizin tamamen güncel olduğundan</a> emin olmamız gerekecek.</p>
+<p>Güncel olmayan tüm paketlerinizi güncellemenin en kolay yolu, terminalde aşağıdaki iki komutu çalıştırmaktır. İlk komut paket listesi önbelleğini güncelleyecek, ikincisi ise güncel olmadığını bulduğu tüm paketleri yükseltecektir.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Pi'miz artık güncel olduğuna göre, Terraria sunucusunu çalıştırmak için gerekli şeyleri hazırlamaya geçebiliriz. Neyse ki bizim için, TShock zor işin çoğunu bizim için yapar, bu yüzden Pi'mizde yapmamız gereken çok fazla şey yok.</p>
+<p>Yapmamız gereken ilk ve en önemli şey, Pi'mizde sunucu dosyalarını saklamak için bir yer oluşturmaktır. Bu eğitim için, mevcut kullanıcınızın ana dizini içinde &quot;tshock&quot; adlı bir dizin oluşturacağız.</p>
+<p>Bunu aşağıda yaptığımız gibi <a href="https://pimylifeup.com/mkdir-command-linux/">mkdir komutunu kullanarak</a> başarabilirsiniz. Tilde sembolünün (<code>~</code>) kullanımı, terminale ana klasörden bahsettiğimizi anlamasına yardımcı olur.</p>
+<p>Dizini oluşturduktan sonra, <a href="https://pimylifeup.com/cd-command/">cd komutunu kullanarak</a> ona geçeceğiz.</p>
+<pre><code>mkdir ~/tshock
+cd ~/tshock
+</code></pre>
+<h3>Raspberry Pi'de TShock Terraria Sunucusunu İndirme</h3>
+<p><strong>3.</strong> Artık yeni oluşturduğumuz klasörde olduğumuza göre, wget komutunu kullanarak Terraria sunucu yazılımını Raspberry Pi'mize indirelim.</p>
+<p>Pi'nize indirdiğimiz sürüm, Terraria 1.4.4.9 için derlenmiş TShock 5.2.4'tür. <a href="https://github.com/Pryaxis/TShock/releases">TShock GitHub sayfasına</a> giderek daha yeni bir sürüm olup olmadığını kontrol edebilirsiniz.</p>
+<pre><code>wget https://github.com/Pryaxis/TShock/releases/download/v5.2.4/TShock-5.2.4-for-Terraria-1.4.4.9-linux-arm64-Release.zip
+</code></pre>
+<p><strong>3.</strong> Artık Raspberry Pi'mizde aşağıdaki komutu çalıştırarak zip dosyasını çıkarabiliriz. <a href="https://pimylifeup.com/unzip-command-linux/">unzip</a> temel Raspberry Pi OS kurulumunda varsayılan olarak gelse de, daha sade kurulumlarda onu kurmanız gerekebilir.</p>
+<pre><code>unzip TShock-5.2.4-for-Terraria-1.4.4.9-linux-arm64-Release.zip
+</code></pre>
+<p><strong>4.</strong> Bu zip dosyasının içinde, çıkarmamız gereken başka bir arşiv bulacaksınız; ancak bu sefer aşağıda gösterildiği gibi tar komutunu kullanmamız gerekiyor.</p>
+<pre><code>tar xvf TShock-Beta-linux-arm64-Release.tar
+</code></pre>
+<p><strong>5.</strong> Bir sonraki adımımız, az önce çıkardığımız iki arşiv dosyasını temizlemektir. Artık gerekli olmadıklarından, onları Raspberry Pi'nizde bırakmanın bir anlamı yok, ayrıca TShock Terraria sunucusunu çalıştırmak için gerekli değiller.</p>
+<p>Aşağıdaki iki komutu kullanarak arşivi kaldırabilirsiniz.</p>
+<pre><code>rm TShock-5.2.4-for-Terraria-1.4.4.9-linux-arm64-Release.zip TShock-Beta-linux-arm64-Release.tar
+</code></pre>
+<h3>Terraria Sunucusunu Raspberry Pi'nizde Çalıştırma</h3>
+<p><strong>6.</strong> TShock sunucusu Raspberry Pi'mize çıkarıldığına göre, artık &quot;installer&quot;ı (kurulum aracı) çalıştırabiliriz.</p>
+<p>İlk çalıştırıldığında, bu kurulum aracı Pi'nizle uyumlu bir .NET Framework sürümünü indirip kuracaktır. Bu bize bir sürü zahmetten tasarruf sağlar ve Terraria sunucusunun çalışması için Mono'ya güvenmekten kaçınmamızı sağlar.</p>
+<p>Dosyanın adına rağmen, Terraria sunucusunu başlatmak için de aynı dosyayı kullanabilirsiniz. Bu, yazılımı her başlatmak istediğinizde bir ortam değişkeni ayarlamak zorunda kalma zahmetinden sizi kurtaracaktır.</p>
+<p>Kurulum aracını çalıştırmak için, daha önce oluşturduğumuz tshock klasöründeyken terminalde aşağıdaki komutu kullanın.</p>
+<p>Bunu yapmak için, tshock klasörümüzdeyken Raspberry Pi'de aşağıdaki komutu çalıştırmamız gerekiyor.</p>
+<pre><code>./TShock.Installer
+</code></pre>
+<p><strong>7.</strong> Raspberry Pi'de Terraria dünyanızı kurmak için birkaç adımdan geçirileceksiniz.</p>
+<p>Daha büyük olanlar üretim sırasında Raspberry Pi'nin donmasına neden olabileceğinden, küçük bir dünyayla başlamanızı öneririz. Dünyanızın adını not edin.</p>
+<p>Üretim tamamlandıktan sonra, komut satırının ana menüsüne döneceksiniz. Dünyanızın adının yanındaki numarayı girip enter'a basmanız yeterli. Birkaç detay daha isteneceksiniz, ancak genellikle bunları atlamak için sadece Enter tuşuna basmak güvenlidir.</p>
+<h2>Sonuç</h2>
+<p>Artık Raspberry Pi'nizde tamamen çalışan bir Terraria sunucusuna sahip olmalı ve cihazınızdan ona başarıyla bağlanabilmelisiniz. Herhangi bir sorunla karşılaşırsanız veya bu eğitimle ilgili bir geri bildirim bırakmak isterseniz, aşağıya yorum bırakmaktan çekinmeyin.</p>
+<p>Raspberry Pi'niz için daha fazla oyun sunucusuna bakmakla ilgileniyorsanız, <a href="https://pimylifeup.com/raspberry-pi-minecraft-server/">Minecraft Raspberry Pi sunucusu eğitimimize</a> ve <a href="https://pimylifeup.com/raspberry-pi-minecraft-pe-server/">Minecraft Pocket Edition sunucusu eğitimimize</a> de göz atabilirsiniz.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-terraria-server.html&amp;text=Raspberry+Pi+Terraria+Sunucusu+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-terraria-server.html&amp;text=Raspberry+Pi+Terraria+Sunucusu+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-terraria-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-terraria-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-terraria-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-terraria-server.html&amp;title=Raspberry+Pi+Terraria+Sunucusu+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi+Terraria+Sunucusu+Nas%C4%B1l+Kurulur%20codenfast.com%2Fposts%2Fraspberry-pi-terraria-server.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

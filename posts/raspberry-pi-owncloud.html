@@ -1,0 +1,423 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi ownCloud: Kişisel Bulut Depolamanız - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Kendi kişisel bulut depolamanızı kurun"/>
+    <meta property="og:title" content="Raspberry Pi ownCloud: Kişisel Bulut Depolamanız"/>
+    <meta property="og:description"
+          content="Kendi kişisel bulut depolamanızı kurun"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-owncloud.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-owncloud.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2015/08/Raspberry-Pi-Owncloud-no-wm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi ownCloud: Kişisel Bulut Depolamanız"/>
+    <meta name="twitter:description"
+          content="Kendi kişisel bulut depolamanızı kurun"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2015/08/Raspberry-Pi-Owncloud-no-wm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi ownCloud: Kişisel Bulut Depolamanız","item":{"@id":"https://codenfast.com/posts/raspberry-pi-owncloud.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2015/08/Raspberry-Pi-Owncloud-no-wm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2015/08/Raspberry-Pi-Owncloud-no-wm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2015/08/Raspberry-Pi-Owncloud-1.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2015/08/Raspberry-Pi-Owncloud-1.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2015/08/ownCloud-Login-Page.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2015/08/ownCloud-Login-Page.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2015/08/ownCloud-First-Login.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2015/08/ownCloud-First-Login.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2015/08/ownCloud-File-Upload.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2015/08/ownCloud-File-Upload.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi ownCloud: Kişisel Bulut Depolamanız","description":"Kendi kişisel bulut depolamanızı kurun","image":["https://pimylifeup.com/wp-content/uploads/2015/08/Raspberry-Pi-Owncloud-no-wm.jpg"],"datePublished":"2026-08-03T16:07:44.195643+03:00","dateModified":"2026-08-03T16:07:44.195662+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi ownCloud: Kişisel Bulut Depolamanız</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-owncloud/">PiMyLifeUp - Raspberry Pi ownCloud: Your Personal Cloud Storage</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu projede, Raspberry Pi'de bir ownCloud sunucusu kuracağız. Bu sunucu, kendi kişisel bulut depolamanız olarak görev yapabilir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2015/08/Raspberry-Pi-Owncloud-1.jpg" alt="Raspberry Pi ownCloud" /></p>
+<p>Gizliliğinizi korumak giderek zorlaştıkça, dosyalarınızı özel, self-hosted bir bulut depolamaya taşımayı düşünüyor olabilirsiniz. Durum buysa, bu eğitim tam size göre.</p>
+<p>ownCloud web arayüzü, Dropbox, Google Drive ve daha fazlası gibi mevcut birçok bulut depolama sağlayıcısına çok benzer. Bu benzerlik, self-hosted yazılıma geçişi çok daha kolay hale getirecektir.</p>
+<p>Veriniz ev ağınızda saklanacağından, ağınız dışından dosya yükleyip indirirseniz daha fazla bant genişliği kullanacağınızı hatırlamak önemlidir.</p>
+<p>Bu eğitim, ownCloud'u kurup erişilebilir hale getirmek için bilmeniz gereken her şeyde size yol gösterecek.</p>
+<p>Meraklıysanız ve ownCloud yazılımı hakkında daha fazla bilgi edinmek isterseniz, <a href="https://owncloud.com">ownCloud web sitesine</a> göz atmayı unutmayın.</p>
+<h2>Raspberry Pi ownCloud Sunucusunu Kurma</h2>
+<p>Öncelikle, üzerinde bir işletim sistemi kurulu bir Raspberry Pi'ye sahip olmanız gerekecek. Raspberry Pi OS'yi henüz kurmadıysanız, <a href="https://pimylifeup.com/raspberry-pi-os-install/">Raspberry Pi OS kurma</a> rehberimize göz atın. En iyi performans ve güvenilirlik için en son sürümü kullanmanızı öneririz.</p>
+<p>ownCloud'u Raspberry Pi'nize kurmanın oldukça fazla yolu var. Bu eğitimde, ownCloud'u kurmak için Docker kullanacağız.</p>
+<p>Bu eğitimin önceki sürümünde, <a href="https://pimylifeup.com/raspberry-pi-nginx/">Nginx kullandık</a>, ancak bu yöntem artık kullanımdan kaldırılmıştır ve şimdi Docker kullanmanızı öneriyoruz, özellikle ownCloud hala PHP7.4'e dayandığından.</p>
+<h3>Docker Kurma</h3>
+<p>Yapmamız gereken ilk şey, Raspberry Pi'mize Docker kurmaktır. ownCloud yazılımını çalıştırmak için bu yazılıma ihtiyacımız olacak.</p>
+<p><strong>1.</strong> Öncelikle, terminalde veya <a href="https://pimylifeup.com/raspberry-pi-ssh/">SSH üzerinden</a>, Raspberry Pi'yi ve paketlerini güncellememiz gerekecek. Aşağıdaki iki komutu girerek bunu yapın.</p>
+<pre><code>sudo apt update
+sudo apt upgrade -y
+</code></pre>
+<p><strong>2.</strong> Sonraki birkaç adıma geçmeden önce Raspberry Pi'nizde Docker'ın olduğundan emin olmanız gerekecek. Zaten kurulu ise, 3. adıma gidin.</p>
+<p>Docker'ı kurmanız gerekiyorsa, <a href="https://pimylifeup.com/raspberry-pi-docker/">Raspberry Pi'de Docker kurma</a> eğitimimizi takip edin. Yazılımı doğru şekilde kurmak için tüm adımlarda size yol gösterecektir.</p>
+<pre><code>https://pimylifeup.com/raspberry-pi-docker/
+</code></pre>
+<h3>Gerekli Dizinleri Oluşturma</h3>
+<p><strong>3.</strong> Şimdi compose dosyasını ve ortam değişkenlerini saklayacağımız dizinleri oluşturmamız gerekiyor.</p>
+<p><a href="https://pimylifeup.com/mkdir-command-linux/">mkdir komutunu</a> çalıştırarak bunu yapabilirsiniz. &quot;<code>-p</code>&quot; seçeneği, eksik olan tüm dizinleri oluşturacaktır.</p>
+<pre><code>sudo mkdir -p /opt/stacks/owncloud
+</code></pre>
+<p><strong>4.</strong> Şimdi <a href="https://pimylifeup.com/cd-command/">cd komutunu kullanarak</a> yeni oluşturulan dizine geçin.</p>
+<pre><code>cd /opt/stacks/owncloud
+</code></pre>
+<h3>Docker Compose Dosyasını Ayarlama</h3>
+<p><strong>5.</strong> Devam etmeden önce, Raspberry Pi'nin IP adresini almamız gerekecek. Ortam dosyasında ve ownCloud web arayüzüne erişmek için IP adresini kullanmanız gerekecek.</p>
+<p>Gelecekte değişmesini önlemek için <a href="https://pimylifeup.com/raspberry-pi-static-ip-address/">Raspberry Pi IP'nizi statik olarak ayarlamanızı</a> öneririm.</p>
+<p>Raspberry Pi'nin IP adresini almak için, &quot;<code>-I</code>&quot; seçeneğiyle <a href="https://pimylifeup.com/hostname-command/">hostname komutunu</a> girin.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>6.</strong> ownCloud kurulumumuz için bir compose dosyası yazma zamanı. Bu dosya, Docker'ın belirtilen seçeneklerle tüm ilgili servisleri kurmak için çalıştıracağı bir talimatlar dizisidir. ownCloud'un yanında, bir MySQL ve bir Redis sunucusu da kuracağız.</p>
+<p>Aşağıdaki komutu çalıştırarak bu dosyayı oluşturup düzenleyin. <a href="https://pimylifeup.com/nano-text-editor/">nano metin editörünü</a> kullanacağız.</p>
+<pre><code>sudo nano compose.yaml
+</code></pre>
+<p><strong>7.</strong> Bu dosyaya, aşağıdaki metni kopyalayıp yapıştırın. Neyse ki, herhangi bir ek yapılandırma bir ortam dosyasında saklanacağından bu dosyada herhangi bir değişiklik yapmamıza gerek yok.</p>
+<pre><code>services:
+  owncloud:
+    image: owncloud/server:${OWNCLOUD_VERSION}
+    container_name: owncloud_server
+    restart: always
+    ports:
+      - ${HTTP_PORT}:8080
+    depends_on:
+      - mariadb
+      - redis
+    environment:
+      - OWNCLOUD_DOMAIN=${OWNCLOUD_DOMAIN}
+      - OWNCLOUD_TRUSTED_DOMAINS=${OWNCLOUD_TRUSTED_DOMAINS}
+      - OWNCLOUD_DB_TYPE=mysql
+      - OWNCLOUD_DB_NAME=owncloud
+      - OWNCLOUD_DB_USERNAME=owncloud
+      - OWNCLOUD_DB_PASSWORD=owncloud
+      - OWNCLOUD_DB_HOST=mariadb
+      - OWNCLOUD_ADMIN_USERNAME=${ADMIN_USERNAME}
+      - OWNCLOUD_ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - OWNCLOUD_MYSQL_UTF8MB4=true
+      - OWNCLOUD_REDIS_ENABLED=true
+      - OWNCLOUD_REDIS_HOST=redis
+    healthcheck:
+      test: [&quot;CMD&quot;, &quot;/usr/bin/healthcheck&quot;]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - ${OWNCLOUD_FILES_LOCATION}:/mnt/data
+
+  mariadb:
+    image: mariadb:10.11 # minimum required ownCloud version is 10.9
+    container_name: owncloud_mariadb
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=owncloud
+      - MYSQL_USER=owncloud
+      - MYSQL_PASSWORD=owncloud
+      - MYSQL_DATABASE=owncloud
+      - MARIADB_AUTO_UPGRADE=1
+    command: [&quot;--max-allowed-packet=128M&quot;, &quot;--innodb-log-file-size=64M&quot;]
+    healthcheck:
+      test: [&quot;CMD&quot;, &quot;mysqladmin&quot;, &quot;ping&quot;, &quot;-u&quot;, &quot;root&quot;, &quot;--password=owncloud&quot;]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - ./mysql:/var/lib/mysql
+
+  redis:
+    image: redis:6
+    container_name: owncloud_redis
+    restart: always
+    command: [&quot;--databases&quot;, &quot;1&quot;]
+    healthcheck:
+      test: [&quot;CMD&quot;, &quot;redis-cli&quot;, &quot;ping&quot;]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - ./redis:/data
+</code></pre>
+<p>Bitirdiğinizde, <code>CTRL</code> + <code>X</code>, <code>Y</code>, ardından <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<p><strong>8.</strong> Ortam dosyasını yazma zamanı. Bu dosya, ownCloud yazılımı için ayarlamak istediğimiz tüm yapılandırmaları içerecektir. Örneğin, kullanıcı adları, parolalar, portlar ve daha fazlası. Docker bunu otomatik olarak okur ve compose dosyasındaki yer tutucuları ortam dosyasındaki ilgili veriyle eşleştirip değiştirecektir.</p>
+<p>Ortam dosyasını oluşturmak için, aşağıdaki komutu girin.</p>
+<pre><code>sudo nano .env
+</code></pre>
+<p><strong>9.</strong> Bu dosyaya, aşağıdaki satırları girmeniz ve her yer tutucuyu kullanmak istediğiniz değerle değiştirmeniz gerekecek. Bu seçeneklerin her birini aşağıda açıklayacağız.</p>
+<pre><code>OWNCLOUD_VERSION=&lt;SÜRÜM&gt;
+OWNCLOUD_DOMAIN=&lt;ALANADIVEYAIP&gt;:&lt;HTTPPORTU&gt;
+OWNCLOUD_TRUSTED_DOMAINS=&lt;ALANADIVEYAIP&gt;
+ADMIN_USERNAME=&lt;ADMINKULLANICIADI&gt;
+ADMIN_PASSWORD=&lt;ADMINPAROLASI&gt;
+HTTP_PORT=&lt;HTTPPORTU&gt;
+OWNCLOUD_FILES_LOCATION=&lt;BAĞLAMAYOLU&gt;
+</code></pre>
+<ul>
+<li><code>&lt;SÜRÜM&gt;</code> Bu yer tutucu, Raspberry Pi'nizde çalıştırmak istediğiniz ownCloud sürümünü temsil eder. <code>latest</code> kullanmanızı öneririm, ancak her zaman <code>10</code> gibi daha eski bir sürüm belirtebilirsiniz.</li>
+<li><code>&lt;ALANADIVEYAIP&gt;</code> ownCloud örneğine erişim için izin verilen adresi belirtmek için bu seçeneği kullanın. Örneğin, onu yerel olarak kullanmak istiyorsam, <code>192.168.0.15</code> gibi yerel IP'yi kullanacağım.</li>
+</ul>
+<p>Yazılıma uzaktan erişmek istersem, harici bir IP adresi veya alan adı kullanabilirim. Her birini virgülle ayırarak birden fazla alan adı ve IP ekleyebilirsiniz. Örneğin, <code>192.168.0.15,test.pimylifeup.com</code>. Lütfen, birden fazla IP ve alan adının yalnızca <code>OWNCLOUD_TRUSTED_DOMAINS</code> değişkeni için geçerli olduğunu unutmayın.</p>
+<ul>
+<li><code>&lt;HTTPPORTU&gt;</code> Bu, ownCloud'un dinleyeceği varsayılan porttur. Diğer yazılımlarla çakışmayı önlemek için <code>8080</code> veya benzeri bir port kullanmanızı öneririm.</li>
+<li><code>&lt;ADMINKULLANICIADI&gt;</code> Bu yer tutucuyu admin hesabınız için kullanmak istediğiniz kullanıcı adıyla değiştirin. İlk kurulumdan sonra bunu değiştiremezsiniz.</li>
+<li><code>&lt;ADMINPAROLASI&gt;</code> Kullanıcı adı gibi, admin parolası da yalnızca ilk kurulum için kullanılır. Sonrasında, parolayı web arayüzünde değiştirmeniz gerekecek.</li>
+<li><code>&lt;BAĞLAMAYOLU&gt;</code> Bu, ownCloud'un verisini saklama yoludur. <code>.data</code> kullanmak, onu <code>/opt/stacks/owncloud</code> dizini içinde saklayacaktır. Bu dizini size en uygun olan herhangi bir yere değiştirebilirsiniz.</li>
+</ul>
+<p>Bunu <code>/mnt/usb1/owncloud</code> gibi bir şey kullanarak <a href="https://pimylifeup.com/raspberry-pi-mount-usb-drive/">bağlı bir sürücüye</a> ayarlayabilirsiniz. Bağlı bir sürücü iyi bir seçenektir çünkü çok fazla depolama alanına erişim kazanmanızı sağlar.</p>
+<pre><code>OWNCLOUD_VERSION=latest
+OWNCLOUD_DOMAIN=192.168.0.15:8080
+OWNCLOUD_TRUSTED_DOMAINS=192.168.0.15
+ADMIN_USERNAME=pimylifeup
+ADMIN_PASSWORD=pimylifeup
+HTTP_PORT=8080
+OWNCLOUD_FILES_LOCATION=./data
+</code></pre>
+<p>Bitirdiğinizde, <code>CTRL</code> + <code>X</code>, <code>Y</code>, ardından <code>ENTER</code> tuşuna basarak dosyayı kaydedip çıkın.</p>
+<h3>Docker ile ownCloud Sunucusunu Başlatma</h3>
+<p><strong>10.</strong> ownCloud sunucunuzu başlatmak için, yapmanız gereken tek şey aşağıdaki komutu çalıştırmaktır.</p>
+<p>Başlatıldıktan sonra, Docker gerekli tüm yazılımı indirecek ve belirtilen seçeneklerle her servisi başlatacaktır. <code>-d</code> seçeneğini kullanmak, Docker'ı arka planda çalıştıracaktır.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h2>Raspberry Pi'de ownCloud'un İlk Başlatılması</h2>
+<p>Raspberry Pi'de çalışan ownCloud'un temellerinden kısaca geçeceğim. Daha fazla bilgi isterseniz, web sitelerindeki kılavuzlara bakmanızı şiddetle öneririm. Bunları <a href="https://doc.owncloud.com/">ownCloud kılavuz sitesinde burada</a> bulabilirsiniz.</p>
+<p><strong>11.</strong> Favori web tarayıcınızda, Raspberry Pi'nizin IP adresine gitmeniz gerekiyor.</p>
+<p>IP adresinizi bilmiyorsanız, Raspberry Pi'de <a href="https://pimylifeup.com/change-hostname-ubuntu/">hostname komutunu</a> çalıştırabilirsiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<p>Aşağıda, tarayıcıya girmeniz gereken adresin bir örneği var. Yukarıdaki komutu kullanarak aldığınız IP adresiyle güncellemeyi unutmayın.</p>
+<pre><code>http://192.168.0.15:8080
+</code></pre>
+<p><strong>12.</strong> Artık aşağıdakine benzer bir giriş sayfasıyla karşılaşmalısınız. Sadece ortam dosyasında ayarladığımız kullanıcı adını ve parolayı girin.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2015/08/ownCloud-Login-Page.jpg" alt="ownCloud Giriş Sayfası" /></p>
+<p><strong>13.</strong> Şimdi masaüstü, Android ve iOS için uygulamaları nasıl kurabileceğinize dair bir açılır pencere ile bir sayfa göreceksiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2015/08/ownCloud-First-Login.jpg" alt="ownCloud İlk Giriş" /></p>
+<p><strong>14.</strong> Son olarak, bir dosyayı web arayüzüne sürükleyip bırakarak ownCloud kurulumunuza dosya yükleyebildiğinizi test edin. Herhangi bir sorun olmadan yüklenmeli.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2015/08/ownCloud-File-Upload.jpg" alt="ownCloud Dosya Yükleme" /></p>
+<p><strong>15.</strong> Artık ownCloud, Raspberry Pi'nizde kurulu ve çalışıyor. Sonraki birkaç bölüm, uzaktan erişim, yazılımı güncelleme ve onu güvenli bir yere yedeklemenin temellerini kapsıyor.</p>
+<h2>Uzaktan Erişim Ayarlama</h2>
+<p>Sunucuya uzaktan erişmek istiyorsanız, <a href="https://pimylifeup.com/raspberry-pi-cloudflare-tunnel/">Cloudflare Tunnels</a> veya <a href="https://pimylifeup.com/raspberry-pi-tailscale/">Tailscale</a> gibi bir hizmet kullanmanızı şiddetle öneririm. Bu hizmetler, çoğu kişi için anlaşılması ve kurulması nispeten kolaydır. Alternatif olarak, Traefik veya <a href="https://pimylifeup.com/raspberry-pi-nginx-proxy-manager/">Nginx proxy manager</a> gibi bir ters proxy kurmak da işe yarayacaktır.</p>
+<p>ownCloud'u internete açığa çıkarma yönteminizi seçtikten sonra, sadece yazılımın IP adresini ve portunu belirtmeniz gerekecek. Yukarıdaki yazılımların çoğu, alan adınız için sertifika oluşturacaktır.</p>
+<h2>ownCloud Docker'ı Güncelleme</h2>
+<p>Docker kullanmak, ownCloud yazılımınızı güncellemeyi son derece kolaylaştırır ve sadece birkaç basit adım içerir.</p>
+<p><strong>1.</strong> Güncellemeden önce, güncelleme ile ilgili bir şeyler ters giderse diye herhangi bir veriyi yedeklemenizi öneririz. Daha fazla bilgi için yedekleme bölümümüzü takip edin.</p>
+<p><strong>2.</strong> Önce ownCloud compose dosyanızın bulunduğu yere geçmeniz gerekecek. Bu eğitimi takip ettiyseniz, aşağıdaki komutu kullanın.</p>
+<pre><code>cd /opt/stacks/owncloud
+</code></pre>
+<p><strong>3.</strong> Compose dosyasında belirtilen yazılımın en son sürümlerini çekmesini Docker'a basitçe söyleyebilirsiniz.</p>
+<pre><code>docker compose pull
+</code></pre>
+<p><strong>4.</strong> En son yazılım indirildikten sonra, compose up komutunu vermeniz gerekiyor. Bu komut, docker'da çalışan yazılımın daha önce indirdiğimiz en son sürümlere güncellendiğinden emin olur.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<h2>ownCloud Docker'ı Yedekleme</h2>
+<p>Veri sürücüsü arızası, doğal afetler, bozulma veya kazara silme her an ve en beklemediğiniz zamanda olabileceğinden, verinizi yedeklemek son derece önemlidir. Neyse ki, veriyi yedeklemek nispeten basittir.</p>
+<p>Veriyi kopyalayıp başka bir konumda saklamak için <a href="https://pimylifeup.com/raspberry-pi-rclone/">Raspberry Pi'de rclone</a> veya benzer bir şey kullanabilirsiniz. Ayrıca aşağıdaki adımları bir bash script'i kullanarak ve cron ayarlayarak otomatikleştirebilirsiniz.</p>
+<p><strong>1.</strong> Önce compose dosyasının bulunduğu yere geçmeniz gerekecek.</p>
+<pre><code>cd /opt/stacks/owncloud
+</code></pre>
+<p><strong>2.</strong> Önce, aşağıdaki komutu çalıştırarak docker konteynerini durdurun.</p>
+<pre><code>docker compose stop
+</code></pre>
+<p><strong>3.</strong> Sonraki birkaç satır, rclone'un kurulu olmasını gerektirir, ancak bunlar sadece içeriği kaynak konumdan hedefe senkronize edecektir. Örneğin, <code>/opt/stacks/owncloud/data</code>, <code>/backups/owncloud/data</code>ya senkronize olacaktır.</p>
+<p>Ayrıca rclone'u yerel yerine uzak bir konuma senkronize edecek şekilde ayarlayabilirsiniz. Bu yöntem, önemli veriyi yedeklemek için şiddetle önerilir.</p>
+<pre><code>sudo rclone sync /opt/stacks/owncloud/data /backups/owncloud/data --progress
+sudo rclone sync /opt/stacks/owncloud/mysql /backups/owncloud/mysql --progress
+</code></pre>
+<p><strong>4.</strong> Yukarıdaki iki komut tamamlandıktan sonra, aşağıdaki komutu çalıştırarak docker konteynerini başlatın.</p>
+<pre><code>docker compose up -d
+</code></pre>
+<p>Daha önce belirttiğim gibi, yukarıdaki komutları bir bash script'ine ekleyebilir ve ardından yedekleme sırasını otomatikleştirebilirsiniz. Yedeklemeyi sunucunun en az kullanılma olasılığının olduğu zaman gerçekleşecek şekilde zamanlamanızı şiddetle öneririm.</p>
+<h2>Sonuç</h2>
+<p>Umarım bu eğitim, kendi Raspberry Pi ownCloud'unuzu kurmanıza yardımcı olmuştur. Artık kendi kişisel bulutunuz içinde dosya yükleyip saklayabilmelisiniz.</p>
+<p>Diğer self-hosted projelerle ilgileniyorsanız, <a href="https://pimylifeup.com/raspberry-pi-immich/">Raspberry Pi'de Immich'e</a> de göz atmanızı öneririm. Fotoğrafları saklamak ve görüntülemek için harika bir yazılımdır.</p>
+<p>Herhangi bir sorununuz varsa, geri bildirim bırakmak isterseniz veya bir şey kaçırdıysam, aşağıya bir yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-owncloud.html&amp;text=Raspberry+Pi+ownCloud%3A+Ki%C5%9Fisel+Bulut+Depolaman%C4%B1z" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-owncloud.html&amp;text=Raspberry+Pi+ownCloud%3A+Ki%C5%9Fisel+Bulut+Depolaman%C4%B1z" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-owncloud.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-owncloud.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-owncloud.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-owncloud.html&amp;title=Raspberry+Pi+ownCloud%3A+Ki%C5%9Fisel+Bulut+Depolaman%C4%B1z" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi+ownCloud%3A+Ki%C5%9Fisel+Bulut+Depolaman%C4%B1z%20codenfast.com%2Fposts%2Fraspberry-pi-owncloud.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

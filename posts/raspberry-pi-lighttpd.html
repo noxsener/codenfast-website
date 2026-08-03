@@ -1,0 +1,307 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi Lighttpd Nasıl Kurulur - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Pi&#39;de Lighttpd kurmanın tüm adımları"/>
+    <meta property="og:title" content="Raspberry Pi Lighttpd Nasıl Kurulur"/>
+    <meta property="og:description"
+          content="Pi&#39;de Lighttpd kurmanın tüm adımları"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-lighttpd.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-lighttpd.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2017/12/Raspberry-Pi-Lighttpd-no-wm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi Lighttpd Nasıl Kurulur"/>
+    <meta name="twitter:description"
+          content="Pi&#39;de Lighttpd kurmanın tüm adımları"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2017/12/Raspberry-Pi-Lighttpd-no-wm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi Lighttpd Nasıl Kurulur","item":{"@id":"https://codenfast.com/posts/raspberry-pi-lighttpd.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/12/Raspberry-Pi-Lighttpd-no-wm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/12/Raspberry-Pi-Lighttpd-no-wm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/12/Raspberry-Pi-Lighttpd.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/12/Raspberry-Pi-Lighttpd.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/07/01-default-screen.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/07/01-default-screen.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi Lighttpd Nasıl Kurulur","description":"Pi'de Lighttpd kurmanın tüm adımları","image":["https://pimylifeup.com/wp-content/uploads/2017/12/Raspberry-Pi-Lighttpd-no-wm.jpg"],"datePublished":"2026-08-03T15:50:39.610021+03:00","dateModified":"2026-08-03T15:50:39.61013+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi Lighttpd Nasıl Kurulur</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-lighttpd/">PiMyLifeUp - How to Set Up Raspberry Pi Lighttpd</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu projede, Raspberry Pi'nizde bir Lighttpd Web Sunucusunu nasıl kuracağınızı keşfedeceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/12/Raspberry-Pi-Lighttpd.jpg" alt="Raspberry Pi Lighttpd" /></p>
+<p>NGINX gibi Lighttpd de, nispeten düşük bellek kullanımına ve küçük bir CPU yüküne sahip olacak şekilde tasarlanmış, Apache'ye hızlı ve bellek açısından verimli bir alternatiftir, bunların ikisi de Raspberry Pi için mükemmel özelliklerdir. Lighttpd'nin en büyük kullanıcılarından biri Wikimedia Foundation'dır.</p>
+<p>Varsayılan yapılandırmayla çalışan <a href="https://www.lighttpd.net/">temel bir Lighttpd sunucusunu</a> nasıl kuracağımızı keşfedeceğiz, aynı zamanda Lighttpd'yi PHP-FPM ile çalışacak şekilde nasıl kuracağımızı da keşfedeceğiz, çünkü bu Lighttpd'nin Raspbian sürümüyle doğrudan çalışmaz.</p>
+<p>Yapabileceğiniz <a href="https://pimylifeup.com/category/projects/server/">Pi için başka birçok sunucu projesi</a> var. Her birinin kendi artıları ve eksileri var, ancak Pi hepsini test etmek için harika küçük bir cihaz.</p>
+<p>Bu rehber, Raspberry Pi OS Bookworm çalıştıran bir Raspberry Pi 5 üzerinde son olarak test edilmiştir.</p>
+<h2>Raspberry Pi'de Lighttpd Ayarlama</h2>
+<p>Başlamadan önce, <a href="https://pimylifeup.com/raspberry-pi-os-install/">Raspberry Pi OS'nin en son sürümünü</a> çalıştırdığınızdan emin olun. Yazılımın daha yeni sürümleri genellikle daha güvenli ve güvenilirdir.</p>
+<p><strong>1.</strong> Şimdi Lighttpd'yi kurmaya gitmeden önce, en son yazılımı çalıştırdığımızdan emin olmak için Raspberry Pi'yi güncellememiz gerekiyor.</p>
+<p>Raspberry Pi'nizi güncellemek için aşağıdaki iki komutu çalıştırın.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Raspberry Pi artık güncel olduğuna göre, Apache2'yi kaldırmamız gerekecek. Bu kaldırma gereklidir çünkü Raspberry Pi OS onu varsayılan olarak içerebilir.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-web-server/">Apache2'nin kurulu</a> olmadığından eminseniz bu adımı atlayabilirsiniz.</p>
+<pre><code>sudo apt remove apache2
+</code></pre>
+<p><strong>3.</strong> Raspberry Pi artık güncel ve Apache kaldırıldığına göre, Lighttpd'yi kurmaya devam edebiliriz. Neyse ki bizim için, Lighttpd paket deposunda sağlanmaktadır.</p>
+<p>Aşağıdaki komutu çalıştırarak kurun.</p>
+<pre><code>sudo apt install lighttpd -y
+</code></pre>
+<p><strong>4.</strong> Lighttpd kurulduktan sonra, artık çalışıp çalışmadığını kontrol edebiliriz, herhangi bir web tarayıcısından <a href="https://pimylifeup.com/raspberry-pi-ip-address/">Raspberry Pi'nizin yerel IP Adresine</a> gidin.</p>
+<p>IP adresinizi bilmiyorsanız, onu almak için aşağıdaki <a href="https://pimylifeup.com/hostname-command/">hostname komutunu</a> yazın.</p>
+<pre><code>hostname -I
+</code></pre>
+<p>Başarılı bir bağlantıda, aşağıda gösterdiğimize biraz benzeyen bir ekran görmelisiniz.</p>
+<p>Önce <strong>Apache2</strong>'yi kaldırmanız gerektiyse, bir Apache varsayılan sayfası ile karşılaşabilirsiniz. Endişelenmeyin, çünkü bu Lighttpd'nin çalıştığını doğrular.</p>
+<p>Bir 403 forbidden sayfası görürseniz, bu muhtemelen yer tutucu html dosyasının eksik olduğu ve oluşturulması gerektiği anlamına gelir. Bir sonraki adıma bakın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/07/01-default-screen.png" alt="Raspberry Pi Lighttpd Varsayılan Ekran" /></p>
+<p><strong>5.</strong> Yer tutucu sayfada değişiklikler yapmak isterseniz, aşağıdaki komutu çalıştırabilirsiniz. Yüklenen tüm dosyalar &quot;<code>/var/www/html</code>&quot; içinde tutulur.</p>
+<pre><code>sudo nano /var/www/html/index.html
+</code></pre>
+<h2>Lighttpd için PHP Kurma</h2>
+<p><strong>6.</strong> Bu Raspberry Pi Lighttpd eğitimi için, PHP-FPM kullanmamız gerekecek. Size PHP'yi Raspberry Pi'nize nasıl kuracağınızı göstereceğiz.</p>
+<p><strong>7.</strong> Raspberry Pi'nize PHP 8.2'yi kurmak için aşağıdaki komutu çalıştırabilirsiniz.</p>
+<p>Ayrıca, daha fazla paket kurmaya gerek kalmadan çoğu PHP script'ini çalıştırmanıza yardımcı olacak birkaç ek PHP modülü de kuracağız.</p>
+<pre><code>sudo apt install php8.2-fpm php8.2-mbstring php8.2-mysql php8.2-curl php8.2-gd php8.2-curl php8.2-zip php8.2-xml -y
+</code></pre>
+<p>Bu komutu Raspberry Pi OS'nin daha eski bir sürümünde çalıştırırken, &quot;<code>package not found</code>&quot; hatasıyla karşılaşabilirsiniz. Cihazınıza <a href="https://pimylifeup.com/raspberry-pi-latest-php/">üçüncü taraf bir PHP deposu ekleyerek</a> bu hatayı aşabilirsiniz.</p>
+<p>Raspberry Pi'nize PHP 8.2 kurulumunu bitirdikten sonra, Lighttpd'nin onu kullanmayı bilmesi için bazı yapılandırma değişiklikleri yapmamız gerekecek.</p>
+<h2>PHP için Lighttpd Yapılandırma</h2>
+<p><strong>8.</strong> <a href="https://php-fpm.org/">PHP-FPM'i kurduğumuza</a> göre, yapmamız gereken birkaç şey var.</p>
+<p>Başlamak için önce aşağıdaki iki komutu çalıştırmamız gerekecek. Bu komutlar, Lighttpd'nin onu PHP için ayarlayan yapılandırma dosyalarını okumaya başlaması için iki symlink oluşturur.</p>
+<pre><code>sudo lighttpd-enable-mod fastcgi
+sudo lighttpd-enable-mod fastcgi-php
+</code></pre>
+<p><strong>9.</strong> Şimdi Lighttpd'yi yeniden yüklemeye gitmeden önce, yapılandırmasında değişiklikler yapmamız gerekecek. Varsayılan olarak, <strong>PHP-FPM</strong> ile değil <strong>PHP-CGI</strong> ile çalışacak şekilde yapılandırılmıştır, neyse ki bu değişiklikleri yapmak kolaydır.</p>
+<p>Dosyayı düzenlemeye başlamak için aşağıdaki komutu çalıştırarak başlayalım.</p>
+<pre><code>sudo nano /etc/lighttpd/conf-available/15-fastcgi-php.conf
+</code></pre>
+<p><strong>10.</strong> Dosyayı aşağıdaki gibi görünecek şekilde değiştirin. Temel olarak, bu onu sadece PHP-FPM socket dosyasını kullanacak hale getirir.</p>
+<p>Kullanılacak socket'in tanımı ve <strong>broken-scriptfilename</strong> ayarı dışında, diğer seçenekleri atıyoruz.</p>
+<pre><code># -*- depends: fastcgi -*-
+# /usr/share/doc/lighttpd/fastcgi.txt.gz
+
+## Start an FastCGI server for php
+fastcgi.server += ( &quot;.php&quot; =&gt;
+        ((
+                &quot;socket&quot; =&gt; &quot;/var/run/php/php8.2-fpm.sock&quot;,
+                &quot;broken-scriptfilename&quot; =&gt; &quot;enable&quot;
+        ))
+)
+</code></pre>
+<p><code>CTRL</code> + <code>X</code> tuşlarına basıp ardından <strong><code>Y</code></strong>'ye basarak kaydedip çıkın. Son olarak, <code>ENTER</code> tuşuna basın.</p>
+<p><strong>11.</strong> Son olarak, bunların hepsi tamamlandığına göre, terminale aşağıdaki komutu yazarak Lighttpd'yi yeniden yüklemeye zorlayabiliriz.</p>
+<pre><code>sudo service lighttpd force-reload
+</code></pre>
+<p><strong>12.</strong> Bu yapıldıktan sonra, yeni kurulumumuzun çalışıp çalışmadığını test etmek için bir PHP dosyası oluşturalım, &quot;<code>/var/www/html</code>&quot; klasörümüzde yeni bir PHP dosyası yazmaya başlamak için aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo nano /var/www/html/index.php
+</code></pre>
+<p><strong>13.</strong> Bu dosyanın içine, aşağıdaki satırları yazın, php'nin doğru çalıştığının en iyi göstergelerinden biri olduğu için &quot;<code>phpinfo()</code>&quot; kullanıyoruz.</p>
+<pre><code>&lt;?php phpinfo()?&gt;
+</code></pre>
+<p>Artık bitmiş olmalısınız ve <code>CTRL</code> + <code>X</code> tuşlarına basıp ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<p><strong>14.</strong> Son olarak, daha önce yaptığımız gibi bir web tarayıcısında artık <a href="https://pimylifeup.com/raspberry-pi-ip-address/">Raspberry Pi'nin yerel IP adresine</a> gidebilirsiniz.</p>
+<p>Tüm PHP bilgilerini gösteren bir ekran görmelisiniz. Bu ekran görüntülenirse, Raspberry Pi'nizde PHP'yi de kullanabilen bir Lighttpd web sunucusunu başarıyla kurmuşsunuzdur.</p>
+<h2>Sonuç</h2>
+<p>Bu Raspberry Pi Lighttpd eğitiminin, web sunucu kurulumunuzu tamamlamanıza yardımcı olabilmesini umuyorum.</p>
+<p>Farklı yazılım kurulumları için <a href="https://pimylifeup.com/category/projects/server/">diğer web sunucusu eğitimlerimizden</a> bazılarına göz atın. PHP kullanarak programlama hakkında daha fazla bilgi edinmek isterseniz göz atmaya değer bir dizi <a href="https://pimylifeup.com/category/coding/php/">PHP eğitimimiz</a> de var.</p>
+<p>Herhangi bir sorunuz, sorgunuz, düşünceniz veya başka bir şeyiniz varsa, aşağıya bir yorum bırakmayı unutmayın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-lighttpd.html&amp;text=Raspberry+Pi+Lighttpd+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-lighttpd.html&amp;text=Raspberry+Pi+Lighttpd+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-lighttpd.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-lighttpd.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-lighttpd.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-lighttpd.html&amp;title=Raspberry+Pi+Lighttpd+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi+Lighttpd+Nas%C4%B1l+Kurulur%20codenfast.com%2Fposts%2Fraspberry-pi-lighttpd.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

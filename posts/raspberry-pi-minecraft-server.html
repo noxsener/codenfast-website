@@ -1,0 +1,389 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi Minecraft Sunucusu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Pi&#39;de bir Minecraft sunucusu kurmayı öğrenin"/>
+    <meta property="og:title" content="Raspberry Pi Minecraft Sunucusu"/>
+    <meta property="og:description"
+          content="Pi&#39;de bir Minecraft sunucusu kurmayı öğrenin"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-minecraft-server.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-minecraft-server.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2015/08/Raspberry-Pi-Minecraft-Server-no-wm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi Minecraft Sunucusu"/>
+    <meta name="twitter:description"
+          content="Pi&#39;de bir Minecraft sunucusu kurmayı öğrenin"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2015/08/Raspberry-Pi-Minecraft-Server-no-wm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi Minecraft Sunucusu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-minecraft-server.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2015/08/Raspberry-Pi-Minecraft-Server-no-wm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2015/08/Raspberry-Pi-Minecraft-Server-no-wm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2015/08/Raspberry-Pi-Minecraft.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2015/08/Raspberry-Pi-Minecraft.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2015/07/Raspberry-Pi-Minecraft-Server.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2015/07/Raspberry-Pi-Minecraft-Server.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi Minecraft Sunucusu","description":"Pi'de bir Minecraft sunucusu kurmayı öğrenin","image":["https://pimylifeup.com/wp-content/uploads/2015/08/Raspberry-Pi-Minecraft-Server-no-wm.jpg"],"datePublished":"2026-08-03T16:09:20.593835+03:00","dateModified":"2026-08-03T16:09:20.593855+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi Minecraft Sunucusu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-minecraft-server/">PiMyLifeUp - Raspberry Pi Minecraft Server</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bir Raspberry Pi Minecraft sunucusu, arkadaşlarınızla veya sadece uğraşmak için kendi özel sunucunuza sahip olmanın uygun maliyetli bir yoludur.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2015/08/Raspberry-Pi-Minecraft.jpg" alt="Raspberry Pi Minecraft" /></p>
+<p>Benimki oldukça uzun süredir çalışıyor ve çok fazla sorunla karşılaşmadım. Bu sunucunun çok fazla insanı tutamayacağını bilmek çok önemli.</p>
+<p>Deneyimlerimden, beş kişinin üzerindeki her şey ve sunucu biraz garip davranmaya başlayacaktır. Optimal insan miktarının sadece iki ila üç olduğunu buldum, ancak bu sunucuyu ayarlayarak iyileştirilebilir.</p>
+<p>Ayrıca varsayılan kurulum benim için işe yaramadığından <a href="https://www.spigotmc.org/">Minecraft'ın spigot sürümünü</a> kullanacağız. Çok sık çöktüğünü, gecikmeli olduğunu ve çok kararsız olduğunu buldum. Resmi Java sürümü zamanla iyileşebilir.</p>
+<p>Bedrock sunucusu arıyorsanız, <a href="https://pimylifeup.com/raspberry-pi-minecraft-pe-server/">Minecraft Bedrock sunucusu eğitimimize</a> göz atmayı unutmayın. Onu doğru şekilde kurmanın tüm adımlarında size yol gösterecektir.</p>
+<p>Bu projede, Raspberry Pi OS'de zaten kurulu olması gereken <a href="https://pimylifeup.com/raspberry-pi-java/">Java kullanacağız</a>. Sunucuyu Raspberry Pi 2, 3, 4 veya 5 için optimize etmek üzere birkaç değişiklik yapacağız. Ayrıca ona web üzerinden erişebilmeniz için ayarlayacağız ve Pi herhangi bir nedenden dolayı çevrimdışı olursa yeniden başlamasını sağlayacağız.</p>
+<h2>Raspberry Pi Minecraft Sunucusunu Kurma</h2>
+<p>Öncelikle, Raspberry Pi'ye bir işletim sistemi kurmalıyız. Bunu henüz yapmadıysanız, <a href="https://pimylifeup.com/raspberry-pi-os-install/">Raspberry Pi OS kurma</a> hakkındaki harika rehberimize göz atın. Yapmanız gereken tüm adımlarda size yol gösterecektir.</p>
+<p>Bu eğitimde, tamamen terminalde çalışacağız. GUI'yi yüklemeyerek kaynaklardan tasarruf edebilmemiz için muhtemelen doğrudan terminale önyükleme yapmamız en iyisi.</p>
+<p><strong>1.</strong> İlk olarak, aşağıdaki komutları girerek işletim sistemi paketlerini en son sürüme güncelleyin.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Şimdi, yapılandırma aracında birkaç değişiklik yapmamız gerekecek. Aşağıdaki satırı girerek aracı açalım.</p>
+<pre><code>sudo raspi-config
+</code></pre>
+<p><a href="https://pimylifeup.com/raspi-config-tool/">raspi-config aracı</a> hakkında daha fazla bilgiye ihtiyacınız varsa, lütfen rehberimize göz atın.</p>
+<p><strong>3.</strong> Ayrıca, masaüstüne önyükleme yapmak istemeniz pek olası değil, bu yüzden önyükleme seçeneğinin CLI'ye (Command Line Interface) ayarlandığından emin olun. Bu değişiklik, sunucuya mümkün olduğunca fazla işlem gücü vermeye yardımcı olacaktır.</p>
+<p>Önyükleme seçeneğini değiştirmek için, <strong>1 System Options</strong>'ı seçin ve <strong>Boot / Auto Login</strong>'i seçin.</p>
+<p><strong>Console</strong> veya <strong>Console Autologin</strong>'i seçin.</p>
+<p><strong>4.</strong> Son olarak, henüz etkinleştirmediyseniz gerektiğinde Pi'ye uzaktan erişebilmemiz için <a href="https://pimylifeup.com/raspberry-pi-ssh/">SSH'yi etkinleştirin</a>.</p>
+<p>SSH'yi etkinleştirmek için, <strong>Interface Options</strong>'a gidin. Ardından, <strong>I1 SSH</strong>'i seçin. Son olarak, SSH sunucusunu etkinleştirmek için <strong><YES></strong>'i yanıtlayın.</p>
+<p><strong>5.</strong> Şimdi ana ekranda <strong><Finish></strong>'e gidin ve yeniden başlatma sorusuna <strong><YES></strong>'i yanıtlayın.</p>
+<p><strong>6.</strong> Şimdi sunucumuza bağlanmayı denediğimizde Pi'mizin IP adresini isteyeceğiz. Raspberry Pi'nin <strong>IP adresini</strong> almak için, <a href="https://pimylifeup.com/hostname-command/">hostname komutunu</a> girin.</p>
+<pre><code>sudo hostname -I
+</code></pre>
+<p>IP'nin değişmemesini sağlamak için, Raspberry Pi'nizde ve router'ınızda <a href="https://pimylifeup.com/raspberry-pi-static-ip-address/">statik bir IP adresi kurmalısınız</a>.</p>
+<p><strong>7.</strong> Ardından, Git ve jq'nun kurulu olduğundan emin olmamız gerekiyor. Aksi takdirde, sunucuyu inşa edemeyeceğiz.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-git-server/">Git yazılımını</a> ve jq'yu kurmak için aşağıdaki komutu girin. jq, terminal içinde JSON verisini kolayca yorumlamamızı sağlar.</p>
+<pre><code>sudo apt install git jq
+</code></pre>
+<p><strong>8.</strong> Varsayılan olarak, Java (17) Raspberry Pi OS'de (Bookworm) zaten mevcut olmalıdır. Ancak, Minecraft sunucusunun en son sürümünü kullanmak isterseniz, mevcut olandan daha yeni bir sürüm kullanmanız gerekecek.</p>
+<p>Minecraft 1.20.6+ (Java 21 veya 22) ile uyumlu bir Java sürümü kurmak için, lütfen <a href="https://pimylifeup.com/raspberry-pi-java/">Java kurma rehberimizi</a> takip edin.</p>
+<p><strong>9.</strong> Şimdi, Spigot'un sağladığı bir builder aracını kullanarak oluşturacağımız Minecraft sunucu dosyasına ihtiyacımız olacak.</p>
+<p>Araçları almak için, aşağıdaki komutları girin.</p>
+<pre><code>mkdir ~/minecraft
+cd ~/minecraft
+wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
+</code></pre>
+<p><strong>10.</strong> Şimdi build tools dosyasını çalıştırmak isteyeceğiz, böylece Spigot sunucumuzu oluşturacaktır. Bitmesi yaklaşık 15 dakika sürecektir.</p>
+<p>Farklı bir sürüm almak için komutun sonundaki <code>--rev latest</code>i değiştirin. Komuttaki <strong>latest</strong>'i indirmek istediğiniz sürüm numarasıyla değiştirmeyi unutmayın. Örneğin, <code>--rev 1.20.6</code>, <strong>1.20.6</strong> sürümünü indirecektir.</p>
+<pre><code>java -Xmx1024M -jar BuildTools.jar --final-name server.jar --rev latest
+</code></pre>
+<p><strong>Önemli</strong>: Bir Raspberry Pi B+, B veya Raspberry Pi 2'den önceki herhangi bir varyasyona sahipseniz, build tools muhtemelen başarısız olacaktır. Bunun yerine <strong>spigot.jar</strong>'ı daha güçlü bir bilgisayarda oluşturmanız gerekecek.</p>
+<p><strong>11.</strong> Spigot sunucusunun başarıyla indirilip kaydedildiğinden emin olmak için, sadece <code>ls</code> yazın. <code>spigot-1.20.6.jar</code>ı görmelisiniz. İndirdiğiniz sürüme bağlı olarak dosya adı farklı olabilir.</p>
+<pre><code>ls
+</code></pre>
+<p>Tüm sunucu dosyalarının burada oluşturulmasını istediğimizden <code>~/minecraft</code> klasöründe kaldığınızdan emin olun. Sunucuyu farklı bir klasörde başlatırsanız, dosyaları orada oluşturacaktır.</p>
+<p><strong>12.</strong> Artık sunucuyu başlatmaya hazırız. Bunu yapmak için, aşağıdaki komutu girin. Kullandığınız sürüme bağlı olarak sürüm numarasını değiştirmeniz gerekebilir, örn. <code>spigot-1.20.6.jar</code>.</p>
+<p><strong>Raspberry Pi 1</strong></p>
+<pre><code>java -Xms256M -Xmx496M -jar ~/minecraft/server.jar nogui
+</code></pre>
+<p><strong>Raspberry Pi 2, 3, 4 veya 5</strong></p>
+<pre><code>java -Xms512M -Xmx1008M -jar ~/minecraft/server.jar nogui
+</code></pre>
+<p>Raspberry Pi 4 veya 5'in 2GB ve 4GB varyantlarıyla, Xmx değerini daha da artırabilirsiniz.</p>
+<p><strong>Eula'yı kabul etmemiz</strong> gerekeceğinden sunucu hemen duracaktır. Bunu, aşağıdaki komutu yazarak Eula'yı açıp yapabilirsiniz.</p>
+<pre><code>nano eula.txt
+</code></pre>
+<p><strong>13.</strong> Burada, &quot;<code>false</code>&quot;u &quot;<code>TRUE</code>&quot; olarak değiştirin. Bittiğinde, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code> tuşuna basarak kaydedip çıkın.</p>
+<p><strong>14.</strong> Şimdi sunucuyu tekrar başlatın. Bir harita oluşturması biraz zaman alacaktır, bu yüzden ona üç ila beş dakika verin. Bir daha yeniden başlatırsanız, harita zaten oluşturulduğundan yüklenmesi sadece otuz saniye sürecektir.</p>
+<p><strong>15.</strong> Sunucu çalışıyor ve yerel ağ üzerinden erişilebilir olmalıdır.</p>
+<p><strong>16.</strong> Şimdi kullanıcınızı mod'lamak isteyebilirsiniz, böylece giriş yaptığınızda tüm sunucu komutlarını kullanabilirsiniz. Başlangıçta otomatik önyüklemesi varsa, sunucu backend'ine erişmek biraz daha zor olur.</p>
+<p>Kullanıcınızı mod'lamak için, sunucu başladığında sadece aşağıdaki komutu çalıştırın (username'i kendi kullanıcı adınızla değiştirin).</p>
+<pre><code>op username
+</code></pre>
+<p><strong>17.</strong> Raspberry Pi'deki Minecraft sunucusu artık iyi çalışıyor olacak, ancak sunucuyu daha da iyi çalıştırmak için bazı optimizasyonlar yapmak isteyebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2015/07/Raspberry-Pi-Minecraft-Server.jpg" alt="Raspberry Pi Minecraft Sunucusu" /></p>
+<h2>Minecraft Sunucusuna Bağlanma</h2>
+<p>Yerel bir ağdaysanız, Raspberry Pi'de çalışan Minecraft sunucusuna bağlanmak oldukça kolay olmalıdır. Test etmek için, aşağıdaki adımları takip edin.</p>
+<p><strong>1.</strong> Pi ile aynı yerel ağda bulunan bir bilgisayarda <a href="https://www.minecraft.net/en-us/store/minecraft-java-edition">Minecraft Java istemcisini</a> yükleyin. İstemcinin sürümünün sunucunun sürümüyle eşleştiğinden emin olun.</p>
+<p><strong>2.</strong> Multiplayer'a gidin ve sunucunuz yerel listede görünebilir. Görünmezse, sadece direct connect'e gidin ve daha önce <a href="https://pimylifeup.com/hostname-command/">hostname komutunu</a> kullanarak Pi'de aldığımız IP adresini girin.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>3.</strong> Minecraft sunucusuna internet üzerinden erişime izin vermek isterseniz, port yönlendirmesi kurmanız gerekecek.</p>
+<p>Bunu nasıl yapacağınızı öğrenmek istediğinizi varsayarak, <a href="https://pimylifeup.com/raspberry-pi-port-forwarding/">Raspberry Pi port yönlendirmesi</a> kurma rehberime gidin. 25565 portunu (sunucu özelliklerinde değiştirmediğiniz sürece) Pi'nizin IP'sine port yönlendirmeniz gerekecek.</p>
+<h2>Sunucuyu Yapılandırma</h2>
+<p>İşte sunucuyu yapılandırma ve çalışır hale getirme için birkaç ipucu.</p>
+<h3>Minecraft Sunucusunu Optimize Etme</h3>
+<p>Raspberry Pi'deki Minecraft sunucumuzdan en iyi verimi almak için, performansı optimize etmeye yardımcı olacak bir eklenti kurabilirsiniz.</p>
+<p>Performansa yardımcı olabilecek veya sunucunun işlevselliğini genişletebilecek birçok <a href="https://www.spigotmc.org/resources/categories/spigot.4/">eklenti</a> vardır. Bunları Pi'ye indirmek için sadece <a href="https://pimylifeup.com/wget-command-linux/">wget komutunu</a> kullanın. Aşağıda bir örnek var.</p>
+<pre><code>cd ~/minecraft/plugins
+wget -O example.jar &lt;example_plugin_url&gt;
+</code></pre>
+<h3>Minecraft Özelliklerini Düzenleme</h3>
+<p>Muhtemelen sunucu özelliklerini nasıl düzenleyeceğinizi bilmek isteyeceksiniz. Bu düzenleme yeteneği, sunucuyu optimize etmek ve sunucunun nasıl olmasını istediğinize göre özelleştirmek için çok önemlidir.</p>
+<p>Sunucu ayarlarının her biri hakkında daha fazla bilgi isterseniz, <a href="https://minecraft.gamepedia.com/Server.properties">tüm sunucu özellikleri hakkında burada</a> iyi bir sayfa bulabilirsiniz.</p>
+<p>Sunucu özelliklerine girmek için, aşağıdaki satırı girin.</p>
+<pre><code>sudo nano ~/minecraft/server.properties
+</code></pre>
+<p>Şimdi, sunucunun performansını optimize etmeye yardımcı olması için birkaç ayarı değiştirmek isteyeceğiz.</p>
+<p>Bunları ve diğer ayarları istediğiniz herhangi bir şekilde değiştirebilirsiniz, ancak Pi'nin çok fazla işlemi kaldıramayacağını unutmayın.</p>
+<pre><code>view-distance=04
+max-player=5
+</code></pre>
+<h3>Önyüklemede Başlatma</h3>
+<p>Sunucunun önyüklemede başlaması için, birkaç ekstra adım atmamız gerekecek.</p>
+<p><strong>1.</strong> Minecraft sunucusu için bir servis oluşturmamız gerekecek, bu yüzden aşağıdaki komutu girerek servis dosyasını yazmaya başlayalım.</p>
+<pre><code>sudo nano /lib/systemd/system/minecraftserver.service
+</code></pre>
+<p><strong>2.</strong> Bu dosyaya, aşağıdaki metni girmeniz gerekecek.</p>
+<p>Bu dosya servisi tanımlar, böylece servis yöneticisi neyi ve nasıl çalıştıracağını bilir. Her yükselttiğinizde spigot sürüm numarasını güncellemeyi unutmayın.</p>
+<p>&quot;<code>&lt;KULLANICI&gt;</code>&quot; kısmını sunucuyu çalıştırmak için kullanmayı planladığınız kullanıcı adıyla güncelleyin. Terminale <a href="https://pimylifeup.com/whoami-command-linux/">whoami komutunu</a> girerek kullanıcınızın kullanıcı adını görebilirsiniz.</p>
+<pre><code>[Unit]
+Description=Minecraft Spigot Server
+
+[Service]
+User=&lt;KULLANICI&gt;
+Group=&lt;KULLANICI&gt;
+Restart=on-abort
+WorkingDirectory=/home/&lt;KULLANICI&gt;/minecraft/
+ExecStart=/usr/bin/java -Xms512M -Xmx1008M -jar /home/&lt;KULLANICI&gt;/minecraft/server.jar nogui
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p>Bittiğinde, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak dosyayı kaydedin.</p>
+<p><strong>3.</strong> Şimdi, servisi etkinleştirmemiz gerekecek. Aşağıdaki komutu çalıştırarak servisi etkinleştirebilirsiniz.</p>
+<pre><code>sudo systemctl enable minecraftserver.service
+</code></pre>
+<p><strong>4.</strong> Artık sadece aşağıdaki komutu kullanarak Minecraft sunucusunu başlatabilmeniz gerekiyor.</p>
+<pre><code>sudo systemctl start minecraftserver.service
+</code></pre>
+<p><strong>5.</strong> Benzer bir komut kullanarak, servisin durumunu kontrol edebilirsiniz. Durumu kontrol etmek hata ayıklama için harikadır.</p>
+<pre><code>sudo systemctl status minecraftserver.service
+</code></pre>
+<p><strong>5.</strong> Aşağıdaki komutu kullanarak sunucuyu durdurabilirsiniz.</p>
+<pre><code>sudo systemctl stop minecraftserver.service
+</code></pre>
+<p>Sunucunuz artık önyüklemede başlamalıdır. Raspberry Pi'yi yeniden başlatarak bunu test edebilirsiniz. Başlaması birkaç dakika sürecektir.</p>
+<pre><code>sudo reboot
+</code></pre>
+<p>Sunucuya komut satırında erişim kazanmak isterseniz, sunucuyu kapatmanız ve onu normal komutu kullanarak yüklemeniz gerekecek.</p>
+<h2>Raspberry Pi'de Minecraft Sunucunuzu Güncelleme</h2>
+<p>Bu bölümde, Raspberry Pi'nizdeki Minecraft sunucusunu en son sürüme nasıl güncelleyeceğinizi göstereceğiz.</p>
+<p><strong>1.</strong> Minecraft sunucusunu güncellemeye başlayabilmemiz için, sunucunun saklandığı dizine geçmemiz gerekecek.</p>
+<p>Eğitimimizi takip ettiyseniz, bu, aşağıdaki komutu çalıştırarak doğru yere geçebilmeniz gerektiği anlamına gelir.</p>
+<pre><code>cd ~/minecraft/
+</code></pre>
+<p><strong>2.</strong> Doğru yerde olduğumuza göre şimdi yapmak isteyeceğimiz ilk şey, Spigot build tools'un en son sürümüne sahip olduğumuzdan emin olmaktır.</p>
+<p>En son sürümü indirmek için terminalde aşağıdakini kullanarak wget komutunu kullanabiliriz.</p>
+<pre><code>wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
+</code></pre>
+<p><strong>3.</strong> Build tools güncellendiğine göre, şimdi aşağıdaki komutu kullanarak Minecraft sunucusunun en son sürümü için sürüm numarasını alabiliriz.</p>
+<p>Raspberry Pi'nizde kullanmak istediğiniz belirli bir Minecraft sunucusu sürümü varsa komutu burada onunla değiştirin. Aksi takdirde, peşinde olduğumuz sürüm numarasını almak için biraz curl ve jq büyüsü kullanabiliriz.</p>
+<pre><code>MINECRAFT_VERSION=$(curl -sS https://launchermeta.mojang.com/mc/game/version_manifest.json | jq -r '{latest: .latest.release} | .[]')
+</code></pre>
+<p><strong>4.</strong> Sürüm numaranızı ortam değişkenine kaydettikten sonra devam edebiliriz.</p>
+<p>Raspberry Pi'mizdeki Minecraft sunucusunu güncelleyebilmemiz için, mevcut olanın çalışmasını durdurmamız gerekecek. Aşağıdaki komutu çalıştırarak çalışan sunucuyu durdurabilirsiniz.</p>
+<pre><code>sudo systemctl stop minecraftserver
+</code></pre>
+<p><strong>5.</strong> Şimdi Minecraft sunucunuzu en son sürüme indirmek ve güncellemek için Spigot build tools'u kullanın.</p>
+<p>Lütfen bu sürecin tamamlanmasının birkaç dakika sürebileceğini unutmayın.</p>
+<pre><code>java -Xmx1024M -jar BuildTools.jar --final-name server.jar --rev $MINECRAFT_VERSION
+</code></pre>
+<p><strong>6.</strong> Güncelleme süreci tamamlandıktan sonra, aşağıdaki komutu kullanarak sunucuyu başlatabilirsiniz.</p>
+<pre><code>sudo systemctl start minecraftserver
+</code></pre>
+<h2>Sonuç</h2>
+<p>Umarım bu eğitim, kararlı bir sürüm Raspberry Pi Minecraft sunucusu kurmanıza yardımcı olmuştur. Bu eğitimi beğendiyseniz, <a href="https://pimylifeup.com">başka birçok Raspberry Pi Projemize</a> göz atmayı unutmayın.</p>
+<p>Ayrıca, daha iyi optimizasyon ayarlarınız, eklentileriniz veya fikirleriniz varsa aşağıya bir yorum bırakmaktan çekinmeyin. Sorun yaşıyorsanız, aşağıda bize bildirin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-minecraft-server.html&amp;text=Raspberry+Pi+Minecraft+Sunucusu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-minecraft-server.html&amp;text=Raspberry+Pi+Minecraft+Sunucusu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-minecraft-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-minecraft-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-minecraft-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-minecraft-server.html&amp;title=Raspberry+Pi+Minecraft+Sunucusu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi+Minecraft+Sunucusu%20codenfast.com%2Fposts%2Fraspberry-pi-minecraft-server.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Citadel Kullanarak Raspberry Pi E-posta Sunucusu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Pi&#39;de kendi e-posta sunucunuzu kurun"/>
+    <meta property="og:title" content="Citadel Kullanarak Raspberry Pi E-posta Sunucusu"/>
+    <meta property="og:description"
+          content="Pi&#39;de kendi e-posta sunucunuzu kurun"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-email-server.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-email-server.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-Mail-Server-no-wm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Citadel Kullanarak Raspberry Pi E-posta Sunucusu"/>
+    <meta name="twitter:description"
+          content="Pi&#39;de kendi e-posta sunucunuzu kurun"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-Mail-Server-no-wm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Citadel Kullanarak Raspberry Pi E-posta Sunucusu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-email-server.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-Mail-Server-no-wm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-Mail-Server-no-wm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-Mail-Server.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-Mail-Server.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-Citadel-Config-Set-Admin-Username.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-Citadel-Config-Set-Admin-Username.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-Citadel-Config-Set-Admin-Password.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-Citadel-Config-Set-Admin-Password.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/Pi-Citadel-Set-User-to-run-Under.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/Pi-Citadel-Set-User-to-run-Under.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/Pi-Citadel-Setting-Listen-Addresses.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/Pi-Citadel-Setting-Listen-Addresses.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/Citadel-Port.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/Citadel-Port.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-Citadel-Authentication-Method.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-Citadel-Authentication-Method.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-Set-Citadel-Web-Ports.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-Set-Citadel-Web-Ports.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/09-Citadel-Login.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/09-Citadel-Login.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/10-Citadel-Dashboard.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/10-Citadel-Dashboard.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/11-Citadel-Admin-menu.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/11-Citadel-Admin-menu.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/12-Citadel-Site-config-general.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/12-Citadel-Site-config-general.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/13-SMTP-config.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/13-SMTP-config.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/11b-Citadel-Admin-menu.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/11b-Citadel-Admin-menu.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/14-Local-host-aliases.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/14-Local-host-aliases.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/11c-Citadel-Admin-menu.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/11c-Citadel-Admin-menu.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/15-Cloudflare.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/15-Cloudflare.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/10-Citadel-Dashboard-1.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/10-Citadel-Dashboard-1.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/16-Add-spamassassin.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/16-Add-spamassassin.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/17-Add-clamav.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/17-Add-clamav.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/update-contact-information.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/update-contact-information.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/03/update-personal-email-address.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/03/update-personal-email-address.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Citadel Kullanarak Raspberry Pi E-posta Sunucusu","description":"Pi'de kendi e-posta sunucunuzu kurun","image":["https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-Mail-Server-no-wm.jpg"],"datePublished":"2026-08-03T16:02:19.521699+03:00","dateModified":"2026-08-03T16:02:19.52172+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Citadel Kullanarak Raspberry Pi E-posta Sunucusu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-email-server/">PiMyLifeUp - Raspberry Pi Email Server using Citadel</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu Raspberry Pi e-posta sunucusu eğitimi, hem düşük maliyetli hem de nispeten çok yönlü kendi e-posta sunucunuzu nasıl kuracağınız adımlarında size yol gösterecek.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-Mail-Server.jpg" alt="Raspberry Pi e-posta Sunucusu" /></p>
+<p>Pi'de kişisel bir sunucu kurmanın birçok nedeninden biri düşük maliyetidir. İlk maliyet düşüktür ve Raspberry Pi'nin düşük güç kullanımı nedeniyle devam eden giderler de nispeten düşüktür.</p>
+<p>Özel bir alan adı kullanabilme ve kendi kişisel iletişimleriniz üzerinde tam kontrole sahip olma gibi bir Raspberry Pi e-posta sunucusu kurmanın başka birçok avantajı da var.</p>
+<p>E-postalarınız kendi kişisel sunucunuzda saklandığından, size daha iyi reklamlar sunmaya çalışmak için onları tarayan kimse olmayacak. Tam bir kurulum için bunu bir <a href="https://pimylifeup.com/raspberry-pi-web-server/">Apache web sunucusu</a> ile birlikte çalıştırabilirsiniz.</p>
+<p>Kendi e-posta sunucunuzu kurmak için harika bir başka neden de, her şeyi doğru şekilde yapılandırma konusunda harika bir öğrenme deneyimi olmasıdır. Bunu kurmak zor olabilir çünkü yanlış gidebilecek oldukça fazla şey var ve yeni başlayan biriyseniz, sorun giderme biraz sinir bozucu olabilir.</p>
+<p>Yazılımın kendisi kurulumu son derece kolaydır ancak ilk seferinde mükemmel çalışacak şekilde yapılandırmak zor olabilir, bu yüzden bu projeyi orta zorlukta olarak işaretledim.</p>
+<p>E-posta göndermeyi planlıyorsanız, ISP'nizin 25 portunu engellemediğinden emin olmanız gerekecek. Bu engelleme oldukça yaygındır ancak genellikle talep edilirse kaldırılabilir.</p>
+<h2>Citadel E-posta Sunucusunu Kurma</h2>
+<p>Neredeyse her eğitimde olduğu gibi, Raspbian'ın varsayılan kurulumunu çalıştırıyorum. Kurmanız gerekiyorsa, <a href="https://pimylifeup.com/how-to-install-raspbian/">Raspbian kurma rehberime</a> göz atmayı unutmayın.</p>
+<p>Raspberry Pi'de bir e-posta sunucusu kurmanın birkaç yolu vardır, en karmaşık yollarından biri Postfix ve Dovecot'u ayrı ayrı kurmak, ardından bir web önyüzü kurmaktır. Bu bileşenlerin her biri ayrı ayrı yapılandırılmak zorunda kalacak ve doğru şekilde kurmak oldukça zaman alıcı hale gelebilir.</p>
+<p>Ancak, eğitimimizde, <a href="https://www.citadel.org/">Citadel adlı bir yazılım paketini</a> kullanacağız. Kurulumu kolay, güçlü ama çok yönlü bir mail sunucusudur. E-posta sunucusu kurma sürecini büyük ölçüde basitleştirir ve çalışır hale getirmek için kapsamlı bir yapılandırma gerektirmez. En iyisi, %100 açık kaynaklı bir yazılımdır.</p>
+<p><strong>1.</strong> İlk olarak, aşağıdaki iki komutu çalıştırarak işletim sistemimizdeki tüm paketleri güncelleyip yükseltelim.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Ardından, Citadel yazılımını Raspberry Pi'mizde derlemek için ihtiyacımız olan paketleri kuralım.</p>
+<p>Citadel'i yerel olarak derleyeceğiz çünkü Raspbian deposundan sağlanan derlemeyle çeşitli sorunlar olabilir.</p>
+<pre><code>sudo apt install build-essential curl g++ gettext shared-mime-info libssl-dev zlib1g-dev
+</code></pre>
+<p><strong>3.</strong> Artık Citadel'in kurulum sürecini başlatma zamanı, bunu aşağıdaki komutla kolayca yapabiliriz.</p>
+<pre><code>curl https://easyinstall.citadel.org/install | sudo bash
+</code></pre>
+<p>Bu komut, Citadel geliştirme ekibi tarafından sağlanan bir script'i çalıştıracaktır.</p>
+<p>Bu script, Citadel yazılımını Raspberry Pi'mizde çalıştırmak için ihtiyacımız olan her şeyi indirecek, kuracak ve yapılandıracaktır.</p>
+<p>Bu script'i kendiniz görmek isterseniz, doğrudan <a href="https://easyinstall.citadel.org/install">Citadel Easy Install web sitesine</a> gidebilirsiniz.</p>
+<p><strong>4.</strong> Şart ve koşulları kabul etmeniz istendiğinde, devam etmek için <code>Y</code>, ardından <code>ENTER</code> tuşuna basın.</p>
+<p><strong>5.</strong> Ardından, script'in Citadel'in ihtiyaç duyabileceği ek paketleri kurmasını isteyip istemediğiniz sorulacaktır.</p>
+<p>Tekrar, devam etmek için <code>Y</code>, ardından <code>ENTER</code> tuşuna basın.</p>
+<p>Kurulum süreci biraz zaman alacaktır, bu yüzden Raspberry Pi'niz çalışırken bir kahve almaya gitmek için iyi bir zaman.</p>
+<p><strong>6.</strong> Citadel kurulumu bittikten sonra, artık yazılımı yapılandırmanız gerekecek.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-Citadel-Config-Set-Admin-Username.png" alt="Citadel Admin için Kullanıcı Adı Belirle" /></p>
+<p>Önce admin kullanıcınız için bir kullanıcı adı belirlemeniz istenecektir. Varsayılan olarak, bu kullanıcı <code>admin</code> olarak adlandırılacaktır.</p>
+<p>Admin için farklı bir kullanıcı adı kullanmak isterseniz, bu aşamada girebilirsiniz. Aksi takdirde, devam etmek için <code>ENTER</code> tuşuna basabilirsiniz.</p>
+<p><strong>7.</strong> Şimdi admin kullanıcınız için bir parola girmeniz istenecektir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-Citadel-Config-Set-Admin-Password.png" alt="Citadel Admin Kullanıcı Parolasını Belirle" /></p>
+<p>Bunun için varsayılan parola <code>citadel</code>dir. Bunu daha güvenli bir şeyle değiştirmenizi şiddetle öneririz.</p>
+<p><strong>8.</strong> Ardından, Citadel yazılımının altında çalışacağı kullanıcıyı belirtmemiz gerekecek.</p>
+<p>Varsayılan olarak, Citadel hiçbiri belirtilmediyse <code>root</code> kullanıcısı altında çalışmaya çalışacaktır.</p>
+<p>Bu seçenek için, &quot;<code>citadel</code>&quot; yazdığınızdan emin olun. Bu seçenek değişikliğini onaylamak için <code>ENTER</code> tuşuna basın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/Pi-Citadel-Set-User-to-run-Under.png" alt="Citadel'in Altında Çalışacağı Kullanıcıyı Belirle" /></p>
+<p><strong>9.</strong> Bu adımda, Citadel sunucusunun dinleyeceği bir IP adresi girebilirsiniz.</p>
+<p>Bu seçenek, Citadel'e yalnızca belirli bir IP adresi üzerinden erişilmesini istiyorsanız kullanışlıdır. Varsayılan olarak, Citadel tüm adresleri dinleyecektir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/Pi-Citadel-Setting-Listen-Addresses.png" alt="Citadel Dinleme Adresini Ayarla" /></p>
+<p>Bu seçenek için, varsayılan ayarları korumak için <code>ENTER</code> tuşuna basacağız.</p>
+<p><strong>10.</strong> Bir sonraki adım, Citadel'in altında çalışmasını istediğiniz portu belirtmektir.</p>
+<p>Aynı sunucuda birden fazla Citadel örneği çalıştırmadığınız sürece bunu varsayılan <code>504</code> portundan değiştirmemelisiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/Citadel-Port.png" alt="Citadel Port Numarasını Tanımla" /></p>
+<p><strong>11.</strong> Şimdi kimlik doğrulama yöntemini tanımlamanız istenecektir.</p>
+<p>Diğer üç seçenek için özel bir ihtiyacınız olmadığı sürece, bunu varsayılan <code>0</code> seçeneğinde bırakmak en güvenlisidir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-Citadel-Authentication-Method.png" alt="Citadel Kimlik Doğrulama Yöntemini Belirle" /></p>
+<p>Son adıma devam etmek için <code>ENTER</code> tuşuna basın.</p>
+<p><strong>12.</strong> Bu son adımlarda, Raspberry Pi'mizde Citadel web arayüzü için portları tanımlayacağız.</p>
+<p>Apache gibi başka bir web sunucusu çalıştırmıyorsanız, <strong>HTTP</strong>'yi <code>80</code> portuna, <strong>HTTPS</strong>'i <code>443</code> portuna ayarlamak en iyisidir.</p>
+<p>Alternatif olarak, bir web sunucusu çalıştırıyorsanız, <strong>HTTP</strong> portunu <code>8080</code>, <strong>HTTPS</strong> portunu <code>8443</code> olarak ayarlamayı deneyin.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/Raspberry-Pi-Set-Citadel-Web-Ports.png" alt="Citadel Web Arayüzü Portlarını Belirle" /></p>
+<h3>Ekstra Adımlar</h3>
+<p>Bazen yukarıdaki adımlar hatalar fırlatabilir ve e-posta sunucusunu doğru şekilde kurmak için ihtiyacımız olan admin hesabını oluşturmayabilir. Sizin durumunuz buysa, bazı ekstra adımlar atmanız gerekecek.</p>
+<p><strong>1.</strong> İlk olarak, &quot;<code>netconfigs</code>&quot; klasörünü oluşturmamız ve sahibini ve grubunu citadel olarak ayarlamamız gerekiyor.</p>
+<pre><code>sudo mkdir /etc/citadel/netconfigs
+sudo chown citadel:citadel /etc/citadel/netconfigs
+</code></pre>
+<p><strong>2.</strong> Ardından, önceki değişikliklerin doğru şekilde uygulanması için Citadel'i yeniden başlatmamız gerekiyor. Ayrıca ilk seferde doğru şekilde oluşturulmadıysa admin hesabını kurabilmemiz için kurulumu yeniden çalıştırmak istiyoruz.</p>
+<pre><code>sudo systemctl citadel restart
+sudo /usr/lib/citadel-server/setup
+</code></pre>
+<p><strong>3.</strong> Kurulumu çalıştırdığınızda, ilki admin'in adı olmak üzere bir dizi sorudan geçireceksiniz. Bunu admin hesabınız için istediğiniz kullanıcı adına ayarlayın.</p>
+<p><strong>4.</strong> Ardından, yönetici hesabı için bir parola belirlemenizi isteyecektir. Bunu, kolayca hacklenmeyeceğiniz güvenli bir şeye ayarlayın.</p>
+<p><strong>5.</strong> Artık soruların geri kalanını atlayabilirsiniz. Soruları atlamak ve hiçbir şeyi değiştirmemek için sadece enter'a basın.</p>
+<h2>Citadel E-posta Sunucusunu Ayarlama</h2>
+<p><strong>1.</strong> Şimdi Citadel'in web arayüzünü yüklememiz gerekiyor, bunu yapmak için favori web tarayıcınızda Raspberry Pi'nizin IP adresine gidin. Benim durumumda, <code>http://192.168.1.105/</code>e giderdim.</p>
+<p>Raspberry Pi'nizin IP adresi elinizde değilse, yerel IP adresinizi almak için Raspberry Pi'nin terminaline <code>hostname -I</code> yazabilirsiniz.</p>
+<p>Kurulum süreci sırasında ayarladığınız admin kullanıcı adını ve admin parolasını kullanarak giriş yapın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/09-Citadel-Login.png" alt="e-posta Sunucusu Giriş" /></p>
+<p><strong>2.</strong> Artık varsayılan dashboard'u görüyor olmalısınız ve başka bir sayfa açıp sağ üst köşede bulunan &quot;<code>Make this my start page</code>&quot;e <code>tıklayarak</code> ana sayfayı değiştirebilirsiniz.</p>
+<p>Şimdilik, sadece kenar çubuğunda &quot;<code>Administration</code>&quot;a <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/10-Citadel-Dashboard.png" alt="Raspberry Pi Citadel Dashboard" /></p>
+<p><strong>3.</strong> Artık sistem yönetimi menüsündeyiz, burada çok çeşitli farklı seçenekler var ama peşinde olduğumuz şey &quot;<code>Edit site-wide configuration</code>&quot;, bu yüzden ona <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/11-Citadel-Admin-menu.png" alt="Citadel Admin Menüsü" /></p>
+<p><strong>4.</strong> Şimdi bu ekranda, her şeyin çalışması için bazı değişiklikler yapmamız gerekecek.</p>
+<p>Burada &quot;<code>Fully Qualified Domain Name</code>&quot;i e-postamız için kullanmayı planladığımız özel alan adına değiştirmemiz gerekiyor.</p>
+<p>Bizim durumumuzda, bunu &quot;<code>mail.pimylifeup.com</code>&quot; olarak ayarlayacağız.</p>
+<p>Bittiğinde, &quot;<code>SMTP</code>&quot; sekmesine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/12-Citadel-Site-config-general.png" alt="Pi Citadel Genel yapılandırma" /></p>
+<p><strong>5.</strong> Şimdi bu ekranda burada belirtilen portları not edin, sunucunun SMTP üzerinden e-posta alabilmesi için bunları port yönlendirmemiz gerekecek.</p>
+<p>Bittiğinde, &quot;<code>Save Changes</code>&quot; butonuna <code>tıklayın</code>, ardından kenar çubuğunda &quot;<code>Administration</code>&quot;a <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/13-SMTP-config.png" alt="e-posta Sunucusu SMTP ayarları" /></p>
+<p><strong>6.</strong> Şimdi tekrar &quot;<code>System Administration Menu</code>&quot;de, &quot;<code>Domain names and internet mail configuration</code>&quot;a <code>tıklayın</code>.</p>
+<p>Bu seçenek, Citadel'e ek alan adları eklemek için kullanacağımız menüye götürecektir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/11b-Citadel-Admin-menu.png" alt="Citadel Admin Menüsü" /></p>
+<p><strong>7.</strong> Şimdi bu ekranda, &quot;<code>Local host aliases</code>&quot; altına kullanmak istediğiniz alan adını yazın ve ardından &quot;<code>Add</code>&quot; butonuna <code>tıklayın</code>.</p>
+<p>Bittiğinde, kenar çubuğunda &quot;<code>Administration</code>&quot;a <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/14-Local-host-aliases.png" alt="Citadel Localhost takma adlarını ayarla" /></p>
+<p><strong>8.</strong> Şimdi tekrar bu ekrandayız ve &quot;<code>Shutdown Citadel</code>&quot; altındaki &quot;<code>Restart Now</code>&quot;a <code>tıklamamız</code> gerekiyor, bu tüm ayar değişikliklerimizin artık yükleneceğinden emin olur.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/11c-Citadel-Admin-menu.png" alt="Citadel E-posta Sunucusunu Şimdi Yeniden Başlat" /></p>
+<h2>Raspberry Pi E-posta Sunucunuz için DNS Ayarlama</h2>
+<p>DNS'inizi ayarlamanın en kolay yolu, Cloudflare gibi bir hizmet kullanmaktır. Cloudflare, dinamik bir IP adresinin arkasında olan herkes için son derece kullanışlı olan, aynı zamanda dinamik bir DNS hizmeti olarak da kolayca ayarlanabilecek kararlı ve yedekli bir DNS hizmeti sunar.</p>
+<p>Ek bir avantajı, DNS kayıtlarını değiştirmeyi de son derece kolay hale getirmesi ve güncellemelerin çoğu DNS hizmetinden çok daha hızlı yayılmasıdır.</p>
+<p><strong>1.</strong> Cloudflare'de alan adınıza gidin, ardından DNS sekmesine gidin.</p>
+<p><strong>2.</strong> Burada ağınızın herkese açık IP adresine işaret eden bir A adı kaydı eklemeniz gerekiyor. Bu kayıt, port yönlendirmesinden sonra webmail istemcinize erişmenizi sağlayacaktır. Ayrıca MX Kaydını ona işaret edebilmemiz için de gereklidir.</p>
+<p><strong>3.</strong> Şimdi önceki adımda A kaydı olarak ayarladığınız alan adına işaret eden bir MX kaydı ekleyin.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/15-Cloudflare.png" alt="Cloudflare e-posta kurulumu" /></p>
+<p><strong>4.</strong> Bunların hepsi yapıldıktan sonra, artık daha önceki çeşitli portları port yönlendirmeniz gerekecek. Herhangi bir değişiklik yapmadıysanız, <code>80</code>, <code>25</code>, <code>587</code> ve <code>465</code> portlarını port yönlendirmeniz gerekecek.</p>
+<p>Bu portlardan son 3'ü, daha önceki SMTP ayarları sayfasında belirtilen SMTP portlarınız olmalıdır.</p>
+<p>Router'ınızda port yönlendirmenin nasıl yapılacağından emin değilseniz, bu web sitesinde bulabileceğiniz genel <a href="https://pimylifeup.com/raspberry-pi-port-forwarding/">port yönlendirme rehberimizi</a> takip etmeyi deneyebilirsiniz. Aksi takdirde router'ınızı <a href="https://portforward.com/">port forward web sitesinde</a> arayın.</p>
+<p>Ayrıca, dinamik bir IP adresiniz varsa, <a href="https://pimylifeup.com/raspberry-pi-port-forwarding/">dinamik bir DNS istemcisi kurmanız</a> gerekecek, bunu kurma rehberimizi takip edebilirsiniz. Cloudflare üzerinden çalışacak şekilde kurma adımlarını takip ettiğinizden emin olun.</p>
+<h2>Raspberry Pi E-posta Sunucunuz için SpamAssassin Ayarlama</h2>
+<p>Şimdi <a href="http://spamassassin.apache.org/">SPAM'i eleyerek işleyen bir araç olan</a> Spamassassin'i ayarlama sürecinden geçeceğiz. Herhangi bir özel e-posta sunucusuna kurulu olması gereken önemli bir araçtır. Raspberry Pi'ye biraz daha iş yükü ekleyecektir ancak bunu gayet iyi idare edebilmesi gerekir.</p>
+<p><strong>1.</strong> İlk olarak, aşağıdaki komutu çalıştırarak Spamassassin'i resmi paketlerden kuralım.</p>
+<p>Spamassassin'in kurulum süreci, birçok şeyi derlemesi gerektiğinden biraz zaman alabilir.</p>
+<pre><code>sudo apt install spamassassin
+</code></pre>
+<p><strong>2.</strong> Spamassassin kurulduktan sonra, artık yapılandırmasında bazı değişiklikler yapmamız gerekiyor, ilk yapılandırma dosyasını düzenlemek için aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo nano /etc/spamassassin/local.cf
+</code></pre>
+<p><strong>3.</strong> Aşağıda belirtilen satırları, yazdıklarımızla eşleşecek şekilde güncelleyin, bu satırlardan herhangi birinin önünde bir # varsa, onu kaldırın. Her satırın ne yaptığını ve neden bunları etkinleştirmeniz gerektiğini açıklayacağız.</p>
+<p>Bu satır, Spamassassin'in spam e-postaların konu başlığını, SPAM ve Spamassassin sisteminin ona atadığı spam puanını içerecek şekilde değiştirmesini sağlar.</p>
+<pre><code>rewrite_header Subject [***** SPAM _SCORE_ *****]
+</code></pre>
+<p>Bu satır, Spamassassin'e sadece bir e-postanın başlıklarını değiştirmesini ve gerçek gövdede herhangi bir değişiklik yapmamasını söyler.</p>
+<pre><code>report_safe 0
+</code></pre>
+<p>Gerekli puanı düşük ayarlamak, başlangıçta çok sayıda yanlış pozitif alacağınız anlamına gelir, ancak Spamassassin'e hangi e-postaların iyi hangi e-postaların kötü olduğunu öğretmenize yardımcı olacaktır.</p>
+<pre><code>required_score 2.0
+</code></pre>
+<p>Bir sonraki satır, Spamassassin'in bir Bayesian filtresi kullanmasını ayarlar. Bayesian, bir e-postanın Spam olup olmadığının <a href="https://en.wikipedia.org/wiki/Naive_Bayes_spam_filtering">olasılığını tahmin etmenin</a> bir yoludur. Örnek boyutu arttıkça iyileşen, yaygın olarak kullanılan bir yöntemdir.</p>
+<pre><code>use_bayes 1
+</code></pre>
+<p>Aşağıdaki satır, Bayesian filtreleme için otomatik öğrenmeyi açar.</p>
+<pre><code>bayes_auto_learn 1
+</code></pre>
+<p>Bunların hepsi yapıldıktan sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak dosyayı kaydedip çıkın.</p>
+<p><strong>4.</strong> Şimdi Spamassassin'in kurulumunu bitirmek için düzenlememiz gereken bir son dosya daha var, aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo nano /etc/default/spamassassin
+</code></pre>
+<p>Bu satır, <a href="https://pimylifeup.com/cron-jobs-and-crontab/">bir cron işinin</a> Spamassassin kurallarını otomatik olarak güncellemesine izin verir.</p>
+<pre><code>CRON=1
+</code></pre>
+<p><code>CTRL</code> + <code>X</code>, ardından <code>Y</code> tuşuna basarak kaydedip dosyadan çıkın.</p>
+<p><strong>5.</strong> Bir sonraki komut, spamassassin servisinin önyüklemede başlamasını etkinleştirecektir.</p>
+<pre><code>sudo systemctl enable spamassassin
+</code></pre>
+<p><strong>6.</strong> Şimdi aşağıdaki komutla Spamassassin daemon'unu başlatabiliriz.</p>
+<pre><code>sudo systemctl start spamassassin
+</code></pre>
+<p><strong>7.</strong> Şimdi Citadel'in web arayüzüne gitmemiz ve tekrar Administration ekranına dönmemiz gerekiyor.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/10-Citadel-Dashboard-1.png" alt="Citadel Admin Dashboard" /></p>
+<p><strong>8.</strong> Buraya döndükten sonra, &quot;Domain names and Internet mail configuration&quot;a gitmemiz gerekiyor.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/11b-Citadel-Admin-menu.png" alt="Citadel Admin Menüsü" /></p>
+<p><strong>9.</strong> Artık burada olduğumuza göre, &quot;SpamAssassin Hosts&quot; altına IP adresini, <code>127.0.0.1</code>i yazmamız gerekiyor. Yazdıktan sonra, sadece &quot;Add&quot; butonuna basabiliriz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/16-Add-spamassassin.png" alt="Citadel Spamassassin Ekle" /></p>
+<h2>Citadel için ClamAV Ayarlama</h2>
+<p>Şimdi Raspberry Pi e-posta sunucusu kurulum rehberimizin son bölümüne geliyoruz, <a href="https://www.clamav.net/">ClamAV yazılımını</a> kurup ayarlayacağız. Bu yazılım, tüm gelen e-postalarınızı virüsler için tarayacak ve Raspberry Pi'nizin enfekte olmasını önlemeye yardımcı olacaktır.</p>
+<p><strong>1.</strong> ClamAV'ı kurmak son derece kolaydır çünkü zaten Debian paketlerine dahildir, sadece aşağıdaki komutu çalıştırarak kurabiliriz.</p>
+<pre><code>sudo apt install clamav
+</code></pre>
+<p><strong>2.</strong> Şimdi ClamAV'ın virüs veritabanlarının en son sürümünü indirmesini istiyoruz, bunu aşağıdaki komutu çalıştırarak yapabiliriz.</p>
+<pre><code>sudo freshclam
+</code></pre>
+<p>Aşağıdaki hatayla karşılaşabilirsiniz, ancak bunu halledebiliriz:</p>
+<pre><code>ERROR: /var/log/clamav/freshclam.log is locked by another process
+</code></pre>
+<p>Bu hatayı halletmek için, clamav'ı durdurmamız gerekiyor, bunu aşağıdaki komutu çalıştırarak yapabiliriz. Ardından <strong>sudo freshclam</strong>'i tekrar çalıştırın.</p>
+<pre><code>sudo systemctl stop clamav-freshclam
+</code></pre>
+<p><strong>3.</strong> Güncelleme tamamlandıktan sonra, aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo systemctl start clamav-freshclam
+</code></pre>
+<p><strong>4.</strong> Şimdi önyüklemede başlamasını sağlamak için systemctl ile ClamAV'ı etkinleştirin.</p>
+<pre><code>sudo systemctl enable clamav-freshclam
+</code></pre>
+<p><strong>5.</strong> Şimdi Citadel'in web arayüzüne gitmemiz ve tekrar Administration ekranına dönmemiz gerekiyor.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/10-Citadel-Dashboard.png" alt="Raspberry Pi Citadel Dashboard" /></p>
+<p><strong>6.</strong> Buraya döndükten sonra, &quot;Domain names and Internet mail configuration&quot;a gitmemiz gerekiyor.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/11b-Citadel-Admin-menu.png" alt="Citadel Admin Menüsü" /></p>
+<p><strong>7.</strong> Artık burada olduğumuza göre, &quot;ClamAV clamd hosts&quot; altına IP Adresini, 127.0.0.1'i yazmamız gerekiyor. Yazdıktan sonra, sadece &quot;Add&quot; butonuna basabiliriz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/17-Add-clamav.png" alt="Clamav Ekle" /></p>
+<p>Umarız, bu noktada, başarıyla bağlanabileceğiniz tamamen işlevsel bir e-posta sunucunuz vardır.</p>
+<h2>Kullanıcı Hesabınızın E-posta Adresini Güncelleme</h2>
+<p>Kullanıcı hesabınızın e-posta adresini güncellemeniz gerekirse, bu seçilen kullanıcınıza giriş yaptığınızda gelişmiş menüde bulunabilir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/update-contact-information.png" alt="iletişim bilgilerini güncelle" /></p>
+<p><strong>1.</strong> Gelişmişe gidin ve bu ekranda &quot;update your contact information&quot;ı seçin.</p>
+<p><strong>2.</strong> &quot;primary internet email address&quot; altında e-posta adresinizi güncelleyin, ayrıca görünen adınız ve bu hesap için bağlı olmasını istediğiniz diğer e-posta adresleri (Internet email alias) gibi başka şeyleri de güncelleyebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/03/update-personal-email-address.png" alt="kişisel e-posta adresini güncelle" /></p>
+<p><strong>3.</strong> Bitirdiğinizde, save changes'i seçin.</p>
+<h2>Sorun Giderme</h2>
+<p>Bu eğitimi yaparken bazıları kolay bir düzeltme, diğerleri biraz daha zor olan oldukça fazla sorunla karşılaşabilirsiniz.</p>
+<ul>
+<li>Bazı ISP'ler 25 portunu engelliyor olacak, bu da e-posta gönderdiğinizde başarısız olacakları anlamına gelir. Bunu aşmak için, ya portun engellemesini kaldırtmanız ya da citadel'i ISP'nin SMTP sunucusunu kullanacak şekilde ayarlamanız gerekecek. <a href="http://www.citadel.org/doku.php/faq:troubleshooting:outbound_mail">Giden e-postanın burada takıldığı hakkında</a> daha fazla bilgi bulabilirsiniz.</li>
+<li>E-posta almıyorsanız, bu muhtemelen DNS'inizin doğru yapılandırılmadığı anlamına gelir. DNS'inizin yönetildiği yere geri dönün ve bilgileri gözden geçirin.</li>
+</ul>
+<h2>Sonuç</h2>
+<p>Bu eğitimin size bir Raspberry Pi e-posta sunucusunu nasıl kuracağınızı gösterdiğini ve herhangi bir sorunla karşılaşmadığınızı umuyorum.</p>
+<p>Üzerinde tam kontrole sahip olduğunuz ucuz bir e-posta sunucusu kurmak isteyen herkes için kesinlikle harika bir proje.</p>
+<p>Herhangi bir geri bildiriminiz, ipucunuz varsa veya paylaşmak istediğiniz herhangi bir sorunla karşılaştıysanız, lütfen aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-email-server.html&amp;text=Citadel+Kullanarak+Raspberry+Pi+E-posta+Sunucusu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-email-server.html&amp;text=Citadel+Kullanarak+Raspberry+Pi+E-posta+Sunucusu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-email-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-email-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-email-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-email-server.html&amp;title=Citadel+Kullanarak+Raspberry+Pi+E-posta+Sunucusu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Citadel+Kullanarak+Raspberry+Pi+E-posta+Sunucusu%20codenfast.com%2Fposts%2Fraspberry-pi-email-server.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

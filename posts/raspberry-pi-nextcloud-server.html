@@ -1,0 +1,553 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi Nextcloud Sunucusu Nasıl Kurulur - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Kendi özel dosya sunucunuzu kurun"/>
+    <meta property="og:title" content="Raspberry Pi Nextcloud Sunucusu Nasıl Kurulur"/>
+    <meta property="og:description"
+          content="Kendi özel dosya sunucunuzu kurun"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-nextcloud-server.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-nextcloud-server.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2017/06/Raspberry-Pi-Nextcloud-Server-no-wm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi Nextcloud Sunucusu Nasıl Kurulur"/>
+    <meta name="twitter:description"
+          content="Kendi özel dosya sunucunuzu kurun"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2017/06/Raspberry-Pi-Nextcloud-Server-no-wm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi Nextcloud Sunucusu Nasıl Kurulur","item":{"@id":"https://codenfast.com/posts/raspberry-pi-nextcloud-server.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/06/Raspberry-Pi-Nextcloud-Server-no-wm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/06/Raspberry-Pi-Nextcloud-Server-no-wm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/06/Raspberry-Pi-Nextcloud-v3.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/06/Raspberry-Pi-Nextcloud-v3.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/06/Raspberry-Pi-Nextcloud-Setup-Screen.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/06/Raspberry-Pi-Nextcloud-Setup-Screen.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/06/02-Welcome-Screen.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/06/02-Welcome-Screen.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/06/03-Files-Screen.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/06/03-Files-Screen.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi Nextcloud Sunucusu Nasıl Kurulur","description":"Kendi özel dosya sunucunuzu kurun","image":["https://pimylifeup.com/wp-content/uploads/2017/06/Raspberry-Pi-Nextcloud-Server-no-wm.jpg"],"datePublished":"2026-08-03T15:59:59.420608+03:00","dateModified":"2026-08-03T15:59:59.420627+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi Nextcloud Sunucusu Nasıl Kurulur</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-nextcloud-server/">PiMyLifeUp - How to Setup a Raspberry Pi Nextcloud Server</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu proje için, bir Raspberry Pi NextCloud Sunucusunu nasıl kurup yapılandıracağınızı göstereceğiz. Bu sunucu, kendi kişisel <code>&quot;cloud&quot;</code> depolama sisteminiz olarak görev yapabilir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/06/Raspberry-Pi-Nextcloud-v3.jpg" alt="Raspberry Pi Nextcloud Sunucusu" /></p>
+<p>Zaman geçtikçe, 3. taraf şirketlere karşı kendi gizliliğinizi korumak giderek zorlaşıyor. Nextcloud gibi yazılımlar tam da burada devreye giriyor, çünkü hiçbir 3. taraf kontrolörü olmadan dosyalarınız üzerinde tam kontrol sahibi olmanızı sağlıyor.</p>
+<p>Veriniz yerel ağınızda saklanacağından, yerel ağınız dışından dosya yüklerken ve indirirken çok fazla bant genişliği kullanacağınızı hatırlamak önemlidir. İnternet bağlantınız harika değilse, onu yerel ağınız dışında kullanmayı planlıyorsanız en iyi deneyimi alamayabilirsiniz.</p>
+<p>Bu tanıdık geliyorsa, muhtemelen öyledir çünkü Nextcloud, <a href="https://pimylifeup.com/raspberry-pi-owncloud/">daha önce ele aldığım owncloud yazılımının</a> aktif olarak sürdürülen bir fork'udur. Geliştirme süresi uzadıkça bu iki yazılım paketi muhtemelen daha da farklılaşacak, ikisine de bakıp hangisiyle devam edeceğinize karar vermenizi öneririm.</p>
+<p>Nextcloud hakkında daha fazla bilgi edinmek isterseniz, <a href="https://nextcloud.com">Nextcloud web sitesine</a> göz atabilirsiniz.</p>
+<p><strong>Not:</strong> Bir Raspberry Pi'deki USB portları genellikle harici bir sabit diski güçlendiremez. Bunun durumunuz olduğunu ve sabit diskinizin harici bir güç kaynağı kullanmadığını fark ederseniz, Pi için güçlendirilmiş bir USB hub satın almayı düşünmenizi öneririm.</p>
+<h2>Apache ve PHP Kurma</h2>
+<p>Raspberry Pi'de Nextcloud'u çalıştırmak için, önce Apache ve PHP'yi kurup ayarlamamız gerekecek.</p>
+<p>Bunları kurmaya çok derinlemesine girmeyeceğiz çünkü bu eğitimde ufak bileşenlerdir.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-web-server/">Bir Web Sunucusu kurma</a> hakkında daha fazla bilgi edinmek isterseniz, bunu nasıl yapacağınızı gösteren eğitimimizi takip ettiğinizden emin olun.</p>
+<p>En iyi performans için Raspbian lite kullanmanızı öneririm ancak normal Raspbian da aynı şekilde iyi çalışacaktır.</p>
+<p>Bunların hepsini nasıl ayarlayacağınız hakkında bilgiye ihtiyacınız varsa <a href="https://pimylifeup.com/category/projects/operating-systems/">Pi işletim sistemleri bölümündeki rehbere</a> göz atın.</p>
+<p>Bu eğitim için, PHP 8'in en son mevcut sürümünü kullanacağız.</p>
+<p><strong>1.</strong> Başlamak için, önce aşağıdaki komutla paket depolarımızı güncelleyelim:</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Bu yapıldıktan sonra, şimdi aşağıdaki komutla apache'yi kuralım:</p>
+<pre><code>sudo apt install apache2
+</code></pre>
+<p>Apache2'nin başarıyla çalıştığından emin olmak için Pi'nizin IP adresine giderek kontrol edebilirsiniz, bu varsayılan bir Apache Sayfası yüklemelidir.</p>
+<p>Raspberry Pi'nizin yerel IP adresinin ne olduğundan emin değilseniz terminale <code>hostname -I</code> yazın.</p>
+<p><strong>3.</strong> Bu eğitim için, yazıldığı sırada Nextcloud için önerilen sürüm olduğundan <strong>PHP 8.4</strong> kullanacağız.</p>
+<p>PHP'nin bu sürümüne erişim kazanmak için, <a href="https://pimylifeup.com/raspberry-pi-latest-php/">rehberimizi takip ederek üçüncü taraf bir PHP deposu eklemeniz</a> gerekecek.</p>
+<p><strong>4.</strong> Apache2 artık Raspberry Pi'ye kurulduğuna göre, sadece PHP'yi ve birkaç paketini kurmamız gerekiyor.</p>
+<p>PHP'yi ve ihtiyacımız olan paketleri kurmak için, aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo apt install -y php8.4 php8.4-gd php8.4-sqlite3 php8.4-curl php8.4-zip php8.4-xml php8.4-mbstring php8.4-mysql php8.4-bz2 php8.4-intl php8.4-smbclient php8.4-gmp php8.4-bcmath libapache2-mod-php8.4
+</code></pre>
+<p><strong>5.</strong> Apache ve PHP artık kurulduğuna göre, yapmamız gereken bir son şey daha var, o da Apache'yi yeniden başlatmak.</p>
+<p>Bunu şimdi aşağıdaki komutu kullanarak yapabilirsiniz:</p>
+<pre><code>sudo service apache2 restart
+</code></pre>
+<h2>Nextcloud için Bir MySQL Veritabanı ve Kullanıcısı Kurma</h2>
+<p>Bu bölümde, Nextcloud'un verilerini saklamak için kullanacağı bir kullanıcı ve veritabanını nasıl kuracağınızı göstereceğiz.</p>
+<p><strong>1.</strong> Raspberry Pi'mizde Nextcloud'u kurmaya devam edebilmemiz için, tüm verilerini saklaması için bir veritabanı sunucusu kurmamız gerekecek.</p>
+<p>Bu rehber için, MariaDB'ye (MySQL'e bir alternatif) güveneceğiz. Devam etmeden önce Raspberry Pi'nizde <a href="https://pimylifeup.com/raspberry-pi-mysql/">MariaDB kurma rehberimizi</a> takip edin.</p>
+<pre><code>https://pimylifeup.com/raspberry-pi-mysql/
+</code></pre>
+<p><strong>2.</strong> MySQL sunucusu artık Raspberry Pi'mize kurulduğuna göre, şimdi aşağıdaki komutu çalıştırarak komut satırı arayüzünü başlatmak isteyeceğiz.</p>
+<p>Nextcloud'un verilerini saklaması için bir kullanıcı ve veritabanı oluşturmak üzere bu komut satırı aracını kullanacağız.</p>
+<pre><code>sudo mysql -u root
+</code></pre>
+<p><strong>3.</strong> Araca giriş yaptıktan sonra, bir veritabanı oluşturarak başlayabiliriz.</p>
+<p>Aşağıdaki komutu çalıştırarak &quot;<code>nextclouddb</code>&quot; adlı bu veritabanını oluşturacağız.</p>
+<pre><code>CREATE DATABASE nextclouddb;
+</code></pre>
+<p><strong>4.</strong> Bir sonraki adımımız, yeni veritabanımızla etkileşim kurmak için kullanacağımız bir kullanıcı oluşturmaktır.</p>
+<p>Aşağıdaki komutu çalıştırarak &quot;<code>nextclouduser</code>&quot; adlı bir kullanıcı oluşturacağız. &quot;<code>&lt;PAROLA&gt;</code>&quot; kısmını güvenli bir parolayla değiştirdiğinizden emin olun ve daha sonra kullanmak üzere not edin.</p>
+<pre><code>CREATE USER 'nextclouduser'@'localhost' IDENTIFIED BY '&lt;PAROLA&gt;';
+</code></pre>
+<p>Örneğin, bu kullanıcıyı &quot;<code>pimylifeup</code>&quot; parolasıyla oluşturuyor olsaydınız, komut aşağıda gösterdiğimiz gibi görünürdü.</p>
+<pre><code>CREATE USER 'nextclouduser'@'localhost' IDENTIFIED BY 'pimylifeup';
+</code></pre>
+<p><strong>5.</strong> Kullanıcımız oluşturulduğuna göre, şimdi ona veritabanımızla etkileşim kurma izinleri vermemiz gerekiyor.</p>
+<p>Bunu aşağıdaki komutu çalıştırarak yapabiliriz.</p>
+<pre><code>GRANT ALL PRIVILEGES ON nextclouddb.* TO 'nextclouduser'@'localhost';
+</code></pre>
+<p>Bu komut, &quot;<code>nextclouduser</code>&quot; kullanıcısına &quot;<code>nextclouddb</code>&quot; veritabanı ve tüm tabloları üzerinde tüm ayrıcalıkları verir.</p>
+<p><strong>6.</strong> Son görevimiz, ayrıcalık tablosunu temizlemektir (flush).</p>
+<p>Ayrıcalıkları temizlemek için yapmamız gereken tek şey aşağıdaki komutu çalıştırmaktır.</p>
+<pre><code>FLUSH PRIVILEGES;
+</code></pre>
+<p><strong>7.</strong> Bu yapıldıktan sonra, artık Raspberry Pi'mize Nextcloud kurmaya devam edebiliriz.</p>
+<p>Terminalde aşağıdaki komutu kullanarak MySQL komut satırı arayüzünden çıkın.</p>
+<pre><code>exit
+</code></pre>
+<h2>Raspberry Pi'nize Nextcloud İndirme</h2>
+<p>Nextcloud'u Raspberry Pi'ye almak oldukça basittir, esas olarak zip dosyasını web sitelerinden indirmeyi, çıkarmayı ve ardından bazı şeyler yapmayı içerir.</p>
+<p><strong>1.</strong> Başlamak için, önce aşağıdaki <a href="https://pimylifeup.com/cd-command/">dizin değiştirme komutuyla</a> html dizinimize geçelim.</p>
+<pre><code>cd /var/www/
+</code></pre>
+<p><strong>2.</strong> Şimdi Nextcloud'un en son sürümünü cihazımıza indirebiliriz.</p>
+<p>Bunu yapmak için, en son sürümü mevcut klasöre indirmek üzere <a href="https://pimylifeup.com/wget-command-linux/">wget kullanacağız</a>.</p>
+<pre><code>sudo wget https://download.nextcloud.com/server/releases/latest.tar.bz2
+</code></pre>
+<p><strong>3.</strong> Nextcloud artık Raspberry Pi'mize indirildiğine göre, arşivi çıkaralım.</p>
+<p>Arşivi &quot;<code>tar</code>&quot; kullanarak çıkarmak için aşağıdaki komutu kullanmamız gerekiyor.</p>
+<pre><code>sudo tar -xvf latest.tar.bz2
+</code></pre>
+<p><strong>4.</strong> Şimdi Nextcloud'un içinde çalışması için bir veri dizini oluşturmamız gerekiyor, Nextcloud'un ilk kurulumu için bu klasörü &quot;<code>/var/www/</code>&quot; dizinimizde oluşturmalıyız.</p>
+<p>Aşağıda gösterildiği gibi <a href="https://pimylifeup.com/mkdir-command-linux/">mkdir komutunu kullanarak</a> dizini oluşturun:</p>
+<pre><code>sudo mkdir -p /var/www/nextcloud/data
+</code></pre>
+<p><strong>5.</strong> Şimdi aşağıdaki <a href="https://pimylifeup.com/chown-command/">chown komutunu</a> çalıştırarak tüm Nextcloud klasörü ve içindeki her şey üzerinde doğru kullanıcı ve gruba kontrol verelim.</p>
+<pre><code>sudo chown -R www-data:www-data /var/www/nextcloud/
+</code></pre>
+<p><strong>6.</strong> Son olarak ona doğru izinleri vermemiz gerekiyor, tekrar aşağıdaki <a href="https://pimylifeup.com/chmod-command/">chmod komutunu</a> çalıştırın.</p>
+<pre><code>sudo chmod 750 /var/www/nextcloud/data
+</code></pre>
+<h2>Nextcloud için Apache'yi Yapılandırma</h2>
+<p>Ardından, Nextcloud için &quot;<code>.htaccess</code>&quot; dosyasıyla ilgilenmemiz gerekiyor.</p>
+<p>Nextcloud'u varsayılan Apache2 dizini &quot;<code>/var/www/</code>&quot;e kurduğumuzdan, &quot;<code>.htaccess</code>&quot; dosyasının ayarları geçersiz kılmasına izin vermek için Apache2'de bazı ayarları değiştirmemiz gerekecek.</p>
+<p>Bunu yalnızca Nextcloud dizini için yönetmek üzere, Apache için yeni bir yapılandırma dosyası oluşturacağız.</p>
+<p><strong>1.</strong> Başlamak için, Nextcloud için yapılandırma değişikliklerimizi saklayacak bir dosya oluşturalım.</p>
+<p>Terminalde aşağıdaki komutu kullanarak bu yapılandırma dosyasını yazmaya başlayabilirsiniz. Burada <a href="https://pimylifeup.com/nano-text-editor/">Nano kullanıyoruz</a> çünkü kullanımı en kolay olanlardan biri.</p>
+<pre><code>sudo nano /etc/apache2/sites-available/nextcloud.conf
+</code></pre>
+<p><strong>2.</strong> Şimdi daha ileri gitmeden önce, Nextcloud'un &quot;<code>/nextcloud</code>&quot; dizini altında mı yoksa kendi alan adında veya alt alan adında mı çalışmasını istediğinize karar vermeniz gerekecek.</p>
+<p><strong>Bir Dizin Altında Çalıştırma</strong></p>
+<p>NextCloud'un birisi &quot;<code>/nextcloud</code>&quot;a her gittiğinde erişilebilir olmasını istiyorsanız, yapmanız gereken tek şey aşağıdaki satırları dosyaya yazmaktır.</p>
+<p>Bu yapılandırma basittir ve birisi Pi'nizin IP adresine, ardından &quot;<code>/nextcloud</code>&quot;a her gittiğinde arayüzüyle karşılaşacağı anlamına gelir.</p>
+<pre><code>Alias /nextcloud &quot;/var/www/nextcloud/&quot;
+
+&lt;Directory /var/www/nextcloud/&gt;
+  Require all granted
+  AllowOverride All
+  Options FollowSymLinks MultiViews
+
+  &lt;IfModule mod_dav.c&gt;
+    Dav off
+  &lt;/IfModule&gt;
+
+&lt;/Directory&gt;
+</code></pre>
+<p><strong>NextCloud'u Kendi Alan Adında Çalıştırma</strong></p>
+<p>Nextcloud'un ayrı bir alan adı veya alt alan adı altında çalışmasını tercih ederseniz, aşağıda gösterildiği gibi bir sanal host oluşturmanız gerekir.</p>
+<p>Bu yapılandırma satırlarını yazarken &quot;<code>&lt;ALANADI&gt;</code>&quot; kısmını kullanmayı planladığınız alan adıyla değiştirdiğinizden emin olun. Örneğin, bunu &quot;<code>nextcloud.pimylifeup.com</code>&quot; ile değiştirirdik.</p>
+<pre><code>&lt;VirtualHost *:80&gt;
+  DocumentRoot /var/www/nextcloud/
+  ServerName  &lt;ALANADI&gt;
+
+  &lt;Directory /var/www/nextcloud/&gt;
+    Require all granted
+    AllowOverride All
+    Options FollowSymLinks MultiViews
+
+    &lt;IfModule mod_dav.c&gt;
+      Dav off
+    &lt;/IfModule&gt;
+  &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+</code></pre>
+<p><strong>3.</strong> Bu satırlar temel olarak Apache2'ye &quot;<code>/var/www/nextcloud/</code>&quot; klasörü içinde kendini nasıl yöneteceğini söyler.</p>
+<p>Bu değişiklikler, Apache2'nin Nextcloud dizini içindeki &quot;<code>.htaccess</code>&quot; dosyalarını okumasına ve kullanmasına izin verecektir.</p>
+<p><strong>4.</strong> Şimdi <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak dosyayı kaydedip çıkabiliriz.</p>
+<p><strong>5.</strong> Dosya oluşturulduğuna göre, şimdi Apache'ye onu kullanmasını söylememiz gerekiyor.</p>
+<p>Bunu, a2ensite komutunu ve ardından &quot;<code>nextcloud.conf</code>&quot;u kullanarak yapabiliriz.</p>
+<pre><code>sudo a2ensite nextcloud.conf
+</code></pre>
+<p><strong>6.</strong> Şimdi güncellenmiş yapılandırma dosyasını okumaya zorlamak için Apache2'yi yeniden başlatmamız gerekiyor. Bunu aşağıdaki komutla kolayca yapabiliriz:</p>
+<pre><code>sudo systemctl reload apache2
+</code></pre>
+<p>Bu yapıldıktan sonra, artık Nextcloud yazılımını kendi web arayüzü içinde kurmaya geçebilirsiniz.</p>
+<h2>Nextcloud İlk Kurulum</h2>
+<p><strong>1.</strong> Bunu bitirdiğimize göre, artık sonunda Nextcloud'un kendisine gidip kurulum sürecini başlatabiliriz.</p>
+<p>Başlamak için <a href="https://pimylifeup.com/raspberry-pi-ip-address/">Raspberry Pi'nizin IP adresine</a>, ardından &quot;<code>/nextcloud</code>&quot; yoluna gidin. Pi'nizin IP adresini bilmiyorsanız, <a href="https://pimylifeup.com/hostname-command/">hostname komutu</a> onu almak için harika bir yoldur.</p>
+<p>&quot;<code>&lt;IPADRESI&gt;</code>&quot; kısmını Raspberry Pi'nizinkiyle değiştirmeyi unutmayın.</p>
+<pre><code>http://&lt;IPADRESI&gt;/nextcloud
+</code></pre>
+<p>Lütfen bunu bir alan adı altında çalıştırıyorsanız, yukarıda gösterdiğimiz yerine oraya gitmeniz gerektiğini unutmayın.</p>
+<p><strong>2.</strong> Artık aşağıdaki ekranla karşılaşacaksınız.</p>
+<p>Burada admin hesabınız için kullanmayı planladığınız <strong>Kullanıcı Adı</strong> ve <strong>Parolayı</strong> (<strong>1.</strong>) yazmanız gerekecek.</p>
+<p>Nextcloud dosya hizmetinize ağınız dışından erişime izin vermeyi planlıyorsanız, uzun ve güvenli bir parola kullandığınızdan emin olun.</p>
+<p>Ardından, veritabanı sunucumuz için detayları belirtmemiz gerekiyor. Bu seçeneklere ulaşmak için &quot;<code>Storage &amp; Database</code>&quot; seçeneğine <code>tıklamanız</code> gerekecek (<strong>2.</strong>).</p>
+<p>Şimdi kullanmak istediğimiz veritabanı türünü seçmeniz gerekiyor. Bir SQL sunucusu kullandığımızdan &quot;<code>MySQL/MariaDB</code>&quot; (<strong>3.</strong>) seçeneğine <code>tıklayın</code>.</p>
+<p>Son olarak veritabanı sunucumuz için detayları girmemiz gerekiyor. Girmemiz gereken üç bilgi parçası var.</p>
+<ol>
+<li>Veritabanı sunucumuzla etkileşim kuracak kullanıcının kullanıcı adı. (<strong>A.</strong>) Kullandığımız aynı bilgiyi kullanıyorsanız, bu ayar <code>nextclouduser</code> olarak ayarlanmalıdır.</li>
+<li>Yukarıdaki kullanıcı için ayarladığınız parola. (<strong>B.</strong>)</li>
+<li>Ayarlamanız gereken son seçenek veritabanı adıdır. (<strong>C.</strong>) Rehberimizi takip ettiyseniz bu <code>nextclouddb</code> olacaktır.</li>
+</ol>
+<p>Bundan memnun olduğunuzda, &quot;<strong>Finish Setup</strong>&quot; butonuna basın (<strong>4.</strong>), lütfen kurulumunuzu sonlandırdığından bunun tamamlanması biraz zaman alabileceğini unutmayın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/06/Raspberry-Pi-Nextcloud-Setup-Screen.jpg" alt="Raspberry Pi Nextcloud Kurulum Ekranı" /></p>
+<p><strong>3.</strong> Bundan sonra artık aşağıdaki karşılama ekranıyla karşılaşacaksınız, bu sadece Nextcloud kurulumunuza bağlanmak için kullanabileceğiniz çeşitli programları düzenler.</p>
+<p>Devam etmek için sağ üst köşedeki <strong>X</strong> butonuna <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/06/02-Welcome-Screen.jpg" alt="Nextcloud Karşılama Ekranı" /></p>
+<p><strong>4.</strong> Artık sonunda Raspberry Pi Nextcloud arayüzünü görebilirsiniz, Nextcloud arayüzünün tüm işlevselliğine aşina olmak için biraz zaman ayırmalısınız.</p>
+<p>Nextcloud arayüzünün nasıl kullanılacağı hakkında çok derinlemesine gitmeyeceğiz, daha fazla bilgiye ihtiyacınız varsa <a href="https://nextcloud.com/support/">nextcloud'daki destek bölümüne</a> göz atmanızı öneririm.</p>
+<p>Ancak aşağıdaki ekran görüntüsünde göz atılacak bazı önemli alanları vurguladık.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/06/03-Files-Screen.jpg" alt="Nextcloud Dosyalar Ekranı" /></p>
+<h2>Nextcloud'un Veri Klasörünü Taşıma</h2>
+<p>Nextcloud artık güvenli bir şekilde kurulduğuna göre, kurulumu hem daha güvenli hem de biraz daha kullanışlı olacak şekilde ayarlayabiliriz. Yapmamız gereken ilk şeylerden biri, veri dizinini web erişilebilir dizinimizde oturmayacak şekilde taşımaktır.</p>
+<p>Bu ayrıca, Raspberry Pi'nin SD Kartına artan bir yük koymak yerine, Nextcloud veri dizininizi daha büyük harici bir sabit diske taşıyacağınız aynı yoldur.</p>
+<p><strong>1.</strong> Başlamak için, veri dosyalarımızı nerede saklayacağımız için yeni dizinimizi oluşturalım.</p>
+<p>Kolaylaştırmak için &quot;<code>/var/nextcloud</code>&quot;da yeni bir klasör oluşturacağız ve veri klasörümüzü oraya taşıyacağız.</p>
+<p>Aşağıdaki komutu çalıştırarak klasörü oluşturun:</p>
+<pre><code>sudo mkdir -p /var/nextcloud
+</code></pre>
+<p><strong>2.</strong> Oluşturduğumuz yeni klasörle, şimdi veri dizinimizi ona taşıyacağız, bu <a href="https://pimylifeup.com/mv-command-linux/">mv komutu</a> sayesinde yapılması kolaydır.</p>
+<p>Dosyayı taşırken ve ardından yapılandırma dosyasını ayarlarken Nextcloud sisteminizin devre dışı kalacağını lütfen unutmayın.</p>
+<p>Taşımayı başlatmak için aşağıdaki komutu yazın:</p>
+<pre><code>sudo mv -v /var/www/nextcloud/data /var/nextcloud/data
+</code></pre>
+<p><strong>3.</strong> Şimdi dosyalar taşındığına göre, &quot;<code>datadirectory</code>&quot; yapılandırmasını yeni dizinimize işaret edecek şekilde değiştirebiliriz.</p>
+<p>Önce, aşağıdaki komutla Nextcloud için yapılandırma dizinine geçelim.</p>
+<pre><code>cd /var/www/nextcloud/config
+</code></pre>
+<p><strong>4.</strong> Artık dosyanın bir yedeğini oluşturmak için yapılandırma dosyasını <a href="https://pimylifeup.com/cp-command-linux/">kopyalayabiliriz</a>, bunu aşağıdaki komutla yapabiliriz:</p>
+<pre><code>sudo cp -p config.php config.php.bk
+</code></pre>
+<p><strong>5.</strong> Son olarak, &quot;<code>config.php</code>&quot; dosyasını <a href="https://pimylifeup.com/nano-text-editor/">nano kullanarak</a> düzenlemek için açalım.</p>
+<pre><code>sudo nano config.php
+</code></pre>
+<p><strong>6.</strong> Bu dosyanın içinde aşağıdaki satırı değiştirmemiz gerekiyor:</p>
+<pre><code>'datadirectory' =&gt; '/var/www/nextcloud/data',
+</code></pre>
+<p><strong>Şuna</strong></p>
+<pre><code>'datadirectory' =&gt; '/var/nextcloud/data',
+</code></pre>
+<p><strong>7.</strong> Şimdi <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak dosyayı kaydedip çıkabiliriz.</p>
+<p><strong>8.</strong> Son bir önlem olarak, &quot;<code>www-data</code>&quot; kullanıcısının hala yeni klasörümüz üzerinde sahiplik sahibi olduğundan emin olmalıyız.</p>
+<pre><code>sudo chown -R www-data:www-data /var/nextcloud/data
+</code></pre>
+<p>Artık web tarayıcınızı yenileyebilmeniz ve tüm dosyalarınızın tam olarak öncekiyle aynı şekilde görünmesi gerekiyor.</p>
+<h2>Nextcloud'un Maksimum Yükleme Boyutunu Artırma</h2>
+<p>Varsayılan olarak, PHP çok düşük bir yükleme limitine sahiptir, o kadar düşük ki sadece 2 MB. Bunu değiştirmek için, &quot;<code>php.ini</code>&quot; dosyasını değiştirmemiz ve limiti artırmamız gerekiyor. Yalnızca 2mb dosyalar yükleyebilseydiniz bir bulut depolama sistemi pek işe yaramazdı.</p>
+<p><strong>1.</strong> Başlamak için, aşağıdaki komutla yapılandırma dosyasını düzenlemeye başlamamız gerekiyor:</p>
+<pre><code>sudo nano /etc/php/8.4/apache2/php.ini
+</code></pre>
+<p><strong>2.</strong> Şimdi aşağıdaki iki satırı bulup değiştirmemiz gerekiyor.</p>
+<pre><code>post_max_size = 8M
+upload_max_filesize = 2M
+</code></pre>
+<p><strong>Şuna</strong></p>
+<pre><code>post_max_size = 1024M
+upload_max_filesize = 1024M
+</code></pre>
+<p>Tabii ki, dosya boyutu limitlerini 20M'den çok daha yüksek bir şeye ayarlayabilirsiniz, bu yüzden o sayıyı Nextcloud'unuza yükleyeceğinizi düşündüğünüz maksimum dosya boyutuna değiştirmekten çekinmeyin.</p>
+<p><strong>3.</strong> Şimdi <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak dosyayı kaydedip çıkabiliriz.</p>
+<p>Şimdi güncellenmiş yapılandırma dosyasını okumaya zorlamak için Apache2'yi yeniden başlatmamız gerekiyor. Bunu aşağıdaki komutla kolayca yapabiliriz:</p>
+<pre><code>sudo service apache2 restart
+</code></pre>
+<p><strong>4.</strong> Artık web tarayıcınızı yeniden başlatabilmeniz ve maksimum yükleme boyutunun başarıyla artırıldığını görmek için yeni bir yükleme başlatabilmeniz gerekiyor.</p>
+<h2>Nextcloud için SSL Ayarlama</h2>
+<p>Şimdi Raspberry Pi Nextcloud sunucunuzu düz HTTP yerine HTTPS üzerinden çalışacak şekilde ayarlamak üzerinde gerçekten çalışmalıyız.</p>
+<p>Bu eğitim için, bir alan adınız olmadığını varsayacağız, bu yüzden <a href="https://pimylifeup.com/raspberry-pi-ssl-lets-encrypt/">Letsencrypt gibi ücretsiz bir hizmetten</a> birini kullanmak yerine kendi kendinden imzalı sertifikamızı oluşturacağız.</p>
+<p><strong>1.</strong> Apache2 yapılandırmamızı değiştirmeye gitmeden önce, önce kendinden imzalı sertifikayı oluşturacağız, neyse ki, OpenSSL sayesinde bunun hepsini tek bir komutta yapabiliriz.</p>
+<p><strong>Kendinden imzalı bir sertifikanın</strong> web tarayıcınızda <strong>hatalar fırlatacağını</strong> ve düzgün imzalanmış bir sertifika kadar güvenli olmadığını unutmayın ancak hiç olmamasından iyidir. Ayrıca bir alan adı kullanmıyorsanız tek seçenek de budur.</p>
+<p>Sertifikayı oluşturmadan önce, önce onu saklamak için bir dizin oluşturalım.</p>
+<pre><code>sudo mkdir -p /etc/apache2/ssl
+</code></pre>
+<p><strong>2.</strong> Şimdi terminalde aşağıdaki komutu çalıştırarak sertifikanın kendisini oluşturalım:</p>
+<pre><code>sudo openssl req -x509 -nodes -days 365 -newkey rsa:4096 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
+</code></pre>
+<p>Bu komut argümanlarının tam olarak ne yaptığını bilmek isterseniz, aşağıdaki küçük açıklamamızı okuyun.</p>
+<p><code>req</code><strong>:</strong> Bu, X.509 sertifika imzalama isteği (CSR) yönetimi için bir alt komut belirtir.</p>
+<p><code>-x509</code><strong>:</strong> Bu seçenek, bir sertifika isteği oluşturmak yerine kendinden imzalı bir sertifika dosyası oluşturmak istediğimizi belirtir.</p>
+<p><code>-nodes</code><strong>:</strong> Bu, OpenSSL uygulamasına bir passphrase belirtmek istemediğimizi söyler, bir passphrase, Apache her yeniden başlatıldığında onu girmemizi gerektirir ki bu uğraşması zahmetlidir.</p>
+<p><code>-days 365</code><strong>:</strong> Bu, sertifikanın geçerli kalmasını istediğimiz gün sayısını belirtir, bu gün sayısından sonra yeni bir sertifika oluşturmanız gerekecek.</p>
+<p><code>-newkey rsa:4096</code><strong>:</strong> Bu, sertifika isteğini ve yeni bir özel anahtarı aynı anda oluşturacaktır. Önceden bir özel anahtar oluşturmadığımızdan bunu yapmanız gerekecek. <code>rsa:4096</code>, OpenSSL'e 2048 bit uzunluğunda bir RSA anahtarı oluşturmasını söyler.</p>
+<p><code>-keyout</code><strong>:</strong> Bu parametre, oluşturulan özel anahtar dosyası için çıktı dosyasını adlandırır.</p>
+<p><code>-out</code><strong>:</strong> Bu seçenek, oluşturduğumuz sertifika için çıktı dosyasını adlandırır.</p>
+<p>Enter'a bastıktan sonra, doldurmanız için aşağıdaki seçeneklerle karşılaşacaksınız.</p>
+<pre><code>Country Name (2 letter code) [AU]:
+State or Province Name (full name) [Some-State]:
+Locality Name (eg, city) []:
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:
+Organizational Unit Name (eg, section) []:
+Common Name (e.g. server FQDN or YOUR name) []:
+Email Address []:
+</code></pre>
+<p><strong>3.</strong> Tüm bu bilgiyi doldurduktan sonra, Apache2'yi SSL çalıştıracak ve ayrıca yeni oluşturduğumuz sertifikayı kullanacak şekilde ayarlamaya devam edebiliriz. Bu basit ama önemli bir süreçtir.</p>
+<p>Önce aşağıdaki komutla Apache için SSL modülünü etkinleştirelim:</p>
+<pre><code>sudo a2enmod ssl
+</code></pre>
+<p><strong>4.</strong> Şimdi &quot;<code>default-ssl.conf</code>&quot; dosyasını, kurulumda OpenSSL tarafından oluşturulan varsayılan sertifikalar yerine yeni sertifikalarımızı kullanacak şekilde değiştirmemiz gerekiyor.</p>
+<p>Bu dosyayı değiştirmeye başlamak için aşağıdaki komutu çalıştırın:</p>
+<pre><code>sudo nano /etc/apache2/sites-available/default-ssl.conf
+</code></pre>
+<p><strong>5.</strong> Bu dosyanın içinde, &quot;<code>/etc/apache2/ssl</code>&quot; klasörümüze oluşturduğumuz yeni sertifikalarımıza işaret etmesi için aşağıdaki iki satırı değiştirmemiz gerekiyor.</p>
+<p><strong>Değiştir</strong></p>
+<pre><code>SSLCertificateFile /etc/ssl/certs/ssl-cert-snakeoil.pem
+SSLCertificateKeyFile /etc/ssl/private/ssl-cert-snakeoil.key
+</code></pre>
+<p><strong>Şuna</strong></p>
+<pre><code>SSLCertificateFile /etc/apache2/ssl/apache.crt
+SSLCertificateKeyFile /etc/apache2/ssl/apache.key
+</code></pre>
+<p><strong>6.</strong> Şimdi <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>Enter</code> tuşuna basarak dosyayı kaydedip çıkabiliriz.</p>
+<p><strong>7.</strong> Şimdi default-ssl yapılandırmasını etkinleştirebilir ve yeni yapılandırmamızı yüklemesi için Apache'yi yeniden başlatabiliriz. Bunu aşağıdaki iki komutla yapabiliriz.</p>
+<pre><code>sudo a2ensite default-ssl.conf
+sudo service apache2 restart
+</code></pre>
+<p><strong>8.</strong> Bunun çalıştığından emin olmak için, Raspberry Pi'nizin IP adresine önünde &quot;<code>https://</code>&quot; ile giderek test edebilirsiniz. Potansiyel olarak geçersiz bir sertifika olduğu konusunda size bir uyarı verecektir. Bu normaldir çünkü imzasız bir sertifikadır.</p>
+<p>Örneğin, kendi Nextcloud kopyamın artık SSL arkasında çalıştığından emin olmak için aşağıdakine giderdim.</p>
+<pre><code>https://192.168.1.105/nextcloud
+</code></pre>
+<p>9, 10, 11 ve 12. Adımlar <strong>tamamen isteğe bağlıdır</strong> ve tamamlanması gerekmez.</p>
+<p><strong>9.</strong> Nextcloud kurulumunuz için en iyi güvenliğe sahip olduğunuzdan emin olmak için <strong>isteğe bağlı bir ekstra adım</strong>, hiçbir bağlantının HTTP üzerinden yapılamaması için SSL'i zorunlu kılmaktır, bir bağlantı yapılırsa sizi HTTPS'e yönlendirecektir.</p>
+<p>Bunu apache yapılandırmamızda bazı değişiklikler yaparak yapabiliriz, başlamak için varsayılan dosyayı aşağıdaki komutla düzenleyelim:</p>
+<pre><code>sudo nano /etc/apache2/sites-available/000-default.conf
+</code></pre>
+<p><strong>10.</strong> Bu dosyadaki tüm metni aşağıdaki kodla değiştirin. Bu temel olarak tüm HTTP trafiğini HTTPs eşdeğerine yönlendirecektir.</p>
+<p>&quot;<code>&lt;EPOSTA&gt;</code>&quot; kısmını iletişime geçilebileceğiniz bir e-posta adresiyle değiştirdiğinizden emin olun. Bu, bir hata oluştuğunda görüntülenecektir.</p>
+<pre><code>&lt;VirtualHost *:80&gt;
+   ServerAdmin &lt;EPOSTA&gt;
+
+   RewriteEngine On
+   RewriteCond %{HTTPS} off
+   RewriteRule ^(.*)$ https://%{HTTP_HOST}$1 [R=301,L]
+&lt;/VirtualHost&gt;
+</code></pre>
+<p><strong>11.</strong> Şimdi <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak dosyayı kaydedip çıkabiliriz.</p>
+<p><strong>12.</strong> Şimdi bunun çalışması için yönlendirme modülünü etkinleştirmemiz ve apache'yi yeniden başlatmamız gerekiyor. Bunu aşağıdaki iki komutu çalıştırarak kolayca başarabiliriz:</p>
+<pre><code>sudo a2enmod rewrite
+sudo service apache2 restart
+</code></pre>
+<p>Artık Raspberry Pi'nize HTTP üzerinden gitmek otomatik olarak HTTPS sürümüne yönlendirmelidir. Örneğin, &quot;<code>http://192.168.1.105</code>&quot;e gidersem, &quot;<code>https://192.168.1.105</code>&quot;e yönlendirecektir.</p>
+<h2>Nextcloud için Port Yönlendirme</h2>
+<p>Son olarak, Nextcloud için port yönlendirme bölümüne geliyoruz. Router'ınız için port yönlendirmenin ayrıntılarına çok fazla girmeyeceğiz ama hangi portların yönlendirilmesi gerektiğini söyleyeceğiz. Ayrıca bunun çalışması için Nextcloud'da hangi değişikliklerin yapılması gerektiğinden de bahsedeceğiz.</p>
+<p>Bu bölüme başlamadan önce, Nextcloud'un yalnızca belirli olarak belirtilen güvenilir alanlar altında çalışacağını bilmeniz gerekiyor. Bu, bağlantınız için kullanmak istediğiniz bir alan adı belirtmeniz veya herkese açık IP adresinizi kullanmanız gerekeceği anlamına gelir.</p>
+<p>Çoğu ev herkese açık IP adresi dinamik olduğundan, dinamik bir DNS hizmeti kurmaya bakmanız gerekecek, Raspberry Pi'niz için <a href="https://pimylifeup.com/raspberry-pi-port-forwarding/">dinamik bir DNS hizmeti nasıl kurulur</a> eğitimimizi oldukça kullanışlı bulacaksınız.</p>
+<p><strong>1.</strong> Alan adınızı/IP'nizi eklemek için NextCloud'un yapılandırma dosyasını değiştirmemiz gerekiyor, bunu aşağıdaki komutu çalıştırarak yapabiliriz:</p>
+<pre><code>sudo nano /var/www/nextcloud/config/config.php
+</code></pre>
+<p><strong>2.</strong> Bu dosyanın içinde, aşağıdaki gibi bir metin bloğu göreceksiniz. Bu, Nextcloud'un üzerinden çalışmasına izin verdiğiniz tüm güvenilir alanların bir dizisidir.</p>
+<p>Şimdilik, yalnızca Raspberry Pi'nizin yerel IP adresini içermelidir. Yeni alan adımızı/IP'mizi bu dizinin sonuna ekleyeceğiz.</p>
+<pre><code>'trusted_domains' =&gt;
+array (
+    0 =&gt; '192.168.1.105',
+),
+</code></pre>
+<p>Örneğimiz için, diziye &quot;<code>nextcloud.pimylifeup.com</code>&quot; ekleyeceğiz. Bu, dizi ID'sini artırmamız ve alan adını eklememiz gerektiği anlamına gelir. Yeni bir tane ekledikten sonra aşağıdaki gibi görünmelidir. Nextcloud'un üzerinden çalışmasını istediğiniz herhangi bir yeni IP veya alan adı için bu prosedürü tekrarlayın.</p>
+<pre><code>'trusted_domains' =&gt;
+array (
+    0 =&gt; '192.168.1.105',
+    1 =&gt; 'nextcloud.pimylifeup.com',
+),
+</code></pre>
+<p><strong>3.</strong> Şimdi <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak dosyayı kaydedip çıkabiliriz.</p>
+<p><strong>4.</strong> Son olarak, sonunda Nextcloud'u çalışır hale getirmek için iki portu port yönlendirmeniz gerekecek. Bu iki port Port 80 ve Port 443'tür. Bunlar için gerekli protokol TCP'dir.</p>
+<h2>Sonuç</h2>
+<p>Umarız, bu noktada, tamamen çalışan bir Raspberry Pi Nextcloud Sunucunuz vardır.</p>
+<p>Herhangi bir sorunla karşılaşırsanız veya bu eğitimle ilgili bir geri bildiriminiz varsa, lütfen aşağıya yorum bırakmaktan çekinmeyin.</p>
+<p>Bu rehberi beğendiyseniz, <a href="https://pimylifeup.com/category/projects/">başka birçok Raspberry Pi projemizi</a> keşfetmek için biraz zaman ayırmanızı şiddetle öneririz.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-nextcloud-server.html&amp;text=Raspberry+Pi+Nextcloud+Sunucusu+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-nextcloud-server.html&amp;text=Raspberry+Pi+Nextcloud+Sunucusu+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-nextcloud-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-nextcloud-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-nextcloud-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-nextcloud-server.html&amp;title=Raspberry+Pi+Nextcloud+Sunucusu+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi+Nextcloud+Sunucusu+Nas%C4%B1l+Kurulur%20codenfast.com%2Fposts%2Fraspberry-pi-nextcloud-server.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

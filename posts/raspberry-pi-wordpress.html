@@ -1,0 +1,326 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de WordPress Nasıl Kurulur - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Uygun fiyatlı bir geliştirme sunucusu için mükemmel"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de WordPress Nasıl Kurulur"/>
+    <meta property="og:description"
+          content="Uygun fiyatlı bir geliştirme sunucusu için mükemmel"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-wordpress.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-wordpress.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Wordpress-Thumbnail-no-wm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de WordPress Nasıl Kurulur"/>
+    <meta name="twitter:description"
+          content="Uygun fiyatlı bir geliştirme sunucusu için mükemmel"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Wordpress-Thumbnail-no-wm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de WordPress Nasıl Kurulur","item":{"@id":"https://codenfast.com/posts/raspberry-pi-wordpress.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Wordpress-Thumbnail-no-wm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Wordpress-Thumbnail-no-wm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Wordpress-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Wordpress-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Wordpress-Step-02-Language-Select.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Wordpress-Step-02-Language-Select.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Wordpress-Step-03-Lets-Go.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Wordpress-Step-03-Lets-Go.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Wordpress-Step-01-Wordpress-Setup.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Wordpress-Step-01-Wordpress-Setup.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de WordPress Nasıl Kurulur","description":"Uygun fiyatlı bir geliştirme sunucusu için mükemmel","image":["https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Wordpress-Thumbnail-no-wm.jpg"],"datePublished":"2026-08-03T15:34:57.821585+03:00","dateModified":"2026-08-03T15:34:57.821605+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de WordPress Nasıl Kurulur</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-wordpress/">PiMyLifeUp - How to Set Up WordPress on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, popüler WordPress CMS'ini Raspberry Pi'nizde nasıl ayarlayacağınızı öğreneceksiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Wordpress-Thumbnail.jpg" alt="Raspberry Pi WordPress Thumbnail" /></p>
+<p>Bilmeyenler için, <a href="https://wordpress.org/">WordPress 60 milyondan fazla web sitesi tarafından</a> kullanılan bir içerik yönetim sistemidir (CMS). Bloggerlar arasında çok popülerdir ancak büyük web siteleri tarafından da kullanılır.</p>
+<p>Şu anda XAMPP gibi bir şey kullanmaktan daha hızlı olduğu için geliştirme sunucusu olarak görev yapmak üzere Raspberry Pi'mde WordPress çalıştırıyorum.</p>
+<p>WordPress'i Raspberry Pi'de ayarlamak çok karmaşık değildir. Apache, PHP ve MYSQL sunucusunu ayarladıktan sonra, işler sorunsuz ilerler.</p>
+<p>Bu eğitimde çok ileri gitmeden önce, MYSQL root parolanızın hazır olduğundan emin olun. WordPress için bir veritabanı ayarlama adımlarından geçeceğiz ve size veritabanıyla etkileşim kurmak için tamamen MYSQL komut satırını kullanarak bir SQL kullanıcısı nasıl ayarlanır göstereceğiz.</p>
+<p>İlgileniyorsanız, artık WordPress'i Raspberry Pi'de ayarlama zamanı.</p>
+<h2>Raspberry Pi'de WordPress Ayarlama</h2>
+<p>Bu eğitime başlamadan önce <a href="https://pimylifeup.com/raspberry-pi-apache/">Apache ve PHP'yi ayarladığınızdan</a> emin olun. Ayrıca <a href="https://pimylifeup.com/raspberry-pi-mysql/">çalışan ve erişilebilir bir MYSQL sunucusuna</a> sahip olmanız gerekecek. Daha önce belirttiğim gibi, MYSQL root parolanızın hazır olması gerekecek.</p>
+<h3>WordPress'i İndirme ve Çıkarma</h3>
+<p><strong>1.</strong> Başlamak için, WordPress'i Raspberry Pi'mizdeki &quot;<code>/var/www/html</code>&quot; dizinine indirip çıkarmamız gerekiyor. Çıkardıktan sonra wordpress kurulum dizinini, zip dosyasını ve hala varsa orijinal örnek Apache <code>index.html</code>ini kaldıracağız.</p>
+<p>Bunu başarmak için birkaç komut çalıştıracağız, aşağıdaki her satırı terminale yazmanız yeterli.</p>
+<pre><code>cd /var/www/html
+sudo wget https://wordpress.org/latest.tar.gz
+sudo tar xzf latest.tar.gz
+sudo mv wordpress/* ./
+sudo rm -rf wordpress latest.tar.gz
+sudo rm -f index.html
+</code></pre>
+<p><strong>2.</strong> Şimdi bazı izin değişiklikleri yapmamız gerekiyor. İlk olarak, gerekirse dosyalarda değişiklik yapabilmek için kullanıcımızı <code>www-data</code> grubuna ekliyoruz.</p>
+<p>&quot;<code>/var/www/html</code>&quot; klasörünün sahipliğini &quot;<code>www-data</code>&quot; kullanıcısı ve grubuyla almamız gerekecek. Bunu yapmak, PHP'nin herhangi bir izin hatasıyla karşılaşmadan WordPress'i işlemesine olanak tanıyacaktır.</p>
+<p>Son olarak, dizinleri ve dosyaları doğru okuma, yazma, çalıştırma izinlerine sahip olacak şekilde ayarlamak istiyoruz. Dizinler için <code>755</code>, dosyalar için <code>644</code> ayarlayacağız. Bu komutları çalıştırmadan önce <code>/var/www/html</code> dizini içinde olduğunuzdan emin olun.</p>
+<pre><code>sudo usermod -a -G www-data $USER
+sudo chown -R -f www-data:www-data /var/www/html
+find . -type d -exec chmod 755 {} \;
+find . -type f -exec chmod 644 {} \;
+</code></pre>
+<h3>Apache'yi Hazırlama</h3>
+<p><strong>3.</strong> WordPress için Apache'yi hazırlamak için atmamız gereken birkaç adım var. Bu adımlar, WordPress'in özel permalink ayarlarını kullanmak istiyorsanız önemlidir.</p>
+<p>Önce Apache web sunucusu için rewrite modülünü etkinleştirmeliyiz. Bunu a2enmod komutunu kullanarak yapabilirsiniz.</p>
+<pre><code>sudo a2enmod rewrite
+</code></pre>
+<p>Yukarıdaki komutu çalıştırdıktan sonra, yeni modülümüzün doğru şekilde yüklenmesi için Apache'yi yeniden başlatın.</p>
+<pre><code>sudo systemctl restart apache2
+</code></pre>
+<p><strong>4.</strong> Ardından, ana Apache yapılandırma dosyası içinde bir ayar değiştirmemiz gerekecek. Öncelikle, aşağıdaki komutu çalıştırarak yapılandırma dosyasını açın.</p>
+<pre><code>sudo nano /etc/apache2/apache2.conf
+</code></pre>
+<p><strong>5.</strong> Dosyanın içinde, aşağıdaki metinle eşleşen kod parçasını bulmanız gerekecek.</p>
+<p><code>CTRL</code> + <code>W</code> kullanmak, dosyada arama yapmanızı ve belirli bir metni bulmayı hızlandırmanızı sağlayacaktır. Örneğin, <code>AllowOverride</code> aramak sizi bu ayarları bulacağınız alana götürecektir.</p>
+<pre><code>&lt;Directory /var/www/&gt;
+    Options Indexes FollowSymLinks
+    AllowOverride None
+    Require all granted
+&lt;/Directory&gt;
+</code></pre>
+<p>Bu blok içinde, <code>AllowOverride</code> ayarını <code>None</code>dan <code>All</code>e değiştirin. Bunu yaparak Apache'nin WordPress'in <code>.htaccess</code> dosyasını okumasına izin veriyoruz. Bu son derece önemlidir çünkü <code>.htaccess</code> dosyası, WordPress'in permalink'ler için kurallarını kaydedeceği yerdir.</p>
+<pre><code>&lt;Directory /var/www/&gt;
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+&lt;/Directory&gt;
+</code></pre>
+<p>Bittiğinde, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>Enter</code> tuşuna basarak kaydedip çıkın.</p>
+<p><strong>6.</strong> Yukarıdaki adımları tamamladıktan sonra, değişikliklerin etkili olması için Apache'yi yeniden başlatmanız gerekecek. Bunu aşağıdaki komutu çalıştırarak yapabilirsiniz.</p>
+<pre><code>sudo systemctl restart apache2
+</code></pre>
+<p>Her şey doğru çalıştıysa, Apache herhangi bir sorun yaşamadan yeniden başlayacaktır. Aşağıdaki komutu çalıştırarak Apache'nin durumunu kontrol edebilirsiniz.</p>
+<pre><code>sudo systemctl status apache2
+</code></pre>
+<h3>WordPress Veritabanını Oluşturma</h3>
+<p><strong>7.</strong> WordPress artık Raspberry Pi'mize indirilip çıkarıldığına göre, WordPress'in bilgilerini saklaması için MYSQL içinde bir veritabanı da ayarlamamız gerekecek.</p>
+<p>Önce giriş yapmak için MySQL komutunu kullanmamız gerekiyor. <strong>Parola için</strong> &quot;<code>–p</code>&quot; <strong>bayrağını</strong> ve <strong>kullanıcı adı için</strong> &quot;<code>–u</code>&quot;yu kullanın. Parolanızın &quot;<code>-p</code>&quot; <strong>etiketinin</strong> hemen yanına <strong>boşluk olmadan</strong> yazıldığından emin olun.</p>
+<p><strong>Not:</strong> <strong>parola</strong> kısmını MySQL'i kurarken root kullanıcısı için ayarladığınız parolayla değiştirin.</p>
+<pre><code>sudo mysql -u root -p
+</code></pre>
+<p><strong>8.</strong> MYSQL sunucusuna giriş yaptığımıza göre, bu basit satırı kullanarak WordPress için bir veritabanı oluşturmak üzere bir komut verebiliriz:</p>
+<pre><code>CREATE DATABASE wordpress;
+</code></pre>
+<p><strong>9.</strong> Şimdi bu veritabanı için ayrı bir kullanıcı oluşturacağız, bu güvenlik açısından çok daha güvenlidir.</p>
+<p>Hala MYSQL içindeyken aşağıdaki komutu verin:</p>
+<pre><code>CREATE USER 'new_user'@'localhost' IDENTIFIED BY 'new_password';
+</code></pre>
+<p><strong>Not:</strong> <code>new_user</code> ve <code>new_password</code> kısımlarını kendi seçtiğiniz detaylarla değiştirdiğinizden emin olun, WordPress'i ayarlarken ikisini de bilmeniz gerekeceğinden ne seçtiğinizi hatırlayın.</p>
+<p><strong>10.</strong> Yeni bir kullanıcımız olduğuna göre, ona yeni veritabanımızı yönetme izinleri vermemiz gerekecek.</p>
+<p>Bunu aşağıdaki komutla yapabiliriz, <code>new_user</code> kısmını bir önceki adımda girdiğiniz şeyle değiştirdiğinizden emin olun.</p>
+<pre><code>GRANT ALL ON wordpress.* TO 'new_user'@'localhost';
+</code></pre>
+<p><strong>11.</strong> Artık veritabanımızı ve onunla etkileşim kurmak istediğimiz kullanıcımızı oluşturduk. MYSQL komut arayüzünden çıkmamız gerekiyor.</p>
+<p>Bunu <code>CTRL</code> + <code>D</code> tuşlarına basarak yapabiliriz.</p>
+<h3>WordPress İlk Kurulum Sihirbazı</h3>
+<p><strong>12.</strong> Bunların hepsi yapıldığına göre, artık sonunda WordPress'i ayarlamayı bitirebiliriz, bu süreci bir web tarayıcısında Raspberry Pi'nizin IP adresine giderek başlatabiliriz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Wordpress-Step-02-Language-Select.png" alt="Wordpress Dil Seçimi" /></p>
+<p>Sizden bir dil seçmenizi isteyen aşağıdaki ekranla karşılaşacaksınız.</p>
+<p><strong>13.</strong> Bir sonraki sayfa, WordPress'i kurmak için hazır bulundurmanız gereken detayları açıklayacaktır. Önemli ekrana gitmek için sadece &quot;lets go&quot;ya basabilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Wordpress-Step-03-Lets-Go.png" alt="Wordpress Let's Go" /></p>
+<p><strong>14.</strong> Şimdi WordPress'in kurduğumuz MySQL veritabanına bağlanabilmesi için çeşitli detayları girmeniz gerekecek.</p>
+<ul>
+<li><strong>Database Name (Veritabanı Adı)</strong> – Bu, WordPress'in bağlanacağı veritabanıdır. Bu eğitimde daha önce <code>wordpress</code> adlı bir veritabanı oluşturmuştuk.</li>
+<li><strong>Username (Kullanıcı Adı)</strong> – Bu, <strong>4. adımda</strong> oluşturduğumuz kullanıcıdır, yukarıdaki veritabanına bağlanması gerektiğinden bu detayı doğru aldığınızdan emin olun.</li>
+<li><strong>Password (Parola)</strong> – Bu, <strong>4. adımda</strong> MYSQL kullanıcısını oluştururken belirlediğimiz paroladır, yine veritabanına bağlanmak için gerekli olduğundan bunu doğru girdiğinizden emin olun.</li>
+<li><strong>Database Host (Veritabanı Host'u)</strong> – Bunu varsayılan ayarında bırakın, yalnızca yerel olarak bağlanmamız gerekiyor.</li>
+<li><strong>Table Prefix (Tablo Öneki)</strong> – Bunu da varsayılan ayarında bırakın, bunu değiştirmeye gerçek bir gerek yok.</li>
+</ul>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Wordpress-Step-01-Wordpress-Setup.png" alt="Wordpress Veritabanı Bağlantı Detayları" /></p>
+<p><strong>15.</strong> Tüm doğru detayları girdiğinizi varsayarsak, artık yazılımı başarıyla kurmak için &quot;<strong>Submit</strong>&quot;e basabilir ve kurulumu tamamlamak için istemlerin geri kalanını takip edebilirsiniz.</p>
+<h2>Sonuç</h2>
+<p>Bir WordPress teması kurmak veya eklentiler ayarlamak gibi WordPress hakkında öğrenilecek daha çok şey var. Bir Raspberry Pi kullanmak, pahalı bir web sunucusuna yatırım yapmadan tüm temelleri öğrenmenin harika bir yoludur.</p>
+<p>Artık WordPress'i Raspberry Pi'de ayarlamış ve erişilebilir hale getirmiş olmalısınız. Herhangi bir sorunla karşılaşırsanız, bir yorum bırakarak bize bildirmekten çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-wordpress.html&amp;text=Raspberry+Pi%27de+WordPress+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-wordpress.html&amp;text=Raspberry+Pi%27de+WordPress+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-wordpress.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-wordpress.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-wordpress.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-wordpress.html&amp;title=Raspberry+Pi%27de+WordPress+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+WordPress+Nas%C4%B1l+Kurulur%20codenfast.com%2Fposts%2Fraspberry-pi-wordpress.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

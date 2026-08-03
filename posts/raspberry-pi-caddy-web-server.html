@@ -1,0 +1,344 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi Caddy Web Sunucusu Nasıl Kurulur - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Pi&#39;de Caddy kurmanın tüm adımları"/>
+    <meta property="og:title" content="Raspberry Pi Caddy Web Sunucusu Nasıl Kurulur"/>
+    <meta property="og:description"
+          content="Pi&#39;de Caddy kurmanın tüm adımları"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-caddy-web-server.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-caddy-web-server.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2017/08/Raspberry-Pi-Caddy-no-wm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi Caddy Web Sunucusu Nasıl Kurulur"/>
+    <meta name="twitter:description"
+          content="Pi&#39;de Caddy kurmanın tüm adımları"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2017/08/Raspberry-Pi-Caddy-no-wm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi Caddy Web Sunucusu Nasıl Kurulur","item":{"@id":"https://codenfast.com/posts/raspberry-pi-caddy-web-server.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/08/Raspberry-Pi-Caddy-no-wm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/08/Raspberry-Pi-Caddy-no-wm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/08/caddy-v1-web-watermarked.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/08/caddy-v1-web-watermarked.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi Caddy Web Sunucusu Nasıl Kurulur","description":"Pi'de Caddy kurmanın tüm adımları","image":["https://pimylifeup.com/wp-content/uploads/2017/08/Raspberry-Pi-Caddy-no-wm.jpg"],"datePublished":"2026-08-03T15:55:14.637792+03:00","dateModified":"2026-08-03T15:55:14.637817+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi Caddy Web Sunucusu Nasıl Kurulur</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-caddy-web-server/">PiMyLifeUp - How to Setup a Raspberry Pi Caddy Web Server</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu projede, bir Raspberry Pi Caddy web sunucusunu nasıl kuracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/08/caddy-v1-web-watermarked.jpg" alt="Raspberry Pi Caddy Web Sunucusu" /></p>
+<p>Caddy, <a href="https://pimylifeup.com/raspberry-pi-nginx/">Raspberry Pi'de NGINX</a> kadar performans dostu olmasa da, kullanıcı dostu özelliklerle doludur ve kutudan çıktığı gibi modern web teknolojilerini kullanacak şekilde tasarlanmıştır.</p>
+<p>Caddy, baştan itibaren HTTP2 gibi modern web teknolojilerini kullanır ve Caddy dosyalarınız aracılığıyla kurduğunuz herhangi bir alan adı için otomatik olarak SSL sertifikaları sağlar. Bunu, bu sertifikaları Lets Encrypt'ten otomatik olarak alarak yapar.</p>
+<p>Caddy'nin Caddyfile sisteminin bir bonusu, alıştıktan sonra kullanımının nispeten kolay olmasıdır ve neyse ki, çoğu özellik için sağlam belgeleri vardır.</p>
+<h2>Raspberry Pi'de Caddy Ayarlama</h2>
+<p><strong>1.</strong> Raspberry Pi'mizde Caddy'yi kurmaya ve ayarlamaya başlamadan önce yapmamız gereken bir şey, her şeyin güncel olduğundan emin olmaktır.</p>
+<p>Raspberry Pi'nizin paketlerini en son sürümlerine güncellemek için aşağıdaki iki komutu çalıştırın.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Raspberry Pi Caddy web sunucumuzu kurmaya başlamadan önce, önce bazı Raspberry Pi OS kopyalarında varsayılan olarak kurulu olan Apache2'yi kaldırmamız gerekecek.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-web-server/">Raspberry Pi'de Apache2'nin kurulu olmadığını</a> zaten biliyorsanız, bu komutu atlayıp bir sonraki adıma geçebilirsiniz.</p>
+<pre><code>sudo apt remove apache2
+</code></pre>
+<p><strong>3.</strong> Şimdi Caddy'yi indirmek ve kurmak için terminalde aşağıdaki komutları çalıştırabiliriz. Bu komutlar ayrıca <a href="https://caddyserver.com/">Caddy web sitesinde</a> de mevcuttur.</p>
+<pre><code>sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo tee /etc/apt/trusted.gpg.d/caddy-stable.asc
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
+sudo apt update
+sudo apt install caddy
+</code></pre>
+<p><strong>4.</strong> Caddy web sunucumuzun Raspberry Pi'mize indirilip kurulması bittikten sonra, onu ayarlamanın daha karmaşık görevine başlayabiliriz.</p>
+<p>Raspberry Pi'mizde aşağıdaki komutu çalıştırarak önce Caddy yapılandırma dosyamızı tutacağımız <code>/etc/</code> klasöründe bir klasör oluşturalım.</p>
+<pre><code>sudo mkdir /etc/caddy
+</code></pre>
+<p><strong>5.</strong> Klasör oluşturmakla meşgulken, ilk web sitemizi tutmak için de bir tane oluşturacağız. Şimdilik ona localhost adını vereceğiz.</p>
+<p>Ancak, bunu bir alan adı için kullanmak istiyorsanız, <code>localhost</code> klasör adını <code>pimylifeup.com</code> gibi web sitesi alan adınızla değiştirmenizi öneririz.</p>
+<pre><code>sudo mkdir -p /var/www/localhost
+</code></pre>
+<p><strong>6.</strong> Raspberry Pi'mizde her iki klasörümüz de oluşturulduğuna göre, artık ilginç kısma geçebiliriz, o da caddyfile'ımızı oluşturmaktır. Bu dosya, Raspberry Pi Caddy web sunucumuz için tüm yapılandırmalarımızı tutacaktır.</p>
+<p>Bu dosyayı daha önce oluşturduğumuz <code>/etc/caddy</code> klasöründe saklayacağız.</p>
+<p>Caddyfile'ımızı oluşturma sürecini başlatmak için Raspberry Pi'mizde aşağıdaki <a href="https://pimylifeup.com/nano-text-editor/">nano komutunu</a> çalıştırın.</p>
+<pre><code>sudo nano /etc/caddy/Caddyfile
+</code></pre>
+<p><strong>7.</strong> Bu dosyaya aşağıdaki satırları yazın, temel olarak bu metin satırlarının yaptığı şey, dinlenecek adresi, sunmak istediğimiz dosyaların nerede olduğunu tanımlamak ve Caddy'nin HTML çıktısında GZIP sıkıştırmasını kullanmak istememizdir.</p>
+<p><code>localhost</code> kısmını daha önce oluşturduğunuz klasörün adıyla değiştirmeyi unutmayın.</p>
+<p>Bir alan adı kullanıyorsanız, <code>:80 localhost:80</code> kısmını onunla değiştirin, yani, örneğin, satır <code>pimylifeup.com {</code> şeklinde sonuçlanacaktır.</p>
+<pre><code>:80 localhost:80 {
+    root /var/www/localhost
+    gzip
+}
+</code></pre>
+<p>Bunu yapmayı bitirdiğinizde, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, son olarak <code>ENTER</code> tuşuna basarak dosyayı kaydedip çıkabilirsiniz.</p>
+<p><strong>8.</strong> Caddyfile'ımız artık kurulduğuna göre, hala çalıştığından emin olmak için örnek bir HTML dosyası oluşturmaya geçeceğiz. PHP kurarken Caddyfile'ımızı düzenlemeye biraz daha geri döneceğiz.</p>
+<p>Şimdilik, aşağıdaki komutu çalıştırarak test index dosyamızı oluşturalım. Yine <code>localhost</code> kısmını daha önce ayarladığınız her neyse onunla değiştirin.</p>
+<pre><code>sudo nano /var/www/localhost/index.html
+</code></pre>
+<p><strong>9.</strong> Bu dosyaya herhangi bir şey yazın, çünkü tek ihtiyacımız olan şey doğru çalıştığından emin olmaktır. Eğitimimiz için, sadece bu küçük HTML parçasını yazacağız.</p>
+<pre><code>&lt;h1&gt;This is a test for pimylifeup.com&lt;/h1&gt;
+</code></pre>
+<p>Bunu yaptıktan sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkabilirsiniz.</p>
+<p><strong>10.</strong> Raspberry Pi'mizde Caddy web sunucusunu başlatmak için, yapmamız gereken tek şey terminale aşağıdaki komutları yazmaktır.</p>
+<pre><code>cd /etc/caddy
+caddy run
+</code></pre>
+<p><strong>11.</strong> Şimdi Raspberry Pi'nizin yerel IP adresine göz atın veya Pi'nin kendisinde localhost'a gidin. Raspberry Pi'nizin yerel IP adresinin ne olduğundan emin değilseniz <code>hostname -I</code> komutunu kullanabilirsiniz.</p>
+<p>Eğitimimizi takip ettiyseniz, &quot;<strong>This is a test for pimylifeup.com</strong>&quot; metnini görmelisiniz.</p>
+<p><strong>12.</strong> Çalıştığını doğruladıktan sonra, programı sonlandırmak için <code>CTRL</code> + <code>C</code> tuşuna basın.</p>
+<h2>Caddy Web Sunucusu için PHP Kurma</h2>
+<p>Şimdi Raspberry Pi Caddy web sunucumuz için PHP kurmaya geçebiliriz. Bunu yapmak için, PHP-FPM kullanacağız.</p>
+<p><strong>13.</strong> Bu adım için, Raspberry Pi'mize PHP-FPM'i kuracağız. Ayrıca çok sayıda PHP script'i tarafından gerektirilen bazı ek PHP modülleri de kuracağız.</p>
+<p>Bu eğitime devam etmeden önce, Raspberry Pi OS Bullseye veya daha yenisini çalıştırıyor olmalısınız. Rehberimizde <a href="https://pimylifeup.com/upgrade-raspbian-stretch-to-raspbian-buster/">Raspberry Pi OS Buster'dan Bullseye'a nasıl yükseltileceğini</a> öğrenebilirsiniz.</p>
+<p>Şimdi Raspberry Pi'nize &quot;<code>php8.3-fpm</code>&quot; ve diğer birkaç kullanışlı PHP modülünü kurmak için aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo apt install php8.3-fpm php8.3-mbstring php8.3-mysql php8.3-curl php8.3-gd php8.3-curl php8.3-zip php8.3-xml -y
+</code></pre>
+<p>PHP 8.3'ü içermeyen bir Raspberry Pi OS sürümü çalıştırıyorsanız, lütfen <a href="https://pimylifeup.com/raspberry-pi-latest-php/">üçüncü taraf bir PHP deposu ekleme</a> rehberimizi takip edin. Bu depo, PHP'nin hem yeni hem de eski sürümlerini içerir.</p>
+<p><strong>14.</strong> PHP-FPM artık Raspberry Pi'mize kurulduğuna göre, Caddy web sunucumuzu onu kullanacak şekilde yapılandırmaya devam edebiliriz, bunu yapmak için Caddyfile'ımızı tekrar açmamız gerekecek.</p>
+<p>Dosyayı düzenlemeye başlamak için aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo nano /etc/caddy/Caddyfile
+</code></pre>
+<p><strong>15.</strong> Bu dosyaya aşağıdaki satırları eklemek istiyoruz, bu satırlar Caddy web sunucumuza PHP-FPM'i fastcgi handler'ı olarak kullanmasını söyleyecek.</p>
+<p>Ayrıca <code>index.php</code> dosyalarını index olarak okumasını söyler ve PHP ile düzgün çalışması için URL isteklerini yeniden yazan birkaç satır daha ekleriz.</p>
+<p><strong>Bulun</strong></p>
+<pre><code>   root /var/www/localhost
+    gzip
+</code></pre>
+<p><strong>Altına Ekleyin</strong></p>
+<pre><code>    fastcgi / /var/run/php/php8.3-fpm.sock {
+        index index.php
+    }
+    rewrite {
+        r .*
+        ext /
+        to /index.php?{query}
+    }
+</code></pre>
+<p>Bitirdiğinizde, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, son olarak <code>ENTER</code> tuşuna basarak kaydedip çıkın.</p>
+<p><strong>16.</strong> Bu artık kaydedildiğine göre, PHP-FPM'in &quot;<code>index.php</code>&quot; dosyamızı yorumlayabilmesi için birkaç dosyanın iznini değiştirmemiz gerekiyor, ayrıca servis dosyamızı kurmak için de bunu yapmamız gerekiyor.</p>
+<p>Web ile ilgili dosyalarımız üzerinde <code>www-data</code> kullanıcısına ve grubuna kontrol vermek ve ilgili <strong>okuma/yazma/çalıştırma</strong> izinlerini atamak için Raspberry Pi'nizde aşağıdaki <a href="https://pimylifeup.com/linux-commands-cheat-sheet/">Linux izin komutlarını</a> çalıştırın.</p>
+<pre><code>sudo chown -R root:www-data /etc/caddy
+sudo chown www-data:www-data /etc/caddy/Caddyfile
+sudo chmod 444 /etc/caddy/Caddyfile
+sudo chown -R www-data:www-data /var/www
+sudo chmod -R 555 /var/www
+</code></pre>
+<p><strong>17.</strong> Artık Caddy dosyalarımız için okuma/yazma izinlerini ve dosya sahipliğini düzelttiğimize göre, sonunda Caddy servisimizi de oluşturabiliriz. Caddy servisini indirip kurmak için aşağıdaki komutları çalıştırın.</p>
+<pre><code>sudo wget https://raw.githubusercontent.com/mholt/caddy/master/dist/init/linux-systemd/caddy.service
+sudo cp caddy.service /etc/systemd/system/
+sudo chown root:root /etc/systemd/system/caddy.service
+sudo chmod 644 /etc/systemd/system/caddy.service
+sudo systemctl daemon-reload
+</code></pre>
+<p><strong>18.</strong> Şimdi yeni servisimizi kullanarak Caddy'yi başlatmaya gitmeden önce, çalıştırması için bir <strong>.php</strong> dosyası oluşturalım. Gerçek bir alan adı kullanıyorsanız localhost'u değiştirmeyi unutmayın.</p>
+<pre><code>sudo nano /var/www/localhost/index.php
+</code></pre>
+<p><strong>19.</strong> Şimdi bu dosyaya, aşağıdaki satırı ekleyin.</p>
+<pre><code> &lt;?php phpinfo(); ?&gt;
+</code></pre>
+<p>Bunu tamamladıktan sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak dosyayı kaydedip çıkabilirsiniz.</p>
+<p><strong>20.</strong> Şimdi aşağıdaki iki komutu çalıştırarak sonunda yeni servisimizi kullanarak Raspberry Pi Caddy web sunucumuzu başlatabilir ve önyüklemede otomatik olarak başlayacak şekilde ayarlayabiliriz. Önyüklemede başlamasını istemiyorsanız, ikinci komutu çalıştırmayın.</p>
+<pre><code>sudo systemctl start caddy.service
+sudo systemctl enable caddy.service
+</code></pre>
+<p><strong>21.</strong> Artık Caddy kullanan tamamen çalışan bir HTTP sunucunuz olmalı, Caddy yapılandırmanızı daha fazla değiştirmek isterseniz, <a href="https://caddyserver.com/docs/">Caddy Docs sayfasına</a> giderek resmi belgelerine göz atabilirsiniz.</p>
+<h2>Sonuç</h2>
+<p>Bu noktada umarız Raspberry Pi Caddy web sunucunuzu başarıyla kurmuşsunuzdur, bu <a href="https://pimylifeup.com">DIY Pi eğitiminden</a> keyif aldıysanız veya herhangi bir sorunla karşılaştıysanız aşağıdaki yorumlar bölümüne bir yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-caddy-web-server.html&amp;text=Raspberry+Pi+Caddy+Web+Sunucusu+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-caddy-web-server.html&amp;text=Raspberry+Pi+Caddy+Web+Sunucusu+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-caddy-web-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-caddy-web-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-caddy-web-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-caddy-web-server.html&amp;title=Raspberry+Pi+Caddy+Web+Sunucusu+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi+Caddy+Web+Sunucusu+Nas%C4%B1l+Kurulur%20codenfast.com%2Fposts%2Fraspberry-pi-caddy-web-server.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

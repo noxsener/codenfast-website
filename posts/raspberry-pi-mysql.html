@@ -1,0 +1,293 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de MYSQL Veritabanı Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Son derece kolay"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de MYSQL Veritabanı Kurulumu"/>
+    <meta property="og:description"
+          content="Son derece kolay"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-mysql.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-mysql.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-MySQL-Thumbnail-No-WM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de MYSQL Veritabanı Kurulumu"/>
+    <meta name="twitter:description"
+          content="Son derece kolay"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-MySQL-Thumbnail-No-WM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de MYSQL Veritabanı Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-mysql.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-MySQL-Thumbnail-No-WM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-MySQL-Thumbnail-No-WM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-MySQL.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-MySQL.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de MYSQL Veritabanı Kurulumu","description":"Son derece kolay","image":["https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-MySQL-Thumbnail-No-WM.jpg"],"datePublished":"2026-08-03T15:41:15.629849+03:00","dateModified":"2026-08-03T15:41:15.630164+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de MYSQL Veritabanı Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-mysql/">PiMyLifeUp - Setup a Raspberry Pi MYSQL Database</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu Raspberry Pi MYSQL eğitiminde, MySQL sunucusunu Pi'nizde nasıl kurup yapılandıracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-MySQL.jpg" alt="Raspberry Pi MySQL" /></p>
+<p>MySQL, dünyanın en popüler ilişkisel veritabanı sistemlerinden biridir ve çoğu <a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)">LAMP</a> (Linux, Apache, MYSQL ve PHP) yığınının ortak bir bileşenidir. Modern web'i yönlendirmeye yardımcı olan teknoloji parçalarından biridir.</p>
+<p>MYSQL gibi bir veritabanı, genellikle dinamik web sitelerinin önemli bir bileşenidir ve web uygulamaları için veri saklamanın en iyi yollarından biridir.</p>
+<p>MySQL'e aşina değilseniz, bu bir <a href="https://en.wikipedia.org/wiki/Relational_database">ilişkisel veritabanı</a> yönetim sistemidir ve büyük miktarda veriyi kolayca saklamanızı ve sürdürmenizi sağlar.</p>
+<p>Komut satırı yerine grafik bir kullanıcı arayüzü istiyorsanız <a href="https://pimylifeup.com/raspberry-pi-phpmyadmin/">PHPMyAdmin gibi bir şey</a> kurun. Bu, bir veritabanını yönetmeyi biraz daha kolaylaştırır.</p>
+<p>Veritabanı gerektiren herhangi bir <a href="https://pimylifeup.com/raspberry-pi-web-server/">web sunucusu projesi</a> kurmak için bu eğitimden geçmeniz gerekecek. Örneğin, bunu <a href="https://pimylifeup.com/raspberry-pi-wordpress/">WordPress eğitimimizde</a> kullanıyoruz.</p>
+<h2>Raspberry Pi'de MYSQL Ayarlama</h2>
+<p>Tüm eğitimlerimizde olduğu gibi, Raspbian işletim sistemini kullanacağız. Farklı bir şey kullanıyorsanız, adımlar biraz farklılık gösterebilir.</p>
+<p><strong>1.</strong> MySQL'i Raspberry Pi'mize kurmaya başlamadan önce, önce paket listemizi ve kurulu tüm paketleri güncellememiz gerekiyor.</p>
+<p>Bunu aşağıdaki iki komutu çalıştırarak yapabiliriz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Bir sonraki adım, MySQL sunucu yazılımını Raspberry Pi'nize kurmaktır.</p>
+<p>MySQL'i Raspberry Pi'ye kurmak basit bir süreçtir ve aşağıdaki komutla yapılabilir.</p>
+<pre><code>sudo apt install mariadb-server
+</code></pre>
+<p><strong>3.</strong> MySQL sunucu yazılımı Raspberry Pi'ye kurulduğuna göre, şimdi &quot;<code>root</code>&quot; kullanıcısı için bir parola belirleyerek onu güvenli hale getirmemiz gerekecek.</p>
+<p>Varsayılan olarak, MySQL herhangi bir parola yapılandırılmadan kurulur, yani MySQL sunucusuna herhangi bir kimlik doğrulama olmadan erişebilirsiniz.</p>
+<p>MySQL güvenli hale getirme sürecini başlatmak için aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo mariadb-secure-installation
+</code></pre>
+<p>Root kullanıcısı için bir parola belirlemek ve MySQL kurulumunuzu güvenli hale getirmek için istemleri takip edin.</p>
+<p>Daha güvenli bir kurulum için, &quot;<code>Y</code>&quot; veya &quot;<code>N</code>&quot; yanıtlamanız istendiğinde tüm istemlere &quot;<code>Y</code>&quot; yanıtı vermelisiniz.</p>
+<p>Bu istemler, birinin sunucuya daha kolay erişim kazanmasına izin veren özellikleri kaldıracaktır.</p>
+<p>Bu süreçte belirlediğiniz parolayı yazdığınızdan emin olun çünkü MySQL sunucusuna erişmek ve WordPress veya PHPMyAdmin gibi yazılımlar için veritabanları ve kullanıcılar oluşturmak için buna ihtiyacımız olacak.</p>
+<p><strong>4.</strong> Şimdi, Raspberry Pi'nizin MySQL sunucusuna erişmek ve veritabanlarınızda değişiklik yapmaya başlamak istiyorsanız, aşağıdaki komutu girebilirsiniz.</p>
+<pre><code>sudo mysql -u root -p
+</code></pre>
+<p><strong>5.</strong> MySQL'in root kullanıcısı için <strong>3. adımda</strong> az önce oluşturduğumuz parolayı girmeniz istenecek.</p>
+<p><strong>Not:</strong> Çoğu Linux parola girişinde olduğu gibi, yazarken metin görünmeyecektir.</p>
+<p><strong>6.</strong> Artık veritabanları oluşturmak, değiştirmek ve silmek için MYSQL komutları girebilirsiniz. Bu arayüz üzerinden, ayrıca kullanıcılar oluşturabilir veya silebilir ve onlara herhangi bir veritabanını yönetme hakları atayabilirsiniz.</p>
+<p><strong>7.</strong> MYSQL komut satırından çıkmanın iki farklı yolu vardır. Bunlardan ilki, MySQL arayüzüne &quot;<code>quit;</code>&quot; <code>yazmaktır</code>.</p>
+<p>MYSQL komut satırından çıkmanın diğer yolu ise <code>CTRL</code> + <code>D</code> tuşlarına basmaktır.</p>
+<p><strong>8.</strong> Bu noktada, artık MySQL'i Raspberry Pi'nizde başarıyla kurmuş olacaksınız. Sonraki birkaç bölümümüz bu veritabanını daha iyi kullanmaya yönelik olacak.</p>
+<h2>Bir MySQL Veritabanı ve Kullanıcısı Oluşturma</h2>
+<p><strong>1.</strong> Raspberry Pi'mizde bir MySQL kullanıcısı ve veritabanı oluşturmaya geçmeden önce, önce MySQL komut satırı aracına tekrar giriş yapmamız gerekiyor.</p>
+<p>MySQL komut satırına giriş yapmak için aşağıdaki komutu çalıştırın. Daha önce ayarladığınız &quot;<strong>root</strong>&quot; hesabının parolasını girmeniz istenecektir.</p>
+<pre><code>sudo mysql -u root -p
+</code></pre>
+<p><strong>2.</strong> Aşağıdaki komutu kullanarak bir MySQL veritabanı oluşturarak başlayalım.</p>
+<p>Bu komut son derece basittir ve sadece &quot;<code>CREATE DATABASE</code>&quot; ile ardından veritabanına vermek istediğiniz isimdir.</p>
+<p>Örneğimizde, bu veritabanını &quot;<code>exampledb</code>&quot; olarak adlandıracağız.</p>
+<pre><code>CREATE DATABASE exampledb;
+</code></pre>
+<p><strong>3.</strong> Ardından, yeni veritabanımıza atayacağımız bir MySQL kullanıcısı oluşturacağız. Bu kullanıcıyı aşağıdaki komutu çalıştırarak oluşturabiliriz.</p>
+<p>Bu örnek için, kullanıcıyı &quot;<code>exampleuser</code>&quot; olarak adlandıracağız ve &quot;<code>pimylifeup</code>&quot; parolasını vereceğiz. Kendinizinkini oluştururken, ikisini de değiştirdiğinizden emin olun.</p>
+<pre><code>CREATE USER 'exampleuser'@'localhost' IDENTIFIED BY 'pimylifeup';
+</code></pre>
+<p><strong>4.</strong> Kullanıcı oluşturulduğuna göre, artık kullanıcıya veritabanıyla etkileşim kurabilmesi için tüm ayrıcalıkları vermeye geçebiliriz.</p>
+<p>Bu komut, &quot;<code>exampledb</code>&quot; veritabanımızdaki tüm tablolar için &quot;<code>exampleuser</code>&quot; kullanıcımıza tüm izinleri verecektir.</p>
+<pre><code>GRANT ALL PRIVILEGES ON exampledb.* TO 'exampleuser'@'localhost';
+</code></pre>
+<p><strong>5.</strong> Hem MySQL veritabanımızın hem de kullanıcımızın tamamlanması için yapmamız gereken son şey, ayrıcalık tablosunu temizlemektir (flush). Ayrıcalık tablosunu temizlemeden, yeni kullanıcı veritabanına erişemeyecektir.</p>
+<p>Bunu aşağıdaki komutu çalıştırarak yapabiliriz.</p>
+<pre><code>FLUSH PRIVILEGES;
+</code></pre>
+<p>Veritabanlarınızı yönetmek için komut satırını kullanmak yerine, her zaman <a href="https://pimylifeup.com/raspberry-pi-phpmyadmin/">PHPMyAdmin'i kurabilirsiniz</a>.</p>
+<h2>PHP MySQL Bağlayıcısını Kurma</h2>
+<p><strong>1.</strong> PHP'den bir MySQL veritabanı kullanmayı düşünüyorsanız, modülün kurulu olduğundan emin olmanız gerekecek.</p>
+<p>Raspberry Pi'nize PHP için MySQL bağlayıcısını aşağıdaki komutu çalıştırarak kurabilirsiniz.</p>
+<pre><code>sudo apt install php-mysql
+</code></pre>
+<p>Daha önce belirttiğim gibi, bir veritabanının işe yarayacağı <a href="https://pimylifeup.com/category/projects/server/">birçok proje</a> vardır. Çoğu modern web sitesi, doğru şekilde çalışabilmek için bir veritabanına ihtiyaç duyacaktır.</p>
+<p>Eğitimin bu noktasında, artık Raspberry Pi'nizde çalışan bir MySQL sunucusu olmalı. Herhangi bir sorunla karşılaşırsanız, aşağıdaki yorumlar bölümüne bir yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-mysql.html&amp;text=Raspberry+Pi%27de+MYSQL+Veritaban%C4%B1+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-mysql.html&amp;text=Raspberry+Pi%27de+MYSQL+Veritaban%C4%B1+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-mysql.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-mysql.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-mysql.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-mysql.html&amp;title=Raspberry+Pi%27de+MYSQL+Veritaban%C4%B1+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+MYSQL+Veritaban%C4%B1+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-mysql.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

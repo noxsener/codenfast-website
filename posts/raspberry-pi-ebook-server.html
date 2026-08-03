@@ -1,0 +1,335 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Kendi Raspberry Pi eKitap Sunucunuzu Kurma - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Pi&#39;de bir eKitap sunucusu nasıl kurulur"/>
+    <meta property="og:title" content="Kendi Raspberry Pi eKitap Sunucunuzu Kurma"/>
+    <meta property="og:description"
+          content="Pi&#39;de bir eKitap sunucusu nasıl kurulur"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-ebook-server.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-ebook-server.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2017/10/Raspberry-Pi-eBook-Library-no-wm-1.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Kendi Raspberry Pi eKitap Sunucunuzu Kurma"/>
+    <meta name="twitter:description"
+          content="Pi&#39;de bir eKitap sunucusu nasıl kurulur"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2017/10/Raspberry-Pi-eBook-Library-no-wm-1.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Kendi Raspberry Pi eKitap Sunucunuzu Kurma","item":{"@id":"https://codenfast.com/posts/raspberry-pi-ebook-server.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/10/Raspberry-Pi-eBook-Library-no-wm-1.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/10/Raspberry-Pi-eBook-Library-no-wm-1.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/10/ebook-library-watermarked.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/10/ebook-library-watermarked.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/08/01-Calibre-Library.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/08/01-Calibre-Library.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/08/02-Find-calibre-folder.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/08/02-Find-calibre-folder.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/08/03-Calibre-copy-all-within.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/08/03-Calibre-copy-all-within.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/08/05-mobaxterm-session.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/08/05-mobaxterm-session.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/08/06-Mobaxterm-select-SFTP.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/08/06-Mobaxterm-select-SFTP.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/08/07-Mobaxterm-change-directory.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/08/07-Mobaxterm-change-directory.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/08/08-Mobaxterm-copy-files.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/08/08-Mobaxterm-copy-files.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Kendi Raspberry Pi eKitap Sunucunuzu Kurma","description":"Pi'de bir eKitap sunucusu nasıl kurulur","image":["https://pimylifeup.com/wp-content/uploads/2017/10/Raspberry-Pi-eBook-Library-no-wm-1.jpg"],"datePublished":"2026-08-03T15:52:52.194116+03:00","dateModified":"2026-08-03T15:52:52.194141+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Kendi Raspberry Pi eKitap Sunucunuzu Kurma</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-ebook-server/">PiMyLifeUp - Setting up your own Raspberry Pi eBook Server</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu projede, COPS (<strong>C</strong>alibre <strong>O</strong>PDS (ve HTML) <strong>P</strong>HP <strong>S</strong>erver) yazılımını kullanarak kendi Raspberry Pi eKitap sunucunuzu nasıl kuracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/10/ebook-library-watermarked.jpg" alt="Raspberry Pi eKitap Sunucusu" /></p>
+<p>Bu yazılım, Raspberry Pi'nizde bir web arayüzü olarak görev yapar, burada tüm eKitaplarınıza ya web arayüzü üzerinden ya da onları doğrudan Raspberry Pi'nizden cihazlarınıza indirerek erişebilirsiniz.</p>
+<p>Bu yazılım, özellikle eKitaplarınızı çok sayıda cihaz arasında sıkça paylaşıyorsanız, eKitaplarınız için harika bir aracı olarak çalışır. Ayrıca eKitaplarınızı yazara ve diğer şeylere göre sıralamak için de güzel bir arayüzdür.</p>
+<p>Bir eKitabı evinizin her yerinden erişebilmek için bir sunucuda barındırmak istiyorsanız bunun oldukça kullanışlı bir eğitim olduğunu göreceksiniz.</p>
+<h2>COPS ile eKitap Sunucunuzu Kurma</h2>
+<p>Bu eğitime başlamadan önce, lütfen <a href="https://pimylifeup.com/raspberry-pi-nginx/">&quot;NGINX Ayarlama&quot; rehberimizi takip ettiğinizden ve PHP'yi kurduğunuzdan</a> emin olun. Hızı ve bellek verimliliği nedeniyle bunu Raspberry Pi eKitap sunucumuz için temel olarak kullanacağız.</p>
+<h3>Raspberry Pi'nizi COPS için Hazırlama</h3>
+<p><strong>1.</strong> Başlamadan önce, terminalde aşağıdaki komutu çalıştırarak <a href="https://pimylifeup.com/update-raspbian/">Raspberry Pi OS'deki</a> tüm paketlerimizi güncel hale getirelim.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Raspberry Pi'miz artık güncel olduğuna göre, artık COPS PHP yazılımını çalıştırmak için ihtiyacımız olan ek PHP paketlerini kurabiliriz. Bu rehberi takip etmeden önce PHP'yi zaten kurduğunuzu varsayacağız.</p>
+<p>Ek paketleri kurmak için Raspberry Pi'nizde aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo apt-get install git php8.2-gd php8.2-cli php8.2-sqlite3 php8.2-intl php8.2-xml php8.2-mbstring php8.2-zip composer
+</code></pre>
+<p>Raspberry Pi OS'nin daha eski sürümlerinde, APT'nin bir paket bulamadığını gösteren bir hatayla karşılaşabilirsiniz. Bu sorun, bu eksik paketleri içeren <a href="https://pimylifeup.com/raspberry-pi-latest-php/">üçüncü taraf bir PHP deposu ekleyerek</a> aşılabilir.</p>
+<p><strong>3.</strong> Yeni PHP paketlerimiz kurulduğuna göre, yeni modülleri yüklemesi için önce NGINX'i yeniden başlatmamız gerekecek.</p>
+<p>NGINX'i yeniden başlatmak için Raspberry Pi'nizde terminale şu komutu yazmanız yeterli.</p>
+<pre><code>sudo systemctl reload nginx
+</code></pre>
+<h3>Raspberry Pi'nizde eKitap Sunucusunu Kurma</h3>
+<p><strong>4.</strong> Artık kurmamız gereken PHP modülleri kurulu ve NGINX yeniden başlatıldığına göre, COPS'u (<strong>C</strong>alibre <strong>O</strong>PDS (ve HTML) <strong>P</strong>HP <strong>S</strong>erver) kurmaya geçebiliriz. COPS, kütüphane yöneticimiz olarak kullanacağımız PHP yazılımıdır ve eKitaplarınızı ona bağlanan herhangi bir cihaza sunar.</p>
+<p>COPS'un en son sürümlerini Raspberry Pi'mize klonlamadan önce, onu saklamak için Raspberry Pi'mizde bir dizin oluşturalım.</p>
+<p>Bu dizini, terminalde <a href="https://pimylifeup.com/mkdir-command-linux/">mkdir komutunu kullanarak</a> oluşturabilirsiniz.</p>
+<pre><code>sudo mkdir -p /var/www/html/ebooks
+</code></pre>
+<p><strong>5.</strong> Dizini oluşturduktan sonra, <a href="https://pimylifeup.com/cd-command/">cd komutunu kullanarak</a> ona geçmemiz gerekiyor.</p>
+<pre><code>cd /var/www/html/ebooks
+</code></pre>
+<p><strong>6.</strong> Artık yeni &quot;<code>ebooks</code>&quot; klasörümüzde olduğumuza göre, COPS deposunu klonlamak için aşağıdaki komutu kullanabiliriz. Modern PHP ve Composer sürümleri için daha iyi destek sunduğundan Mike's Pub'un bir fork'unu kullanıyoruz.</p>
+<p>git clone komutundan sonra nokta (<code>.</code>) yazdığınızdan emin olun çünkü bu onu yeni bir dizin oluşturmak yerine mevcut dizine klonlamasını sağlar. COPS hakkında daha fazla bilgi edinmek isterseniz <a href="https://github.com/mikespub-org/seblucas-cops">COPS GitHub sayfasına</a> giderek web sitelerini ziyaret edebilirsiniz.</p>
+<pre><code>sudo git clone https://github.com/mikespub-org/seblucas-cops.git .
+</code></pre>
+<p><strong>7.</strong> Şimdi COPS'un çalışması için güvendiği PHP kütüphanelerini kurmak için Composer'ı kullanmamız gerekiyor.</p>
+<p>Neyse ki, bu terminalde aşağıdaki komutu çalıştırmak kadar kolaydır.</p>
+<pre><code>sudo composer install --no-dev -o
+</code></pre>
+<p>Composer'ı root/süper kullanıcı olarak çalıştırma hakkında bir uyarı alacaksınız, devam etmek için &quot;<code>yes</code>&quot; yazın.</p>
+<h3>eKitaplarınız için Bir Depolama Konumu Oluşturma</h3>
+<p><strong>8.</strong> Şimdi Raspberry Pi eKitap sunucumuzu yapılandırmaya gitmeden önce, önce bir klasör daha oluşturmamız gerekiyor. Bu klasör, eKitap kütüphanenizin kendisini tutacağınız ve onu yapılandırdıktan sonra COPS'un dosyaları okuyacağı yerdir.</p>
+<p>Aşağıdaki komutu çalıştırarak ana dizininizde &quot;<code>/storage/eBooks/</code>&quot; adlı bir klasör oluşturalım.</p>
+<pre><code>mkdir -p ~/storage/eBooks
+</code></pre>
+<p>Yolu tilde (<code>~</code>) sembolü ile başlatarak, mevcut kullanıcının ana dizinine referans veriyoruz.</p>
+<h3>Raspberry Pi'niz için COPS eKitap Sunucusunu Yapılandırma</h3>
+<p><strong>9.</strong> Klasörümüz artık oluşturulduğuna göre, COPS'un yapılandırma dosyasını ayarlamak üzerinde çalışalım.</p>
+<p>İlk görevimiz, başlamak için bir şeye sahip olabilmemiz için <a href="https://pimylifeup.com/cp-command-linux/">örnek yapılandırma dosyasını kopyalamaktır</a>.</p>
+<pre><code>sudo cp config/local.php.example config/local.php
+</code></pre>
+<p><strong>10.</strong> Örnek yapılandırmayı kopyaladıktan sonra, aşağıdakini kullanarak yapılandırma dosyasını düzenlemeye başlayabiliriz.</p>
+<pre><code>sudo nano config/local.php
+</code></pre>
+<p><strong>11.</strong> Bu dosyada, aşağıdaki değişiklikleri yapın.</p>
+<p><strong>a.</strong> Yapılandırmamız gereken ilk seçenek eKitaplarınızın konumudur.</p>
+<p>Önce yapılandırma dosyası içinde aşağıdaki satırı arayın.</p>
+<pre><code>$config['calibre_directory'] = './';
+</code></pre>
+<p>Yukarıdaki satırı bulduktan sonra, burada gösterdiğimize biraz benzeyecek şekilde değiştirin.</p>
+<p>&quot;<code>&lt;KULLANICIADI&gt;</code>&quot; kısmını kendi kullanıcı adınızla değiştirdiğinizden emin olun.</p>
+<pre><code>$config['calibre_directory'] = '/home/&lt;KULLANICIADI&gt;/storage/eBooks/';
+</code></pre>
+<p><strong>b.</strong> Yapmak isteyeceğiniz bir sonraki şey, yeni Raspberry Pi eKitap sunucunuza daha iyi bir isim vermektir. Şu anda &quot;COPS&quot; olarak ayarlanmış.</p>
+<p>Bu dosyanın içinde, aşağıdaki satırı arayın.</p>
+<pre><code>$config['cops_title_default'] = &quot;COPS&quot;;
+</code></pre>
+<p>Yukarıdaki satırı bulduktan sonra, &quot;COPS&quot; kısmını sunucunuza atamak istediğiniz başlıkla değiştirin.</p>
+<pre><code>$config['cops_title_default'] = &quot;My Raspberry Pi eBook Server&quot;;
+</code></pre>
+<p><strong>12.</strong> Değişiklikleri yaptıktan sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, son olarak <code>ENTER</code> tuşuna basarak dosyayı kaydedin.</p>
+<h2>Kütüphanenizi Calibre'den COPS'a Kopyalama</h2>
+<p><strong>1.</strong> Eğitimin bu bölümünde, <a href="https://calibre-ebook.com/">Calibre kütüphanenizin</a> COPS üzerinden görünmesini sağlamak için ne yapmanız gerektiğini açıklayacağız.</p>
+<p>Bu eğitimde Mobaxterm üzerinden SFTP kullanacak olsak da, eKitaplarınızı Raspberry Pi'nize aktarmak için başka birçok yöntem kullanabilirsiniz. <a href="https://pimylifeup.com/raspberry-pi-ftp/">FTP kullanmak</a> veya bir <a href="https://pimylifeup.com/raspberry-pi-samba/">SAMBA paylaşımı</a> gibi.</p>
+<p>Bilgisayarınızda Calibre'yi açarak başlayın, açıldıktan sonra herhangi bir <strong>kitaba</strong> <code>sağ tıklayın</code> (<strong>1.</strong>) ve &quot;<strong>Open containing folder</strong>&quot;a <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/08/01-Calibre-Library.jpg" alt="Raspberry Pi eKitap Calibre Kütüphanesi" /></p>
+<p><strong>2.</strong> Bu süreç, dosya gezginini o kitabın bulunduğu konumda açmalıdır, adres çubuğunda &quot;<strong>Calibre Library</strong>&quot; görmelisiniz, o dizine atlamak için ona <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/08/02-Find-calibre-folder.jpg" alt="Raspberry Pi Calibre klasörünü bul" /></p>
+<p><strong>3.</strong> Artık tüm Calibre Kütüphane dosyalarınızın konumunu bulduğunuza göre, bu dosyaları ve klasörleri <strong>/home/<KULLANICIADI>/storage/eBooks/</strong> klasörünüze kopyalayın.</p>
+<p>COPS tüm bu dosyaları otomatik olarak bulacak ve web arayüzünde görüntülenecektir. Bu dosyaları Raspberry Pi'nize nasıl aktaracağınızdan emin değilseniz bu eğitime devam edin.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/08/03-Calibre-copy-all-within.jpg" alt="Raspberry Pi Calibre içindekilerin tümünü kopyala" /></p>
+<p><strong>4.</strong> Şimdi tüm Calibre dosya ve klasörlerimizi Raspberry Pi'mize aktarmak için, MobaXterm adlı yazılım parçasını kullanacağız. Geniş bir protokol yelpazesi için destek sunan harika bir yazılım parçasıdır, bunlardan biri SFTP'dir.</p>
+<p>MobaXterm'i <a href="https://mobaxterm.mobatek.net/">MobaXterm'in resmi web sitesinden</a> ücretsiz olarak alabilirsiniz. İndirerek, kurarak ve ardından MobaXterm'i çalıştırarak başlayın.</p>
+<p><strong>5.</strong> MobaXterm'i çalıştırdığınızda aşağıdaki ekranla karşılaşmalısınız. Sağ üst köşedeki &quot;<strong>Session</strong>&quot; etiketli butona tıklayarak başlayın.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/08/05-mobaxterm-session.jpg" alt="Raspberry Pi Mobaxterm oturumu" /></p>
+<p><strong>6.</strong> Bir sonraki ekranda, önce <strong>SFTP</strong> sekmesine <code>tıklayın</code> (<strong>1.</strong>).</p>
+<p>Ardından hem Raspberry Pi'nizin <strong>yerel IP Adresini</strong> hem de Pi kullanıcınızın kullanıcı adını yazın, <strong>pi</strong> varsayılan kullanıcının kullanıcı adıdır (<strong>2.</strong>)</p>
+<p>Son olarak, bağlantıyı başlatmak için &quot;<strong>Ok</strong>&quot; butonuna basın (<strong>3.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/08/06-Mobaxterm-select-SFTP.jpg" alt="Raspberry Pi Mobaxterm SFTP seç" /></p>
+<p><strong>7.</strong> Bir sonraki ekranda aşağıda gösterildiği gibi adres çubuğuna tıklayın ve <code>/home/&lt;KULLANICIADI&gt;/storage/eBooks/</code> yazın, ardından <code>ENTER</code> tuşuna basın.</p>
+<p>Bu süreç, doğrudan ihtiyacımız olan klasöre atlamamızı sağlayacaktır.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/08/07-Mobaxterm-change-directory.jpg" alt="Raspberry Pi Mobaxterm dizin değiştir" /></p>
+<p><strong>8.</strong> Son olarak, aşağıda gösterdiğimiz gibi dosyaları klasörden MobaXterm SFTP penceresine sürükleyerek bilgisayarınızdan Raspberry Pi'ye kopyalayabiliriz.</p>
+<p>Hemen aktarım sürecini başlatacaktır ve tamamlandığında, son adımımıza devam edebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/08/08-Mobaxterm-copy-files.jpg" alt="Raspberry Pi Mobaxterm dosyaları kopyala" /></p>
+<h2>COPS'a Göz Atma</h2>
+<p><strong>1.</strong> Pi'nin eKitap sunucusuna göz atmak için, Raspberry Pi'nizin IP adresine sonunda <code>/ebooks</code> ile gitmeniz gerekecek.</p>
+<p>Raspberry Pi'nizin yerel IP adresini almak için, terminale aşağıdaki <a href="https://pimylifeup.com/raspberry-pi-hostname/">hostname komutunu</a> yazabilirsiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>2.</strong> Raspberry Pi'nizin yerel IP adresini aldıktan sonra, favori web tarayıcınızda sonuna <code>/ebooks</code> etiketlenmiş şekilde ona gidin.</p>
+<p>Bu URL'yi, verilere kendi arayüzleri üzerinden erişebilmeniz için çeşitli eKitap okuyucularla da kullanabilirsiniz.</p>
+<p>Ziyaret ettiğiniz URL aşağıdakine benzer görünmelidir, tabii ki <code>192.168.0.143</code> kısmını kendi IP Adresinizle değiştirerek.</p>
+<pre><code>http://192.168.0.143/ebooks
+</code></pre>
+<p>URL'ye göz attığınızda aşağıdaki gibi bir web sayfası ile karşılaşmalısınız.</p>
+<h2>Sonuç</h2>
+<p>Bu noktaya geldiğinizde, umarız kendi Raspberry Pi eKitap sunucunuzu başarıyla kurmuş ve Calibre kütüphanenizi SFTP kullanarak ona nasıl kopyalayacağınızı öğrenmişsinizdir.</p>
+<p>Bu eğitimden keyif aldıysanız veya bir geri bildiriminiz varsa, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-ebook-server.html&amp;text=Kendi+Raspberry+Pi+eKitap+Sunucunuzu+Kurma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-ebook-server.html&amp;text=Kendi+Raspberry+Pi+eKitap+Sunucunuzu+Kurma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-ebook-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-ebook-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-ebook-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-ebook-server.html&amp;title=Kendi+Raspberry+Pi+eKitap+Sunucunuzu+Kurma" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Kendi+Raspberry+Pi+eKitap+Sunucunuzu+Kurma%20codenfast.com%2Fposts%2Fraspberry-pi-ebook-server.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

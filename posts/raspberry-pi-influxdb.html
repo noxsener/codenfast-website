@@ -1,0 +1,417 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;ye InfluxDB Kurulumu - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Metrikleri kolayca saklayın"/>
+    <meta property="og:title" content="Raspberry Pi&#39;ye InfluxDB Kurulumu"/>
+    <meta property="og:description"
+          content="Metrikleri kolayca saklayın"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-influxdb.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-influxdb.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-InfluxDB-Thumbnail-No-WM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;ye InfluxDB Kurulumu"/>
+    <meta name="twitter:description"
+          content="Metrikleri kolayca saklayın"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-InfluxDB-Thumbnail-No-WM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'ye InfluxDB Kurulumu","item":{"@id":"https://codenfast.com/posts/raspberry-pi-influxdb.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-InfluxDB-Thumbnail-No-WM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-InfluxDB-Thumbnail-No-WM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-InfluxDB-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-InfluxDB-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-InfluxDB-01-Open-Get-Started-GUI.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-InfluxDB-01-Open-Get-Started-GUI.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-InfluxDB-02-Setup-initial-User.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-InfluxDB-02-Setup-initial-User.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-InfluxDB-03-Get-API-Token-and-Quick-Start.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-InfluxDB-03-Get-API-Token-and-Quick-Start.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-InfluxDB-04-Select-Language-to-get-started-with.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-InfluxDB-04-Select-Language-to-get-started-with.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'ye InfluxDB Kurulumu","description":"Metrikleri kolayca saklayın","image":["https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-InfluxDB-Thumbnail-No-WM.jpg"],"datePublished":"2026-08-03T15:31:55.360237+03:00","dateModified":"2026-08-03T15:31:55.360262+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;ye InfluxDB Kurulumu</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-influxdb/">PiMyLifeUp - Installing InfluxDB to the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu Raspberry Pi InfluxDB eğitiminde, InfluxDB'yi Raspberry Pi üzerinde nasıl kurup ayarlayacağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-InfluxDB-Thumbnail.jpg" alt="Raspberry Pi InfluxDB" /></p>
+<p>Ayrıca güvenliğini artırmak için InfluxDB sunucunuzda kimlik doğrulamayı nasıl etkinleştireceğinizi ve veritabanıyla komut satırı üzerinden nasıl etkileşim kuracağınızı da göstereceğiz.</p>
+<p><a href="https://www.influxdata.com/">InfluxDB'nin ne olduğunu</a> merak edenler için, bu zaman serisi tabanlı bir veritabanı sistemidir. Bunun anlamı, veritabanındaki her veri noktasının bir zaman damgası içereceğidir.</p>
+<p>Zaman serisi tabanlı olması, InfluxDB'yi metrik ve olayları izlemek için en iyi veritabanlarından biri yapar. InfluxDB'yi bir odadaki sıcaklık veya bir sistemin CPU kullanımı gibi bilgileri saklamak için kolayca kullanabilirsiniz.</p>
+<p>InfluxDB, <a href="https://pimylifeup.com/raspberry-pi-grafana/">popüler görselleştirme aracı Grafana</a> ile birlikte kullanmak için mükemmel bir veritabanı yazılımıdır. Grafana, bir InfluxDB veritabanından veri görüntülemek için yerleşik desteğe sahiptir.</p>
+<h2>InfluxDB'yi Raspberry Pi'ye Kurma</h2>
+<p>Sonraki birkaç bölümde, InfluxDB'yi kurup çalıştırmak için Raspberry Pi'nizi ayarlama sürecinde size yol göstereceğiz.</p>
+<h3>Raspberry Pi'nizi InfluxDB için Hazırlama</h3>
+<p><strong>1.</strong> InfluxDB'yi Raspberry Pi'ye kurmadan önce yapmamız gereken ilk şey, şu anda kurulu olan tüm paketlerin güncel olduğundan emin olmaktır.</p>
+<p>Aşağıdaki iki komutu çalıştırarak kurulu tüm paketleri yükseltebiliriz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<h3>InfluxDB Deposunu Ekleme</h3>
+<p><strong>2.</strong> Her şey artık güncel olduğuna göre, InfluxDB'yi Raspberry Pi'ye kurmaya devam edebiliriz.</p>
+<p>Bir sonraki adımımız, InfluxDB depo anahtarını Raspberry Pi'mize eklemektir.</p>
+<p>Anahtarı eklemek, Raspberry Pi OS'deki paket yöneticisinin depoyu aramasına ve kurduğu paketleri doğrulamasına olanak tanır.</p>
+<p>InfluxDB anahtarını aşağıdaki komutu çalıştırarak ekleyebiliriz.</p>
+<pre><code>curl https://repos.influxdata.com/influxdata-archive.key | gpg --dearmor | sudo tee /usr/share/keyrings/influxdb-archive-keyring.gpg &gt;/dev/null
+</code></pre>
+<p>Bu komut, anahtarı curl kullanarak indirecek ve bir pipe (&quot;<code>|</code>&quot;) kullanarak doğrudan &quot;<strong>gpg</strong>&quot; programına iletecektir. Keyring dearmor edildikten sonra &quot;<code>/usr/share/keyrings/</code>&quot; dizinine kaydedilir.</p>
+<p><strong>3.</strong> Artık InfluxDB depo anahtarını Raspberry Pi'mize kurduğumuza göre, deposunu kaynak listesine eklememiz gerekecek.</p>
+<p>Şimdi InfluxDB deposunu kaynak listesine eklemek için aşağıdaki komutu girin. Bu komut, Ubuntu veya Raspberry Pi OS gibi Debian tabanlı bir işletim sistemi çalıştıran herkes için çalışacaktır.</p>
+<pre><code>echo &quot;deb [signed-by=/usr/share/keyrings/influxdb-archive-keyring.gpg] https://repos.influxdata.com/debian stable main&quot; | sudo tee /etc/apt/sources.list.d/influxdb.list
+</code></pre>
+<p><strong>4.</strong> Depo eklendiğine göre, artık paket listesini tekrar güncellememiz gerekiyor.</p>
+<p>Bunu yapmamız gerekiyor çünkü apt paket yöneticisinin az önce eklediğimiz depoyu paketler için aramasını sağlamalıyız. İşletim sistemi bunu otomatik olarak yapmaz.</p>
+<p>Paket listesini güncellemek için Raspberry Pi'nizde aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo apt update
+</code></pre>
+<h3>InfluxDB'yi Raspberry Pi'nize Kurma</h3>
+<p><strong>5.</strong> Depoyu ayarladığımıza göre, artık InfluxDB yazılımını kurmaya geçebiliriz. Ancak bunu yapmadan önce, Raspberry Pi'nizde InfluxDB V2 mi yoksa V1 mi çalıştırmak istediğinize karar vermelisiniz.</p>
+<p>Bu sürümler arasında bazı önemli farklar vardır, bu yüzden kullanım durumunuz için hangi sürümün gerekli olduğunu kontrol edin. Bazı kullanıcılar Grafana kullanırken V1'de kalmayı tercih eder.</p>
+<h4>InfluxDB V2'yi Raspberry Pi'ye Kurma</h4>
+<p><strong>6a.</strong> InfluxDB V2'yi kurmak, terminalinizde aşağıdaki komutu kullanmak kadar basittir.</p>
+<p>Paket yöneticisi hem veritabanını hem de bir CLI aracını kuracaktır.</p>
+<pre><code>sudo apt install influxdb2
+</code></pre>
+<h4>InfluxDB V1 Kurma</h4>
+<p><strong>6b.</strong> InfluxDB V1'i Raspberry Pi'nize kurmak için, aşağıdaki komutu kullanmanız gerekecek.</p>
+<pre><code>sudo apt install influxdb
+</code></pre>
+<h3>InfluxDB Sunucusunu Başlatma</h3>
+<p><strong>7.</strong> InfluxDB artık Raspberry Pi'mize kurulduğuna göre, şimdi onu önyüklemede başlayacak şekilde ayarlayalım.</p>
+<p>Bunu, InfluxDB servis dosyamızı etkinleştirmek için systemctl servis yöneticisini kullanarak yapabiliriz.</p>
+<p>Raspberry Pi'nizde InfluxDB'nin önyüklemede başlamasını etkinleştirmek için aşağıdaki iki komutu çalıştırın.</p>
+<pre><code>sudo systemctl unmask influxdb
+sudo systemctl enable influxdb
+</code></pre>
+<p>Kullandığımız ilk komut influxdb servis dosyasının maskesini kaldırır. Servisin maskesini kaldırmak, maskeli bir servisin başlatılamayacağı için servisi etkinleştirebilmemizi ve başlatabilmemizi sağlar.</p>
+<p>İkinci komutumuz influxdb servisini etkinleştirir. Bu komut, servis yöneticisine &quot;<strong>influxdb.service</strong>&quot; dosyasını gözetlemesini ve içeriğine dayalı olarak servisi ayarlamasını söyleyecektir.</p>
+<p><strong>8.</strong> Artık her şey ayarlandığına göre, InfluxDB'yi Raspberry Pi'mizde başlatmaya geçebiliriz.</p>
+<p>InfluxDB sunucusunu başlatmak için, aşağıdaki komutu çalıştırmamız gerekecek. Servis yöneticisi ardından servisi başlatacak ve onu izlemeye başlayacaktır.</p>
+<pre><code>sudo systemctl start influxdb
+</code></pre>
+<h2>Raspberry Pi'de InfluxDB V2 Nasıl Kullanılır</h2>
+<p>InfluxDB V1 ve V2'nin farklılaştığı önemli yollardan biri onlara nasıl eriştiğinizdir. V1 çoğu şey için terminal kullanmanızı beklerken, V2 büyük ölçüde bir GUI'ye ve erişim token'larına dayanır.</p>
+<p>Bu bölüm, Raspberry Pi'nizde InfluxDB V2'nin ilk kurulum deneyimini kapsayacaktır. Bunun yerine V1 kullanmayı seçtiyseniz, bu bölümü atlayın.</p>
+<h3>InfluxDB V2 Web Arayüzüne Erişme</h3>
+<p><strong>1.</strong> İlk olarak, Raspberry Pi'nizin yerel IP adresini bilmeniz gerekecek. Bilmiyorsanız, aşağıda gösterildiği gibi her zaman <a href="https://pimylifeup.com/hostname-command/">hostname komutunu</a> kullanabilirsiniz.</p>
+<pre><code>hostname -I
+</code></pre>
+<p><strong>2.</strong> Bir sonraki adımınız, favori web tarayıcınızda aşağıdaki URL'ye gitmektir. Bu sizi InfluxDB V2'nin web arayüzüne götürecektir.</p>
+<p>&quot;<code>&lt;IPADRESI&gt;</code>&quot; kısmını IP'nizle değiştirdiğinizden emin olun. Bu sayfayı Pi'nin kendisinde açıyorsanız, &quot;<code>localhost</code>&quot; veya &quot;<code>127.0.0.1</code>&quot; kullanabilirsiniz.</p>
+<pre><code>http://&lt;IPADRESI&gt;:8086/
+</code></pre>
+<h3>İlk Kurulum</h3>
+<p><strong>3.</strong> InfluxDB 2 arayüzüne ilk eriştiğinizde, bir başlangıç kullanıcısı oluşturmanız gerekecek.</p>
+<p>Bu süreci başlatmak için, &quot;<code>GET STARTED</code>&quot; butonuna <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-InfluxDB-01-Open-Get-Started-GUI.jpg" alt="Get started GUI'yi aç" /></p>
+<p><strong>4.</strong> Artık kullanıcınız için detayları doldurmanız gerekecek (<strong>1.</strong>). Gelecekte bu web arayüzüne erişmek için bunu kullanacağınızdan, güçlü bir parola ayarladığınızdan emin olun.</p>
+<p>Tüm alanları doldurduktan sonra, &quot;<code>CONTINUE</code>&quot; butonuna <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-InfluxDB-02-Setup-initial-User.jpg" alt="Raspberry Pi'de İlk InfluxDB kullanıcısını ayarla" /></p>
+<p><strong>5.</strong> Bir sonraki adım son derece önemlidir. InfluxDB2 artık Raspberry Pi'nizde bir API token'ı oluşturmuş olacak. Ekranınızda gösterildiği gibi API token'ını not edin (<strong>1.</strong>). Bu token size süper kullanıcı ayrıcalıkları verir ve bu sayfadan ayrıldığınızda bir daha gösterilmeyecektir.</p>
+<p>Kodu not aldıktan sonra, &quot;<code>QUICK START</code>&quot; butonuna <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-InfluxDB-03-Get-API-Token-and-Quick-Start.jpg" alt="InfluxDB Erişim Token'ını not al" /></p>
+<h3>Başlarken</h3>
+<p><strong>6.</strong> InfluxDB v2, Raspberry Pi'nizde bu veritabanını kullanma konusunda çeşitli rehberler sunar.</p>
+<p>Kullanmak istediğiniz programlama dilini temsil eden kutuyu seçin ve adımları takip edin.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/11/Raspberry-Pi-InfluxDB-04-Select-Language-to-get-started-with.jpg" alt="Daha fazla bilgi edinmek için başlangıç adımlarını kullanın" /></p>
+<h2>Raspberry Pi'nizde InfluxDB V1 Kullanma</h2>
+<p>Bu bölümde, InfluxDB V1'i Raspberry Pi'de nasıl kullanabileceğinizi keşfedeceğiz. InfluxDB'nin bu sürümüyle etkileşiminizin çoğu komut satırı arayüzünü kullanarak olacaktır.</p>
+<h3>InfluxDB V1'i Test Etme</h3>
+<p><strong>1.</strong> Artık InfluxDB V1'i kurduğumuza göre, veritabanıyla konuşmaya başlayabiliriz.</p>
+<p>Bunu yapmak için, aşağıdaki komutu çalıştırarak Influx'un komut satırı aracını başlatmamız gerekecek.</p>
+<p>Bağlanılacak bir adres belirtmek zorunda değilsiniz çünkü araç, InfluxDB'nin yerel kurulumunu otomatik olarak algılayacaktır.</p>
+<p>Varsayılan olarak, InfluxDB'de kurulu kullanıcı yoktur. Bir sonraki bölümde, InfluxDB'nize erişimi kilitlemek için bir admin kullanıcısı oluşturmayı keşfedeceğiz. Ancak şimdilik, InfluxDB'yi hızlıca keşfedeceğiz.</p>
+<pre><code>influx
+</code></pre>
+<p><strong>2.</strong> InfluxDB varsayılan olarak veritabanı içermeden gelir, bu yüzden ilk görevimiz bir tane oluşturmak olacak.</p>
+<p>InfluxDB'de bir veritabanı oluşturmak basittir ve &quot;<code>CREATE DATABASE &lt;DBADI&gt;</code>&quot; kullanılarak yapılabilir.</p>
+<p>Örneğimiz için, &quot;<code>pimylifeuptemperature</code>&quot; adlı bir veritabanı oluşturacağız.</p>
+<pre><code>CREATE DATABASE pimylifeuptemperature
+</code></pre>
+<p><strong>3.</strong> Yeni veritabanımızı değiştirmeye başlamadan önce, CLI'ye onu &quot;<code>use</code>&quot; etmesini söylemeliyiz.</p>
+<p>Bir veritabanını kullanmak, aşağıdaki komutu çalıştırmak kadar basittir.</p>
+<pre><code>USE pimylifeuptemperature
+</code></pre>
+<p><strong>4.</strong> Bir sonraki adımımız, yeni oluşturduğumuz InfluxDB veritabanına biraz veri yazmaktır.</p>
+<p>Bunu yapmak için, önce InfluxDB'nin veri deposu hakkında temel bir anlayışa sahip olmamız gerekiyor.</p>
+<p>InfluxDB'deki veriler &quot;<strong>time series</strong>&quot; (zaman serileri) tarafından sıralanır. Bu &quot;zaman serileri&quot; ihtiyacınız kadar çok veya az veri noktası içerebilir. Bu veri noktalarının her biri o metriğin tek bir örneğini temsil eder.</p>
+<p>Bir veri noktası, bir <strong>zaman</strong>, &quot;sıcaklık&quot; gibi bir <strong>measurement</strong> (ölçüm) adı ve en az bir <strong>field</strong> (alan)dan oluşur. Ayrıca yalnızca bir string olan indekslenmiş veri parçaları olan <strong>tag</strong>'leri (etiketler) de kullanabilirsiniz. Etiketler, veritabanı sorgularını optimize etmek için önemlidir.</p>
+<p>Bir SQL tablosunun genel düzenine aşinaysanız, &quot;<strong>zaman</strong>&quot;ı birincil indeks, <strong>measurement</strong>'ı tablo adı ve <strong>tag</strong>'leri ile <strong>field</strong>'leri sütun adları olarak düşünebilirsiniz.</p>
+<p>Veri noktası için belirli bir zaman ve tarih belirtmek istemediğiniz sürece zaman damgasını belirtmenize gerek yoktur.</p>
+<p>Aşağıda bir InfluxDB veri noktasının temel biçimini ekledik.</p>
+<pre><code>&lt;measurement&gt;[,&lt;tag-key&gt;=&lt;tag-value&gt;...] &lt;field-key&gt;=&lt;field-value&gt;[,&lt;field2-key&gt;=&lt;field2-value&gt;...] [unix-nano-timestamp]
+</code></pre>
+<p>InfluxDB satır sözdizimi hakkında daha fazla bilgi edinmek isterseniz, <a href="https://docs.influxdata.com/influxdb/v1.7/write_protocols/line_protocol_tutorial">InfluxDB resmi belgelerine</a> göz atabilirsiniz.</p>
+<p><strong>5.</strong> Artık InfluxDB'deki veriler hakkında temel bir anlayışa sahip olduğumuza göre, veritabanımıza ilk veri noktamızı eklemeye geçebiliriz.</p>
+<p>Bu örnek veritabanı için, bir evin çeşitli <strong>konumlarının</strong> &quot;<strong>sıcaklık</strong>&quot; ölçümlerini saklayacağız.</p>
+<p>Bunun için, &quot;<strong>sıcaklık</strong>&quot; measurement adı ve &quot;<strong>konum</strong>&quot; tag anahtarı ile &quot;<strong>değer</strong>&quot; field anahtarına sahip veri noktaları ekleyeceğiz.</p>
+<p>İlk örnek noktamız için, konumun &quot;<strong>living_room</strong>&quot; ve değerin &quot;<strong>20</strong>&quot; olduğunu söyleyeceğiz.</p>
+<pre><code>INSERT temperature,location=living_room value=20
+</code></pre>
+<p><strong>6.</strong> InfluxDB'de veri &quot;seçmeyi&quot; göstermek için verileri daha ilginç hale getirmek amacıyla, biraz daha rastgele veri ekleyelim.</p>
+<p>Veritabanımıza biraz ek veri girmek için aşağıdaki birkaç komutu girin. Bunlar yukarıdaki &quot;<strong>INSERT</strong>&quot; komutunun sadece değeri ve konumu ayarlanmış varyasyonlarıdır.</p>
+<pre><code>INSERT temperature,location=living_room value=10
+INSERT temperature,location=bedroom value=34
+INSERT temperature,location=bedroom value=23
+</code></pre>
+<p><strong>7.</strong> Artık bazı örnek verilerimiz olduğuna göre, size &quot;<strong>SELECT</strong>&quot; kullanarak bu verileri nasıl sorgulayacağınızı gösterebiliriz.</p>
+<p>Başlangıç olarak, aşağıdaki gibi bir komut kullanarak bir measurement'tan tüm veriyi alabilirsiniz. Bu komut, belirtilen measurement'tan tüm field ve key'leri alacaktır.</p>
+<pre><code>SELECT * FROM temperature
+</code></pre>
+<p>Örnek verimizle bu komutu kullandığınızda, aşağıdaki gibi bir sonuç almalısınız.</p>
+<pre><code>name: temperature
+time                location    value
+----                --------    -----
+1574055049844513350 living_room 20
+1574055196564029842 living_room 10
+1574055196576516557 bedroom     34
+1574055197188117724 bedroom     23
+</code></pre>
+<p><strong>8.</strong> Diyelim ki şimdi yalnızca yatak odasının sıcaklığını almak istiyorsunuz. Bunu, bir &quot;<strong>SELECT</strong>&quot; ifadesiyle birlikte &quot;<strong>WHERE</strong>&quot; ifadesini kullanarak yapabilirsiniz.</p>
+<p>Ayrıca değerlerini almak istediğimiz tag/field'ların adını da belirtiyoruz.</p>
+<p>Tag alanlarını sorgularken, tüm tag'lerin string olarak kabul edildiğini hatırlamanız gerekiyor. Bu, aradığımız değeri tek tırnak içine almamız gerektiği anlamına gelir.</p>
+<pre><code>SELECT value FROM temperature WHERE location='bedroom'
+</code></pre>
+<p>Bu komutla, yalnızca yatak odasındaki sıcaklık değerini gösteren aşağıdaki veri setini almalısınız.</p>
+<p>Örnek verimiz durumunda, bu <strong>34</strong> ve <strong>23</strong> olmalıdır.</p>
+<pre><code>name: temperature
+time                location    value
+----                --------    -----
+1574055049844513350 living_room 20
+1574055196564029842 living_room 10
+1574055196576516557 bedroom     34
+1574055197188117724 bedroom     23
+</code></pre>
+<p><strong>9.</strong> Bu noktada, artık InfluxDB ve verilerinin nasıl çalıştığı hakkında temel bir anlayışa sahip olmanız gerekiyor.</p>
+<h3>InfluxDB V1'e Kimlik Doğrulama Ekleme</h3>
+<p><strong>1.</strong> Bir sonraki adım, Raspberry Pi'deki InfluxDB kurulumumuza ekstra kimlik doğrulama eklemektir. Kimlik doğrulama olmadan, herkes veritabanınızla etkileşim kurabilir.</p>
+<p>Başlamak için, önce admin'imiz olarak görev yapacak bir kullanıcı oluşturmamız gerekiyor.</p>
+<p>Bu kullanıcıyı oluşturmak için, önce aşağıdaki komutu çalıştırarak InfluxDB CLI aracını başlatmamız gerekiyor.</p>
+<pre><code>influx
+</code></pre>
+<p><strong>2.</strong> Bu arayüz içinde, veritabanına tam erişime sahip olacak bir kullanıcı oluşturabiliriz. Bu kullanıcı admin hesabımız olarak görev yapacaktır.</p>
+<p>Bu admin kullanıcısını oluşturmak için, InfluxDB'nin CLI aracı içinde aşağıdaki komutu çalıştırın.</p>
+<p><strong><parola></strong> kısmını seçtiğiniz güvenli bir parola ile değiştirdiğinizden emin olun.</p>
+<pre><code>CREATE USER admin WITH PASSWORD '&lt;parola&gt;' WITH ALL PRIVILEGES
+</code></pre>
+<p>Bu komut, seçtiğiniz parolayla &quot;<strong>admin</strong>&quot; adlı yeni bir kullanıcı oluşturacak ve ona tüm ayrıcalıkları verecektir.</p>
+<p><strong>3.</strong> Bu yapıldıktan sonra, &quot;<strong>exit</strong>&quot; yazıp <code>ENTER</code> tuşuna basarak InfluxDB'den çıkabilirsiniz.</p>
+<p><strong>4.</strong> Bir sonraki işimiz, kimlik doğrulamayı etkinleştirmek için InfluxDB yapılandırma dosyasını değiştirmektir.</p>
+<p>Aşağıdaki komutu kullanarak dosyayı düzenlemeye başlayabiliriz.</p>
+<pre><code>sudo nano /etc/influxdb/influxdb.conf
+</code></pre>
+<p><strong>5.</strong> Bu dosyanın içinde, <strong>[HTTP]</strong> bölümünü bulmak için <code>CTRL</code> + <code>W</code> kullanın ve o bölümün altına aşağıdaki seçenekleri ekleyin.</p>
+<p><strong>Bulun</strong></p>
+<pre><code>[HTTP]
+</code></pre>
+<p><strong>Altına Ekleyin</strong></p>
+<pre><code>auth-enabled = true
+pprof-enabled = true
+pprof-auth-enabled = true
+ping-auth-enabled = true
+</code></pre>
+<p><strong>6.</strong> Eklendikten sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak dosyayı kaydedin.</p>
+<p><strong>7.</strong> Şimdi, InfluxDB'nin yapılandırmasında değişiklik yaptığımız için, aşağıdaki komutu kullanarak servisi yeniden başlatmamız gerekecek.</p>
+<p>Servisi yeniden başlatmak, yapılandırma değişikliklerimizin okunmasını sağlayacaktır.</p>
+<pre><code>sudo systemctl restart influxdb
+</code></pre>
+<p><strong>8.</strong> Artık InfluxDB'nin kimlik doğrulamasını açtığımıza göre, InfluxDB CLI aracını kullanmadan önce kullanıcı adımızı ve parolamızı girmemiz gerekecek.</p>
+<p>Araç içinde &quot;<strong>auth</strong>&quot; komutunu kullanabilir veya aşağıda gösterdiğimiz gibi kullanıcı adı ve parolayı komut satırından iletebilirsiniz.</p>
+<pre><code>influx -username admin -password &lt;parola&gt;
+</code></pre>
+<h2>Sonuç</h2>
+<p>Umarız bu noktada, InfluxDB'yi Raspberry Pi'nizde başarıyla kurmuşsunuzdur. Artık InfluxDB hakkında temel bir anlayışa sahip olmalı ve kimlik doğrulama modunu etkinleştirmiş olmalısınız.</p>
+<p>Bu veritabanı modelini kullanmanın, <a href="https://pimylifeup.com/category/raspberry-pi-sensors/">sensörlerden</a> ve diğer kaynaklardan veri saklamayı ne kadar kullanışlı hale getireceğini kolayca görebilirsiniz.</p>
+<p>Raspberry Pi'de InfluxDB'yi çalışır hale getirmekle ilgili herhangi bir sorunla karşılaştıysanız, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-influxdb.html&amp;text=Raspberry+Pi%27ye+InfluxDB+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-influxdb.html&amp;text=Raspberry+Pi%27ye+InfluxDB+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-influxdb.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-influxdb.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-influxdb.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-influxdb.html&amp;title=Raspberry+Pi%27ye+InfluxDB+Kurulumu" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27ye+InfluxDB+Kurulumu%20codenfast.com%2Fposts%2Fraspberry-pi-influxdb.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

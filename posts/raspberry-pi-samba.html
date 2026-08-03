@@ -1,0 +1,341 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi Samba Sunucusu Nasıl Kurulur - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Ağa bağlı depolama alanı kurun"/>
+    <meta property="og:title" content="Raspberry Pi Samba Sunucusu Nasıl Kurulur"/>
+    <meta property="og:description"
+          content="Ağa bağlı depolama alanı kurun"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-samba.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-samba.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Sambs-Cifs-Thumbnail-no-WM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi Samba Sunucusu Nasıl Kurulur"/>
+    <meta name="twitter:description"
+          content="Ağa bağlı depolama alanı kurun"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Sambs-Cifs-Thumbnail-no-WM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi Samba Sunucusu Nasıl Kurulur","item":{"@id":"https://codenfast.com/posts/raspberry-pi-samba.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Sambs-Cifs-Thumbnail-no-WM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Sambs-Cifs-Thumbnail-no-WM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Sambs-Cifs-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Sambs-Cifs-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Samba-Cifs-Windows-01-File-Explorer.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Samba-Cifs-Windows-01-File-Explorer.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Samba-Cifs-Windows-02-Map-network-drive.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Samba-Cifs-Windows-02-Map-network-drive.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Samba-Cifs-Windows-03-Enter-Credentials.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Samba-Cifs-Windows-03-Enter-Credentials.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Samba-Cifs-Mac-OS-X-01-Opening-Finder-on-Mac-OS-X.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Samba-Cifs-Mac-OS-X-01-Opening-Finder-on-Mac-OS-X.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Samba-Cifs-Mac-OS-X-02-Connect-to-Server.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Samba-Cifs-Mac-OS-X-02-Connect-to-Server.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Samba-Cifs-Mac-OS-X-03-Connect-to-Server-dialog.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Samba-Cifs-Mac-OS-X-03-Connect-to-Server-dialog.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Samba-Cifs-Mac-OS-X-04-Enter-Login-Details.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Samba-Cifs-Mac-OS-X-04-Enter-Login-Details.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi Samba Sunucusu Nasıl Kurulur","description":"Ağa bağlı depolama alanı kurun","image":["https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Sambs-Cifs-Thumbnail-no-WM.jpg"],"datePublished":"2026-08-03T15:42:28.168029+03:00","dateModified":"2026-08-03T15:42:28.168086+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi Samba Sunucusu Nasıl Kurulur</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-samba/">PiMyLifeUp - How to Setup a Raspberry Pi Samba Server</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu Raspberry Pi Samba eğitiminde, Raspberry Pi'nizden SMB/CIFS protokollerini kullanarak dizinleri nasıl paylaşabileceğinizi göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Sambs-Cifs-Thumbnail.jpg" alt="Raspberry Pi Samba" /></p>
+<p>Samba, <a href="https://en.wikipedia.org/wiki/Server_Message_Block">SMB (Server Message Block) ağ protokolünün</a> bir yeniden uygulamasıdır ve Linux bilgisayarların Microsoft'un active directory ortamlarına sorunsuz bir şekilde entegre olmasını sağlar.</p>
+<p>CIFS veya Common Internet File System, SMB protokolünün bir uygulamasıdır. Modern kurulumlarda, CIFS veya SMB birbirinin yerine kullanılır, ancak çoğu kişi SMB terimini kullanacaktır.</p>
+<p>Raspberry Pi'mizde Samba kullanarak, neredeyse her işletim sisteminde erişilebilecek şekilde dizinleri kolayca paylaşabiliriz.</p>
+<p>Samba, kurulup yapılandırılması en kolay dosya sunucularından biridir, bu da onu özellikle Windows sistemlerini hedeflemeyi düşündüğünüzde bir NAS kurmak için en iyi çözümlerden biri yapar.</p>
+<p>Raspberry Pi'nizde çalıştırabileceğiniz <a href="https://pimylifeup.com/raspberry-pi-nas/">başka birçok NAS kurulumu</a> vardır. En az sorunla karşılaştığım için Samba'yı tercih ediyorum, ancak başka bir şey size daha çekici gelebilir.</p>
+<h2>Raspberry Pi'nizde Samba Ayarlama</h2>
+<p>Sonraki bölümlerde, Raspberry Pi'nizde bir Samba paylaşımını nasıl ayarlayacağınızı göstereceğiz.</p>
+<h3>Samba'yı Raspberry Pi'nize Kurma</h3>
+<p><strong>1.</strong> Raspberry Pi'mizde bir SMB/CIFS paylaşımı kurmadan önce yapmamız gereken ilk şey, her şeyin güncel olduğundan emin olmaktır.</p>
+<p>Aşağıdaki iki komutu çalıştırarak paket listesini ve tüm paketlerimizi güncelleyebiliriz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Raspberry Pi OS artık tamamen güncel olduğuna göre, artık Samba yazılımını kurmaya geçebiliriz.</p>
+<p>Samba'yı kurmak için ihtiyacımız olan paketleri aşağıdaki komutu çalıştırarak kurabiliriz.</p>
+<pre><code>sudo apt install samba samba-common-bin
+</code></pre>
+<h3>Paylaşılacak Bir Dizin Oluşturma</h3>
+<p><strong>3.</strong> Pi'mizde ağ depolamamızı kurmadan önce, önce paylaşacağımız bir klasör oluşturmamız gerekiyor.</p>
+<p>Bu klasör herhangi bir yerde bulunabilir, <a href="https://pimylifeup.com/raspberry-pi-mount-usb-drive/">bağlı bir harici sabit disk</a> üzerinde bile. Bu eğitim için, dizini mevcut kullanıcımızın ana dizini içinde oluşturacağız.</p>
+<p>Bu klasörü <a href="https://pimylifeup.com/mkdir-command-linux/">mkdir komutunu kullanarak</a> oluşturun. Tilde (<code>~</code>) sembolünü kullanarak, bu yeni klasörü mevcut kullanıcının ana dizini içinde oluşturacağız.</p>
+<pre><code>mkdir ~/shared
+</code></pre>
+<p>Paylaşmak istediğiniz herhangi bir dizini oluştururken &quot;<code>sudo</code>&quot; kullanmadığınızdan emin olun. &quot;<code>sudo</code>&quot; kullanılarak oluşturulan bir dizin root kullanıcısına ait olacaktır.</p>
+<p>Sudo kullanırsanız, o dizinin sahipliğini gerçek kullanıcınıza vermek için <a href="https://pimylifeup.com/chown-command/">chown komutunu kullanmanız</a> gerekecek.</p>
+<h3>Raspberry Pi'nizde Samba'yı Yapılandırma</h3>
+<p><strong>4.</strong> Şimdi bu klasörü Samba yazılımını kullanarak paylaşabiliriz. Bunu yapmak için, samba yapılandırma dosyasını değiştirmemiz gerekiyor.</p>
+<p>&quot;<code>smb.conf</code>&quot; yapılandırma dosyası, paylaşımlarınız için tüm ayarlarınızı saklayacağınız yerdir.</p>
+<p><a href="https://pimylifeup.com/nano-text-editor/">nano metin editörünü kullanarak</a> yapılandırma dosyasını değiştirmeye başlayabiliriz.</p>
+<pre><code>sudo nano /etc/samba/smb.conf
+</code></pre>
+<p><strong>5.</strong> Bu dosyanın altına aşağıdakini ekleyin. Bu metin, paylaşımımızın çeşitli detaylarını tanımlar.</p>
+<p>Bu örneğin çalışması için, &quot;<code>&lt;KULLANICIADI&gt;</code>&quot; kısmını kullanıcınızın adıyla değiştirdiğinizden emin olun.</p>
+<pre><code>[pimylifeupshare]
+path = /home/&lt;KULLANICIADI&gt;/shared
+writeable = yes
+browseable = yes
+public = no
+</code></pre>
+<ul>
+<li><code>[pimylifeupshare]</code> <strong>–</strong> Bu blok, yeni bir Samba paylaşımının başlangıcını tanımlar. Köşeli parantezler (<code>[ ]</code>) arasındaki metin, paylaşımınıza atanacak isimdir.</li>
+</ul>
+<p>Örneğin, paylaşım adımızı &quot;<code>pimylifeupshare</code>&quot; olarak ayarlayarak buna şuraya giderek erişebiliriz: &quot;<code>\\192.168.0.134\pimylifeupshare</code>&quot;.</p>
+<ul>
+<li><code>path</code> <strong>–</strong> Raspberry Pi'nizde Samba kullanarak paylaşmak istediğiniz dizinin yolunu belirtmek için bu seçeneği kullanın.</li>
+<li><code>writeable</code> <strong>–</strong> Bu seçenek &quot;<code>yes</code>&quot; olarak ayarlandığında, klasörün yazılabilir olmasına izin verecektir.</li>
+</ul>
+<p>Kullanıcıların bu paylaşıma yazmasını engellemek istiyorsanız, bunu &quot;<code>no</code>&quot; olarak ayarlayın.</p>
+<ul>
+<li><code>browseable</code> – Browsable seçeneği, bu paylaşımın ağınızdaki diğer kişiler tarafından görüntülenebilir olup olmayacağını kontrol etmenizi sağlar. Bu seçeneği &quot;<code>yes</code>&quot; olarak ayarlamak, başkalarının bu paylaşımı ağınızda bulmasına izin verecektir.</li>
+</ul>
+<p>Bu seçeneği &quot;<code>no</code>&quot; olarak ayarlayarak, ona bağlanmak için paylaşım yolunu girmeniz gerekecektir.</p>
+<ul>
+<li><code>public</code> – Bu &quot;<code>no</code>&quot; olarak ayarlanırsa, Pi Samba paylaşımına erişmek için geçerli bir kullanıcıya sahip bir bağlantı gerektirecektir.</li>
+</ul>
+<p><strong>6.</strong> Dosyada değişiklikler yapıldıktan sonra, artık <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedebilirsiniz.</p>
+<h3>Samba Paylaşımlarınıza Erişmek İçin Bir Kullanıcı Ayarlama</h3>
+<p><strong>7.</strong> Ardından, Raspberry Pi'mizdeki Samba paylaşımımız için bir kullanıcı ayarlamamız gerekiyor. Bu olmadan, paylaşılan ağ sürücüsüne bağlantı kuramayacağız.</p>
+<p>Kullanıcınıza bir Samba parolası atamak için &quot;<code>smbpassword</code>&quot; aracını kullanmamız gerekecek. Kullanıcınız için bir parola belirlemek üzere aşağıdaki komutu kullanın, &quot;<code>&lt;KULLANICIADI&gt;</code>&quot; kısmını kullanıcınızın adıyla değiştirin.</p>
+<pre><code>sudo smbpasswd -a &lt;KULLANICIADI&gt;
+</code></pre>
+<p><strong>8.</strong> Artık kullanıcınız için yeni bir SMB parolası girmeniz istenecektir.</p>
+<pre><code>New SMB password:
+Retype new SMB password:
+</code></pre>
+<p><strong>9.</strong> Aşağıdaki mesajı görürseniz, kullanıcınıza başarıyla bir SMB parolası eklediğinizi anlayabilirsiniz.</p>
+<p>Paylaşımlarınıza bağlanmak için bu kullanıcı adı ve parolayı kullanacaksınız.</p>
+<pre><code>Added user USERNAME
+</code></pre>
+<h3>Raspberry Pi'nizde Samba'yı Yeniden Başlatma</h3>
+<p><strong>10.</strong> Son olarak, Raspberry Pi Samba paylaşımımıza bağlanmadan önce, yapılandırma değişikliklerimizi yüklemesi için samba servisini yeniden başlatmamız gerekiyor.</p>
+<pre><code>sudo systemctl restart smbd
+</code></pre>
+<p><strong>11.</strong> Samba paylaşımımıza bağlanmayı denemeden önce yapmamız gereken son şey, Raspberry Pi'mizin yerel IP adresini almaktır.</p>
+<p>Öncelikle, bir Ethernet kablosu bağlayarak veya <a href="https://pimylifeup.com/setting-up-raspberry-pi-wifi/">WiFi kurarak</a> bir ağa bağlı olduğunuzdan emin olun.</p>
+<p>Pi'nin ağ adını kullanarak bağlanabilseniz de, bu seçeneğin ev ağınızda çalışmaması ihtimaline karşı IP adresini alacağız.</p>
+<p>Pi'nin yerel IP Adresini yazdırmak için aşağıdaki komutu çalıştırın.</p>
+<pre><code>hostname -I
+</code></pre>
+<p>Sonraki birkaç bölümde, Windows ve macOS'ta ağa bağlı depolamanıza bağlanma sürecinde size yol göstereceğiz.</p>
+<h2>Windows'ta Samba Sunucunuza Bağlanma</h2>
+<p><strong>1.</strong> Windows'ta Samba'nıza bağlanmak için, &quot;<strong>File Explorer</strong>&quot;ı açarak başlayın.</p>
+<p>&quot;<strong>File Explorer</strong>&quot; içinde &quot;<strong>Computer</strong>&quot; sekmesine <code>tıklayın</code> (<strong>1.</strong>) ardından &quot;<strong>Map network drive</strong>&quot;a <code>tıklayın</code> (<strong>2.</strong>)</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Samba-Cifs-Windows-01-File-Explorer.png" alt="Windows File Explorer Ağ Sürücüsü Eşleştirme" /></p>
+<p><strong>2.</strong> Artık sizden bazı detayları girmenizi isteyen aşağıda gösterilen iletişim kutusuyla karşılaşacaksınız.</p>
+<p>&quot;<strong>Folder</strong>&quot; metin kutusuna (<strong>1.</strong>) aşağıdakini girmek isteyeceksiniz: &quot;<code>\\raspberrypi\pimylifeupshare</code>&quot;.</p>
+<p>&quot;<code>pimylifeupshare</code>&quot; kısmını Samba paylaşımınız için tanımladığınız isimle değiştirdiğinizden emin olun.</p>
+<p>Herhangi bir nedenle bağlantı başarısız olursa, &quot;<code>raspberrypi</code>&quot; yerine bu eğitimin kurulum bölümünün <strong>9. adımında</strong> aldığınız Raspberry Pi'nizin yerel IP adresini kullanabilirsiniz.</p>
+<p>Bittiğinde, bağlantıyı sonlandırmak için &quot;<strong>Finish</strong>&quot; butonuna <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Samba-Cifs-Windows-02-Map-network-drive.png" alt="Windows Samba Ağ Sürücüsü Detayları" /></p>
+<p><strong>3.</strong> Son olarak, bağlantıyı tamamlayabilmek için giriş detaylarınızı girmeniz istenecektir.</p>
+<p>Bu eğitimde daha önce &quot;<code>smbpasswd</code>&quot; aracını kullanarak ayarladığınız kullanıcı adı ve parolayı (<strong>1.</strong>) girin.</p>
+<p>Bittiğinde, devam etmek için &quot;<strong>OK</strong>&quot; butonuna <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Samba-Cifs-Windows-03-Enter-Credentials.png" alt="Windows Samba Kimlik Bilgilerini Girme" /></p>
+<h2>macOS'ta Samba Paylaşımınıza Bağlanma</h2>
+<p><strong>1.</strong> Şimdi bir macOS sisteminde Raspberry Pi'nizin Samba sunucusuna bağlanalım.</p>
+<p>Aşağıdaki ekran görüntüsünde gösterdiğimiz gibi &quot;<strong>Finder</strong>&quot; uygulamasını açarak başlamanız gerekecek.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Samba-Cifs-Mac-OS-X-01-Opening-Finder-on-Mac-OS-X.png" alt="Raspberry Pi Samba Cifs - Mac OS X - macOS'ta Finder'ı Açma" /></p>
+<p><strong>2.</strong> &quot;<strong>Finder</strong>&quot; uygulaması artık açık olduğuna göre, araç çubuğundaki &quot;<strong>Go</strong>&quot; butonuna <code>tıklayın</code> (<strong>1.</strong>), ardından &quot;<strong>Connect to Server…</strong>&quot; seçeneğine <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Samba-Cifs-Mac-OS-X-02-Connect-to-Server.png" alt="Raspberry Pi Samba Cifs - Mac OS X - Sunucuya Bağlan" /></p>
+<p><strong>3.</strong> Artık &quot;<strong>Connect to server</strong>&quot; iletişim kutusu cihazınızda açık olduğuna göre, Raspberry Pi'nizin SMB paylaşımı için detayları girebilirsiniz.</p>
+<p>Adres kutusu içine (<strong>1.</strong>) &quot;<code>smb://192.168.0.159/pimylifeupshare</code>&quot; girmeniz gerekecek.</p>
+<p>&quot;<code>192.168.0.159</code>&quot; IP adresini bu eğitimin kurulum bölümünün <strong>9. adımında</strong> aldığınız Raspberry Pi'nizin IP adresi ile değiştirmeniz gerekecek.</p>
+<p>Ayrıca, paylaşım adını &quot;<code>pimylifeupshare</code>&quot;den değiştirdiyseniz, adresin o kısmını değiştirmeniz gerekecek.</p>
+<p>Adresi girdikten sonra, Raspberry Pi'nizin Samba paylaşımına bağlantıyı başlatmak için &quot;<strong>Connect</strong>&quot; butonuna <code>tıklayabilirsiniz</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Samba-Cifs-Mac-OS-X-03-Connect-to-Server-dialog.png" alt="Raspberry Pi Samba Cifs - Mac OS X - Sunucuya Bağlan iletişim kutusu" /></p>
+<p><strong>4.</strong> Bağlantı tamamlanmadan önce, bu rehberde daha önce &quot;<strong>smbpasswd</strong>&quot; (<strong>1.</strong>) aracını kullanarak ayarladığınız hem kullanıcı adını hem de parolayı girmeniz istenecektir.</p>
+<p>Her iki detayı da girdikten sonra, bağlantıyı sonlandırmak için &quot;<strong>Connect</strong>&quot; butonuna <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-Samba-Cifs-Mac-OS-X-04-Enter-Login-Details.png" alt="Raspberry Pi Samba Cifs - Mac OS X - Giriş Detaylarını Girme" /></p>
+<h2>Sonuç</h2>
+<p>Artık hem bir Windows PC'de hem de bir Mac bilgisayarda erişebileceğiniz bir ağ sürücüsünü başarıyla kurmuş olmalısınız. Ayrıca cep telefonları gibi diğer cihazlarda da ona erişebilmelisiniz.</p>
+<p>Bu Raspberry Pi Samba sunucusu eğitiminin, ağ depolamanızı çalışır hale getirmek için bilmeniz gereken her şeyi göstermiş olmasını umuyoruz. Herhangi bir geri bildiriminiz varsa, lütfen aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-samba.html&amp;text=Raspberry+Pi+Samba+Sunucusu+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-samba.html&amp;text=Raspberry+Pi+Samba+Sunucusu+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-samba.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-samba.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-samba.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-samba.html&amp;title=Raspberry+Pi+Samba+Sunucusu+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi+Samba+Sunucusu+Nas%C4%B1l+Kurulur%20codenfast.com%2Fposts%2Fraspberry-pi-samba.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

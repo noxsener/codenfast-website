@@ -1,0 +1,347 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi NFS Sunucusu Nasıl Kurulur - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Kendi ağa bağlı depolama alanınızı kurun"/>
+    <meta property="og:title" content="Raspberry Pi NFS Sunucusu Nasıl Kurulur"/>
+    <meta property="og:description"
+          content="Kendi ağa bağlı depolama alanınızı kurun"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-nfs.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-nfs.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Thumbnail-No-WM.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi NFS Sunucusu Nasıl Kurulur"/>
+    <meta name="twitter:description"
+          content="Kendi ağa bağlı depolama alanınızı kurun"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Thumbnail-No-WM.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi NFS Sunucusu Nasıl Kurulur","item":{"@id":"https://codenfast.com/posts/raspberry-pi-nfs.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Thumbnail-No-WM.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Thumbnail-No-WM.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Windows-Step-1-Search-Turn-windows-features-on-and-off.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Windows-Step-1-Search-Turn-windows-features-on-and-off.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Windows-Step-2-Turn-on-services-for-NFS.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Windows-Step-2-Turn-on-services-for-NFS.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Windows-Step-3-File-Explorer-Map-Network-Drive.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Windows-Step-3-File-Explorer-Map-Network-Drive.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Windows-Step-4-Map-Network-Drive.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Windows-Step-4-Map-Network-Drive.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Windows-Step-5-View-Networked-Drives.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Windows-Step-5-View-Networked-Drives.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Mac-OS-X-Step-01-Opening-Finder.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Mac-OS-X-Step-01-Opening-Finder.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-MAC-OS-X-Step-02-Connect-to-NFS-protocol.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-MAC-OS-X-Step-02-Connect-to-NFS-protocol.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-MAC-OS-X-Step-03-Connect-to-NFS-Server.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-MAC-OS-X-Step-03-Connect-to-NFS-Server.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-MAC-OS-X-Step-04-NFS-Connected.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-MAC-OS-X-Step-04-NFS-Connected.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi NFS Sunucusu Nasıl Kurulur","description":"Kendi ağa bağlı depolama alanınızı kurun","image":["https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Thumbnail-No-WM.jpg"],"datePublished":"2026-08-03T15:44:43.263544+03:00","dateModified":"2026-08-03T15:44:43.263562+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi NFS Sunucusu Nasıl Kurulur</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-nfs/">PiMyLifeUp - How to Setup Raspberry Pi NFS Server</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Raspberry Pi'nizden Network File System (NFS) protokolünü kullanarak dosyaları nasıl paylaşabileceğinizi göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Thumbnail.jpg" alt="Raspberry Pi NFS" /></p>
+<p><a href="https://en.wikipedia.org/wiki/Network_File_System">Network File System (NFS) protokolü</a> ilk olarak 1983 yılında Sun Microsystems tarafından geliştirildi. Bir istemci bilgisayarın bir ağ üzerinden dosyalara erişmesini sağlayacak bir yöntem olarak tasarlandı.</p>
+<p>NFS protokolünün RFC'de tanımlanan açık bir standart olması sayesinde, herkes onu kolayca uygulayabilir. Ağ yöneticilerinin <a href="https://pimylifeup.com/raspberry-pi-nas/">bir NAS kurması</a> için yaygın olarak kullanılan bir protokol haline gelmiştir.</p>
+<p>Bu eğitim boyunca, Raspberry Pi'nizde NFS protokolünü çalışır hale getirmek için gerekli paketleri kurma sürecinde size yol göstereceğiz.</p>
+<p>Bunun üstüne, dizinleri NFS protokolünü kullanarak nasıl paylaşacağınızı da göstereceğiz.</p>
+<p>Son olarak, hem Windows hem de Mac OS X işletim sistemlerinden Raspberry Pi'nizin NFS paylaşımına nasıl bağlanacağınızı göstereceğiz.</p>
+<p>Başlamaya hazırsanız, eğitimin tamamını hemen aşağıda bulabilirsiniz.</p>
+<h2>Raspberry Pi'nizde Network File System (NFS) Ayarlama</h2>
+<p><strong>1.</strong> Raspberry Pi'mizde Network File System (NFS) protokolünü ayarlamaya devam etmeden önce yapmamız gereken ilk şey, tüm paketlerin güncel olduğundan emin olmaktır.</p>
+<p>Bunu <a href="https://pimylifeup.com/raspberry-pi-os-install/">Raspberry Pi OS işletim sisteminde</a> yapmak için, aşağıdaki komutu çalıştırın.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Raspberry Pi güncel olduğuna göre, artık NFS paylaşımı için güveneceğimiz paketleri kurabiliriz.</p>
+<p>Bu rehberde, &quot;<code>nfs-kernel-server</code>&quot; paketini kullanmamız gerekecek. Bu paket, Raspberry Pi'mizden NFS protokolü üzerinden dosya sunmanın temelini oluşturur.</p>
+<p>&quot;<code>nfs-kernel-server</code>&quot; paketi, NFS protokolünün sunucu tarafını yönetir ve sürücüleri kolayca paylaşmamızı sağlar.</p>
+<p>Bu paketleri kurmak için, aşağıdaki komutu çalıştırmamız gerekiyor.</p>
+<pre><code>sudo apt install nfs-kernel-server -y
+</code></pre>
+<p><strong>3.</strong> Artık NFS sunucu tarafı yazılımını kurduğumuza göre, şimdi Raspberry Pi'de bir NFS paylaşımı ayarlamaya geçebiliriz.</p>
+<p>Bu rehber için, &quot;<code>/mnt/</code>&quot; dizini içinde &quot;<code>nfsshare</code>&quot; adlı bir dizin oluşturacağız.</p>
+<p><a href="https://pimylifeup.com/raspberry-pi-mount-usb-drive/">Zaten bir sürücü bağladıysanız</a> veya farklı bir dizini paylaşmak istiyorsanız, eğitimin sonraki birkaç bölümünde &quot;<code>/mnt/nfsshare</code>&quot; kısmını kullanmak istediğiniz dizinle değiştirdiğinizden emin olun.</p>
+<pre><code>sudo mkdir /mnt/nfsshare
+</code></pre>
+<p><strong>4.</strong> Yapmamız gereken bir sonraki şey, ağda paylaşmak istediğimiz klasöre doğru hakları atamaktır.</p>
+<p>Bunu yapmak için, aşağıdaki üç komutu kullanacağız. Bu komutların her birinin belirli bir amacı vardır.</p>
+<p>İlk komut, dizin içinde bulunan tüm dosya ve klasörlerin sahipliğini &quot;<code>pi</code>&quot; kullanıcısına ve &quot;<code>pi</code>&quot; grubuna verir.</p>
+<p>İkinci satır, &quot;<code>/mnt/nfsshare</code>&quot; klasörümüz içindeki tüm dizinleri arar ve her dizine &quot;<code>755</code>&quot; (<strong>Sahip</strong> için <strong>Okuma</strong>/<strong>Yazma</strong>/<strong>Çalıştırma</strong>, <strong>Grup</strong> ve <strong>Diğer</strong> için <strong>Okuma</strong>/<strong>Çalıştırma</strong>) izinleri vermek için <a href="https://pimylifeup.com/chmod-command/"><strong>chmod</strong> komutunu çalıştırır</a>.</p>
+<p>Üçüncü satır benzer bir şey yapar, ancak bunun yerine dizin içindeki tüm dosyaları arar ve dosyaya &quot;<code>644</code>&quot; (<strong>Sahip</strong> için <strong>Okuma</strong>/<strong>Yazma</strong>, <strong>Grup</strong> ve <strong>Diğer</strong> için <strong>Okuma</strong>) izinlerini uygular.</p>
+<p>İzinleri daha iyi anlamak için, <a href="https://pimylifeup.com/file-permissions-in-linux/">Linux izinleri eğitimimize</a> göz atmayı unutmayın.</p>
+<pre><code>sudo chown -R pi:pi /mnt/nfsshare
+sudo find /mnt/nfsshare/ -type d -exec chmod 755 {} \;
+sudo find /mnt/nfsshare/ -type f -exec chmod 644 {} \;
+</code></pre>
+<p><strong>5.</strong> Ardından, dosyalara erişmek için kullanmak istediğiniz kullanıcının hem &quot;<code>gid</code>&quot;ini (Grup id) hem de &quot;<code>uid</code>&quot;ini (Kullanıcı id) almamız gerekecek. Bunu aşağıdaki komutu çalıştırarak yapabilirsiniz.</p>
+<p>Bu eğitim için, sadece &quot;<code>pi</code>&quot; kullanıcısını kullanacağız, ancak bunu istediğiniz herhangi bir kullanıcı için kullanabilirsiniz.</p>
+<pre><code>id pi
+</code></pre>
+<p><strong>6.</strong> Önceki komuttan, aşağıda gösterdiğimiz gibi bir sonuç almalısınız.</p>
+<p><code>gid</code> ve <code>uid</code> değerlerini not edin çünkü ilerideki bir adımda bunlara ihtiyacınız olacak.</p>
+<pre><code>uid=1000(pi) gid=1000(pi)
+</code></pre>
+<p><strong>7.</strong> Artık ihtiyacımız olan her şeye sahip olduğumuza ve paylaşmak için bir klasör hazırladığımıza göre. Aşağıdaki komutu çalıştırarak &quot;<code>exports</code>&quot; dosyasını değiştirmemiz gerekiyor.</p>
+<p>Daha önce kurduğumuz Raspberry Pi NFS sunucu yazılımı, NFS protokolü üzerinden hangi dizinleri paylaşacağını bilmek için bu dosyayı okur.</p>
+<pre><code>sudo nano /etc/exports
+</code></pre>
+<p><strong>8.</strong> İşte burada işler biraz daha karmaşıklaşıyor.</p>
+<p>Klasörü, herkesin ona erişebilmesi, okuyabilmesi ve yazabilmesi için paylaşmak istiyorsanız, herhangi bir endişe duymadan aşağıdaki satırı ekleyebilirsiniz.</p>
+<p>Ne yaptığını anlamanız için bu satırı daha ayrıntılı açıklayacağız, ancak <a href="https://linux.die.net/man/5/exports">NFS &quot;exports&quot; dosyası hakkındaki belgelere</a> de göz atabilirsiniz.</p>
+<p>&quot;<code>anonuid</code>&quot; kısmını <strong>6. adımda</strong> aldığınız &quot;<code>uid</code>&quot; değeriyle, &quot;<code>anongid</code>&quot; kısmını da yine <strong>6. adımda</strong> aldığınız &quot;<code>gid</code>&quot; değeriyle değiştirdiğinizden emin olun.</p>
+<pre><code>/mnt/nfsshare *(rw,all_squash,insecure,async,no_subtree_check,anonuid=1000,anongid=1000)
+</code></pre>
+<p>Ne yaptığını anlamanız için satırın aşağıda dökümü var.</p>
+<pre><code>/mnt/nfsshare
+</code></pre>
+<p>Satırın bu kısmı, paylaşmak istediğimiz dizini tanımlar. Bizim durumumuzda, bu daha önce oluşturduğumuz &quot;<code>/mnt/nfsshare</code>&quot; klasörüdür.</p>
+<pre><code>*(NTFS Seçenekleri)
+</code></pre>
+<p>Bu yıldız işareti, bağlanan tüm IP adreslerinin bu paylaşıma erişmesine izin verilmesi gerektiğini tanımlar. Bunu &quot;<code>*</code>&quot; yerine IP'yi kullanarak belirli IP'lere veya bir IP aralığına izin verecek şekilde değiştirebilirsiniz.</p>
+<p>&quot;<code>192.168.0.0</code>&quot;dan &quot;<code>192.168.0.256</code>&quot;ya kadar tüm IP'lere izin vermek için, yıldız işaretini &quot;<code>192.168.0.0/24</code>&quot; ile değiştirebiliriz.</p>
+<p>Parantezler içindeki tüm seçenekler yalnızca o IP adresi için uygulanır, her biri kendi seçenek setine sahip birden fazla farklı IP tanımlayabilirsiniz.</p>
+<pre><code>(rw,all_squash,insecure,async,no_subtree_check,anonuid=1000,anongid=1000)
+</code></pre>
+<ul>
+<li><code>rw</code> – Bu seçenek, NFS hacminde hem okuma hem de yazma isteklerine izin verir.</li>
+<li><code>all_squash</code> – Bu seçenek tüm uid ve gid'leri anonim kullanıcıya eşleyecektir.</li>
+<li><code>insecure</code> – Bu seçenek, rezerve edilmiş bir NFS portu kullanmayan bir NFS uygulamasına sahip istemcilere izin verir.</li>
+<li><code>async</code> – Bu seçenek, NFS sunucusunun sunucu çökerse verilerin potansiyel olarak bozulması pahasına performansı artırmak için NFS protokolünü bozmasına izin verir.</li>
+<li><code>no_subtree_check</code> – Bu, subtree kontrolünü devre dışı bırakır, güvenlik açısından bir bedeli olsa da NFS sunucusunun güvenilirliğini artırabilir. Bunun hakkında daha fazla bilgiyi daha önce bağlantısını verdiğimiz exports belge sayfasında okuyabilirsiniz.</li>
+<li><code>anonuid</code> – Bu, anonim olarak bağlanan bir kullanıcı için kullanılacak UID'dir.</li>
+<li><code>anongid</code> – Bu, anonim olarak bağlanan bir kullanıcı için kullanılacak GID'dir.</li>
+</ul>
+<p><strong>9.</strong> Satırı girdikten sonra, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak dosyayı kaydedebilirsiniz.</p>
+<p><strong>10.</strong> Şimdi yeni eklediğimiz klasörün NFS protokolü üzerinden erişilebilir olması için, aşağıdaki komutu çalıştırarak &quot;<code>exportfs</code>&quot; paketini çalıştırmamız gerekiyor.</p>
+<p>Bu uygulama, NFS sunucusu için mevcut export tablosunu günceller.</p>
+<pre><code>sudo exportfs -ra
+</code></pre>
+<p><strong>11.</strong> &quot;<code>exportfs</code>&quot; paketini çalıştırmaya ek olarak, NFS Kernel sunucu modülünü de yeniden başlatmamız gerekiyor.</p>
+<p>Terminalde aşağıdaki komutu kullanarak bu servisi yeniden başlatabiliriz.</p>
+<pre><code>sudo systemctl restart nfs-kernel-server
+</code></pre>
+<p><strong>12.</strong> Yapmamız gereken son şey, aşağıdaki <a href="https://pimylifeup.com/hostname-command/">hostname komutunu</a> çalıştırarak Raspberry Pi'mizin yerel IP adresini almaktır.</p>
+<p>Pi'nizin, ister <a href="https://pimylifeup.com/setting-up-raspberry-pi-wifi/">Wi-Fi kurarak</a> ister bir ethernet kablosu kullanarak ağa bağlı olduğundan emin olmanız gerekecek.</p>
+<p>Raspberry Pi NFS sunucusuna başarıyla bağlanabilmemiz için bu IP adresine ihtiyacımız var.</p>
+<pre><code>hostname -I
+</code></pre>
+<h2>Windows'ta Raspberry Pi'nizin NFS Paylaşımına Bağlanma</h2>
+<p><strong>1.</strong> Windows'ta NFS paylaşımlarıyla etkileşim kurmak için, önce NFS istemcisini etkinleştirmemiz gerekiyor. Varsayılan olarak, bu özellik Windows kurulumlarında devre dışıdır.</p>
+<p>Bunu yapmak için, Windows'ta &quot;<strong>turn windows features on or off</strong>&quot; aramanız ve aşağıda gösterildiği gibi görünen &quot;<strong>Turn Windows features on or off</strong>&quot; seçeneğine <code>tıklamanız</code> gerekir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Windows-Step-1-Search-Turn-windows-features-on-and-off.png" alt="Windows Özelliklerini Aç veya Kapat Ara" /></p>
+<p><strong>2.</strong> Bu menüde, &quot;<strong>Services for NFS</strong>&quot; (<strong>1.</strong>) klasörünü arayın ve tüm mevcut özellikleri etkinleştirmek için onay kutusuna <code>tıklayın</code>.</p>
+<p>Bittiğinde, ayarları sonlandırmak için &quot;<strong>OK</strong>&quot; butonuna <code>tıklayın</code> (<strong>2.</strong>). Windows kurulumunuz, bir NFS paylaşımına bağlanmak için gerekli olan her şeyi ayarlamaya devam edecektir.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Windows-Step-2-Turn-on-services-for-NFS.png" alt="Windows NFS için servisleri açma" /></p>
+<p><strong>3.</strong> Şimdi dosya gezginini açın ve &quot;<strong>Map network drive</strong>&quot; seçeneğini görebilmeniz gerekir.</p>
+<p>Raspberry Pi'nizin NFS paylaşımını bilgisayarınıza bağlama sürecine devam etmek için bu seçeneğe <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Windows-Step-3-File-Explorer-Map-Network-Drive.png" alt="Windows File Explorer Ağ Sürücüsü Eşleştirme" /></p>
+<p><strong>4.</strong> Bu ekranda, Raspberry Pi'nizin IP adresini ve ardından NFS Paylaşımına bağladığımız klasörü girmeniz gerekiyor (<strong>1.</strong>).</p>
+<p>Örneğin, Raspberry Pi'mizin IP adresi &quot;<code>192.168.0.159</code>&quot; ve ayarladığımız klasör &quot;<code>\mnt\nfsshare</code>&quot;de. Kullanacağımız &quot;<strong>klasör</strong>&quot; &quot;<code>\\192.168.0.159\mnt\nfsshare</code>&quot; olacaktır.</p>
+<p>Girdikten sonra, bağlantıyı sonlandırmak için &quot;<strong>Finish</strong>&quot; butonuna <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Windows-Step-4-Map-Network-Drive.png" alt="Windows Ağ Sürücüsü NFS Detaylarını Eşleştirme" /></p>
+<p><strong>5.</strong> Artık Windows cihazınızda &quot;<code>Network Locations</code>&quot; veya &quot;<code>Network</code>&quot; altında paylaşılan Raspberry Pi NFS klasörünüzü görebilmeniz gerekiyor.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Windows-Step-5-View-Networked-Drives.png" alt="Windows NFS Ağ Sürücülerini Görüntüleme" /></p>
+<h2>Mac OS X'te Pi'nizin NFS Paylaşımına Bağlanma</h2>
+<p><strong>1.</strong> Şimdi MAC OS X'te Raspberry Pi'nizin NFS Paylaşımına bağlanma zamanı, <strong>Finder uygulamasını</strong> açarak başlamanız gerekecek.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-Mac-OS-X-Step-01-Opening-Finder.png" alt="Mac OS X Finder'ı Açma" /></p>
+<p><strong>2.</strong> &quot;<strong>Finder</strong>&quot; uygulaması açıkken, ekranın üstündeki araç çubuğunda &quot;<strong>Go</strong>&quot;ya <code>tıklayın</code> (<strong>1.</strong>) ve ardından &quot;<strong>Connect to Server...</strong>&quot; (<strong>2.</strong>) seçeneğine <code>tıklayın</code>.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-MAC-OS-X-Step-02-Connect-to-NFS-protocol.png" alt="MAC OS X NFS protokolüne bağlan" /></p>
+<p><strong>3.</strong> Ardından, bağlanmak istediğiniz adresi girmeniz istenecektir (<strong>1.</strong>).</p>
+<p>Buna girmeniz gereken adres, &quot;<code>nfs:\\</code>&quot; protokolünün ardından Raspberry Pi'nizin IP adresinin bir kombinasyonudur. Son olarak, erişmeye çalıştığınız dizin ile biter.</p>
+<p>Örneğin, IP &quot;<code>192.168.0.159</code>&quot; ve Pi'de paylaştığımız klasör &quot;<code>\mnt\nfsshare</code>&quot; ise, gireceğimiz adres &quot;<code>nfs:\\192.168.0.159\mnt\nfsshare</code>&quot; olur.</p>
+<p>Bittiğinde, paylaşılan hacmi bağlamak için &quot;<strong>Connect</strong>&quot; butonuna <code>tıklayın</code> (<strong>2.</strong>).</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-MAC-OS-X-Step-03-Connect-to-NFS-Server.png" alt="MAC OS X NFS Sunucusuna Bağlan" /></p>
+<p><strong>4.</strong> Bağlantı başarılı olursa, Raspberry Pi'nizde NFS Protokolünü kullanarak paylaştığınız klasörün içini gösteren yeni bir pencere göreceksiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/06/Raspberry-Pi-NFS-MAC-OS-X-Step-04-NFS-Connected.png" alt="MAC OS X Raspberry Pi NFS Bağlandı" /></p>
+<p>Klasörü, Finder kenar çubuğundaki &quot;<code>Locations</code>&quot; bölümüne bakarak da tekrar bulabilirsiniz.</p>
+<h2>Sonuç</h2>
+<p>Artık Raspberry Pi NFS sunucunuz kurulmuş ve ağda erişilebilir olmalı. Umarız bir Windows PC veya bir Mac OS X bilgisayar kullanarak ona kolayca bağlanabilirsiniz.</p>
+<p>Raspberry Pi'nizde <a href="https://pimylifeup.com/raspberry-pi-nfs-client/">bir NFS sunucusuna bağlanma</a> rehberimize de göz atmayı unutmayın.</p>
+<p>Herhangi bir geri bildiriminiz, ipucunuz veya başka bir şeyiniz varsa, lütfen aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-nfs.html&amp;text=Raspberry+Pi+NFS+Sunucusu+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-nfs.html&amp;text=Raspberry+Pi+NFS+Sunucusu+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-nfs.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-nfs.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-nfs.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-nfs.html&amp;title=Raspberry+Pi+NFS+Sunucusu+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi+NFS+Sunucusu+Nas%C4%B1l+Kurulur%20codenfast.com%2Fposts%2Fraspberry-pi-nfs.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

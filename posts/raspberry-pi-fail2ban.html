@@ -1,0 +1,314 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;de Fail2ban Nasıl Kurulur - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Fail2ban kullanarak Pi&#39;nizi korumaya yardımcı olun"/>
+    <meta property="og:title" content="Raspberry Pi&#39;de Fail2ban Nasıl Kurulur"/>
+    <meta property="og:description"
+          content="Fail2ban kullanarak Pi&#39;nizi korumaya yardımcı olun"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-fail2ban.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-fail2ban.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2019/02/Raspberry-Pi-Fail2Ban-no-wm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;de Fail2ban Nasıl Kurulur"/>
+    <meta name="twitter:description"
+          content="Fail2ban kullanarak Pi&#39;nizi korumaya yardımcı olun"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2019/02/Raspberry-Pi-Fail2Ban-no-wm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'de Fail2ban Nasıl Kurulur","item":{"@id":"https://codenfast.com/posts/raspberry-pi-fail2ban.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/02/Raspberry-Pi-Fail2Ban-no-wm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/02/Raspberry-Pi-Fail2Ban-no-wm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/01/Raspberry-Pi-Fail2ban-thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/01/Raspberry-Pi-Fail2ban-thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/02/Fail2Ban-on-Raspbian.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/02/Fail2Ban-on-Raspbian.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'de Fail2ban Nasıl Kurulur","description":"Fail2ban kullanarak Pi'nizi korumaya yardımcı olun","image":["https://pimylifeup.com/wp-content/uploads/2019/02/Raspberry-Pi-Fail2Ban-no-wm.jpg"],"datePublished":"2026-08-03T15:48:04.747807+03:00","dateModified":"2026-08-03T15:48:04.747833+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;de Fail2ban Nasıl Kurulur</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-fail2ban/">PiMyLifeUp - How to Setup Fail2ban on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, Fail2ban yazılımını Raspberry Pi'nizde nasıl kurup yapılandıracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/01/Raspberry-Pi-Fail2ban-thumbnail.jpg" alt="Raspberry Pi Fail2Ban Eğitimi" /></p>
+<p>Fail2ban, Raspberry Pi'nizin güvenliğini artırmak söz konusu olduğunda önemli bir yazılım parçasıdır. Raspberry Pi'niz internet üzerinden herkese açık olarak erişilebilirse özellikle kullanışlıdır çünkü aktif ve öğrenen bir savunma biçimidir.</p>
+<p><a href="https://www.fail2ban.org/wiki/index.php/Main_Page">Fail2ban'in ne olduğunu</a> bilmeyenler için, bu cihazınıza (bizim durumumuzda Raspberry Pi'mize) yönelik kötü niyetli bağlantıları engellemeye çalışan bir yazılım parçasıdır. <a href="https://pimylifeup.com/raspberry-pi-ssh/">SSH'niz</a> veya hatta herkese açık olarak erişilebilen <a href="https://pimylifeup.com/raspberry-pi-web-server/">bir web sunucunuz</a> varsa önemlidir.</p>
+<p>Fail2ban, log dosyalarınızı sürekli tarayarak ve potansiyel saldırı belirtilerini arayarak çalışır. Bunlar arasında çok fazla parola başarısızlığı gibi saldırıların yanı sıra exploit'leri taramak ve çok daha fazlası bulunur. Olağandışı bir aktivite bulduğunda, o IP adresini yasaklamak için güvenlik duvarınızı otomatik olarak günceller.</p>
+<h2>Fail2ban'i Kurma ve Yapılandırma</h2>
+<p><strong>1.</strong> Fail2ban'i Raspberry Pi'mize kurmaya başlamadan önce, önce tamamen güncel olduğundan emin olmalıyız.</p>
+<p>Bunu, Raspberry Pi'deki terminalde aşağıdaki komutları çalıştırarak çok basitçe yapabiliriz.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> <a href="https://pimylifeup.com/raspberry-pi-os-install/">Raspberry Pi işletim sistemi</a> artık güncel olduğuna göre, Raspberry Pi'de aşağıdaki komutu çalıştırarak Fail2ban yazılımını kuralım.</p>
+<pre><code>sudo apt install fail2ban
+</code></pre>
+<p><strong>3.</strong> Kurulum süreci sırasında, fail2ban &quot;<code>jail.conf</code>&quot; adlı bir dosya oluşturacaktır.</p>
+<p>Bu dosyanın bir kopyasını oluşturup &quot;<code>jail.local</code>&quot; olarak adlandırmamız gerekiyor, fail2ban bu dosyayı otomatik olarak algılayacak ve yapılandırmasını yükleyecektir.</p>
+<p>Raspberry Pi'de terminalde aşağıdaki komutu çalıştırarak <a href="https://pimylifeup.com/cp-command-linux/">dosyayı kopyalayalım</a>.</p>
+<pre><code>sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+</code></pre>
+<p><strong>4.</strong> Şimdi az önce kopyaladığımız dosyayı açalım ve Fail2ban'ın birlikte geldiği varsayılan yapılandırmaya bir göz atalım.</p>
+<p>Raspberry Pi'nizde aşağıdaki komutu çalıştırarak dosyayı <a href="https://pimylifeup.com/nano-text-editor/">nano editörünü kullanarak</a> açın.</p>
+<pre><code>sudo nano /etc/fail2ban/jail.local
+</code></pre>
+<p><strong>5.</strong> Bu dosyanın içinde, &quot;<code>[sshd]</code>&quot; aramak için <code>CTRL</code> + <code>W</code> tuş kombinasyonunu kullanın, aşağıda gösterdiğimiz metne benzer görünmelidir.</p>
+<pre><code>[sshd]
+
+port    = ssh
+logpath = %(sshd_log)s
+backend = %(sshd_backend)s
+</code></pre>
+<p><strong>6.</strong> Şimdi bu bölümü etkinleştirmek ve SSHD filtresini ayarlamak için, önceki adımda bulduğumuz &quot;<code>[sshd]</code>&quot; metninin altına aşağıdaki iki satırı eklememiz gerekiyor.</p>
+<pre><code>enabled = true
+filter = sshd
+</code></pre>
+<p>Bu yapılandırma dosyasına eklediğimiz ilk satır, Fail2ban'in belirtilen port için bu kuralları işlemesini sağlar.</p>
+<p>İkinci satır, Fail2ban'e SSH portuna bağlantıları filtrelemek için &quot;<code>/etc/fail2ban/filter.d/sshd.conf</code>&quot; dosyasını kullanması gerektiğini söyler.</p>
+<p><strong>7.</strong> Onu etkinleştirebilmeye ve filtreyi ayarlayabilmeye ek olarak, birisi filtreleri tetiklediğinde Fail2ban'in ne yapacağını da değiştirebiliriz.</p>
+<p>Yasaklama eylemini ayarlamak için aşağıdaki satırı kullanabilirsiniz. Aşağıda sahip olduğumuz örnekte, &quot;<strong>iptables-multiport</strong>&quot; yasaklama eylemini kullanacağız.</p>
+<p>Bu eylem, filtreyi tetikleyen kullanıcıyı yasaklayacak ve cihazdaki herhangi bir porta erişmesini kısıtlayacaktır.</p>
+<pre><code>banaction = iptables-multiport
+</code></pre>
+<p>&quot;<code>/etc/fail2ban/action.d/</code>&quot; klasörüne göz atarak ek eylemler bulabilirsiniz, ancak genellikle bir saldırganı tüm portlarda engellemek isteyeceksiniz.</p>
+<p><strong>8.</strong> Yasaklama eylemini ayarlayabilmeye ek olarak, bir kullanıcının yasaklanmadan önce aldığı deneme sayısını ve ne kadar süre yasaklanacağını da ayarlayabilirsiniz.</p>
+<p>Bunu yapmak için aşağıdaki iki değeri kullanabiliriz, aşağıda açıklayacağımız bazı örnek değerler belirledik.</p>
+<pre><code>bantime = -1
+maxretry = 3
+</code></pre>
+<p>Yukarıdaki ilk satır (&quot;<code>bantime = -1</code>&quot;), kullanıcının ne kadar süre yasaklanmasını istediğinizi ayarlar. Bu değerin saniye cinsinden olması gerekir, örneğin, <strong>1800 saniye</strong> kullanıcıyı <strong>30 dakika</strong> boyunca yasaklayacaktır.</p>
+<p>Kullanıcıyı süresiz olarak yasaklamak istiyorsanız, bu değeri yukarıdaki örneğimizde olduğu gibi <code>-1</code> olarak ayarlayabilirsiniz.</p>
+<p>İkinci satır (&quot;<code>maxretry = 3</code>&quot;), yasaklama eylemi çalıştırılmadan önce kullanıcının kaç deneme hakkı olduğunu tanımlar. Örneğimizde, bunu <code>3</code> olarak ayarladık, yani kullanıcı cihaza tüm portlarda erişimden yasaklanmadan önce üç şansı olacaktır.</p>
+<p><strong>9.</strong> <code>[sshd]</code> bölümünü bir yasaklama eylemi, yasaklama süresi, maksimum deneme sayısı ile yapılandırmayı ve onu etkinleştirmeyi ve filtreyi ayarlamayı bitirdikten sonra, aşağıda gösterdiğimize benzer bir şeyle karşılaşmalısınız.</p>
+<pre><code>[sshd]
+enabled = true
+filter = sshd
+port = ssh
+banaction = iptables-multiport
+bantime = -1
+maxretry = 3
+logpath = %(sshd_log)s
+backend = %(sshd_backend)s
+</code></pre>
+<p><strong>10.</strong> Değişikliklerinizden memnun olduğunuzda, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak dosyayı kaydedin.</p>
+<p><strong>11.</strong> Artık Raspberry Pi Fail2ban'ınız başarıyla çalışıyor olmalı. Fail2ban yazılımının Raspberry Pi'nizde değişikliklerinizi yüklemesi için aşağıdaki komutu girmeniz gerekiyor.</p>
+<pre><code>sudo service fail2ban restart
+</code></pre>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/02/Fail2Ban-on-Raspbian.jpg" alt="Raspbian'da Fail2Ban" /></p>
+<h2>Apache ve Nginx Web Sunucuları</h2>
+<p>Fail2Ban kullanarak <a href="https://pimylifeup.com/raspberry-pi-apache/">Apache</a> veya <a href="https://pimylifeup.com/raspberry-pi-nginx/">Nginx web sunucunuzu</a> da koruyabilirsiniz. Kurulum, SSH için yaptığımıza çok benzer. Aşağıda hızlıca Apache için bir örnekten geçeceğim.</p>
+<p><strong>1.</strong> Apache için kötü botlara karşı korumayı etkinleştirmek istiyorsanız, jail local dosyasını açmanız gerekecek.</p>
+<pre><code>sudo nano /etc/fail2ban/jail.local
+</code></pre>
+<p><strong>2.</strong> <code>[apache-badbots]</code> adlı bölümü bulun, onu bulmak için <code>CTRL</code> + <code>W</code> kullanabilirsiniz.</p>
+<p><strong>3.</strong> Bu başlığın altına, aşağıdaki iki satırı ekleyin.</p>
+<pre><code>enabled = true
+filter = apache-badbots
+</code></pre>
+<p>Özel bir yapılandırma dosyası kullanmıyorsanız, filtre adı genellikle modülle aynı isim olacaktır. Yani, <code>[apache-badbots]</code>, <code>apache-badbots</code> filtre adına sahip olacaktır.</p>
+<p>Tüm filtre yapılandırma dosyalarını aşağıdaki dizinde bulabilirsiniz, tüm dosyaları listelemek için <a href="https://pimylifeup.com/ls-command/">ls kullanın</a>.</p>
+<pre><code>ls /etc/fail2ban/filter.d/
+</code></pre>
+<p><strong>4.</strong> &quot;<code>jail.local</code>&quot; dosyasını düzenlemeyi bitirdiğinizde, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak dosyayı kaydedin.</p>
+<p><strong>5.</strong> Son olarak, herhangi bir değişiklik yaptığınızda Raspberry Pi'de Fail2Ban'i yeniden başlatmayı unutmayın.</p>
+<pre><code>sudo service fail2ban restart
+</code></pre>
+<h2>Sonuç</h2>
+<p>Bu Raspberry Pi Fail2Ban eğitiminden, yazılımı nasıl kurup yapılandıracağınızı öğrenmiş olmanızı umuyorum. Ayrıca Fail2Ban gibi bir yazılım parçası kullanmanın faydalarını göstermiş olmasını da umuyorum.</p>
+<p>Raspberry Pi'nizde Fail2Ban'i kurup yapılandırma hakkındaki bu eğitimle ilgili herhangi bir geri bildiriminiz varsa, aşağıya bir yanıt bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-fail2ban.html&amp;text=Raspberry+Pi%27de+Fail2ban+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-fail2ban.html&amp;text=Raspberry+Pi%27de+Fail2ban+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-fail2ban.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-fail2ban.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-fail2ban.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-fail2ban.html&amp;title=Raspberry+Pi%27de+Fail2ban+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27de+Fail2ban+Nas%C4%B1l+Kurulur%20codenfast.com%2Fposts%2Fraspberry-pi-fail2ban.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

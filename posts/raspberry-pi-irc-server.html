@@ -1,0 +1,343 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi IRC Sunucusu: Kendi Sohbet Ağınızı Kurun - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Kendi sohbet ağınızı kurun"/>
+    <meta property="og:title" content="Raspberry Pi IRC Sunucusu: Kendi Sohbet Ağınızı Kurun"/>
+    <meta property="og:description"
+          content="Kendi sohbet ağınızı kurun"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-irc-server.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-irc-server.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2017/09/Raspberry-Pi-IRC-no-wm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi IRC Sunucusu: Kendi Sohbet Ağınızı Kurun"/>
+    <meta name="twitter:description"
+          content="Kendi sohbet ağınızı kurun"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2017/09/Raspberry-Pi-IRC-no-wm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi IRC Sunucusu: Kendi Sohbet Ağınızı Kurun","item":{"@id":"https://codenfast.com/posts/raspberry-pi-irc-server.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/09/Raspberry-Pi-IRC-no-wm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/09/Raspberry-Pi-IRC-no-wm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2017/08/raspberry-pi-irc-server-mini.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2017/08/raspberry-pi-irc-server-mini.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi IRC Sunucusu: Kendi Sohbet Ağınızı Kurun","description":"Kendi sohbet ağınızı kurun","image":["https://pimylifeup.com/wp-content/uploads/2017/09/Raspberry-Pi-IRC-no-wm.jpg"],"datePublished":"2026-08-03T15:54:07.625563+03:00","dateModified":"2026-08-03T15:54:07.625582+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi IRC Sunucusu: Kendi Sohbet Ağınızı Kurun</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-irc-server/">PiMyLifeUp - Raspberry Pi IRC Server: Setup your own Chat Network</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu projede, bir Raspberry Pi IRC Sunucusunu nasıl kuracağınızı göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2017/08/raspberry-pi-irc-server-mini.jpg" alt="Raspberry Pi IRC Sunucusu" /></p>
+<p>Bir IRC sunucusu, çoğu diğer sunucuyla karşılaştırıldığında Raspberry Pi için mükemmeldir, çünkü Raspberry Pi'nin sınırlı kaynakları üzerinde büyük bir performans yükü oluşturmaz.</p>
+<p>Bilmeyenler için IRC, Internet Relay Chat'in kısaltmasıdır, en eski sohbet protokollerinden biridir ve son yıllarda popülerliği azalmış olsa da hala birçok topluluğun bel kemiğidir.</p>
+<p>Popüler yayın hizmeti Twitch bile sohbetini yönetmek için bir IRC sunucusu kullanır. Aslında, Twitch'in Sohbet ağıyla etkileşim kurmak için <a href="https://pimylifeup.com/raspberry-pi-twitch-bot/">Raspberry Pi Twitch Bot eğitimimizde</a> IRC protokolünü kullanıyoruz.</p>
+<p>Bir Raspberry Pi'de kurabileceğiniz oldukça farklı sunucular var, ve bu sadece onlardan biri. Bu fikri beğendiyseniz, <a href="https://pimylifeup.com/category/projects/server/">Raspberry Pi için diğer sunucu eğitimlerimizden</a> bazılarına göz atmayı unutmayın.</p>
+<p>Bu proje için, test ettiğimiz en hafif, yüksek performanslı ve güvenilir IRC sunucusu olduğu için <strong>Ircd-Hybrid</strong>'i kullanacağız.</p>
+<h2>IRC Sunucusunu Kurma ve Yapılandırma</h2>
+<p><strong>1.</strong> Raspberry Pi IRC sunucumuzu kurmaya ve ayarlamaya başlamadan önce, önce Raspbian işletim sisteminin tamamen güncel olduğundan emin olmak için bir güncelleme ve yükseltme çalıştıracağız.</p>
+<p>Bunu yapmak için Raspberry Pi'nizde terminalde aşağıdaki iki komutu çalıştırın.</p>
+<pre><code>sudo apt update
+sudo apt upgrade
+</code></pre>
+<p><strong>2.</strong> Raspberry Pi'miz artık güncel olduğuna göre, üzerine IRC Sunucu yazılımını kurmaya devam edebiliriz.</p>
+<p>Çok hafif, kararlı ve yüksek performanslı bir IRC sunucusu olan <a href="http://www.ircd-hybrid.org/">Ircd-Hybrid adlı bir yazılım parçasını</a> kullanıyoruz. Bunların üçü de Raspberry Pi'nin sınırlı kaynakları için mükemmel özelliklerdir.</p>
+<p>Raspberry Pi IRC Sunucumuz için yazılımı kurmak için, terminale aşağıdaki komutu yazın.</p>
+<pre><code>sudo apt install ircd-hybrid
+</code></pre>
+<p><strong>3.</strong> IRC Sunucumuzda oping ayarlamak için, bir parola da belirlememiz gerekecek. ircd-hybrid bu parolanın şifrelenmiş olmasını gerektirir ve parolayı şifrelemek için aşağıdaki komutu kullanabiliriz. <strong>parola</strong> kısmını kendi parolanızla değiştirdiğinizden emin olun ve sonucu kaydedin çünkü buna daha sonra ihtiyacımız olacak.</p>
+<pre><code>/usr/bin/mkpasswd password
+</code></pre>
+<p><strong>4.</strong> Kurulum tamamlandıktan sonra, Ircd-Hybrid yazılımını yapılandırmaya devam edebiliriz. Bunu yapmak için, <code>/etc/ircd-hybrid</code> klasörü içindeki <strong>ircd.conf</strong> dosyasını düzenlememiz gerekecek.</p>
+<p>Bunu yapmak için, <a href="https://pimylifeup.com/nano-text-editor/">nano'yu yüklemek</a> ve dosyayı düzenlemeye başlamak üzere terminalde basitçe aşağıdaki komutu çalıştırabiliriz.</p>
+<pre><code>sudo nano /etc/ircd-hybrid/ircd.conf
+</code></pre>
+<p><strong>5.</strong> Bu dosyanın içinde, burada yapılandırabileceğiniz muazzam miktarda farklı seçenek fark edeceksiniz. Bunlardan bazılarını hızlıca değiştireceğiz ve size bunların ne için olduğu hakkında bir fikir vermek için nedenini açıklayacağız.</p>
+<p>Neyse ki yapılandırma dosyası, çok sayıda yorum sayesinde anlaşılması oldukça kolaydır, bu yüzden düzenlemeniz gereken herhangi bir şey varsa, sadece etrafındaki yorumları okuyun.</p>
+<h3><em>serverinfo {</em> bloğu içinde</h3>
+<p><strong>Bulun</strong></p>
+<pre><code>name = &quot;hybrid8.debian.local&quot;;
+</code></pre>
+<p><strong>Şununla Değiştirin</strong></p>
+<pre><code>name = &quot;pimylifeup.irc&quot;;
+</code></pre>
+<p>Bu satır, IRC sunucunuzun adını tanımlar ve bunu istediğiniz herhangi bir şeye ayarlayabilirsiniz. Örnek olarak, eğitimimiz için, bunu <strong>pimylifeup.irc</strong> olarak ayarlayacağız.</p>
+<p><strong>Bulun</strong></p>
+<pre><code>description = &quot;ircd-hybrid 8.1-debian&quot;;
+</code></pre>
+<p><strong>Şununla Değiştirin</strong></p>
+<pre><code>description = &quot;Raspberry Pi IRC Server&quot;;
+</code></pre>
+<p>Bu satır, sunucunun açıklamasını ayarlar ve insanlar sunucunuza bağlandığında göreceği şey olacaktır.</p>
+<p><strong>Bulun</strong></p>
+<pre><code>network_name = &quot;debian&quot;;
+network_desc = &quot;This is My Network&quot;;
+</code></pre>
+<p><strong>Şununla Değiştirin</strong></p>
+<pre><code>network_name = &quot;pimylifeup&quot;;
+network_desc = &quot;This is my Raspberry Pi IRC Network&quot;;
+</code></pre>
+<p>Bu satır, sunucunuzun bulunduğu ağın adını ve açıklamasını tanımlamak içindir.</p>
+<p><strong>Bulun</strong></p>
+<pre><code>max_clients = 512;
+</code></pre>
+<p><strong>Şununla Değiştirin</strong></p>
+<pre><code>max_clients = 128;
+</code></pre>
+<p>Bu satır, IRC Sunucusuna bağlanabilecek maksimum kişi sayısını tanımlar.</p>
+<h3><em>operator {</em> bloğu içinde</h3>
+<p><strong>Bulun ve kaldırın</strong></p>
+<pre><code>#
+</code></pre>
+<p>Bu bölümün yorum satırından çıkarılması gerekiyor, eğer sadece <strong>##</strong> görüyorsanız yalnızca ilk katmandaki <strong>#</strong>'i kaldırın.</p>
+<p><strong>Bulun</strong></p>
+<pre><code>name = &quot;sheep&quot;;
+</code></pre>
+<p><strong>Şununla Değiştirin</strong></p>
+<pre><code>name = &quot;op&quot;;
+</code></pre>
+<p>Bu satır, operatör grubunun adını tanımlar ve hatırlaması en kolay olduğu için <strong>op</strong>'u kullanacağız, bunu istediğiniz herhangi bir şeye ayarlayabilirsiniz.</p>
+<p><strong>Bulun</strong></p>
+<pre><code>user = &quot;*@192.0.2.240/28&quot;;
+</code></pre>
+<p><strong>Şununla Değiştirin</strong></p>
+<pre><code>user = &quot;*@*&quot;;
+</code></pre>
+<p>Bu satır, sunucuya bağlanan herkesin <code>oper</code> komutunu çalıştırabilmesi için bunu değiştirecektir. Bunu yalnızca yerel kullanıcılarla sınırlamak isterseniz, <code>*@192.168.*.*</code> gibi bir şey kullanmayı deneyebilirsiniz.</p>
+<p><strong>Bulun</strong></p>
+<pre><code>password = &quot;xxxxxxxxxxxxx&quot;;
+</code></pre>
+<p><strong>Şununla Değiştirin</strong></p>
+<pre><code>password = &quot;ŞİFRELENMİŞ PAROLANIZLA DEĞİŞTİRİN&quot;;
+</code></pre>
+<p>Burada, varsayılan parolayı eğitimde daha önce <code>/usr/bin/mkpasswd</code> aracıyla şifrelediğimiz parolayla değiştirmek isteyeceğiz. Bunun parolanızın düz metin sürümü olmadığını, karıştırılmış (scrambled) formu olduğunu unutmayın.</p>
+<p><strong>6.</strong> Şimdi <strong>Ctrl +X</strong>, ardından <strong>Y</strong>, sonra <strong>Enter</strong> tuşuna basarak dosyayı kaydedip çıkabiliriz.</p>
+<p><strong>7.</strong> Bu yapıldıktan sonra, IRC Sunucusu için günün mesajını (MOTD) değiştirebilirsiniz. Bu mesaj, ircd-hybrid yazılımının onu <code>/etc/ircd-hybrid</code> klasöründe bulunan <strong>ircd.motd</strong> adlı bir dosyadan okuması nedeniyle değiştirmesi nispeten kolaydır.</p>
+<p>Terminalde aşağıdaki komutu çalıştırarak bu dosyayı değiştirmeye başlayabilirsiniz.</p>
+<pre><code>sudo nano /etc/ircd-hybrid/ircd.motd
+</code></pre>
+<p>Eğitimimiz için, bu dosyayı değiştirmeyi atlayacağız, ancak temel olarak içinde ne varsa, sunucuya bağlandığında bir kullanıcıya gösterilecektir.</p>
+<p><strong>8.</strong> Raspberry Pi IRC Sunucumuzun ilk yapılandırmasını yaptığımıza göre, sunucu yazılımını yeniden başlatmamız gerekecek. Bu yeniden başlatma, terminalde aşağıdaki komutu çalıştırarak kolayca yapılır.</p>
+<pre><code>sudo /etc/init.d/ircd-hybrid restart
+</code></pre>
+<h2>IRC Sunucunuza Bağlanma</h2>
+<p>Raspberry Pi IRC Sunucumuzu yapılandırdığımıza göre, artık çalıştığından emin olmak için test edebiliriz. Sunucunuzu nasıl kullanacağınız hakkında bir fikir vermek için Windows'ta bir IRC istemcisi kullanarak sunucuya bağlanma adımlarından geçeceğiz.</p>
+<p>Windows için, popüler mIRC istemcisini kullanacağız.</p>
+<p><strong>1.</strong> Başlamak için, önce mIRC istemcisini indirip kurun, <a href="https://www.mirc.com/">mIRC'nin ana sayfasına giderek</a> indirebilirsiniz.</p>
+<p><strong>2.</strong> mIRC kurulumunu bitirdikten sonra, çalıştırın. Çalıştırdıktan sonra <strong>File -&gt; Select Server</strong>'a tıklayın (Veya <code>ALT</code> + <code>E</code> tuşlarına basın)</p>
+<p><strong>3.</strong> Artık yeni bir pencere açılmalı, burada <strong>Add</strong> butonuna tıklamak isteyeceksiniz.</p>
+<p><strong>4.</strong> Başka bir pencere daha yüklenmeli, bu sefer <strong>Description:</strong> ve <strong>Address:</strong> metin kutularını doldurmanız gerekecek.</p>
+<p><strong>Description:</strong> için <strong>pimylifeup</strong> kullanmayı seçtik, diğer IRC sunucularından ayırt edici bir şey seçtiğinizden emin olun.</p>
+<p><strong>Address:</strong> için bunu Raspberry Pi'mizin IP'sine ayarlamamız gerekiyor, Raspberry Pi'nizin IP'sini bilmiyorsanız, terminaline <code>hostname -I</code> komutunu yazmayı deneyin. Örneğimizde, <code>192.168.0.143</code> kullanacağız.</p>
+<p>Bu bilgiyi doldurduktan sonra, <strong>Add</strong> butonuna tıklayın.</p>
+<p><strong>5.</strong> Artık sunucunuz mIRC'nin IRC sunucuları listesine eklenmiş olmalı. Ayrıca zaten seçili olmalı, değilse, yeni eklediğiniz şeyi arayın. <strong>Description:</strong> için ayarladığınız isim altında olacaktır, bizim durumumuzda, onu <strong>pimylifeup</strong> adı altında bulurduk.</p>
+<p>Seçili olduğundan emin olduğunuzda, <strong>Select</strong> butonuna basın.</p>
+<p><strong>6.</strong> Sonunda bağlantıyı yapmadan önce son bir ekrana getirileceksiniz, burada <strong>Nickname:</strong>'inizi istediğiniz herhangi bir şeye ayarlamak isteyeceksiniz. Şimdi ileri atlayıp <strong>Connect</strong> butonuna basmadan önce, sunucu açıklama adınızın <strong>Server:</strong>'ın yanında olduğundan emin olun.</p>
+<p>Doğru olduğundan emin olduktan sonra, <strong>Connect</strong> butonuna tıklayın.</p>
+<p><strong>7.</strong> Son olarak, kullanmak istediğiniz kanal adını yazın, bu <strong>#</strong> ile başladığı sürece herhangi bir şey olabilir, yazıldıktan sonra yapmanız gereken tek şey <strong>Join</strong> butonuna tıklamaktır.</p>
+<p>Her şey yolunda gittiyse, artık Raspberry Pi IRC Sunucunuza başarıyla bağlanmış olmalısınız.</p>
+<h2>Raspberry Pi IRC Sunucunuzda Kendinizi OP Yapma</h2>
+<p><strong>1.</strong> IRC sunucunuzda kendinizi OP yapmak için, bu eğitimde daha önce belirlediğiniz grup adını ve şifrelenmemiş parolayı hatırlamanız gerekiyor.</p>
+<p>Her ikisi de elinizde olduğunda, IRC sunucunuza bağlanın.</p>
+<p><strong>2.</strong> IRC sunucunuza bağlandıktan ve bir kanalda olduğunuzda, sohbete aşağıdaki komutu yazın. <em>op</em> kısmını grup adınızla ve <em><strong>password</strong></em> kısmını <code>/usr/bin/mkpasswd</code> komutunu çalıştırdığınızda bu eğitimde daha önce belirlediğiniz <em><strong>parola</strong></em> ile değiştirdiğinizden emin olun.</p>
+<p><strong>3.</strong> Başarıyla bir operatör yapıldıysanız, sohbette <strong>You are now an IRC operator</strong> metninin göründüğünü görmelisiniz.</p>
+<p>Umarız, bu noktada, Raspberry Pi'nizde tamamen işlevsel bir IRC Sunucusuna sahipsinizdir, bu kendinizi bir operatör olarak ayarlayabilme yeteneğini de içerir. Ailenizle ve arkadaşlarınızla paylaşabileceğiniz kendi özel sohbet sunucunuza sahip olmanın oldukça havalı bir yolu.</p>
+<p>Bu Raspberry Pi IRC sunucusu eğitimi size yardımcı olduysa veya herhangi bir sorunla karşılaştıysanız aşağıya bir yorum bırakmayı unutmayın. Web sitemizde bulunan diğer birçok <a href="https://pimylifeup.com/category/projects/">eğlenceli Raspberry Pi projesine</a> göz atmayı unutmayın.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-irc-server.html&amp;text=Raspberry+Pi+IRC+Sunucusu%3A+Kendi+Sohbet+A%C4%9F%C4%B1n%C4%B1z%C4%B1+Kurun" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-irc-server.html&amp;text=Raspberry+Pi+IRC+Sunucusu%3A+Kendi+Sohbet+A%C4%9F%C4%B1n%C4%B1z%C4%B1+Kurun" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-irc-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-irc-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-irc-server.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-irc-server.html&amp;title=Raspberry+Pi+IRC+Sunucusu%3A+Kendi+Sohbet+A%C4%9F%C4%B1n%C4%B1z%C4%B1+Kurun" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi+IRC+Sunucusu%3A+Kendi+Sohbet+A%C4%9F%C4%B1n%C4%B1z%C4%B1+Kurun%20codenfast.com%2Fposts%2Fraspberry-pi-irc-server.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

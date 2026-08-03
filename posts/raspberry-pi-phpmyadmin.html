@@ -1,0 +1,293 @@
+<!DOCTYPE HTML>
+<html lang="tr">
+<head>
+    <title>Raspberry Pi&#39;ye phpMyAdmin Nasıl Kurulur - Codenfast</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="description"
+          content="Bir web sunucusuna ve MYSQL&#39;e ihtiyacınız olacak"/>
+    <meta property="og:title" content="Raspberry Pi&#39;ye phpMyAdmin Nasıl Kurulur"/>
+    <meta property="og:description"
+          content="Bir web sunucusuna ve MYSQL&#39;e ihtiyacınız olacak"/>
+    <meta property="og:site_name" content="Codenfast"/>
+    <meta property="og:type" content="article"/>
+    
+        <link rel="canonical" href="codenfast.com/posts/raspberry-pi-phpmyadmin.html"/>
+        <meta property="og:url" content="codenfast.com/posts/raspberry-pi-phpmyadmin.html"/>
+    
+    <meta property="og:image" content="https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-PHPMyAdmin-v2-no-wm.jpg"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Raspberry Pi&#39;ye phpMyAdmin Nasıl Kurulur"/>
+    <meta name="twitter:description"
+          content="Bir web sunucusuna ve MYSQL&#39;e ihtiyacınız olacak"/>
+    <meta name="twitter:image" content="https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-PHPMyAdmin-v2-no-wm.jpg"/>
+    <meta name="twitter:site" content="@"/>
+
+    <meta name="theme-color" content="#050709"/>
+    <meta name="color-scheme" content="dark"/>
+
+    <script type="application/ld+json">{"@graph":[{"itemListElement":[{"position":1,"name":"Home","item":{"@id":"https://codenfast.com/"},"@type":"ListItem"},{"position":2,"name":"Raspberry Pi Projeleri","item":{"@id":"https://codenfast.com/categories/raspberry-pi-projeleri.html"},"@type":"ListItem"},{"position":3,"name":"Raspberry Pi'ye phpMyAdmin Nasıl Kurulur","item":{"@id":"https://codenfast.com/posts/raspberry-pi-phpmyadmin.html"},"@type":"ListItem"}],"@context":"https://schema.org","@type":"BreadcrumbList"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-PHPMyAdmin-v2-no-wm.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-PHPMyAdmin-v2-no-wm.jpg","license":null,"acquireLicensePage":null,"@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-PHPMyAdmin-v2.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-PHPMyAdmin-v2.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-PHPMyAdmin-setup.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-PHPMyAdmin-setup.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-PHPMyAdmin-Thumbnail.jpg","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-PHPMyAdmin-Thumbnail.jpg","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"url":"https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-PHPMyAdmin-Interface.png","contentUrl":"https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-PHPMyAdmin-Interface.png","license":"https://codenfast.com/","acquireLicensePage":"https://codenfast.com/","@type":"ImageObject"},{"headline":"Raspberry Pi'ye phpMyAdmin Nasıl Kurulur","description":"Bir web sunucusuna ve MYSQL'e ihtiyacınız olacak","image":["https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-PHPMyAdmin-v2-no-wm.jpg"],"datePublished":"2026-08-03T15:40:22.611541+03:00","dateModified":"2026-08-03T15:40:22.611561+03:00","author":{"name":"Şener K.","@type":"Person"},"publisher":{"name":"Codenfast","url":"https://codenfast.com/","logo":{"url":"https://codenfast.com/images/012021/Icon-144.webp","contentUrl":"https://codenfast.com/images/012021/Icon-144.webp","license":null,"acquireLicensePage":null,"@type":"ImageObject"},"@type":"Organization"},"@context":"https://schema.org","@type":"Article"}]}</script>
+
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <link rel="icon" href="https://codenfast.com/images/012021/Icon-144.webp">
+</head>
+<body class="is-preload">
+
+<div id="page-wrapper">
+
+    <!-- ══ HEADER ═══════════════════════════════════════════ -->
+    <div id="header-wrapper">
+        <header class="container" id="header">
+
+            <div id="logo">
+                <h1>
+                    <a href="/">
+                        <img loading="lazy"
+                             alt="Codenfast"
+                             title="Codenfast"
+                             src="https://codenfast.com/images/012021/Icon-144.webp"/>
+                        
+                    </a>
+                </h1>
+            </div>
+
+            <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav">
+                <ul>
+                    <!-- Home -->
+                    <li>
+                        <a href="/">Anasayfa</a>
+                    </li>
+
+                    <!-- Product/Service Showcase -->
+                    
+
+                    <!-- Dynamic dropdown menu from parameters -->
+                    
+
+                    <!-- Featured static pages -->
+                    
+                        
+                    
+
+                    <!-- Categories -->
+                    <li>
+                        <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                    </li>
+                    <li>
+                        <a href="/categories/makale.html">Makale</a>
+                    </li>
+                    <li>
+                        <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                    </li>
+                    <li>
+                        <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                    </li>
+
+                    <!-- Non-featured static pages under "Hakkımızda" -->
+                    
+                        <li class="opener">
+                            <a href="#">Hakkımızda</a>
+                            <ul>
+                                <li>
+                                    <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+                </ul>
+            </nav>
+
+        </header>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+    <!-- ── Page body injected here ── -->
+    <div>
+
+    <div id="main-wrapper">
+        <div class="container">
+            <div id="content">
+
+                <article>
+                    <h2>Raspberry Pi&#39;ye phpMyAdmin Nasıl Kurulur</h2>
+
+                    <div><blockquote>
+<p>Bu yazı, <a href="https://pimylifeup.com/raspberry-pi-phpmyadmin/">PiMyLifeUp - How to Install phpMyAdmin on the Raspberry Pi</a> kaynağından Türkçe'ye çevrilerek hazırlanmıştır.</p>
+</blockquote>
+<p>Bu eğitimde, popüler MySQL yönetim aracı phpMyAdmin'i Raspberry Pi'nize nasıl kuracağınız adımlarında size yol göstereceğiz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-PHPMyAdmin-v2.jpg" alt="Raspberry Pi PHPMyAdmin" /></p>
+<p>Bilmeyenler için, <a href="https://www.phpmyadmin.net/">phpMyAdmin, MySQL'in kolay yönetimine izin vermek için tasarlanmış ücretsiz bir araçtır</a>. Son derece popülerdir ve dünya çapında birçok web sunucusu ortamında kullanılır.</p>
+<p>phpMyAdmin'i Raspberry Pi'ye kurmanın yapılması çok kolay olduğunu ve uzun sürmeyeceğini göreceksiniz. Raspberry Pi'nizde kurulu ve kullanıma hazır bir web sunucusuna ihtiyacınız var.</p>
+<p>phpMyAdmin'in nasıl kullanılacağını öğrenmek yeni başlayanlar için oldukça göz korkutucu olabilir. Veritabanlarını yönetme konusunda tamamen yeniyseniz, bazı eğitimlere göz atmanızı öneririm.</p>
+<p>Henüz bir web sunucusu kurmadıysanız, <a href="https://pimylifeup.com/raspberry-pi-apache/">Apache kurma</a> veya <a href="https://pimylifeup.com/raspberry-pi-nginx/">NGINX kurma</a> rehberimizden öğrenebilirsiniz.</p>
+<h2>Raspberry Pi'de phpMyAdmin Ayarlama</h2>
+<p>Tüm eğitimlerimizde olduğu gibi, bu eğitimi tamamlamak için <a href="https://pimylifeup.com/raspberry-pi-os-install/">Raspberry Pi OS'nin en son sürümünü</a> kullanacağız.</p>
+<p>İlk olarak, PHP desteğiyle <a href="https://pimylifeup.com/raspberry-pi-web-server/">bir web sunucusu kurma</a> (NGINX veya Apache) hakkındaki önceki eğitimi takip ettiğinizden emin olun. Ayrıca <a href="https://pimylifeup.com/raspberry-pi-mysql/">MYSQL'i kurup ayarlamanız</a> gerekecek.</p>
+<p>Root MYSQL hesabı için ayarladığınız parolaya sahip olmanız gerekecek. Buna sahip değilseniz, phpMyAdmin'i kuramayacaksınız.</p>
+<p><strong>1.</strong> Raspberry Pi'mize PHPMyAdmin paketini kurmak için, aşağıdaki komutu çalıştırmamız gerekiyor.</p>
+<pre><code>sudo apt install phpmyadmin
+</code></pre>
+<p><strong>2.</strong> phpMyAdmin artık Pi'nize kurulmaya başlayacak. Süreç boyunca çeşitli adımlarda girdinizi isteyecektir. Hangi tür web sunucusu üzerinde çalışmasını istediğinizi soran bir ekranla karşılaşacaksınız.</p>
+<p><code>SPACE</code> tuşuna basıp ardından <code>ENTER</code> tuşuna basarak &quot;<code>apache2</code>&quot; seçeneğini seçin. NGINX kullanıyor olsanız bile bu seçeneği seçin, çünkü bunu daha sonra kendimiz yapılandıracağız.</p>
+<p><strong>3.</strong> Ardından, phpMyAdmin'i MYSQL sunucumuza bağlanacak şekilde yapılandırmamız gerekecek. Ayrıca phpMyAdmin yazılımına giriş yapabilmemiz için bazı detayları ayarlamamız gerekecek.</p>
+<p>Bunu yapmak için bir sonraki istemde &quot;<strong>&lt; Yes&gt;</strong>&quot;i seçin.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-PHPMyAdmin-setup.png" alt="Raspbian PHPMyAdmin kurulumu" /></p>
+<p><strong>4.</strong> Şimdi phpMyAdmin'in kendisi için bir parola belirlemenizi isteyecektir. Bu parolayı root SQL parolanızdan farklı bir şeye ayarlamak en iyisidir. Bunu yapmak, sunucuyu güvenli hale getirmeye yardımcı olacaktır.</p>
+<p>Bu parola, phpMyAdmin'in MySQL sunucusuna bağlanmak için kullanacağı paroladır.</p>
+<p><strong>5.</strong> phpMyAdmin kurulum süreci tamamlandığında, yapmamız gereken bir son şey daha var. phpMyAdmin varsayılan olarak &quot;<strong>root</strong>&quot; kullanıcısını kullanarak phpMyAdmin arayüzüne giriş yapmanızı engelleyecektir.</p>
+<p>Bunun yerine, phpMyAdmin içinde veri tabloları oluşturmak ve onlara erişmek istiyorsanız yeni bir kullanıcı oluşturmanız gerekecek.</p>
+<p>Bunu yapmak için, önce ayarladığınız parolayla &quot;<strong>root</strong>&quot; kullanıcısını kullanarak MySQL komut satırı arayüzüne giriş yapmamız gerekecek.</p>
+<pre><code>sudo mysql -u root -p
+</code></pre>
+<p><strong>6.</strong> Şimdi bir kullanıcı oluşturmak ve MySQL sunucusundaki tüm veritabanlarına erişim izni vermek için aşağıdaki komutu çalıştırın. Burada girdiğiniz detayları hatırlayın çünkü phpMyAdmin'e giriş yapmak için bunları kullanacaksınız.</p>
+<p>&quot;<strong>username</strong>&quot; kısmını <strong>seçtiğiniz kullanıcı adıyla</strong> değiştirdiğinizden emin olun.</p>
+<p>Ayrıca, &quot;<strong>password</strong>&quot; kısmını seçtiğiniz <strong>güvenli bir parolayla</strong> değiştirin.</p>
+<pre><code>GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' IDENTIFIED BY 'password' WITH GRANT OPTION;
+</code></pre>
+<p><strong>7.</strong> Terminalde &quot;<strong>quit</strong>&quot; yazarak MySQL komut satırı arayüzünden çıkabilirsiniz.</p>
+<p>Bittiğinde, Apache veya NGINX için phpMyAdmin'i yapılandırmaya devam edebilirsiniz.</p>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-PHPMyAdmin-Thumbnail.jpg" alt="Raspberry Pi PHPMyAdmin Thumbnail" /></p>
+<h2>phpMyAdmin için Apache'yi Yapılandırma</h2>
+<p><strong>1.</strong> Raspberry Pi'mizde phpMyAdmin arayüzünü yükleyebilmemiz için, Apache'de bazı yapılandırma değişiklikleri yapmamız gerekecek.</p>
+<p>Başlamak için, <code>Apache2.conf</code> dosyasını düzenlememiz gerekiyor, bunu terminale aşağıdakini girerek yapabiliriz.</p>
+<pre><code>sudo nano /etc/apache2/apache2.conf
+</code></pre>
+<p><strong>2.</strong> Şimdi bu dosyanın altına aşağıdaki satırı eklememiz gerekiyor.</p>
+<p>Bu satır, phpMyAdmin'in yapılandırmasını dahil edecek ve Apache tarafından yüklenip dinlenmesine izin verecektir.</p>
+<pre><code>Include /etc/phpmyadmin/apache.conf
+</code></pre>
+<p>Bittiğinde, <code>CTRL</code> + <code>X</code>, ardından <code>Y</code>, sonra <code>ENTER</code> tuşuna basarak kaydedip çıkabiliriz.</p>
+<p><strong>3.</strong> Şimdi aşağıdaki komutu çalıştırarak Raspberry Pi'mizde Apache servisini yeniden başlatmamız gerekiyor.</p>
+<p>Bunu, mevcut yapılandırmasını temizlemek ve değiştirdiğimiz dosyayı yüklemesini sağlamak için yapmamız gerekiyor.</p>
+<pre><code>sudo systemctl restart apache2
+</code></pre>
+<h2>phpMyAdmin için NGINX'i Yapılandırma</h2>
+<p><strong>1.</strong> NGINX'i phpMyAdmin ile çalışacak şekilde ayarlamak için, yapmamız gereken şey <code>phpmyadmin</code> klasörü ile kök HTML dizinimiz arasında bir bağlantı oluşturmaktır.</p>
+<p>Bunu yapmak için, Raspberry Pi'mizde aşağıdaki komutu çalıştırmamız gerekiyor.</p>
+<pre><code>sudo ln -s /usr/share/phpmyadmin /var/www/html
+</code></pre>
+<p><strong>2.</strong> Değişikliklerin etkili olması için NGINX'i yeniden başlatın.</p>
+<pre><code>sudo systemctl restart nginx
+</code></pre>
+<h2>phpMyAdmin'e Erişme</h2>
+<p><strong>1.</strong> Artık Raspberry Pi'nizin phpMyAdmin arayüzüne <a href="https://pimylifeup.com/category/guides/browsers/">bir web tarayıcısından</a> erişebilmeniz gerekiyor.</p>
+<p>Bunu test etmek için, favori web tarayıcınızda aşağıdaki adrese gidin. Giriş yapmak için eğitimde daha önce oluşturduğunuz kullanıcıyı kullanın. Root kullanıcınızı kullanmayın çünkü bu varsayılan olarak devre dışıdır.</p>
+<p>IP Adresini Raspberry Pi'nizin IP Adresi ile değiştirmeyi unutmayın. Buna sahip değilseniz, Raspberry Pi'nizde <code>hostname –I</code> komutunu çalıştırın.</p>
+<pre><code>http://192.168.1.108/phpmyadmin
+</code></pre>
+<p><img loading="lazy" src="https://pimylifeup.com/wp-content/uploads/2019/07/Raspberry-Pi-PHPMyAdmin-Interface.png" alt="Raspberry Pi PHPMyAdmin Arayüzü" /></p>
+<h2>Sonuç</h2>
+<p>Bu noktada, artık phpMyAdmin Raspberry Pi'nizde çalışıyor olmalı.</p>
+<p>Ağır veritabanı uygulamaları veya web siteleri kurmaya karar verirseniz bu eğitimi çok kullanışlı bulacaksınız. Örneğin, <a href="https://pimylifeup.com/raspberry-pi-wordpress/">WordPress</a> bir veritabanına çok bağımlıdır, bu yüzden ona erişip yönetebilmek bir zorunluluktur.</p>
+<p>Bu Raspberry Pi phpMyAdmin eğitiminden keyif almış olmanızı umarız ve herhangi bir sorunla karşılaşırsanız, aşağıya yorum bırakmaktan çekinmeyin.</p>
+</div>
+
+                    <!-- ══ SHARE BUTTONS ══════════════════════════════ -->
+                    <div class="share-container">
+                        <span>Paylaş:</span>
+                        <a title="Twitter&#39;da Paylaş" href="https://www.twitter.com/share?url=codenfast.com%2Fposts%2Fraspberry-pi-phpmyadmin.html&amp;text=Raspberry+Pi%27ye+phpMyAdmin+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-twitter-64x64.webp"
+                                 class="share-icon" alt="Twitter'da Paylaş">
+                        </a>
+                        <a title="Telegram&#39;da Paylaş" href="https://t.me/share/url?url=codenfast.com%2Fposts%2Fraspberry-pi-phpmyadmin.html&amp;text=Raspberry+Pi%27ye+phpMyAdmin+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-telegram-64x64.webp"
+                                 class="share-icon" alt="Telegram'da Paylaş">
+                        </a>
+                        <a title="Facebook&#39;ta Paylaş" href="https://www.facebook.com/sharer/sharer.php?u=codenfast.com%2Fposts%2Fraspberry-pi-phpmyadmin.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-facebook-64x64.webp"
+                                 class="share-icon" alt="Facebook'ta Paylaş">
+                        </a>
+                        <a title="LinkedIn&#39;de Paylaş" href="https://www.linkedin.com/sharing/share-offsite/?url=codenfast.com%2Fposts%2Fraspberry-pi-phpmyadmin.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-linkedin-64x64.webp"
+                                 class="share-icon" alt="LinkedIn'de Paylaş">
+                        </a>
+                        <a title="Pinterest&#39;te Paylaş" href="http://pinterest.com/pin/create/link/?url=codenfast.com%2Fposts%2Fraspberry-pi-phpmyadmin.html" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-pinterest-64x64.webp"
+                                 class="share-icon" alt="Pinterest'te Paylaş">
+                        </a>
+                        <a title="Reddit&#39;te Paylaş" href="https://reddit.com/submit?url=codenfast.com%2Fposts%2Fraspberry-pi-phpmyadmin.html&amp;title=Raspberry+Pi%27ye+phpMyAdmin+Nas%C4%B1l+Kurulur" target="_blank"
+                           rel="noopener noreferrer">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-reddit-64x64.webp"
+                                 class="share-icon" alt="Reddit'te Paylaş">
+                        </a>
+                        <a title="WhatsApp&#39;ta Paylaş" href="whatsapp://send?text=Raspberry+Pi%27ye+phpMyAdmin+Nas%C4%B1l+Kurulur%20codenfast.com%2Fposts%2Fraspberry-pi-phpmyadmin.html"
+                           data-action="share/whatsapp/share">
+                            <img loading="lazy"
+                                 src="https://codenfast.com/images/012021/share-whatsapp-64x64.webp"
+                                 class="share-icon" alt="WhatsApp'ta Paylaş">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="footer-wrapper">
+        <footer class="container" id="footer">
+            <div class="row">
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Hakkımızda</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/1687973504556-privacy-policy.html.html">Gizlilik sözleşmesi</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-3 col-6-medium col-12-small">
+                    <section class="widget links">
+                        <h3>Kategoriler</h3>
+                        <ul class="style2">
+                            <li>
+                                <a href="/categories/ai-ve-eglence.html">AI ve Eğlence</a>
+                            </li>
+                            <li>
+                                <a href="/categories/makale.html">Makale</a>
+                            </li>
+                            <li>
+                                <a href="/categories/proje-uygulama.html">Proje/Uygulama</a>
+                            </li>
+                            <li>
+                                <a href="/categories/raspberry-pi-projeleri.html">Raspberry Pi Projeleri</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="col-12">
+                    <div id="copyright">
+                        <ul class="menu">
+                            <li>© 2016 CODENFAST CLOUD. All rights reserved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ═══════════════════════════════════════════════════ -->
+
+</div><!-- #page-wrapper -->
+
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>
