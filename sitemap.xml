@@ -2,9 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://codenfast.com/</loc>
-    <lastmod>2026-10-25T03:25:42.933097573+03:00</lastmod>
+    <lastmod>2026-10-26T13:09:53.035200004+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codenfast.com/posts/openai-yapay-zeka-egitiminde-canli-internetin-yerine-kayitli-web-sayfalarini-koydu.html</loc>
+    <lastmod>2026-10-26T13:09:46.94347+03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://codenfast.com/posts/flykobi-kolay-erp.html</loc>
@@ -625,12 +631,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codenfast.com/posts/ucretsiz-paket-ekonomi-paket-business-paket.html</loc>
-    <lastmod>2026-07-20T19:51:21.281413+03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://codenfast.com/posts/elektronik-eimza-projesi.html</loc>
     <lastmod>2026-10-20T11:37:42.156789+03:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -639,12 +639,6 @@
   <url>
     <loc>https://codenfast.com/posts/tost-matik.html</loc>
     <lastmod>2026-06-20T02:47:50.167381+03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://codenfast.com/posts/sirketlerin-ve-kamu-kuruluslari-ai-hizmetlerini-engelledi.html</loc>
-    <lastmod>2026-04-12T02:56:01.527892+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -661,20 +655,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codenfast.com/posts/ai-ile-slot-makinesi-arasindaki-benzerlikler.html</loc>
-    <lastmod>2026-03-19T06:57:21.107049+03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://codenfast.com/posts/windows-12.html</loc>
     <lastmod>2026-03-19T06:37:52.513824+03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://codenfast.com/posts/infoboard.html</loc>
-    <lastmod>2026-03-07T15:31:54.516974+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -685,20 +667,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codenfast.com/posts/ai-ile-verimli-bir-gun.html</loc>
-    <lastmod>2026-03-05T02:06:53.145503+03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://codenfast.com/posts/funnyday-eglence-merkezleri-web-sitesi.html</loc>
     <lastmod>2026-03-13T22:40:48.878303+03:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://codenfast.com/posts/gereksiz-karmasik-cozumler.html</loc>
-    <lastmod>2026-02-24T02:12:10.54182+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -709,8 +679,8 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codenfast.com/categories/ai-ve-eglence.html</loc>
-    <lastmod>2026-02-24T01:52:17.605378+03:00</lastmod>
+    <loc>https://codenfast.com/categories/eglence.html</loc>
+    <lastmod>2026-10-26T13:08:41.14386+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
