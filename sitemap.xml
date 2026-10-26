@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://codenfast.com/</loc>
-    <lastmod>2026-10-26T13:09:53.035200004+03:00</lastmod>
+    <lastmod>2026-10-26T16:53:02.151007602+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://codenfast.com/posts/openai-yapay-zeka-egitiminde-canli-internetin-yerine-kayitli-web-sayfalarini-koydu.html</loc>
-    <lastmod>2026-10-26T13:09:46.94347+03:00</lastmod>
+    <loc>https://codenfast.com/posts/jailbreakli-playstation-5te-steam-uzerinden-pc-oyunlari-oynanabiliyor.html</loc>
+    <lastmod>2026-10-26T16:28:14.825831+03:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://codenfast.com/posts/servet-odenerek-alinan-iphone-duonun-ekrani-ilk-gunden-catladi-cok-sayida-sikyet-var.html</loc>
+    <lastmod>2026-10-26T16:52:45.202747+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
